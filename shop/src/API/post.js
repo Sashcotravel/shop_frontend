@@ -33,36 +33,3 @@ export const fetchDeletePost = createAsyncThunk("posts/fetchDeletePost", async (
 );
 
 
-// request comment
-
-
-export const fetchAllComments = createAsyncThunk("posts/fetchAllComments", async () => {
-    const { data } = await instance.get("/posts/comments/all");
-    return data;
-  }
-);
-
-export const fetchDeleteComments = createAsyncThunk("posts/fetchDeleteComments", async (id) => {
-        const { data } = instance.delete(`/posts/comment/${id}`);
-        return data;
-    }
-);
-
-export const fetchEditeComments = createAsyncThunk("posts/fetchEditeComments", async (editBody) => {
-        const { data } = instance.patch(`/posts/comment/${editBody.id}`, {text: editBody.text,});
-        return data;
-    }
-);
-
-// request tags
-
-export const fetchTags = createAsyncThunk("posts/fetchTags", async () => {
-  const { data } = await instance.get("/posts/posts/tags");
-  return data;
-});
-
-export const fetchOneTags = createAsyncThunk("posts/fetchOneTags", async (tags) => {
-    const { data } = await instance.get(`/posts/posts/tags/${tags}`);
-    return data;
-  }
-);
