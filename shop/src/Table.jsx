@@ -45,20 +45,30 @@ const Table = ({data}) => {
 
     const onBlur = (e) => {
         setData2((actual) => [])
-        data.forEach((user) => {
-            if (user.id == one) {
-                if (user.size != 0) {
+        data.forEach((item) => {
+            if (item.id == one) {
+                if(one === '100002'){
+                    data[1].size = e.target.value
+                    data[2].size = e.target.value
+                    data[3].size = e.target.value
+                    data[4].size = e.target.value
+                    data[5].size = e.target.value
+                }
+                if(one === '100019'){
+                    data[13].size = e.target.value
+                }
+                if (item.size != 0) {
                     userOrder.forEach((el, index) => {
-                        if(user === el) {
+                        if(item === el) {
                             userOrder.splice(index, 1)
                         }
                     })
-                    setTotal(total - user.total)
+                    setTotal(total - item.total)
                 }
-                user.size = e.target.value
-                user.total = user.size * user.prise
-                setTotal((actual) => actual + user.total)
-                userOrder.push(user)
+                item.size = e.target.value
+                item.total = item.size * item.prise
+                setTotal((actual) => actual + item.total)
+                userOrder.push(item)
             }
         })
         setDouble(false)
@@ -70,19 +80,21 @@ const Table = ({data}) => {
             order: userOrder,
             user: userData
         }
-        let massageO = {
+        let userMassage = {
             massage: 'lol',
             userData: userData
         }
         await dispatch(fetchPay(obj))
             .then(res => console.log(res.meta))
-        await dispatch(fetchMail(massageO))
+        await dispatch(fetchMail(userMassage))
             .then(res => console.log(res.meta))
-        let print = handlePrint()
+        handlePrint()
         data.forEach(user => user.size = 0)
         data.forEach(user => user.total = 0)
         nullAll()
     }
+
+    // table userData
 
     const clickCity = (e) => {
         setUserData((actual) => {
@@ -203,7 +215,7 @@ const Table = ({data}) => {
                                     ? <td className={s.list} id={item.id} title={item.size}
                                           onDoubleClick={doubleClick}>{item.size}</td>
                                     : <td className={s.input} id={item.id} title={item.size}>
-                                        <input onBlur={onBlur} type="text"/></td>
+                                        <input className={s.inputIn2Tab} onBlur={onBlur} type="text"/></td>
                             }
                             <td className={s.list}>{item.discount}</td>
                             <td className={s.list}>{item.total}</td>
@@ -211,10 +223,7 @@ const Table = ({data}) => {
                     ))
                 }
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td colSpan="4" className={s.top}></td>
                     <td className={s.list}>Total</td>
                     <td className={s.list + ' ' + s.total}>{total}</td>
                 </tr>

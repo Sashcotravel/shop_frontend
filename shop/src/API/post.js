@@ -8,28 +8,8 @@ export const fetchPay = createAsyncThunk("order/fetchPay", async (obj) => {
   return data;
 });
 
-export const fetchMail = createAsyncThunk("order/fetchMail", async (massage) => {
-        const { data } = await instance.post(`/order/mail`, massage);
+export const fetchMail = createAsyncThunk("order/fetchMail", async (userMassage) => {
+        const { data } = await instance.post(`/order/mail`, userMassage);
         return data;
     }
 );
-
-export const fetchPopulatePosts = createAsyncThunk("posts/fetchPopulatePosts", async () => {
-        const { data } = await instance.get("/posts/all/populate");
-        return data;
-    }
-);
-
-export const fetchLikePosts = createAsyncThunk("posts/fetchLikePosts", async ({ id, act, like }) => {
-        const { data } = await instance.post(`/posts/like/${id}`, {act: act, like: like,});
-        return data;
-    }
-);
-
-export const fetchDeletePost = createAsyncThunk("posts/fetchDeletePost", async (id) => {
-        const { data } = instance.delete(`/posts/${id}`);
-        return data;
-    }
-);
-
-
