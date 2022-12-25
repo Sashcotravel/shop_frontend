@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {fetchMail, fetchPay} from "./API/post";
 import { useReactToPrint } from 'react-to-print'
 import axios from "axios";
+import { Link } from 'react-scroll'
 
 let userOrder = []
 
@@ -30,10 +31,8 @@ const Table = ({data}) => {
     })
 
     const nullAll = () => {
-        setUserData((actual) => {return {...actual, name:''}})
-        setUserData((actual) => {return {...actual, phone:''}})
-        setUserData((actual) => {return {...actual, email:''}})
-        setUserData((actual) => {return {...actual, cite:''}})
+        setUserData((actual) => {
+            return {...actual, name:'', phone:'', email:'', cite:''}})
         setTotal(0)
         userOrder = []
     }
@@ -147,7 +146,11 @@ const Table = ({data}) => {
                 setUserData((actual) => {return {...actual, email: e.target.value}})
             }} className={s.input2}/></td>
         }
-
+        // return <td className={s.input}><input title={names} onBlur={userSave} type="text" onChange={(e) => {
+        //     setUserData((actual) => {
+        //         return {...actual, [names]: e.target.value}
+        //     })
+        // }} className={s.input2}/></td>
     }
 
     const doubleClick2 = (e) => {
@@ -164,20 +167,18 @@ const Table = ({data}) => {
     }
 
     const userSave = (e) => {
-        switch (e.target.title) {
-            case 'name':
-                setDouble2((actual) => {return {...actual, name: false}})
-            case 'phone':
-                setDouble2((actual) => {return {...actual, phone: false}})
-            case 'email':
-                setDouble2((actual) => {return {...actual, email: false}})
-            case 'cite':
-                setDouble2((actual) => {return {...actual, cite: false}})
-        }
+        setDouble2((prev) => ({
+            ...prev, [e.target.title]: true ? false : true
+        }))
     }
 
     return (
         <>
+            <div>
+                <Link to='lolka1' spy={true} smooth={true} offset={-50} duration={500}><h1>LOlka 1</h1></Link>
+                <Link to='lolka2' spy={true} smooth={true} offset={-50} duration={500}><h1>LOlka 2</h1></Link>
+                <Link to='lolka3' spy={true} smooth={true} offset={-50} duration={500}><h1>LOlka 3</h1></Link>
+            </div>
             <table className={s.listTable + ' ' + s.app}>
                 <tbody>
                 <tr>
@@ -230,6 +231,15 @@ const Table = ({data}) => {
                 </tbody>
             </table>
             <button className={s.subBut} onClick={useSubmit}>Замовити</button>
+            <div id='lolka1' className={s.div1}>
+                <h1>Lolka 1</h1>
+            </div>
+            <div id='lolka2' className={s.div1}>
+                <h1>Lolka 2</h1>
+            </div>
+            <div id='lolka3' className={s.div1}>
+                <h1>Lolka 3</h1>
+            </div>
         </>
     )
 }

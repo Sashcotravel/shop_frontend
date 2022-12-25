@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "11.9.0",
     "@emotion/styled": "^11.10.5",
+    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.20.1.tgz",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "@reduxjs/toolkit": "^1.9.1",
@@ -14,7 +15,9 @@
     "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
     "clsx": "^1.1.1",
+    "config": "^3.3.8",
     "easymde": "^2.16.1",
+    "mobiscroll": "^3.0.0-beta6",
     "prettier": "^2.6.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
