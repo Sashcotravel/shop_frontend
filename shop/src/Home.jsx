@@ -158,17 +158,11 @@ const Home = ({data}) => {
             order: userOrder,
             user: userData
         }
-        let userMassage = {
-            massage: 'lol',
-            userData: userData
-        }
         await dispatch(fetchPay(obj))
             .then(res => console.log(res.meta))
         dispatch(fetchMail(obj))
-        dispatch(fetchMail(userMassage))
         if (checked) {
-            await dispatch(fetchMailUser(userMassage))
-                .then(res => console.log(res.meta))
+            dispatch(fetchMailUser(obj))
         }
         data.forEach(user => user.size = 0)
         data.forEach(user => user.total = 0)
