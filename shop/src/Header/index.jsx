@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
 import {Link} from "react-router-dom";
+import image5 from '../image/footer.png'
 
 
 export const Header = () => {
@@ -10,10 +11,15 @@ export const Header = () => {
     <div className={styles.root}>
       <Container maxWidth="lg">
         <div className={styles.inner}>
-          <Link className={styles.logo} to="/">
-            <div>Shop</div>
-          </Link>
-            <div><h3>LOGO</h3></div>
+          <div>
+            <Link to="/">
+              <img className={styles.logo} src={image5} />
+            </Link>
+          </div>
+          <div>
+            <span className={styles.nomer}>+38 (063) 23 56 478</span>
+          </div>
+            <div style={{color: 'whitesmoke'}}>Shop</div>
         </div>
       </Container>
     </div>

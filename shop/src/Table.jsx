@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {fetchMail, fetchPay} from "./API/post";
 import { useReactToPrint } from 'react-to-print'
 import axios from "axios";
-import { Link } from 'react-scroll'
+import {Link} from 'react-scroll'
 
 let userOrder = []
 
@@ -174,6 +174,39 @@ const Table = ({data}) => {
 
     return (
         <>
+
+            {/*<div className={s.boxLink}>*/}
+            {/*    <div className={s.boxh1}>*/}
+            {/*        <Link className={s.link} to='obladnannya' spy={true} smooth={true} offset={0} duration={500}><h1*/}
+            {/*          className={s.h1}>Обладнання</h1>*/}
+            {/*            <img src={image1} className={s.image}/>*/}
+            {/*        </Link>*/}
+            {/*    </div>*/}
+            {/*    <div className={s.boxh1}>*/}
+            {/*        <Link className={s.link} to='nacrnttya' spy={true} smooth={true} offset={0} duration={500}><h1*/}
+            {/*          className={s.h1}>Накриття</h1>*/}
+            {/*            <img src={image2} className={s.image}/>*/}
+            {/*        </Link>*/}
+            {/*    </div>*/}
+            {/*    <div className={s.boxh1}>*/}
+            {/*        <Link className={s.link} to='acsses' spy={true} smooth={true} offset={0} duration={500}><h1*/}
+            {/*          className={s.h1}>Аксесуари</h1>*/}
+            {/*            <img src={image3} className={s.image}/>*/}
+            {/*        </Link>*/}
+            {/*    </div>*/}
+            {/*    <div className={s.boxh1}>*/}
+            {/*        <Link className={s.link} to='building' spy={true} smooth={true} offset={0} duration={500}><h1*/}
+            {/*          className={s.h1}>Будівництво</h1>*/}
+            {/*            <img src={image4} className={s.image}/>*/}
+            {/*        </Link>*/}
+            {/*    </div>*/}
+            {/*    <div className={s.boxh1}>*/}
+            {/*        <Link className={s.link} to='documents' spy={true} smooth={true} offset={0} duration={500}><h1*/}
+            {/*          className={s.h1}>Документація</h1>*/}
+            {/*            <img src={image5} className={s.image}/>*/}
+            {/*        </Link>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div>
                 <Link to='lolka1' spy={true} smooth={true} offset={-50} duration={500}><h1>LOlka 1</h1></Link>
                 <Link to='lolka2' spy={true} smooth={true} offset={-50} duration={500}><h1>LOlka 2</h1></Link>

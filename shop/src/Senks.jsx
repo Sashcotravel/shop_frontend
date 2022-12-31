@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Link} from "react-router-dom";
 import s from './Home.module.css'
 
-const Senks = () => {
+const Senks = ({ setOnFooter }) => {
+
+  useEffect(() => {
+
+    setOnFooter(true)
+
+    return () => {
+      setOnFooter(false)
+    }
+  }, [])
+
+
+
 
     return (
         <div>
@@ -14,7 +26,7 @@ const Senks = () => {
             <br/>
             <br/>
             <br/>
-            <Link className={s.logo} to="/">На головну</Link>
+            <Link className={s.butSencs} to="/">На головну</Link>
         </div>
     )
 }
