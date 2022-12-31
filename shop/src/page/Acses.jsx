@@ -48,7 +48,7 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
   return <>
     <div className={s.divBox}>
       <div className={s.container}>
-        <div style={{ margin: "45px auto 15px auto" }} className={s.boxOne}>
+        <div className={s.boxOne}>
           <div className={s.img3}></div>
           <h5 className={s.itemName}>{data[11].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
@@ -68,7 +68,7 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
         </div>
       </div>
       <div className={s.container}>
-        <div style={{ margin: "45px auto 15px auto" }} className={s.boxOne}>
+        <div className={s.boxOne}>
           <div className={s.img3}></div>
           <h5 className={s.itemName}>{data[12].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
@@ -88,7 +88,7 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
         </div>
       </div>
       <div className={s.container}>
-        <div style={{ margin: "45px auto 15px auto" }} className={s.boxOne}>
+        <div className={s.boxOne}>
           <div className={s.img3}></div>
           <h5 className={s.itemName}>{data[15].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
@@ -108,7 +108,7 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
         </div>
       </div>
       <div className={s.container}>
-        <div style={{ margin: "45px auto 15px auto" }} className={s.boxOne}>
+        <div className={s.boxOne}>
           <div className={s.img3}></div>
           <h5 className={s.itemName}>{data[14].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
