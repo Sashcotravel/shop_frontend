@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import s from "../Home.module.css";
-import image1 from "../image/303822-1366x768.jpg";
+import './Obl.css'
 
 
 const Acses = ({ data, userOrder, setTotal, total }) => {
@@ -45,11 +45,30 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
     });
   };
 
+  const imgSize = (e) => {
+    let size = e.target.id.slice(3)
+    let g = document.getElementById(e.target.id)
+    if(g.className == `${e.target.id} base`){
+      let con = document.getElementById("light");
+      con.style.visibility = "visible";
+      let twoImg = document.getElementById("lightCol");
+      twoImg.className = `${e.target.id}_2`
+      window.scroll(0, 0);
+      window.addEventListener("scroll", window.scroll(0, 0));
+    } else {
+      let con = document.getElementById("light");
+      con.style.visibility = "hidden";
+    }
+  }
+
   return <>
     <div className={s.divBox}>
+      <div id="light" className={s.boxHideImage}>
+        <div className={""} id="lightCol" onClick={imgSize}></div>
+      </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img3}></div>
+          <div className={'img12 base'} id='img12' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[11].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -69,7 +88,7 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img3}></div>
+          <div className={'img13 base'} id='img13' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[12].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -89,7 +108,7 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img3}></div>
+          <div className={'img14 base'} id='img14' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[15].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -109,7 +128,7 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img3}></div>
+          <div className={'img15 base'} id='img15' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[14].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>

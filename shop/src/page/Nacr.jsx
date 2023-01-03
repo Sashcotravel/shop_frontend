@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "../Home.module.css";
+import './Obl.css'
 
 
 const Nacr = ({ data, userOrder, setTotal, total }) => {
@@ -72,11 +73,30 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
     });
   };
 
+  const imgSize = (e) => {
+    let size = e.target.id.slice(3)
+    let g = document.getElementById(e.target.id)
+    if(g.className == `${e.target.id} base`){
+      let con = document.getElementById("light");
+      con.style.visibility = "visible";
+      let twoImg = document.getElementById("lightCol");
+      twoImg.className = `${e.target.id}_2`
+      window.scroll(0, 0);
+      window.addEventListener("scroll", window.scroll(0, 0));
+    } else {
+      let con = document.getElementById("light");
+      con.style.visibility = "hidden";
+    }
+  }
+
   return <>
     <div className={s.divBox}>
+      <div id="light" className={s.boxHideImage}>
+        <div className={""} id="lightCol" onClick={imgSize}></div>
+      </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img2}></div>
+          <div className={'img6 base'} id='img6' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[23].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -104,7 +124,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img2}></div>
+          <div className={'img7 base'} id='img7' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[24].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -132,7 +152,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img2}></div>
+          <div className={'img8 base'} id='img8' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[25].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -160,7 +180,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img2}></div>
+          <div className={'img9 base'} id='img9' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[26].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -188,7 +208,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img2}></div>
+          <div className={'img10 base'} id='img10' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[27].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -216,7 +236,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={s.img2}></div>
+          <div className={'img11 base'} id='img11' onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[28].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "../Home.module.css";
+import './Obl.css'
 
 
 const Obl = ({ data, userOrder, setTotal, total }) => {
@@ -86,13 +87,36 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
     });
   };
 
+  const imgSize = (e) => {
+    // let types = e.target.title.slice(4)
+    let size = e.target.id.slice(3)
+    let g = document.getElementById(e.target.id)
+    if(g.className == `${e.target.id} base`){
+      let con = document.getElementById("light");
+      con.style.visibility = "visible";
+      let twoImg = document.getElementById("lightCol");
+      twoImg.className = `${e.target.id}_2`
+      window.scroll(0, 0);
+      window.addEventListener("scroll", window.scroll(0, 0));
+      // g.className = `${e.target.id}_2`
+    } else {
+      let con = document.getElementById("light");
+      con.style.visibility = "hidden";
+      // g.className = `${e.target.id} base`
+      // let twoImg = document.getElementById("lightCol");
+      // con.className = ''
+    }
+  }
 
   return <>
     <div className={s.divBox}>
-      <div className={s.container}>
+      <div id="light" className={s.boxHideImage}>
+        <div className={""} id="lightCol" onClick={imgSize}></div>
+      </div>
+      <div id="lightblue" className={s.boxHideImage+' ' +s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={s.img1}></div>
+          <div className={"img3 base"} id="img3" onClick={imgSize}></div>
           <h5 className={s.itemName}>{data[0].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -113,7 +137,8 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={s.img1}></div>
+          <div className={'img4 base'} id='img4' onClick={imgSize}></div>
+          {/*<div id="light" className={s.boxHideImage}></div>*/}
           <h5 className={s.itemName}>{data[6].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -143,7 +168,8 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={s.img1}></div>
+          <div className={'img5 base'} id='img5' onClick={imgSize}></div>
+          {/*<div id="light" className={s.boxHideImage}></div>*/}
           <h5 className={s.itemName}>{data[7].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -172,8 +198,9 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          {/*<img src={image1} className={s.img} />*/}
-          <div className={s.img1}></div>
+          {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
+          <div className={'img1 base'} id='img1' onClick={imgSize}></div>
+          {/*<div id="light" className={s.boxHideImage}></div>*/}
           <h5 className={s.itemName}>{data[8].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -188,6 +215,28 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[8].total} грн</span>
+          </div>
+        </div>
+      </div>
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
+          <div className={'img2 base'} id='img2' onClick={imgSize}></div>
+          {/*<div id="light" className={s.boxHideImage}></div>*/}
+          <h5 className={s.itemName}>{data[9].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          <div className={s.divBut}>
+            <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[9].nameOfGoods} className={s.spanAdd}>+</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[9].size}</span>
+              <button className={s.butMin}>
+                <span onClick={minesCount} title={data[9].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+            </div>
+            <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[9].total} грн</span>
           </div>
         </div>
       </div>
