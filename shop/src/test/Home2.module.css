@@ -1,4 +1,4 @@
-@import url(fonts.css);
+@import url(../fonts.css);
 
 *{
     margin: 0;
@@ -327,7 +327,7 @@ body{
     margin: 0 8px 0 0;
     /*background-color: #DF4242;*/
     font-size: 14px;
-    border: 1px solid #B2B1B7;
+    background: #DF4242 0% 0% no-repeat padding-box;
     font-family: Averta;
 
     opacity: 1;
@@ -335,12 +335,8 @@ body{
 
 .linkTitle{
     text-decoration: none;
-    color: #B2B1B7;
+    color: white;
     font-family: Averta;
-}
-
-.active{
-    background-color: #DF4242;
 }
 
 .boxOne{
@@ -384,7 +380,7 @@ body{
     letter-spacing: 0px;
     color: #D9D9D9;
     opacity: 1;
-    margin: 35px 10px 10px 10px;
+    margin: 30px 10px 10px 10px;
 }
 
 .itemDesc{
@@ -519,7 +515,7 @@ body{
     position: fixed;
     bottom: 0;
     background-color: #db2d2d;
-    width: 95%;
+    width: 80%;
     height: 90px;
     border-radius: 15px 15px 0 0;
     display: flex;

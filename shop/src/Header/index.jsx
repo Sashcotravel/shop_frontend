@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Header.module.scss';
+import './Header.scss';
 import Container from '@mui/material/Container';
 import {Link} from "react-router-dom";
 import image5 from '../image/footer.png'
@@ -8,18 +8,30 @@ import image5 from '../image/footer.png'
 export const Header = () => {
 
   return (
-    <div className={styles.root}>
+    <div className='root'>
       <Container maxWidth="lg">
-        <div className={styles.inner}>
+        <div className='inner'>
           <div>
             <Link to="/">
-              <img className={styles.logo} src={image5} />
+              <img className='logo' src={image5} />
             </Link>
           </div>
           <div>
-            <span className={styles.nomer}>+38 (063) 23 56 478</span>
+            <span className='nomer'>+38 (063) 23 56 478</span>
           </div>
-            <div style={{color: 'whitesmoke'}}>Shop</div>
+          <div className="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label className="menu__btn" htmlFor="menu__toggle">
+              <span></span>
+            </label>
+            <ul className="menu__box">
+              <li><a className="menu__item" target="_blank" href="https://sam-wash.com/">Головна сторінка</a></li>
+              <li><a className="menu__item" target="_blank" href="https://sam-wash.com/uk#about_us">Про нас</a></li>
+              <li><a className="menu__item" target="_blank" href="#">Команда</a></li>
+              <li><a className="menu__item" target="_blank" href="#">Блог</a></li>
+              <li><a className="menu__item" target="_blank" href="#">Контакти</a></li>
+            </ul>
+          </div>
         </div>
       </Container>
     </div>

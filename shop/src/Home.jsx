@@ -1,39 +1,45 @@
-import React, {useState} from "react";
-import s from './Home.module.css'
-import {useDispatch} from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import {fetchMail, fetchMailUser, fetchPay} from "./API/post";
-import axios from "axios";
-import image1 from './image/269541-1366x768.jpg'
-import image2 from './image/303822-1366x768.jpg'
-import image3 from './image/322173-1600x900.jpg'
-import image4 from './image/326061-1366x768.jpg'
-import image5 from './image/332274-1366x768.jpg'
-import '@mobiscroll/react/dist/css/mobiscroll.min.css';
-import {Datepicker} from '@mobiscroll/react';
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+
+// import React, {useState} from "react";
+// import s from './Home.module.css'
+// import {useDispatch} from "react-redux";
+// import { Link, useNavigate } from "react-router-dom";
+// import {fetchMail, fetchMailUser, fetchPay} from "./API/post";
+// import axios from "axios";
+// import image1 from './image/269541-1366x768.jpg'
+// import image2 from './image/303822-1366x768.jpg'
+// import image3 from './image/322173-1600x900.jpg'
+// import image4 from './image/326061-1366x768.jpg'
+// import image5 from './image/332274-1366x768.jpg'
+// import '@mobiscroll/react/dist/css/mobiscroll.min.css';
+// import {Datepicker} from '@mobiscroll/react';
+
+//
+//
+// let userOrder = []
+//
+// const Home = ({data}) => {
+//
+//     const [data2, setData2] = useState([])
+//     const [onDouble2, setDouble2] = useState({
+//         name: false, phone: false, email: false, cite: false
+//     })
+//     const [one, setOne] = useState()
+//     const [total, setTotal] = useState(0)
+//     // const [userData, setUserData] = useState({
+//     //     name: '', phone: '', email: '', cite: '', date: ''
+//     // })
+//     const [checked, setChecked] = useState(true)
+//     const [dateT, setDate] = useState('')
+//     const [checked2, setChecked2] = useState(false)
+//     const [selected, setSelected] = useState(null);
+//
+//     const navigate = useNavigate()
+//
+//     const dispatch = useDispatch()
 
 
-let userOrder = []
-
-const Home = ({data}) => {
-
-    const [data2, setData2] = useState([])
-    const [onDouble2, setDouble2] = useState({
-        name: false, phone: false, email: false, cite: false
-    })
-    const [one, setOne] = useState()
-    const [total, setTotal] = useState(0)
-    // const [userData, setUserData] = useState({
-    //     name: '', phone: '', email: '', cite: '', date: ''
-    // })
-    const [checked, setChecked] = useState(true)
-    const [dateT, setDate] = useState('')
-    const [checked2, setChecked2] = useState(false)
-    const [selected, setSelected] = useState(null);
-
-    const navigate = useNavigate()
-
-    const dispatch = useDispatch()
 
     // const clickCity = (e) => {
     //     setUserData((actual) => {
@@ -268,8 +274,8 @@ const Home = ({data}) => {
     //     })
     // }
 
-    return (
-        <>
+    // return (
+    //     <>
 
             {/*<div className={s.divTitle}>*/}
             {/*    <span className={s.spanTitle}><Link className={s.linkTitle} to='/'>Обладнання</Link></span>*/}
@@ -486,10 +492,9 @@ const Home = ({data}) => {
             {/*<div id='documents' className={s.div1}>*/}
             {/*    <h1>Документація</h1>*/}
             {/*</div>*/}
-        </>
-    )
-}
-
-export default Home
-
+//         </>
+//     )
+// }
+//
+// export default Home
 

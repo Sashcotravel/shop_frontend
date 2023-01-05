@@ -53,6 +53,7 @@ export const Users = [
         'prise': 1250.00,
         'size': 0,
         'discount': '',
+        'checked': false,
         'total': 1250
     },
     {
@@ -61,6 +62,7 @@ export const Users = [
         'prise': 900,
         'size': 0,
         'discount': '',
+        'checked': false,
         'total': 900
     },
     {
@@ -199,6 +201,7 @@ export const Users = [
         'prise': 6200,
         'size': 0,
         'discount': '',
+        'checked': false,
         'total': 6200
     },
     {
@@ -207,6 +210,7 @@ export const Users = [
         'prise': 7200,
         'size': 0,
         'discount': '',
+        'checked': false,
         'total': 7200
     },
     {
@@ -215,6 +219,7 @@ export const Users = [
         'prise': 7700,
         'size': 0,
         'discount': '',
+        'checked': false,
         'total': 7700
     },
     {
@@ -223,6 +228,7 @@ export const Users = [
         'prise': 8200,
         'size': 0,
         'discount': '',
+        'checked': false,
         'total': 8200
     },
     {
@@ -231,14 +237,25 @@ export const Users = [
         'prise': 12800,
         'size': 0,
         'discount': '',
+        'checked': false,
+        'total': 12800
+    },
+    {
+        'id': 100044_1,
+        'nameOfGoods': 'Накриття MARCHELLO Light',
+        'prise': 12800,
+        'size': 0,
+        'discount': '',
+        'checked': false,
         'total': 12800
     },
     {
         'id': 100045,
-        'nameOfGoods': 'Накриття UFO', //27
+        'nameOfGoods': 'Накриття UFO', //29
         'prise': 13500,
         'size': 0,
         'discount': '',
+        'checked': false,
         'total': 13500
     },
     {

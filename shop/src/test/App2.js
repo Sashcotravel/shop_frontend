@@ -1,28 +1,24 @@
 import React, { useState } from "react";
-import s from "./Home.module.css";
-import "./App.css";
-import { Link, Route, Routes, useNavigate, NavLink } from "react-router-dom";
-import { Header } from "./Header";
-import { Users } from "./users";
-import Table from "./Table";
-import Home from "./Home";
-import Senks from "./Senks";
-import Obl from "./page/Obl";
-import Nacr from "./page/Nacr";
-import Acses from "./page/Acses";
-import Footer from "./Footer";
-import moment from 'moment';
+import s from "./Home2.module.css";
+import "../App.css";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Header } from "../Header/index";
+import { Users } from "../users";
+import Table from "../Table";
+import Senks from "../Senks";
+import Footer from "../Footer";
+import { Datepicker, localeUa } from "@mobiscroll/react";
 import { useDispatch } from "react-redux";
-import { fetchMail, fetchMailUser, fetchPay } from "./API/post";
-import App2 from "./test/App2";
+import { fetchMail, fetchMailUser, fetchPay } from "../API/post";
+import Obl2 from "./page2/Obl2";
+import Nacr2 from "./page2/Nacr2";
+import Acses2 from "./page2/Acses2";
 
 
 let userOrder = [];
 
-const App = () => {
+const App2 = () => {
 
-  const [date1, setDate1] = useState(null);
-  const [date, setDatex] = useState('');
   const [total, setTotal] = useState(0);
   const [checked, setChecked] = useState(false);
   const [dateT, setDate] = useState("");
@@ -70,12 +66,11 @@ const App = () => {
 
   const selectedChange = (ev) => {
     setSelected(ev.value);
-    // let date = ev.value.toString();
-    // setDate(date.slice(0, 25));
-    // setUserData((actual) => {
-    //   return { ...actual, date: date.slice(0, 25) };
-    // });
-    console.log(ev.value);
+    let date = ev.value.toString();
+    setDate(date.slice(0, 25));
+    setUserData((actual) => {
+      return { ...actual, date: date.slice(0, 25) };
+    });
   };
 
   const nullAll = () => {
@@ -117,25 +112,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
       {/*<Home data={Users} />*/}
-
-      {
-        onFooter ? ""
-          : <>
-            <div className={s.divName}>
-              <h3 style={{ margin: "14px 0 10px 20px" }} className={s.h3Title}>Калькулятор автомийки</h3>
-              <h6 style={{ margin: "20px 0 10px 20px" }} className={s.h6Title}>Етапи виробництва:</h6>
-            </div>
-            <div className={s.divTitle}>
-              <span style={{ margin: "0 8px 0 20px" }} activeClassName={s.active} className={s.spanTitle}><NavLink className={s.linkTitle} to="/">Обладнання</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/nacr">Накриття</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/acses">Аксесуари</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/bud">Будівництво</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/doc">Документація</NavLink></span>
-            </div>
-          </>
-      }
 
       <div id="lightblue" className={s.orderBlock}>
         <div className={s.userdata}>
@@ -179,10 +156,9 @@ const App = () => {
             {
               checked2
                 // ?  <input id="date" type="date" onBlur={valueDate} />
-                // ? <Datepicker controls={["calendar", "time"]} locale={localeUa}
-                //               value={selected} onChange={selectedChange}
-                //               placeholder='встановити дату'/>
-                ? moment().subtract(10, 'days').calendar()
+                ? <Datepicker controls={["calendar", "time"]} locale={localeUa}
+                              value={selected} onChange={selectedChange}
+                              placeholder='встановити дату'/>
                 : ""
             }
 
@@ -195,29 +171,14 @@ const App = () => {
         <Route path="/table" element={<Table data={Users} />} />
         {/*<Route path='/' element={<Home data={Users} />} />*/}
         <Route path="/senks" element={<Senks setOnFooter={setOnFooter} />} />
-        <Route path="/" element={<Obl data={Users} userOrder={userOrder}
+        <Route path="/" element={<Obl2 data={Users} userOrder={userOrder}
                                       setTotal={setTotal} total={total} />} />
-        <Route path="/nacr" element={<Nacr data={Users} userOrder={userOrder}
+        <Route path="/nacr" element={<Nacr2 data={Users} userOrder={userOrder}
                                            setTotal={setTotal} total={total} />} />
-        <Route path="/acses" element={<Acses data={Users} userOrder={userOrder}
+        <Route path="/acses" element={<Acses2 data={Users} userOrder={userOrder}
                                              setTotal={setTotal} total={total} />} />
-        <Route path="/test" element={<App2 data={Users} />} />
       </Routes>
 
-      {
-        onFooter ? ""
-          : <>
-            <div className={s.divTitle}>
-              <span style={{ margin: "0 8px 0 20px" }} className={s.spanTitle}><Link className={s.linkTitle} to="/">Обладнання</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/nacr">Накриття</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/acses">Аксесуари</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/bud">Будівництво</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/doc">Документація</Link></span>
-            </div>
-            <div className={s.empty}></div>
-            <Footer total={total} noScroll={noScroll} setOnFooter={setOnFooter} />
-          </>
-      }
 
       {/*{*/}
       {/*  onFooter ? ""*/}
@@ -227,4 +188,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App2;

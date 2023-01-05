@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import s from "../Home.module.css";
-import './Obl.css'
+import s from "../Home2.module.css";
+import './Obl2.css'
 
 
-const Obl = ({ data, userOrder, setTotal, total }) => {
+const Obl2 = ({ data, userOrder, setTotal, total }) => {
 
   const [pina, setPina] = useState();
 
@@ -124,12 +124,15 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
   return <>
     <div className={s.divBox}>
       <div id="light" className={s.boxHideImage}>
-        <div className={""} id="lightCol" onClick={imgSize}></div>
+        {/*<div className={""} id="lightCol" onClick={imgSize}></div>*/}
+        <figure className={""} id="lightCol" onClick={imgSize}></figure>
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={"img3 base"} id="img3" onClick={imgSize}></div>
+          <figure onClick={imgSize}>
+              <img src="../../image/ЩІТКА (1).jpg" className={"img3 base"} id="img3"/>
+          </figure>
           <h5 className={s.itemName}>{data[0].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -262,4 +265,4 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
   </>;
 };
 
-export default Obl;
+export default Obl2;

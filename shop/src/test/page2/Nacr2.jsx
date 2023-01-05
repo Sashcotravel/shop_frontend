@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import s from "../Home.module.css";
-import './Obl.css'
+import s from "../Home2.module.css";
+import './Obl2.css'
 
 
-const Nacr = ({ data, userOrder, setTotal, total }) => {
+const Nacr2 = ({ data, userOrder, setTotal, total }) => {
 
   const [pina, setPina] = useState();
 
@@ -313,4 +313,4 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
   </>;
 };
 
-export default Nacr;
+export default Nacr2;
