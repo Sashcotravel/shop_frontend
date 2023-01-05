@@ -116,7 +116,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[23].size > 0 ? s.check2 : s.check} checked={data[23].checked}
-                   type="radio" name="pina" title={data[23].nameOfGoods} onClick={clickNacr} />
+                   type="radio" name="pina" title={data[23].nameOfGoods} onChange={clickNacr} />
             {/*{*/}
             {/*  pina?.nameOfGoods === data[23].nameOfGoods*/}
             {/*    ? <span className={s.inputTextGreen}>Вибрано</span>*/}
@@ -149,7 +149,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[24].size > 0 ? s.check2 : s.check} checked={data[24].checked}
-                   type="radio" name="pina" title={data[24].nameOfGoods} onClick={clickNacr} />
+                   type="radio" name="pina" title={data[24].nameOfGoods} onChange={clickNacr} />
             {
               data[24].size > 0
                 ? <span className={s.inputTextGreen}>Вибрано</span>
@@ -177,7 +177,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[25].size > 0 ? s.check2 : s.check} checked={data[25].checked}
-                   type="radio" name="pina" title={data[25].nameOfGoods} onClick={clickNacr} />
+                   type="radio" name="pina" title={data[25].nameOfGoods} onChange={clickNacr} />
             {
               data[25].size > 0
                 ? <span className={s.inputTextGreen}>Вибрано</span>
@@ -205,7 +205,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[26].size > 0 ? s.check2 : s.check} checked={data[26].checked}
-                   type="radio" name="pina" title={data[26].nameOfGoods} onClick={clickNacr} />
+                   type="radio" name="pina" title={data[26].nameOfGoods} onChange={clickNacr} />
             {
               data[26].size > 0
                 ? <span className={s.inputTextGreen}>Вибрано</span>
@@ -233,7 +233,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[27].size > 0 ? s.check2 : s.check} checked={data[27].checked}
-                   type="radio" name="pina" title={data[27].nameOfGoods} onClick={clickNacr} />
+                   type="radio" name="pina" title={data[27].nameOfGoods} onChange={clickNacr} />
             {
               data[27].size > 0
                 ? <span className={s.inputTextGreen}>Вибрано</span>
@@ -260,7 +260,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[28].size > 0 ? s.check2 : s.check} checked={data[28].checked}
-                   type="radio" name="pina" title={data[28].nameOfGoods} onClick={clickNacr} />
+                   type="radio" name="pina" title={data[28].nameOfGoods} onChange={clickNacr} />
             {
               data[28].size > 0
                 ? <span className={s.inputTextGreen}>Вибрано</span>
@@ -288,7 +288,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[29].size > 0 ? s.check2 : s.check} checked={data[29].checked}
-                   type="radio" name="pina" title={data[29].nameOfGoods} onClick={clickNacr} />
+                   type="radio" name="pina" title={data[29].nameOfGoods} onChange={clickNacr} />
             {
               data[29].size > 0
                 ? <span className={s.inputTextGreen}>Вибрано</span>

@@ -160,7 +160,7 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
           <div>
             <input className={data[6].size > 0 ? s.check2 : s.check}
-                   type="radio" name="pina" title={data[6].nameOfGoods} onClick={clickPina} checked={data[6].checked}/>
+                   type="radio" name="pina" title={data[6].nameOfGoods} onChange={clickPina} checked={data[6].checked}/>
             {/*{*/}
             {/*  pina?.nameOfGoods === data[6].nameOfGoods*/}
             {/*    ? <span className={s.inputTextGreen}>Вибрано</span>*/}
@@ -196,7 +196,7 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
           <div>
             <input className={data[7].size > 0 ? s.check2 : s.check}
-                   type="radio" name="pina" title={data[7].nameOfGoods} onClick={clickPina} checked={data[7].checked} />
+                   type="radio" name="pina" title={data[7].nameOfGoods} onChange={clickPina} checked={data[7].checked} />
             {
               data[7].size > 0
                 ? <span className={s.inputTextGreen}>Вибрано</span>

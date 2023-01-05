@@ -115,6 +115,13 @@ const App = () => {
     con.style.visibility = "hidden";
   };
 
+  let activeStyle = {
+    backgroundColor: "DF4242",
+    color: '#FFFFFF'
+  };
+
+  let activeClassName = "underline";
+
   return (
     <div className="App">
       <Header />
@@ -128,11 +135,11 @@ const App = () => {
               <h6 className={s.h6Title}>Етапи виробництва:</h6>
             </div>
             <div className={s.divTitle}>
-              <NavLink style={{ margin: "0 8px 0 20px" }} activeClassName={s.active} className={s.spanTitle} to="/">Обладнання</NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/nacr">Накриття</NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/bud">Будівництво</NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/doc">Документація</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">Обладнання</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">Накриття</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">Будівництво</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">Документація</NavLink>
             </div>
           </>
       }
@@ -208,13 +215,11 @@ const App = () => {
         onFooter ? ""
           : <>
             <div className={s.divTitle}>
-              <NavLink style={{ margin: "0 8px 0 20px" }} activeClassName={s.active} className={s.spanTitle} to="/">
-                <span className={s.linkTitle}>Обладнання</span>
-              </NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/nacr"><span className={s.linkTitle}>Накриття</span></NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/acses"><span className={s.linkTitle}>Аксесуари</span></NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/bud"><span className={s.linkTitle}>Будівництво</span></NavLink>
-              <NavLink activeClassName={s.active} className={s.spanTitle} to="/doc"><span className={s.linkTitle}>Документація</span></NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">Обладнання</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">Накриття</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">Будівництво</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">Документація</NavLink>
             </div>
             <div className={s.empty}></div>
             <Footer total={total} noScroll={noScroll} setOnFooter={setOnFooter} />
