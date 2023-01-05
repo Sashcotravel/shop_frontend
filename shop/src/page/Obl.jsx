@@ -126,6 +126,7 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div id="light" className={s.boxHideImage}>
         <div className={""} id="lightCol" onClick={imgSize}></div>
       </div>
+
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
