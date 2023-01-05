@@ -1,7 +1,8 @@
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+
 .App {
   text-align: center;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -22,5 +23,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.active{
+  background-color: #DF4242;
+  color: #FFFFFF;
 }
 

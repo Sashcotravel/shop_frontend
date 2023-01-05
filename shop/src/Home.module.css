@@ -306,6 +306,7 @@ body{
     letter-spacing: 0;
     color: #FFFFFF;
     opacity: 1;
+    margin: 14px 0 10px 20px;
 }
 
 .h6Title{
@@ -319,6 +320,7 @@ body{
     letter-spacing: 0;
     color: #D9D9D9;
     opacity: 1;
+    margin: 20px 0 10px 20px;
 }
 
 .spanTitle{
@@ -329,7 +331,8 @@ body{
     font-size: 14px;
     border: 1px solid #B2B1B7;
     font-family: Averta;
-
+    text-decoration: none;
+    color: #B2B1B7;
     opacity: 1;
 }
 
@@ -341,6 +344,7 @@ body{
 
 .active{
     background-color: #DF4242;
+    color: #FFFFFF;
 }
 
 .boxOne{
@@ -436,20 +440,20 @@ body{
     border: none;
     background-color: #1d2025;
     border-radius: 50%;
-    height: 25px;
-    width: 25px;
+    height: 24px;
+    width: 26px;
 }
 
 .spanAdd{
     display: block;
     width: 100%;
-    height: 29px;
+    height: 30px;
     position: relative;
-    top: -2px;
+    top: -3px;
     left: 0;
     font-size: 20px;
     font-family: Averta;
-    color: #575758;
+    color: white;
     opacity: 1;
 }
 
@@ -606,8 +610,8 @@ body{
     color: #FFFFFF;
 }
 
-input[type="checkbox"] {
-    filter: sepia(100%) brightness(80%) hue-rotate(100deg) saturate(70%) contrast(300%);
+input[type="radio"] {
+    filter: sepia(100%) brightness(120%) hue-rotate(100deg) saturate(70%) contrast(300%);
 }
 
 .inputCheck{

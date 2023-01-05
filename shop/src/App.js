@@ -11,7 +11,6 @@ import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";
 import Acses from "./page/Acses";
 import Footer from "./Footer";
-import moment from 'moment';
 import { useDispatch } from "react-redux";
 import { fetchMail, fetchMailUser, fetchPay } from "./API/post";
 import App2 from "./test/App2";
@@ -21,8 +20,9 @@ let userOrder = [];
 
 const App = () => {
 
-  const [date1, setDate1] = useState(null);
-  const [date, setDatex] = useState('');
+  // const dateValue: Date = new Date('02/05/2022 10:30 AM')
+  // const minDate: Date = new Date('02/05/2022 9:00 AM')
+  // const maxDate: Date = new Date('02/05/2022 6:00 AM')
   const [total, setTotal] = useState(0);
   const [checked, setChecked] = useState(false);
   const [dateT, setDate] = useState("");
@@ -124,15 +124,15 @@ const App = () => {
         onFooter ? ""
           : <>
             <div className={s.divName}>
-              <h3 style={{ margin: "14px 0 10px 20px" }} className={s.h3Title}>Калькулятор автомийки</h3>
-              <h6 style={{ margin: "20px 0 10px 20px" }} className={s.h6Title}>Етапи виробництва:</h6>
+              <h3 className={s.h3Title}>Калькулятор автомийки</h3>
+              <h6 className={s.h6Title}>Етапи виробництва:</h6>
             </div>
             <div className={s.divTitle}>
-              <span style={{ margin: "0 8px 0 20px" }} activeClassName={s.active} className={s.spanTitle}><NavLink className={s.linkTitle} to="/">Обладнання</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/nacr">Накриття</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/acses">Аксесуари</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/bud">Будівництво</NavLink></span>
-              <span className={s.spanTitle}><NavLink activeClassName={s.active} className={s.linkTitle} to="/doc">Документація</NavLink></span>
+              <NavLink style={{ margin: "0 8px 0 20px" }} activeclassname={s.active} className={s.spanTitle} to="/">Обладнання</NavLink>
+              <NavLink activeclassname={s.active} className={s.spanTitle} to="/nacr">Накриття</NavLink>
+              <NavLink activeclassname={s.active} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
+              <NavLink activeclassname={s.active} className={s.spanTitle} to="/bud">Будівництво</NavLink>
+              <NavLink activeclassname={s.active} className={s.spanTitle} to="/doc">Документація</NavLink>
             </div>
           </>
       }
@@ -182,8 +182,8 @@ const App = () => {
                 // ? <Datepicker controls={["calendar", "time"]} locale={localeUa}
                 //               value={selected} onChange={selectedChange}
                 //               placeholder='встановити дату'/>
-                ? moment().subtract(10, 'days').calendar()
-                : ""
+                // ? <DatePicker/>
+                // : ""
             }
 
           <br />
@@ -208,11 +208,13 @@ const App = () => {
         onFooter ? ""
           : <>
             <div className={s.divTitle}>
-              <span style={{ margin: "0 8px 0 20px" }} className={s.spanTitle}><Link className={s.linkTitle} to="/">Обладнання</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/nacr">Накриття</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/acses">Аксесуари</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/bud">Будівництво</Link></span>
-              <span className={s.spanTitle}><Link className={s.linkTitle} to="/doc">Документація</Link></span>
+              <NavLink style={{ margin: "0 8px 0 20px" }} activeClassName={s.active} className={s.spanTitle} to="/">
+                <span className={s.linkTitle}>Обладнання</span>
+              </NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/nacr"><span className={s.linkTitle}>Накриття</span></NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/acses"><span className={s.linkTitle}>Аксесуари</span></NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/bud"><span className={s.linkTitle}>Будівництво</span></NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/doc"><span className={s.linkTitle}>Документація</span></NavLink>
             </div>
             <div className={s.empty}></div>
             <Footer total={total} noScroll={noScroll} setOnFooter={setOnFooter} />
