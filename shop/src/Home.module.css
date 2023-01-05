@@ -334,6 +334,7 @@ body{
     text-decoration: none;
     color: #B2B1B7;
     opacity: 1;
+    padding: 8px;
 }
 
 .linkTitle{
@@ -367,6 +368,7 @@ body{
 .active{
     background-color: #DF4242;
     color: #FFFFFF;
+    border: none;
 }
 
 .boxOne{
