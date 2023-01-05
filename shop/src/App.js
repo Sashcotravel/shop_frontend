@@ -114,7 +114,8 @@ const App = () => {
 
   let activeStyle = {
     backgroundColor: "DF4242",
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    border: 'none'
   };
 
   let activeClassName = "underline";

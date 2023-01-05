@@ -124,10 +124,10 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
   }
 
   return <>
+    <div id="light" className={s.boxHideImage}>
+      <div className={""} id="lightCol" onClick={imgSize}></div>
+    </div>
     <div className={s.divBox}>
-      <div id="light" className={s.boxHideImage}>
-        <div className={""} id="lightCol" onClick={imgSize}></div>
-      </div>
 
       <div className={s.container}>
         <div className={s.boxOne}>
@@ -141,12 +141,12 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
           <div className={s.divBut}>
             <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[0].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[0].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[0].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[0].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[0].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal}>{data[0].total} грн</span>
@@ -178,12 +178,12 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[6].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[6].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[6].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[6].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[6].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[6].total} грн</span>
@@ -193,7 +193,7 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={'img5 base'} id='img5' onClick={imgSize}>
+          <div className={'img5 base'} id='img5'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img5'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[7].nameOfGoods}</h5>
@@ -210,12 +210,12 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[7].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[7].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[7].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[7].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[7].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[7].total} грн</span>
@@ -225,7 +225,7 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
-          <div className={'img1 base'} id='img1' onClick={imgSize}>
+          <div className={'img1 base'} id='img1'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img1'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[8].nameOfGoods}</h5>
@@ -233,12 +233,12 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
           <div className={s.divBut}>
             <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[8].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[8].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[8].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[8].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[8].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[8].total} грн</span>
@@ -248,7 +248,7 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
-          <div className={'img2 base'} id='img2' onClick={imgSize}>
+          <div className={'img2 base'} id='img2'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img2'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[9].nameOfGoods}</h5>
@@ -256,12 +256,12 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
           <div className={s.divBut}>
             <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[9].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[9].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[9].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[9].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[9].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[9].total} грн</span>

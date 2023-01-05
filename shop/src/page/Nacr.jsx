@@ -113,7 +113,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img6 base'} id='img6' onClick={imgSize}>
+          <div className={'img6 base'} id='img6'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img6'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[23].nameOfGoods}</h5>
@@ -134,12 +134,12 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[23].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[23].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[23].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[23].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[23].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[23].total} грн</span>
@@ -148,7 +148,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img7 base'} id='img7' onClick={imgSize}>
+          <div className={'img7 base'} id='img7'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img7'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[24].nameOfGoods}</h5>
@@ -164,12 +164,12 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[24].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[24].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[24].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[24].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[24].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[24].total} грн</span>
@@ -178,7 +178,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img8 base'} id='img8' onClick={imgSize}>
+          <div className={'img8 base'} id='img8'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img8'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[25].nameOfGoods}</h5>
@@ -194,12 +194,12 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[25].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[25].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[25].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[25].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[25].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[25].total} грн</span>
@@ -208,7 +208,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img9 base'} id='img9' onClick={imgSize}>
+          <div className={'img9 base'} id='img9'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img9'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[26].nameOfGoods}</h5>
@@ -224,12 +224,12 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[26].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[26].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[26].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[26].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[26].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[26].total} грн</span>
@@ -238,7 +238,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img10 base'} id='img10' onClick={imgSize}>
+          <div className={'img10 base'} id='img10'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img10'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[27].nameOfGoods}</h5>
@@ -254,12 +254,12 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[27].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[27].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[27].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[27].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[27].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[27].total} грн</span>
@@ -267,7 +267,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
         </div>
       </div><div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img10 base'} id='img10' onClick={imgSize}>
+          <div className={'img10 base'} id='img10'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img10'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[28].nameOfGoods}</h5>
@@ -283,12 +283,12 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[28].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[28].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[28].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[28].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[28].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[28].total} грн</span>
@@ -297,7 +297,7 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img11 base'} id='img11' onClick={imgSize}>
+          <div className={'img11 base'} id='img11'>
             {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img11'></span> : ''}
           </div>
           <h5 className={s.itemName}>{data[29].nameOfGoods}</h5>
@@ -313,12 +313,12 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
           </div>
           <div className={s.divBut}>
             <div>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[29].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[29].size}</span>
               <button className={s.butMin}>
                 <span onClick={minesCount} title={data[29].nameOfGoods} className={s.spanMin}>-</span>
+              </button>
+              <span className={s.itemTotalSize} id="lightblue">{data[29].size}</span>
+              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                <span onClick={addCount} title={data[29].nameOfGoods} className={s.spanAdd}>+</span>
               </button>
             </div>
             <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[29].total} грн</span>
