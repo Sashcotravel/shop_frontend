@@ -199,7 +199,7 @@ const App = () => {
       </div>
 
       <Routes>
-        <Route path="/table" element={<Table data={Users} />} />
+        {/*<Route path="/table" element={<Table data={Users} />} />*/}
         {/*<Route path='/' element={<Home data={Users} />} />*/}
         <Route path="/senks" element={<Senks setOnFooter={setOnFooter} />} />
         <Route path="/" element={<Obl data={Users} userOrder={userOrder}
