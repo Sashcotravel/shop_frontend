@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 import Slider from 'react-slick';
 
 // import React, {useState} from "react";

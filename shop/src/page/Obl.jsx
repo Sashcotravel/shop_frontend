@@ -129,9 +129,8 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          {/*<img src={image1} className={s.img} />*/}
           <figure onClick={imgSize}>
-            <img src="../../image/ЩІТКА (1).jpg" className={"img3 base"} id="img3"/>
+            <img url="../image/ЩІТКА%20(1).jpg" className={"base"} id="img3"/>
           </figure>
           <h5 className={s.itemName}>{data[0].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
@@ -154,7 +153,6 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
           <div className={'img4 base'} id='img4' onClick={imgSize}></div>
-          {/*<div id="light" className={s.boxHideImage}></div>*/}
           <h5 className={s.itemName}>{data[6].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -190,7 +188,6 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
           <div className={'img5 base'} id='img5' onClick={imgSize}></div>
-          {/*<div id="light" className={s.boxHideImage}></div>*/}
           <h5 className={s.itemName}>{data[7].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -221,7 +218,6 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
           <div className={'img1 base'} id='img1' onClick={imgSize}></div>
-          {/*<div id="light" className={s.boxHideImage}></div>*/}
           <h5 className={s.itemName}>{data[8].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -243,7 +239,6 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
           <div className={'img2 base'} id='img2' onClick={imgSize}></div>
-          {/*<div id="light" className={s.boxHideImage}></div>*/}
           <h5 className={s.itemName}>{data[9].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
