@@ -46,18 +46,20 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
   };
 
   const imgSize = (e) => {
-    let size = e.target.id.slice(3)
-    let g = document.getElementById(e.target.id)
-    if(g.className == `${e.target.id} base`){
-      let con = document.getElementById("light");
-      con.style.visibility = "visible";
-      let twoImg = document.getElementById("lightCol");
-      twoImg.className = `${e.target.id}_2`
-      window.scroll(0, 0);
-      window.addEventListener("scroll", window.scroll(0, 0));
-    } else {
-      let con = document.getElementById("light");
-      con.style.visibility = "hidden";
+    if(window.screen.availWidth > 600) {
+      let size = e.target.id.slice(3)
+      let g = document.getElementById(e.target.id)
+      if (g.className == `${e.target.id} base`) {
+        let con = document.getElementById("light");
+        con.style.visibility = "visible";
+        let twoImg = document.getElementById("lightCol");
+        twoImg.className = `${e.target.id}_2`
+        window.scroll(0, 0);
+        window.addEventListener("scroll", window.scroll(0, 0));
+      } else {
+        let con = document.getElementById("light");
+        con.style.visibility = "hidden";
+      }
     }
   }
 
@@ -68,7 +70,9 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img12 base'} id='img12' onClick={imgSize}></div>
+          <div className={'img12 base'} id='img12' onClick={imgSize}>
+            <span>OOO</span>
+          </div>
           <h5 className={s.itemName}>{data[11].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>

@@ -20,9 +20,6 @@ let userOrder = [];
 
 const App = () => {
 
-  // const dateValue: Date = new Date('02/05/2022 10:30 AM')
-  // const minDate: Date = new Date('02/05/2022 9:00 AM')
-  // const maxDate: Date = new Date('02/05/2022 6:00 AM')
   const [total, setTotal] = useState(0);
   const [checked, setChecked] = useState(false);
   const [dateT, setDate] = useState("");
@@ -41,11 +38,11 @@ const App = () => {
     // function noscroll() {
     //   window.scrollTo(0, 0);
     // }
-    // function noscroll() {
-    //   window.scroll(0, 0);
-    // }
+    function noscroll() {
+      window.scroll(0, 0);
+    }
 
-    // window.addEventListener("scroll", window.scroll(0, 0));
+    window.addEventListener("scroll", window.scroll(0, 0));
     let con = document.getElementById("lightblue");
     con.style.visibility = "visible";
 

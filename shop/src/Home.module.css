@@ -342,6 +342,24 @@ body{
     font-family: Averta;
 }
 
+.block {
+    background-image: url('./image/svg/compress-alt-solid.svg');
+    display: block;
+    width: 47px;
+    height: 56px;
+    margin: 24px 0px 0 77%;
+    opacity: 0.5;
+    background-color: lightslategrey;
+}
+
+.spanImg{
+    display: block;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+
+}
+
 .title1{
     margin: 0 8px 0 20px;
 }
@@ -354,7 +372,6 @@ body{
 .boxOne{
     width: 335px;
     height: auto;
-    border: 1px solid gray;
     border-radius: 20px;
     /*margin: 30px auto;*/
     background-color: #1D2025;

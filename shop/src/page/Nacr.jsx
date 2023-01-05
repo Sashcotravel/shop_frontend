@@ -89,18 +89,20 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
   };
 
   const imgSize = (e) => {
-    let size = e.target.id.slice(3)
-    let g = document.getElementById(e.target.id)
-    if(g.className == `${e.target.id} base`){
-      let con = document.getElementById("light");
-      con.style.visibility = "visible";
-      let twoImg = document.getElementById("lightCol");
-      twoImg.className = `${e.target.id}_2`
-      window.scroll(0, 0);
-      window.addEventListener("scroll", window.scroll(0, 0));
-    } else {
-      let con = document.getElementById("light");
-      con.style.visibility = "hidden";
+    if(window.screen.availWidth > 600) {
+      let size = e.target.id.slice(3)
+      let g = document.getElementById(e.target.id)
+      if (g.className == `${e.target.id} base`) {
+        let con = document.getElementById("light");
+        con.style.visibility = "visible";
+        let twoImg = document.getElementById("lightCol");
+        twoImg.className = `${e.target.id}_2`
+        window.scroll(0, 0);
+        window.addEventListener("scroll", window.scroll(0, 0));
+      } else {
+        let con = document.getElementById("light");
+        con.style.visibility = "hidden";
+      }
     }
   }
 
@@ -111,7 +113,9 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img6 base'} id='img6' onClick={imgSize}></div>
+          <div className={'img6 base'} id='img6' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img6'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[23].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -144,7 +148,9 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img7 base'} id='img7' onClick={imgSize}></div>
+          <div className={'img7 base'} id='img7' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img7'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[24].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -172,7 +178,9 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img8 base'} id='img8' onClick={imgSize}></div>
+          <div className={'img8 base'} id='img8' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img8'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[25].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -200,7 +208,9 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img9 base'} id='img9' onClick={imgSize}></div>
+          <div className={'img9 base'} id='img9' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img9'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[26].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -228,7 +238,9 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img10 base'} id='img10' onClick={imgSize}></div>
+          <div className={'img10 base'} id='img10' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img10'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[27].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -255,7 +267,9 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
         </div>
       </div><div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img10 base'} id='img10' onClick={imgSize}></div>
+          <div className={'img10 base'} id='img10' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img10'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[28].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -283,7 +297,9 @@ const Nacr = ({ data, userOrder, setTotal, total }) => {
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img11 base'} id='img11' onClick={imgSize}></div>
+          <div className={'img11 base'} id='img11' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img11'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[29].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>

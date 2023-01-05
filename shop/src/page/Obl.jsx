@@ -102,22 +102,24 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
 
   const imgSize = (e) => {
     // let types = e.target.title.slice(4)
-    let size = e.target.id.slice(3)
-    let g = document.getElementById(e.target.id)
-    if(g.className == `${e.target.id} base`){
-      let con = document.getElementById("light");
-      con.style.visibility = "visible";
-      let twoImg = document.getElementById("lightCol");
-      twoImg.className = `${e.target.id}_2`
-      window.scroll(0, 0);
-      window.addEventListener("scroll", window.scroll(0, 0));
-      // g.className = `${e.target.id}_2`
-    } else {
-      let con = document.getElementById("light");
-      con.style.visibility = "hidden";
-      // g.className = `${e.target.id} base`
-      // let twoImg = document.getElementById("lightCol");
-      // con.className = ''
+    if(window.screen.availWidth > 600){
+      let size = e.target.id.slice(3)
+      let g = document.getElementById(e.target.id)
+      if(g.className == `${e.target.id} base`){
+        let con = document.getElementById("light");
+        con.style.visibility = "visible";
+        let twoImg = document.getElementById("lightCol");
+        twoImg.className = `${e.target.id}_2`
+        window.scroll(0, 0);
+        window.addEventListener("scroll", window.scroll(0, 0));
+        // g.className = `${e.target.id}_2`
+      } else {
+        let con = document.getElementById("light");
+        con.style.visibility = "hidden";
+        // g.className = `${e.target.id} base`
+        // let twoImg = document.getElementById("lightCol");
+        // con.className = ''
+      }
     }
   }
 
@@ -129,8 +131,10 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <figure onClick={imgSize}>
-            <div className={"img3 base"} id="img3"></div>
+          <figure>
+            <div className={"img3 base"} id="img3">
+              {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img3'></span> : ''}
+            </div>
           </figure>
           <h5 className={s.itemName}>{data[0].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
@@ -152,7 +156,9 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={'img4 base'} id='img4' onClick={imgSize}></div>
+          <div className={'img4 base'} id='img4'>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img4'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[6].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -187,7 +193,9 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={'img5 base'} id='img5' onClick={imgSize}></div>
+          <div className={'img5 base'} id='img5' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img5'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[7].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -217,7 +225,9 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
-          <div className={'img1 base'} id='img1' onClick={imgSize}></div>
+          <div className={'img1 base'} id='img1' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img1'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[8].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -238,7 +248,9 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src='image/ЩІТКА (1).jpg' className={s.img} />*/}
-          <div className={'img2 base'} id='img2' onClick={imgSize}></div>
+          <div className={'img2 base'} id='img2' onClick={imgSize}>
+            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img2'></span> : ''}
+          </div>
           <h5 className={s.itemName}>{data[9].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
