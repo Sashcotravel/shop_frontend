@@ -42,10 +42,10 @@ const App = () => {
     //   window.scrollTo(0, 0);
     // }
     // function noscroll() {
-      window.scroll(0, 0);
+    //   window.scroll(0, 0);
     // }
 
-    window.addEventListener("scroll", window.scroll(0, 0));
+    // window.addEventListener("scroll", window.scroll(0, 0));
     let con = document.getElementById("lightblue");
     con.style.visibility = "visible";
 
@@ -128,11 +128,11 @@ const App = () => {
               <h6 className={s.h6Title}>Етапи виробництва:</h6>
             </div>
             <div className={s.divTitle}>
-              <NavLink style={{ margin: "0 8px 0 20px" }} activeclassname={s.active} className={s.spanTitle} to="/">Обладнання</NavLink>
-              <NavLink activeclassname={s.active} className={s.spanTitle} to="/nacr">Накриття</NavLink>
-              <NavLink activeclassname={s.active} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
-              <NavLink activeclassname={s.active} className={s.spanTitle} to="/bud">Будівництво</NavLink>
-              <NavLink activeclassname={s.active} className={s.spanTitle} to="/doc">Документація</NavLink>
+              <NavLink style={{ margin: "0 8px 0 20px" }} activeClassName={s.active} className={s.spanTitle} to="/">Обладнання</NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/nacr">Накриття</NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/bud">Будівництво</NavLink>
+              <NavLink activeClassName={s.active} className={s.spanTitle} to="/doc">Документація</NavLink>
             </div>
           </>
       }

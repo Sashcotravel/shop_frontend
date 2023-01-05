@@ -130,7 +130,9 @@ const Obl = ({ data, userOrder, setTotal, total }) => {
       <div className={s.container}>
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={"img3 base"} id="img3" onClick={imgSize}></div>
+          <figure onClick={imgSize}>
+            <img src="../../image/ЩІТКА (1).jpg" className={"img3 base"} id="img3"/>
+          </figure>
           <h5 className={s.itemName}>{data[0].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
