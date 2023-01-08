@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import s from "../Home.module.css";
-import './Obl.css'
+import s from "../component/Home.module.css";
+import "./Obl.css";
 
 
-const Acses = ({ data, userOrder, setTotal, total }) => {
+const Acses = ({ t, data, userOrder, setTotal, total }) => {
 
   const addCount = (e) => {
     data.forEach(item => {
@@ -46,114 +46,100 @@ const Acses = ({ data, userOrder, setTotal, total }) => {
   };
 
   const imgSize = (e) => {
-    if(window.screen.availWidth > 600) {
-      let size = e.target.id.slice(3)
-      let g = document.getElementById(e.target.id)
+    if (window.screen.availWidth > 600) {
+      let size = e.target.id.slice(3);
+      let g = document.getElementById(e.target.id);
       if (g.className == `${e.target.id} base`) {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol");
-        twoImg.className = `${e.target.id}_2`
-        window.scroll(0, 0);
-        window.addEventListener("scroll", window.scroll(0, 0));
+        twoImg.className = `${e.target.id}_2`;
       } else {
         let con = document.getElementById("light");
         con.style.visibility = "hidden";
       }
     }
+  };
+
+  const hidden = (e) => {
+    if (e.target.id === "light") {
+      let con = document.getElementById("light");
+      con.style.visibility = "hidden";
+    }
+  };
+
+  const size = (num) => {
+    return(
+      window.screen.width > 900 ? <span className={s.block} onClick={imgSize} id={`img${num}`}></span> : ''
+    )
+  }
+
+  const boxBut = (num) => {
+    return (
+      <div className={s.divBut}>
+        <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
+          <button className={s.butMin}>
+            <span onClick={minesCount} title={data[num].nameOfGoods} className={s.spanMin}>-</span>
+          </button>
+          <span className={s.itemTotalSize} id="lightblue">{data[num].size}</span>
+          <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+            <span onClick={addCount} title={data[num].nameOfGoods} className={s.spanAdd}>+</span>
+          </button>
+        </div>
+        <span className={s.itemTotal}>{data[num].total} грн</span>
+      </div>
+    )
   }
 
   return <>
-    <div className={s.divBox}>
-      <div id="light" className={s.boxHideImage}>
-        <div className={""} id="lightCol" onClick={imgSize}></div>
+    <div id="light" className={s.boxHideImage} onClick={hidden}>
+      <div className={""} id="lightCol">
+        <span className={s.blockLarge} onClick={imgSize} id="lightCol"></span>
       </div>
+    </div>
+    <div className={s.divBox}>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img12 base'} id='img12'>
-            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img12'></span> : ''}
+          <div className={"img12 base"} id="img12">
+            {size(12)}
           </div>
           <h5 className={s.itemName}>{data[11].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-          <div className={s.divBut}>
-            <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-              <button className={s.butMin}>
-                <span onClick={minesCount} title={data[11].nameOfGoods} className={s.spanMin}>-</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[11].size}</span>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[11].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-            </div>
-            <span className={s.itemTotal}>{data[11].total} грн</span>
-          </div>
+          { boxBut(11) }
         </div>
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img13 base'} id='img13'>
-            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img13'></span> : ''}
+          <div className={"img13 base"} id="img13">
+            {size(13)}
           </div>
           <h5 className={s.itemName}>{data[12].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-          <div className={s.divBut}>
-            <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-              <button className={s.butMin}>
-                <span onClick={minesCount} title={data[12].nameOfGoods} className={s.spanMin}>-</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[12].size}</span>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[12].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-            </div>
-            <span className={s.itemTotal}>{data[12].total} грн</span>
-          </div>
+          { boxBut(12) }
         </div>
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img14 base'} id='img14'>
-            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img6'></span> : ''}
+          <div className={"img14 base"} id="img14">
+            {size(14)}
           </div>
           <h5 className={s.itemName}>{data[15].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-          <div className={s.divBut}>
-            <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-              <button className={s.butMin}>
-                <span onClick={minesCount} title={data[15].nameOfGoods} className={s.spanMin}>-</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[15].size}</span>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[15].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-            </div>
-            <span className={s.itemTotal}>{data[15].total} грн</span>
-          </div>
+          { boxBut(15) }
         </div>
       </div>
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img15 base'} id='img15'>
-            {window.screen.width > 600 ? <span className={s.block} onClick={imgSize} id='img6'></span> : ''}
+          <div className={"img15 base"} id="img15">
+            {size(15)}
           </div>
           <h5 className={s.itemName}>{data[14].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-          <div className={s.divBut}>
-            <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-              <button className={s.butMin}>
-                <span onClick={minesCount} title={data[14].nameOfGoods} className={s.spanMin}>-</span>
-              </button>
-              <span className={s.itemTotalSize} id="lightblue">{data[14].size}</span>
-              <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-                <span onClick={addCount} title={data[14].nameOfGoods} className={s.spanAdd}>+</span>
-              </button>
-            </div>
-            <span className={s.itemTotal}>{data[14].total} грн</span>
-          </div>
+          { boxBut(14) }
         </div>
       </div>
     </div>

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import s from "./Home.module.css";
+import s from "./component/Home.module.css";
 import "./App.css";
+import { useTranslation } from 'react-i18next'
 import { Link, Route, Routes, useNavigate, NavLink } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
-import Table from "./Table";
-import Home from "./Home";
-import Senks from "./Senks";
+import Table from "./component/Table";
+import Home from "./component/Home";
+import Senks from "./component/Senks";
 import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";
 import Acses from "./page/Acses";
-import Footer from "./Footer";
+import Footer from "./component/Footer";
 import { useDispatch } from "react-redux";
 import { fetchMail, fetchMailUser, fetchPay } from "./API/post";
 import App2 from "./test/App2";
@@ -20,6 +21,7 @@ let userOrder = [];
 
 const App = () => {
 
+  const [lang, setLang] = useState("ua");
   const [total, setTotal] = useState(0);
   const [checked, setChecked] = useState(false);
   const [dateT, setDate] = useState("");
@@ -30,23 +32,15 @@ const App = () => {
   });
   const [onFooter, setOnFooter] = useState(false);
 
+  const { t, i18n } = useTranslation()
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const noScroll = () => {
-    // function noscroll() {
-    //   window.scrollTo(0, 0);
-    // }
-    function noscroll() {
-      window.scroll(0, 0);
-    }
-
-    window.addEventListener("scroll", window.scroll(0, 0));
     let con = document.getElementById("lightblue");
     con.style.visibility = "visible";
-
-    // return () => {window.removeEventListener("scroll", noscroll);}
   };
 
   const checkedClick = () => {
@@ -72,7 +66,6 @@ const App = () => {
     // setUserData((actual) => {
     //   return { ...actual, date: date.slice(0, 25) };
     // });
-    console.log(ev.value);
   };
 
   const nullAll = () => {
@@ -118,26 +111,34 @@ const App = () => {
     border: 'none'
   };
 
-  let activeClassName = "underline";
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language)
+    setLang(language)
+  }
+
 
   return (
     <div className="App">
-      <Header />
+      <Header t={t} />
       {/*<Home data={Users} />*/}
 
       {
         onFooter ? ""
           : <>
+          <div className={s.translateDiv}>
+            <button className={s.trBut+' '+`${lang == 'en' ? s.color : ''}`} onClick={() => changeLanguage("en")}>EN</button>
+            <button className={s.trBut+' '+`${lang == 'ua' ? s.color : ''}`} onClick={() => changeLanguage("ua")}>UA</button>
+          </div>
             <div className={s.divName}>
-              <h3 className={s.h3Title}>Калькулятор автомийки</h3>
-              <h6 className={s.h6Title}>Етапи виробництва:</h6>
+              <h3 className={s.h3Title}>{t("title")}</h3>
+              <h6 className={s.h6Title}>{t("step")}:</h6>
             </div>
             <div className={s.divTitle}>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">Обладнання</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">Накриття</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">Будівництво</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">Документація</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">{t("equipment")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">{t("cover")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">{t("accessories")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">{t("construction")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">{t("documentation")}</NavLink>
             </div>
           </>
       }
@@ -145,27 +146,26 @@ const App = () => {
       <div id="lightblue" className={s.orderBlock}>
         <div className={s.userdata}>
           <div className={s.ix}>
-            <span style={{ margin: '5px 15px 0 0', color: '#BBB9B9' }} onClick={hiddeItem}>&#10006;</span>
+            <span style={{ margin: '5px 15px 0 0', color: '#BBB9B9', cursor: 'pointer' }} onClick={hiddeItem}>&#10006;</span>
           </div>
-          <p className={s.titleUser}>Отримати пропозицію</p>
+          <p className={s.titleUser}>{t("getAnOffer")}</p>
           <br />
-          <p className={s.descSpan}>Введіть свої дані, і вибраний Вами прорахунок надійде на Ваш e-mail. А також з
-            Вами зв'яжеться наш спеціаліст для уточнення інформації та консультації.</p>
+          <p className={s.descSpan}>{t("desc")}</p>
           <br />
           <input className={s.inputUser} type="text" title="name"
-                 placeholder="Веддіть Ім'я" onChange={(e) => {
+                 placeholder={`${t("enterName")}`} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };
             });
           }} />
           <input className={s.inputUser} type="email" title="email"
-                 placeholder="Веддіть e-mail" onChange={(e) => {
+                 placeholder={`${t("enterEmail")}`} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };
             });
           }} />
-          <input className={s.inputUser} type="number" title="phone"
-                 placeholder="Веддіть телефон" onChange={(e) => {
+          <input className={s.inputUser} type="text" title="phone"
+                 placeholder={`${t("enterYourPhoneNumber")}`} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };
             });
@@ -174,12 +174,12 @@ const App = () => {
           <div className={s.boxCheck}>
             <input className={s.inputCheck} type="checkbox"
                    checked={checked} onChange={checkedClick} />
-            <p>Не дзвоніть мені</p>
+            <p>{t("don'tCallMe")}</p>
           </div>
           <div className={s.boxCheck2}>
               <input onChange={checkedClick2} className={s.inputCheck}
                      type="checkbox" checked={checked2} />
-            <span>Замовити консультацію</span>
+            <span>{t("orderAConsultation")}</span>
           </div>
             {
               checked2
@@ -192,7 +192,7 @@ const App = () => {
             }
 
           <br />
-          <button className={s.footerBut} style={{ width: "50%" }} onClick={useSubmit}>Надіслати</button>
+          <button className={s.footerBut} style={{ width: "50%" }} onClick={useSubmit}>{t("send")}</button>
         </div>
       </div>
 
@@ -200,11 +200,11 @@ const App = () => {
         {/*<Route path="/table" element={<Table data={Users} />} />*/}
         {/*<Route path='/' element={<Home data={Users} />} />*/}
         <Route path="/senks" element={<Senks setOnFooter={setOnFooter} />} />
-        <Route path="/" element={<Obl data={Users} userOrder={userOrder}
+        <Route path="/" element={<Obl t={t} data={Users} userOrder={userOrder}
                                       setTotal={setTotal} total={total} />} />
-        <Route path="/nacr" element={<Nacr data={Users} userOrder={userOrder}
+        <Route path="/nacr" element={<Nacr t={t} data={Users} userOrder={userOrder}
                                            setTotal={setTotal} total={total} />} />
-        <Route path="/acses" element={<Acses data={Users} userOrder={userOrder}
+        <Route path="/acses" element={<Acses t={t} data={Users} userOrder={userOrder}
                                              setTotal={setTotal} total={total} />} />
         <Route path="/test" element={<App2 data={Users} />} />
       </Routes>
@@ -213,14 +213,14 @@ const App = () => {
         onFooter ? ""
           : <>
             <div className={s.divTitle}>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">Обладнання</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">Накриття</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">Аксесуари</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">Будівництво</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">Документація</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">{t("equipment")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">{t("cover")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">{t("accessories")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">{t("construction")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">{t("documentation")}</NavLink>
             </div>
             <div className={s.empty}></div>
-            <Footer total={total} noScroll={noScroll} setOnFooter={setOnFooter} />
+            <Footer total={total} noScroll={noScroll} t={t} setOnFooter={setOnFooter} />
           </>
       }
 
