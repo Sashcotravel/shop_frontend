@@ -1,0 +1,260 @@
+/*.app{*/
+/*    margin: 20px 200px 50px 50px;*/
+/*}*/
+
+/*.search{*/
+/*    padding: 10px;*/
+/*    font-size: 20px;*/
+/*}*/
+
+/*.listTable{*/
+/*    padding: 2px;*/
+/*    width: 80%;*/
+/*    list-style: none;*/
+/*    text-align: center;*/
+/*    border-radius: 4px;*/
+/*    background-color: lightgrey;*/
+/*    color: #851653;*/
+/*    font-family: sans-serif;*/
+/*    margin: 20px;*/
+/*}*/
+
+/*.list{*/
+/*    padding: 2px;*/
+/*    list-style: none;*/
+/*    text-align: center;*/
+/*    background-color: lightgrey;*/
+/*    color: #851653;*/
+/*    font-family: sans-serif;*/
+/*}*/
+
+/*.listTableName{*/
+/*    padding: 2px;*/
+/*    list-style: none;*/
+/*    text-align: center;*/
+/*    background-color: lightgrey;*/
+/*    color: #851653;*/
+/*    font-family: sans-serif;*/
+/*    width: 15%;*/
+/*}*/
+
+/*.dateT{*/
+/*    width: 23%;*/
+/*}*/
+
+/*.listForm{*/
+/*    padding: 4px;*/
+/*    list-style: none;*/
+/*    text-align: center;*/
+/*    height: 20px;*/
+/*}*/
+
+/*.listName{*/
+/*    padding: 5px;*/
+/*    list-style: none;*/
+/*    text-align: left;*/
+/*    max-width: 800px;*/
+
+/*}*/
+
+/*.input{*/
+/*    background-color: lightgrey;*/
+/*    color: #851653;*/
+/*    outline: none;*/
+/*}*/
+
+/*.input2{*/
+/*    width: 100%;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    padding: 4px;*/
+/*}*/
+
+/*.input1{*/
+/*    width: 50px;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*}*/
+
+/*.inputIn2Tab{*/
+/*    color: #851653;*/
+/*    outline: none;*/
+/*    padding: 4px;*/
+/*}*/
+
+/*.listItem{*/
+/*    margin-bottom: 20px;*/
+/*    font-size: 25px;*/
+/*    color: #444;*/
+/*    font-weight: 300;*/
+/*}*/
+
+/*.top{*/
+/*    background-color: lightgrey;*/
+/*}*/
+
+/*.total{*/
+/*    background-color: aliceblue;*/
+
+/*}*/
+
+/*.subBut{*/
+/*    width: 100px;*/
+/*    height: 35px;*/
+/*    background-color: #00ff008f;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    font-family: sans-serif;*/
+/*    position: relative;*/
+/*    top: -30px;*/
+/*    left: 30%;*/
+/*}*/
+
+/*.box2{*/
+/*    width: 500px;*/
+/*    height: 500px;*/
+/*    border: 1px solid black;*/
+/*}*/
+
+/*.liClass{*/
+/*    width: 50px;*/
+/*    height: 20px;*/
+/*}*/
+
+/*.citiBox{*/
+/*    border-collapse: collapse;*/
+/*    border-style: groove;*/
+/*    background: aliceblue;*/
+/*}*/
+
+/*table, th, td {*/
+/*    border-collapse: collapse;*/
+/*    border-style: groove;*/
+/*}*/
+
+/*th, td {*/
+/*    background-color: #96D4D4;*/
+/*}*/
+
+/*.div1{*/
+/*    border: 5px solid lightpink;*/
+/*    background-color: lightgray;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.boxh1{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.link{*/
+/*    border: 1px solid black;*/
+/*    display: contents;*/
+/*}*/
+
+/*.image{*/
+/*    width: 270px;*/
+/*    height: 150px;*/
+/*    margin: 10px 50px 10px;*/
+/*}*/
+
+/*.h1{*/
+/*    width: 200px;*/
+/*}*/
+
+/*.boxLink{*/
+/*    margin-bottom: 50px;*/
+/*}*/
+
+/*.inputBox{*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    flex-wrap: nowrap;*/
+/*    background-color: darkolivegreen;*/
+/*    padding: 15px;*/
+/*    flex-direction: row;*/
+/*}*/
+
+/*.span{*/
+/*    padding: 5px;*/
+/*    margin: 15px 10px 0 0;*/
+/*    background-color: #96D4D4;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.divBox2{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.divBox3{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: flex-start;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.divBox4{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.marginR{*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.display{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    background-color: yellowgreen;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.add{*/
+/*    display: flex;*/
+/*    justify-content: end;*/
+/*    background-color: yellowgreen;*/
+/*}*/
+
+/*.spanAdd{*/
+/*    background-color: azure;*/
+/*    margin-right: 50px;*/
+/*}*/
+
+/*.inputSpan{*/
+/*    width: 65px;*/
+/*}*/
+
+/*.submitBut{*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    background-color: #96D4D4;*/
+/*    margin: 10px;*/
+/*    padding: 10px;*/
+/*    border-radius: 10px;*/
+/*    font-family: sans-serif;*/
+/*    font-weight: 500;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.logo {*/
+/*    background-color: black;*/
+/*    color: #fff;*/
+/*    font-weight: 700;*/
+/*    line-height: 35px;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 0.15px;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px 10px;*/
+/*    text-decoration: none;*/
+
+/*}*/
+
+/*.logo:hover {*/
+/*    background-color: #4361ee;*/
+/*}*/

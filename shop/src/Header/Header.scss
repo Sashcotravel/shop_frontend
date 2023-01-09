@@ -94,6 +94,7 @@
   position: fixed;
   visibility: hidden;
   top: 0;
+  right: 0;
   //left: -100%;
   width: 300px;
   height: 100%;
@@ -118,24 +119,24 @@
   background-color: #CFD8DC;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
-  transform: rotate(45deg);
-  //visibility: hidden;
-}
-#menu__toggle:checked ~ .menu__btn > span::before {
-  top: 0;
-  transform: rotate(0);
-  //visibility: hidden;
-}
-#menu__toggle:checked ~ .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-  //visibility: hidden;
-}
-#menu__toggle:checked ~ .menu__box {
-  visibility: visible;
-  right: 0;
-}
+//#menu__toggle:checked ~ .menu__btn > span {
+//  transform: rotate(45deg);
+//  //visibility: hidden;
+//}
+//#menu__toggle:checked ~ .menu__btn > span::before {
+//  top: 0;
+//  transform: rotate(0);
+//  //visibility: hidden;
+//}
+//#menu__toggle:checked ~ .menu__btn > span::after {
+//  top: 0;
+//  transform: rotate(90deg);
+//  //visibility: hidden;
+//}
+//#menu__toggle:checked ~ .menu__box {
+//  visibility: visible;
+//  right: 0;
+//}
 
 .spanX{
   z-index: 1;

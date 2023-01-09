@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next'
 import { Link, Route, Routes, useNavigate, NavLink } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
-import Table from "./component/Table";
-import Home from "./component/Home";
+import Table from "./old/Table";
+import Home from "./old/Home";
 import Senks from "./component/Senks";
 import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";

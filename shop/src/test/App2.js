@@ -4,7 +4,7 @@ import "../App.css";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Header } from "../Header/index";
 import { Users } from "../users";
-import Table from "../component/Table";
+import Table from "../old/Table";
 import Senks from "../component/Senks";
 import Footer from "../component/Footer";
 import { Datepicker, localeUa } from "@mobiscroll/react";

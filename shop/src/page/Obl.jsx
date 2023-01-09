@@ -22,7 +22,6 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         userOrder.push(item);
       }
     });
-    console.log(userOrder);
   };
 
   const addCountCheck = (e) => {
@@ -52,7 +51,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         userOrder.push(item);
       }
     });
-    console.log(userOrder);
+    // console.log(userOrder);
   };
 
   const minesCount = (e) => {
@@ -311,6 +310,163 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
           { boxBut(9) }
         </div>
       </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img16 base'} id='img16'>
+            {size(16)}
+          </div>
+          <h5 className={s.itemName}>{data[10].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(10) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img17 base'} id='img17'>
+            {size(17)}
+          </div>
+          <h5 className={s.itemName}>{data[11].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(11) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img18 base'} id='img18'>
+            {size(18)}
+          </div>
+          <h5 className={s.itemName}>{data[12].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(12) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img19 base'} id='img19'>
+            {size(19)}
+          </div>
+          <h5 className={s.itemName}>{data[14].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(14) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img20 base'} id='img20'>
+            {size(20)}
+          </div>
+          <h5 className={s.itemName}>{data[15].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(15) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img21 base'} id='img21'>
+            {size(21)}
+          </div>
+          <h5 className={s.itemName}>{data[16].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(16) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img22 base'} id='img22'>
+            {size(22)}
+          </div>
+          <h5 className={s.itemName}>{data[17].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(17) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img23 base'} id='img23'>
+            {size(23)}
+          </div>
+          <h5 className={s.itemName}>{data[18].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(18) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img24 base'} id='img24'>
+            {size(24)}
+          </div>
+          <h5 className={s.itemName}>{data[19].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(19) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img25 base'} id='img25'>
+            {size(25)}
+          </div>
+          <h5 className={s.itemName}>{data[20].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(20) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img26 base'} id='img26'>
+            {size(26)}
+          </div>
+          <h5 className={s.itemName}>{data[21].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(21) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={'img27 base'} id='img27'>
+            {size(27)}
+          </div>
+          <h5 className={s.itemName}>{data[22].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(22) }
+        </div>
+      </div>
+
+      <div className={s.container}>
+        <div className={s.boxOne}>
+          <div className={"img36 base"} id="img36">
+            {size(36)}
+          </div>
+          <h5 className={s.itemName}>{data[41].nameOfGoods}</h5>
+          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          { boxBut(41) }
+        </div>
+      </div>
+
     </div>
   </>;
 };
