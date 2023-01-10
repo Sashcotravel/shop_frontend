@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import s from "../component/Home.module.css";
 import './Obl.css'
+import image1 from "../image/svg/Fullscreenicon.svg";
+import image2 from "../image/svg/Group31.svg";
 
 
 const Obl = ({ t, data, userOrder, setTotal, total }) => {
@@ -123,30 +125,25 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
   };
 
   const imgSize = (e) => {
-    // let types = e.target.title.slice(4)
-    if(window.screen.availWidth > 900){
-      let size = e.target.id.slice(3)
-      let g = document.getElementById(e.target.id)
-      if(g.className == `${e.target.id} base`){
+    let twoImg = document.getElementById("lightCol");
+    twoImg.src = "";
+    if (window.screen.availWidth > 900) {
+      let g = document.getElementById(e.target.id);
+      let a = g.src.substring(35, g.src.length - 24) + "webp";
+      let x = "../image/" + a;
+      if (g.src.slice(-3) === "jpg") {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol");
-        twoImg.className = `${e.target.id}_2`
-        // g.className = `${e.target.id}_2`
-      } else {
-        let con = document.getElementById("light");
-        con.style.visibility = "hidden";
-        // g.className = `${e.target.id} base`
-        // let twoImg = document.getElementById("lightCol");
-        // con.className = ''
+        twoImg.src = require("../image/" + a);
       }
     }
-  }
+  };
 
   const hidden = (e) => {
     if(e.target.id === 'light'){
-      let con = document.getElementById("light");
-      con.style.visibility = "hidden";
+    let con = document.getElementById("light");
+    con.style.visibility = "hidden";
     }
   }
 
@@ -159,10 +156,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
   }
 
   const size = (num) => {
-    return(
-      window.screen.width > 900 ? <span className={s.block} onClick={imgSize} id={`img${num}`}></span> : ''
-    )
-  }
+    return (
+      window.screen.width > 900 ? <span className="block">
+        <img style={{width: '35px'}} src={image1} onClick={imgSize} id={`img${num}`}/>
+      </span> : ""
+    );
+  };
 
   const boxButWithCheck = (num) => {
     return (
@@ -231,16 +230,23 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
   return <>
     <div id="light" className={s.boxHideImage} onClick={hidden}>
-      <div className={""} id="lightCol">
-        <span className={s.blockLarge} onClick={imgSize} id="lightCol"></span>
-      </div>
+      <figure className='figure'>
+        <div className='divImg'>
+            <span className='blockLarge' id="light">
+              <img style={{width: '35px'}} src={image2} onClick={hidden} id="light" />
+            </span>
+          <img src={require("../image/ЩІТКА (1).jpg")} className="imageLarge" id="lightCol" />
+        </div>
+      </figure>
     </div>
+
     <div className={s.divBox}>
 
       <div className={s.container}>
         <div className={s.boxOne}>
           <figure>
-            <div className={"img3 base"} id="img3">
+            <div style={{height: '315px'}}>
+              <img src={require("../image/0_02_0a_4441a50b7f71d56d8223346d30daca1e623cd86a3a5c0234e5ed10c4dce9c140.jpg")} className={"base"} id="img3" />
               {size(3)}
             </div>
           </figure>
@@ -254,9 +260,15 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
       <div className={s.container}>     {/*  with check  */}
         <div className={s.boxOne}>
           {/*<img src={image1} className={s.img} />*/}
-          <div className={"img4 base"} id="img4">
-            {size(4)}
-          </div>
+          {/*<div className={"img4 base"} id="img4">*/}
+          {/*  {size(4)}*/}
+          {/*</div>*/}
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/4RAV4(none).jpg")} className={"base"} id="img4" />
+              {size(4)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[6].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -272,9 +284,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>   {/*  with check  */}
         <div className={s.boxOne}>
-          <div className={'img5 base'} id='img5'>
-            {size(5)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/244538142_1063353097750478_5474927411768411711_n(1).jpg")} className={"base"} id="img5" />
+              {size(5)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[7].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -289,9 +304,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img1 base'} id='img1'>
-            {size(1)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/vynnytsya4.jpg")} className={"base"} id="img1" />
+              {size(1)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[8].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -301,9 +319,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img2 base'} id='img2'>
-            {size(2)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/Share2015_03_24_2dc90332b70c75a404dbce5f80b15297e23f4aca4c1b687.jpg")} className={"base"} id="img2" />
+              {size(2)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[9].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -313,9 +334,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img16 base'} id='img16'>
-            {size(16)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/33(1).jpg")} className={"base"} id="img16" />
+              {size(16)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[10].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -325,9 +349,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img17 base'} id='img17'>
-            {size(17)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/selfservicecarwash_2(2).jpg")} className={"base"} id="img17" />
+              {size(17)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[11].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -337,9 +364,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img18 base'} id='img18'>
-            {size(18)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" />
+              {size(18)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[12].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -349,9 +379,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img19 base'} id='img19'>
-            {size(19)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/244398001_1063353077750480_6075659314078428638_n.jpg")} className={"base"} id="img19" />
+              {size(19)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[14].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -361,9 +394,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img20 base'} id='img20'>
-            {size(20)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/244538142_1063353097750478_5474927411768411711_n.jpg")} className={"base"} id="img20" />
+              {size(20)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[15].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -373,9 +409,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img21 base'} id='img21'>
-            {size(21)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/BX_3.jpg")} className={"base"} id="img21" />
+              {size(21)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[16].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -385,9 +424,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img22 base'} id='img22'>
-            {size(22)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/bank(1).jpg")} className={"base"} id="img22" />
+              {size(22)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[17].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -397,9 +439,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img23 base'} id='img23'>
-            {size(23)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/trafficLights.jpg")} className={"base"} id="img23" />
+              {size(23)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[18].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -409,9 +454,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img24 base'} id='img24'>
-            {size(24)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/Fura_1.jpg")} className={"base"} id="img24" />
+              {size(24)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[19].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -421,9 +469,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img25 base'} id='img25'>
-            {size(25)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/Fura_3(2).jpg")} className={"base"} id="img25" />
+              {size(25)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[20].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -433,9 +484,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img26 base'} id='img26'>
-            {size(26)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/OSMOSISINSTALLATION.jpg")} className={"base"} id="img26" />
+              {size(26)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[21].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -445,9 +499,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img27 base'} id='img27'>
-            {size(27)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/Hust_1(2).jpg")} className={"base"} id="img27" />
+              {size(27)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[22].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>
@@ -457,9 +514,12 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={"img36 base"} id="img36">
-            {size(36)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/IMG_0332(1).jpg")} className={"base"} id="img36" />
+              {size(36)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[41].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard</p>

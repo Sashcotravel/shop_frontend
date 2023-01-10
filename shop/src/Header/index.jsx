@@ -31,7 +31,11 @@ export const Header = ({ t }) => {
             </Link>
           </div>
           <div>
-            <span className="nomer">+38 (063) 23 56 478</span>
+            {
+              window.screen.width < 900
+                ? <span><a className="nomer" href="tel:+380505923772">+38 (050) 59 23 772</a></span>
+                : <span className="nomer">+38 (050) 59 23 772</span>
+            }
           </div>
           <div className="hamburger-menu" style={{ zIndex: "1" }}>
             <input id="menu__toggle" type="checkbox" />

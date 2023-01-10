@@ -1,9 +1,61 @@
 .base{
     width: 335px;
-    height: 140px;
-    /*background-size: cover;*/
+    height: 315px;
     border-radius: 20px 20px 0 0;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 24px 0 0 77%;
+    position: relative;
+    top: -90px;
+    left: -244px;
+    opacity: 1;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+}
+
+.imageLarge {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.figure{
+    display: flex;
+    width: 60%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+.blockLarge{
+    display: flex;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 24px 0 0 77%;
+    position: relative;
+    top: 65px;
+    left: 16%;
+    opacity: 1;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+}
+
+.divImg{
+    width: 100%;
+    position: relative;
+    top: -5%;
 }
 
 .img1{
@@ -39,6 +91,7 @@
 }
 
 .img3_2{
+    /*background-image: url("../image/lubomil1.jpg");*/
     background: transparent url('../image/0_02_0a_4441a50b7f71d56d8223346d30daca1e623cd86a3a5c0234e5ed10c4dce9c140.webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,11 +103,11 @@
 }
 
 .img4{
-    background: transparent url('../image/4 RAV 4 (нічого).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/4RAV4(none).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img4_2{
-    background: transparent url('../image/4 RAV 4 (нічого).webp') 0% 0% padding-box;
+    background: transparent url('../image/4RAV4(none).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
@@ -64,11 +117,11 @@
 }
 
 .img5{
-    background: transparent url('../image/244538142_1063353097750478_5474927411768411711_n (1).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/244538142_1063353097750478_5474927411768411711_n(1).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img5_2{
-    background: transparent url('../image/244538142_1063353097750478_5474927411768411711_n (1).webp') 0% 0% padding-box;
+    background: transparent url('../image/244538142_1063353097750478_5474927411768411711_n(1).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;z-index: 2;
@@ -78,11 +131,11 @@
 }
 
 .img6{
-    background: transparent url('../image/2d6a01e6d774667f7590e83a7f816c9721103a54b38bc5f36237e931555e4ded (1).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/2d6a01e6d774667f7590e83a7f816c9721103a54b38bc5f36237e931555e4ded(1).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img6_2{
-    background: transparent url('../image/2d6a01e6d774667f7590e83a7f816c9721103a54b38bc5f36237e931555e4ded (1).webp') 0% 0% padding-box;
+    background: transparent url('../image/2d6a01e6d774667f7590e83a7f816c9721103a54b38bc5f36237e931555e4ded(1).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
@@ -92,11 +145,11 @@
 }
 
 .img7{
-    background: transparent url('../image/термінал2 (1).webp') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/термінал2 (1).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img7_2{
-    background: transparent url('../image/термінал2 (1).jpg') 0% 0% padding-box;
+    background: transparent url('../image/термінал2 (1).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -106,11 +159,11 @@
 }
 
 .img8{
-    background: transparent url('../image/стрий 1 (1).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/Stryi(1).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img8_2{
-    background: transparent url('../image/стрий 1 (1).webp') 0% 0% padding-box;
+    background: transparent url('../image/Stryi(1).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -176,11 +229,11 @@
 }
 
 .img13{
-    background: transparent url('../image/IMG_0065 (2).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/IMG_0065(2).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img13_2{
-    background: transparent url('../image/IMG_0065 (2).webp') 0% 0% padding-box;
+    background: transparent url('../image/IMG_0065(2).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -204,11 +257,11 @@
 }
 
 .img15{
-    background: transparent url('../image/IMG_0707 (1).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/IMG_0707.jpg') 0% 0% no-repeat padding-box;
 }
 
 .img15_2{
-    background: transparent url('../image/IMG_0707 (1).webp') 0% 0% padding-box;
+    background: transparent url('../image/IMG_0707.webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -218,11 +271,11 @@
 }
 
 .img16{
-    background: transparent url('../image/33 (1).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/33(1).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img16_2{
-    background: transparent url('../image/33 (1).webp') 0% 0% padding-box;
+    background: transparent url('../image/33(1).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -316,11 +369,11 @@
 }
 
 .img23{
-    background: transparent url('../image/EK 1000 NEW R1.38-600x800.jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/EK1000NEWR1.38-600x800.jpg') 0% 0% no-repeat padding-box;
 }
 
 .img23_2{
-    background: transparent url('../image/EK 1000 NEW R1.38-600x800.webp') 0% 0% padding-box;
+    background: transparent url('../image/EK1000NEWR1.38-600x800.webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -344,11 +397,11 @@
 }
 
 .img25{
-    background: transparent url('../image/Fura_3 (2).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/Fura_3(2).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img25_2{
-    background: transparent url('../image/Fura_3 (2).webp') 0% 0% padding-box;
+    background: transparent url('../image/Fura_3(2).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -372,11 +425,11 @@
 }
 
 .img27{
-    background: transparent url('../image/Hust_1 (2).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/Hust_1(2).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img27_2{
-    background: transparent url('../image/Hust_1 (2).webp') 0% 0% padding-box;
+    background: transparent url('../image/Hust_1(2).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -470,11 +523,11 @@
 }
 
 .img34{
-    background: transparent url('../image/IMG_0065 (2).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/IMG_0065(2).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img34_2{
-    background: transparent url('../image/IMG_0065 (2).webp') 0% 0% padding-box;
+    background: transparent url('../image/IMG_0065(2).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;
@@ -498,11 +551,11 @@
 }
 
 .img36{
-    background: transparent url('../image/IMG_0332 (1).jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../image/IMG_0332(1).jpg') 0% 0% no-repeat padding-box;
 }
 
 .img36_2{
-    background: transparent url('../image/IMG_0332 (1).webp') 0% 0% padding-box;
+    background: transparent url('../image/IMG_0332(1).webp') 0% 0% padding-box;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70%;

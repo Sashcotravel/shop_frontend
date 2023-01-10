@@ -15,6 +15,7 @@ import Footer from "./component/Footer";
 import { useDispatch } from "react-redux";
 import { fetchMail, fetchMailUser, fetchPay } from "./API/post";
 import App2 from "./test/App2";
+import Build from "./page/build";
 
 
 let userOrder = [];
@@ -137,7 +138,7 @@ const App = () => {
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">{t("equipment")}</NavLink>
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">{t("cover")}</NavLink>
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">{t("accessories")}</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">{t("construction")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/build">{t("construction")}</NavLink>
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">{t("documentation")}</NavLink>
             </div>
           </>
@@ -206,6 +207,8 @@ const App = () => {
                                            setTotal={setTotal} total={total} />} />
         <Route path="/acses" element={<Acses t={t} data={Users} userOrder={userOrder}
                                              setTotal={setTotal} total={total} />} />
+        <Route path="/build" element={<Build t={t} data={Users} userOrder={userOrder}
+                                             setTotal={setTotal} total={total} />} />
         <Route path="/test" element={<App2 data={Users} />} />
       </Routes>
 
@@ -216,7 +219,7 @@ const App = () => {
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.title1} to="/">{t("equipment")}</NavLink>
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/nacr">{t("cover")}</NavLink>
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/acses">{t("accessories")}</NavLink>
-              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/bud">{t("construction")}</NavLink>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/build">{t("construction")}</NavLink>
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">{t("documentation")}</NavLink>
             </div>
             <div className={s.empty}></div>

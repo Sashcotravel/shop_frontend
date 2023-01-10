@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import s from "../component/Home.module.css";
 import './Obl.css'
+import image1 from '../image/svg/Fullscreenicon.svg'
+import image2 from "../image/svg/Group31.svg";
 
 
 const Nacr = ({ t, data, userOrder, setTotal, total }) => {
@@ -97,20 +99,20 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
   };
 
   const imgSize = (e) => {
-    if(window.screen.availWidth > 600) {
-      let size = e.target.id.slice(3)
-      let g = document.getElementById(e.target.id)
-      if (g.className == `${e.target.id} base`) {
+    let twoImg = document.getElementById("lightCol");
+    twoImg.src = "";
+    if (window.screen.availWidth > 900) {
+      let g = document.getElementById(e.target.id);
+      let a = g.src.substring(35, g.src.length - 24) + "webp";
+      let x = "../image/" + a;
+      if (g.src.slice(-3) === "jpg") {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol");
-        twoImg.className = `${e.target.id}_2`
-      } else {
-        let con = document.getElementById("light");
-        con.style.visibility = "hidden";
+        twoImg.src = require("../image/" + a);
       }
     }
-  }
+  };
 
   const hidden = (e) => {
     if(e.target.id === 'light'){
@@ -128,10 +130,12 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
   }
 
   const size = (num) => {
-    return(
-      window.screen.width > 900 ? <span className={s.block} onClick={imgSize} id={`img${num}`}></span> : ''
-    )
-  }
+    return (
+      window.screen.width > 900 ? <span className="block">
+        <img style={{width: '35px'}} src={image1} onClick={imgSize} id={`img${num}`}/>
+      </span> : ""
+    );
+  };
 
   const boxButWithCheck = (num) => {
     return (
@@ -152,107 +156,102 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
 
   return <>
     <div id="light" className={s.boxHideImage} onClick={hidden}>
-      <div className={""} id="lightCol">
-        <span className={s.blockLarge} onClick={imgSize} id="lightCol"></span>
-      </div>
+      <figure className='figure'>
+        <div className='divImg'>
+            <span className='blockLarge' id="light">
+              <img style={{width: '35px'}} src={image2} onClick={hidden} id="light" />
+            </span>
+          <img src={require("../image/ЩІТКА (1).jpg")} className="imageLarge" id="lightCol" />
+        </div>
+      </figure>
     </div>
+
     <div className={s.divBox}>
+
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img6 base'} id='img6'>
-            {/*{window.screen.width > 900 ? <span className={s.block} onClick={imgSize} id='img6'></span> : ''}*/}
-            {size(6)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/Lutsk.jpg")} className={"base"} id="img6" />
+              {size(6)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[23].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[23].size > 0 ? s.check2 : s.check} checked={data[23].checked}
                    type="radio" name="pina" title={data[23].nameOfGoods} onChange={clickNacr} />
-            {/*{*/}
-            {/*  pina?.nameOfGoods === data[23].nameOfGoods*/}
-            {/*    ? <span className={s.inputTextGreen}>Вибрано</span>*/}
-            {/*    : <span className={s.inputText}>Вибрати цей тип накриття</span>*/}
-            {/*}*/}
-            {/*{*/}
-            {/*  data[23].size > 0*/}
-            {/*    ? <span className={s.inputTextGreen}>{t("selected")}</span>*/}
-            {/*    : <span className={s.inputText}>{t("chooseThisTypeOfCover")}</span>*/}
-            {/*}*/}
-            {
-              selectName(23)
-            }
+            { selectName(23) }
           </div>
-          {/*<div className={s.divBut}>*/}
-          {/*  <div>*/}
-          {/*    <button className={s.butMin}>*/}
-          {/*      <span onClick={minesCount} title={data[23].nameOfGoods} className={s.spanMin}>-</span>*/}
-          {/*    </button>*/}
-          {/*    <span className={s.itemTotalSize} id="lightblue">{data[23].size}</span>*/}
-          {/*    <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>*/}
-          {/*      <span onClick={addCount} title={data[23].nameOfGoods} className={s.spanAdd}>+</span>*/}
-          {/*    </button>*/}
-          {/*  </div>*/}
-          {/*  <span className={s.itemTotal} style={{ padding: 10 + "px" }}>{data[23].total} грн</span>*/}
-          {/*</div>*/}
           { boxButWithCheck(23) }
         </div>
       </div>
+
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img7 base'} id='img7'>
-            {size(7)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/BX_3.jpg")} className={"base"} id="img7" />
+              {size(7)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[24].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[24].size > 0 ? s.check2 : s.check} checked={data[24].checked}
                    type="radio" name="pina" title={data[24].nameOfGoods} onChange={clickNacr} />
-            {
-              selectName(24)
-            }
+            { selectName(24) }
           </div>
           { boxButWithCheck(24) }
         </div>
       </div>
+
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img8 base'} id='img8'>
-            {size(8)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/pop.jpg")} className={"base"} id="img8" />
+              {size(8)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[25].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[25].size > 0 ? s.check2 : s.check} checked={data[25].checked}
                    type="radio" name="pina" title={data[25].nameOfGoods} onChange={clickNacr} />
-            {
-              selectName(25)
-            }
+            { selectName(25) }
           </div>
           { boxButWithCheck(25) }
         </div>
       </div>
+
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img9 base'} id='img9'>
-            {size(9)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/Rogatyn.jpg")} className={"base"} id="img9" />
+              {size(9)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[26].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[26].size > 0 ? s.check2 : s.check} checked={data[26].checked}
                    type="radio" name="pina" title={data[26].nameOfGoods} onChange={clickNacr} />
-            {
-              selectName(26)
-            }
+            { selectName(26) }
           </div>
           { boxButWithCheck(26) }
         </div>
       </div>
+
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img10 base'} id='img10'>
-            {size(10)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/sam4.jpg")} className={"base"} id="img10" />
+              {size(10)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[27].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
@@ -264,40 +263,48 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
           </div>
           { boxButWithCheck(27) }
         </div>
+
       </div><div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img10 base'} id='img10'>
-            {size(10)}
-          </div>
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/Striy_2(2).jpg")} className={"base"} id="img60" />
+              {size(60)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[28].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[28].size > 0 ? s.check2 : s.check} checked={data[28].checked}
                    type="radio" name="pina" title={data[28].nameOfGoods} onChange={clickNacr} />
-            {
-              selectName(28)
-            }
+            { selectName(28) }
           </div>
           { boxButWithCheck(28) }
         </div>
       </div>
+
       <div className={s.container}>
         <div className={s.boxOne}>
-          <div className={'img11 base'} id='img11'>
-            {size(11)}
-          </div>
+          {/*<div className={'img11 base'} id='img11'>*/}
+          {/*  {size(11)}*/}
+          {/*</div>*/}
+          <figure>
+            <div style={{height: '315px'}}>
+              <img src={require("../image/vynnytsya2.jpg")} className={"base"} id="img11" />
+              {size(11)}
+            </div>
+          </figure>
           <h5 className={s.itemName}>{data[29].nameOfGoods}</h5>
           <p className={s.itemDesc}>Desc</p>
           <div>
             <input className={data[29].size > 0 ? s.check2 : s.check} checked={data[29].checked}
                    type="radio" name="pina" title={data[29].nameOfGoods} onChange={clickNacr} />
-            {
-              selectName(29)
-            }
+            { selectName(29) }
           </div>
           { boxButWithCheck(29) }
         </div>
       </div>
+
     </div>
   </>;
 };
