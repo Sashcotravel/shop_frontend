@@ -7,15 +7,16 @@ import { Header } from "./Header";
 import { Users } from "./users";
 import Table from "./old/Table";
 import Home from "./old/Home";
-import Senks from "./component/Senks";
+import Thanks from "./component/Thanks";
 import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";
 import Acses from "./page/Acses";
 import Footer from "./component/Footer";
 import { useDispatch } from "react-redux";
-import { fetchMail, fetchMailUser, fetchPay } from "./API/post";
+import { fetchMail, fetchMailDima, fetchMailUser, fetchPay } from "./API/post";
 import App2 from "./test/App2";
 import Build from "./page/build";
+import YourOrder from "./page/YourOrder";
 
 
 let userOrder = [];
@@ -88,16 +89,16 @@ const App = () => {
         order: userOrder,
         user: userData
       };
-      await dispatch(fetchPay(obj))
-        .then(res => console.log(res.meta));
+      const d = await dispatch(fetchPay(obj))
+      console.log(d.payload)
       dispatch(fetchMail(obj));
-      if (!checked) {
-        dispatch(fetchMailUser(obj));
-      }
+      dispatch(fetchMailDima(obj));
+      dispatch(fetchMailUser(obj));
+
       Users.forEach(user => user.size = 0);
       Users.forEach(user => user.total = user.prise);
       nullAll();
-      navigate("/senks");
+      navigate("/thanks");
     }
   };
 
@@ -153,13 +154,13 @@ const App = () => {
           <br />
           <p className={s.descSpan}>{t("desc")}</p>
           <br />
-          <input className={s.inputUser} type="text" title="name"
+          <input className={s.inputUser} type="name" title="name"
                  placeholder={`${t("enterName")}`} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };
             });
           }} />
-          <input className={s.inputUser} type="email" title="email"
+          <input className={s.inputUser} type="email" title="email" required
                  placeholder={`${t("enterEmail")}`} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };
@@ -200,7 +201,7 @@ const App = () => {
       <Routes>
         {/*<Route path="/table" element={<Table data={Users} />} />*/}
         {/*<Route path='/' element={<Home data={Users} />} />*/}
-        <Route path="/senks" element={<Senks setOnFooter={setOnFooter} />} />
+        <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
         <Route path="/" element={<Obl t={t} data={Users} userOrder={userOrder}
                                       setTotal={setTotal} total={total} />} />
         <Route path="/nacr" element={<Nacr t={t} data={Users} userOrder={userOrder}
@@ -210,6 +211,7 @@ const App = () => {
         <Route path="/build" element={<Build t={t} data={Users} userOrder={userOrder}
                                              setTotal={setTotal} total={total} />} />
         <Route path="/test" element={<App2 data={Users} />} />
+        <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
       </Routes>
 
       {

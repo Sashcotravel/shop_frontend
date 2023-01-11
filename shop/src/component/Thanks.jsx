@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import {Link} from "react-router-dom";
 import s from './Home.module.css'
 
-const Senks = ({ setOnFooter }) => {
+const Thanks = ({ setOnFooter }) => {
 
   useEffect(() => {
 
@@ -31,4 +31,4 @@ const Senks = ({ setOnFooter }) => {
     )
 }
 
-export default Senks
+export default Thanks

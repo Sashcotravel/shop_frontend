@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import {Users} from "./users";
+import {Users} from "../users";
 
 
 const store = configureStore({

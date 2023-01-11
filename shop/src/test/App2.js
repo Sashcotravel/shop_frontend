@@ -5,7 +5,7 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Header } from "../Header/index";
 import { Users } from "../users";
 import Table from "../old/Table";
-import Senks from "../component/Senks";
+import Thanks from "../component/Thanks";
 import Footer from "../component/Footer";
 import { Datepicker, localeUa } from "@mobiscroll/react";
 import { useDispatch } from "react-redux";
@@ -170,7 +170,7 @@ const App2 = () => {
       <Routes>
         <Route path="/table" element={<Table data={Users} />} />
         {/*<Route path='/' element={<Home data={Users} />} />*/}
-        <Route path="/senks" element={<Senks setOnFooter={setOnFooter} />} />
+        <Route path="/senks" element={<Thanks setOnFooter={setOnFooter} />} />
         <Route path="/" element={<Obl2 data={Users} userOrder={userOrder}
                                       setTotal={setTotal} total={total} />} />
         <Route path="/nacr" element={<Nacr2 data={Users} userOrder={userOrder}
