@@ -119,21 +119,26 @@ const App = () => {
   const changeLanguage = (language) => {
     i18n.changeLanguage(language)
     setLang(language)
+    if(language === 'en'){
+      navigate('/en')
+    } else {
+      navigate('/')
+    }
   }
 
 
   return (
     <div className="App">
-      <Header t={t} />
+      <Header t={t} changeLanguage={changeLanguage} lang={lang} />
       {/*<Home data={Users} />*/}
 
       {
         onFooter ? ""
           : <>
-          <div className={s.translateDiv}>
-            <button className={s.trBut+' '+`${lang == 'en' ? s.color : ''}`} onClick={() => changeLanguage("en")}>EN</button>
-            <button className={s.trBut+' '+`${lang == 'ua' ? s.color : ''}`} onClick={() => changeLanguage("ua")}>UA</button>
-          </div>
+          {/*<div className={s.translateDiv}>*/}
+          {/*  <button className={s.trBut+' '+`${lang == 'en' ? s.color : ''}`} onClick={() => changeLanguage("en")}>EN</button>*/}
+          {/*  <button className={s.trBut+' '+`${lang == 'ua' ? s.color : ''}`} onClick={() => changeLanguage("ua")}>UA</button>*/}
+          {/*</div>*/}
             <div className={s.divName}>
               <h3 className={s.h3Title}>{t("title")}</h3>
               <h6 className={s.h6Title}>{t("step")}:</h6>
@@ -207,6 +212,8 @@ const App = () => {
         <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
         <Route path="/" element={<Obl t={t} data={Users} userOrder={userOrder}
                                       setTotal={setTotal} total={total} />} />
+        <Route path="/en" element={<Obl t={t} data={Users} userOrder={userOrder}
+                                      setTotal={setTotal} total={total} />} />
         <Route path="/nacr" element={<Nacr t={t} data={Users} userOrder={userOrder}
                                            setTotal={setTotal} total={total} />} />
         <Route path="/acses" element={<Acses t={t} data={Users} userOrder={userOrder}
@@ -228,7 +235,9 @@ const App = () => {
               <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle} to="/doc">{t("documentation")}</NavLink>
             </div>
             <div className={s.empty}></div>
-            <Footer total={total} noScroll={noScroll} t={t} setOnFooter={setOnFooter} />
+            {
+              userOrder.length > 0 && <Footer total={total} noScroll={noScroll} t={t} setOnFooter={setOnFooter} />
+            }
           </>
       }
 

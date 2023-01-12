@@ -3,9 +3,10 @@ import "./Header.scss";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
 import image5 from "../image/footer.png";
+import s from "../component/Home.module.css";
 
 
-export const Header = ({ t }) => {
+export const Header = ({ t, changeLanguage, lang }) => {
 
   const click = () => {
     const id = document.getElementsByClassName("menu__btn");
@@ -36,6 +37,10 @@ export const Header = ({ t }) => {
                 ? <span><a className="nomer" href="tel:+380505923772">+38 (050) 59 23 772</a></span>
                 : <span className="nomer">+38 (050) 59 23 772</span>
             }
+            <div className={s.translateDiv}>
+              <button className={s.trBut+' '+`${lang == 'en' ? s.color : ''}`} onClick={() => changeLanguage("en")}>EN</button>
+              <button className={s.trBut+' '+`${lang == 'ua' ? s.color : ''}`} onClick={() => changeLanguage("ua")}>UA</button>
+            </div>
           </div>
           <div className="hamburger-menu" style={{ zIndex: "1" }}>
             <input id="menu__toggle" type="checkbox" />
