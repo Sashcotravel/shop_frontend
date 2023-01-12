@@ -103,16 +103,14 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
     twoImg.src = "";
     if (window.screen.availWidth > 900) {
       let g = document.getElementById(e.target.id);
-      let a = g.src.substring(35, g.src.length - 24) + "webp";
-      let x = "../image/" + a;
       if (g.src.slice(-3) === "jpg") {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol");
-        twoImg.src = require("../image/" + a);
+        twoImg.src = g.src
       }
     }
-  };
+  }
 
   const hidden = (e) => {
     if(e.target.id === 'light'){
@@ -161,7 +159,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
             <span className='blockLarge' id="light">
               <img style={{width: '35px'}} src={image2} onClick={hidden} id="light" />
             </span>
-          <img src={require("../image/ЩІТКА (1).jpg")} className="imageLarge" id="lightCol" />
+          <img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className="imageLarge" id="lightCol" />
         </div>
       </figure>
     </div>
@@ -172,7 +170,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/Lutsk.jpg")} className={"base"} id="img6" />
+              {/*<img src={require("../image/Lutsk.jpg")} className={"base"} id="img6" />*/}
+              <img src={(`/static/media/${data[23].src}.${data[23].src2}`)} className={"base"} id="img6" />
               {size(6)}
             </div>
           </figure>
@@ -191,7 +190,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/BX_3.jpg")} className={"base"} id="img7" />
+              {/*<img src={require("../image/BX_3.jpg")} className={"base"} id="img7" />*/}
+              <img src={(`/static/media/${data[24].src}.${data[24].src2}`)} className={"base"} id="img7" />
               {size(7)}
             </div>
           </figure>
@@ -210,7 +210,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/pop.jpg")} className={"base"} id="img8" />
+              {/*<img src={require("../image/pop.jpg")} className={"base"} id="img8" />*/}
+              <img src={(`/static/media/${data[25].src}.${data[25].src2}`)} className={"base"} id="img8" />
               {size(8)}
             </div>
           </figure>
@@ -229,7 +230,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/Rogatyn.jpg")} className={"base"} id="img9" />
+              {/*<img src={require("../image/Rogatyn.jpg")} className={"base"} id="img9" />*/}
+              <img src={(`/static/media/${data[26].src}.${data[26].src2}`)} className={"base"} id="img9" />
               {size(9)}
             </div>
           </figure>
@@ -248,7 +250,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/sam4.jpg")} className={"base"} id="img10" />
+              {/*<img src={require("../image/sam4.jpg")} className={"base"} id="img10" />*/}
+              <img src={(`/static/media/${data[27].src}.${data[27].src2}`)} className={"base"} id="img10" />
               {size(10)}
             </div>
           </figure>
@@ -268,7 +271,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/Striy_2(2).jpg")} className={"base"} id="img60" />
+              {/*<img src={require("../image/Striy_2(2).jpg")} className={"base"} id="img60" />*/}
+              <img src={(`/static/media/${data[28].src}.${data[28].src2}`)} className={"base"} id="img60" />
               {size(60)}
             </div>
           </figure>
@@ -290,7 +294,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
           {/*</div>*/}
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/vynnytsya2.jpg")} className={"base"} id="img11" />
+              {/*<img src={require("../image/vynnytsya2.jpg")} className={"base"} id="img11" />*/}
+              <img src={(`/static/media/${data[29].src}.${data[29].src2}`)} className={"base"} id="img11" />
               {size(11)}
             </div>
           </figure>

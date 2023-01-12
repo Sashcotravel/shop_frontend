@@ -129,13 +129,14 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
     twoImg.src = "";
     if (window.screen.availWidth > 900) {
       let g = document.getElementById(e.target.id);
-      let a = g.src.substring(35, g.src.length - 24) + "webp";
-      let x = "../image/" + a;
+      // let a = g.src.substring(35, g.src.length - 3) + "webp";
+      // let x = "/static/media/" + a;
       if (g.src.slice(-3) === "jpg") {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol");
-        twoImg.src = require("../image/" + a);
+        // twoImg.src = "/static/media/" + a
+        twoImg.src = g.src
       }
     }
   };
@@ -235,7 +236,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
             <span className='blockLarge' id="light">
               <img style={{width: '35px'}} src={image2} onClick={hidden} id="light" />
             </span>
-          <img src={require("../image/ЩІТКА (1).jpg")} className="imageLarge" id="lightCol" />
+          <img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className="imageLarge" id="lightCol" />
         </div>
       </figure>
     </div>
@@ -246,7 +247,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/0_02_0a_4441a50b7f71d56d8223346d30daca1e623cd86a3a5c0234e5ed10c4dce9c140.jpg")} className={"base"} id="img3" />
+              <img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className={"base"} id="img3" />
+              {/*<img src={require("../image/0020a4441a50b7f71d56d8223346d30daca1e623cd86a3a5c0234e5ed10c4dce9c140.jpg")} className={"base"} id="img3" />*/}
               {size(3)}
             </div>
           </figure>
@@ -265,7 +267,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
           {/*</div>*/}
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/4RAV4(none).jpg")} className={"base"} id="img4" />
+              {/*<img src={require("../image/4RAV4(none).jpg")} className={"base"} id="img4" />*/}
+              <img src={(`/static/media/${data[6].src}.${data[6].src2}`)} className={"base"} id="img4" />
               {size(4)}
             </div>
           </figure>
@@ -286,7 +289,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/244538142_1063353097750478_5474927411768411711_n(1).jpg")} className={"base"} id="img5" />
+              {/*<img src={require("../image/244538142_1063353097750478_5474927411768411711_n(1).jpg")} className={"base"} id="img5" />*/}
+              <img src={(`/static/media/${data[7].src}.${data[7].src2}`)} className={"base"} id="img5" />
               {size(5)}
             </div>
           </figure>
@@ -306,7 +310,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/vynnytsya4.jpg")} className={"base"} id="img1" />
+              {/*<img src={require("../image/vynnytsya4.jpg")} className={"base"} id="img1" />*/}
+              <img src={(`/static/media/${data[8].src}.${data[8].src2}`)} className={"base"} id="img1" />
               {size(1)}
             </div>
           </figure>
@@ -321,7 +326,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/Share2015_03_24_2dc90332b70c75a404dbce5f80b15297e23f4aca4c1b687.jpg")} className={"base"} id="img2" />
+              {/*<img src={require("../image/Share2015_03_24_2dc90332b70c75a404dbce5f80b15297e23f4aca4c1b687.jpg")} className={"base"} id="img2" />*/}
+              <img src={(`/static/media/${data[9].src}.${data[9].src2}`)} className={"base"} id="img2" />
               {size(2)}
             </div>
           </figure>
@@ -336,7 +342,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/33(1).jpg")} className={"base"} id="img16" />
+              {/*<img src={require("../image/33(1).jpg")} className={"base"} id="img16" />*/}
+              <img src={(`/static/media/${data[10].src}.${data[10].src2}`)} className={"base"} id="img16" />
               {size(16)}
             </div>
           </figure>
@@ -351,7 +358,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/selfservicecarwash_2(2).jpg")} className={"base"} id="img17" />
+              {/*<img src={require("../image/selfservicecarwash_2(2).jpg")} className={"base"} id="img17" />*/}
+              <img src={(`/static/media/${data[11].src}.${data[11].src2}`)} className={"base"} id="img17" />
               {size(17)}
             </div>
           </figure>
@@ -366,7 +374,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" />
+              {/*<img src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" />*/}
+              <img src={(`/static/media/${data[12].src}.${data[12].src2}`)} className={"base"} id="img18" />
               {size(18)}
             </div>
           </figure>
@@ -381,13 +390,14 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/244398001_1063353077750480_6075659314078428638_n.jpg")} className={"base"} id="img19" />
+              {/*<img src={require("../image/244398001_1063353077750480_6075659314078428638_n.jpg")} className={"base"} id="img19" />*/}
+              <img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />
               {size(19)}
             </div>
           </figure>
           <h5 className={s.itemName}>{data[14].nameOfGoods}</h5>
           <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+            and typesetting industry. Lorem Ipsum has been the industry's standard 13</p>
           { boxBut(14) }
         </div>
       </div>
@@ -396,7 +406,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/244538142_1063353097750478_5474927411768411711_n.jpg")} className={"base"} id="img20" />
+              {/*<img src={require("../image/244538142_1063353097750478_5474927411768411711_n.jpg")} className={"base"} id="img20" />*/}
+              <img src={(`/static/media/${data[15].src}.${data[15].src2}`)} className={"base"} id="img20" />
               {size(20)}
             </div>
           </figure>
@@ -411,7 +422,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/BX_3.jpg")} className={"base"} id="img21" />
+              {/*<img src={require("../image/BX_3.jpg")} className={"base"} id="img21" />*/}
+              <img src={(`/static/media/${data[16].src}.${data[16].src2}`)} className={"base"} id="img21" />
               {size(21)}
             </div>
           </figure>
@@ -426,7 +438,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/bank(1).jpg")} className={"base"} id="img22" />
+              {/*<img src={require("../image/bank(1).jpg")} className={"base"} id="img22" />*/}
+              <img src={(`/static/media/${data[17].src}.${data[17].src2}`)} className={"base"} id="img22" />
               {size(22)}
             </div>
           </figure>
@@ -441,7 +454,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/trafficLights.jpg")} className={"base"} id="img23" />
+              {/*<img src={require("../image/trafficLights.jpg")} className={"base"} id="img23" />*/}
+              <img src={(`/static/media/${data[18].src}.${data[18].src2}`)} className={"base"} id="img23" />
               {size(23)}
             </div>
           </figure>
@@ -456,7 +470,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/Fura_1.jpg")} className={"base"} id="img24" />
+              {/*<img src={require("../image/Fura_1.jpg")} className={"base"} id="img24" />*/}
+              <img src={(`/static/media/${data[19].src}.${data[19].src2}`)} className={"base"} id="img24" />
               {size(24)}
             </div>
           </figure>
@@ -471,7 +486,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/Fura_3(2).jpg")} className={"base"} id="img25" />
+              {/*<img src={require("../image/Fura_3(2).jpg")} className={"base"} id="img25" />*/}
+              <img src={(`/static/media/${data[20].src}.${data[20].src2}`)} className={"base"} id="img25" />
               {size(25)}
             </div>
           </figure>
@@ -486,7 +502,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/OSMOSISINSTALLATION.jpg")} className={"base"} id="img26" />
+              {/*<img src={require("../image/OSMOSISINSTALLATION.jpg")} className={"base"} id="img26" />*/}
+              <img src={(`/static/media/${data[21].src}.${data[21].src2}`)} className={"base"} id="img26" />
               {size(26)}
             </div>
           </figure>
@@ -501,7 +518,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/Hust_1(2).jpg")} className={"base"} id="img27" />
+              {/*<img src={require("../image/Hust_1(2).jpg")} className={"base"} id="img27" />*/}
+              <img src={(`/static/media/${data[22].src}.${data[22].src2}`)} className={"base"} id="img27" />
               {size(27)}
             </div>
           </figure>
@@ -516,7 +534,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         <div className={s.boxOne}>
           <figure>
             <div style={{height: '315px'}}>
-              <img src={require("../image/IMG_0332(1).jpg")} className={"base"} id="img36" />
+              {/*<img src={require("../image/IMG_0332(1).jpg")} className={"base"} id="img36" />*/}
+              <img src={(`/static/media/${data[41].src}.${data[41].src2}`)} className={"base"} id="img36" />
               {size(36)}
             </div>
           </figure>

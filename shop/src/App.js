@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./component/Home.module.css";
 import "./App.css";
 import { useTranslation } from 'react-i18next'
-import { Link, Route, Routes, useNavigate, NavLink } from "react-router-dom";
+import { Link, Route, Routes, useNavigate, NavLink, useParams } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
 import Table from "./old/Table";
@@ -35,6 +35,8 @@ const App = () => {
   const [onFooter, setOnFooter] = useState(false);
 
   const { t, i18n } = useTranslation()
+
+  const { id } = useParams();
 
   const dispatch = useDispatch();
 
@@ -90,10 +92,11 @@ const App = () => {
         user: userData
       };
       const d = await dispatch(fetchPay(obj))
-      console.log(d.payload)
-      dispatch(fetchMail(obj));
-      dispatch(fetchMailDima(obj));
-      dispatch(fetchMailUser(obj));
+      let link = 'http://localhost:3000/your-order/' +  d.payload
+      console.log(link)
+      // dispatch(fetchMail(obj));
+      // dispatch(fetchMailDima(obj));
+      // dispatch(fetchMailUser(obj));
 
       Users.forEach(user => user.size = 0);
       Users.forEach(user => user.total = user.prise);
