@@ -1,0 +1,126 @@
+@font-face {
+    font-family: ManropeBold;
+    src: url(./static/Manrope-Bold.ttf);
+}
+@font-face {
+    font-family: ManropeExtraBold;
+    src: url(./static/Manrope-ExtraBold.ttf);
+}
+@font-face {
+    font-family: ManropeExtraLight;
+    src: url(./static/Manrope-ExtraLight.ttf);
+}
+@font-face {
+    font-family: ManropeLight;
+    src: url(./static/Manrope-Light.ttf);
+}
+@font-face {
+    font-family: ManropeMedium;
+    src: url(./static/Manrope-Medium.ttf);
+}
+@font-face {
+    font-family: ManropeRegular;
+    src: url(./static/Manrope-Regular.ttf);
+}
+@font-face {
+    font-family: ManropeSemiBold;
+    src: url(./static/Manrope-SemiBold.ttf);
+}
+
+body {
+    font-family: ManropeMedium;
+    color: #2e2e2e;
+}
+
+.back{
+    background-color: #eaebf0;
+}
+
+@media (min-width: 1440px) {
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 3rem;
+    }
+
+}
+@media (min-width: 576px) {
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+
+}
+
+h1, h2, h3, h4 {
+    font-family: ManropeSemiBold;
+    color: #212121;
+}
+
+a {
+    text-decoration: none;
+}
+.cgrey {
+    color: #2e2e2e;
+}
+.cdgrey {
+    color: #212121;
+}
+.cwgrey {
+    color: #eaebf0;
+}
+.cwhite {
+    color: #ffffff;
+}
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid #eaebf0;
+    color: #ffffff;
+    background-color: #212121;
+    width: 100%;
+}
+input[type=text]:focus {
+    color: #ffffff;
+    background-color: #212121;
+}
+input[type=text]:active {
+    color: #ffffff;
+    background-color: #212121;
+}
+button {
+    background-color: #ef0b0c;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+}
+footer {
+    background-color: #212121;
+    padding: 10% 0 2% 0;
+}
+
+.tomain {
+    background-color: #ef0b0c;
+    color: #ffffff;
+}
+.tomain:hover {
+    background-color: rgb(169, 18, 19);
+    color: #f8eaea;
+}
+.mt-10 {
+    margin-top: 15%;
+}
+.mt-7 {
+    margin-top: 8%;
+}
+.mb-7 {
+    margin-bottom: 7%;
+}
