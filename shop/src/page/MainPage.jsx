@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
-// import './style.css'
+import m from './MainPage.module.css'
 import s from "../component/Home.module.css";
 import { fetchPay } from "../API/post";
 import { Users } from "../users";
@@ -45,9 +45,9 @@ const MainPage = ({ t, setOnFooter }) => {
       };
   }, []);
 
-  return <div className='back'>
+  return <div className={m.back}>
 
-    <main className="container ">
+    <main className={m.container}>
 
       <div id="lightblue" className={s.orderBlock} style={{left: '0'}}>
         <div className={s.userdata2}>

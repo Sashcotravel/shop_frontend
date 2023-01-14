@@ -124,3 +124,11 @@ footer {
 .mb-7 {
     margin-bottom: 7%;
 }
+
+.container{
+    max-width: 100%;
+}
+
+.mb5{
+    margin-bottom: 5px;
+}
