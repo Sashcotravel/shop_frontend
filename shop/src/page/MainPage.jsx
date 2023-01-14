@@ -82,18 +82,23 @@ const MainPage = ({ t, setOnFooter }) => {
         </div>
       </div>
 
-      <div className="row mb-5">
-        <div className="col-12 my-3 my-md-5">
+      {/*<div className="row mb-5">*/}
+      <div className={m.mb5}>
+        {/*<div className="col-12 my-3 my-md-5">*/}
+        <div style={{height: '50px'}}></div>
+        <div style={{margin: '0 auto 50px'}}>
           <h2>Будівництво автомийки <br/>самообслуговування SamWash</h2>
         </div>
-        <div className="col-12 col-md-8 offset-md-4 my-md-5">
-          <p>
+        {/*<div className="col-12 col-md-8 offset-md-4 my-md-5">*/}
+        <div>
+          <p style={{width: '80%', margin: '40px auto'}}>
             Проєкт виконується з усіма нормами ДБН України, що підтверджено Укрдержбудекспертизою по всіх наших
             об'єктах,
             які ми будували (ДБН Б.2.2-12.2018, ДСП-173, ДБН В.2.3-5-2018, ДБН Б.1.1-14:12).
           </p>
         </div>
-        <div className="col-12 col-md-4">
+        {/*<div className="col-12 col-md-4">*/}
+        <div>
           <p>
             При використанні приямків H подібної форми вміст шламу (піску) складає 7 м. куб. і займає площу 4,5 м. кв.
             Це дозволяє зекономити до 20 000 грн в рік. Технологічне приміщення займає площу 14,4 м. кв, що дає
@@ -102,32 +107,37 @@ const MainPage = ({ t, setOnFooter }) => {
             будівництві.
           </p>
         </div>
-        <div className="col-12 col-md-8 mt-3 mt-md-0">
+        {/*<div className="col-12 col-md-8 mt-3 mt-md-0">*/}
+        <div>
           <picture>
-            <img src={require("../image/images/building/buildding.jpg")} className="img-fluid" />
+            <img src={require("../image/images/building/buildding.jpg")} className={m.imgFluid} />
           </picture>
-          <div className="row my-5">
-            <div className="col-12 col-md-6">
+          {/*<div className="row my-5">*/}
+          <div>
+            {/*<div className="col-12 col-md-6">*/}
+            <div>
               <picture>
-                <img src={require("../image/images/building/5.jpg")} className="img-fluid" />
+                <img src={require("../image/images/building/5.jpg")} className={m.imgFluid} />
               </picture>
             </div>
-            <div className="col-12 col-md-6 mt-5 mt-md-0">
+            {/*<div className="col-12 col-md-6 mt-5 mt-md-0">*/}
+            <div>
               <picture>
-                <img src={require("../image/images/building/7.jpg")} className="img-fluid" />
+                <img src={require("../image/images/building/7.jpg")} className={m.imgFluid} />
               </picture>
             </div>
           </div>
         </div>
 
-        <div className="col-12 col-md-4">
+        {/*<div className="col-12 col-md-4">*/}
+        <div>
           <picture>
-            <img src={require("../image/images/building/9.jpg")} className="img-fluid" />
+            <img src={require("../image/images/building/9.jpg")} className={m.imgFluid} />
           </picture>
         </div>
         <div className="col-12 col-md-8 mt-5 mt-md-0">
           <picture>
-            <img src={require("../image/images/building/8.jpg")} className="img-fluid" />
+            <img src={require("../image/images/building/8.jpg")} className={m.imgFluid} />
           </picture>
         </div>
 
@@ -173,31 +183,39 @@ const MainPage = ({ t, setOnFooter }) => {
           </div>
           <div className="col-12 col-md-8 mt-5">
             <picture>
-              <img src={require("../image/images/designs/ufo.jpg")}  className="img-fluid" />
+              <img src={require("../image/images/designs/ufo.jpg")}  className={m.imgFluid} />
             </picture>
           </div>
           <div className="col-12 my-1 my-md-5"><hr/></div>
 
-          <div className="col-12 col-md-4 mt-3 mt-md-5">
-            <h3>Marchello Light </h3>
-            <h4 className="mb-4">Ціна ~14 000 € за 1 пост</h4>
-            <h3>Marchello </h3>
-            <h4 className="mb-4">Ціна ~12 800 € за 1 пост</h4>
-            <p>
-              Дизайн цієї конструкції повністю обшитий листовою нержавіючою сталлю А - 304, перегородки між мийними
-              постами виконані з гартованого 10 мм скла, тому надзвичайно привабливий для клієнта.
-              Даний каркас виконаний методом гарячого цинкування, а на даху встановлені сендвіч панелі 100 мм.
-              Атіка виконана композитним матеріалом товщиною 4 мм фірми Alubond з підсвіткою.
-              У сонячний день та у вечірній час коли ліхтарі вмикаються, нержавіюче оздоблення відсвічує світло а
-              перегородки пропускають його, можете бути впевнені ніхто не омине цю красу.
-              В конструкції накриття спроектовано відвід дощових стоків в антивандальному виконанні.
-            </p>
-          </div>
-          <div className="col-12 col-md-8 mt-5">
-            <picture>
-              <img src={require("../image/images/designs/marchello.jpg")} className="img-fluid" />
-            </picture>
-          </div>
+          {/*<div className="col-12 col-md-4 mt-3 mt-md-5">*/}
+
+            <div className={m.divCov}>
+              <div style={{width: '45%'}}>
+                <h3>Marchello Light </h3>
+                <h4 className="mb-4">Ціна ~14 000 € за 1 пост</h4>
+                <h3>Marchello </h3>
+                <h4 className="mb-4">Ціна ~12 800 € за 1 пост</h4>
+                <p>
+                  Дизайн цієї конструкції повністю обшитий листовою нержавіючою сталлю А - 304, перегородки між мийними
+                  постами виконані з гартованого 10 мм скла, тому надзвичайно привабливий для клієнта.
+                  Даний каркас виконаний методом гарячого цинкування, а на даху встановлені сендвіч панелі 100 мм.
+                  Атіка виконана композитним матеріалом товщиною 4 мм фірми Alubond з підсвіткою.
+                  У сонячний день та у вечірній час коли ліхтарі вмикаються, нержавіюче оздоблення відсвічує світло а
+                  перегородки пропускають його, можете бути впевнені ніхто не омине цю красу.
+                  В конструкції накриття спроектовано відвід дощових стоків в антивандальному виконанні.
+                </p>
+              </div>
+              <div style={{width: '90%'}}>
+                {/*<div className="col-12 col-md-8 mt-5">*/}
+                  <picture>
+                    <img src={require("../image/images/designs/marchello.jpg")} className={m.imgFluid} />
+                  </picture>
+                {/*</div>*/}
+              </div>
+            </div>
+          {/*</div>*/}
+
           <div className="col-12 my-1 my-md-5"><hr/></div>
 
           <div className="col-12 col-md-4 mt-3 mt-md-5">
@@ -215,7 +233,7 @@ const MainPage = ({ t, setOnFooter }) => {
           </div>
           <div className="col-12 col-md-8 mt-5">
             <picture>
-              <img src={require("../image/images/designs/marcoglas.png")} className="img-fluid" />
+              <img src={require("../image/images/designs/marcoglas.png")} className={m.imgFluid} />
             </picture>
           </div>
           <div className="col-12 my-1 my-md-5"><hr /></div>
@@ -236,7 +254,7 @@ const MainPage = ({ t, setOnFooter }) => {
           </div>
           <div className="col-12 col-md-8 mt-5">
             <picture>
-              <img src={require("../image/images/designs/marcobaner.jpg")} className="img-fluid" />
+              <img src={require("../image/images/designs/marcobaner.jpg")} className={m.imgFluid} />
             </picture>
           </div>
           <div className="col-12 my-1 my-md-5"><hr/></div>
@@ -256,7 +274,7 @@ const MainPage = ({ t, setOnFooter }) => {
           </div>
           <div className="col-12 col-md-8 mt-5">
             <picture>
-              <img src={require("../image/images/designs/pixel.jpg")} className="img-fluid" />
+              <img src={require("../image/images/designs/pixel.jpg")} className={m.imgFluid} />
             </picture>
           </div>
           <div className="col-12 my-1 my-md-5"><hr/></div>
@@ -276,7 +294,7 @@ const MainPage = ({ t, setOnFooter }) => {
           </div>
           <div className="col-12 col-md-8 mt-5">
             <picture>
-              <img src={require("../image/images/designs/smart.jpg")} className="img-fluid" />
+              <img src={require("../image/images/designs/smart.jpg")} className={m.imgFluid} />
             </picture>
           </div>
 
@@ -297,19 +315,19 @@ const MainPage = ({ t, setOnFooter }) => {
               5 штук на пост та ступенем захисту ІР65 включення яких контролюється контролером Schneider.
             </b>
             <picture className="mt-4 d-block">
-              <img src={require("../image/images/light/light.jpg")} className="img-fluid" />
+              <img src={require("../image/images/light/light.jpg")} className={m.imgFluid} />
             </picture>
           </div>
           <div className="col-12 col-md-8 offset-md-4">
             <div className="row mt-5">
               <div className="col-12 col-md-6">
                 <picture>
-                  <img src={require("../image/images/light/light1.jpg")} className="img-fluid"/>
+                  <img src={require("../image/images/light/light1.jpg")} className={m.imgFluid} />
                 </picture>
               </div>
               <div className="col-12 col-md-6 mt-4 mt-md-0">
                 <picture>
-                  <img src={require("../image/images/light/light2.jpg")} className="img-fluid"/>
+                  <img src={require("../image/images/light/light2.jpg")} className={m.imgFluid} />
                 </picture>
               </div>
             </div>
@@ -346,7 +364,7 @@ const MainPage = ({ t, setOnFooter }) => {
                     (5% хімічних засобів).
                   </p>
                   <picture className="d-block my-4">
-                    <img src={require("../image/images/eqipment/equpment1.jpg")} className="img-fluid"/>
+                    <img src={require("../image/images/eqipment/equpment1.jpg")} className={m.imgFluid}/>
                   </picture>
                 </div>
                 <div className="row mt-4 mb-5">
@@ -360,19 +378,19 @@ const MainPage = ({ t, setOnFooter }) => {
                   </div>
                   <div className="col-12 col-md-4">
                     <picture>
-                      <img src={require("../image/images/eqipment/seco.jpg")} className="img-fluid"/>
+                      <img src={require("../image/images/eqipment/seco.jpg")} className={m.imgFluid} />
                     </picture>
                   </div>
                   <div className="col-12 col-md-4 mt-4 mt-md-0">
                     <div className="row">
                       <div className="col-12">
                         <picture>
-                          <img src={require("../image/images/eqipment/eqipment3.jpg")} className="img-fluid"/>
+                          <img src={require("../image/images/eqipment/eqipment3.jpg")} className={m.imgFluid} />
                         </picture>
                       </div>
                       <div className="col-12 mt-5">
                         <picture>
-                          <img src={require("../image/images/eqipment/equipment3.jpg")} className="img-fluid"/>
+                          <img src={require("../image/images/eqipment/equipment3.jpg")} className={m.imgFluid} />
                         </picture>
                       </div>
                     </div>
@@ -391,17 +409,17 @@ const MainPage = ({ t, setOnFooter }) => {
             </div>
             <div className="col-12 col-md-8">
               <picture>
-                <img src={require("../image/images/electric/electricbox.jpg")} className="img-fluid" />
+                <img src={require("../image/images/electric/electricbox.jpg")} className={m.imgFluid} />
               </picture>
             </div>
             <div className="offset-md-4 col-12 col-md-4">
               <picture className="d-block mt-4 mb-5">
-                <img src={require("../image/images/electric/electrik3.jpg")} className="img-fluid" />
+                <img src={require("../image/images/electric/electrik3.jpg")} className={m.imgFluid} />
               </picture>
             </div>
             <div className="col-12 col-md-4">
               <picture className="d-block mt-4 mb-5">
-                <img src={require("../image/images/electric/electric.jpg")} className="img-fluid" />
+                <img src={require("../image/images/electric/electric.jpg")} className={m.imgFluid} />
               </picture>
             </div>
           </div>
@@ -495,7 +513,7 @@ const MainPage = ({ t, setOnFooter }) => {
             </div>
             <div className="col-12 col-md-6">
               <picture className="d-block mt-4 mb-5">
-                <img src={require("../image/images/terminal/1.jpg")} className="img-fluid" />
+                <img src={require("../image/images/terminal/1.jpg")} className={m.imgFluid} />
               </picture>
             </div>
           </div>
@@ -503,7 +521,7 @@ const MainPage = ({ t, setOnFooter }) => {
 
       <div className="col-12">
         <picture className="d-block mt-4 mb-5">
-          <img src={require("../image/images/terminal/terminal.jpg")} className="img-fluid" />
+          <img src={require("../image/images/terminal/terminal.jpg")} className={m.imgFluid} />
         </picture>
       </div>
       <div className="col-10 col-md-6 col-lg-5 my-4">
@@ -624,7 +642,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 </div>
                 <div className="col-12 col-md-6">
                   <picture className="d-block mt-4 mb-5">
-                    <img src={require("../image/images/vacuum-cleaner/vacuumcliner.jpg")} className="img-fluid" />
+                    <img src={require("../image/images/vacuum-cleaner/vacuumcliner.jpg")} className={m.imgFluid} />
                   </picture>
                 </div>
               </div>
@@ -707,31 +725,31 @@ const MainPage = ({ t, setOnFooter }) => {
 
       <div className="col-12 mt-7">
         <picture className="d-block mt-4 mb-3">
-          <img src={require("../image/images/benefits/roof.jpg")} className="img-fluid" />
+          <img src={require("../image/images/benefits/roof.jpg")} className={m.imgFluid} />
         </picture>
       </div>
 
       <div className="row my-5">
         <div className="col-12 col-md-4">
           <picture>
-            <img src={require("../image/images/benefits/vacyumcliner.jpg")} className="img-fluid" />
+            <img src={require("../image/images/benefits/vacyumcliner.jpg")} className={m.imgFluid} />
           </picture>
         </div>
         <div className="col-12 col-md-4 my-4 my-md-0">
           <picture>
-            <img src={require("../image/images/benefits/cleantracs.jpg")} className="img-fluid" />
+            <img src={require("../image/images/benefits/cleantracs.jpg")} className={m.imgFluid} />
           </picture>
         </div>
         <div className="col-12 col-md-4">
           <picture>
-            <img src={require("../image/images/benefits/service.jpg")} className="img-fluid" />
+            <img src={require("../image/images/benefits/service.jpg")} className={m.imgFluid} />
           </picture>
         </div>
       </div>
 
       <div className="col-12 mt-3 mb-5">
         <picture>
-          <img src={require("../image/images/benefits/benefit2.jpg")} className="img-fluid" />
+          <img src={require("../image/images/benefits/benefit2.jpg")} className={m.imgFluid} />
         </picture>
       </div>
       <div className="col-12 mt-10 mb-7">
@@ -775,7 +793,7 @@ const MainPage = ({ t, setOnFooter }) => {
         </div>
         <div className="row mt-10">
           <div className="text-center text-md-start col-6 offset-3 offset-md-0 col-md-2">
-            <img src={require("../image/images/main/samwash_logo.png")} className="img-fluid" />
+            <img src={require("../image/images/main/samwash_logo.png")} className={m.imgFluid} />
           </div>
           <div className="col-12 offset-md-2 col-md-4 text-center mt-3">
             <a href="tel:+380505923772" className="cwhite"><b>+38 (050) 592 37 72</b></a>

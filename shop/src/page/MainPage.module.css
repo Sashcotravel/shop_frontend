@@ -58,7 +58,13 @@ body {
     h3 {
         font-size: 2rem;
     }
+}
 
+.divCov{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 h1, h2, h3, h4 {
@@ -81,31 +87,31 @@ a {
 .cwhite {
     color: #ffffff;
 }
-input[type=text] {
-    border: none;
-    border-bottom: 2px solid #eaebf0;
-    color: #ffffff;
-    background-color: #212121;
-    width: 100%;
-}
-input[type=text]:focus {
-    color: #ffffff;
-    background-color: #212121;
-}
-input[type=text]:active {
-    color: #ffffff;
-    background-color: #212121;
-}
-button {
-    background-color: #ef0b0c;
-    color: #ffffff;
-    border: none;
-    width: 100%;
-}
-footer {
-    background-color: #212121;
-    padding: 10% 0 2% 0;
-}
+/*input[type=text] {*/
+/*    border: none;*/
+/*    border-bottom: 2px solid #eaebf0;*/
+/*    color: #ffffff;*/
+/*    background-color: #212121;*/
+/*    width: 100%;*/
+/*}*/
+/*input[type=text]:focus {*/
+/*    color: #ffffff;*/
+/*    background-color: #212121;*/
+/*}*/
+/*input[type=text]:active {*/
+/*    color: #ffffff;*/
+/*    background-color: #212121;*/
+/*}*/
+/*button {*/
+/*    background-color: #ef0b0c;*/
+/*    color: #ffffff;*/
+/*    border: none;*/
+/*    width: 100%;*/
+/*}*/
+/*footer {*/
+/*    background-color: #212121;*/
+/*    padding: 10% 0 2% 0;*/
+/*}*/
 
 .tomain {
     background-color: #ef0b0c;
@@ -131,4 +137,23 @@ footer {
 
 .mb5{
     margin-bottom: 5px;
+}
+
+.imgFluid{
+    max-width: 100%;
+    height: auto;
+}
+
+.divCov{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: auto;
+}
+
+@media screen and (max-width: 767px){
+    .divCov{
+        flex-wrap: wrap;
+    }
 }
