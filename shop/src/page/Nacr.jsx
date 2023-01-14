@@ -171,13 +171,13 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
           <div className={s.boxOne}>
             <figure>
               <div style={{ height: "315px" }}>
-                {/*<img src={require("../image/Lutsk.jpg")} className={"base"} id="img6" />*/}
+                {/*<img src={require("../image2/coverSMART.jpg")} className={"base"} id="img6" />*/}
                 <img src={(`/static/media/${data[23].src}.${data[23].src2}`)} className={"base"} id="img6" />
                 {size(6)}
               </div>
             </figure>
             <h5 className={s.itemName}>{data[23].nameOfGoods}</h5>
-            <p className={s.itemDesc}>Desc</p>
+            <p className={s.itemDesc}></p>
             <div>
               <input className={data[23].size > 0 ? s.check2 : s.check} checked={data[23].checked}
                      type="radio" name="pina" title={data[23].nameOfGoods} onChange={clickNacr} />
@@ -197,7 +197,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
               </div>
             </figure>
             <h5 className={s.itemName}>{data[24].nameOfGoods}</h5>
-            <p className={s.itemDesc}>Desc</p>
+            <p className={s.itemDesc}></p>
             <div>
               <input className={data[24].size > 0 ? s.check2 : s.check} checked={data[24].checked}
                      type="radio" name="pina" title={data[24].nameOfGoods} onChange={clickNacr} />
@@ -211,13 +211,13 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
           <div className={s.boxOne}>
             <figure>
               <div style={{ height: "315px" }}>
-                {/*<img src={require("../image/pop.jpg")} className={"base"} id="img8" />*/}
+                {/*<img src={require("../image2/coverMARCO1.jpg")} className={"base"} id="img8" />*/}
                 <img src={(`/static/media/${data[25].src}.${data[25].src2}`)} className={"base"} id="img8" />
                 {size(8)}
               </div>
             </figure>
             <h5 className={s.itemName}>{data[25].nameOfGoods}</h5>
-            <p className={s.itemDesc}>Desc</p>
+            <p className={s.itemDesc}></p>
             <div>
               <input className={data[25].size > 0 ? s.check2 : s.check} checked={data[25].checked}
                      type="radio" name="pina" title={data[25].nameOfGoods} onChange={clickNacr} />
@@ -231,13 +231,13 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
           <div className={s.boxOne}>
             <figure>
               <div style={{ height: "315px" }}>
-                {/*<img src={require("../image/Rogatyn.jpg")} className={"base"} id="img9" />*/}
+                {/*<img src={require("../image2/coverMARCO.jpg")} className={"base"} id="img9" />*/}
                 <img src={(`/static/media/${data[26].src}.${data[26].src2}`)} className={"base"} id="img9" />
                 {size(9)}
               </div>
             </figure>
             <h5 className={s.itemName}>{data[26].nameOfGoods}</h5>
-            <p className={s.itemDesc}>Desc</p>
+            <p className={s.itemDesc}></p>
             <div>
               <input className={data[26].size > 0 ? s.check2 : s.check} checked={data[26].checked}
                      type="radio" name="pina" title={data[26].nameOfGoods} onChange={clickNacr} />
@@ -251,13 +251,13 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
           <div className={s.boxOne}>
             <figure>
               <div style={{ height: "315px" }}>
-                {/*<img src={require("../image/sam4.jpg")} className={"base"} id="img10" />*/}
+                {/*<img src={require("../image2/coverMARCHELLO.jpg")} className={"base"} id="img10" />*/}
                 <img src={(`/static/media/${data[27].src}.${data[27].src2}`)} className={"base"} id="img10" />
                 {size(10)}
               </div>
             </figure>
             <h5 className={s.itemName}>{data[27].nameOfGoods}</h5>
-            <p className={s.itemDesc}>Desc</p>
+            <p className={s.itemDesc}></p>
             <div>
               <input className={data[27].size > 0 ? s.check2 : s.check} checked={data[27].checked}
                      type="radio" name="pina" title={data[27].nameOfGoods} onChange={clickNacr} />
@@ -273,13 +273,13 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
           <div className={s.boxOne}>
             <figure>
               <div style={{ height: "315px" }}>
-                {/*<img src={require("../image/Striy_2(2).jpg")} className={"base"} id="img60" />*/}
+                {/*<img src={require("../image2/coverMARCHELLight.jpg")} className={"base"} id="img60" />*/}
                 <img src={(`/static/media/${data[28].src}.${data[28].src2}`)} className={"base"} id="img60" />
                 {size(60)}
               </div>
             </figure>
             <h5 className={s.itemName}>{data[28].nameOfGoods}</h5>
-            <p className={s.itemDesc}>Desc</p>
+            <p className={s.itemDesc}></p>
             <div>
               <input className={data[28].size > 0 ? s.check2 : s.check} checked={data[28].checked}
                      type="radio" name="pina" title={data[28].nameOfGoods} onChange={clickNacr} />
@@ -296,13 +296,13 @@ const Nacr = ({ t, data, userOrder, setTotal, total }) => {
             {/*</div>*/}
             <figure>
               <div style={{ height: "315px" }}>
-                {/*<img src={require("../image/vynnytsya2.jpg")} className={"base"} id="img11" />*/}
+                {/*<img src={require("../image2/karkasUfo.jpg")} className={"base"} id="img11" />*/}
                 <img src={(`/static/media/${data[29].src}.${data[29].src2}`)} className={"base"} id="img11" />
                 {size(11)}
               </div>
             </figure>
             <h5 className={s.itemName}>{data[29].nameOfGoods}</h5>
-            <p className={s.itemDesc}>Desc</p>
+            <p className={s.itemDesc}></p>
             <div>
               <input className={data[29].size > 0 ? s.check2 : s.check} checked={data[29].checked}
                      type="radio" name="pina" title={data[29].nameOfGoods} onChange={clickNacr} />

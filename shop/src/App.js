@@ -46,7 +46,7 @@ const App = () => {
   const navigate = useNavigate();
 
   const noScroll = () => {
-    let con = document.getElementById("lightblue");
+    let con = document.getElementById("lightblue2");
     con.style.visibility = "visible";
   };
 
@@ -97,9 +97,9 @@ const App = () => {
       const d = await dispatch(fetchPay(obj));
       let link = "http://localhost:3000/your-order/" + d.payload;
       console.log(link);
-      // dispatch(fetchMail(obj));
-      // dispatch(fetchMailDima(obj));
-      // dispatch(fetchMailUser(obj));
+      dispatch(fetchMail(obj));
+      dispatch(fetchMailDima(obj));
+      dispatch(fetchMailUser(obj));
 
       Users.forEach(user => user.size = 0);
       Users.forEach(user => user.total = user.prise);
@@ -109,7 +109,7 @@ const App = () => {
   };
 
   const hiddeItem = () => {
-    let con = document.getElementById("lightblue");
+    let con = document.getElementById("lightblue2");
     con.style.visibility = "hidden";
   };
 
@@ -125,15 +125,15 @@ const App = () => {
     // console.log(window.location);
     // console.log(window.location.pathname);
     // console.log(`http://${window.location.host}${window.location.pathname}/en`);
-    if (language === "en") {
-      if(window.location.pathname === '/'){
-        navigate('/en')
-      } else {
-        navigate(`${window.location.pathname}/en`);
-      }
-    } else {
-      navigate(`${window.location.pathname.slice(0, window.location.pathname.length -3)}`);
-    }
+    // if (language === "en") {
+    //   if(window.location.pathname === '/'){
+    //     navigate('/en')
+    //   } else {
+    //     navigate(`${window.location.pathname}/en`);
+    //   }
+    // } else {
+    //   navigate(`${window.location.pathname.slice(0, window.location.pathname.length -3)}`);
+    // }
   };
 
   return (
@@ -195,7 +195,7 @@ const App = () => {
             <Route path="/your-order/:id/en" element={<YourOrder setOnFooter={setOnFooter} />} />
           </Routes>
 
-          <div id="lightblue" className={s.orderBlock}>
+          <div id="lightblue2" className={s.orderBlock}>
             <div className={s.userdata}>
               <div className={s.ix}>
                 <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}

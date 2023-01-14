@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './style.css'
 import s from "../component/Home.module.css";
 import { fetchPay } from "../API/post";
 import { Users } from "../users";
