@@ -87,7 +87,7 @@ const App = () => {
 
   const useSubmit = async () => {
     if (total > 0) {
-      let con = document.getElementById("lightblue");
+      let con = document.getElementById("lightblue2");
       con.style.visibility = "hidden";
       let obj = {
         total: total,
@@ -171,7 +171,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
             <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
-            <Route path="/obl/" element={<Obl t={t} data={Users} userOrder={userOrder}
+            <Route path="/obl" element={<Obl t={t} data={Users} userOrder={userOrder}
                                           setTotal={setTotal} total={total} />} />
             <Route path="/nacr" element={<Nacr t={t} data={Users} userOrder={userOrder}
                                                setTotal={setTotal} total={total} />} />
