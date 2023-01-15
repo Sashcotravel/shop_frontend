@@ -13,13 +13,16 @@ export const Header = ({ t, changeLanguage, lang }) => {
     id[0].style.visibility = "hidden";
     const id2 = document.getElementsByClassName("menu__box");
     id2[0].style.visibility = "visible";
+    console.log(id, id2);
   };
 
   const click2 = () => {
-    const id = document.getElementsByClassName("menu__btn");
-    id[0].style.visibility = "visible";
-    const id2 = document.getElementsByClassName("menu__box");
-    id2[0].style.visibility = "hidden";
+    // const id = document.getElementsByClassName("menu__btn");
+    // id[0].style.visibility = "visible";
+    // const id2 = document.getElementsByClassName("menu__box");
+    // id2[0].style.visibility = "hidden";
+
+    // console.log(id, id2);
   };
 
 
@@ -50,17 +53,17 @@ export const Header = ({ t, changeLanguage, lang }) => {
             </div>
             <div className="hamburger-menu" style={{ zIndex: "1" }}>
               <input id="menu__toggle" type="checkbox" />
-              <label className="menu__btn" htmlFor="menu__toggle" onClick={click}>
+              <label className="menu__btn" htmlFor="menu__toggle">
                 <span></span>
               </label>
               <span onClick={click2}>
             <ul className="menu__box">
-              <li><NavLink className="menu__item" target="_blank" to="/">{t("mainPage")}</NavLink></li>
-              <li><NavLink className="menu__item" target="_blank"
+              <li><NavLink className="menu__item" to="/">{t("mainPage")}</NavLink></li>
+              <li><NavLink className="menu__item"
                            to="/obl">{t("aboutUs")}</NavLink></li>
-              <li><a className="menu__item" target="_blank" href="#">{t("team")}</a></li>
-              <li><a className="menu__item" target="_blank" href="#">{t("blog")}</a></li>
-              <li><a className="menu__item" target="_blank" href="#">{t("contacts")}</a></li>
+              <li><a className="menu__item" href="#">{t("team")}</a></li>
+              <li><a className="menu__item" href="#">{t("blog")}</a></li>
+              <li><a className="menu__item" href="#">{t("contacts")}</a></li>
             </ul>
             </span>
             </div>
