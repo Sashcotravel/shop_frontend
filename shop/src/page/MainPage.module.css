@@ -140,7 +140,7 @@ a {
 }
 
 .imgFluid{
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
 }
 
@@ -150,10 +150,65 @@ a {
     align-items: center;
     flex-wrap: nowrap;
     margin: auto;
+    padding: 20px;
+}
+
+.imgSt{
+    width: 45%;
+    margin: 0 20px 20px;
+}
+
+.butZam{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    background-color: #fb0808;
+    margin: 30px auto;
+    font-size: 17px;
+    font-family: 'ManropeSemiBold';
+}
+
+.p{
+    margin: 50px auto;
+    display: block;
+    width: 80%;
+}
+
+.imdiv2{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.imdiv{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.textdiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.ul1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+    margin: 0 0 20px 20px;
 }
 
 @media screen and (max-width: 767px){
     .divCov{
         flex-wrap: wrap;
+    }
+    .imgSt{
+        width: 90%;
     }
 }

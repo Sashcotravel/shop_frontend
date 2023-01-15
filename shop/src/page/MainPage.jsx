@@ -99,7 +99,7 @@ const MainPage = ({ t, setOnFooter }) => {
         </div>
         {/*<div className="col-12 col-md-4">*/}
         <div>
-          <p>
+          <p style={{width: '80%', margin: '40px auto'}}>
             При використанні приямків H подібної форми вміст шламу (піску) складає 7 м. куб. і займає площу 4,5 м. кв.
             Це дозволяє зекономити до 20 000 грн в рік. Технологічне приміщення займає площу 14,4 м. кв, що дає
             можливість розмістити ємкості запасу води від 10 до 15 м. куб. Загальна площа технологічного приміщення
@@ -115,25 +115,27 @@ const MainPage = ({ t, setOnFooter }) => {
           {/*<div className="row my-5">*/}
           <div>
             {/*<div className="col-12 col-md-6">*/}
-            <div>
-              <picture>
-                <img src={require("../image/images/building/5.jpg")} className={m.imgFluid} />
-              </picture>
-            </div>
-            {/*<div className="col-12 col-md-6 mt-5 mt-md-0">*/}
-            <div>
-              <picture>
-                <img src={require("../image/images/building/7.jpg")} className={m.imgFluid} />
-              </picture>
-            </div>
           </div>
         </div>
 
         {/*<div className="col-12 col-md-4">*/}
+        <div className={m.imdiv2}>
         <div>
           <picture>
-            <img src={require("../image/images/building/9.jpg")} className={m.imgFluid} />
+            <img src={require("../image/images/building/9.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
           </picture>
+        </div>
+        <div>
+          <picture>
+            <img src={require("../image/images/building/5.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
+          </picture>
+        </div>
+        {/*<div className="col-12 col-md-6 mt-5 mt-md-0">*/}
+        <div>
+          <picture>
+            <img src={require("../image/images/building/7.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
+          </picture>
+        </div>
         </div>
         <div className="col-12 col-md-8 mt-5 mt-md-0">
           <picture>
@@ -146,13 +148,13 @@ const MainPage = ({ t, setOnFooter }) => {
       <div className="row mt-10">
 
         <div className="col mt-5 mt-md-0">
-          <h2 className="d-block">Навіс / накриття автомийки <br/>самообслуговування SamWash</h2>
+          <h2 style={{margin: '35px'}}>Навіс / накриття автомийки <br/>самообслуговування SamWash</h2>
         </div>
         <div className="row">
           <div className="col-12 my-3 my-md-5"><hr/></div>
-
-          <div className="col-12 col-md-8 offset-md-4">
-            <p>
+          <div className={m.p}>
+          <div>
+            <p style={{margin: '0 0 20px 0'}}>
               Обрамлення мийки / каркасу виготовлене методом вальцювання із композитного матеріалу товщиною 4 мм фірми
               Alubond.
               Перегородки між постами можуть бути виконані із гартованого скла товщиною 10 мм та нанесеним на ньому
@@ -171,8 +173,8 @@ const MainPage = ({ t, setOnFooter }) => {
             </p>
           </div>
         </div>
-        <div className="row orderclick">
-          <div className="col-12 col-md-4 mt-5">
+      <div className={m.divCov}>
+        <div className={m.imgSt}>
             <h3>Ufo</h3>
             <h4 className="mb-4">Ціна ~13 500 € за 1 пост</h4>
             <p>Унікальний власний дизайн. Дана конструкція виконана з нержавіючого круглого каркасу,
@@ -181,17 +183,20 @@ const MainPage = ({ t, setOnFooter }) => {
               В конструкції накриття спроектовано відвід дощових стоків в антивандальному виконанні.
             </p>
           </div>
-          <div className="col-12 col-md-8 mt-5">
+          {/*<div className="col-12 col-md-8 mt-5">*/}
+          <div style={{width: '90%'}}>
             <picture>
               <img src={require("../image/images/designs/ufo.jpg")}  className={m.imgFluid} />
             </picture>
           </div>
-          <div className="col-12 my-1 my-md-5"><hr/></div>
+          </div>
+          {/*<div className="col-12 my-1 my-md-5"><hr/></div>*/}
+          <div><hr/></div>
 
           {/*<div className="col-12 col-md-4 mt-3 mt-md-5">*/}
 
             <div className={m.divCov}>
-              <div style={{width: '45%'}}>
+              <div className={m.imgSt}>
                 <h3>Marchello Light </h3>
                 <h4 className="mb-4">Ціна ~14 000 € за 1 пост</h4>
                 <h3>Marchello </h3>
@@ -218,7 +223,8 @@ const MainPage = ({ t, setOnFooter }) => {
 
           <div className="col-12 my-1 my-md-5"><hr/></div>
 
-          <div className="col-12 col-md-4 mt-3 mt-md-5">
+          <div className={m.divCov}>
+            <div className={m.imgSt}>
             <h3>Marko Glass</h3>
             <h4 className="mb-4">Ціна ~8 200 € за 1 пост</h4>
             <p>
@@ -231,14 +237,16 @@ const MainPage = ({ t, setOnFooter }) => {
               В конструкції накриття спроектовано відвід дощових стоків в антивандальному виконанні.
             </p>
           </div>
-          <div className="col-12 col-md-8 mt-5">
+          <div style={{width: '90%'}}>
             <picture>
               <img src={require("../image/images/designs/marcoglas.png")} className={m.imgFluid} />
             </picture>
           </div>
+            </div>
           <div className="col-12 my-1 my-md-5"><hr /></div>
 
-          <div className="col-12 col-md-4 mt-3 mt-md-5">
+          <div className={m.divCov}>
+            <div className={m.imgSt}>
             <h3>Marco Banner</h3>
             <h4 className="mb-4">Ціна ~7 700 € за 1 пост</h4>
             <p>
@@ -252,14 +260,16 @@ const MainPage = ({ t, setOnFooter }) => {
               В конструкції накриття спроектовано відвід дощових стоків в антивандальному виконанні.
             </p>
           </div>
-          <div className="col-12 col-md-8 mt-5">
+          <div style={{width: '90%'}}>
             <picture>
               <img src={require("../image/images/designs/marcobaner.jpg")} className={m.imgFluid} />
             </picture>
           </div>
+          </div>
           <div className="col-12 my-1 my-md-5"><hr/></div>
 
-          <div className="col-12 col-md-4 mt-3 mt-md-5">
+          <div className={m.divCov}>
+            <div className={m.imgSt}>
             <h3>Pixel</h3>
             <h4 className="mb-4">Ціна ~7 200 € за 1 пост</h4>
             <p>
@@ -272,14 +282,16 @@ const MainPage = ({ t, setOnFooter }) => {
               В конструкції накриття спроектовано відвід дощових стоків в антивандальному виконанні.
             </p>
           </div>
-          <div className="col-12 col-md-8 mt-5">
+          <div style={{width: '90%'}}>
             <picture>
               <img src={require("../image/images/designs/pixel.jpg")} className={m.imgFluid} />
             </picture>
           </div>
+          </div>
           <div className="col-12 my-1 my-md-5"><hr/></div>
 
-          <div className="col-12 col-md-4 mt-3 mt-md-5">
+          <div className={m.divCov}>
+            <div className={m.imgSt}>
             <h3>Smart</h3>
             <h4 className="mb-4">Ціна ~6 200 € за 1 пост</h4>
             <p>
@@ -292,16 +304,17 @@ const MainPage = ({ t, setOnFooter }) => {
               В конструкції накриття спроектовано відвід дощових стоків в антивандальному виконанні.
             </p>
           </div>
-          <div className="col-12 col-md-8 mt-5">
+          <div style={{width: '90%'}}>
             <picture>
               <img src={require("../image/images/designs/smart.jpg")} className={m.imgFluid} />
             </picture>
           </div>
+          </div>
 
           <div className="col-10 col-md-5 mt-5 offset-mb-0">
-            <a href="#order" className="d-block center-block text-center">  // sho tyt
-              <button className="py-3 h4" onClick={noScroll}>Безкоштовна консультація</button>
-            </a>
+            {/*<a href="#order" className="d-block center-block text-center">  */}
+              <button className={m.butZam} onClick={noScroll}>Безкоштовна консультація</button>
+            {/*</a>*/}
           </div>
 
           <div className="col-12 my-5"><hr/></div>
@@ -309,38 +322,54 @@ const MainPage = ({ t, setOnFooter }) => {
         </div>
 
         <div className="row">
-          <div className="col-12 col-md-8 offset-md-4">
-            <b className="d-block mb-5">Освітлення мийки забезпечується лінійними LED світильниками фірми Maxus довжиною
+          {/*<div className="col-12 col-md-8 offset-md-4">*/}
+            <b className={m.p}>Освітлення мийки забезпечується лінійними LED світильниками фірми Maxus довжиною
               1200 мм.
               5 штук на пост та ступенем захисту ІР65 включення яких контролюється контролером Schneider.
             </b>
-            <picture className="mt-4 d-block">
-              <img src={require("../image/images/light/light.jpg")} className={m.imgFluid} />
-            </picture>
-          </div>
-          <div className="col-12 col-md-8 offset-md-4">
-            <div className="row mt-5">
-              <div className="col-12 col-md-6">
-                <picture>
-                  <img src={require("../image/images/light/light1.jpg")} className={m.imgFluid} />
-                </picture>
-              </div>
-              <div className="col-12 col-md-6 mt-4 mt-md-0">
-                <picture>
-                  <img src={require("../image/images/light/light2.jpg")} className={m.imgFluid} />
-                </picture>
-              </div>
+          <div>
+            <div>
+              <picture className="mt-4 d-block">
+                <img src={require("../image/images/light/light.jpg")}  className={m.imgFluid} />
+              </picture>
             </div>
+            <div className={m.imdiv}>
+                <div className="col-12 col-md-6">
+                  <picture>
+                    <img src={require("../image/images/light/light1.jpg")} style={{margin: '20px 0'}}  className={m.imgFluid} />
+                  </picture>
+                </div>
+                <div className="col-12 col-md-6 mt-4 mt-md-0">
+                  <picture>
+                    <img src={require("../image/images/light/light2.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
+                  </picture>
+                </div>
+          {/*  <picture className="mt-4 d-block">*/}
+          {/*    <img src={require("../image/images/light/light.jpg")} className={m.imgFluid} />*/}
+          {/*  </picture>*/}
+          {/*</div>*/}
+          {/*<div className="col-12 col-md-8 offset-md-4">*/}
+          {/*  <div className="row mt-5">*/}
+          {/*    <div className="col-12 col-md-6">*/}
+          {/*      <picture>*/}
+          {/*        <img src={require("../image/images/light/light1.jpg")} className={m.imgFluid} />*/}
+          {/*      </picture>*/}
+          {/*    </div>*/}
+          {/*    <div className="col-12 col-md-6 mt-4 mt-md-0">*/}
+          {/*      <picture>*/}
+          {/*        <img src={require("../image/images/light/light2.jpg")} className={m.imgFluid} />*/}
+          {/*      </picture>*/}
+              </div>
           </div>
         </div>
 
         <div className="col">
-          <h2 className="d-block mb-5 mt-5 mt-md-0">Обладнання автомийки <br/>самообслуговування SamWash</h2>
+          <h2 className="d-block mb-5 mt-5 mt-md-0" style={{margin: '30px'}}>Обладнання автомийки <br/>самообслуговування SamWash</h2>
           <hr className="d-block my-3 my-md-5"/>
             <div className="row">
-              <div className="col-12 col-md-8 offset-md-4">
+              <div className={m.textdiv}>
                 <h3 className="h3">Усереднена ціна обладнання одного поста</h3>
-                <b className="display-3 mt-4 mb-4 d-block">9 800€</b>
+                <b className="display-3 mt-4 mb-4 d-block" style={{margin: '20px'}}>9 800€</b>
                 <h3 className="h3">Комплектуючі: Італія, Німеччина, Японія, Франція, США.</h3>
               </div>
             </div>
@@ -348,7 +377,7 @@ const MainPage = ({ t, setOnFooter }) => {
 
               <div className="row mt-4 mt-md-5">
                 <div className="col-12 col-md-8 offset-md-4 mt-4">
-                  <p>
+                  <p style={{margin: '40px'}}>
                     Технологічне обладнання зібрано на оцинкованій рамі і займає площу 2 м. кв. Розміри: ширина 0.8,
                     довжина 2,5 м, висота 2 м.
                     На рамі кріпиться двох колонна система пом'якшення води з клапаном керування Clack, система
@@ -356,7 +385,7 @@ const MainPage = ({ t, setOnFooter }) => {
                     використанням води (економить 10% води). Насоси високого тиску Interpump з регульованим тиском
                     до 250 бар.
                   </p>
-                  <p>
+                  <p style={{margin: '40px'}}>
                     Електродвигуни 2.2, 3.0, 4.0, 5.5, 7.5 кВт,
                     які забезпечують тиск від 120 до 250 бар. Частотні перетворювачі Schneider, які забезпечують плавний
                     пуск і економлять до 15% електроенергії.
@@ -369,7 +398,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 </div>
                 <div className="row mt-4 mb-5">
                   <div className="col-12 col-md-4">
-                    <p>
+                    <p style={{margin: '40px'}}>
                       Електро та пневмо клапани Італійської фірми Aigner дозволяють переключати високий тиск до 250 бар
                       (дозволяє уникнути монтажу додаткового насосу та електродвигуна). З'єднані елементи мийки виконані
                       з поліпропіленових та поліамідних труб та фітингів фірми Aquatherm (гарантійний термін 50 років).
@@ -381,27 +410,25 @@ const MainPage = ({ t, setOnFooter }) => {
                       <img src={require("../image/images/eqipment/seco.jpg")} className={m.imgFluid} />
                     </picture>
                   </div>
-                  <div className="col-12 col-md-4 mt-4 mt-md-0">
-                    <div className="row">
+                  <div className={m.imdiv2}>
                       <div className="col-12">
                         <picture>
-                          <img src={require("../image/images/eqipment/eqipment3.jpg")} className={m.imgFluid} />
+                          <img src={require("../image/images/eqipment/eqipment3.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
                         </picture>
                       </div>
                       <div className="col-12 mt-5">
                         <picture>
-                          <img src={require("../image/images/eqipment/equipment3.jpg")} className={m.imgFluid} />
+                          <img src={require("../image/images/eqipment/equipment3.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
                         </picture>
                       </div>
-                    </div>
                   </div>
                 </div>
               </div>
 
-          <h3 className="d-block mt-10 mb-7">Електрична шафа автомийки <br/>самообслуговування SamWash</h3>
+          <h3 className="d-block mt-10 mb-7" style={{margin: '30px'}}>Електрична шафа автомийки <br/>самообслуговування SamWash</h3>
           <div className="row">
             <div className="col-12 col-md-4">
-              <p>
+              <p style={{margin: '30px'}}>
                 Управління мийки здійснюється за допомогою промислового контроллера Schneider 241 серії, який розміщений
                 в електричній шафі з кулером. Контроллер дозволяє економити до 20% води, електроенергії та хімічних
                 засобів для миття автомобіля. Всі елементи електронного управління виключно фірми Schneider.
@@ -412,15 +439,17 @@ const MainPage = ({ t, setOnFooter }) => {
                 <img src={require("../image/images/electric/electricbox.jpg")} className={m.imgFluid} />
               </picture>
             </div>
-            <div className="offset-md-4 col-12 col-md-4">
-              <picture className="d-block mt-4 mb-5">
-                <img src={require("../image/images/electric/electrik3.jpg")} className={m.imgFluid} />
-              </picture>
-            </div>
-            <div className="col-12 col-md-4">
-              <picture className="d-block mt-4 mb-5">
-                <img src={require("../image/images/electric/electric.jpg")} className={m.imgFluid} />
-              </picture>
+            <div className={m.imdiv2}>
+              <div className="offset-md-4 col-12 col-md-4">
+                <picture className="d-block mt-4 mb-5">
+                  <img src={require("../image/images/electric/electrik3.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
+                </picture>
+              </div>
+              <div className="col-12 col-md-4">
+                <picture className="d-block mt-4 mb-5">
+                  <img src={require("../image/images/electric/electric.jpg")} style={{margin: '20px 0'}} className={m.imgFluid} />
+                </picture>
+              </div>
             </div>
           </div>
         </div>
@@ -428,12 +457,12 @@ const MainPage = ({ t, setOnFooter }) => {
 
       <div className="row mt-10 orderclick">
         <div className="col">
-          <h2 className="d-block mb-5 mt-5 mt-md-0">Платіжний термінал з сенсором <br/>компанії SamWash</h2>
+          <h2 className="d-block mb-5 mt-5 mt-md-0"  style={{margin: '30px'}}>Платіжний термінал з сенсором <br/>компанії SamWash</h2>
           <hr className="d-block my-3 my-md-5"/>
             <div className="row">
-              <div className="col-12 col-md-8 offset-md-4">
+              <div className={m.textdiv}>
                 <h3 className="h3">Ціна терміналу</h3>
-                <b className="display-3 mt-4 mb-4 d-block">6 700€</b>
+                <b className="display-3 mt-4 mb-4 d-block" style={{margin: '20px'}}>6 700€</b>
                 <h3 className="h3">
                   PayPass, купюри, пРРО, карти лояльності, видача жетонів / монет, оплата роботи поста, додаток на
                   Android та IOS.
@@ -444,11 +473,11 @@ const MainPage = ({ t, setOnFooter }) => {
         <hr className="d-block my-3 my-md-5"/>
           <div className="row">
             <div className="col-12 col-md-6 mt-4">
-              <p>
+              <p style={{margin: '20px'}}>
                 На платіжному терміналі розташований великий, зручний та
                 багатофункціональний сенсорний дисплей, на якому є такі функції:
               </p>
-              <ul>
+              <ul className={m.ul1}>
                 <li>
                   Поповнення карти лояльності
                 </li>
@@ -469,16 +498,16 @@ const MainPage = ({ t, setOnFooter }) => {
                 </li>
               </ul>
 
-              <p>
+              <p style={{margin: '20px'}}>
                 Корпус терміналу виконаний з нержавіючої сталі АІ 304.
                 Однією з вагомих переваг є промисловий контролер, який працює в парі з мийкою та
                 надає детальну інформацію про кількість виданих жетонів чи монет та
                 загальну інформацію про кількість транзакцій в режимі реального часу.
               </p>
-              <p>
+              <p style={{margin: '20px'}}>
                 Всі дані про використання терміналу знаходяться у додатку на телефоні Android, IOS та на сайті, а саме:
               </p>
-              <ul>
+              <ul className={m.ul1}>
                 <li>
                   Готівкові поповнення
                 </li>
@@ -492,10 +521,10 @@ const MainPage = ({ t, setOnFooter }) => {
                   Скільки карт лояльності та скільки бонусів нараховано та інше...
                 </li>
               </ul>
-              <h3 className="d-block mt-10 mb-7">
+              <h3 className="d-block mt-10 mb-7"  style={{margin: '20px'}}>
                 Рекомендації при покупці <br/> платіжного терміналу
               </h3>
-              <ul>
+              <ul className={m.ul1}>
                 <li>
                   Комплектуючі та програмне забезпечення з якими можуть взаємодіяти банки України
                 </li>
@@ -511,19 +540,19 @@ const MainPage = ({ t, setOnFooter }) => {
               </ul>
 
             </div>
-            <div className="col-12 col-md-6">
-              <picture className="d-block mt-4 mb-5">
-                <img src={require("../image/images/terminal/1.jpg")} className={m.imgFluid} />
-              </picture>
+            <div className={m.imdiv}>
+                <picture className={m.imgFluid} style={{margin: '10px', width: '45%'}}>
+                  <img src={require("../image/images/terminal/1.jpg")} style={{width: '100%'}} />
+                </picture>
+                <picture className={m.imgFluid} style={{width: '45%'}}>
+                  <img src={require("../image/images/terminal/terminal.jpg")} style={{width: '100%'}} />
+                </picture>
             </div>
+
           </div>
       </div>
 
-      <div className="col-12">
-        <picture className="d-block mt-4 mb-5">
-          <img src={require("../image/images/terminal/terminal.jpg")} className={m.imgFluid} />
-        </picture>
-      </div>
+
       <div className="col-10 col-md-6 col-lg-5 my-4">
         <a href="#order"> sho tyt
           <button onClick={noScroll} className="py-3 h4">Безкоштовна консультація</button>
