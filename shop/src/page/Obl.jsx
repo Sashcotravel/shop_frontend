@@ -265,7 +265,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
               <img style={{ width: "35px" }} src={image2} onClick={hidden} id="light2" />
             </span>
           {/*<img src={''} className="imageLarge" id="lightCol" />*/}
-          <iframe className="imageLarge" id="lightCol2" width="100%" height='100%' src="https://www.youtube.com/embed/wvo65hmKvtA"/>
+          <iframe className="imageLarge2" id="lightCol2" width="100%" height='100%' src="https://www.youtube.com/embed/wvo65hmKvtA"/>
         </div>
       </figure>
     </div>
@@ -489,8 +489,8 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
           <div className={s.boxOne}>
             <figure>
               <div style={{ height: "315px" }}>
-                {/*<img src={require("../image/Fura_1.jpg")} className={"base"} id="img24" />*/}
-                <img src={(`/static/media/${data[19].src}.${data[19].src2}`)} className={"base"} id="img24" />
+                <img src={require("../image2/termainal.jpg")} className={"base"} id="img24" />
+                {/*<img src={(`/static/media/${data[19].src}.${data[19].src2}`)} className={"base"} id="img24" />*/}
                 {size(24)}
               </div>
             </figure>
@@ -504,7 +504,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
           <div className={s.boxOne}>
             <figure>
               <div style={{ height: "315px" }}>
-                <img src={require("../image/Fura_3(2).jpg")} className={"base"} id="img25" />
+                <img src={require("../image2/termainal.jpg")} className={"base"} id="img25" />
                 {/*<img src={(`/static/media/${data[20].src}.${data[20].src2}`)} className={"base"} id="img25" />*/}
                 {size(25)}
               </div>

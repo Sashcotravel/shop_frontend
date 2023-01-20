@@ -19,6 +19,8 @@ import App2 from "./test/App2";
 import Build from "./page/build";
 import YourOrder from "./page/YourOrder";
 import MainPage from "./page/MainPage";
+import ListWash from "./component/ListWash";
+import OnePost from "./page/listwash/OnePost";
 
 
 let userOrder = [];
@@ -108,9 +110,9 @@ const App = () => {
     }
   };
 
-  const hiddeItem = () => {
-    let con = document.getElementById("lightblue2");
-    con.style.visibility = "hidden";
+  const hiddeItem = (e) => {
+      let con = document.getElementById("lightblue2");
+      con.style.visibility = "hidden";
   };
 
   let activeStyle = {
@@ -125,15 +127,15 @@ const App = () => {
     // console.log(window.location);
     // console.log(window.location.pathname);
     // console.log(`http://${window.location.host}${window.location.pathname}/en`);
-    // if (language === "en") {
-    //   if(window.location.pathname === '/'){
-    //     navigate('/en')
-    //   } else {
-    //     navigate(`${window.location.pathname}/en`);
-    //   }
-    // } else {
-    //   navigate(`${window.location.pathname.slice(0, window.location.pathname.length -3)}`);
-    // }
+    if (language === "en") {
+      if(window.location.pathname === '/'){
+        navigate('/en')
+      } else {
+        navigate(`${window.location.pathname}/en`);
+      }
+    } else {
+      navigate(`${window.location.pathname.slice(0, window.location.pathname.length -3)}`);
+    }
   };
 
   return (
@@ -153,7 +155,9 @@ const App = () => {
                   <h3 className={s.h3Title}>{t("title")}</h3>
                   <h6 className={s.h6Title}>{t("step")}:</h6>
                 </div>
-                <div className={s.divTitle}>
+                {
+                  lang == 'ua' ?
+                  <div className={s.divTitle}>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                            className={s.spanTitle + " " + s.title1} to="/obl">{t("equipment")}</NavLink>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
@@ -165,41 +169,67 @@ const App = () => {
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                            to="/doc">{t("documentation")}</NavLink>
                 </div>
+                :
+                    <div className={s.divTitle}>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
+                               className={s.spanTitle + " " + s.title1} to="/obl/en">{t("equipment")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/nacr/en">{t("cover")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/acses/en">{t("accessories")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/build/en">{t("construction")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/doc/en">{t("documentation")}</NavLink>
+                    </div>
+                }
               </>
           }
 
-          <Routes>
-            <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-            <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
-            <Route path="/obl" element={<Obl t={t} data={Users} userOrder={userOrder}
-                                          setTotal={setTotal} total={total} />} />
-            <Route path="/nacr" element={<Nacr t={t} data={Users} userOrder={userOrder}
-                                               setTotal={setTotal} total={total} />} />
-            <Route path="/acses" element={<Acses t={t} data={Users} userOrder={userOrder}
+          {
+            lang == 'ua' ?
+              <Routes>
+                <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
+                <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
+                <Route path="/obl" element={<Obl t={t} data={Users} userOrder={userOrder}
                                                  setTotal={setTotal} total={total} />} />
-            <Route path="/build" element={<Build t={t} data={Users} userOrder={userOrder}
-                                                 setTotal={setTotal} total={total} />} />
-            <Route path="/test" element={<App2 data={Users} />} />
-            <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
-            <Route path="/thanks/en" element={<Thanks setOnFooter={setOnFooter} />} />
-            <Route path="/obl/en" element={<Obl t={t} data={Users} userOrder={userOrder}
-                                          setTotal={setTotal} total={total} />} />
-            <Route path="/en" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-            <Route path="/nacr/en" element={<Nacr t={t} data={Users} userOrder={userOrder}
-                                               setTotal={setTotal} total={total} />} />
-            <Route path="/acses/en" element={<Acses t={t} data={Users} userOrder={userOrder}
-                                                 setTotal={setTotal} total={total} />} />
-            <Route path="/build/en" element={<Build t={t} data={Users} userOrder={userOrder}
-                                                 setTotal={setTotal} total={total} />} />
-            <Route path="/test/en" element={<App2 data={Users} />} />
-            <Route path="/your-order/:id/en" element={<YourOrder setOnFooter={setOnFooter} />} />
-          </Routes>
+                <Route path="/nacr" element={<Nacr t={t} data={Users} userOrder={userOrder}
+                                                   setTotal={setTotal} total={total} />} />
+                <Route path="/acses" element={<Acses t={t} data={Users} userOrder={userOrder}
+                                                     setTotal={setTotal} total={total} />} />
+                <Route path="/build" element={<Build t={t} data={Users} userOrder={userOrder}
+                                                     setTotal={setTotal} total={total} />} />
+                <Route path="/test" element={<App2 data={Users} />} />
+                <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
+                <Route path="/listWash/:id" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                <Route path="/listWash/all" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                {/*<Route path="/listWash/post/:id" element={<OnePost setOnFooter={setOnFooter} t={t} lang={lang} />} />*/}
+              </Routes>
+              :
+              <Routes>
+                <Route path="/en" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
+                <Route path="/thanks/en" element={<Thanks setOnFooter={setOnFooter} />} />
+                <Route path="/obl/en" element={<Obl t={t} data={Users} userOrder={userOrder}
+                                                    setTotal={setTotal} total={total} />} />
+                <Route path="/en" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
+                <Route path="/nacr/en" element={<Nacr t={t} data={Users} userOrder={userOrder}
+                                                      setTotal={setTotal} total={total} />} />
+                <Route path="/acses/en" element={<Acses t={t} data={Users} userOrder={userOrder}
+                                                        setTotal={setTotal} total={total} />} />
+                <Route path="/build/en" element={<Build t={t} data={Users} userOrder={userOrder}
+                                                        setTotal={setTotal} total={total} />} />
+                <Route path="/test/en" element={<App2 data={Users} />} />
+                <Route path="/your-order/:id/en" element={<YourOrder setOnFooter={setOnFooter} />} />
+                <Route path="/listWash/:id/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                <Route path="/listWash/all/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+              </Routes>
+          }
 
           <div id="lightblue2" className={s.orderBlock}>
             <div className={s.userdata}>
               <div className={s.ix}>
                 <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}
-                      onClick={hiddeItem}>&#10006;</span>
+                      onClick={hiddeItem} id='x1'>&#10006;</span>
               </div>
               <p className={s.titleUser}>{t("getAnOffer")}</p>
               <br />
@@ -229,20 +259,20 @@ const App = () => {
                        checked={checked} onChange={checkedClick} />
                 <p>{t("don'tCallMe")}</p>
               </div>
-              <div className={s.boxCheck2}>
-                <input onChange={checkedClick2} className={s.inputCheck}
-                       type="checkbox" checked={checked2} />
-                <span>{t("orderAConsultation")}</span>
-              </div>
-              {
-                checked2
-                // ?  <input id="date" type="date" onBlur={valueDate} />
-                // ? <Datepicker controls={["calendar", "time"]} locale={localeUa}
-                //               value={selected} onChange={selectedChange}
-                //               placeholder='встановити дату'/>
-                // ? <DatePicker/>
-                // : ""
-              }
+              {/*<div className={s.boxCheck2}>*/}
+              {/*  <input onChange={checkedClick2} className={s.inputCheck}*/}
+              {/*         type="checkbox" checked={checked2} />*/}
+              {/*  <span>{t("orderAConsultation")}</span>*/}
+              {/*</div>*/}
+              {/*{*/}
+              {/*  // checked2 &&*/}
+                {/*// ?  <input id="date" type="date" onBlur={valueDate} />*/}
+                {/*// ? <Datepicker controls={["calendar", "time"]} locale={localeUa}*/}
+                {/*//               value={selected} onChange={selectedChange}*/}
+                {/*//               placeholder='встановити дату'/>*/}
+                {/*// ? <DatePicker/>*/}
+                {/*// : ""*/}
+               {/*}*/}
 
               <br />
               <button className={s.footerBut} style={{ width: "50%" }} onClick={useSubmit}>{t("send")}</button>
@@ -252,18 +282,34 @@ const App = () => {
           {
             onFooter ? ""
               : <>
-                <div className={s.divTitle}>
-                  <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                           className={s.spanTitle + " " + s.title1} to="/obl">{t("equipment")}</NavLink>
-                  <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                           to="/nacr">{t("cover")}</NavLink>
-                  <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                           to="/acses">{t("accessories")}</NavLink>
-                  <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                           to="/build">{t("construction")}</NavLink>
-                  <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                           to="/doc">{t("documentation")}</NavLink>
-                </div>
+                {
+                  lang == 'ua' ?
+                    <div className={s.divTitle}>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
+                               className={s.spanTitle + " " + s.title1} to="/obl">{t("equipment")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/nacr">{t("cover")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/acses">{t("accessories")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/build">{t("construction")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/doc">{t("documentation")}</NavLink>
+                    </div>
+                    :
+                    <div className={s.divTitle}>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
+                               className={s.spanTitle + " " + s.title1} to="/obl/en">{t("equipment")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/nacr/en">{t("cover")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/acses/en">{t("accessories")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/build/en">{t("construction")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/doc/en">{t("documentation")}</NavLink>
+                    </div>
+                }
                 <div className={s.empty}></div>
                 {
                   userOrder.length > 0 && <Footer total={total} noScroll={noScroll} t={t} setOnFooter={setOnFooter} />

@@ -19,7 +19,9 @@
   "chooseThisTypeOfCover": "Choose this type of cover",
   "mainPage": "Main page",
   "aboutUs": "Sink calculator",
-  "team": "Team",
+  "team": "List of car washes",
   "blog": "Blog",
-  "contacts": "Contacts"
+  "contacts": "Contacts",
+  "post": "post",
+  "posts": "All posts"
 }

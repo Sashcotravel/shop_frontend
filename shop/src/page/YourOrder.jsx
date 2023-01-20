@@ -56,7 +56,6 @@ const YourOrder = ({ setOnFooter }) => {
     twoImg.src = "";
     if (window.screen.availWidth > 900) {
       let g = document.getElementById(e.target.id);
-      console.log(g.src);
       if (g.src.slice(-3) === "jpg") {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
