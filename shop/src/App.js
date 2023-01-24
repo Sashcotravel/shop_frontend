@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./component/Home.module.css";
 import "./App.css";
 import { useTranslation } from "react-i18next";
-import { Link, Route, Routes, useNavigate, NavLink } from "react-router-dom";
+import { Link, Route, Routes, useNavigate, NavLink, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
@@ -21,6 +21,7 @@ import YourOrder from "./page/YourOrder";
 import MainPage from "./page/MainPage";
 import ListWash from "./component/ListWash";
 import OnePost from "./page/listwash/OnePost";
+import Breadcrumbs from "./Breadcrumbs";
 
 
 let userOrder = [];
@@ -38,10 +39,13 @@ const App = () => {
   });
   const [onFooter, setOnFooter] = useState(false);
   const [onMain, setOnMain] = useState(false);
+  const [post, setPost] = useState(null)
 
   const { t, i18n } = useTranslation();
 
   const { id } = useParams();
+
+  const location = useLocation()
 
   const dispatch = useDispatch();
 
@@ -124,7 +128,6 @@ const App = () => {
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
     setLang(language);
-    // console.log(window.location);
     // console.log(window.location.pathname);
     // console.log(`http://${window.location.host}${window.location.pathname}/en`);
     if (language === "en") {
@@ -142,15 +145,12 @@ const App = () => {
     <div className="App">
       <Header t={t} changeLanguage={changeLanguage} lang={lang} />
         <>
-
+          {
+            location.pathname === '/' ? '' : <Breadcrumbs />
+          }
           {
             onFooter ? ""
               : <>
-                {/*<div className={s.translateDiv}>*/}
-                {/*  <button className={s.trBut+' '+`${lang == 'en' ? s.color : ''}`} onClick={() => changeLanguage("en")}>EN</button>*/}
-                {/*  <button className={s.trBut+' '+`${lang == 'ua' ? s.color : ''}`} onClick={() => changeLanguage("ua")}>UA</button>*/}
-                {/*</div>*/}
-
                 <div className={s.divName}>
                   <h3 className={s.h3Title}>{t("title")}</h3>
                   <h6 className={s.h6Title}>{t("step")}:</h6>
@@ -187,7 +187,7 @@ const App = () => {
           }
 
           {
-            lang == 'ua' ?
+            // lang == 'ua' ?
               <Routes>
                 <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
@@ -201,12 +201,13 @@ const App = () => {
                                                      setTotal={setTotal} total={total} />} />
                 <Route path="/test" element={<App2 data={Users} />} />
                 <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
-                <Route path="/listWash/:id" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
-                <Route path="/listWash/all" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
-                {/*<Route path="/listWash/post/:id" element={<OnePost setOnFooter={setOnFooter} t={t} lang={lang} />} />*/}
-              </Routes>
-              :
-              <Routes>
+                <Route path="/listWash/:id" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
+                <Route path="/listWash/all" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
+                <Route path="/listWash" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
+                <Route path="/listWash/post" element={<OnePost setOnFooter={setOnFooter} post={post} t={t} lang={lang} />} />
+              {/*</Routes>*/}
+              {/*:*/}
+              {/*<Routes>*/}
                 <Route path="/en" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/thanks/en" element={<Thanks setOnFooter={setOnFooter} />} />
                 <Route path="/obl/en" element={<Obl t={t} data={Users} userOrder={userOrder}
@@ -222,6 +223,8 @@ const App = () => {
                 <Route path="/your-order/:id/en" element={<YourOrder setOnFooter={setOnFooter} />} />
                 <Route path="/listWash/:id/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
                 <Route path="/listWash/all/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                <Route path="/listWash/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                <Route path="/listWash/post/en" element={<OnePost setOnFooter={setOnFooter} post={post} t={t} lang={lang} />} />
               </Routes>
           }
 

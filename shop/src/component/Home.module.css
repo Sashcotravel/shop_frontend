@@ -71,7 +71,7 @@ body{
 }
 
 .h3Title{
-    width: 335px;
+    /*width: 335px;*/
     height: 90px;
     text-align: left;
     font: normal normal normal 36px/43px Averta Demo PE;
@@ -80,6 +80,7 @@ body{
     color: #FFFFFF;
     opacity: 1;
     margin: 14px 0 0 20px;
+    font-size: 35px;
 }
 
 .h6Title{

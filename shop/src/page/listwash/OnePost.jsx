@@ -1,52 +1,59 @@
-import React, { useEffect } from "react";
-import s from "../../component/Home.module.css";
+import React, { useEffect } from 'react'
+import '../Obl.css'
+import ImageSlider from "./ImageSlider";
+import image from '../../image/svg/Group 59.svg'
 
 
-const OnePost = ({ listWash, colPost }) => {
 
-  const container = (name, desc, desc2, city, img, imgNum, index) => {
-    return (
-      <div key={index} className={s.container}>
-        <div className={s.boxOne}>
-          <figure>
-            <div style={{ height: "315px" }}>
-              {/*<img src={require("../image2/post2_2.jpg")} className={"base"} id={`img${imgNum}`} />*/}
-              <img src={img} className={"base"} id={`img${imgNum}`} />
-              {/*{size(imgNum)}*/}
-            </div>
-          </figure>
-          <h5 className={s.itemName}>{name}</h5>
-          {desc.map((item, i) => <ul key={i} style={{ textDecoration: "none" }}>
-            <li className={s.itemDesc}>{item}</li>
-          </ul>)}
-          <p className={s.itemDesc}>{desc2}</p>
-          <span className={s.itemDesc}>місто {city}</span>
-          {/*<div className={s.divBut}>*/}
-          {/*  <div style={{ padding: 10 + "px", margin: "20px 15px" }}>*/}
-          {/*    <span className={s.itemTotalSize} id="lightblue">{totalsSize}</span>*/}
-          {/*  </div>*/}
-          {/*  <span className={s.itemTotal}>{total} грн</span>*/}
-          {/*</div>*/}
-        </div>
-      </div>
-    );
-  };
+const OnePost = ({ post, setOnFooter, t, lang}) => {
+
+  useEffect(() => {
+    setOnFooter(true)
+    return () => {
+      setOnFooter(false)
+    }
+  }, [])
+
+  const road = () => {
+
+  }
 
   return (
     <>
-      <div className={s.divBox}>
-        {
-          listWash.map((item, index) => {
-            if (item.colPost === colPost) {
-              return container(item.name, item.desc, item.desc2, item.city, item.src, item.imgNum, index);
-            } else if (colPost === 0) {
-              return container(item.name, item.desc, item.desc2, item.city, item.src, item.imgNum, index);
-            }
-          })
-        }
+      <div className='boxPost2'>
+
+        <div>
+        <h4 className='titlePost'>SamWash {post?.city}</h4>
+        <p className='dataTitle'>{post?.city}</p>
+        <br/>
+
+        <div className='containerStyle'>
+          <ImageSlider sliders={post?.src} />
+        </div>
+
+        <p className='pSt'>вул. {post?.st}, м. {post?.city}, {post?.obl.split(' ')[0]} обл.</p>
+        </div>
+
+        <div onClick={road} className='marshBut'>
+          <img style={{position: 'relative', left: '10px'}} src={image} />
+          <span style={{position: 'relative', right: '10px'}}>Прокласти маршрут</span>
+        </div>
+
+        <p className='serv'>Сервіси на автомийці</p>
+
+        <div className='servDiv'>
+          {post?.desc.map((item, index) => <div className='servDiv2' key={index}>
+            <span className='spanGrad'></span>
+            <span style={{fontSize: '14px', width: '126px'}}>{item}</span>
+          </div>)}
+        </div>
+        <p className='desc2'>{post?.desc2}</p>
+
+        <div onClick={road} className='hosh'>Хочу собі таку!</div>
+
       </div>
     </>
-  );
-};
+  )
+}
 
-export default OnePost;
+export default OnePost

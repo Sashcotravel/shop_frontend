@@ -35,6 +35,7 @@
     "react-scroll": "^1.8.9",
     "react-simplemde-editor": "^5.2.0",
     "react-slick": "^0.29.0",
+    "react-swipe": "^6.0.4",
     "react-table": "^7.8.0",
     "react-to-print": "^2.14.10",
     "sass": "1.52.1",
