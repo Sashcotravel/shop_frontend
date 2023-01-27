@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 
 const ImageSlider = ({ sliders }) => {
@@ -29,6 +29,12 @@ const ImageSlider = ({ sliders }) => {
   return (
     <div className={"sliderStyle"}>
       {
+        // <figure>
+        // <div style={{ height: "315px" }}>
+        //   <iframe id="img4" width="100%" height='100%' src={sliders}/>
+        // </div>
+        // </figure>
+
         sliders?.length === 1
           ? <div style={slideStyle}></div>
           : <>

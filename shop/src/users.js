@@ -654,7 +654,7 @@ export const listWash = [
         'desc': ['Активна піна', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
         'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос потужністю 3 кВт.',
         'colPost': 2,
-        'src': [image1, image2, image5],
+        'src': [image1, image2, image5, 'https://www.youtube.com/embed/ENZjdyDPFos'],
         'imgNum': 1,
         'city': 'Дрогобич',
         'obl': 'Львівська область'
@@ -770,7 +770,13 @@ export const listWash = [
         'imgNum': 11,
         'city': 'Любомиль',
         'obl': 'Волинська область',
-        'st': 'Брестська 4'
+        'st': 'Брестська 4',
+        'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0' +
+          '%BC%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D0%A1%D0%B0%D0%' +
+          'BC%D0%92%D0%B0%D1%88+%2F+SamWash+%D0%9B%D1%8E%D0%B1%D0%BE%D0%BC%D0%B8%D0%BB%D1%8C,+%D0%B2%D1%83%D0%BB%D0%B8%D1%' +
+          '86%D1%8F+%D0%91%D1%80%D0%B5%D1%81%D1%82%D1%81%D1%8C%D0%BA%D0%B0,+4,+%D0%9B%D1%8E%D0%B1%D0%BE%D0%BC%D0%BB%D1%8C' +
+          ',+%D0%92%D0%BE%D0%BB%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+44301/@51.2' +
+          '278327,24.0327013,17z/data=!4m6!3m5!1s0x472475006207fd89:0xc3e2ec86c602ceed!8m2!3d51.2278327!4d24.0327013!16s%2Fg%2F11rkc2hlz4'
     },
     {
         'name': 'Мийка самообслуговування 5 постів',
@@ -854,7 +860,7 @@ export const listWash = [
           'додатковою програмою №3 "Миття щіткою". Для зручності відвідувачів передбачено два пилососа потужністю 3 кВт.',
         'colPost': 6,
         'src': [image18], // tyt
-        'imgNum': 18,
+        'imgNum': 18_1,
         'city': 'Берегове',
         'obl': 'Закарпатська область'
     },
@@ -889,7 +895,13 @@ export const listWash = [
         'imgNum': 21,
         'city': 'Львів',
         'obl': 'Львівська область',
-        'st': 'Шевченка 360Г'
+        'st': 'Шевченка 360Г',
+        'map': 'https://www.google.com/maps/place/SAMWASH,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A8%D0%B5%D0%B2%D1%8' +
+          '7%D0%B5%D0%BD%D0%BA%D0%B0,+360%D0%B3,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D' +
+          '1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79069/@49.867852,23.953529,17z/data=!4m14!1m7!3m6' +
+          '!1s0x473ade717cb34d1d:0x8f54b10edf457f8f!2z0LLRg9C70LjRhtGPINCo0LXQstGH0LXQvdC60LAsIDM2MNCzLCDQm9GM0LLRltCyLCDQm' +
+          '9GM0LLRltCy0YHRjNC60LAg0L7QsdC70LDRgdGC0YwsIDc5MDY5!8m2!3d49.867852!4d23.953529!16s%2Fg%2F11pysc3cr9!3m5!1s0x473ad' +
+          'e717b41613d:0xbb38e462032a7976!8m2!3d49.867852!4d23.953529!16s%2Fg%2F11clscp7bd'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -900,7 +912,13 @@ export const listWash = [
         'imgNum': 22,
         'city': 'Стрий',
         'obl': 'Львівська область',
-        'st': 'Промислова 1б'
+        'st': 'Промислова 1б',
+        'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0%B' +
+          'C%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D1%83+%D0%BC.+%' +
+          'D0%A1%D1%82%D1%80%D0%B8%D0%B9+%D0%A1%D0%B0%D0%BC%D0%92%D0%B0%D1%88+%2F+SamWash,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D' +
+          '1%8F+%D0%9F%D1%80%D0%BE%D0%BC%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0,+1%D0%B1,+%D0%A1%D1%82%D1%80%D0%B8%D0%B9,+%D0%9B' +
+          '%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+82400/@49.2715312,23.8' +
+          '086241,17z/data=!4m6!3m5!1s0x473a433aa8f22729:0x8963fc4d5d2e83ec!8m2!3d49.2715312!4d23.8086241!16s%2Fg%2F11pkdv1bk7'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -912,7 +930,16 @@ export const listWash = [
         'imgNum': 23,
         'city': 'Львів',
         'obl': 'Львівська область',
-        'st': 'Рудненська 14'
+        'st': 'Рудненська 14',
+        'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0%BC' +
+          '%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D0%A1%D0%B0%D0%BC%D0%92' +
+          '%D0%B0%D1%88+%2F+SAMWASH+%D0%BD%D0%B0+6+%D0%BF%D0%BE%D1%81%D1%82%D1%96%D0%B2+%E2%80%94+%D0%9B%D0%B5%D0%B2%D0%B0%D' +
+          '0%BD%D0%B4%D1%96%D0%B2%D0%BA%D0%B0,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A0%D1%83%D0%B4%D0%BD%D0%B5%D0%BD%D1%' +
+          '81%D1%8C%D0%BA%D0%B0,+14,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D' +
+          '0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79000/@49.836795,23.966743,17z/data=!4m14!1m7!3m6!1s0x473ae75f707cdfbf:0x8' +
+          'fdf21bfdc2a2e45!2z0LLRg9C70LjRhtGPINCg0YPQtNC90LXQvdGB0YzQutCwLCAxNCwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LH' +
+          'Qu9Cw0YHRgtGMLCA3OTAwMA!8m2!3d49.8368531!4d23.9667285!16s%2Fg%2F11c4n98b_1!3m5!1s0x473ae75f71cea1ab:0x7cc77ec64613117!8' +
+          'm2!3d49.836795!4d23.966743!16s%2Fg%2F11bbrlyyn3'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -945,7 +972,14 @@ export const listWash = [
         'imgNum': 26,
         'city': 'Львів',
         'obl': 'Львівська область',
-        'st': 'Богдана Хмельницького 200'
+        'st': 'Богдана Хмельницького 200',
+        'map': 'https://www.google.com/maps/place/SAMWASH,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%91%D0%BE%D0%B3%D0%B4%' +
+          'D0%B0%D0%BD%D0%B0+%D0%A5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE,+200,+%D0%9B%D' +
+          '1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%' +
+          '82%D1%8C,+79000/@49.8673763,24.0566549,17z/data=!4m14!1m7!3m6!1s0x473adce46ff82a5f:0x662381eb30fb27e!2z0LLRg9C' +
+          '70LjRhtGPINCR0L7Qs9C00LDQvdCwINCl0LzQtdC70YzQvdC40YbRjNC60L7Qs9C-LCAyMDAsINCb0YzQstGW0LIsINCb0YzQstGW0LLRgdGM0LrQs' +
+          'CDQvtCx0LvQsNGB0YLRjCwgNzkwMDA!8m2!3d49.8673763!4d24.0566549!16s%2Fg%2F11bw3yvcys!3m5!1s0x473adce38307c6a9:0x443e9a04' +
+          '3ad7894b!8m2!3d49.866811!4d24.055296!16s%2Fg%2F11dylwxmvx'
     },
     {
         'name': 'Мийка самообслуговування 10 постів',

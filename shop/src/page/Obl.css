@@ -128,7 +128,7 @@
     left: 32px;
     font-size: 45px;
     color: #fff;
-    z-index: 1;
+    z-index: 0;
     cursor: pointer;
 }
 
@@ -140,7 +140,7 @@
     right: 32px;
     font-size: 45px;
     color: #fff;
-    z-index: 1;
+    z-index: 0;
     cursor: pointer;
 }
 
@@ -153,12 +153,12 @@
 
 .breadcrumbs > *{
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .breadcrumbs .crumb:after {
     content: '>';
-    margin-left: 10px;
+    margin-left: 5px;
     color: #ddd;
 }
 
@@ -167,6 +167,15 @@
 }
 
 .breadcrumbs .crumb a {
+    color: #ddd;
+}
+
+.bread{
+    color: #ddd;
+    margin-left: 10px;
+}
+
+.breads{
     color: #ddd;
 }
 
@@ -297,9 +306,13 @@
 }
 
 .containerStyle {
-    width: 90%;
-    height: 210px;
-    margin: 20px auto 0;
+    /*width: 90%;*/
+    /*height: 210px;*/
+    /*margin: 20px auto 0;*/
+
+    display: flex;
+    overflow-y: hidden;
+    margin-left: 20px;
 }
 
 .pSt{
@@ -368,4 +381,26 @@
     color: rgba(178, 177, 183, 1);
     font-size: 14px;
     font-family: 'Averta';
+}
+
+.imageBox{
+    width: 280px;
+    height: 210px;
+    border-radius: 18px;
+    margin: 0 20px 0 0;
+}
+
+.divIm2{
+    background: linear-gradient(180deg, rgb(0, 0, 0), rgba(29, 32, 37, 0));
+    position: absolute;
+    height: 177px;
+    width: 100%;
+    backdrop-filter: blur(1px);
+}
+
+.divIm1{
+    background: url('../image2/coverMARCHELLO.jpg');
+    height: 170px;
+    margin-bottom: 30px;
+    background-size: cover;
 }

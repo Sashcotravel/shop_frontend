@@ -146,11 +146,13 @@ const App = () => {
       <Header t={t} changeLanguage={changeLanguage} lang={lang} />
         <>
           {
-            location.pathname === '/' ? '' : <Breadcrumbs />
-          }
-          {
             onFooter ? ""
               : <>
+
+                {
+                  location.pathname === '/' ? '' : <Breadcrumbs />
+                }
+
                 <div className={s.divName}>
                   <h3 className={s.h3Title}>{t("title")}</h3>
                   <h6 className={s.h6Title}>{t("step")}:</h6>
@@ -159,26 +161,26 @@ const App = () => {
                   lang == 'ua' ?
                   <div className={s.divTitle}>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                           className={s.spanTitle + " " + s.title1} to="/obl">{t("equipment")}</NavLink>
+                           className={s.spanTitle + " " + s.title1} to="/obladnannya">{t("equipment")}</NavLink>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                           to="/nacr">{t("cover")}</NavLink>
+                           to="/nakritya">{t("cover")}</NavLink>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                           to="/acses">{t("accessories")}</NavLink>
+                           to="/aksesyari">{t("accessories")}</NavLink>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                           to="/build">{t("construction")}</NavLink>
+                           to="/budivnitstvo">{t("construction")}</NavLink>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                            to="/doc">{t("documentation")}</NavLink>
                 </div>
                 :
                     <div className={s.divTitle}>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                               className={s.spanTitle + " " + s.title1} to="/obl/en">{t("equipment")}</NavLink>
+                               className={s.spanTitle + " " + s.title1} to="/obladnannya/en">{t("equipment")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/nacr/en">{t("cover")}</NavLink>
+                               to="/nakritya/en">{t("cover")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/acses/en">{t("accessories")}</NavLink>
+                               to="/aksesyari/en">{t("accessories")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/build/en">{t("construction")}</NavLink>
+                               to="/budivnitstvo/en">{t("construction")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                                to="/doc/en">{t("documentation")}</NavLink>
                     </div>
@@ -191,26 +193,30 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
-                <Route path="/obl" element={<Obl t={t} data={Users} userOrder={userOrder}
+                <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
                                                  setTotal={setTotal} total={total} />} />
-                <Route path="/nacr" element={<Nacr t={t} data={Users} userOrder={userOrder}
+                <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder}
                                                    setTotal={setTotal} total={total} />} />
-                <Route path="/acses" element={<Acses t={t} data={Users} userOrder={userOrder}
+                <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder}
                                                      setTotal={setTotal} total={total} />} />
-                <Route path="/build" element={<Build t={t} data={Users} userOrder={userOrder}
+                <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder}
                                                      setTotal={setTotal} total={total} />} />
                 <Route path="/test" element={<App2 data={Users} />} />
                 <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
-                <Route path="/listWash/:id" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
-                <Route path="/listWash/all" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
-                <Route path="/listWash" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
-                <Route path="/listWash/post" element={<OnePost setOnFooter={setOnFooter} post={post} t={t} lang={lang} />} />
+                <Route path="/nashi_avtomiyki" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
+                <Route path="/nashi_avtomiyki/wsi" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
+                <Route path="/nashi_avtomiyki/:id" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
+                <Route path="/nashi_avtomiyki/:id/:post" element={<ListWash setOnFooter={setOnFooter} t={t} setPost={setPost} lang={lang} />} />
+                <Route path="/nashi_avtomiyki/miyka/:id/:post/:idMiyka" element={<OnePost setPost={setPost}
+                  setOnFooter={setOnFooter} post={post} t={t} lang={lang} />} />
+                <Route path="/nashi_avtomiyki/miyka/:id/:idMiyka" element={<OnePost setPost={setPost}
+                  setOnFooter={setOnFooter} post={post} t={t} lang={lang} />} />
               {/*</Routes>*/}
               {/*:*/}
               {/*<Routes>*/}
                 <Route path="/en" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/thanks/en" element={<Thanks setOnFooter={setOnFooter} />} />
-                <Route path="/obl/en" element={<Obl t={t} data={Users} userOrder={userOrder}
+                <Route path="/obladnannya/en" element={<Obl t={t} data={Users} userOrder={userOrder}
                                                     setTotal={setTotal} total={total} />} />
                 <Route path="/en" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/nacr/en" element={<Nacr t={t} data={Users} userOrder={userOrder}
@@ -221,10 +227,10 @@ const App = () => {
                                                         setTotal={setTotal} total={total} />} />
                 <Route path="/test/en" element={<App2 data={Users} />} />
                 <Route path="/your-order/:id/en" element={<YourOrder setOnFooter={setOnFooter} />} />
-                <Route path="/listWash/:id/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
-                <Route path="/listWash/all/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
-                <Route path="/listWash/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
-                <Route path="/listWash/post/en" element={<OnePost setOnFooter={setOnFooter} post={post} t={t} lang={lang} />} />
+                <Route path="/nashi_avtomiyki/:id/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                <Route path="/nashi_avtomiyki/wsi/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                <Route path="/nashi_avtomiyki/en" element={<ListWash setOnFooter={setOnFooter} t={t} lang={lang} data={Users} />} />
+                <Route path="/nashi_avtomiyki/post/en" element={<OnePost setOnFooter={setOnFooter} post={post} t={t} lang={lang} />} />
               </Routes>
           }
 
@@ -289,26 +295,26 @@ const App = () => {
                   lang == 'ua' ?
                     <div className={s.divTitle}>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                               className={s.spanTitle + " " + s.title1} to="/obl">{t("equipment")}</NavLink>
+                               className={s.spanTitle + " " + s.title1} to="/obladnannya">{t("equipment")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/nacr">{t("cover")}</NavLink>
+                               to="/nakritya">{t("cover")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/acses">{t("accessories")}</NavLink>
+                               to="/aksesyari">{t("accessories")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/build">{t("construction")}</NavLink>
+                               to="/budivnitstvo">{t("construction")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                                to="/doc">{t("documentation")}</NavLink>
                     </div>
                     :
                     <div className={s.divTitle}>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                               className={s.spanTitle + " " + s.title1} to="/obl/en">{t("equipment")}</NavLink>
+                               className={s.spanTitle + " " + s.title1} to="/obladnannya/en">{t("equipment")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/nacr/en">{t("cover")}</NavLink>
+                               to="/nakritya/en">{t("cover")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/acses/en">{t("accessories")}</NavLink>
+                               to="/aksesyari/en">{t("accessories")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/build/en">{t("construction")}</NavLink>
+                               to="/budivnitstvo/en">{t("construction")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                                to="/doc/en">{t("documentation")}</NavLink>
                     </div>

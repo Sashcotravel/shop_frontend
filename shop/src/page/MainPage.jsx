@@ -5,6 +5,7 @@ import s from "../component/Home.module.css";
 import { fetchPay } from "../API/post";
 import { Users } from "../users";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 const MainPage = ({ t, setOnFooter }) => {
@@ -81,6 +82,8 @@ const MainPage = ({ t, setOnFooter }) => {
           <div className={s.footerBut} style={{ width: "50%", margin: '30px auto' }} onClick={useSubmit}>{t("send")}</div>
         </div>
       </div>
+
+      <div style={{textAlign: 'start', marginLeft: '20px', position: 'absolute', top: '115px'}}><Link to='/'>Головна</Link></div>
 
       {/*<div className="row mb-5">*/}
       <div className={m.mb5}>

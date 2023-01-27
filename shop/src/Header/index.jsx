@@ -57,19 +57,19 @@ export const Header = ({ t, changeLanguage, lang }) => {
           <span onClick={click}></span>
         </label>
         <span>
-                      <div className="divBox" id="divHidden" onClick={click2}>
-                      <ul className="menu__box">
-                         <li><NavLink onClick={click3} className="menu__item" to="/">{t("mainPage")}</NavLink></li>
-                          <li><NavLink onClick={click3} className="menu__item"
-                                       to="/obl">{t("aboutUs")}</NavLink></li>
-                        <li><NavLink onClick={click3} className="menu__item"
-                                       to="/listWash/all">{t("team")}</NavLink></li>
-                        <li><a onClick={click3} className="menu__item" href="#">{t("blog")}</a></li>
-                        <li><a onClick={click3} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
+          <div className="divBox" id="divHidden" onClick={click2}>
+            <ul className="menu__box">
+              <li><NavLink onClick={click3} className="menu__item" to="/">{t("mainPage")}</NavLink></li>
+              <li><NavLink onClick={click3} className="menu__item"
+                                       to="/obladnannya">{t("aboutUs")}</NavLink></li>
+              <li><NavLink onClick={click3} className="menu__item"
+                                       to="/nashi_avtomiyki/wsi">{t("team")}</NavLink></li>
+              <li><a onClick={click3} className="menu__item" href="#">{t("blog")}</a></li>
+              <li><a onClick={click3} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
                                href="#">{t("contacts")}</a></li>
-                      </ul>
-                        </div>
-                    </span>
+            </ul>
+          </div>
+        </span>
       </div>;
     }
     else {
@@ -78,8 +78,8 @@ export const Header = ({ t, changeLanguage, lang }) => {
         <Link className="menu__item" to="/">{t("mainPage")}</Link>
         {/*</div>*/}
         {/*<div className="menu__item">*/}
-        <Link className="menu__item" to="/obl">{t("aboutUs")}</Link>
-        <Link className="menu__item" to="/listWash/all">{t("team")}</Link>
+        <Link className="menu__item" to="/obladnannya">{t("aboutUs")}</Link>
+        <Link className="menu__item" to="/nashi_avtomiyki/wsi">{t("team")}</Link>
         <div className="menu__item">{t("blog")}</div>
         <div className="menu__item">{t("contacts")}</div>
       </div>;
@@ -94,30 +94,26 @@ export const Header = ({ t, changeLanguage, lang }) => {
           <span onClick={click}></span>
         </label>
         <span>
-                      <div className="divBox" id="divHidden" onClick={click2}>
-                      <ul className="menu__box">
-                         <li><NavLink className="menu__item" to="/en">{t("mainPage")}</NavLink></li>
-                          <li><NavLink className="menu__item"
-                                       to="/obl/en">{t("aboutUs")}</NavLink></li>
-                        <li><NavLink className="menu__item"
-                                     to="/listWash/all/en">{t("team")}</NavLink></li>
-                        <li><a className="menu__item" href="#">{t("blog")}</a></li>
-                        <li><a className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
+          <div className="divBox" id="divHidden" onClick={click2}>
+            <ul className="menu__box">
+              <li><NavLink onClick={click3} className="menu__item" to="/en">{t("mainPage")}</NavLink></li>
+              <li><NavLink onClick={click3} className="menu__item"
+                                       to="/obladnannya/en">{t("aboutUs")}</NavLink></li>
+              <li><NavLink onClick={click3} className="menu__item"
+                                     to="/nashi_avtomiyki/wsi/en">{t("team")}</NavLink></li>
+              <li><a onClick={click3} className="menu__item" href="#">{t("blog")}</a></li>
+              <li><a onClick={click3} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
                                href="#">{t("contacts")}</a></li>
-                      </ul>
-                        </div>
-                    </span>
+            </ul>
+          </div>
+        </span>
       </div>;
     }
     else {
       return <div className="manu">
-        {/*<div className="menu__item">*/}
         <Link className="menu__item" to="/en">{t("mainPage")}</Link>
-        {/*</div>*/}
-        {/*<div className="menu__item">*/}
-        <Link className="menu__item" to="/obl/en">{t("aboutUs")}</Link>
-        {/*</div>*/}
-        <Link className="menu__item" to="/listWash/all/en">{t("team")}</Link>
+        <Link className="menu__item" to="/obladnannya/en">{t("aboutUs")}</Link>
+        <Link className="menu__item" to="/nashi_avtomiyki/wsi/en">{t("team")}</Link>
         <div className="menu__item">{t("blog")}</div>
         <div className="menu__item">{t("contacts")}</div>
       </div>;
@@ -127,8 +123,6 @@ export const Header = ({ t, changeLanguage, lang }) => {
   return (
     <header>
       <div className="root">
-        {/*<Container maxWidth="lg">*/}
-        {/*  <div className="inner">*/}
             <div>
               <Link to="/">
                 <img className="logo" src={image5} />
@@ -153,8 +147,6 @@ export const Header = ({ t, changeLanguage, lang }) => {
             lang === 'ua' ? uaHeader() : enHeader()
           }
           </div>
-        {/*</Container>*/}
-      {/*</div>*/}
     </header>
   );
 };

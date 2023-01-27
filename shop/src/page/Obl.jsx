@@ -3,6 +3,8 @@ import s from "../component/Home.module.css";
 import "./Obl.css";
 import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
+import { useLocation } from "react-router-dom";
+import Breadcrumbs from "../Breadcrumbs";
 
 
 const Obl = ({ t, data, userOrder, setTotal, total }) => {
@@ -271,6 +273,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
     </div>
 
     <main>
+
       <div className={s.divBox}>
 
         <div className={s.container}>
