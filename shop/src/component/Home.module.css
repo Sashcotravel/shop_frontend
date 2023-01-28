@@ -67,7 +67,8 @@ body{
 .divTitle{
     display: flex;
     overflow-y: hidden;
-    margin: 35px 0 0 0;
+    margin-top: 35px;
+    padding-bottom: 20px;
 }
 
 .h3Title{

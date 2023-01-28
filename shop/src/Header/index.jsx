@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Header.scss";
 import Container from "@mui/material/Container";
-import { Link, Route, Routes, useNavigate, NavLink, useParams } from "react-router-dom";
+import { Link, Route, Routes, useNavigate, NavLink, useParams, useLocation } from "react-router-dom";
 import image5 from "../image/footer.png";
 import s from "../component/Home.module.css";
 
 
 export const Header = ({ t, changeLanguage, lang }) => {
+
+  const location = useLocation()
+
+  useEffect(() => {
+    if(location.pathname.slice(location.pathname.length-2) === 'en'){
+      changeLanguage("en")
+    }
+  }, [])
 
   const click = () => {
     const id = document.getElementById("menu__toggle");
@@ -22,7 +30,6 @@ export const Header = ({ t, changeLanguage, lang }) => {
       id3.style.visibility = "visible";
     }
   };
-
   const click2 = (e) => {
     const id = document.getElementById("menu__toggle");
     const id2 = document.getElementsByClassName("menu__box");
@@ -37,7 +44,6 @@ export const Header = ({ t, changeLanguage, lang }) => {
       }
     }
   };
-
   const click3 = () => {
     const id = document.getElementById("menu__toggle");
     const id2 = document.getElementsByClassName("menu__box");
@@ -63,7 +69,7 @@ export const Header = ({ t, changeLanguage, lang }) => {
               <li><NavLink onClick={click3} className="menu__item"
                                        to="/obladnannya">{t("aboutUs")}</NavLink></li>
               <li><NavLink onClick={click3} className="menu__item"
-                                       to="/nashi_avtomiyki/wsi">{t("team")}</NavLink></li>
+                                       to="/nashi-avtomiyki/wsi">{t("team")}</NavLink></li>
               <li><a onClick={click3} className="menu__item" href="#">{t("blog")}</a></li>
               <li><a onClick={click3} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
                                href="#">{t("contacts")}</a></li>
@@ -79,7 +85,7 @@ export const Header = ({ t, changeLanguage, lang }) => {
         {/*</div>*/}
         {/*<div className="menu__item">*/}
         <Link className="menu__item" to="/obladnannya">{t("aboutUs")}</Link>
-        <Link className="menu__item" to="/nashi_avtomiyki/wsi">{t("team")}</Link>
+        <Link className="menu__item" to="/nashi-avtomiyki/wsi">{t("team")}</Link>
         <div className="menu__item">{t("blog")}</div>
         <div className="menu__item">{t("contacts")}</div>
       </div>;
@@ -100,7 +106,7 @@ export const Header = ({ t, changeLanguage, lang }) => {
               <li><NavLink onClick={click3} className="menu__item"
                                        to="/obladnannya/en">{t("aboutUs")}</NavLink></li>
               <li><NavLink onClick={click3} className="menu__item"
-                                     to="/nashi_avtomiyki/wsi/en">{t("team")}</NavLink></li>
+                                     to="/nashi-avtomiyki/wsi/en">{t("team")}</NavLink></li>
               <li><a onClick={click3} className="menu__item" href="#">{t("blog")}</a></li>
               <li><a onClick={click3} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
                                href="#">{t("contacts")}</a></li>
@@ -113,7 +119,7 @@ export const Header = ({ t, changeLanguage, lang }) => {
       return <div className="manu">
         <Link className="menu__item" to="/en">{t("mainPage")}</Link>
         <Link className="menu__item" to="/obladnannya/en">{t("aboutUs")}</Link>
-        <Link className="menu__item" to="/nashi_avtomiyki/wsi/en">{t("team")}</Link>
+        <Link className="menu__item" to="/nashi-avtomiyki/wsi/en">{t("team")}</Link>
         <div className="menu__item">{t("blog")}</div>
         <div className="menu__item">{t("contacts")}</div>
       </div>;

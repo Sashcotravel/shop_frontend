@@ -4,22 +4,24 @@ import ImageSlider from "./ImageSlider";
 import image from '../../image/svg/Group 59.svg'
 import image2 from '../../image2/coverMARCHELLO.jpg'
 import Breadcrumbs from "../../Breadcrumbs";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { listWash } from "../../users";
 
 
 
-const OnePost = ({ post, setOnFooter, t, lang, setPost }) => {
+const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
 
-  const location = useLocation()
   const { idMiyka } = useParams();
+  const { id } = useParams();
+  const { post } = useParams();
+
 
   useEffect(() => {
     setOnFooter(true)
-    if (post === null) {
+    if (postOne === null) {
       listWash.map((item, i) => {
-        if(item.imgNum === Number(idMiyka)){
-          setPost(item)
+        if(item.city2 === idMiyka){
+          setPostOne(item)
         }
       });
     }
@@ -29,27 +31,44 @@ const OnePost = ({ post, setOnFooter, t, lang, setPost }) => {
       setOnFooter(false)
     }
   }, [])
-
   const road = () => {
 
   }
 
+
   return (
     <>
       <div className='boxPost2'>
+        <div className={postOne?.city === 'Хуст' ? "divIm1" : postOne?.city === 'Тернопіль' ? "divIm1" : ''}>
+          <div className={postOne?.city === 'Хуст' ? "divIm2" : postOne?.city === 'Тернопіль' ? "divIm2" : ''}>
 
-        {/*<div style={{ background: `url(${image2})`, backgroundSize: "cover", height: '150px', marginBottom: '20px' }}>*/}
-        <div className={post?.city === 'Хуст' ? "divIm1" : post?.city === 'Тернопіль' ? "divIm1" : ''}>
-          <div className={post?.city === 'Хуст' ? "divIm2" : post?.city === 'Тернопіль' ? "divIm2" : ''}>
-            { location.pathname === "/" ? "" : <Breadcrumbs /> }
-            <h4 className="titlePost">SamWash {post?.city}</h4>
-            <p className="dataTitle">{post?.city}</p>
+            {
+              lang === "ua" ?
+                <div className="breadcrumbs">
+                  <Link className="breads" to="/nashi-avtomiyki/wsi">{t("OurCarWashes")}</Link>
+                  <Link className="breads" to={`/nashi-avtomiyki/${id}/${post}`}>
+                    {id === "wsi" ? "" : id === undefined ? "" : id !== "all" ? ` / ${postOne.obl}` : ""}</Link>
+                  <Link className="breads" to={`/nashi-avtomiyki/wsi/${post}`}>
+                    {post !== undefined ? ` / ${post} ${t("postCol")}` : ""} </Link>
+                </div>
+                :
+                <div className="breadcrumbs">
+                  <Link className="breads" to="/nashi-avtomiyki/wsi/en">{t("OurCarWashes")}</Link>
+                  <Link className="breads" to={`/nashi-avtomiyki/${id}/${post}/en`}>
+                    {id === "wsi" ? "" : id === undefined ? "" : id !== "all" ? ` / ${postOne.obl2}` : ""}</Link>
+                  <Link className="breads" to={`/nashi-avtomiyki/wsi/${post}/en`}>
+                    {post === undefined ? '' : post === 0 ? '' : ` / ${post} ${t("postCol")}`} </Link>
+                </div>
+            }
+
+            <h4 className="titlePost">SamWash {postOne?.city}</h4>
+            <p className="dataTitle">{postOne?.city}</p>
             <br />
           </div>
         </div>
 
           <figure className='containerStyle'>
-            {post?.src.map((item, index) => {
+            {postOne?.src.map((item, index) => {
               if(item.slice(0, 4) === 'http') {
                 return <iframe key={index} className='imageBox' src={item}/>
               }
@@ -67,27 +86,27 @@ const OnePost = ({ post, setOnFooter, t, lang, setPost }) => {
           {/*</figure>*/}
         {/*</div>*/}
 
-        <p className='pSt'>вул. {post?.st}, м. {post?.city}, {post?.obl.split(' ')[0]} обл.</p>
+        <p className='pSt'>вул. {postOne?.st}, м. {postOne?.city}, {postOne?.obl.split(' ')[0]} обл.</p>
 
-          <a href={post?.map} style={{color: 'white'}}>
+          <a href={postOne?.map} style={{color: 'white'}}>
             <div className="marshBut">
               <img style={{ position: "relative", left: "10px", width: '14%' }} src={image} />
-              <span style={{ position: "relative", right: "10px" }}>Прокласти маршрут</span>
+              <span style={{ position: "relative", right: "10px" }}>{t("MakeARoute")}</span>
             </div>
           </a>
 
 
-        <p className='serv'>Сервіси на автомийці</p>
+        <p className='serv'>{t("CarWashServices")}</p>
 
         <div className='servDiv'>
-          {post?.desc.map((item, index) => <div className='servDiv2' key={index}>
+          {postOne?.desc.map((item, index) => <div className='servDiv2' key={index}>
             <span className='spanGrad'></span>
             <span style={{fontSize: '14px', width: '126px'}}>{item}</span>
           </div>)}
         </div>
-        <p className='desc2'>{post?.desc2}</p>
+        <p className='desc2'>{postOne?.desc2}</p>
 
-        <div onClick={road} className='hosh'>Хочу собі таку!</div>
+        <div onClick={road} className='hosh'>{t("IWant")}</div>
 
       </div>
     </>

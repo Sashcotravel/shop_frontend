@@ -657,7 +657,10 @@ export const listWash = [
         'src': [image1, image2, image5, 'https://www.youtube.com/embed/ENZjdyDPFos'],
         'imgNum': 1,
         'city': 'Дрогобич',
-        'obl': 'Львівська область'
+        'city2': 'Drohobych',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
+
     },
     {
         'name': 'Мийка самообслуговування 2 поста',
@@ -667,7 +670,9 @@ export const listWash = [
         'src': [image2, image6_1, image10],
         'imgNum': 2,
         'city': 'Львів',
-        'obl': 'Львівська область'
+        'city2': 'Lviv1',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -677,7 +682,9 @@ export const listWash = [
         'src': [image3],
         'imgNum': 3,
         'city': 'Рогатин',
-        'obl': 'Франківська область'
+        'city2': 'Rohatyn',
+        'obl': 'Франківська область',
+        'obl2': 'Ivano-Frankivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -687,7 +694,9 @@ export const listWash = [
         'src': [image14],
         'imgNum': 4,
         'city': 'Монастирське',
-        'obl': 'Франківська область'
+        'city2': 'Monastyrske',
+        'obl': 'Франківська область',
+        'obl2': 'Ivano-Frankivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -697,7 +706,9 @@ export const listWash = [
         'src': [image5],
         'imgNum': 5,
         'city': 'Рахів',
-        'obl': 'Закарпатська область'
+        'city2': 'Rakhiv',
+        'obl': 'Закарпатська область',
+        'obl2': 'Zakarpatska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -708,7 +719,9 @@ export const listWash = [
         'src': [image18], // tyt
         'imgNum': 6,
         'city': 'Ильниці',
-        'obl': 'Закарпатська область'
+        'city2': 'Ilnytsia',
+        'obl': 'Закарпатська область',
+        'obl2': 'Zakarpatska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -718,7 +731,9 @@ export const listWash = [
         'src': [image6], // tyt
         'imgNum': 7,
         'city': 'Коростень',
-        'obl': 'Житомирська область'
+        'city2': 'Korosten',
+        'obl': 'Житомирська область',
+        'obl2': 'Zhytomyrska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -728,7 +743,9 @@ export const listWash = [
         'src': [image6_1], // tyt
         'imgNum': 8_1,
         'city': 'Терновиця',
-        'obl': 'Львівська область'
+        'city2': 'Ternovitsa',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -738,7 +755,9 @@ export const listWash = [
         'src': [image7], // tyt
         'imgNum': 8,
         'city': 'Добромиль',
-        'obl': 'Львівська область'
+        'city2': 'Dobromil',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -748,7 +767,9 @@ export const listWash = [
         'src': [image8],
         'imgNum': 9,
         'city': 'Новий Розділ',
-        'obl': 'Львівська область'
+        'city2': 'Noviy-Rozdil',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -758,7 +779,9 @@ export const listWash = [
         'src': [image9], // tyt
         'imgNum': 10,
         'city': 'Давидов',
-        'obl': 'Львівська область'
+        'city2': 'Davydov',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -768,8 +791,10 @@ export const listWash = [
         'colPost': 4,
         'src': [image10], // tyt
         'imgNum': 11,
-        'city': 'Любомиль',
+        'city': 'Любомль',
+        'city2': 'Luboml',
         'obl': 'Волинська область',
+        'obl2': 'Volynska Oblast',
         'st': 'Брестська 4',
         'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0' +
           '%BC%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D0%A1%D0%B0%D0%' +
@@ -786,7 +811,9 @@ export const listWash = [
         'src': [image11], // tyt
         'imgNum': 12,
         'city': 'Попасне',
-        'obl': 'Луганська область'
+        'city2': 'Popasne',
+        'obl': 'Луганська область',
+        'obl2': 'Luhanska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 5 постів',
@@ -796,8 +823,10 @@ export const listWash = [
         'colPost': 5,
         'src': [image12], // tyt
         'imgNum': 13,
-        'city': 'Лука Малешковська',
-        'obl': 'Віницька область'
+        'city': 'Лука Мелешківська',
+        'city2': 'Luka-Meleshkivska',
+        'obl': 'Віницька область',
+        'obl2': 'Vinnytska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 5 постів',
@@ -807,7 +836,9 @@ export const listWash = [
         'src': [image13], // tyt
         'imgNum': 14,
         'city': 'Тернопіль',
-        'obl': 'Тернопільська область'
+        'city2': 'Ternopil',
+        'obl': 'Тернопільська область',
+        'obl2': 'Ternopilska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 5 постів',
@@ -818,7 +849,9 @@ export const listWash = [
         'src': [image14], // tyt
         'imgNum': 15,
         'city': 'Городок',
-        'obl': 'Львівська область'
+        'city2': 'Gorodok',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -829,7 +862,9 @@ export const listWash = [
         'src': [image15], // tyt
         'imgNum': 16,
         'city': 'Дніпро',
-        'obl': 'Дніпропетровська область'
+        'city2': 'Dnipro',
+        'obl': 'Дніпропетровська область',
+        'obl2': 'Dnipropetrovska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -840,7 +875,9 @@ export const listWash = [
         'src': [image16], // tyt
         'imgNum': 17,
         'city': 'Ужгород',
-        'obl': 'Закарпатська область'
+        'city2': 'Uzhhorod',
+        'obl': 'Закарпатська область',
+        'obl2': 'Zakarpatska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -851,7 +888,9 @@ export const listWash = [
         'src': [image17], // tyt
         'imgNum': 18,
         'city': 'Львів',
-        'obl': 'Львівська область'
+        'city2': 'Lviv2',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -862,7 +901,9 @@ export const listWash = [
         'src': [image18], // tyt
         'imgNum': 18_1,
         'city': 'Берегове',
-        'obl': 'Закарпатська область'
+        'city2': 'Berehove',
+        'obl': 'Закарпатська область',
+        'obl2': 'Zakarpatska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -872,7 +913,9 @@ export const listWash = [
         'src': [image19], // tyt
         'imgNum': 19,
         'city': 'Софіївка',
-        'obl': 'Дніпропетровська область'
+        'city2': 'Sofievka',
+        'obl': 'Дніпропетровська область',
+        'obl2': 'Dnipropetrovska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -883,7 +926,9 @@ export const listWash = [
         'src': [image20], // tyt
         'imgNum': 20,
         'city': 'Радехів',
-        'obl': 'Львівська область'
+        'city2': 'Radekhov',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -894,7 +939,9 @@ export const listWash = [
         'src': [image21], // tyt
         'imgNum': 21,
         'city': 'Львів',
+        'city2': 'Lviv3',
         'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
         'st': 'Шевченка 360Г',
         'map': 'https://www.google.com/maps/place/SAMWASH,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A8%D0%B5%D0%B2%D1%8' +
           '7%D0%B5%D0%BD%D0%BA%D0%B0,+360%D0%B3,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D' +
@@ -911,7 +958,9 @@ export const listWash = [
         'src': [image22], // tyt
         'imgNum': 22,
         'city': 'Стрий',
+        'city2': 'Striy',
         'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
         'st': 'Промислова 1б',
         'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0%B' +
           'C%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D1%83+%D0%BC.+%' +
@@ -929,7 +978,9 @@ export const listWash = [
         'src': [image23], // tyt
         'imgNum': 23,
         'city': 'Львів',
+        'city2': 'Lviv4',
         'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
         'st': 'Рудненська 14',
         'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0%BC' +
           '%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D0%A1%D0%B0%D0%BC%D0%92' +
@@ -950,7 +1001,9 @@ export const listWash = [
         'src': [image24], // tyt
         'imgNum': 24,
         'city': 'Луцьк',
-        'obl': 'Волинська область'
+        'city2': 'Lutsk',
+        'obl': 'Волинська область',
+        'obl2': 'Volynska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 7 постів',
@@ -960,7 +1013,9 @@ export const listWash = [
         'src': [image25], // tyt
         'imgNum': 25,
         'city': 'Лубни',
-        'obl': 'Полтавська область'
+        'city2': 'Lubny',
+        'obl': 'Полтавська область',
+        'obl2': 'Poltavska Oblast',
     },
     {
         'name': 'Мийка самообслуговування 10 постів',
@@ -971,7 +1026,9 @@ export const listWash = [
         'src': [image26], // tyt
         'imgNum': 26,
         'city': 'Львів',
+        'city2': 'Lviv5',
         'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
         'st': 'Богдана Хмельницького 200',
         'map': 'https://www.google.com/maps/place/SAMWASH,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%91%D0%BE%D0%B3%D0%B4%' +
           'D0%B0%D0%BD%D0%B0+%D0%A5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE,+200,+%D0%9B%D' +
@@ -989,6 +1046,8 @@ export const listWash = [
         'src': [image27], // tyt
         'imgNum': 27,
         'city': 'Хуст',
-        'obl': 'Закарпатська область'
+        'city2': 'Hust',
+        'obl': 'Закарпатська область',
+        'obl2': 'Zakarpatska Oblast',
     },
 ]
