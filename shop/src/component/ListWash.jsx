@@ -25,12 +25,28 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   const navigator = useNavigate()
 
   const url = location.pathname.slice(location.pathname.length-2) === 'en'
+  const url1 = location.pathname.slice(location.pathname.length-2)
   const url2 = location.pathname.slice(location.pathname.length-2) !== 'en'
 
   useEffect(() => {
     setOnFooter(true);
     if(url){
       changeLanguage('en')
+      obl = oblFalse(id)
+      click1Use(obl)
+      colPost = Number(post)
+      document.getElementById('select2').value = obl
+      document.getElementById('select').value = post
+      console.log('lol');
+      console.log(url1);
+    } else {
+      changeLanguage('ua')
+      obl = oblFalse(id)
+      click1Use(obl)
+      colPost = Number(post)
+      document.getElementById('select2').value = obl
+      document.getElementById('select').value = post
+      console.log('lol2');
     }
     if(location.pathname === '/nashi-avtomiyki/wsi'){
       document.getElementById('select2').value = 'all'
