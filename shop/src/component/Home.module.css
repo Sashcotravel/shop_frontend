@@ -44,10 +44,6 @@
     width: 90%;
 }
 
-body{
-    background-color: #29363B;
-}
-
 .container{
 
 }
@@ -56,11 +52,12 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 30px;
 }
 
 .divName{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
 }
 
@@ -68,46 +65,59 @@ body{
     display: flex;
     overflow-y: hidden;
     margin-top: 35px;
-    padding-bottom: 20px;
+    padding-bottom: 45px;
+    justify-content: center;
+    align-items: center;
 }
 
 .h3Title{
-    /*width: 335px;*/
-    height: 90px;
+    width: 454px;
+    height: 177px;
     text-align: left;
-    font: normal normal normal 36px/43px Averta Demo PE;
+    font-weight: normal;
     font-family: Averta;
-    letter-spacing: 0;
     color: #FFFFFF;
-    opacity: 1;
-    margin: 14px 0 0 20px;
-    font-size: 35px;
+    margin-left: 128px;
+    font-size: 72px;
+}
+
+.divH6{
+    width: 100%;
+    margin: 85px auto 0;
+    display: flex;
+    justify-content: center;
 }
 
 .h6Title{
-    width: 185px;
-    height: 24px;
-    text-align: left;
-    font: normal normal normal 18px/20px Averta Demo PE;
+    font: normal normal normal 48px/20px Averta Demo PE;
     font-family: Averta;
-    letter-spacing: 0;
-    color: #D9D9D9;
-    opacity: 1;
-    margin: -15px 0 10px 20px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.pTitle{
+    width: 445px;
+    height: 181px;
+     text-align: left;
+    font: normal normal normal 18px/28px Averta Demo PE;
+    color: #B2B1B7;
+    margin: 30px 0 0 200px;
+    font-family: 'Averta';
 }
 
 .spanTitle{
-    border-radius: 20px;
-    padding: 6px;
-    margin: 0 8px 0 0;
-    /*background-color: #DF4242;*/
-    font-size: 14px;
+    border-radius: 25px;
+    font: normal normal normal 16px/20px Averta Demo PE;
+    margin-right: 15px;
     border: 1px solid #B2B1B7;
     font-family: Averta;
     text-decoration: none;
     color: #B2B1B7;
-    opacity: 1;
-    padding: 8px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .linkTitle{
@@ -141,7 +151,6 @@ body{
     width: 75px;
     height: 75px;
     position: absolute;
-
 }
 
 .title1{
@@ -199,7 +208,6 @@ body{
 
 .itemDesc{
     text-align: left;
-    /*font: normal normal normal;*/
     font-size: 12px;
     font-family: Averta;
     letter-spacing: 0px;
@@ -329,23 +337,26 @@ body{
     position: fixed;
     bottom: 0;
     background-color: #db2d2d;
-    width: 95%;
-    height: 90px;
+    width: 704px;
+    height: 110px;
     border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: 20px;
+    font-family: 'Averta';
 }
 
 .footerBut{
     padding: 12px;
     border: none;
     cursor: pointer;
-    width: 180px;
-    height: 50px;
+    width: 283px;
+    height: 60px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 30px;
-    opacity: 1;
+    font: normal normal normal 16px/19px Averta Demo PE;
+    font-family: 'Averta';
 }
 
 .orderBlock{
@@ -476,7 +487,6 @@ input[type="radio"] {
         width: 180px;
         height: 100px;
     }
-
     .inputBox{
         display: flex;
         flex-wrap: nowrap;
@@ -485,12 +495,70 @@ input[type="radio"] {
         flex-direction: column;
         align-items: center;
     }
-
     .listTableName{
         font-size: 13px;
     }
-
     .span{
         font-size: 9px;
     }
+    .h3Title{
+        font-family: Averta;
+        font-weight: normal;
+        margin: 14px 0 45px 20px;
+        font-size: 35px;
+        height: 90px;
+        width: auto;
+    }
+    .divH6{
+        width: auto;
+        margin: auto;
+        display: block;
+        justify-content: normal;
+    }
+    .h6Title{
+        font: normal normal normal 18px/20px Averta Demo PE;
+        font-family: Averta;
+        color: #D9D9D9;
+        text-align: left;
+        margin: -15px 0 10px 20px;
+    }
+    .divTitle{
+        display: flex;
+        overflow-y: hidden;
+        margin-top: 35px;
+        padding-bottom: 20px;
+        justify-content: normal;
+        align-items: normal;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .spanTitle{
+        margin: 0 8px 0 0;
+        font-size: 14px;
+        font-family: Averta;
+        padding: 8px;
+        width: auto;
+        height: auto;
+    }
+    .footerDiv2{
+        position: fixed;
+        bottom: 0;
+        background-color: #db2d2d;
+        width: 95%;
+        height: 90px;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 14px;
+    }
+    .footerBut{
+        width: 180px;
+        height: 50px;
+        font: unset;
+    }
+    .divBox{
+        margin: auto;
+    }
+
 }

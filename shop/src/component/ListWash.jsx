@@ -28,26 +28,10 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   const url1 = location.pathname.slice(location.pathname.length-2)
   const url2 = location.pathname.slice(location.pathname.length-2) !== 'en'
 
+
+
   useEffect(() => {
     setOnFooter(true);
-    if(url){
-      changeLanguage('en')
-      obl = oblFalse(id)
-      click1Use(obl)
-      colPost = Number(post)
-      document.getElementById('select2').value = obl
-      document.getElementById('select').value = post
-      console.log('lol');
-      console.log(url1);
-    } else {
-      changeLanguage('ua')
-      obl = oblFalse(id)
-      click1Use(obl)
-      colPost = Number(post)
-      document.getElementById('select2').value = obl
-      document.getElementById('select').value = post
-      console.log('lol2');
-    }
     if(location.pathname === '/nashi-avtomiyki/wsi'){
       document.getElementById('select2').value = 'all'
       document.getElementById('select').value = 0
@@ -59,9 +43,26 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
     else if (location.pathname === `/nashi-avtomiyki/wsi/${post}`) {
       colPost = Number(post)
       document.getElementById('select').value = post
+      oblUrl2()
     }
     else if (location.pathname === `/nashi-avtomiyki/wsi/${post}/en`) {
       colPost = Number(post)
+      document.getElementById('select').value = post
+      oblUrl2()
+    }
+    else if(url){
+      changeLanguage('en')
+      obl = oblFalse(id)
+      click1Use(obl)
+      colPost = Number(post)
+      document.getElementById('select2').value = obl
+      document.getElementById('select').value = post
+    }
+    else if(url2){
+      obl = oblFalse(id)
+      click1Use(obl)
+      colPost = Number(post)
+      document.getElementById('select2').value = obl
       document.getElementById('select').value = post
     }
     else {
@@ -133,12 +134,14 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
           {
             lang === 'ua' ?
               <NavLink onClick={onePost}
-                       to={`/nashi-avtomiyki/miyka${oblUrl}${colP === 0 ? '' : '/' + colP}/${city2}`}>
+                       // to={`/nashi-avtomiyki/miyka${oblUrl}${colP === 0 ? '' : '/' + colP}/${city2}`}>
+                       to={`/nashi-avtomiyki/miyka${oblUrl}${'/' + colPost}/${city2}`}>
                 <button id={imgNum} className="redBut">{t("Details")}</button>
               </NavLink>
               :
               <NavLink onClick={onePost}
-                       to={`/nashi-avtomiyki/miyka${oblUrl}${colP === 0 ? '' : '/' + colP}/${city2}/en`}>
+                       // to={`/nashi-avtomiyki/miyka${oblUrl}${colP === 0 ? '' : '/' + colP}/${city2}/en`}>
+                       to={`/nashi-avtomiyki/miyka${oblUrl}${'/' + colPost}/${city2}/en`}>
                 <button id={imgNum} className="redBut">{t("Details")}</button>
               </NavLink>
           }
@@ -259,14 +262,12 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   return (
     <main>
 
-      {/*{ location.pathname === "/" ? "" : <Breadcrumbs /> }*/}
-
       {
         lang === "ua" ?
           <div className="breadcrumbs">
             <Link className="breads" onClick={oblUrl} to="/nashi-avtomiyki/wsi">{t("OurCarWashes")}</Link>
             <Link className="breads" to={`/nashi-avtomiyki/${id}/${colPost}`}>
-              {obl !== "all" ? ` / ${obl}` : obl === "wsi" ? "" : ""}</Link>
+            {obl === "all" ? '' : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ? ` / ${obl}` : ''}</Link>
             <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}`}>
               {post !== undefined ? ` / ${colPost} ${t("postCol")}` : ""} </Link>
           </div>
@@ -274,63 +275,67 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
           <div className="breadcrumbs">
             <Link className="breads" onClick={oblUrl} to="/nashi-avtomiyki/wsi/en">{t("OurCarWashes")}</Link>
             <Link className="breads" to={`/nashi-avtomiyki/${id}/${colPost}/en`}>
-              {obl !== "all" ? ` / ${obl}` : obl === "wsi" ? "" : ""}</Link>
+              {obl === "all" ? '' : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}/en` ? ` / ${obl}` : ''}</Link>
             <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}/en`}>
               {post !== undefined ? ` / ${colPost} ${t("postCol")}` : ""} </Link>
           </div>
       }
 
-      <h3 className={s.h3Title}>{t("title2")}</h3>
-
-      { obl === "all" ? "" :
-        <h4 className="h4Title">в {obl.split(" ")[0].slice(0, obl.split(" ")[0].length - 1)}ій області</h4> }
-
-      <div>
-        <div className="divItem"><img src={image2} className="slideStyle3" /></div>
-        <select id='select2' className="select noneBorder slideStyle" onChange={click1}>
-          <option value='all'>{t("SelectAnArea")}</option>
-          <option>{url ? "Lvivska Oblast" : "Львівська область"}</option>
-          <option>{url ? "Ivano-Frankivska Oblast" : "Франківська область"}</option>
-          <option>{url ? "Zakarpatska Oblast" : "Закарпатська область"}</option>
-          <option>{url ? "Ternopilska Oblast" : "Тернопільська область"}</option>
-          <option>{url ? "Dnipropetrovska Oblast" : "Дніпропетровська область"}</option>
-          <option>{url ? "Zhytomyrska Oblast" : "Житомирська область"}</option>
-          <option>{url ? "Volynska Oblast" : "Волинська область"}</option>
-          <option>{url ? "Luhanska Oblast" : "Луганська область"}</option>
-          <option>{url ? "Vinnytska Oblast" : "Віницька область"}</option>
-          <option>{url ? "Poltavska Oblast" : "Полтавська область"}</option>
-        </select>
+      <div className='divBoxTitASel'>
+        <div>
+          {/*<h3 className={s.h3Title}>{t("title2")}</h3>*/}
+          <h3 className='titleH2'>{t("title2")}</h3>
+          { obl === "all" ? "" :
+            <h4 className="titleH4">в {obl.split(" ")[0].slice(0, obl.split(" ")[0].length - 1)}ій області</h4> }
+        </div>
+        <div>
+          <div>
+            <div className="divItem"><img src={image2} className="slideStyle3" /></div>
+            <select id='select2' className="select noneBorder slideStyle" onChange={click1}>
+              <option value='all'>{t("SelectAnArea")}</option>
+              <option>{url ? "Lvivska Oblast" : "Львівська область"}</option>
+              <option>{url ? "Ivano-Frankivska Oblast" : "Франківська область"}</option>
+              <option>{url ? "Zakarpatska Oblast" : "Закарпатська область"}</option>
+              <option>{url ? "Ternopilska Oblast" : "Тернопільська область"}</option>
+              <option>{url ? "Dnipropetrovska Oblast" : "Дніпропетровська область"}</option>
+              <option>{url ? "Zhytomyrska Oblast" : "Житомирська область"}</option>
+              <option>{url ? "Volynska Oblast" : "Волинська область"}</option>
+              <option>{url ? "Luhanska Oblast" : "Луганська область"}</option>
+              <option>{url ? "Vinnytska Oblast" : "Віницька область"}</option>
+              <option>{url ? "Poltavska Oblast" : "Полтавська область"}</option>
+            </select>
+          </div>
+          <div>
+            <div className="divItem"><img src={image2} className="slideStyle3" /></div>
+            <select className="select selects slideStyle2" onClick={urlClick} onChange={(e) => colPost = Number(e.target.value)}
+                    style={{ backgroundColor: "#29363b", paddingLeft: "107px" }} id='select' >
+              {col?.map((item, i) => item === 0
+                ? <option key={i} value="0">{t("NumberOfPosts")}</option> : '' ) }
+              {col?.map((item, i) => item === 2
+                ? <option key={i}>2</option> : item === 0 ? <option key={i}>2</option> : '' ) }
+              {col?.map((item, i) => item === 3
+                ? <option key={i}>3</option> : item === 0 ? <option key={i}>3</option> : '' ) }
+              {col?.map((item, i) => item === 4
+                ? <option key={i}>4</option> : item === 0 ? <option key={i}>4</option> : '' ) }
+              {col?.map((item, i) => item === 5
+                ? <option key={i}>5</option> : item === 0 ? <option key={i}>5</option> : '' ) }
+              {col?.map((item, i) => item === 6
+                ? <option key={i}>6</option> : item === 0 ? <option key={i}>6</option> : '' ) }
+              {col?.map((item, i) => item === 7
+                ? <option key={i}>7</option> : item === 0 ? <option key={i}>7</option> : '' ) }
+              {col?.map((item, i) => item === 10
+                ? <option key={i}>10</option> : item === 0 ? <option key={i}>10</option> : '' ) }
+              {/*<option value="0">Кількість постів</option>*/}
+              {/*<option>10</option>*/}
+            </select>
+          </div>
+        </div>
       </div>
 
-
-      <div>
-        <div className="divItem"><img src={image2} className="slideStyle3" /></div>
-        <select className="select selects slideStyle2" onClick={urlClick} onChange={(e) => colPost = Number(e.target.value)}
-                style={{ backgroundColor: "#29363b", paddingLeft: "107px" }} id='select' >
-          {col?.map((item, i) => item === 0
-            ? <option key={i} value="0">{t("NumberOfPosts")}</option> : '' ) }
-          {col?.map((item, i) => item === 2
-            ? <option key={i}>2</option> : item === 0 ? <option key={i}>2</option> : '' ) }
-          {col?.map((item, i) => item === 3
-            ? <option key={i}>3</option> : item === 0 ? <option key={i}>3</option> : '' ) }
-          {col?.map((item, i) => item === 4
-            ? <option key={i}>4</option> : item === 0 ? <option key={i}>4</option> : '' ) }
-          {col?.map((item, i) => item === 5
-            ? <option key={i}>5</option> : item === 0 ? <option key={i}>5</option> : '' ) }
-          {col?.map((item, i) => item === 6
-            ? <option key={i}>6</option> : item === 0 ? <option key={i}>6</option> : '' ) }
-          {col?.map((item, i) => item === 7
-            ? <option key={i}>7</option> : item === 0 ? <option key={i}>7</option> : '' ) }
-          {col?.map((item, i) => item === 10
-            ? <option key={i}>10</option> : item === 0 ? <option key={i}>10</option> : '' ) }
-          {/*<option value="0">Кількість постів</option>*/}
-          {/*<option>10</option>*/}
-        </select>
-      </div>
 
       <div className={s.divBox}>
         {
-          !url ?
+          location.pathname.slice(location.pathname.length-2) !== 'en' ?
             listWash.map((item, i) => {
               if (item.colPost === colPost && item.obl === obl) {
                 return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
@@ -339,6 +344,8 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
               } else if (colPost === 0 && obl === "all") {
                 return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
               } else if (item.colPost === colPost && obl === "all") {
+                return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+              } else if (item.colPost === colPost && item.obl2 === obl) {
                 return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
               }
             })

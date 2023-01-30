@@ -30,8 +30,7 @@
     /*width: 100%;*/
     /*height: 100%;*/
 
-    width: 50%;
-    /* height: 100%; */
+    width: 40%;
     bottom: 35px;
     position: relative;
 }
@@ -73,15 +72,10 @@
 .blockLarge{
     /*display: flex;*/
     /*justify-content: center;*/
-    /*width: 48px;*/
-    /*height: 48px;*/
     /*margin: 24px 0 0 77%;*/
     /*position: relative;*/
     /*top: 65px;*/
     /*left: 16%;*/
-    /*opacity: 1;*/
-    /*border-radius: 10px;*/
-    /*backdrop-filter: blur(3px);*/
 
     display: flex;
     justify-content: center;
@@ -90,8 +84,7 @@
     margin: 24px 0 0 77%;
     position: relative;
     top: 35px;
-    left: -7%;
-    opacity: 1;
+    left: -11%;
     border-radius: 10px;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
@@ -120,40 +113,17 @@
     position: relative;
 }
 
-.leftArrowStyle{
-    position: absolute;
-    /*top: 50%;*/
-    top: 29%;
-    transform: translate(0, 50%);
-    left: 32px;
-    font-size: 45px;
-    color: #fff;
-    z-index: 0;
-    cursor: pointer;
-}
-
-.rightArrowStyle {
-    position: absolute;
-    /*top: 50%;*/
-    top: 29%;
-    transform: translate(0, 50%);
-    right: 32px;
-    font-size: 45px;
-    color: #fff;
-    z-index: 0;
-    cursor: pointer;
-}
-
 .breadcrumbs{
     max-width: 1200px;
-    margin: 20px auto;
     text-align: start;
-    margin-left: 20px;
+    margin: 10px auto 60px 100px;
+    font-size: 14px;
 }
 
 .breadcrumbs > *{
     display: inline-block;
     margin-right: 5px;
+    margin-top: 40px;
 }
 
 .breadcrumbs .crumb:after {
@@ -207,12 +177,12 @@
 }
 
 .boxItem{
-    background: linear-gradient(rgba(29, 32, 37, 1), rgba(41, 55, 58, 1));
+    background: transparent linear-gradient(70deg, #1D2025 0%, #29373A 100%) 0% 0% no-repeat padding-box;
     width: 325px;
     height: 130px;
     border-radius: 20px;
     padding: 10px;
-    margin: 30px auto;
+    margin: 30px;
 }
 
 .divItem{
@@ -220,6 +190,26 @@
     display: flex;
     margin: 0 auto;
     flex-direction: row-reverse;
+}
+
+.titleH2{
+    font-family: 'Averta';
+    font-size: 72px;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-align: left;
+    /*margin: 14px 0 0 20px;*/
+    width: 550px;
+    height: 177px;
+
+}
+
+.divBoxTitASel{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    align-items: center;
 }
 
 .pRed{
@@ -291,35 +281,35 @@
 
 .titlePost{
     font-family: 'Averta';
-    font-size: 36px;
-    margin-left: 20px;
     color: #FFFFFF;
-    font-weight: normal;
+    height: 95px;
+    font: normal normal normal 72px/98px Averta;
+    margin: -10px 0 0 100px;
 }
 
 .dataTitle{
-    margin: 10px 0 0 20px;
+    margin: 10px 0 0 100px;
     color: #B2B1B7;
-    font-size: 14px;
+    font-size: 20px;
     font-family: 'Averta';
     font-weight: normal;
 }
 
 .containerStyle {
-    /*width: 90%;*/
-    /*height: 210px;*/
-    /*margin: 20px auto 0;*/
-
     display: flex;
     overflow-y: hidden;
-    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.containerStyle::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
 
 .pSt{
-    margin: 40px 20px 20px;
-    font-size: 14px;
+    font-size: 20px;
     font-family: 'Averta';
     color: #B2B1B7;
+    margin-top: 20px;
 }
 
 .marshBut{
@@ -336,14 +326,14 @@
 }
 
 .serv{
-    margin: 20px;
-    font-size: 18px;
+    margin: 20px 20px 40px 100px;
+    font-size: 48px;
     font-family: 'Averta';
 }
 
 .spanGrad{
-    width: 30px;
-    height: 30px;
+    width: 47px;
+    height: 47px;
     display: block;
     margin: 0 11px 30px 0;
     border-radius: 50%;
@@ -353,18 +343,22 @@
 .servDiv{
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
-    justify-content: space-around;
+    margin: 10px 100px 50px;
 }
 
 .servDiv2{
-    width: 45%;
+    width: 26%;
     display: flex;
+}
 
+.spanNameG{
+    font-size: 18px;
+    width: 200px;
+    margin-top: 12px;
 }
 
 .hosh{
-    margin: 40px auto;
+    margin: 40px 0 100px 100px;
     width: 283px;
     height: 60px;
     border-radius: 30px;
@@ -377,30 +371,186 @@
 }
 
 .desc2{
-    margin: -10px 20px 20px 20px;
-    color: rgba(178, 177, 183, 1);
-    font-size: 14px;
+    margin: -10px 20px 20px 100px;
+    color: #B2B1B7;
+    font-size: 20px;
     font-family: 'Averta';
 }
 
 .imageBox{
-    width: 280px;
-    height: 210px;
+    width: 380px;
+    height: 240px;
     border-radius: 18px;
-    margin: 0 20px 0 0;
+    margin: 40px -70px 0 100px;
+}
+
+.zI{
+    z-index: 1;
 }
 
 .divIm2{
-    background: linear-gradient(180deg, rgb(0, 0, 0), rgba(29, 32, 37, 0));
+    background: transparent linear-gradient(180deg, #000000 0%, #1D202533 100%) 0% 0% no-repeat padding-box;
+    /*background: linear-gradient(180deg, rgb(0, 0, 0), rgba(29, 32, 37, 0));*/
     position: absolute;
-    height: 177px;
+    height: 351px;
     width: 100%;
     backdrop-filter: blur(1px);
+    z-index: 0;
 }
 
 .divIm1{
     background: url('../image2/coverMARCHELLO.jpg');
-    height: 170px;
+    position: absolute;
+    height: 350px;
+    width: 100%;
     margin-bottom: 30px;
     background-size: cover;
+}
+
+.titleH4{
+    color: rgba(178, 177, 183, 1);
+    font: normal normal normal 24px Averta;
+    text-align: start;
+    margin: 40px 0 40px;
+}
+
+.footerMain{
+    width: 100%;
+    height: 120px;
+    background-color: #131718;
+    color: #575758;
+    font-size: 12px;
+    font-family: 'Averta';
+    position: relative;
+    /*bottom: -110px;*/
+    bottom: -221px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerMain2{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divButP{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 85px;
+}
+
+.invest{
+    margin: 100px 100px 20px 100px;
+    font-size: 48px;
+    font-family: 'Averta';
+    width: 582px;
+}
+
+/*.div2Title{*/
+/*    margin-left: -60px;*/
+/*}*/
+
+@media screen and (max-width: 700px) {
+    .titleH2 {
+        height: 90px;
+        font-size: 36px;
+        width: auto;
+
+    }
+    .divBoxTitASel{
+        margin-bottom: 20px;
+    }
+    .breadcrumbs > * {
+        margin-top: auto;
+    }
+    .breadcrumbs{
+        margin: 20px 0 30px 20px;
+        font-size: 10px;
+    }
+    /*.div2Title{*/
+    /*    margin-left: 0;*/
+    /*}*/
+    .titleH4{
+        margin: -30px 0 60px 5px;
+    }
+    .divIm1{
+        height: 160px;
+        margin-bottom: 30px;
+    }
+    .divIm2{
+        height: 161px;
+    }
+    .imageBox {
+        margin: 20px 20px 0 0;
+    }
+    .titlePost {
+        font: normal normal normal 36px Averta;
+        height: auto;
+        margin-left: 20px;
+    }
+    .dataTitle{
+        margin: 10px 0 0 20px;
+        font-size: 14px;
+    }
+    .imageBox{
+        width: 280px;
+        height: 210px;
+        margin: 0 20px 0 0;
+    }
+    .footerMain {
+        bottom: -80px;
+    }
+    .containerStyle {
+        margin-left: 20px;
+    }
+    .divButP{
+        display: block;
+        flex-wrap: nowrap;
+        justify-content: normal;
+        margin-top: 0;
+    }
+    .pSt{
+         margin: 40px 20px 20px;
+         font-size: 14px;
+     }
+    .servDiv{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 10px 10px 20px;
+    }
+    .servDiv2{
+        width: 45%;
+        display: flex;
+
+    }
+    .serv{
+        margin: 20px;
+        font-size: 18px;
+        font-family: 'Averta';
+    }
+    .spanGrad{
+        width: 30px;
+        height: 30px;
+        margin: 0 11px 30px 0;
+    }
+    .spanNameG{
+        font-size: 14px;
+        width: 126px;
+    }
+    .desc2{
+        margin: -10px 20px 20px 20px;
+        font-size: 14px;
+    }
+    .invest {
+        margin: 60px 100px 20px 20px;
+        font-size: 18px;
+        font-family: 'Averta';
+        width: 80%;
+    }
+    .hosh {
+        margin: 40px auto;
+    }
 }

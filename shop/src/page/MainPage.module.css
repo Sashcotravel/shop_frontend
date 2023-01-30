@@ -27,10 +27,6 @@
     src: url(./static/Manrope-SemiBold.ttf);
 }
 
-body {
-    font-family: ManropeMedium;
-    color: #2e2e2e;
-}
 
 .back{
     background-color: #eaebf0;

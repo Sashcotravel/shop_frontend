@@ -1,10 +1,10 @@
-@import url(../fonts.css);
+/*@import url(../fonts.css);*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
 /*.app{*/
 /*    margin: 20px 200px 50px 50px;*/
@@ -269,9 +269,6 @@
 
 /*NOW*/
 
-body{
-    background-color: #29363B;
-}
 
 .container{
 

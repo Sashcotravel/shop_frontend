@@ -22,6 +22,7 @@ import MainPage from "./page/MainPage";
 import ListWash from "./component/ListWash";
 import OnePost from "./page/listwash/OnePost";
 import Breadcrumbs from "./Breadcrumbs";
+import FooterMain from "./component/FooterMain";
 
 
 let userOrder = [];
@@ -170,8 +171,19 @@ const App = () => {
 
                 <div className={s.divName}>
                   <h3 className={s.h3Title}>{t("title")}</h3>
-                  <h6 className={s.h6Title}>{t("step")}:</h6>
+                  {
+                    window.screen.width > 900 &&
+                    <span className={s.pTitle}>Короткий текст-пояснення про що цей калькулятор: що можна
+                    порахувати вартість нової мийки, або шо можна замовити тільки
+                    частину обладнання яке цікавить, або просто ознайомитись з
+                    нашими цінами та асортиментом;)</span>
+                  }
                 </div>
+
+              <div className={s.divH6}>
+                <h6 className={s.h6Title}>{t("step")}:</h6>
+              </div>
+
                 {
                   lang == 'ua' ?
                   <div className={s.divTitle} onClick={clickBread}>
@@ -320,7 +332,7 @@ const App = () => {
               : <>
                 {
                   lang == 'ua' ?
-                    <div className={s.divTitle}>
+                    <div className={s.divTitle} style={{marginTop: '90px'}}>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                                className={s.spanTitle + " " + s.title1} to="/obladnannya">{t("equipment")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
@@ -333,7 +345,7 @@ const App = () => {
                                to="/doc">{t("documentation")}</NavLink>
                     </div>
                     :
-                    <div className={s.divTitle}>
+                    <div className={s.divTitle} style={{marginTop: '90px'}}>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                                className={s.spanTitle + " " + s.title1} to="/obladnannya/en">{t("equipment")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
@@ -352,6 +364,8 @@ const App = () => {
                 }
               </>
           }
+
+          <FooterMain />
 
         </>
     </div>

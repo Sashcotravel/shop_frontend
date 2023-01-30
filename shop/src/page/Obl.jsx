@@ -3,7 +3,6 @@ import s from "../component/Home.module.css";
 import "./Obl.css";
 import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
-import Breadcrumbs from "../Breadcrumbs";
 
 
 const Obl = ({ t, data, userOrder, setTotal, total }) => {
@@ -217,36 +216,6 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
     );
   };
 
-  // const container = (nameImg, nameGoods, size, boxBut) => {
-  //
-  //   console.log(userOrder);
-  //   return (
-  //     <div className={s.container}>
-  //       <div className={s.boxOne}>
-  //         <figure>
-  //           <div className={`img${nameImg} base`} id={`img${nameImg}`}>
-  //             { window.screen.width > 900 ? <span className={s.block} onClick={imgSize} id={`img${size}`}></span> : '' }
-  //           </div>
-  //         </figure>
-  //         <h5 className={s.itemName}>{data[nameGoods].nameOfGoods}</h5>
-  //         <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
-  //           and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-  //         <div className={s.divBut}>
-  //           <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-  //             <button className={s.butMin}>
-  //               <span onClick={minesCount} title={data[boxBut].nameOfGoods} className={s.spanMin}>-</span>
-  //             </button>
-  //             <span className={s.itemTotalSize} id="lightblue">{data[boxBut].size}</span>
-  //             <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-  //               <span onClick={addCount} title={data[boxBut].nameOfGoods} className={s.spanAdd}>+</span>
-  //             </button>
-  //           </div>
-  //           <span className={s.itemTotal}>{data[boxBut].total} грн</span>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   )
-  // }
 
   return <>
     <div id="light" className={s.boxHideImage} onClick={hidden}>
@@ -570,16 +539,16 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 export default Obl;
 
 
-{/*{*/
-}
-{/*  data[6].size > 0*/
-}
-{/*  ? <span className={s.inputTextGreen}>{t("selected")}</span>*/
-}
-{/*  : <span className={s.inputText}>{t("chooseThisTypeOfCover")}</span>*/
-}
-{/*}*/
-}
+// {/*{*/
+// }
+// {/*  data[6].size > 0*/
+// }
+// {/*  ? <span className={s.inputTextGreen}>{t("selected")}</span>*/
+// }
+// {/*  : <span className={s.inputText}>{t("chooseThisTypeOfCover")}</span>*/
+// }
+// {/*}*/
+// }
 
 // userOrder.forEach((el, index) => {
 //   if (el.nameOfGoods === data[7].nameOfGoods || el.nameOfGoods === data[6].nameOfGoods) {
@@ -593,3 +562,35 @@ export default Obl;
 //       el.checked = false
 //     }
 //   }})
+
+
+// const container = (nameImg, nameGoods, size, boxBut) => {
+//
+//   console.log(userOrder);
+//   return (
+//     <div className={s.container}>
+//       <div className={s.boxOne}>
+//         <figure>
+//           <div className={`img${nameImg} base`} id={`img${nameImg}`}>
+//             { window.screen.width > 900 ? <span className={s.block} onClick={imgSize} id={`img${size}`}></span> : '' }
+//           </div>
+//         </figure>
+//         <h5 className={s.itemName}>{data[nameGoods].nameOfGoods}</h5>
+//         <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
+//           and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+//         <div className={s.divBut}>
+//           <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
+//             <button className={s.butMin}>
+//               <span onClick={minesCount} title={data[boxBut].nameOfGoods} className={s.spanMin}>-</span>
+//             </button>
+//             <span className={s.itemTotalSize} id="lightblue">{data[boxBut].size}</span>
+//             <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+//               <span onClick={addCount} title={data[boxBut].nameOfGoods} className={s.spanAdd}>+</span>
+//             </button>
+//           </div>
+//           <span className={s.itemTotal}>{data[boxBut].total} грн</span>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }

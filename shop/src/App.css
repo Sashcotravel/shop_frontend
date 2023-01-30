@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #29363B;
+  background: transparent linear-gradient(70deg, #1D2025 0%, #29373A 100%) 0% 0% no-repeat padding-box;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,14 +18,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background: transparent linear-gradient(70deg, #1D2025 0%, #29373A 100%) 0% 0% no-repeat padding-box;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.active{
-  background-color: #DF4242;
-  color: #FFFFFF;
-}
 
