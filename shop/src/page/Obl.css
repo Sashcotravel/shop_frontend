@@ -422,8 +422,8 @@
     font-size: 12px;
     font-family: 'Averta';
     position: relative;
-    /*bottom: -110px;*/
-    bottom: -221px;
+    bottom: -110px;
+    /*bottom: -221px;*/
     display: flex;
     align-items: center;
     justify-content: center;

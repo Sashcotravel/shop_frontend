@@ -1,12 +1,17 @@
 import React from 'react';
-import image from '../image/svg/samwash_logo.png'
 
 
-const FooterMain = () => {
+const FooterMain = ({ o }) => {
 
+  if(o === -221){
+    o = -221
+  } else {
+    o = 0
+  }
 
   return <>
-    <div className="footerMain">
+    <div className="footerMain" style={o === 0 ? {bottom: '0'}
+      : o === -221 ? {bottom: '-221px'} : {bottom: '-115px'}}>
       <div className='footerMain2'>
         <div>
           <img src={require("../image/svg/samwash_logo.png")} />

@@ -6,6 +6,7 @@ import image2 from "../../image2/coverMARCHELLO.jpg";
 import Breadcrumbs from "../../Breadcrumbs";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { listWash } from "../../users";
+import FooterMain from "../../component/FooterMain";
 
 
 const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
@@ -14,6 +15,7 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
   const { id } = useParams();
   const { post } = useParams();
 
+  const o = -115
 
   useEffect(() => {
     setOnFooter(true);
@@ -34,6 +36,7 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
   };
 
 
+
   return (
     <>
 
@@ -48,7 +51,7 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
                   <Link className="breads" to={`/nashi-avtomiyki/${id}/${post}`}>
                     {id === "wsi" ? "" : id === undefined ? "" : id !== "all" ? ` / ${postOne?.obl}` : ""}</Link>
                   <Link className="breads" to={`/nashi-avtomiyki/wsi/${post}`}>
-                    {post !== undefined ? ` / ${post} ${t("postCol")}` : ""} </Link>
+                    {post === undefined ? '' : post === '0' ? '' : ` / ${post} ${t("postCol")}`} </Link>
                 </div>
                 :
                 <div className="breadcrumbs zI">
@@ -56,7 +59,7 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
                   <Link className="breads" to={`/nashi-avtomiyki/${id}/${post}/en`}>
                     {id === "wsi" ? "" : id === undefined ? "" : id !== "all" ? ` / ${postOne.obl2}` : ""}</Link>
                   <Link className="breads" to={`/nashi-avtomiyki/wsi/${post}/en`}>
-                    {post === undefined ? "" : post === 0 ? "" : ` / ${post} ${t("postCol")}`} </Link>
+                    {post === undefined ? '' : post === '0' ? '' : ` / ${post} ${t("postCol")}`} </Link>
                 </div>
             }
 
@@ -103,6 +106,7 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
         </div>
       {/*</div>*/}
 
+      <FooterMain o={o} />
     </>
   );
 };

@@ -5,6 +5,7 @@ import { listWash } from "../users";
 import image from "../image/svg/Route.svg";
 import image2 from "../image/svg/Arrow.svg";
 import Breadcrumbs from "../Breadcrumbs";
+import FooterMain from "./FooterMain";
 // import Post from "../page/listwash/Post";
 
 
@@ -13,7 +14,7 @@ let col2 = 0
 let oblUrl
 let colP = 0
 let obl = 'all'
-let colPost = 0
+let colPost
 
 const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
 
@@ -28,29 +29,35 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   const url1 = location.pathname.slice(location.pathname.length-2)
   const url2 = location.pathname.slice(location.pathname.length-2) !== 'en'
 
+  const o = -221
+
+  if(location.pathname === '/nashi-avtomiyki/wsi' || location.pathname === '/nashi-avtomiyki/wsi/en'){
+    colPost = Number(0)
+    obl = 'all'
+    col = [0]
+  } else if (location.pathname === `/nashi-avtomiyki/wsi/${post}` || location.pathname === `/nashi-avtomiyki/wsi/${post}/en`) {
+    obl = 'all'
+    colPost = Number(post)
+  }
 
 
-  useEffect(() => {
+    useEffect(() => {
     setOnFooter(true);
     if(location.pathname === '/nashi-avtomiyki/wsi'){
       document.getElementById('select2').value = 'all'
-      document.getElementById('select').value = 0
-    }
-    else if(location.pathname === '/nashi-avtomiyki/wsi/en'){
+    } else if(location.pathname === '/nashi-avtomiyki/wsi/en'){
       document.getElementById('select2').value = 'all'
-      document.getElementById('select').value = 0
-    }
-    else if (location.pathname === `/nashi-avtomiyki/wsi/${post}`) {
-      colPost = Number(post)
+    } else
+      if (location.pathname === `/nashi-avtomiyki/wsi/${post}`) {
       document.getElementById('select').value = post
       oblUrl2()
     }
     else if (location.pathname === `/nashi-avtomiyki/wsi/${post}/en`) {
-      colPost = Number(post)
       document.getElementById('select').value = post
       oblUrl2()
     }
-    else if(url){
+    else
+      if(url){
       changeLanguage('en')
       obl = oblFalse(id)
       click1Use(obl)
@@ -269,7 +276,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
             <Link className="breads" to={`/nashi-avtomiyki/${id}/${colPost}`}>
             {obl === "all" ? '' : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ? ` / ${obl}` : ''}</Link>
             <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}`}>
-              {post !== undefined ? ` / ${colPost} ${t("postCol")}` : ""} </Link>
+              {post === undefined ? '' : post === '0' ? '' : ` / ${colPost} ${t("postCol")}`} </Link>
           </div>
           :
           <div className="breadcrumbs">
@@ -277,7 +284,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
             <Link className="breads" to={`/nashi-avtomiyki/${id}/${colPost}/en`}>
               {obl === "all" ? '' : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}/en` ? ` / ${obl}` : ''}</Link>
             <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}/en`}>
-              {post !== undefined ? ` / ${colPost} ${t("postCol")}` : ""} </Link>
+              {post === undefined ? '' : post === '0' ? '' : ` / ${colPost} ${t("postCol")}`} </Link>
           </div>
       }
 
@@ -376,6 +383,8 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
             })
         }
       </div>
+
+      <FooterMain o={o} />
 
       {/*<Post listWash={listWash} colPost={colPost} t={t} setPost={setPost} lang={lang} />*/}
     </main>
