@@ -3,15 +3,17 @@ import React from 'react';
 
 const FooterMain = ({ o }) => {
 
-  if(o === -221){
-    o = -221
+  if(o === -156){
+    o = -156
+  } else if(o = -115) {
+    o = -115
   } else {
     o = 0
   }
 
   return <>
     <div className="footerMain" style={o === 0 ? {bottom: '0'}
-      : o === -221 ? {bottom: '-221px'} : {bottom: '-115px'}}>
+      : o === -156 ? {bottom: '-156px'} : {bottom: '-115px'}}>
       <div className='footerMain2'>
         <div>
           <img src={require("../image/svg/samwash_logo.png")} />

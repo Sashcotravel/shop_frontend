@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "11.9.0",
     "@emotion/styled": "^11.10.5",
+    "@fancyapps/ui": "^4.0.31",
     "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.20.1.tgz",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",

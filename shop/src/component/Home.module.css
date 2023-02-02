@@ -55,6 +55,13 @@
     margin: 0 30px;
 }
 
+.divBox12{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 75px;
+    justify-content: space-evenly;
+}
+
 .divName{
     display: flex;
     flex-direction: row;

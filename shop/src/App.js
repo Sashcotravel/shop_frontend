@@ -195,7 +195,7 @@ const App = () => {
                   lang == 'ua' ?
                   <div className={s.divTitle} onClick={clickBread}>
                   <NavLink style={ ({ isActive }) => isActive ? activeStyle : undefined} id='equipment'
-                           className={s.spanTitle + " " + s.title1} to="/obladnannya">{t("equipment")}</NavLink>
+                           className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                            to="/nakritya" id='cover'>{t("cover")}</NavLink>
                   <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}

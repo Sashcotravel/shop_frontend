@@ -654,7 +654,7 @@ export const listWash = [
         'desc': ['Активна піна', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
         'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос потужністю 3 кВт.',
         'colPost': 2,
-        'src': [image1, image2, image5, 'https://www.youtube.com/embed/ENZjdyDPFos'],
+        'src': [image1, image1, image2, image5, 'https://www.youtube.com/embed/ENZjdyDPFos'],
         'imgNum': 1,
         'city': 'Дрогобич',
         'city2': 'Drohobych',
