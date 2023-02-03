@@ -40,10 +40,10 @@ const MainPage = ({ t, setOnFooter }) => {
   };
 
   useEffect(() => {
-        setOnFooter(true);
-      return () => {
-        setOnFooter(false);
-      };
+    setOnFooter(true);
+    return () => {
+      setOnFooter(false);
+    };
   }, []);
 
   return <div className={m.back}>

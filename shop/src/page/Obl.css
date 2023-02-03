@@ -451,6 +451,23 @@
     justify-content: center;
 }
 
+.titlePName{
+    font-size: 18px;
+    width: 172px;
+    text-align: start;
+    height: 24px;
+    font-family: 'Averta';
+    font-weight: normal;
+}
+
+.titlePName2{
+    font-size: 12px;
+    text-align: start;
+    font-family: 'Averta';
+    margin: 5px 0 -2px 0;
+    font-weight: normal;
+}
+
 .footerMain2{
     width: 85%;
     display: flex;
@@ -582,5 +599,9 @@ a[data-fancybox] img {
     }
     .hosh {
         margin: 40px auto;
+    }
+    .addBlock {
+        top: 39px;
+        left: 51px;
     }
 }

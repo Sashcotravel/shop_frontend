@@ -30,23 +30,26 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   const url = location.pathname.slice(location.pathname.length - 2) === "en";
   const url1 = location.pathname.slice(location.pathname.length - 2);
   const url2 = location.pathname.slice(location.pathname.length - 2) !== "en";
+  const loc = location.pathname
 
   const o = win ? -156 : -115;
 
 
   useEffect(() => {
     setOnFooter(true);
-    if (location.pathname === "/nashi-avtomiyki/wsi") {
+    if (loc === "/nashi-avtomiyki/wsi") {
+      document.getElementById("select2").value = "all";
+      document.title = "Автомийки SamWash";
+    }
+    else if (loc === "/nashi-avtomiyki/wsi/en") {
       document.getElementById("select2").value = "all";
     }
-    else if (location.pathname === "/nashi-avtomiyki/wsi/en") {
-      document.getElementById("select2").value = "all";
-    }
-    else if (location.pathname === `/nashi-avtomiyki/wsi/${post}`) {
+    else if (loc === `/nashi-avtomiyki/wsi/${post}`) {
       document.getElementById("select").value = post;
       oblUrl2();
+      document.title = `Автомийки SamWash на ${post} боксів`;
     }
-    else if (location.pathname === `/nashi-avtomiyki/wsi/${post}/en`) {
+    else if (loc === `/nashi-avtomiyki/wsi/${post}/en`) {
       document.getElementById("select").value = post;
       oblUrl2();
     }
@@ -54,9 +57,8 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
       changeLanguage("en");
       obl = oblFalse(id);
       click1Use(obl);
-      colPost = Number(post);
       document.getElementById("select2").value = obl;
-      if (post === undefined) {
+      if (post === undefined || post === "NaN" || post === 'wsi') {
         document.getElementById("select").value = "0";
         colPost = Number(0);
       } else {
@@ -68,16 +70,15 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
       obl = oblFalse(id);
       click1Use(obl);
       document.getElementById("select2").value = obl;
-      if (post === undefined || post === "NaN") {
+      if (post === undefined || post === "NaN" || post === 'wsi') {
         document.getElementById("select").value = "0";
         colPost = Number(0);
       } else {
         colPost = Number(post);
-        document.getElementById("select").value = post;
+        document.getElementById("select").value = colPost.toString();
       }
     }
     else {
-      console.log("4=4=5");
       obl = oblFalse(id);
       click1Use(obl);
       colPost = Number(post);
@@ -129,17 +130,17 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
       }
     });
   };
-  const container = ({ item, city, st, imgNum, map, city2 }) => {
+  const container = ({ item, city, vOb, imgNum, map, city2, st }) => {
     let oblUrl = oblTrue(obl);
     return (
       <div key={imgNum}>
-        {st === undefined ? "" : <div className="addBlock">ВЛАСНИЙ ОБ'ЄКТ</div>}
+        {vOb === undefined ? "" : <div className="addBlock">ВЛАСНИЙ ОБ'ЄКТ</div>}
         <div className="boxItem">
           <p className="pRed">SAMWASH</p>
           <div className="divRoad">
             <div>
-              <span>{city}</span> <br />
-              <span style={{ fontSize: "12px" }}>{city}</span>
+              <p className='titlePName'>{city}</p>
+              <p className='titlePName2'>{st !== undefined && st !== '' ? `вул. ${st}` : ''}</p>
             </div>
             <a href={map}>
               <img src={image} style={{ margin: "0 10px 0 0" }} width={"53.74px"} />
@@ -169,7 +170,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
         : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
           : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
             : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
-              : obl === "Луганська область" ? "/luganska-oblast" : obl === "Віницька область" ? "/vinnytska-oblast"
+              : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
                 : obl === "Полтавська область" ? "/poltavska-oblast" : "";
     } else {
       return obl === "all" ? "/wsi" : obl === "Zakarpatska Oblast" ? "/zakarpatska-oblast"
@@ -186,7 +187,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
         : id === "lvivska-oblast" ? "Львівська область" : id === "frankivska-oblast" ? "Франківська область"
           : id === "ternopilska-oblast" ? "Тернопільська область" : id === "dniprotrovska-oblast" ? "Дніпропетровська область"
             : id === "zhitomirska-oblast" ? "Житомирська область" : id === "volynska-oblast" ? "Волинська область"
-              : id === "luganska-oblast" ? "Луганська область" : id === "vinnytska-oblast" ? "Віницька область"
+              : id === "luganska-oblast" ? "Луганська область" : id === "vinnytska-oblast" ? "Вінницька область"
                 : id === "poltavska-oblast" ? "Полтавська область" : "";
     } else {
       return id === "wsi" ? "Select an Oblast" : id === "zakarpatska-oblast" ? "Zakarpatska Oblast"
@@ -286,33 +287,45 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   };
 
 
-  if (location.pathname === "/nashi-avtomiyki/wsi" || location.pathname === "/nashi-avtomiyki/wsi/en") {
+  if (loc === "/nashi-avtomiyki/wsi" || loc === "/nashi-avtomiyki/wsi/en") {
     colPost = Number(0);
     obl = "all";
     col = [0];
     allObl = [];
-  } else if (location.pathname === `/nashi-avtomiyki/wsi/${post}` || location.pathname === `/nashi-avtomiyki/wsi/${post}/en`) {
+  }
+  else if (loc === `/nashi-avtomiyki/wsi/${post}` || loc === `/nashi-avtomiyki/wsi/${post}/en`) {
     obl = "all";
     colPost = Number(post);
-  } else if (location.pathname === `/nashi-avtomiyki/${id}/wsi`) {
+    document.title = `Автомийки SamWash на ${post} боксів`;
+  }
+  else if (loc === `/nashi-avtomiyki/${id}/wsi`) {
     obl = oblFalse(id);
     colPost = Number(0);
-  } else if (location.pathname === `/nashi-avtomiyki/${id}/wsi/en`) {
+    document.title = `Автомийки SamWash в ${obl.split(" ")[0].slice(0, obl.split(" ")[0].length - 1)}ій області`;
+  }
+  else if (loc === `/nashi-avtomiyki/${id}/wsi/en`) {
     colPost = Number(0);
-  } else if (location.pathname === `/nashi-avtomiyki/${id}`) {
+  }
+  else if (loc === `/nashi-avtomiyki/${id}`) {
     obl = oblFalse(id);
     colPost = Number(0);
-  } else if (location.pathname === `/nashi-avtomiyki/${id}/en`) {
+  }
+  else if (loc === `/nashi-avtomiyki/${id}/en`) {
+    obl = oblTrue(id);
     colPost = Number(0);
-  } else if (location.pathname === `/nashi-avtomiyki/${id}/${post}`) {
+  }
+  else if (loc === `/nashi-avtomiyki/${id}/${post}`) {
     obl = oblFalse(id);
     colPost = Number(post);
-  } else if (location.pathname === `/nashi-avtomiyki/${id}/${post}`) {
+    document.title = `Автомийки SamWash в ${obl.split(" ")[0].slice(0, obl.split(" ")[0].length - 1)}ій 
+    області на ${post} постів`;
+  }
+  else if (loc === `/nashi-avtomiyki/${id}/${post}`) {
     obl = oblTrue(id);
     colPost = Number(post);
   }
 
-  // const style = window.screen.availWidth > 900 ? 'margin: auto 128px' : ''
+
   const style = {
     margin: "auto 128px"
   };
@@ -339,7 +352,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
               <Link className="breads" to={`/nashi-avtomiyki/${id}/${colPost}/en`}>
                 {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}/en` ? ` / ${obl}` : ""}</Link>
               <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}/en`}>
-                {post === undefined ? "" : post === "0" ? "" : ` / on ${colPost} ${t("postCol")}`} </Link>
+                {post === undefined ? "" : post === "0" ? "" : post === "wsi" ? "" : ` / on ${colPost} ${t("postCol")}`} </Link>
             </div>
         }
 
@@ -348,7 +361,8 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
             {/*<h3 className={s.h3Title}>{t("title2")}</h3>*/}
             <h1 className="titleH2">{t("title2")}</h1>
             {obl === "all" ? "" :
-              <h4 className="titleH4">в {obl.split(" ")[0].slice(0, obl.split(" ")[0].length - 1)}ій області</h4>}
+              <h4 className="titleH4">в {obl.split(" ")[0]
+                .slice(0, obl.split(" ")[0].length - 1)}ій {t("oblast")}</h4>}
           </div>
           <div style={{ marginLeft: "21px" }}>
             <div>
@@ -363,7 +377,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
                 <option>{url ? "Zhytomyrska Oblast" : "Житомирська область"}</option>
                 <option>{url ? "Volynska Oblast" : "Волинська область"}</option>
                 <option>{url ? "Luhanska Oblast" : "Луганська область"}</option>
-                <option>{url ? "Vinnytska Oblast" : "Віницька область"}</option>
+                <option>{url ? "Vinnytska Oblast" : "Вінницька область"}</option>
                 <option>{url ? "Poltavska Oblast" : "Полтавська область"}</option>
               </select>
             </div>
@@ -372,9 +386,9 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
               <select className="select selects slideStyle2" onClick={urlClick}
                       onChange={(e) => colPost = Number(e.target.value)}
                       style={{ backgroundColor: "#29363b", paddingLeft: "107px" }} id="select">
+                {allObl.length !== 0 ? <option value="0" title="0">{t("posts")}</option> : ""}
                 {col?.map((item, i) => item === 0
                   ? <option key={i} value="0">{t("NumberOfPosts")}</option> : "")}
-                {allObl.length !== 0 ? <option value="0" title="0">{t("posts")}</option> : ""}
                 {col?.map((item, i) => item === 2
                   ? <option key={i}>2</option> : item === 0 ? <option key={i}>2</option> : "")}
                 {col?.map((item, i) => item === 3
@@ -401,27 +415,27 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
             location.pathname.slice(location.pathname.length - 2) !== "en" ?
               listWash.map((item, i) => {
                 if (item.colPost === colPost && item.obl === obl) {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 } else if (item.obl === obl && colPost === 0) {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 } else if (colPost === 0 && obl === "all") {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 } else if (item.colPost === colPost && obl === "all") {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 } else if (item.colPost === colPost && item.obl2 === obl) {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 } else if (colPost === 0 && item.obl2 === obl) {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 }
               })
               :
               listWash.map((item, i) => {
                 if (item.colPost === colPost && item.obl2 === obl) {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 } else if (item.obl2 === obl && colPost === 0) {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 } else if (colPost === 0 && obl === "all") {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                   // return <div key={index} className='boxItem'>
                   //                     <p className='pRed'>SAMWASH</p>
                   //                   <div className='divRoad'>
@@ -436,7 +450,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
                   //                     </NavLink>
                   //                   </div>
                 } else if (item.colPost === colPost && obl === "all") {
-                  return container(item, item.city, item.st, item.imgNum, item.map, item.city2, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 }
               })
           }

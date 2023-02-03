@@ -158,6 +158,10 @@ const App = () => {
     nameKalk = e.target.id
   }
 
+  const style = {
+    margin: '10px auto 60px 100px'
+  }
+
   return (
     <div className="App">
       <Header t={t} changeLanguage={changeLanguage} lang={lang} />
@@ -167,7 +171,7 @@ const App = () => {
               : <>
 
                 {
-                  <div className="breadcrumbs">
+                  <div className="breadcrumbs" style={ window.screen.availWidth > 900 ? style : undefined}>
                     <Link className="breads" to={urlKalk}>{t(`${nameKalk}`)}</Link>
                   </div>
                 }

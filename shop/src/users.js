@@ -660,6 +660,11 @@ export const listWash = [
         'city2': 'Drohobych',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'st': 'Трускавецька 71',
+        'map': 'https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A2%D1%80%D1%83%D1%81%D0%BA%D0%' +
+          'B0%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B0,+71,+%D0%94%D1%80%D0%BE%D0%B3%D0%BE%D0%B1%D0%B8%D1%87,+%D0%9B%D1%8C%D0%B' +
+          '2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+82100/@49.3512328,23.4218097' +
+          ',11.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x473a4f13b718b391:0xc84bea8ad2b329ca!2m2!1d23.5095463!2d49.3405895'
 
     },
     {
@@ -685,6 +690,27 @@ export const listWash = [
         'city2': 'Rohatyn',
         'obl': 'Франківська область',
         'obl2': 'Ivano-Frankivska Oblast',
+        'st': 'Городецького 27 б',
+        'map': 'https://www.google.com/maps/dir//%D0%9D09,+%D0%92%D0%B5%D1%80%D0%B1' +
+          '%D0%B8%D0%BB%D1%96%D0%B2%D1%86%D1%96,+%D0%86%D0%B2%D0%B0%D0%BD%D0%BE-%D0' +
+          '%A4%D1%80%D0%B0%D0%BD%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D' +
+          '0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+77005/@49.3757143,24.6053947,14z/data' +
+          '=!4m8!4m7!1m0!1m5!1m1!1s0x47307f77592d2207:0xa267eb3294d01318!2m2!1d24.61' +
+          '00583!2d49.3772503'
+    },
+    {
+        'name': 'Мийка самообслуговування 3 поста',
+        'desc': ['Активна піна', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
+        'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос потужністю 3 кВт.',
+        'colPost': 3,
+        'src': [image3],
+        'imgNum': 30,
+        'city': 'Рожнів',
+        'city2': 'Rozhniv',
+        'obl': 'Франківська область',
+        'obl2': 'Ivano-Frankivska Oblast',
+        'st': 'Т0904',
+        'map': 'https://www.google.com/maps/place/48.358075,25.241673/@48.358075,25.241673,18z'
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -695,8 +721,16 @@ export const listWash = [
         'imgNum': 4,
         'city': 'Монастирське',
         'city2': 'Monastyrske',
-        'obl': 'Франківська область',
-        'obl2': 'Ivano-Frankivska Oblast',
+        'obl': 'Тернопільська область',
+        'obl2': 'Ternopilska Oblast',
+        'st': 'Михайла Грушевського 1',
+        'map': 'https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB.+%D0%9C%D0%B8%D1%' +
+          '85%D0%B0%D0%B9%D0%BB%D0%B0+%D0%93%D1%80%D1%83%D1%88%D0%B5%D0%B2%D1%81%D1%8C%' +
+          'D0%BA%D0%BE%D0%B3%D0%BE,+1,+%D0%9C%D0%BE%D0%BD%D0%B0%D1%81%D1%82%D0%B8%D1%80%' +
+          'D0%B8%D1%81%D1%8C%D0%BA%D0%B0,+%D0%A2%D0%B5%D1%80%D0%BD%D0%BE%D0%BF%D1%96%D0%B' +
+          'B%D1%8C%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+48' +
+          '300/@49.0889746,25.2639925,10z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4730fb16c331e017:0' +
+          'x9ca43414b13388b9!2m2!1d25.1753946!2d49.0902069'
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -709,6 +743,13 @@ export const listWash = [
         'city2': 'Rakhiv',
         'obl': 'Закарпатська область',
         'obl2': 'Zakarpatska Oblast',
+        'st': 'Миру',
+        'map': 'https://www.google.com/maps/dir/48.0421194,24.178492/226,+%D0%B2' +
+          '%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%9C%D0%B8%D1%80%D1%83,+%D0%A0%D0%B0' +
+          '%D1%85%D1%96%D0%B2,+%D0%97%D0%B0%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D' +
+          '1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+906' +
+          '00/@48.0411253,24.1872923,14.5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4737a99ee' +
+          'e8deb05:0x380f49777d60e70b!2m2!1d24.1783268!2d48.0421344'
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -720,8 +761,69 @@ export const listWash = [
         'imgNum': 6,
         'city': 'Ильниці',
         'city2': 'Ilnytsia',
-        'obl': 'Закарпатська область',
-        'obl2': 'Zakarpatska Oblast',
+        'obl': 'Вінницька область',
+        'obl2': 'Vinnytska Oblast',
+        'st': 'Т0606',
+        'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8' +
+          '%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0%BC%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0' +
+          '%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+SAMWASH/@49.1858092,28.7' +
+          '56274,9z/data=!4m19!1m13!4m12!1m4!2m2!1d23.9412178!2d49.7455798!4e1!1m6!1m2!1' +
+          's0x40d2bb89ee966611:0x1457eb690356ed5a!2z0ZbQu9C70ZbQvdGG0ZYg0LDQstGC0L7QvNC40' +
+          'LnQutCwINGB0LDQvNC-0L7QsdGB0LvRg9Cz0L7QstGD0LLQsNC90L3Rjw!2m2!1d29.2028923!2d4' +
+          '9.1194942!3m4!1s0x40d2bb89ee966611:0x1457eb690356ed5a!8m2!3d49.1194942!4d29.2028923'
+    },
+    {
+        'name': 'Мийка самообслуговування 3 поста',
+        'desc': ['Попередня мийка піною', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
+        'desc2': 'Перша мийка самообслуговувания для миття ФУР 20+ метрів в Україні. Унікальна розрабка консолі і обладняння дозволяє отримати чистий автомобіль, ' +
+          'навіть Фуру. Комбінація обляднання і миючих засобів.',
+        'colPost': 3,
+        'src': [image18], // tyt
+        'imgNum': 28,
+        'city': 'Львів',
+        'city2': 'Lviv6',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
+        'st': 'Патона 4',
+        'map': 'https://www.google.com/maps/place/SAMWASH/@49.8227116,23.9568651,' +
+          '19z/data=!4m18!1m12!4m11!1m3!2m2!1d23.9562789!2d49.8225291!1m6!1m2!1s0' +
+          'x473ae74195b1f4f9:0x1677c8e989f8a171!2z0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstG' +
+          'B0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!2m2!1d23.956326!2d49.82245!3m4!' +
+          '1s0x473ae74195b1f4f9:0x1677c8e989f8a171!8m2!3d49.82245!4d23.956326'
+    },
+    {
+        'name': 'Мийка самообслуговування 4 поста',
+        'desc': ['Активна піна', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
+        'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос потужністю 3 кВт.',
+        'colPost': 4,
+        'src': [image3],
+        'imgNum': 31,
+        'city': 'Коломия',
+        'city2': 'Kolomyia',
+        'obl': 'Франківська область',
+        'obl2': 'Ivano-Frankivska Oblast',
+        'st': 'Карпатська 93',
+        'map': 'https://www.google.com/maps/place/LuxWash/@48.5338106,25.0117082,17z/data=!4m9!1m2!2m1!1zc2Ftd2FzaCDQs' +
+          'dGW0LvRjyDQmtC-0LvQvtC80LjRjywg0IbQstCw0L3Qvi3QpNGA0LDQvdC60ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGM!3m5!1s0x4736d' +
+          '3c7053d87c1:0xf34bd306d2c23413!8m2!3d48.5331534!4d25.0130796!15sClFzYW13YXNoINCx0ZbQu9GPINCa0L7Qu9C-0LzQuNGPL' +
+          'CDQhtCy0LDQvdC-LdCk0YDQsNC90LrRltCy0YHRjNC60LAg0L7QsdC70LDRgdGC0YwiA4gBAZIBFXNlbGZfc2VydmljZV9jYXJfd2FzaOABAA'
+    },
+    {
+        'name': 'Мийка самообслуговування 4 поста',
+        'desc': ['Активна піна', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
+        'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос потужністю 3 кВт.',
+        'colPost': 4,
+        'src': [image3],
+        'imgNum': 32,
+        'city': 'Букачівці',
+        'city2': 'Bukachevtsi',
+        'obl': 'Франківська область',
+        'obl2': 'Ivano-Frankivska Oblast',
+        'st': '',
+        'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE+%D0%B7%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%8' +
+          '7%D0%BD%D0%B0+%D1%81%D1%82%D0%B0%D0%BD%D1%86%D1%96%D1%8F/@49.2623121,24.495801,17.25z/data=!4m8!1m2!2m1!1zU2Ftd2F' +
+          'zaCDQkdGD0LrQsNGH0ZbQstGG0ZYsINCG0LLQsNC90L4t0KTRgNCw0L3QutGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjA!3m4!1s0x4730836ab' +
+          'f180b97:0x676ac14e297cb5c6!8m2!3d49.2624931!4d24.4962179'
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -734,6 +836,16 @@ export const listWash = [
         'city2': 'Korosten',
         'obl': 'Житомирська область',
         'obl2': 'Zhytomyrska Oblast',
+        'st': 'Человська',
+        'map': 'https://www.google.com/maps?lqi=CkrQsNCy0YLQvtC80LjQudC60LAg0YHQsNC80L7QvtCx0YH' +
+          'Qu9GD0LPQvtCy0YPQstCw0L3QvdGPINC60L7RgNC-0YHRgtC10L3RjEiZ6ZPTm7eAgAhaVhAAEAEYABgBGAIi' +
+          'StCw0LLRgtC-0LzQuNC50LrQsCDRgdCw0LzQvtC-0LHRgdC70YPQs9C-0LLRg9Cy0LDQvdC90Y8g0LrQvtGA0' +
+          'L7RgdGC0LXQvdGMkgEIY2FyX3dhc2iqAT8QASo7IjfQsNCy0YLQvtC80LjQudC60LAg0YHQsNC80L7QvtCx0YH' +
+          'Qu9GD0LPQvtCy0YPQstCw0L3QvdGPKCI&vet=12ahUKEwi3xNCr8fb8AhU6h_0HHUjiAWQQ8UF6BAgDED4..i&l' +
+          'ei=1LLbY7eKA7qO9u8PyMSHoAY&cs=0&um=1&ie=UTF-8&fb=1&gl=ua&sa=X&geocode=KU9LiF4V3StHMcBBc' +
+          '58pO1uq&daddr=%D1%83%D0%BB.+%D0%A7%D0%B5%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F,+%D0%' +
+          '9A%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B5%D0%BD%D1%8C,+%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8' +
+          '%D1%80%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+11500'
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -746,11 +858,19 @@ export const listWash = [
         'city2': 'Ternovitsa',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'st': 'Придорожна 3',
+        'map': 'https://www.google.com/maps/dir//%D0%A2%D0%B5%D1%80%D0%BD%D0%BE%D0' +
+          '%B2%D0%B8%D1%86%D1%8F,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D' +
+          '0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/@49.9082042,23.4738152,15' +
+          'z/data=!4m9!4m8!1m0!1m5!1m1!1s0x473b1667b6b41e95:0x202842bc1226d8ca!2m2!1d' +
+          '23.4818694!2d49.9093501!3e0',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
         'desc': ['Активна піна', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
-        'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос потужністю 3 кВт.',
+        'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) ' +
+          'передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос ' +
+          'потужністю 3 кВт. Оплата купюрами на постах',
         'colPost': 4,
         'src': [image7], // tyt
         'imgNum': 8,
@@ -758,6 +878,8 @@ export const listWash = [
         'city2': 'Dobromil',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'st': 'Хирівська 24',
+        'map': 'https://goo.gl/maps/AqBcJ5eAXS1zyUeCA'
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -770,6 +892,8 @@ export const listWash = [
         'city2': 'Noviy-Rozdil',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'st': 'В\'ячеслава Чорновола 6',
+        'map': 'https://www.google.com/maps/dir//49.4745036,24.1290584/@49.4743402,24.0590904,12z',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -778,10 +902,14 @@ export const listWash = [
         'colPost': 4,
         'src': [image9], // tyt
         'imgNum': 10,
-        'city': 'Давидов',
+        'city': 'Давидів',
         'city2': 'Davydov',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'st': 'Львівська',
+        'map': 'https://www.google.com/maps/place/Sam+Wash/@49.7464739,24.1509624,16.5z/data=!4m19!1m13!4m12!1m4!2m2!1d' +
+          '23.9412178!2d49.7455798!4e1!1m6!1m2!1s0x473aeb3bb5294815:0x17fb2035b1f8d24e!2z0LDQstGC0L7QvNC40LnQutCwINC00L' +
+          'DQstC40LTRltCy!2m2!1d24.1492339!2d49.748765!3m4!1s0x473aeb3bb5294815:0x17fb2035b1f8d24e!8m2!3d49.748765!4d24.1492339',
     },
     {
         'name': 'Мийка самообслуговування 4 поста',
@@ -795,6 +923,7 @@ export const listWash = [
         'city2': 'Luboml',
         'obl': 'Волинська область',
         'obl2': 'Volynska Oblast',
+        'vOb': true,
         'st': 'Брестська 4',
         'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0' +
           '%BC%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D0%A1%D0%B0%D0%' +
@@ -825,8 +954,34 @@ export const listWash = [
         'imgNum': 13,
         'city': 'Лука Мелешківська',
         'city2': 'Luka-Meleshkivska',
-        'obl': 'Віницька область',
+        'obl': 'Вінницька область',
         'obl2': 'Vinnytska Oblast',
+        'st': 'Т0212',
+        'map': 'https://www.google.com/maps/dir//%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD+%22%D0%9A%D0%' +
+          'B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD,+%D0%9B%D1%83%D0%BA%D0%B0-%D0%9C%D0%B5%D0%BB%D0%B5%D1%8' +
+          '8%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0,+%D0%92%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1' +
+          '%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+23234/@49.1694323,' +
+          '28.4909415,13.25z/data=!4m8!4m7!1m0!1m5!1m1!1s0x472d5bf47732ed3b:0x3cd7a3f2' +
+          'ee7d0a9e!2m2!1d28.5038758!2d49.1786344'
+    },
+    {
+        'name': 'Мийка самообслуговування 5 постів',
+        'desc': ['Гель', 'Основна мийка піною', 'Полоскання', 'Віск', 'Осмос'],
+        'desc2': 'Мийка самообслговуання на 5 постів. Також на автомийці розташований ' +
+          'термінал для оплати послуг купюрами, paypass, картою лояльності та по QR коду.',
+        'colPost': 5,
+        'src': [image12], // tyt
+        'imgNum': 29,
+        'city': 'Вінниця',
+        'city2': 'Vinnytska',
+        'obl': 'Вінницька область',
+        'obl2': 'Vinnytska Oblast',
+        'st': 'Пирогова 135',
+        'map': 'https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F' +
+          '+%D0%9F%D0%B8%D1%80%D0%BE%D0%B3%D0%BE%D0%B2%D0%B0,+135,+%D0%92%D1%96%D0%BD%D0' +
+          '%BD%D0%B8%D1%86%D1%8F,+%D0%92%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B0' +
+          '+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+21000/@49.2129096,28.421719,13z/d' +
+          'ata=!4m8!4m7!1m0!1m5!1m1!1s0x472d5de3e395774d:0x3d7371e657da895f!2m2!1d28.4292421!2d49.2120354'
     },
     {
         'name': 'Мийка самообслуговування 5 постів',
@@ -839,6 +994,9 @@ export const listWash = [
         'city2': 'Ternopil',
         'obl': 'Тернопільська область',
         'obl2': 'Ternopilska Oblast',
+        'st': 'Текстильна',
+        'map': 'https://www.google.com/maps/place/49%C2%B034\'26.6%22N+25%C2%B0' +
+          '37\'08.7%22E/@49.574042,25.619086,17z/data=!3m1!4b1!4m6!3m5!1s0!7e2!8m2!3d49.5740417!4d25.6190859'
     },
     {
         'name': 'Мийка самообслуговування 5 постів',
@@ -852,6 +1010,13 @@ export const listWash = [
         'city2': 'Gorodok',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'st': 'Львівська 38',
+        'map': 'https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D' +
+          '1%8F+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0,+38,+%D0' +
+          '%93%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%BA,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B' +
+          '2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+815' +
+          '02/@49.7843455,23.5889951,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x473b1dc1a632' +
+          'bf49:0x8e183ed61e702091!2m2!1d23.6590347!2d49.7843666'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -865,6 +1030,8 @@ export const listWash = [
         'city2': 'Dnipro',
         'obl': 'Дніпропетровська область',
         'obl2': 'Dnipropetrovska Oblast',
+        'st': 'Березинська',
+        'map': 'https://goo.gl/maps/Vgi2WMptuL9CPfGe9'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -878,6 +1045,17 @@ export const listWash = [
         'city2': 'Uzhhorod',
         'obl': 'Закарпатська область',
         'obl2': 'Zakarpatska Oblast',
+        'st': 'Коритнянська',
+        'map': 'https://www.google.com/maps?lqi=CkbRg9C20LPQvtGA0L7QtCDQsNCy0YLQvt' +
+          'C80LjQudC60LAg0YHQsNC80L7QvtCx0YHQu9GD0LPQvtCy0YPQstCw0L3QvdGPSN7b4eHnr' +
+          'oCACFpSEAEQAhgAGAEYAiJG0YPQttCz0L7RgNC-0LQg0LDQstGC0L7QvNC40LnQutCwINGB' +
+          '0LDQvNC-0L7QsdGB0LvRg9Cz0L7QstGD0LLQsNC90L3Rj5IBCGNhcl93YXNomgEjQ2haRFN' +
+          'VaE5NRzluUzBWSlEwRm5TVVJaYWpSTFExZG5FQUWqAT8QASo7IjfQsNCy0YLQvtC80LjQudC' +
+          '60LAg0YHQsNC80L7QvtCx0YHQu9GD0LPQvtCy0YPQstCw0L3QvdGPKCI&vet=12ahUKEwjM2' +
+          'buR4fb8AhV1hv0HHWT8B50Q8UF6BAgDED4..i&lei=1qHbY8yWDfWM9u8P5Pif6Ak&cs=0&um' +
+          '=1&ie=UTF-8&fb=1&gl=ua&sa=X&geocode=KX1o9MgdGTlHMf0qaras5f1k&daddr=%D0%A3' +
+          '%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4,+%D0%97%D0%B0%D0%BA%D0%B0%D1%80%D0%BF' +
+          '%D0%B0%D1%82%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -904,6 +1082,8 @@ export const listWash = [
         'city2': 'Berehove',
         'obl': 'Закарпатська область',
         'obl2': 'Zakarpatska Oblast',
+        'st': 'Лісова',
+        'map': 'https://www.google.com/maps/dir//48.1971868,22.6370954/@48.1969131,22.5671636,12z'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -929,6 +1109,12 @@ export const listWash = [
         'city2': 'Radekhov',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'st': 'Галицька 2г',
+        'map': 'https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%' +
+          '93%D0%B0%D0%BB%D0%B8%D1%86%D1%8C%D0%BA%D0%B0,+2%D0%B3,+%D0%A0%D0%B0%D0%B4%D0%B5%D1%85%D1%96%' +
+          'D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81' +
+          '%D1%82%D1%8C,+80200/@50.2783997,24.6285982,14.5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x472539788dc04' +
+          'e93:0x359350005e6395b8!2m2!1d24.6267833!2d50.2839202'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -942,6 +1128,7 @@ export const listWash = [
         'city2': 'Lviv3',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'vOb': true,
         'st': 'Шевченка 360Г',
         'map': 'https://www.google.com/maps/place/SAMWASH,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A8%D0%B5%D0%B2%D1%8' +
           '7%D0%B5%D0%BD%D0%BA%D0%B0,+360%D0%B3,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D' +
@@ -957,6 +1144,7 @@ export const listWash = [
         'colPost': 6,
         'src': [image22], // tyt
         'imgNum': 22,
+        'vOb': true,
         'city': 'Стрий',
         'city2': 'Striy',
         'obl': 'Львівська область',
@@ -977,20 +1165,19 @@ export const listWash = [
         'colPost': 6,
         'src': [image23], // tyt
         'imgNum': 23,
+        'vOb': true,
         'city': 'Львів',
         'city2': 'Lviv4',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
         'st': 'Рудненська 14',
-        'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B8%D0%B9%D0%BA%D0%B0+%D1%81%D0%B0%D0%BC' +
-          '%D0%BE%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F+%D0%A1%D0%B0%D0%BC%D0%92' +
-          '%D0%B0%D1%88+%2F+SAMWASH+%D0%BD%D0%B0+6+%D0%BF%D0%BE%D1%81%D1%82%D1%96%D0%B2+%E2%80%94+%D0%9B%D0%B5%D0%B2%D0%B0%D' +
-          '0%BD%D0%B4%D1%96%D0%B2%D0%BA%D0%B0,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A0%D1%83%D0%B4%D0%BD%D0%B5%D0%BD%D1%' +
-          '81%D1%8C%D0%BA%D0%B0,+14,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D' +
-          '0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79000/@49.836795,23.966743,17z/data=!4m14!1m7!3m6!1s0x473ae75f707cdfbf:0x8' +
-          'fdf21bfdc2a2e45!2z0LLRg9C70LjRhtGPINCg0YPQtNC90LXQvdGB0YzQutCwLCAxNCwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LH' +
-          'Qu9Cw0YHRgtGMLCA3OTAwMA!8m2!3d49.8368531!4d23.9667285!16s%2Fg%2F11c4n98b_1!3m5!1s0x473ae75f71cea1ab:0x7cc77ec64613117!8' +
-          'm2!3d49.836795!4d23.966743!16s%2Fg%2F11bbrlyyn3'
+        'meta': 'Мийка самообслуговування на 6 постів у м. Львів, вул. Рудненська 14',
+        'metaDesc': 'На автомийці є 4 накріти та 2 відкриті пости для миття великогабаритних ' +
+          'автомобілів та спец техніки, пилосос. Оплата готівкою, paypass, монетою 10 грн, QR код.',
+        'titleH1': 'Автомийка самообслуговування на 6 постів у місті Львів вул. Рудненська 14',
+        'map': 'https://www.google.com/maps/dir/49.7455798,23.9412178/SAMWASH+of' +
+          '+6+posts+%E2%80%94+Levandivka/@49.7912928,23.8804788,12z/data=!3m1!4b1!4m9' +
+          '!4m8!1m1!4e1!1m5!1m1!1s0x473ae75f71cea1ab:0x7cc77ec64613117!2m2!1d23.9667816!2d49.8367898'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -1004,11 +1191,15 @@ export const listWash = [
         'city2': 'Lutsk',
         'obl': 'Волинська область',
         'obl2': 'Volynska Oblast',
+        'st': 'Окружна',
+        'map': 'https://www.google.com/maps/place/SamWash/@50.7371802,25.2878125,17z/da' +
+          'ta=!3m1!4b1!4m5!3m4!1s0x472599baf2bc0001:0xf36e8a5eda9f2e0f!8m2!3d50.7371278!4d25.2900066'
     },
     {
         'name': 'Мийка самообслуговування 7 постів',
         'desc': ['Попередня мийка піною', 'Попередня мийка гелем', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос', 'Щітка'],
-        'desc2': 'Дизайн накриття Pixel. Додатково два потужних двопостових пилососа разом зі столиками і умивальниками.',
+        'desc2': 'Дизайн накриття Pixel. Мийка самообслговуання на 7 потів та 2-ма двох постовими пилососами. ' +
+          'Також на автомийці розташований термінал для оплати послуг купюрами, paypass, картою лояльності та по QR коду',
         'colPost': 7,
         'src': [image25], // tyt
         'imgNum': 25,
@@ -1016,6 +1207,14 @@ export const listWash = [
         'city2': 'Lubny',
         'obl': 'Полтавська область',
         'obl2': 'Poltavska Oblast',
+        'st': 'Авангардна',
+        'map': 'https://www.google.com/maps/dir//%D0%BF%D1%80%D0%BE%D1%81%D0%BF%' +
+          'D0%B5%D0%BA%D1%82+%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%' +
+          '80%D1%81%D1%8C%D0%BA%D0%B8%D0%B9,+80%2F1,+%D0%9B%D1%83%D0%B1%D0%BD%D0%' +
+          'B8,+%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%' +
+          'BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+37500/@50.0634305,32.9844734,1' +
+          '0.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40d65d4decb26c5f:0x46642b2fc80a02f' +
+          'b!2m2!1d32.9872529!2d50.0204822'
     },
     {
         'name': 'Мийка самообслуговування 10 постів',
@@ -1025,6 +1224,7 @@ export const listWash = [
         'colPost': 10,
         'src': [image26], // tyt
         'imgNum': 26,
+        'vOb': true,
         'city': 'Львів',
         'city2': 'Lviv5',
         'obl': 'Львівська область',
@@ -1049,5 +1249,10 @@ export const listWash = [
         'city2': 'Hust',
         'obl': 'Закарпатська область',
         'obl2': 'Zakarpatska Oblast',
+        'st': 'Львівська',
+        'map': 'https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%' +
+          '81%D1%8C%D0%BA%D0%B0,+%D0%A5%D1%83%D1%81%D1%82,+%D0%97%D0%B0%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%81%D1%8C%D' +
+          '0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+90401/@48.1881618,23.2993195,17z/data=!3m1!4b1!4m5!3m4!' +
+          '1s0x47382958125a008b:0x11b57679244b99f1!8m2!3d48.1881582!4d23.3015082'
     },
 ]
