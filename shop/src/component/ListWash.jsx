@@ -253,6 +253,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   };
   const urlClick = (e) => {
     colP = e.target.value;
+    colPost = Number(colP)
     let oblUrl = oblTrue(obl);
     if (e.target.value === "0" && e.target.children[0].title !== "0") {
       if (location.pathname.slice(location.pathname.length - 2) === "en") {
@@ -364,7 +365,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
               <h4 className="titleH4">в {obl.split(" ")[0]
                 .slice(0, obl.split(" ")[0].length - 1)}ій {t("oblast")}</h4>}
           </div>
-          <div style={{ marginLeft: "21px" }}>
+          <div style={window.screen.availWidth > 900 ? { marginLeft: "21px" } : { margin: "0 auto" } }>
             <div>
               <div className="divItem"><img src={image2} className="slideStyle3" /></div>
               <select id="select2" className="select noneBorder slideStyle" onChange={click1}>

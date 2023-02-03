@@ -604,4 +604,7 @@ a[data-fancybox] img {
         top: 39px;
         left: 51px;
     }
+    .zI{
+        z-index: 0;
+    }
 }
