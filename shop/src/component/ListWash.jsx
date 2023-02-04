@@ -4,12 +4,12 @@ import { Link, Navigate, NavLink, useLocation, useNavigate, useParams } from "re
 import { listWash } from "../users";
 import image from "../image/svg/Route.svg";
 import image2 from "../image/svg/Arrow.svg";
-import Breadcrumbs from "../Breadcrumbs";
 import FooterMain from "./FooterMain";
 // import Post from "../page/listwash/Post";
 
 
-let col = [0];
+// let col = [0];
+let col = [];
 let col2 = 0;
 let oblUrl;
 let colP = 0;
@@ -89,7 +89,7 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
     return () => {
       setOnFooter(false);
     };
-  }, [lang]);
+  }, [lang, col.length]);
 
 
   const click1Use = (o) => {
@@ -200,35 +200,45 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   };
   const click1 = (e) => {
     obl = e.target.value;
-    col = [0];
+    // col = [0];
+    col = [];
     col2 = -1;
     allObl = [];
-    listWash.forEach((item, i) => {
-      if (item.obl === e.target.value) {
+    listWash.map(item => {
+      if(item.obl === obl){
         allObl.push(item);
-        if (col2 === -1) {
-          col.pop();
-        }
-        if (item.colPost != col[col2]) {
-          col2++;
-          col.push(item.colPost);
-        }
+        col.push(item.colPost)
       } else if (item.obl2 === e.target.value) {
         allObl.push(item);
-        if (col2 === -1) {
-          col.pop();
-        }
-        if (item.colPost != col[col2]) {
-          col2++;
-          col.push(item.colPost);
-        }
+        col.push(item.colPost)
       }
-    });
-    if (col[0] === 0) {
+    })
+    // listWash.forEach((item, i) => {
+    //   if (item.obl === e.target.value) {
+    //     allObl.push(item);
+    //     if (col2 === -1) {
+    //       col.pop();
+    //     }
+    //     if (item.colPost != col[col2]) {
+    //       col2++;
+    //       col.push(item.colPost);
+    //     }
+    //   } else if (item.obl2 === e.target.value) {
+    //     allObl.push(item);
+    //     if (col2 === -1) {
+    //       col.pop();
+    //     }
+    //     if (item.colPost != col[col2]) {
+    //       col2++;
+    //       col.push(item.colPost);
+    //     }
+    //   }
+    // });
+    // if (col[0] === 0) {
+    if (col.length === 0) {
       document.getElementById("select").value = "0";
     }
     // setColPost(col[0])
-    // colPost = col[0]
     colPost = 0;
     let oblUrl = oblTrue(obl);
     if (obl === "all") {
@@ -237,13 +247,15 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
       } else {
         navigator(`/nashi-avtomiyki/wsi`);
       }
-    } else if (obl !== "all" && allObl.length !== 0) {
+    }
+    else if (obl !== "all" && allObl.length !== 0) {
       if (url) {
         navigator(`/nashi-avtomiyki${oblUrl}/wsi/en`);
       } else {
         navigator(`/nashi-avtomiyki${oblUrl}/wsi`);
       }
-    } else if (obl !== "all" && col[0] !== 0) {
+    }
+    else if (obl !== "all" && col[0] !== 0) {
       if (url) {
         navigator(`/nashi-avtomiyki${oblUrl}/${col[0]}/en`);
       } else {
@@ -291,7 +303,8 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   if (loc === "/nashi-avtomiyki/wsi" || loc === "/nashi-avtomiyki/wsi/en") {
     colPost = Number(0);
     obl = "all";
-    col = [0];
+    // col = [0];
+    col = [];
     allObl = [];
   }
   else if (loc === `/nashi-avtomiyki/wsi/${post}` || loc === `/nashi-avtomiyki/wsi/${post}/en`) {
@@ -330,7 +343,6 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
   const style = {
     margin: "auto 128px"
   };
-
 
   return (
     <>
@@ -388,22 +400,38 @@ const ListWash = ({ setOnFooter, t, lang, setPostOne, changeLanguage }) => {
                       onChange={(e) => colPost = Number(e.target.value)}
                       style={{ backgroundColor: "#29363b", paddingLeft: "107px" }} id="select">
                 {allObl.length !== 0 ? <option value="0" title="0">{t("posts")}</option> : ""}
-                {col?.map((item, i) => item === 0
-                  ? <option key={i} value="0">{t("NumberOfPosts")}</option> : "")}
-                {col?.map((item, i) => item === 2
-                  ? <option key={i}>2</option> : item === 0 ? <option key={i}>2</option> : "")}
-                {col?.map((item, i) => item === 3
-                  ? <option key={i}>3</option> : item === 0 ? <option key={i}>3</option> : "")}
-                {col?.map((item, i) => item === 4
-                  ? <option key={i}>4</option> : item === 0 ? <option key={i}>4</option> : "")}
-                {col?.map((item, i) => item === 5
-                  ? <option key={i}>5</option> : item === 0 ? <option key={i}>5</option> : "")}
-                {col?.map((item, i) => item === 6
-                  ? <option key={i}>6</option> : item === 0 ? <option key={i}>6</option> : "")}
-                {col?.map((item, i) => item === 7
-                  ? <option key={i}>7</option> : item === 0 ? <option key={i}>7</option> : "")}
-                {col?.map((item, i) => item === 10
-                  ? <option key={i}>10</option> : item === 0 ? <option key={i}>10</option> : "")}
+                { col.length === 0 ? <option value="0">{t("NumberOfPosts")}</option> : ""}
+                { col.some(item => item === 2) === true ? <option>2</option> : col.length === 0
+                  ? <option>2</option> : '' }
+                { col.some(item => item === 3) === true ? <option>3</option> : col.length === 0
+                  ? <option>3</option> : '' }
+                { col.some(item => item === 4) === true ? <option>4</option> : col.length === 0
+                  ? <option>4</option> : '' }
+                { col.some(item => item === 5) === true ? <option>5</option> : col.length === 0
+                  ? <option>5</option> : '' }
+                { col.some(item => item === 6) === true ? <option>6</option> : col.length === 0
+                  ? <option>6</option> : '' }
+                { col.some(item => item === 7) === true ? <option>7</option> : col.length === 0
+                  ? <option>7</option> : '' }
+                { col.some(item => item === 10) === true ? <option>10</option> : col.length === 0
+                  ? <option>10</option> : '' }
+                {/*{allObl.length !== 0 ? <option value="0" title="0">{t("posts")}</option> : ""}*/}
+                {/*{col?.map((item, i) => item === 0*/}
+                {/*  ? <option key={i} value="0">{t("NumberOfPosts")}</option> : "")}*/}
+                {/*{col?.map((item, i) => item === 2*/}
+                {/*  ? <option key={i}>2</option> : item === 0 ? <option key={i}>2</option> : "")}*/}
+                {/*{col?.map((item, i) => item === 3*/}
+                {/*  ? <option key={i}>3</option> : item === 0 ? <option key={i}>3</option> : "")}*/}
+                {/*{col?.map((item, i) => item === 4*/}
+                {/*  ? <option key={i}>4</option> : item === 0 ? <option key={i}>4</option> : "")}*/}
+                {/*{col?.map((item, i) => item === 5*/}
+                {/*  ? <option key={i}>5</option> : item === 0 ? <option key={i}>5</option> : "")}*/}
+                {/*{col?.map((item, i) => item === 6*/}
+                {/*  ? <option key={i}>6</option> : item === 0 ? <option key={i}>6</option> : "")}*/}
+                {/*{col?.map((item, i) => item === 7*/}
+                {/*  ? <option key={i}>7</option> : item === 0 ? <option key={i}>7</option> : "")}*/}
+                {/*{col?.map((item, i) => item === 10*/}
+                {/*  ? <option key={i}>10</option> : item === 0 ? <option key={i}>10</option> : "")}*/}
                 {/*<option value="0">Кількість постів</option>*/}
               </select>
             </div>

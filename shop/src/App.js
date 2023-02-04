@@ -23,6 +23,7 @@ import ListWash from "./component/ListWash";
 // import OnePost from "./page/listwash/OnePost";
 import Breadcrumbs from "./Breadcrumbs";
 import FooterMain from "./component/FooterMain";
+import ListWash123 from "./TestSelect";
 
 
 let userOrder = [];
@@ -262,6 +263,20 @@ const App = () => {
                                                                                     setOnFooter={setOnFooter}
                                                                                     postOne={postOne} t={t}
                                                                                     lang={lang} />} />
+                {/* TEST START  */}
+
+                <Route path="/test/nashi-avtomiyki/:id"
+                       element={<ListWash123 setOnFooter={setOnFooter} changeLanguage={changeLanguage}
+                                             t={t} setPostOne={setPostOne} lang={lang} />} />
+                <Route path="/test/nashi-avtomiyki/wsi"
+                       element={<ListWash123 setOnFooter={setOnFooter} changeLanguage={changeLanguage}
+                                             t={t} setPostOne={setPostOne} lang={lang} />} />
+                <Route path="/test/nashi-avtomiyki/:id/:post"
+                       element={<ListWash123 setOnFooter={setOnFooter} changeLanguage={changeLanguage}
+                                             t={t} setPostOne={setPostOne} lang={lang} />} />
+
+                {/* TEST END  */}
+
                 {/*</Routes>*/}
                 {/*:*/}
                 {/*<Routes>*/}
@@ -297,6 +312,9 @@ const App = () => {
                                                                                        setOnFooter={setOnFooter}
                                                                                        postOne={postOne} t={t}
                                                                                        lang={lang} />} />
+                <Route path="/test/nashi-avtomiyki/:id/en"
+                       element={<ListWash123 setOnFooter={setOnFooter} changeLanguage={changeLanguage}
+                                             t={t} setPostOne={setPostOne} lang={lang} />} />
               </Routes>
             </Suspense>
           }

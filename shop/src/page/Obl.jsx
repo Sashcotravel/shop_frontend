@@ -220,7 +220,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
   return <>
     <div id="light" className={s.boxHideImage} onClick={hidden}>
       <figure className="figure">
-        <div className="divImg">
+        <div className="divImg" id="light">
             <span className="blockLarge" id="light">
               <img style={{ width: "35px" }} src={image2} onClick={hidden} id="light" />
             </span>
@@ -230,7 +230,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
     </div>
     <div id="light2" className={s.boxHideImage} onClick={hidden2}>
       <figure className="figure">
-        <div className="divImg">
+        <div className="divImg" id="light2">
             <span className="blockLarge" id="light2">
               <img style={{ width: "35px" }} src={image2} onClick={hidden} id="light2" />
             </span>
