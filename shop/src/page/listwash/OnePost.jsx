@@ -9,7 +9,7 @@ import FooterMain from "../../component/FooterMain";
 import { Fancybox, Carousel } from "@fancyapps/ui";
 
 
-const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
+const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
 
   const { idMiyka } = useParams();
   const { id } = useParams();
@@ -51,7 +51,8 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
             : one === "Житомирська область" ? "/zhitomirska-oblast" : one === "Волинська область" ? "/volynska-oblast"
               : one === "Луганська область" ? "/luganska-oblast" : one === "Вінницька область" ? "/vinnytska-oblast"
                 : one === "Полтавська область" ? "/poltavska-oblast" : "";
-    } else {
+    }
+    else {
       return two === "all" ? "/wsi" : two === "Zakarpatska Oblast" ? "/zakarpatska-oblast"
         : two === "Lvivska Oblast" ? "/lvivska-oblast" : two === "Ivano-Frankivska Oblast" ? "/frankivska-oblast"
           : two === "Ternopilska Oblast" ? "/ternopilska-oblast" : two === "Dnipropetrovska Oblast" ? "/dniprotrovska-oblast"
@@ -65,6 +66,18 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
 
   const style = {
     margin: '10px auto 60px 100px'
+  }
+
+  const postColIn = (colPost, className) => {
+    if(colPost === 0){
+      return ''
+    } else if (colPost === 1){
+      return <span className={`${className}`}>{t('on')} {colPost} {t('postCol1')}</span>
+    } else if (colPost === 2 || colPost === 3 || colPost === 4){
+      return <span className={`${className}`}>{t('on')} {colPost} {t('postCol2')}</span>
+    } else {
+      return <span className={`${className}`}>{t('on')} {colPost} {t('postCol')}</span>
+    }
   }
 
 
@@ -85,23 +98,25 @@ const OnePost = ({ postOne, setOnFooter, t, lang, setPostOne }) => {
           <div className={postOne?.city === "Хуст" ? "divIm2" : postOne?.city === "Тернопіль" ? "divIm2" : ""}></div>
 
             {
-              lang === "ua" ?
+              localStorage.i18nextLng === 'ua' ?
                 <div className="breadcrumbs zI" style={ window.screen.availWidth > 900 ? style : undefined}>
                   <Link className="breads" to="/">{t("home")}</Link>
                   <Link className="breads" to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>
                   <Link className="breads" to={`/nashi-avtomiyki${fg}/${postOne?.colPost}`}>
                     {` / ${postOne?.obl}`}</Link>
                   <Link className="breads" to={`/nashi-avtomiyki/wsi/${postOne?.colPost}`}>
-                    {` / ${postOne?.colPost} ${t("postCol")}`} </Link>
+                    {/*{` / ${postOne?.colPost} ${t("postCol")}`} </Link>*/}
+                    / {postColIn(postOne?.colPost, 'breads')} </Link>
                 </div>
                 :
                 <div className="breadcrumbs zI" style={ window.screen.availWidth > 900 ? style : undefined}>
                   <Link className="breads" to="/">{t("home")}</Link>
-                  <Link className="breads" to="/nashi-avtomiyki/wsi/en">/ {t("OurCarWashes")}</Link>
-                  <Link className="breads" to={`/nashi-avtomiyki${fg}/${postOne?.colPost}/en`}>
+                  <Link className="breads" to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>
+                  <Link className="breads" to={`/nashi-avtomiyki${fg}/${postOne?.colPost}`}>
                     {` / ${postOne?.obl2}`}</Link>
-                  <Link className="breads" to={`/nashi-avtomiyki/wsi/${postOne?.colPost}/en`}>
-                    {` / ${postOne?.colPost} ${t("postCol")}`} </Link>
+                  <Link className="breads" to={`/nashi-avtomiyki/wsi/${postOne?.colPost}`}>
+                    {/*{` / ${postOne?.colPost} ${t("postCol")}`} </Link>*/}
+                    / {postColIn(postOne?.colPost, 'breads')} </Link>
                 </div>
             }
 

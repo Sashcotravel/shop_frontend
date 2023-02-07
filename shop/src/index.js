@@ -3,20 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import "./18n";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <React.Suspense fallback={<div>Loading...</div>}>
-      <BrowserRouter>
+      {/*<Router basename={`/${i18n.language}`}>*/}
         <Provider store={store}>
           <App />
         </Provider>
-      </BrowserRouter>
+      {/*</Router>*/}
     </React.Suspense>
   </React.StrictMode>
 );

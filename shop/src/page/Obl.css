@@ -171,8 +171,9 @@
     height: 50px;
     border-radius: 20px;
     padding: 10px;
-    padding-left: 70px;
-    text-align-last: start;
+    /*padding-left: 70px;*/
+    /*text-align-last: start;*/
+    text-align: center;
     color: white;
     background-color: #DF4242;
     font-size: 16px;
@@ -486,6 +487,9 @@ a[data-fancybox] img {
     cursor: zoom-in;
 }
 
+.titleH4321{
+}
+
 
 @media screen and (max-width: 700px) {
     .titleH2 {
@@ -512,6 +516,9 @@ a[data-fancybox] img {
     /*}*/
     .titleH4{
         margin: -30px 0 50px 20px;
+    }
+    .titleH4321{
+        margin: -30px 0 50px 5px
     }
     .divIm1{
         height: 160px;

@@ -3,87 +3,61 @@ import "./Header.scss";
 import Container from "@mui/material/Container";
 import { Link, Route, Routes, useNavigate, NavLink, useParams, useLocation } from "react-router-dom";
 import image5 from "../image/footer.png";
+import image1 from "../image/svg/BurgerMenuIcon.svg";
 import s from "../component/Home.module.css";
+import { LanguageSwitcher } from "../component/language";
 
 
-export const Header = ({ t, changeLanguage, lang }) => {
+export const Header = ({ t }) => {
 
-  const location = useLocation()
-
-  useEffect(() => {
-    if(location.pathname.slice(location.pathname.length-2) === 'en'){
-      changeLanguage("en")
+  const oneClick = (e) => {
+    if(e.target.id === 'img'){
+      document.getElementById("divHidden").style.visibility = 'visible'
+      document.getElementById("hidden").style.visibility = 'visible'
     }
-  }, [])
+  }
 
-  const click = () => {
-    const id = document.getElementById("menu__toggle");
-    const id2 = document.getElementsByClassName("menu__box");
-    const id3 = document.getElementById("divHidden");
-    if(id2[0].style.visibility === "visible"){
-      id2[0].style.visibility = "hidden"
-      id3.style.visibility = "hidden";
-      id.checked = true
-    } else {
-      id.checked = false
-      id2[0].style.visibility = "visible"
-      id3.style.visibility = "visible";
+  const twoClick = (e) => {
+    if(e.target.id === 'close'){
+      document.getElementById("divHidden").style.visibility = 'hidden'
+      document.getElementById("hidden").style.visibility = 'hidden'
     }
-  };
-  const click2 = (e) => {
-    const id = document.getElementById("menu__toggle");
-    const id2 = document.getElementsByClassName("menu__box");
-    const id3 = document.getElementById("divHidden");
-    if(e.target.id === 'divHidden') {
-      if (id2[0].style.visibility === "visible") {
-        id2[0].style.visibility = "hidden"
-        id3.style.visibility = "hidden"
-        id.checked = false
-      } else {
-        id2[0].style.visibility = "visible"
-      }
-    }
-  };
-  const click3 = () => {
-    const id = document.getElementById("menu__toggle");
-    const id2 = document.getElementsByClassName("menu__box");
-    const id3 = document.getElementById("divHidden");
-    id.checked = false
-    id2[0].style.visibility = "hidden"
-    id3.style.visibility = "hidden";
+  }
+
+  const threeClick = (e) => {
+    document.getElementById("divHidden").style.visibility = 'hidden'
+    document.getElementById("hidden").style.visibility = 'hidden'
+  }
+
+  const fourClick = (e) => {
+    document.getElementById("divHidden").style.visibility = 'hidden'
+    document.getElementById("hidden").style.visibility = 'hidden'
   }
 
   const screen = window.screen.width < 900
 
   const uaHeader = () => {
     if (screen === true) {
-      return <div className="hamburger-menu" style={{ zIndex: "1" }}>
-        <input id="menu__toggle" type="checkbox" />
-        <label className="menu__btn" htmlFor="menu__toggle">
-          <span onClick={click}></span>
-        </label>
-        <span>
-          <div className="divBox" id="divHidden" onClick={click2}>
+      return <div className="humManu" id="menu__toggle" style={{ zIndex: "1" }}>
+        <img onClick={oneClick} id='img' src={image1} />
+          <div className='divManu' id="divHidden">
             <ul className="menu__box">
-              <li><NavLink onClick={click3} className="menu__item" to="/">{t("mainPage")}</NavLink></li>
-              <li><NavLink onClick={click3} className="menu__item"
+              <p className='close' id='close' onClick={twoClick}></p>
+              <li><NavLink onClick={threeClick} className="menu__item" to="/">{t("mainPage")}</NavLink></li>
+              <li><NavLink onClick={threeClick} className="menu__item"
                                        to="/obladnannya">{t("aboutUs")}</NavLink></li>
-              <li><NavLink onClick={click3} className="menu__item"
+              <li><NavLink onClick={threeClick} className="menu__item"
                                        to="/nashi-avtomiyki/wsi">{t("team")}</NavLink></li>
-              <li><a onClick={click3} className="menu__item" href="#">{t("blog")}</a></li>
-              <li><a onClick={click3} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
+              <li><a onClick={threeClick} className="menu__item" href="#">{t("blog")}</a></li>
+              <li><a onClick={threeClick} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
                                href="#">{t("contacts")}</a></li>
             </ul>
           </div>
-        </span>
       </div>;
     }
     else {
       return <div className="manu">
-        {/*<div className="menu__item">*/}
         <Link className="menu__item" to="/">{t("mainPage")}</Link>
-        {/*</div>*/}
-        {/*<div className="menu__item">*/}
         <Link className="menu__item" to="/obladnannya">{t("aboutUs")}</Link>
         <Link className="menu__item" to="/nashi-avtomiyki/wsi">{t("team")}</Link>
         <div className="menu__item">{t("blog")}</div>
@@ -92,39 +66,35 @@ export const Header = ({ t, changeLanguage, lang }) => {
     }
   };
 
-  const enHeader = () => {
-    if (screen === true) {
-      return <div className="hamburger-menu" style={{ zIndex: "1" }}>
-        <input id="menu__toggle" type="checkbox" />
-        <label className="menu__btn" htmlFor="menu__toggle">
-          <span onClick={click}></span>
-        </label>
-        <span>
-          <div className="divBox" id="divHidden" onClick={click2}>
-            <ul className="menu__box">
-              <li><NavLink onClick={click3} className="menu__item" to="/en">{t("mainPage")}</NavLink></li>
-              <li><NavLink onClick={click3} className="menu__item"
-                                       to="/obladnannya/en">{t("aboutUs")}</NavLink></li>
-              <li><NavLink onClick={click3} className="menu__item"
-                                     to="/nashi-avtomiyki/wsi/en">{t("team")}</NavLink></li>
-              <li><a onClick={click3} className="menu__item" href="#">{t("blog")}</a></li>
-              <li><a onClick={click3} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
-                               href="#">{t("contacts")}</a></li>
-            </ul>
-          </div>
-        </span>
-      </div>;
-    }
-    else {
-      return <div className="manu">
-        <Link className="menu__item" to="/en">{t("mainPage")}</Link>
-        <Link className="menu__item" to="/obladnannya/en">{t("aboutUs")}</Link>
-        <Link className="menu__item" to="/nashi-avtomiyki/wsi/en">{t("team")}</Link>
-        <div className="menu__item">{t("blog")}</div>
-        <div className="menu__item">{t("contacts")}</div>
-      </div>;
-    }
-  }
+  // const enHeader = () => {
+  //   if (screen === true) {
+  //     return <div className="humManu" id="menu__toggle" style={{ zIndex: "1" }}>
+  //       <img onClick={oneClick} id="img" src={image1} />
+  //       <div className="divManu" id="divHidden">
+  //         <ul className="menu__box">
+  //           <p className="close" id="close" onClick={twoClick}></p>
+  //           <li><NavLink onClick={threeClick} className="menu__item" to="/en">{t("mainPage")}</NavLink></li>
+  //           <li><NavLink onClick={threeClick} className="menu__item"
+  //                        to="/obladnannya/en">{t("aboutUs")}</NavLink></li>
+  //           <li><NavLink onClick={threeClick} className="menu__item"
+  //                        to="/nashi-avtomiyki/wsi/en">{t("team")}</NavLink></li>
+  //           <li><a onClick={threeClick} className="menu__item" href="#">{t("blog")}</a></li>
+  //           <li><a onClick={threeClick} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
+  //                  href="#">{t("contacts")}</a></li>
+  //         </ul>
+  //       </div>
+  //     </div>;
+  //   }
+  //  else {
+  //    return <div className="manu">
+  //       <Link className="menu__item" to="/en">{t("mainPage")}</Link>
+  //       <Link className="menu__item" to="/obladnannya/en">{t("aboutUs")}</Link>
+  //       <Link className="menu__item" to="/nashi-avtomiyki/wsi/en">{t("team")}</Link>
+  //       <div className="menu__item">{t("blog")}</div>
+  //       <div className="menu__item">{t("contacts")}</div>
+  //     </div>;
+  //   }
+  // }
 
   return (
     <header>
@@ -140,18 +110,13 @@ export const Header = ({ t, changeLanguage, lang }) => {
                   ? <span><a className="nomer" href="tel:+380505923772">+38 (050) 59 23 772</a></span>
                   : <span className="nomer">+38 (050) 59 23 772</span>
               }
-              <div className={s.translateDiv}>
-                <button className={s.trBut + " " + `${lang == "en" ? s.color : ""}`}
-                        onClick={() => changeLanguage("en")}>EN
-                </button>
-                <button className={s.trBut + " " + `${lang == "ua" ? s.color : ""}`}
-                        onClick={() => changeLanguage("ua")}>UA
-                </button>
-              </div>
+              <LanguageSwitcher />
             </div>
           {
-            lang === 'ua' ? uaHeader() : enHeader()
+            // localStorage.i18nextLng === 'ua' ? uaHeader() : enHeader()
+            uaHeader()
           }
+          <div className='divContainer' id='hidden' onClick={fourClick}></div>
           </div>
     </header>
   );

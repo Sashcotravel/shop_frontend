@@ -46,117 +46,71 @@
   align-items: center;
 }
 
-.manuItem{
-  background: white;
-  width: 100%;
-  /* height: 100%; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .link{
   text-decoration: none;
   color: white;
 }
 
-.buttons {
-  button {
-    margin-left: 10px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-}
-
-#menu__toggle {
-  opacity: 0;
-}
-/* стилизуем кнопку */
-.menu__btn {
-  display: flex; /* используем flex для центрирования содержимого */
-  //align-items: center;
-  /* центрируем содержимое кнопки */
-  position: relative;
-  top: 0;
-  //top: 20px;
-  //left: 20px;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  z-index: 1;
-}
-/* добавляем "гамбургер" */
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-  display: block;
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #616161;
-  z-index: 2;
-  //right: 120px;
-}
-.menu__btn > span::before {
-  content: '';
-  top: -8px;
-}
-.menu__btn > span::after {
-  content: '';
-  top: 8px;
+.humManu{
+  margin-right: 10px;
 }
 
 .menu__box {
   display: block;
   position: fixed;
-  visibility: hidden;
-  top: 0;
-  right: 0;
-  //left: -100%;
+  top: 100px;
+  right: 1px;
   width: 300px;
   height: 100%;
   margin: 0;
-  padding: 80px 0;
+  //padding: 80px 0;
   list-style: none;
   text-align: center;
   background-color: black;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 }
-/* элементы меню */
+
 .menu__item {
   display: flex;
   padding: 12px 24px;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: Averta;
   font-size: 20px;
-  font-weight: 600;
   text-decoration: none;
   height: 100px;
   align-items: center;
   border-top: 1px solid white;
 }
-.menu__item:hover {
-  background-color: #CFD8DC;
-  color: black;
+
+.close{
+  background-image: url("../image/svg/icons8-close.svg");
+  width: 30px;
+  position: fixed;
+  top: 35px;
+  right: 30px;
+  height: 30px;
+  background-size: cover;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
-  transform: rotate(45deg);
+.divContainer{
+  backdrop-filter: blur(3px);
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  visibility: hidden;
 }
-#menu__toggle:checked ~ .menu__btn > span::before {
+
+.divManu{
+  background-color: black;
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  left: 90px;
   top: 0;
-  transform: rotate(0);
-}
-#menu__toggle:checked ~ .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-#menu__toggle:checked ~ .menu__box {
-  visibility: visible;
-  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
 }
 
 .divBox{
@@ -179,3 +133,83 @@
 .spanX > span::after {
   visibility: visible;
 }
+
+//.manuItem{
+//  background: white;
+//  width: 100%;
+//  /* height: 100%; */
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+
+//.buttons {
+//  button {
+//    margin-left: 10px;
+//  }
+//
+//  a {
+//    text-decoration: none;
+//  }
+//}
+//
+//#menu__toggle {
+//  opacity: 0;
+//}
+///* стилизуем кнопку */
+//.menu__btn {
+//  display: flex; /* используем flex для центрирования содержимого */
+//  //align-items: center;
+//  /* центрируем содержимое кнопки */
+//  position: relative;
+//  top: 0;
+//  //top: 20px;
+//  //left: 20px;
+//  width: 26px;
+//  height: 26px;
+//  cursor: pointer;
+//  z-index: 1;
+//}
+///* добавляем "гамбургер" */
+//.menu__btn > span,
+//.menu__btn > span::before,
+//.menu__btn > span::after {
+//  display: block;
+//  position: relative;
+//  top: 0;
+//  width: 100%;
+//  height: 2px;
+//  background-color: #616161;
+//  z-index: 2;
+//  //right: 120px;
+//}
+//.menu__btn > span::before {
+//  content: '';
+//  top: -8px;
+//}
+//.menu__btn > span::after {
+//  content: '';
+//  top: 8px;
+//}
+
+//.menu__item:hover {
+//  background-color: #CFD8DC;
+//  color: black;
+//}
+//
+//#menu__toggle:checked ~ .menu__btn > span {
+//  transform: rotate(45deg);
+//}
+//#menu__toggle:checked ~ .menu__btn > span::before {
+//  top: 0;
+//  transform: rotate(0);
+//}
+//#menu__toggle:checked ~ .menu__btn > span::after {
+//  top: 0;
+//  transform: rotate(90deg);
+//}
+//#menu__toggle:checked ~ .menu__box {
+//  visibility: visible;
+//  right: 0;
+//}
+
