@@ -48,11 +48,7 @@ const App = () => {
 
   const { id } = useParams();
 
-  // const location = useLocation();
-
   const dispatch = useDispatch();
-
-  // const navigate = useNavigate();
 
   // const ListWash = React.lazy(() => import('./component/ListWash'))
   const YourOrder = React.lazy(() => import("./page/YourOrder"));
@@ -148,7 +144,7 @@ const App = () => {
   };
 
   const style = {
-    margin: "10px auto 60px 100px"
+    margin: "10px auto 60px 125px"
   };
 
   return (
@@ -204,7 +200,8 @@ const App = () => {
 
           {
             <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
-              <Routes basename={`/${language}`}>
+              <Routes>
+                <Route path={`/${language}`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
                 <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
@@ -318,20 +315,20 @@ const App = () => {
                        checked={checked} onChange={checkedClick} />
                 <p>{t("don'tCallMe")}</p>
               </div>
-              {/*<div className={s.boxCheck2}>*/}
-              {/*  <input onChange={checkedClick2} className={s.inputCheck}*/}
-              {/*         type="checkbox" checked={checked2} />*/}
-              {/*  <span>{t("orderAConsultation")}</span>*/}
-              {/*</div>*/}
-              {/*{*/}
-              {/*  // checked2 &&*/}
-              {/*// ?  <input id="date" type="date" onBlur={valueDate} />*/}
-              {/*// ? <Datepicker controls={["calendar", "time"]} locale={localeUa}*/}
-              {/*//               value={selected} onChange={selectedChange}*/}
-              {/*//               placeholder='встановити дату'/>*/}
-              {/*// ? <DatePicker/>*/}
-              {/*// : ""*/}
-              {/*}*/}
+              <div className={s.boxCheck2}>
+                <input onChange={checkedClick2} className={s.inputCheck}
+                       type="checkbox" checked={checked2} />
+                <span>{t("orderAConsultation")}</span>
+              </div>
+              {
+                // checked2 &&
+              // ?  <input id="date" type="date" onBlur={valueDate} />
+              // ? <Datepicker controls={["calendar", "time"]} locale={localeUa}
+              //               value={selected} onChange={selectedChange}
+              //               placeholder='встановити дату'/>
+              // ? <DatePicker/>
+              // : ""
+              }
 
               <br />
               <button className={s.footerBut} style={{ width: "50%", backgroundColor: '#42DF4C' }} onClick={useSubmit}><Link style={{color: '#FFFFFF'}} to='/thanks'>{t("send")}</Link></button>

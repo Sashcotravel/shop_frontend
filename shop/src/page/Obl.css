@@ -246,6 +246,8 @@
     font-family: 'Averta';
 }
 
+
+
 .divRoad{
     display: flex;
     justify-content: space-between;
@@ -254,6 +256,22 @@
     color: rgba(217, 217, 217, 1);
     font-family: 'Averta';
     margin-left: 10px;
+}
+
+.zPoz{
+    position: relative;
+    z-index: 2;
+}
+
+.slideStyleBack{
+    background: transparent url("../image/svg/sw logo.svg") 21% 29% no-repeat padding-box;
+    opacity: 1%;
+    position: absolute;
+    width: 99%;
+    height: 70vh;
+    top: 0;
+    left: 5px;
+    background-size: cover;
 }
 
 .slideStyle{
@@ -490,6 +508,256 @@ a[data-fancybox] img {
 .titleH4321{
 }
 
+.rich-select {
+    height: 50px;
+    position: relative;
+    border: none;
+    margin: 0 0 15px 0;
+    padding: 12px 10px 10px 10px;
+    background-color: #DF4242;
+    width: 335px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: 'Averta';
+    outline: none;
+    appearance: none;
+}
+.rich-select2 {
+    width: 335px;
+    height: 50px;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid gray;
+    margin: 0 0 15px 0;
+    padding: 12px 10px 10px 10px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: 'Averta';
+    outline: none;
+    appearance: none;
+}
+
+.rich-select-dropdown {
+    /*border-radius: .25rem;*/
+    border: none;
+    outline: none;
+}
+.rich-select-dropdown2 {
+    /*border-radius: .25rem;*/
+    border: none;
+    outline: none;
+}
+
+.rich-select-dropdown:focus-within {
+    /*border-color: #80bdff;*/
+    /*outline: 0;*/
+    /*box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);*/
+}
+.rich-select-dropdown2:focus-within {
+}
+
+.rich-select-dropdown-button {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+.rich-select-dropdown-button2 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.rich-select-dropdown-button + label,
+.rich-select-option > input[type=radio] {
+    position: absolute;
+    display: block;
+    right: .5rem;
+    width: 2rem;
+    height: 1rem;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: end;
+}
+.rich-select-dropdown-button2 + label,
+.rich-select-option2 > input[type=radio] {
+    position: absolute;
+    display: block;
+    right: .5rem;
+    width: 2rem;
+    height: 1rem;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: end;
+}
+
+.rich-select-dropdown-button + label {
+    top: -6px;
+    left: 0;
+    padding: 25px 10px;
+    width: 92%;
+    border-radius: 20px;
+}
+.rich-select-dropdown-button2 + label {
+    top: -6px;
+    left: 0;
+    padding: 25px 10px;
+    width: 92%;
+    border-radius: 20px;
+}
+
+.rich-select-dropdown-button + label::before {
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../image/svg/Arrow.svg");
+}
+.rich-select-dropdown-button2 + label::before {
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../image/svg/Arrow.svg");
+}
+
+.rich-select-dropdown > .rich-select-option > .rich-select-option-body {
+    display: none;
+}
+.rich-select-dropdown > .rich-select-option input[type=radio]:checked + .rich-select-option-body {
+    display: inline-block;
+    width: 100%;
+}
+
+.rich-select-dropdown2 > .rich-select-option2 > .rich-select-option-body2 {
+    display: none;
+}
+.rich-select-dropdown2 > .rich-select-option2 input[type=radio]:checked + .rich-select-option-body2 {
+    display: inline-block;
+    width: 100%;
+}
+
+.rich-select-options {
+    display: none;
+    position: absolute;
+    background-color: #DF4242;
+    border-top: none;
+    border-radius: 0.25rem;
+    width: 100%;
+    max-height: 75vh;
+    overflow-y: hidden;
+    z-index: 1000;
+    box-shadow: rgb(0 0 0 / 40%) 5px 8px 15px;
+    left: 0;
+    top: 50px;
+}
+
+.rich-select-options2 {
+    display: none;
+    position: absolute;
+    background-color: rgb(41, 54, 59);
+    border-top: none;
+    border-radius: 0.25rem;
+    width: 100%;
+    max-height: 75vh;
+    overflow-y: hidden;
+    z-index: 1000;
+    box-shadow: rgb(0 0 0 / 40%) 5px 8px 15px;
+    left: 0;
+    top: 50px;
+}
+
+.rich-select-option {
+    padding: 0 8px;
+}
+.rich-select-options > .rich-select-option:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.rich-select-option2 {
+    padding: 0 8px;
+
+}
+.rich-select-options2 > .rich-select-option2:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.rich-select-option-body label {
+    width: 100%;
+    /*padding: 4px 0 0 0;*/
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 3px 0;
+}
+.rich-select-option-body2 label {
+    width: 100%;
+    /*padding: 4px 0 0 0;*/
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 3px 0;
+}
+
+.rich-select-option-body img {
+    height: 20px;
+    width: 15px;
+    object-fit: contain;
+    margin-right: 11px;
+}
+.rich-select-option-body2 img {
+    height: 32px;
+    width: 24px;
+    object-fit: contain;
+    margin-right: 11px;
+    margin-top: -6px;
+}
+
+.rich-select-option-body > button {
+    width: 100%;
+    text-align: left;
+    padding: 2px;
+    border: none;
+    outline: none;
+    background: none;
+}
+.rich-select-option-body2 > button {
+    width: 100%;
+    text-align: left;
+    padding: 2px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.rich-select-dropdown-button:checked ~ .rich-select-options {
+    display: inline-block;
+    z-index: 3;
+}
+.rich-select-dropdown-button2:checked ~ .rich-select-options2 {
+    display: inline-block;
+    z-index: 2;
+}
 
 @media screen and (max-width: 700px) {
     .titleH2 {
@@ -603,5 +871,9 @@ a[data-fancybox] img {
     }
     .zI{
         z-index: 0;
+    }
+    .zPoz{
+        position: relative;
+        z-index: auto;
     }
 }

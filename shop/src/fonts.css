@@ -2,3 +2,18 @@
     font-family: Averta;
     src: url(fonts/AvertaDemoPE-Regular.otf);
 }
+
+@font-face {
+    font-family: Averta Light;
+    src: url(fonts/AvertaDemoPE-Regular.ttf);
+}
+
+@font-face {
+    font-family: NoAverta Light;
+    src: url(fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Rubic;
+    src: url(fonts/RubikVinyl-Regular.ttf);
+}
