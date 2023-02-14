@@ -36,9 +36,15 @@ export const Header = ({ t }) => {
 
   const screen = window.screen.width < 900
 
+  const bot = {
+    borderBottom: 'none',
+  }
+
+  const width = { width: '33%' }
+
   const uaHeader = () => {
     if (screen === true) {
-      return <div className="humManu" id="menu__toggle" style={{ zIndex: "1" }}>
+      return <div className="humManu" id="menu__toggle" style={{ zIndex: "1", width: '20%' }}>
         <img onClick={oneClick} id='img' src={image1} />
           <div className='divManu' id="divHidden">
             <ul className="menu__box">
@@ -98,26 +104,26 @@ export const Header = ({ t }) => {
 
   return (
     <header>
-      <div className="root">
-            <div>
-              <Link to="/">
-                <img className="logo" src={image5} />
-              </Link>
-            </div>
-            <div>
-              {
-                window.screen.width < 900
-                  ? <span><a className="nomer" href="tel:+380505923772">+38 (050) 59 23 772</a></span>
-                  : <span className="nomer">+38 (050) 59 23 772</span>
-              }
-              <LanguageSwitcher />
-            </div>
+      <div className="root" style={screen ? bot : undefined}>
+        <div style={screen ? width : undefined}>
+          <Link to="/">
+            <img className="logo" src={image5} />
+          </Link>
+        </div>
+        <div style={screen ? width : undefined}>
           {
-            // localStorage.i18nextLng === 'ua' ? uaHeader() : enHeader()
-            uaHeader()
+            window.screen.width < 900
+              ? <span><a className="nomer" href="tel:+380505923772">+38 (050) 59 23 772</a></span>
+              : <span className="nomer">+38 (050) 59 23 772</span>
           }
-          <div className='divContainer' id='hidden' onClick={fourClick}></div>
-          </div>
+          <LanguageSwitcher />
+        </div>
+        {
+          // localStorage.i18nextLng === 'ua' ? uaHeader() : enHeader()
+          uaHeader()
+        }
+        <div className="divContainer" id="hidden" onClick={fourClick}></div>
+      </div>
     </header>
   );
 };
