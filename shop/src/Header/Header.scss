@@ -115,7 +115,8 @@
   position: fixed;
   height: 100%;
   width: 80%;
-  left: 90px;
+  //left: 90px;
+  right: 0;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -152,6 +153,30 @@
     width: 100%;
     margin: auto;
     justify-content: space-between;
+  }
+  .divManu {
+    width: 50%;
+    //left: 0;
+    right: 0;
+  }
+  .menu__box {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .root{
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+  }
+  .divManu {
+    width: 80%;
+    //left: 0;
+    right: 0;
+  }
+  .menu__box {
+    width: 80%;
   }
 }
 

@@ -75,7 +75,8 @@ const MainPage = ({ t, setOnFooter }) => {
                   allowFullScreen />
         </div>}
 
-      {screen && <div className={m.divStart}></div>}
+      {/*{screen && <div className={m.divStart}></div>}*/}
+      <div className={m.divStart}></div>
       <div className={m.mainContainer}>
 
         <div className={m.container1}>
@@ -98,41 +99,42 @@ const MainPage = ({ t, setOnFooter }) => {
                 <span className={m.percentPAnim}></span>
                 <span className={m.percent}>%</span>
 
-                {screen ? <section style={{marginTop: '50px'}}>
-                  <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="400" height="400"
-                       xmlns="http://www.w3.org/2000/svg" style={{ overflowClipMargin: "border-box", padding: "20px" }}>
-                    <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"
-                            cx="16.91549431"
-                            cy="16.91549431" r="15.91549431" />
-                    <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4" stroke-dasharray="75,100"
-                            stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                    <g className={m.circleChartInfo}>
-                      <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"
-                            text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA
-                      </text>
-                    </g>
-                  </svg>
-                </section> : <section style={{marginTop: '20px', marginLeft: '30px'}}>
-                  <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="250" height="250"
-                       xmlns="http://www.w3.org/2000/svg" style={{ overflowClipMargin: "border-box", padding: "20px" }}>
-                    <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"
-                            cx="16.91549431"
-                            cy="16.91549431" r="15.91549431" />
-                    <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4" stroke-dasharray="75,100"
-                            stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                    <g className={m.circleChartInfo}>
-                      <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"
-                            text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA
-                      </text>
-                    </g>
-                  </svg>
-                </section>}
-
-                {/*<div className={m.container}>*/}
-                  {/*<div className={m.uiwidgets}>*/}
-                    {/*<div className={m.uivalues}>EBITDA</div>*/}
-                  {/*</div>*/}
-                {/*</div>*/}
+                {
+                  screen ? <section style={{ marginTop: "50px" }}>
+                    <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="400" height="400"
+                         xmlns="http://www.w3.org/2000/svg"
+                         style={{ overflowClipMargin: "border-box", padding: "20px" }}>
+                      <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"
+                              cx="16.91549431"
+                              cy="16.91549431" r="15.91549431" />
+                      <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4"
+                              stroke-dasharray="75,100"
+                              stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                      <g className={m.circleChartInfo}>
+                        <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"
+                              text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA
+                        </text>
+                      </g>
+                    </svg>
+                  </section>
+                    : <section style={{ marginTop: "20px", marginLeft: "0px" }}>
+                    <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="250" height="250"
+                         xmlns="http://www.w3.org/2000/svg"
+                         style={{ overflowClipMargin: "border-box", padding: "20px" }}>
+                      <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"
+                              cx="16.91549431"
+                              cy="16.91549431" r="15.91549431" />
+                      <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4"
+                              stroke-dasharray="75,100"
+                              stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                      <g className={m.circleChartInfo}>
+                        <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"
+                              text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA
+                        </text>
+                      </g>
+                    </svg>
+                  </section>
+                }
               </div>
             </div>
 
@@ -233,24 +235,26 @@ const MainPage = ({ t, setOnFooter }) => {
 
         <div className={m.container4_5}>
           <div className={m.container4_52}>
-            {screen ? <>
-                <p className={m.p4_5}>Замовляючи автомийку у</p>
-                <p className={m.p4_52}>SamWash, Ви отримаєте не лише</p>
-                <p className={m.p4_52}>прибутковий бізнес, а й досвід, набутий</p>
-                <p className={m.p4_5}>за роки створень</p>
-                <p className={m.p4_5}>автомийок по всій Україні.</p>
-              </>
-              : <>
-                <p className={m.p4_5}>Замовляючи автомийку</p>
-                <p className={m.p4_52}>у SamWash, Ви</p>
-                <p className={m.p4_52}>отримаєте не лише</p>
-                <p className={m.p4_52}>прибутковий бізнес, а й</p>
-                <p className={m.p4_52}>досвід, набутий за</p>
-                <p className={m.p4_5}>роки створень</p>
-                <p className={m.p4_5}>автомийок по всій</p>
-                <p className={m.p4_5}>Україні.</p>
-              </>
-            }
+            <div className={m.container4_53}>
+              {screen ? <>
+                  <p className={m.p4_5}>Замовляючи автомийку у</p>
+                  <p className={m.p4_52}>SamWash, Ви отримаєте не лише</p>
+                  <p className={m.p4_52}>прибутковий бізнес, а й досвід, набутий</p>
+                  <p className={m.p4_5}>за роки створень</p>
+                  <p className={m.p4_5}>автомийок по всій Україні.</p>
+                </>
+                : <>
+                  <p className={m.p4_5}>Замовляючи автомийку</p>
+                  <p className={m.p4_52}>у SamWash, Ви</p>
+                  <p className={m.p4_52}>отримаєте не лише</p>
+                  <p className={m.p4_52}>прибутковий бізнес, а й</p>
+                  <p className={m.p4_52}>досвід, набутий за</p>
+                  <p className={m.p4_5}>роки створень</p>
+                  <p className={m.p4_5}>автомийок по всій</p>
+                  <p className={m.p4_5}>Україні.</p>
+                </>
+              }
+            </div>
           </div>
         </div>
 
@@ -270,7 +274,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <li className={m.li}><img className={m.imageS} src={image3} />
                   <span className={m.spanIm}>...</span></li>
               </ul>
-              <span className={m.pBig23} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
+              <span className={m.pBig23+' '+m.pBig23_3} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
             </div>
 
             {screen && <div className={m.div12}>
@@ -313,7 +317,7 @@ const MainPage = ({ t, setOnFooter }) => {
                   <span className={m.spanIm}>термін активної експлуатації - більше 10 років</span></li>
               </ul>
 
-              <span className={m.pBig23} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
+              <span className={m.pBig23+' '+m.pBig23_2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
             </div>
 
             {screen && <div className={m.div12}>
@@ -423,10 +427,10 @@ const MainPage = ({ t, setOnFooter }) => {
               <div className={m.container11_4}>
                 <p className={m.p11}>грошей на даний момент не достатньо?</p>
               </div>
-              <div className={m.container11_4}>
+              <div className={m.container11_4+' '+m.c12}>
                 <p className={m.p11}>Всього за 30% від загальної вартості, Ви</p>
               </div>
-              <div className={m.container11}>
+              <div className={m.container11+' '+m.c11}>
                 <p className={m.p11}>стаєте повноправним</p>
                 <p className={m.p11}>власником бізнесу, який</p>
                 <p className={m.p11}>відразу після запуску</p>
