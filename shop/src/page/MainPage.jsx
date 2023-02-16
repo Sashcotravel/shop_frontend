@@ -1,65 +1,90 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import m from "./MainPage.module.css";
 import s from "../component/Home.module.css";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import image1 from "../image/322173-1600x900.jpg";
+import image1 from "../image/svg/sw logo.svg";
 import image2 from "../image2/coverSMART.jpg";
 import image3 from "../image/svg/SW icon.svg";
 
 
-const MainPage = ({ t, setOnFooter }) => {
 
-  const [userData, setUserData] = useState({
-    name: "", phone: "", email: "", cite: "", date: ""
-  });
+const MainPage = ({ t, setOnFooter }) => {
 
   const screen = window.screen.availWidth > 900
 
   const dispatch = useDispatch();
 
-  const hiddeItem = () => {
-    let con = document.getElementById("lightblue");
-    con.style.visibility = "hidden";
-  };
-
-  const noScroll = () => {
-    let con = document.getElementById("lightblue");
-    con.style.visibility = "visible";
-  };
-
-  const useSubmit = async () => {
-    let con = document.getElementById("lightblue");
-    con.style.visibility = "hidden";
-    let obj = {
-      user: userData
-    };
-    // const d = await dispatch(fetchPay(obj));
-    // dispatch(fetchMail(obj));
-    // dispatch(fetchMailDima(obj));
-    // dispatch(fetchMailUser(obj));
-
-  };
-
   useEffect(() => {
     setOnFooter(true);
+
+    const percent = document.getElementById('percent')
+    const preloader = document.getElementById('preloader')
+    const anim1 = document.getElementById('anim1')
+    const anim2 = document.getElementById('anim2')
+    const anim3 = document.getElementById('anim3')
+    const anim4 = document.getElementById('anim4')
+    const anim5 = document.getElementById('anim5')
+    const container1 = document.getElementById('container1')
+    const mediaFiles = document.querySelectorAll('img, video, iframe')
+    let i = 2
+
+    Array.from(mediaFiles).forEach((file, index) => {
+      file.onload = () => {
+        i++
+        percent.innerHTML = ((i * 100) / mediaFiles.length).toFixed()
+
+        if(i === mediaFiles.length){
+          preloader.classList.add(`${m.preloader__hide}`)
+          anim1.classList.add(`${m.animTit}`)
+          anim2.classList.add(`${m.animTit}`)
+          anim3.classList.add(`${m.animTit}`)
+          anim4.classList.add(`${m.animTit}`)
+          anim5.classList.add(`${m.animTit}`)
+          container1.classList.add(`${m.animCon}`)
+          percent.innerHTML = '100'
+        }
+      }
+    })
+
+
+
     return () => {
       setOnFooter(false);
     };
   }, []);
 
-  const greenBut = () => {
-  };
+  const greenBut = () => {};
 
-  const infoBig = () => {
-  };
+  const infoBig = () => {};
+
+
 
 
   return <div>
 
     <main style={{ backgroundColor: "#283338" }}>
 
-      {/*{!screen && <img src={image1} className={m.image} />}*/}
+      {/*<div className={m.preloader} id={m["preloader"]}>*/}
+      <div className={`${m.preloader}`} id="preloader">
+        <div className={m.preloader__loader}>
+          <p><img src={image1} className={m.imgTit}/></p>
+          <span className={m.preloader__percent}>
+            {/*<p><img src={image1} style={{position: 'relative', left: '-70px'}} /></p>*/}
+            <span id='percent'>0</span>%
+          </span>
+        </div>
+      </div>
+
+      <div className={m.animDiv1}>
+        <div id='anim1' className={`${m.animPidDiv}`}></div>
+        <div id='anim2' className={`${m.animPidDiv2}`}></div>
+        <div id='anim3' className={`${m.animPidDiv3}`}></div>
+        <div id='anim4' className={`${m.animPidDiv4}`}></div>
+        <div id='anim5' className={`${m.animPidDiv5}`}></div>
+      </div>
+
+      {!screen && <img src={image1} className={m.image} />}
       {screen ? <div className={m.youtubecontainer}>
           <iframe className={m.startImage}
                   src="https://www.youtube.com/embed/aBA0fi0gua4?autoplay=1&mute=1&loop=1&playlist=aBA0fi0gua4&enablejsapi=1&showinfo=0&controls=0&modestbranding=1"
@@ -75,11 +100,12 @@ const MainPage = ({ t, setOnFooter }) => {
                   allowFullScreen />
         </div>}
 
+
       {/*{screen && <div className={m.divStart}></div>}*/}
       <div className={m.divStart}></div>
       <div className={m.mainContainer}>
 
-        <div className={m.container1}>
+        <div id='container1' className={`${m.container1}`}>
           <h1 className={m.titleH1}>Шукаєш куди інвестувати?</h1>
           <h4 className={m.titleH4}>Побудуємо для тебе автомийку самообслуговування за 100 днів!</h4>
           <div className={m.greenButDiv}>

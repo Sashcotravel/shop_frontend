@@ -26,6 +26,91 @@
 }
 
 
+.animDiv1{
+    grid-template-columns: 150px 505px 505px 505px 1fr;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    visibility: hidden;
+}
+
+@keyframes typewriper {
+    from {
+        width: 100%;
+        visibility: visible;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+@keyframes title1 {
+    from {
+        position: relative;
+        left: -500px;
+    }
+    to {
+        position: relative;
+        left: 0px;
+    }
+}
+
+.animTit{
+    animation: typewriper 1s ease-in-out;
+}
+
+.animPidDiv5, .animPidDiv4, .animPidDiv3, .animPidDiv2, .animPidDiv{
+    width: 100%;
+    background-color: #29363B;
+}
+
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #283338;
+    z-index: 6;
+    transition: all .09s ease-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+.preloader__loader, .preloader__percent{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #B2B1B7;
+    font-size: 70px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.preloader__hide{
+    display: none;
+}
+
+.imgTit{
+    position: absolute;
+    left: -160px;
+    top: -150px;
+    width: 200px;
+}
+
+.preloader__percent{
+    font: normal normal 300 80px/121px Gilroy Light;
+}
+
 a {
     text-decoration: none;
 }
@@ -71,6 +156,10 @@ a {
     grid-column-end: 5;
     display: grid;
     margin-bottom: 218px;
+}
+
+.animCon{
+    animation: title1 1s ease-in-out;
 }
 
 .titleH1{
@@ -896,7 +985,7 @@ a {
 
 @media screen and (max-width: 1770px) {
     .mainContainer, .container8, .container6, .container21,
-    .container10_2, .container11_2, .container4_5{
+    .container10_2, .container11_2, .container4_5, .animDiv1{
         grid-template-columns: 150px 405px 405px 405px 1fr;
     }
     .percentPAnim2{
@@ -933,6 +1022,16 @@ a {
     .p102{
         left: -15px;
     }
+    @keyframes title1 {
+        from {
+            position: relative;
+            left: -400px;
+        }
+        to {
+            position: relative;
+            left: 0px;
+        }
+    }
 }
 
 @media screen and (max-width: 1510px) {
@@ -940,7 +1039,7 @@ a {
         width: 150%;
     }
     .mainContainer, .container8, .container6, .container21,
-    .container10_2, .container11_2, .container4_5{
+    .container10_2, .container11_2, .container4_5, .animDiv1{
         grid-template-columns: 100px 305px 305px 305px 1fr;
     }
     .titleH1{
@@ -980,11 +1079,21 @@ a {
     .p102{
         left: -15px;
     }
+    @keyframes title1 {
+        from {
+            position: relative;
+            left: -300px;
+        }
+        to {
+            position: relative;
+            left: 0px;
+        }
+    }
 }
 
 @media screen and (max-width: 1305px) {
     .mainContainer, .container8, .container6, .container21,
-    .container10_2, .container11_2, .container4_5{
+    .container10_2, .container11_2, .container4_5, .animDiv1{
         grid-template-columns: 100px 205px 205px 205px 1fr;
     }
     .p4_5, .p4_52, .p10_2, .p10, .p11{
@@ -1112,7 +1221,16 @@ a {
     .titleH4 {
         font: normal normal 400 27px/35px Gilroy Light;
     }
-
+    @keyframes title1 {
+        from {
+            position: relative;
+            left: -200px;
+        }
+        to {
+            position: relative;
+            left: 0px;
+        }
+    }
 }
 
 @media screen and (max-width: 1020px){
@@ -1150,7 +1268,7 @@ a {
         width: 300px;
     }
     .mainContainer, .container8, .container6, .container21,
-    .container10_2, .container11_2, .container4_5{
+    .container10_2, .container11_2, .container4_5, .animDiv1{
         grid-template-columns: 100px 155px 305px 305px 1fr;
     }
     .pH, .pH2 {
@@ -1178,9 +1296,22 @@ a {
     .p11 {
         font: normal normal normal 42px/60px Gilroy Light;
     }
+    @keyframes title1 {
+        from {
+            position: relative;
+            left: -155px;
+        }
+        to {
+            position: relative;
+            left: 0px;
+        }
+    }
 }
 
 @media screen and (max-width: 900px) {
+    .animDiv1{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
     .youtubecontainer{
         top: 100px;
         height: 88%;
@@ -1595,6 +1726,9 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+    .animDiv1{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
 .youtubecontainer{
     top: 100px;
     height: 88%;

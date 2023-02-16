@@ -1,11 +1,4 @@
 .root {
-  //width: 100%;
-  //height: 100px;
-  //opacity: 1;
-  //display: flex;
-  //justify-content: space-around;
-  //align-items: center;
-
   width: auto;
   height: 100px;
   opacity: 1;
@@ -45,7 +38,7 @@
   text-align: left;
   font: normal normal normal 14px/20px Averta Demo PE;
   font-family: Averta;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   color: #B2B1B7;
   opacity: 1;
   text-decoration: none;
@@ -70,14 +63,16 @@
   position: fixed;
   top: 100px;
   right: 1px;
-  width: 300px;
+  //width: 300px;
+  width: 0;
   height: 100%;
   margin: 0;
   //padding: 80px 0;
   list-style: none;
   text-align: center;
   background-color: black;
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+  transition: all .09s ease-out;
 }
 
 .menu__item {
@@ -100,28 +95,34 @@
   right: 30px;
   height: 30px;
   background-size: cover;
+  visibility: hidden;
 }
 
 .divContainer{
   backdrop-filter: blur(3px);
   position: absolute;
-  width: 98vw;
+  //width: 98vw;
+  width: 0;
   height: 200vh;
-  visibility: hidden;
+  visibility: visible;
+  //visibility: hidden;
 }
 
 .divManu{
   background-color: black;
   position: fixed;
   height: 100%;
-  width: 80%;
+  //width: 80%;
+  width: 0%;
   //left: 90px;
   right: 0;
   top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  visibility: hidden;
+  //visibility: hidden;
+  visibility: visible;
+  transition: all .09s ease-out;
 }
 
 .divBox{
@@ -154,14 +155,14 @@
     margin: auto;
     justify-content: space-between;
   }
-  .divManu {
-    width: 50%;
-    //left: 0;
-    right: 0;
-  }
-  .menu__box {
-    width: 50%;
-  }
+  //.divManu {
+  //  width: 50%;
+  //  //left: 0;
+  //  right: 0;
+  //}
+  //.menu__box {
+  //  width: 50%;
+  //}
 }
 
 @media screen and (max-width: 500px) {
@@ -170,15 +171,18 @@
     margin: auto;
     justify-content: space-between;
   }
-  .divManu {
-    width: 80%;
-    //left: 0;
-    right: 0;
-  }
-  .menu__box {
-    width: 80%;
-  }
+//  .divManu {
+//    width: 80%;
+//    //left: 0;
+//    right: 0;
+//  }
+//  .menu__box {
+//    width: 80%;
+//  }
 }
+
+
+
 
 //.manuItem{
 //  background: white;

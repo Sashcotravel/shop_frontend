@@ -12,51 +12,72 @@ export const Header = ({ t }) => {
 
   const oneClick = (e) => {
     if(e.target.id === 'img'){
-      document.getElementById("divHidden").style.visibility = 'visible'
-      document.getElementById("hidden").style.visibility = 'visible'
+      // document.getElementById("divHidden").style.visibility = 'hidden'
+      document.getElementById("divHidden").style.width = '80%'
+      // document.getElementById("hidden").style.visibility = 'hidden'
+      document.getElementById("hidden").style.width = '98vw'
+      // document.getElementById("menu__box").style.width = '300px'
+      document.getElementById("menu__box").style.width = '80%'
+      document.getElementById("close").style.visibility = 'visible'
     }
   }
 
   const twoClick = (e) => {
     if(e.target.id === 'close'){
-      document.getElementById("divHidden").style.visibility = 'hidden'
-      document.getElementById("hidden").style.visibility = 'hidden'
+      document.getElementById("divHidden").style.width = '0'
+      document.getElementById("hidden").style.width = '0'
+      document.getElementById("menu__box").style.width = '0'
+      document.getElementById("close").style.visibility = 'hidden'
     }
   }
 
   const threeClick = (e) => {
-    document.getElementById("divHidden").style.visibility = 'hidden'
-    document.getElementById("hidden").style.visibility = 'hidden'
+    document.getElementById("divHidden").style.width = '0%'
+    document.getElementById("hidden").style.width = '0%'
+    document.getElementById("menu__box").style.width = '0'
+    document.getElementById("close").style.visibility = 'hidden'
   }
 
   const fourClick = (e) => {
-    document.getElementById("divHidden").style.visibility = 'hidden'
-    document.getElementById("hidden").style.visibility = 'hidden'
+    // document.getElementById("divHidden").style.visibility = 'visible'
+    document.getElementById("divHidden").style.width = '0%'
+    // document.getElementById("hidden").style.visibility = 'visible'
+    document.getElementById("hidden").style.width = '0%'
+    document.getElementById("menu__box").style.width = '0'
+    document.getElementById("close").style.visibility = 'hidden'
   }
 
   const screen = window.screen.width < 900
 
-  const bot = {
-    borderBottom: 'none',
-  }
+  const bot = { borderBottom: 'none' }
 
   const width = { width: '33%' }
+
+  let activeStyle = {
+    backgroundColor: "#DF4242",
+    color: "#FFFFFF",
+    border: "none"
+  };
 
   const uaHeader = () => {
     if (screen === true) {
       return <div className="humManu" id="menu__toggle" style={{ zIndex: "1", width: '20%' }}>
         <img onClick={oneClick} id='img' src={image1} />
           <div className='divManu' id="divHidden">
-            <ul className="menu__box">
+            <ul className="menu__box" id="menu__box">
               <p className='close' id='close' onClick={twoClick}></p>
-              <li><NavLink onClick={threeClick} className="menu__item" to="/">{t("mainPage")}</NavLink></li>
-              <li><NavLink onClick={threeClick} className="menu__item"
-                                       to="/obladnannya">{t("aboutUs")}</NavLink></li>
-              <li><NavLink onClick={threeClick} className="menu__item"
+              <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
+                           className="menu__item" to={"/"}>{t("mainPage")}</NavLink></li>
+              <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
+                           className="menu__item" to="/obladnannya">{t("aboutUs")}</NavLink></li>
+              <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
+                           className="menu__item"
                                        to="/nashi-avtomiyki/wsi">{t("team")}</NavLink></li>
-              <li><a onClick={threeClick} className="menu__item" href="#">{t("blog")}</a></li>
-              <li><a onClick={threeClick} className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
-                               href="#">{t("contacts")}</a></li>
+              <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
+                     className="menu__item" to="/blog">{t("blog")}</NavLink></li>
+              <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
+                     className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
+                           to="/contacts">{t("contacts")}</NavLink></li>
             </ul>
           </div>
       </div>;
