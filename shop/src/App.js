@@ -24,6 +24,7 @@ import ListWash from "./component/ListWash";
 import FooterMain from "./component/FooterMain";
 import ListWash123 from "./TestSelect";
 import { LanguageSwitcher, removeLngPrefix } from "./18n";
+import i18next from "i18next";
 
 
 let userOrder = [];
@@ -63,7 +64,24 @@ const App = () => {
     if (currentPathname !== newPathname) {
       window.location.replace(newPathname);
     }
+
+
   }, []);
+
+  useEffect(() => {
+    if(language === 'uk-UA'){
+      const switcher = (lng) => {
+        i18next.changeLanguage(lng)
+        window.location.replace(
+          `/${lng}${window.location.pathname}`
+        )
+      }
+
+      switcher('ua')
+    }
+
+  }, []);
+
 
   const noScroll = () => {
     let con = document.getElementById("lightblue2");
@@ -139,16 +157,12 @@ const App = () => {
   };
 
   urlKalk = window.document.location.pathname.slice(3)
-  const clickBread = (e) => {
-    nameKalk = e.target.id;
-  };
+  const clickBread = (e) => { nameKalk = e.target.id };
 
-  const style = {
-    margin: "10px auto 60px 125px"
-  };
+  const style = { margin: "10px auto 60px 125px" };
 
   return (
-    <Router basename={`/${language}`}>
+    <Router basename={`/${language}/`}>
       <div className="App">
         <Header t={t} />
         <>
@@ -201,8 +215,9 @@ const App = () => {
           {
             <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
               <Routes>
-                <Route path={`/${language}`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />
+                {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
                 <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
+                <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
                 <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
                                                          setTotal={setTotal} total={total} />} />
