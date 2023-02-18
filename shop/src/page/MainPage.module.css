@@ -1106,7 +1106,7 @@ a {
 @media screen and (max-width: 1305px) {
     .startImage {
         width: 240%;
-        height: 185%;
+        height: 246%;
         top: -207px;
     }
     .mainContainer, .container8, .container6, .container21,
@@ -1250,7 +1250,7 @@ a {
 @media screen and (max-width: 1020px){
     .startImage {
         width: 260%;
-        height: 179%;
+        height: 215%;
         top: -194px;
     }
     .div10{
@@ -1336,9 +1336,9 @@ a {
         height: 100%;
     }
     .startImage{
-        width: 380%;
-        top: -410px;
-        height: 201%;
+        height: 273%;
+        top: -40px;
+        width: 377%;
     }
     .pSmart{
         font-size: 60px;
