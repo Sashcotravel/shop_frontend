@@ -1105,9 +1105,9 @@ a {
 
 @media screen and (max-width: 1305px) {
     .startImage {
-        width: 240%;
-        height: 246%;
-        top: -207px;
+        width: 346%;
+        height: 260%;
+        top: -281px;
     }
     .mainContainer, .container8, .container6, .container21,
     .container10_2, .container11_2, .container4_5, .animDiv1{
@@ -1249,7 +1249,7 @@ a {
 
 @media screen and (max-width: 1020px){
     .startImage {
-        width: 260%;
+        width: 370%;
         height: 215%;
         top: -194px;
     }
@@ -1336,9 +1336,9 @@ a {
         height: 100%;
     }
     .startImage{
-        height: 273%;
-        top: -40px;
-        width: 377%;
+        height: 276%;
+        top: -430px;
+        width: 542%;
     }
     .pSmart{
         font-size: 60px;
