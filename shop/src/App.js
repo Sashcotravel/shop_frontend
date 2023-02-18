@@ -78,9 +78,31 @@ const App = () => {
       }
 
       switcher('ua')
+    }
+    if(language === 'en-US'){
+      const switcher = (lng) => {
+        i18next.changeLanguage(lng)
+        window.location.replace(
+          `/${lng}${window.location.pathname}`
+        )
+      }
+
+      switcher('ua')
     } else if (window.location.pathname === '/ua/ua/'){
       window.location.replace(
         `/ua/`
+      )
+    } else if (window.location.pathname === '/en/en/'){
+      window.location.replace(
+        `/en/`
+      )
+    } else if (window.location.pathname === '/ua/en/'){
+      window.location.replace(
+        `/ua/`
+      )
+    } else if (window.location.pathname === '/en/ua/'){
+      window.location.replace(
+        `/en/`
       )
     }
   }, []);
