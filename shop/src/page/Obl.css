@@ -133,7 +133,7 @@
 .breadcrumbs > *{
     display: inline-block;
     margin-right: 5px;
-    margin-top: 40px;
+    margin-top: 140px;
 }
 
 .breadcrumbs .crumb:after {

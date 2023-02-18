@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import Container from "@mui/material/Container";
 import { Link, Route, Routes, useNavigate, NavLink, useParams, useLocation } from "react-router-dom";
@@ -9,6 +9,16 @@ import { LanguageSwitcher } from "../component/language";
 
 
 export const Header = ({ t }) => {
+
+
+  const [color, setColor] = useState(false)
+
+  const changeColor = () => {
+    if(window.scrollY >= 90) {setColor(true)}
+    else {setColor(false)}
+  }
+
+  window.addEventListener('scroll', changeColor)
 
   const oneClick = (e) => {
     if(e.target.id === 'img'){
@@ -125,7 +135,7 @@ export const Header = ({ t }) => {
 
   return (
     <header>
-      <div className="root" style={screen ? bot : undefined}>
+      <div className={color ? "root header-bg" : 'root'} style={screen ? bot : undefined}>
         <div style={screen ? width : undefined}>
           <Link to="/">
             <img className="logo" src={image5} />

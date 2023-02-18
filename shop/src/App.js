@@ -78,8 +78,11 @@ const App = () => {
       }
 
       switcher('ua')
+    } else if (window.location.pathname === '/ua/ua/'){
+      window.location.replace(
+        `/ua/`
+      )
     }
-
   }, []);
 
 
