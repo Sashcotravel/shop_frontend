@@ -88,19 +88,23 @@ const App = () => {
       }
 
       switcher('ua')
-    } else if (window.location.pathname === '/ua/ua/'){
+    }
+    else if (window.location.pathname === '/ua/ua/'){
       window.location.replace(
         `/ua/`
       )
-    } else if (window.location.pathname === '/en/en/'){
+    }
+    else if (window.location.pathname === '/en/en/'){
       window.location.replace(
         `/en/`
       )
-    } else if (window.location.pathname === '/ua/en/'){
+    }
+    else if (window.location.pathname === '/ua/en/'){
       window.location.replace(
         `/ua/`
       )
-    } else if (window.location.pathname === '/en/ua/'){
+    }
+    else if (window.location.pathname === '/en/ua/'){
       window.location.replace(
         `/en/`
       )

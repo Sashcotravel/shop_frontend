@@ -15,6 +15,8 @@ const MainPage = ({ t, setOnFooter }) => {
 
   const dispatch = useDispatch();
 
+  let f = 0
+
   useEffect(() => {
     setOnFooter(true);
 
@@ -29,12 +31,21 @@ const MainPage = ({ t, setOnFooter }) => {
     const mediaFiles = document.querySelectorAll('img, video, iframe')
     let i = 3
 
+    let fg = () => {
+      f = 100;
+      return f;
+    };
+
+      setTimeout(fg, 5000)
+
+    console.log(f);
+
     Array.from(mediaFiles).forEach((file, index) => {
       file.onload = () => {
         i++
         percent.innerHTML = ((i * 100) / mediaFiles.length).toFixed()
-
-        if(i === mediaFiles.length){
+        console.log(f);
+        if(i === mediaFiles.length || f === 100){
           preloader.classList.add(`${m.preloader__hide}`)
           anim1.classList.add(`${m.animTit}`)
           anim2.classList.add(`${m.animTit}`)
@@ -52,7 +63,7 @@ const MainPage = ({ t, setOnFooter }) => {
     return () => {
       setOnFooter(false);
     };
-  }, []);
+  }, [f]);
 
   const greenBut = () => {};
 
@@ -125,42 +136,42 @@ const MainPage = ({ t, setOnFooter }) => {
                 <span className={m.percentPAnim}></span>
                 <span className={m.percent}>%</span>
 
-                {
-                  screen ? <section style={{ marginTop: "50px" }}>
-                      <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="400" height="400"
-                           xmlns="http://www.w3.org/2000/svg"
-                           style={{ overflowClipMargin: "border-box", padding: "20px" }}>
-                        <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"
-                                cx="16.91549431"
-                                cy="16.91549431" r="15.91549431" />
-                        <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4"
-                                stroke-dasharray="75,100"
-                                stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                        <g className={m.circleChartInfo}>
-                          <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"
-                                text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA
-                          </text>
-                        </g>
-                      </svg>
-                    </section>
-                    : <section style={{ marginTop: "20px", marginLeft: "0px" }}>
-                      <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="250" height="250"
-                           xmlns="http://www.w3.org/2000/svg"
-                           style={{ overflowClipMargin: "border-box", padding: "20px" }}>
-                        <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"
-                                cx="16.91549431"
-                                cy="16.91549431" r="15.91549431" />
-                        <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4"
-                                stroke-dasharray="75,100"
-                                stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                        <g className={m.circleChartInfo}>
-                          <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"
-                                text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA
-                          </text>
-                        </g>
-                      </svg>
-                    </section>
-                }
+                {/*{*/}
+                {/*  screen ? <section style={{ marginTop: "50px" }}>*/}
+                {/*      <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="400" height="400"*/}
+                {/*           xmlns="http://www.w3.org/2000/svg"*/}
+                {/*           style={{ overflowClipMargin: "border-box", padding: "20px" }}>*/}
+                {/*        <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"*/}
+                {/*                cx="16.91549431"*/}
+                {/*                cy="16.91549431" r="15.91549431" />*/}
+                {/*        <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4"*/}
+                {/*                stroke-dasharray="75,100"*/}
+                {/*                stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />*/}
+                {/*        <g className={m.circleChartInfo}>*/}
+                {/*          <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"*/}
+                {/*                text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA*/}
+                {/*          </text>*/}
+                {/*        </g>*/}
+                {/*      </svg>*/}
+                {/*    </section>*/}
+                {/*    : <section style={{ marginTop: "20px", marginLeft: "0px" }}>*/}
+                {/*      <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="250" height="250"*/}
+                {/*           xmlns="http://www.w3.org/2000/svg"*/}
+                {/*           style={{ overflowClipMargin: "border-box", padding: "20px" }}>*/}
+                {/*        <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"*/}
+                {/*                cx="16.91549431"*/}
+                {/*                cy="16.91549431" r="15.91549431" />*/}
+                {/*        <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4"*/}
+                {/*                stroke-dasharray="75,100"*/}
+                {/*                stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />*/}
+                {/*        <g className={m.circleChartInfo}>*/}
+                {/*          <text className={m.circleChartPercent} x="16.91549431" y="15.5" alignment-baseline="central"*/}
+                {/*                text-anchor="middle" font-size="4" fill="#575758" stroke="none">EBITDA*/}
+                {/*          </text>*/}
+                {/*        </g>*/}
+                {/*      </svg>*/}
+                {/*    </section>*/}
+                {/*}*/}
               </div>
             </div>
 
