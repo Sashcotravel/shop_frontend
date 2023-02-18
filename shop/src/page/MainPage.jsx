@@ -33,12 +33,12 @@ const MainPage = ({ t, setOnFooter }) => {
 
     let fg = () => {
       f = 100;
+      console.log(f);
       return f;
     };
 
       setTimeout(fg, 5000)
 
-    console.log(f);
 
     Array.from(mediaFiles).forEach((file, index) => {
       file.onload = () => {
@@ -57,8 +57,6 @@ const MainPage = ({ t, setOnFooter }) => {
         }
       }
     })
-
-
 
     return () => {
       setOnFooter(false);
