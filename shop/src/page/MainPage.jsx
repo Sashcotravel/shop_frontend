@@ -75,15 +75,15 @@ const MainPage = ({ t, setOnFooter }) => {
     <main style={{ backgroundColor: "#283338" }}>
 
       {/*<div className={m.preloader} id={m["preloader"]}>*/}
-      <div className={`${m.preloader}`} id="preloader">
-        <div className={m.preloader__loader}>
-          <p><img src={image1} className={m.imgTit}/></p>
-          <span className={m.preloader__percent}>
-            {/*<p><img src={image1} style={{position: 'relative', left: '-70px'}} /></p>*/}
-            <span id='percent'>0</span>%
-          </span>
-        </div>
-      </div>
+      {/*<div className={`${m.preloader}`} id="preloader">*/}
+      {/*  <div className={m.preloader__loader}>*/}
+      {/*    <p><img src={image1} className={m.imgTit}/></p>*/}
+      {/*    <span className={m.preloader__percent}>*/}
+      {/*      /!*<p><img src={image1} style={{position: 'relative', left: '-70px'}} /></p>*!/*/}
+      {/*      <span id='percent'>0</span>%*/}
+      {/*    </span>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
       <div className={m.animDiv1}>
         <div id='anim1' className={`${m.animPidDiv}`}></div>
