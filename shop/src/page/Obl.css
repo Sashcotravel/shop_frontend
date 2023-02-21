@@ -157,6 +157,7 @@
 
 .breads{
     color: #ddd;
+    cursor: pointer;
 }
 
 .h4Title{
@@ -773,7 +774,7 @@ a[data-fancybox] img {
         margin-top: auto;
     }
     .breadcrumbs{
-        margin: 20px 0 30px 20px;
+        margin: 120px 0 30px 20px;
         font-size: 10px;
     }
     .boxItem {

@@ -48,5 +48,12 @@
   "on": "on",
   "home": "Main",
   "oblast": "oblast",
-  "youCan": "You can invest in the same car wash"
+  "youCan": "You can invest in the same car wash",
+  "autowash": "CAR WASH",
+  "obladnanya": "EQUIPMENT",
+  "cover2": "COVER",
+  "calculator": "CALCULATOR",
+  "pageThanks": "Thank you page",
+  "titleThanks": "Request sent successfully",
+  "mainPageTo": "To the main page"
 }

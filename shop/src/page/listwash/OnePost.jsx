@@ -143,7 +143,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
           <div className='divButP'>
             <p className="pSt">вул. {postOne?.st}, м. {postOne?.city}, {postOne?.obl.split(" ")[0]} обл.</p>
 
-            <a href={postOne?.map} style={{ color: "white" }}>
+            <a href={postOne?.map} style={{ color: "white" }} target='_blank'>
               <div className="marshBut">
                 <img style={{ position: "relative", left: "10px", width: "14%" }} src={image} />
                 <span style={{ position: "relative", right: "10px" }}>{t("MakeARoute")}</span>

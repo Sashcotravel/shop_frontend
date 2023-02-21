@@ -25,6 +25,12 @@ export const fetchMailDima = createAsyncThunk("order/fetchMailDima", async (obj)
     }
 );
 
+export const fetchMailDimaZam = createAsyncThunk("order/fetchMailDimaZam", async (obj) => {
+        const { data } = await instance.post(`/order/mailDimaZam`, obj);
+        return data;
+    }
+);
+
 export const fetchMailUser = createAsyncThunk("order/fetchMailUser", async (obj) => {
         const { data } = await instance.post(`/order/mailUser`, obj);
         return data;

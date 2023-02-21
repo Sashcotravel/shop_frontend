@@ -994,7 +994,7 @@ export const listWash = [
         'city2': 'Ternopil',
         'obl': 'Тернопільська область',
         'obl2': 'Ternopilska Oblast',
-        'st': 'Текстильна',
+        'st': 'Текстильна 22 Ж',
         'map': 'https://www.google.com/maps/place/49%C2%B034\'26.6%22N+25%C2%B0' +
           '37\'08.7%22E/@49.574042,25.619086,17z/data=!3m1!4b1!4m6!3m5!1s0!7e2!8m2!3d49.5740417!4d25.6190859'
     },

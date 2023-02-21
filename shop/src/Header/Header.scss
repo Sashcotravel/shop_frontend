@@ -1,21 +1,54 @@
 .root {
   width: 100%;
-  height: 100px;
-  opacity: 1;
+  height: 110px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid gray;
+  justify-content: space-between;
+  //border-bottom: 1px solid gray;
   margin: auto;
-  //position: relative;
   z-index: 4; //2
   position: fixed;
   transition: .1s ease-in;
   top: 0;
+  border-bottom: 2px solid gray;
 }
+
+//hr{
+//  width: 93%;
+//  border: 1px solid gray;
+//  position: relative;
+//  top: 103px;
+//  height: 1px;
+//  z-index: 2;
+//  margin: auto;
+//}
 
 .header-bg{
   background-color: #1D2025;
+}
+
+.mobTelDiv{
+  width: 140px;
+  height: 35px;
+  border-radius: 18px;
+  background: #DF4242 0% 0% no-repeat padding-box;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 60px;
+  margin-left: 45px;
+}
+
+.mobTelDiv:hover{
+  background-color: #42de4c;
+}
+
+.textNom{
+  text-align: left;
+  font: normal normal 300 12px/20px Gilroy Light;
+  letter-spacing: 0;
+  color: #FFFFFF;
 }
 
 .inner {
@@ -26,15 +59,19 @@
 }
 
 .logo {
-  top: 30px;
-  left: 20px;
-  width: 97px;
-  height: 39px;
-  background: transparent url('../image/footer.png');
-  background-position: 0% 0%;
+  //left: 60px;
+  width: 155px;
+  height: 47px;
   background-origin: border-box;
   background-repeat: no-repeat;
   opacity: 1;
+  position: relative;
+}
+
+.divLineManu{
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .nomer{
@@ -54,6 +91,7 @@
 .manu{
   display: flex;
   align-items: center;
+  margin-right: 45px;
 }
 
 .link{
@@ -62,19 +100,19 @@
 }
 
 .humManu{
-  margin-right: 10px;
+  z-index: 1;
+  width: 20%;
+  margin-right: 30px;
 }
 
 .menu__box {
   display: block;
   position: fixed;
   top: 100px;
-  right: 1px;
-  //width: 300px;
+  right: -1px;
   width: 0;
   height: 100%;
   margin: 0;
-  //padding: 80px 0;
   list-style: none;
   text-align: center;
   background-color: black;
@@ -93,6 +131,23 @@
   align-items: center;
 }
 
+.menu__item2 {
+  display: flex;
+  padding: 12px 24px;
+  text-decoration: none;
+  height: 111px;
+  align-items: center;
+  font: normal normal normal 14px/20px Gilroy Light;
+  letter-spacing: 1.12px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.menu__item2:hover {
+  color: #42de4c;
+  border-bottom: 2px solid #42de4c;
+}
+
 .close{
   background-image: url("../image/svg/icons8-close.svg");
   width: 30px;
@@ -107,26 +162,22 @@
 .divContainer{
   backdrop-filter: blur(3px);
   position: absolute;
-  //width: 98vw;
   width: 0;
   height: 200vh;
   visibility: visible;
-  //visibility: hidden;
+  z-index: 3;
 }
 
 .divManu{
   background-color: black;
   position: fixed;
   height: 100%;
-  //width: 80%;
   width: 0%;
-  //left: 90px;
-  right: 0;
+  right: -1px;
   top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  //visibility: hidden;
   visibility: visible;
   transition: all .09s ease-out;
 }
@@ -152,14 +203,140 @@
   visibility: visible;
 }
 
+.napis{
+  margin-left: 95px;
+  width: 49px;
+  height: 47px;
+  text-align: left;
+  font: normal normal bold 12px/11px Gilroy Light;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.logoDiv{
+  display: flex;
+  height: 100%;
+  width: 300px;
+  padding-top: 30px;
+}
+
+// mob
+
+.telDiv{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #B2B1B7;
+  padding-top: 4px;
+}
+
+.manDiv{
+  display: flex;
+  align-items: center;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.man2Div{
+  display: flex;
+  align-items: center;
+  margin-left: -10px;
+}
+
+.divManuLang{
+  width: 52px;
+  text-align: start;
+  height: 32%;
+}
 
 
+@media screen and (max-width: 1400px) {
+  .menu__item2 {
+    padding: 0 15px;
+    font: normal normal normal 12px/20px Gilroy Light;
+  }
+  .root {
+    height: 90px;
+  }
+  hr {
+    top: 93px;
+  }
+  .menu__item2{
+    height: 111px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .menu__item2 {
+    padding: 0 12px;
+    font: normal normal normal 10px/20px Gilroy Light;
+  }
+  .root {
+    height: 70px;
+  }
+  hr {
+    top: 83px;
+  }
+  .logo {
+    width: 100px;
+  }
+  .logoDiv {
+    padding-top: 20px;
+  }
+  .mobTelDiv {
+    margin-right: 40px;
+    margin-left: 25px;
+  }
+  .manu {
+    margin-right: 25px;
+  }
+  .menu__item2{
+    height: 71px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .menu__item2 {
+    padding: 0 9px;
+    font: normal normal normal 9px/20px Gilroy Light;
+  }
+  .logo {
+    width: 87px;
+  }
+  .napis {
+    margin-left: 85px;
+  }
+  .mobTelDiv {
+    width: 120px;
+  }
+  .textNom {
+    text-align: left;
+    font: normal normal 300 10px/20px Gilroy Light;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .menu__item {
+    border-top: 1px solid white;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .menu__item {
+    border-top: 1px solid white;
+  }
+  .root{
+    border: none;
+  }
+}
 
 @media screen and (max-width: 700px) {
   .root{
     width: 100%;
     margin: auto;
     justify-content: space-between;
+    border: none;
   }
   //.divManu {
   //  width: 50%;
@@ -179,6 +356,8 @@
     width: 100%;
     margin: auto;
     justify-content: space-between;
+    height: 70px;
+    border: none;
   }
 //  .divManu {
 //    width: 80%;
@@ -190,6 +369,11 @@
 //  }
   .menu__item {
     border-top: 1px solid white;
+  }
+  .logo {
+    left: 30px;
+    width: 78px;
+    height: 27px;
   }
 }
 

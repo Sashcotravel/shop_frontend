@@ -39,8 +39,7 @@ const App = () => {
   const [checked2, setChecked2] = useState(false);
   const [selected, setSelected] = useState(null);
   const [userData, setUserData] = useState({
-    name: "", phone: "", email: "", cite: "", date: ""
-  });
+    name: "", phone: "", email: "", cite: "", date: "" });
   const [onFooter, setOnFooter] = useState(false);
   const [onMain, setOnMain] = useState(false);
   const [postOne, setPostOne] = useState(null);
@@ -179,6 +178,13 @@ const App = () => {
     con.style.visibility = "hidden";
   };
 
+  const blurClose = (e) => {
+    if(e.target.id === "lightblue2"){
+      let con = document.getElementById("lightblue2");
+      con.style.visibility = "hidden";
+    }
+  };
+
   let activeStyle = {
     backgroundColor: "#DF4242",
     color: "#FFFFFF",
@@ -247,7 +253,7 @@ const App = () => {
                 {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
                 <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
                 <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-                <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} />} />
+                <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} />} />
                 <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
                                                          setTotal={setTotal} total={total} />} />
                 <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder}
@@ -325,7 +331,7 @@ const App = () => {
             </Suspense>
           }
 
-          <div id="lightblue2" className={s.orderBlock}>
+          <div id="lightblue2" onClick={blurClose} className={s.orderBlock}>
             <div className={s.userdata}>
               <div className={s.ix}>
                 <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}

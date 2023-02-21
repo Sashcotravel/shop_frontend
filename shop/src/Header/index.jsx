@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
-import Container from "@mui/material/Container";
 import { Link, Route, Routes, useNavigate, NavLink, useParams, useLocation } from "react-router-dom";
-import image5 from "../image/footer.png";
+import image5 from "../image/svg/samwash_logo_vector-01.svg";
 import image1 from "../image/svg/BurgerMenuIcon.svg";
+import image2 from "../image/svg/icons8-phone-50.png";
 import s from "../component/Home.module.css";
 import { LanguageSwitcher } from "../component/language";
 
@@ -22,13 +22,18 @@ export const Header = ({ t }) => {
 
   const oneClick = (e) => {
     if(e.target.id === 'img'){
-      // document.getElementById("divHidden").style.visibility = 'hidden'
-      document.getElementById("divHidden").style.width = '80%'
-      // document.getElementById("hidden").style.visibility = 'hidden'
-      document.getElementById("hidden").style.width = '98vw'
-      // document.getElementById("menu__box").style.width = '300px'
-      document.getElementById("menu__box").style.width = '80%'
+      if(window.screen.width > 600){
+        document.getElementById("menu__box").style.width = '50%'
+        document.getElementById("divHidden").style.width = '50%'
+      } else {
+        document.getElementById("divHidden").style.width = '80%'
+        document.getElementById("menu__box").style.width = '80%'
+      }
       document.getElementById("close").style.visibility = 'visible'
+      document.getElementById("hidden").style.width = '98vw'
+      // document.getElementById("divHidden").style.visibility = 'hidden'
+      // document.getElementById("hidden").style.visibility = 'hidden'
+      // document.getElementById("menu__box").style.width = '300px'
     }
   }
 
@@ -49,9 +54,7 @@ export const Header = ({ t }) => {
   }
 
   const fourClick = (e) => {
-    // document.getElementById("divHidden").style.visibility = 'visible'
     document.getElementById("divHidden").style.width = '0%'
-    // document.getElementById("hidden").style.visibility = 'visible'
     document.getElementById("hidden").style.width = '0%'
     document.getElementById("menu__box").style.width = '0'
     document.getElementById("close").style.visibility = 'hidden'
@@ -71,7 +74,7 @@ export const Header = ({ t }) => {
 
   const uaHeader = () => {
     if (screen === true) {
-      return <div className="humManu" id="menu__toggle" style={{ zIndex: "1", width: '20%' }}>
+      return <div className="humManu" id="menu__toggle">
         <img onClick={oneClick} id='img' src={image1} />
           <div className='divManu' id="divHidden">
             <ul className="menu__box" id="menu__box">
@@ -94,11 +97,11 @@ export const Header = ({ t }) => {
     }
     else {
       return <div className="manu">
-        <Link className="menu__item" to="/">{t("mainPage")}</Link>
-        <Link className="menu__item" to="/obladnannya">{t("aboutUs")}</Link>
-        <Link className="menu__item" to="/nashi-avtomiyki/wsi">{t("team")}</Link>
-        <div className="menu__item">{t("blog")}</div>
-        <div className="menu__item">{t("contacts")}</div>
+        <Link className="menu__item2" to="/nashi-avtomiyki/wsi">{t("autowash")}</Link>
+        <Link className="menu__item2" to="/obladnannya">{t("obladnanya")}</Link>
+        <Link className="menu__item2" to="/nakritya">{t("cover2")}</Link>
+        <Link className="menu__item2" to="/obladnannya">{t("calculator")}</Link>
+        <div className="menu__item2">{t("blog")}</div>
       </div>;
     }
   };
@@ -132,30 +135,85 @@ export const Header = ({ t }) => {
   //     </div>;
   //   }
   // }
+  // localStorage.i18nextLng === 'ua' ? uaHeader() : enHeader()
+
 
   return (
     <header>
-      <div className={color ? "root header-bg" : 'root'} style={screen ? bot : undefined}>
-        <div style={screen ? width : undefined}>
-          <Link to="/">
-            <img className="logo" src={image5} />
-          </Link>
-        </div>
-        <div style={screen ? width : undefined}>
-          {
-            window.screen.width < 900
-              ? <span><a className="nomer" href="tel:+380505923772">+38 (050) 59 23 772</a></span>
-              : <span className="nomer">+38 (050) 59 23 772</span>
-          }
-          <LanguageSwitcher />
-        </div>
-        {
-          // localStorage.i18nextLng === 'ua' ? uaHeader() : enHeader()
-          uaHeader()
+        {screen ? <div className={"root header-bg"} style={screen ? bot : undefined}>
+            <div style={{ width: "20%" }}>
+              <Link to="/">
+                <img className="logo" src={image5} />
+              </Link>
+            </div>
+
+            <div className="manDiv">
+              <div className="man2Div">
+                <div className="telDiv">
+                  <span><a className="nomer" href="tel:+380505923772"><img width="23px" src={image2} /></a></span>
+                </div>
+                <div>
+                  <LanguageSwitcher />
+                </div>
+              </div>
+
+              {uaHeader()}
+            </div>
+          </div>
+          : <div className={color ? "root header-bg" : "root"} style={screen ? bot : undefined}>
+
+            <div className='logoDiv'>
+              <Link to="/" style={{position: 'relative', left: '60px'}}>
+                <img className="logo" src={image5} />
+              </Link>
+              <p className='napis'>SELF SERVICE CAR WASH</p>
+            </div>
+
+            <div className='divLineManu'>
+
+              <div>
+                {uaHeader()}
+              </div>
+              <div className='divManuLang'>
+                <LanguageSwitcher />
+              </div>
+              <div className="mobTelDiv">
+                <span className="textNom">+38 (050) 59 23 772</span>
+              </div>
+
+            </div>
+
+          </div>
         }
         <div className="divContainer" id="hidden" onClick={fourClick}></div>
-      </div>
     </header>
+    // <header>
+    //   <div className={color ? "root header-bg" : 'root'} style={screen ? bot : undefined}>
+    //     <div style={screen ? width : undefined}>
+    //       <Link to="/">
+    //         <img className="logo" src={image5} />
+    //       </Link>
+    //     </div>
+    //     {
+    //       window.screen.width < 900
+    //         ? <div>
+    //           <span><a className="nomer" href="tel:+380505923772"></a></span>
+    //         </div>
+    //
+    //
+    //
+    //         : <span className="nomer">+38 (050) 59 23 772</span>
+    //     }
+    //     <div style={screen ? width : undefined}>
+    //       <LanguageSwitcher />
+    //     </div>
+    //     {
+    //       // localStorage.i18nextLng === 'ua' ? uaHeader() : enHeader()
+    //       uaHeader()
+    //     }
+    //     <div className="divContainer" id="hidden" onClick={fourClick}></div>
+    //   </div>
+    // </header>
   );
 };
 

@@ -36,7 +36,8 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
   interpolation: { escapeValue: false },
   resources,
   detection: {
-    cache: ['cookie']
+    // cache: ['cookie']
+    cache: ['localStorage']
   },
 
 })

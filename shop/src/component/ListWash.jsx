@@ -157,7 +157,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
               <p className='titlePName'>{city}</p>
               <p className='titlePName2'>{st !== undefined && st !== '' ? `вул. ${st}` : ''}</p>
             </div>
-            <a href={map}>
+            <a href={map} target='_blank'>
               <img src={image} style={{ margin: "0 10px 0 0" }} width={"53.74px"} />
             </a>
           </div>

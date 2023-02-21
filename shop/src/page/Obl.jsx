@@ -217,6 +217,7 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
   };
 
 
+
   return <>
     <div id="light" className={s.boxHideImage} onClick={hidden}>
       <figure className="figure">
