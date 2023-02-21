@@ -9,6 +9,7 @@
     "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.20.1.tgz",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
+    "@react-google-maps/api": "^2.18.1",
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
