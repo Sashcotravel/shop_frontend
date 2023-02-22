@@ -398,7 +398,7 @@ a {
     background-image: url("../image/svg/0020a4441a50b7f71d56d8223346d30daca1e623cd86a3a5c0234e5ed10c4dce9c140.jpg");
     margin: 163px 0 0 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     grid-column-start: 1;
     grid-column-end: 6;
@@ -967,13 +967,18 @@ a {
 /*}*/
 
 .section_counter{}
+.section_counter2{
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
-.counter_item{
+.counter_item, .counter_item2{
     transition: all .5s ease-in-out;
     margin: 50px 0 40px 0;
 }
 
-.counter_item .percentPAnim2{
+.percentPAnim2{
     font: normal normal 900 160px/37px Gilroy bold;
     color: transparent;
     -webkit-text-stroke-width: 0.15rem;
@@ -987,7 +992,7 @@ a {
     -o-text-stroke-color: white;
 }
 
-.counter_item .percentPAnim{
+.percentPAnim{
     width: 400px;
     font: normal normal 900 160px/37px Gilroy bold;
     color: transparent;
@@ -1299,11 +1304,6 @@ video{
 }
 
 @media screen and (max-width: 1305px) {
-    .startImage {
-        /*width: 346%;*/
-        /*height: 260%;*/
-        top: -351px;
-    }
     .circleChartInfo {
         width: 200px;
         top: -195px;
@@ -1416,11 +1416,17 @@ video{
         width: 300px;
         height: 300px;
     }
-    .percentPAnim2:after{
+    .percentPAnim2{
         font-size: 130px;
     }
-    .percentPAnim:after{
+    .percentPAnim{
         font-size: 130px;
+    }
+    .counter_item{
+        margin: 50px 0 -30px 0;
+    }
+    .counter_item2{
+        margin: 80px 0 20px 0;
     }
     .percent, .percent2{
         font-size: 130px;
@@ -1509,11 +1515,6 @@ video{
         height: 46%;
         width: 100%;
     }
-    .startImage {
-        /*width: 370%;*/
-        /*height: 215%;*/
-        top: -194px;
-    }
     .div10{
         display: block;
         margin-bottom: 0;
@@ -1575,6 +1576,21 @@ video{
     }
     .p11 {
         font: normal normal normal 42px/60px Gilroy Light;
+    }
+    .percentDiv2_2 {
+        margin-left: 0;
+    }
+    .percentPAnim2{
+        font-size: 130px;
+    }
+    .percentPAnim{
+        font-size: 130px;
+    }
+    .counter_item{
+        margin: 50px 0 -30px 0;
+    }
+    .counter_item2{
+        margin: 80px 0 20px 0;
     }
     @keyframes title1 {
         from {
@@ -1675,10 +1691,10 @@ video{
         margin-bottom: 50px;
         line-height: 1.1;
     }
-    .percentPAnim:after{
+    .percentPAnim2{
         font-size: 110px;
     }
-    .percentPAnim2:after{
+    .percentPAnim{
         font-size: 110px;
     }
     .percent, .percent2{
@@ -1708,17 +1724,14 @@ video{
         margin-top: -120px;
         left: -40px;
     }
-    .percentPAnim2{
-        margin-left: 0;
-    }
     .addPercentP{
-        left: 210px;
+        left: 240px;
         position: relative;
-        top: 20px;
+        top: -20px;
     }
     .divPerc {
-        margin-top: -60px;
-        padding-left: 210px;
+        margin-top: -50px;
+        padding-left: 240px;
     }
     .percentP2{
         font-size: 30px;
@@ -1734,69 +1747,72 @@ video{
         width: 450px;
         margin-left: 0;
 }
-.pP{
-    font-size: 20px;
-    width: 395px;
-    margin-top: 40px;
-    margin-bottom: 80px;
-}
-.spanB{
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    line-height: 44px;
-    margin-right: 20px;
-}
-.divSpan{
-    width: 475px;
-    font-size: 25px;
-    margin-bottom: 30px;
-    line-height: 1.3;
-}
-.span8Z{
-    font-size: 19px;
-    width: 313px;
-    line-height: 1.2;
-}
-.wW{
-    width: 365px;
-}
-.container3{
-    display: block;
-    height: 410px;
-    min-width: 360px;
-    background-size: cover;
-    padding-top: 50px;
-    padding-left: 50px;
-}
-.pDos2{
-    font-size: 30px;
-}
-.pYear{
-    font-size: 90px;
-}
-.pDos{
-    font-size: 33px;
-    line-height: 1;
-}
-.imageBlock{
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
-.container4{
-    display: block;
-    padding-left: 50px;
-}
-.container4_2{
-    padding-top: 80px;
-    padding-bottom: 40px;
-}
-.h4, .h42{
-    width: 470px;
-    font-size: 40px;
-    margin: 0;
-    line-height: 1;
-}
+    .pP {
+        font-size: 20px;
+        width: 395px;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+    .spanB {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 44px;
+        margin-right: 20px;
+    }
+    .divSpan {
+        width: 475px;
+        font-size: 25px;
+        margin-bottom: 30px;
+        line-height: 1.3;
+    }
+    .span8Z {
+        font-size: 19px;
+        width: 313px;
+        line-height: 1.2;
+    }
+    .wW {
+        width: 365px;
+    }
+    .container3 {
+        display: block;
+        height: 410px;
+        min-width: 360px;
+        background-size: cover;
+        padding-top: 50px;
+        padding-left: 50px;
+    }
+    .section_counter2{
+        flex-direction: column;
+    }
+    .pDos2 {
+        font-size: 30px;
+    }
+    .pYear {
+        font-size: 90px;
+    }
+    .pDos {
+        font-size: 33px;
+        line-height: 1;
+    }
+    .imageBlock {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .container4 {
+        display: block;
+        padding-left: 50px;
+    }
+    .container4_2 {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    .h4, .h42 {
+        width: 470px;
+        font-size: 40px;
+        margin: 0;
+        line-height: 1;
+    }
 .p4{
     width: 335px;
     font-size: 18px;
@@ -2135,11 +2151,14 @@ video{
         margin-bottom: 40px;
         line-height: 1.1;
     }
-    .percentPAnim:after {
+    .percentPAnim2{
         font-size: 90px;
     }
-    .percentPAnim2:after {
+    .percentPAnim{
         font-size: 90px;
+    }
+    .counter_item {
+        margin: 30px 0 -10px 0;
     }
     .percent, .percent2 {
         font-size: 90px;
@@ -2161,8 +2180,9 @@ video{
     }
     .percentDiv2_2 {
         display: block;
-        margin-top: -120px;
-        left: -40px;
+        margin-top: -130px;
+        left: 55px;
+        width: 280px
     }
     .percentPAnim2 {
         margin-left: 0;
@@ -2176,7 +2196,7 @@ video{
         max-width: 350px;
     }
     .divPerc {
-        margin-top: -115px;
+        margin-top: -75px;
         padding-left: 115px;
     }
     .percentP2 {

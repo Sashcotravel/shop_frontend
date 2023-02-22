@@ -195,13 +195,13 @@ const MainPage = ({ t, setOnFooter }) => {
 
   useEffect(() => {
     let section_counter = document.querySelector("#section_counter")
-    let counters = document.querySelectorAll(`.${m.counter_item}, #pes1`)
+    let counters = document.querySelectorAll(`.${m.counter_item}, .${m.counter_item2}, #pes1`)
+    let counter2 = document.querySelectorAll(`#pes3`)
+    let section_counter2 = document.querySelector("#section_counter2")
+    // let counters2 = document.querySelectorAll(`#pes3`)
+    let speed = 100
 
-    console.log(counters);
-    let CounterObserver = new IntersectionObserver((entries, observer) => {
-      let [entry] = entries
-      if(!entry.isIntersecting) return
-      let speed = 100
+    const count = (counters) => {
       counters.forEach((counter, index) => {
         function UpdateCounter(){
           const targetNumber = +counter.dataset.target
@@ -214,18 +214,34 @@ const MainPage = ({ t, setOnFooter }) => {
         }
         UpdateCounter()
 
-        if(counter.parentElement.style.animation){
-          counter.parentElement.style.animation = ''
-        } else {
-          counter.parentElement.style.animation = `slider-up .3s ease forward ${index / counters.length + 0.5}s`
-        }
-
+        if(counter.parentElement.style.animation){ counter.parentElement.style.animation = ''}
+        else { counter.parentElement.style.animation = `slider-up .3s ease forward ${index / counters.length + 0.5}s`}
       })
-    }, {
+    }
+
+    let CounterObserver = new IntersectionObserver((entries, observer) => {
+      let [entry] = entries
+      if(!entry.isIntersecting) return
+      count(counters)
+
+    },
+      {
       root: null,
       threshold: 0.4
     })
     CounterObserver.observe(section_counter)
+
+    let CounterObserver2 = new IntersectionObserver((entries, observer) => {
+      let [entry] = entries
+      if(!entry.isIntersecting) return
+      count(counter2)
+    },
+      {
+      root: null,
+      threshold: 0.4
+    })
+    CounterObserver2.observe(section_counter2)
+
   }, [])
 
 
@@ -337,7 +353,7 @@ const MainPage = ({ t, setOnFooter }) => {
               <p className={m.percentP + " " + m.addPercentP}>прямі витрати</p>
               <div className={m.divPerc}>
                 <section className={m.section_counter}>
-                  <div className={m.counter_item}>
+                  <div className={m.counter_item2}>
                     <span id='pes1' className={m.percentPAnim2} data-target={25}>0</span>
                     <span className={m.percent2}>%</span>
                   </div>
@@ -402,14 +418,16 @@ const MainPage = ({ t, setOnFooter }) => {
           <div>
             <span className={m.pDos2}>Чому ми?</span>
           </div>
-          <div className={m.imageBlock}>
-            <p className={m.pYear}>12</p>
-            <p className={m.pDos}>років досвіду</p>
-          </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <p className={m.pYear}>250</p>
-            <p className={m.pDos} style={{ width: "210px" }}>боксів <br /> під ключ</p>
-          </div>
+          <section id='section_counter2' className={m.section_counter2}>
+            <div className={m.imageBlock}>
+              <p className={m.pYear} id='pes3' data-target={12}>0</p>
+              <p className={m.pDos}>років досвіду</p>
+            </div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <p className={m.pYear} id='pes3' data-target={250}>0</p>
+              <p className={m.pDos} style={{ width: "210px" }}>боксів <br /> під ключ</p>
+            </div>
+          </section>
         </div>
 
         <div className={m.container4}>
