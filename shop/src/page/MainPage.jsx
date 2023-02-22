@@ -87,7 +87,6 @@ const MainPage = ({ t, setOnFooter }) => {
 
   const dispatch = useDispatch();
 
-  let f = 0
 
   useEffect(() => {
     setOnFooter(true);
@@ -100,22 +99,19 @@ const MainPage = ({ t, setOnFooter }) => {
     const anim4 = document.getElementById('anim4')
     const anim5 = document.getElementById('anim5')
     const container1 = document.getElementById('container1')
-    const mediaFiles = document.querySelectorAll('img, video, iframe')
-    let i = 3
+    // const mediaFiles = document.querySelectorAll('video, iframe, svg')
+    const mediaFiles = document.querySelectorAll('iframe, svg, img')
+    let i = 0
 
-    // let fg = () => {
-    //   f = 100;
-    //   return f;
-    // };
-
-    // setTimeout(fg, 5000)
-
+    console.log(mediaFiles);
 
     Array.from(mediaFiles).forEach((file, index) => {
       file.onload = () => {
         i++
+        console.log(file, i);
         percent.innerHTML = ((i * 100) / mediaFiles.length).toFixed()
-        if(i === mediaFiles.length || f === 100){
+        if(i === mediaFiles.length - 5){
+          percent.innerHTML = '100'
           preloader.classList.add(`${m.preloader__hide}`)
           anim1.classList.add(`${m.animTit}`)
           anim2.classList.add(`${m.animTit}`)
@@ -123,13 +119,12 @@ const MainPage = ({ t, setOnFooter }) => {
           anim4.classList.add(`${m.animTit}`)
           anim5.classList.add(`${m.animTit}`)
           container1.classList.add(`${m.animCon}`)
-          percent.innerHTML = '100'
         }
       }
     })
 
     return () => { setOnFooter(false) };
-  }, [f]);
+  }, []);
 
   const hiddeItem = () => {
     let con = document.getElementById("lightblue");
@@ -230,15 +225,15 @@ const MainPage = ({ t, setOnFooter }) => {
       </div>
 
       {/*<div className={m.preloader} id={m["preloader"]}>*/}
-      {/*<div className={`${m.preloader}`} id="preloader">*/}
-      {/*  <div className={m.preloader__loader}>*/}
-      {/*    <p><img src={image1} className={m.imgTit}/></p>*/}
-      {/*    <span className={m.preloader__percent}>*/}
-      {/*      /!*<p><img src={image1} style={{position: 'relative', left: '-70px'}} /></p>*!/*/}
-      {/*      <span id='percent'>0</span>%*/}
-      {/*    </span>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+      <div className={`${m.preloader}`} id="preloader">
+        <div className={m.preloader__loader}>
+          <p><img src={image1} className={m.imgTit}/></p>
+          <span className={m.preloader__percent}>
+            {/*<p><img src={image1} style={{position: 'relative', left: '-70px'}} /></p>*/}
+            <span id='percent'>0</span>%
+          </span>
+        </div>
+      </div>
 
       <div className={m.animDiv1}>
         <div id='anim1' className={`${m.animPidDiv}`}></div>
@@ -248,7 +243,6 @@ const MainPage = ({ t, setOnFooter }) => {
         <div id='anim5' className={`${m.animPidDiv5}`}></div>
       </div>
 
-      {!screen && <img src={image1} className={m.image} />}
       {screen ? <div className={m.youtubecontainer}>
           {/*<iframe className={m.startImage}*/}
           {/*        src="https://www.youtube.com/embed/aBA0fi0gua4?autoplay=1&mute=1&loop=1&playlist=aBA0fi0gua4&enablejsapi=1&showinfo=0&controls=0&modestbranding=1"*/}
@@ -262,16 +256,9 @@ const MainPage = ({ t, setOnFooter }) => {
         <Video  />
           {/*</video>*/}
         </div>
-        : <div className={m.youtubecontainer}>
-          <Video  />
-          {/*<video src={image4} loop autoPlay muted />*/}
-          {/*<video loop autoPlay muted>*/}
-          {/*  <source src={image4} type="video/mp4" />*/}
-          {/*</video>*/}
-        </div>}
+        : <div className={m.youtubecontainer}><Video  /></div>}
 
 
-      {/*{screen && <div className={m.divStart}></div>}*/}
       <div className={m.divStart}></div>
       <div className={m.mainContainer}>
 
@@ -281,7 +268,7 @@ const MainPage = ({ t, setOnFooter }) => {
           <div className={m.greenButDiv}>
             <button className={m.greenBut} onClick={greenBut} style={{ cursor: "pointer" }}>
               <span>ЗАМОВИТИ КОНСУЛЬТЦІЮ</span><span className={m.spanArrow}>
-              <img src={image5}  width='20px' />
+              <img src={image5}  className={m.imgClass} />
             </span>
             </button>
           </div>
@@ -297,7 +284,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <span className={m.percent}>%</span>
 
                 <div>
-                  <section style={{ marginTop: "50px" }}>
+                  <section className={m.circleDiv}>
                     <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="400" height="400"
                          xmlns="http://www.w3.org/2000/svg"
                          style={{ overflowClipMargin: "border-box", padding: "20px" }}>
@@ -404,7 +391,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>SMART</p><p className={m.pPrise}>6 200 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image2} width="100%" height='100%' /></div>
+              <div className={m.divImgSlider}><img src={image2} className={m.imgClass2} /></div>
             </div>
 
             <div className={m.sliderDiv}>
@@ -412,7 +399,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>PIXEL</p><p className={m.pPrise}>7 200 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image21} width="100%" height='100%' /></div>
+              <div className={m.divImgSlider}><img src={image21} className={m.imgClass2} /></div>
             </div>
 
             <div className={m.sliderDiv}>
@@ -420,7 +407,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>MARCO</p><p className={m.pPrise}>7 700 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image212} width="100%" height='100%' /></div>
+              <div className={m.divImgSlider}><img src={image212} className={m.imgClass2} /></div>
             </div>
 
             <div className={m.sliderDiv}>
@@ -428,7 +415,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>MARCO 2</p><p className={m.pPrise}>8 200 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image21234} width="100%" height='100%' /></div>
+              <div className={m.divImgSlider}><img src={image21234} className={m.imgClass2} /></div>
             </div>
 
             <div className={m.sliderDiv}>
@@ -436,7 +423,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>MARCHELLO</p><p className={m.pPrise}>12 800 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image2123} width="100%" height='100%' /></div>
+              <div className={m.divImgSlider}><img src={image2123} className={m.imgClass2} /></div>
             </div>
 
             <div className={m.sliderDiv}>
@@ -444,7 +431,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>UFO</p><p className={m.pPrise}>13 500 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image212345} width="100%" height='100%' /></div>
+              <div className={m.divImgSlider}><img src={image212345} className={m.imgClass2} /></div>
             </div>
           </Carousel>
 
@@ -487,7 +474,6 @@ const MainPage = ({ t, setOnFooter }) => {
           <div className={m.container5}>
             <div className={m.container5_3}>
               { !screen && <span className={m.p5}>9 800 € за 1 пост</span> }
-
               <p className={m.title5P}>Все ваше обладнання буде таке ж, як на автомийках Німеччини, Італії чи
                 Франнції:</p>
               <ul className={m.ul}>
@@ -500,7 +486,6 @@ const MainPage = ({ t, setOnFooter }) => {
               </ul>
               <span className={m.pBig23+' '+m.pBig23_3} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
             </div>
-
             {screen && <div className={m.div12}>
               <span className={m.p5}>9 800 € за 1 пост</span>
             </div>}
@@ -510,7 +495,6 @@ const MainPage = ({ t, setOnFooter }) => {
         <div className={m.container6}>
           <div className={m.container6_2}>
             <p className={m.p6}>У вас буде найменша технічна кімната серед конкурентів (10²), а це:</p>
-
             <ul className={m.ul} style={{ color: "black" }}>
               <li className={m.li}><img className={m.imageS} src={image3} />
                 <span className={m.spanIm}>менші витрати на будівництво</span></li>
@@ -519,7 +503,6 @@ const MainPage = ({ t, setOnFooter }) => {
               <li className={m.li}><img className={m.imageS} src={image3} />
                 <span className={m.spanIm}>менші витрати на опалення взимку</span></li>
             </ul>
-
             <span className={m.pBig23+' '+m.butGreen2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
           </div>
         </div>
@@ -531,7 +514,6 @@ const MainPage = ({ t, setOnFooter }) => {
               { !screen && <span className={m.p5}>6 800 € за 1 прилад</span> }
               <p className={m.p16}>Ми можемо поставити на Вашу автомийку найпотужніший
                 порохотяг в Україні.</p>
-
               <ul className={m.ul}>
                 <li className={m.li}><img className={m.imageS} src={image3} />
                   <span className={m.spanIm}>працює одразу на 2 поста</span></li>
@@ -540,7 +522,6 @@ const MainPage = ({ t, setOnFooter }) => {
                 <li className={m.li}><img className={m.imageS} src={image3} />
                   <span className={m.spanIm}>термін активної експлуатації - більше 10 років</span></li>
               </ul>
-
               <span className={m.pBig23+' '+m.pBig23_2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
             </div>
 
@@ -596,9 +577,7 @@ const MainPage = ({ t, setOnFooter }) => {
           </div>
         </div>
 
-        <div className={m.container10_5}>
-
-        </div>
+        <div className={m.container10_5}></div>
 
         <div className={m.container10_2}>
           <div className={m.container10}>
@@ -616,7 +595,6 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.p10}>автомийки SamWash і</p>
                 <p className={m.p10}>після запуску</p>
               </>
-
             }
 
             <div className={m.div10}>
@@ -628,7 +606,7 @@ const MainPage = ({ t, setOnFooter }) => {
                   <button className={m.greenBut} style={{ cursor: "pointer" }}>
                     <span>СПИСОК АВТОМИЙОК</span>
                     <span className={m.spanArrow}>
-                      <img src={image5} width="20px" />
+                      <img src={image5} className={m.imgClass} />
                     </span>
                   </button>
                 </Link>
@@ -673,11 +651,10 @@ const MainPage = ({ t, setOnFooter }) => {
 
           <div className={m.container11_6}>
             <p className={m.p11_2}>Лізинг на обладнання та накриття до 3-х років під 10% річних (при першому внеску 30%)</p>
-
             <div className={m.greenButDiv}>
               <button className={m.greenBut} onClick={greenBut} style={{ cursor: "pointer" }}>
                 <span>ЗАМОВИТИ КОНСУЛЬТЦІЮ</span><span className={m.spanArrow}>
-              <img src={image5} width="20px" />
+              <img src={image5} className={m.imgClass} />
             </span>
               </button>
             </div>

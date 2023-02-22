@@ -140,7 +140,9 @@ export const Header = ({ t }) => {
 
   return (
     <header>
-        {screen ? <div className={"root header-bg"} style={screen ? bot : undefined}>
+        {screen ? <>
+
+          <div className={"root header-bg"} style={screen ? bot : undefined}>
             <div style={{ width: "20%" }}>
               <Link to="/">
                 <img className="logo" src={image5} />
@@ -150,7 +152,7 @@ export const Header = ({ t }) => {
             <div className="manDiv">
               <div className="man2Div">
                 <div className="telDiv">
-                  <span><a className="nomer" href="tel:+380505923772"><img width="23px" src={image2} /></a></span>
+                  <span><a className="nomer" href="tel:+380505923772"><img className='imgClass' src={image2} /></a></span>
                 </div>
                 <div>
                   <LanguageSwitcher />
@@ -160,6 +162,7 @@ export const Header = ({ t }) => {
               {uaHeader()}
             </div>
           </div>
+          </>
           : <div className={color ? "root header-bg" : "root"} style={screen ? bot : undefined}>
 
             <div className='logoDiv'>
