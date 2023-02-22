@@ -1,31 +1,5 @@
 @import url(../fonts.css);
 
-@property --num {
-    syntax: "<integer>";
-    initial-value: 0;
-    inherits: false;
-}
-@property --cum {
-    syntax: "<integer>";
-    initial-value: 0;
-    inherits: false;
-}
-
-.percentPAnim::after {
-    content: counter(num);
-    font: normal normal 900 160px/37px Gilroy bold;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px #08ff08;
-}
-
-.percentPAnim2::after {
-    content: counter(cum);
-    font: normal normal 900 160px/37px Gilroy bold;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px #B2B1B7;
-}
-
-
 .animDiv1{
     grid-template-columns: 150px 505px 505px 505px 1fr;
     position: absolute;
@@ -260,14 +234,6 @@ a {
     background-color: #283338;
 }
 
-.container21:hover {
-    --num: 75;
-}
-
-.div99:hover {
-    --cum: 25;
-}
-
 .percentDiv2{
     font: 800 40px system-ui;
     margin-top: 150px;
@@ -292,18 +258,6 @@ a {
     width: 218px;
     font: normal normal 300 50px/48px Gilroy Light;
     margin-bottom: 90px;
-}
-
-.percentPAnim {
-    width: 400px;
-}
-
-.percentPAnim2 {
-    margin: 50px 0 0 85px;
-    color: white;
-    font: normal normal 900 160px/37px Gilroy bold;
-    width: 400px;
-    line-height: 1;
 }
 
 .percent{
@@ -965,6 +919,90 @@ a {
 /*    transform: translateY(0.3em);*/
 /*}*/
 
+/*@property --num {*/
+/*    syntax: "<integer>";*/
+/*    !*initial-value: 0;*!*/
+/*    initial-value: 75;*/
+/*    inherits: false;*/
+/*}*/
+/*@property --cum {*/
+/*    syntax: "<integer>";*/
+/*    !*initial-value: 0;*!*/
+/*    initial-value: 25;*/
+/*    inherits: false;*/
+/*}*/
+
+/*.percentPAnim::after {*/
+/*    content: counter(num);*/
+/*    font: normal normal 900 160px/37px Gilroy bold;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*    -webkit-text-stroke: 3px #08ff08;*/
+/*}*/
+
+/*.percentPAnim2::after {*/
+/*    content: counter(cum);*/
+/*    font: normal normal 900 160px/37px Gilroy bold;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*    -webkit-text-stroke: 3px #B2B1B7;*/
+/*}*/
+
+/*.container21:hover {*/
+/*    --num: 75;*/
+/*}*/
+
+/*.div99:hover {*/
+/*    --cum: 25;*/
+/*}*/
+
+/*.percentPAnim {*/
+/*    width: 400px;*/
+/*}*/
+
+/*.percentPAnim2 {*/
+/*    margin: 50px 0 0 85px;*/
+/*    color: white;*/
+/*    font: normal normal 900 160px/37px Gilroy bold;*/
+/*    width: 400px;*/
+/*    line-height: 1;*/
+/*}*/
+
+.section_counter{}
+
+.counter_item{
+    transition: all .5s ease-in-out;
+    margin: 50px 0 40px 0;
+}
+
+.counter_item .percentPAnim2{
+    font: normal normal 900 160px/37px Gilroy bold;
+    color: transparent;
+    -webkit-text-stroke-width: 0.15rem;
+    -moz-text-stroke-width: 0.15rem;
+    -ms-text-stroke-width: 0.15rem;
+    -o-text-stroke-width: 0.15rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px #B2B1B7;
+    -moz-text-stroke-color: white;
+    -ms-text-stroke-color: white;
+    -o-text-stroke-color: white;
+}
+
+.counter_item .percentPAnim{
+    width: 400px;
+    font: normal normal 900 160px/37px Gilroy bold;
+    color: transparent;
+    -webkit-text-stroke-width: 0.15rem;
+    -moz-text-stroke-width: 0.15rem;
+    -ms-text-stroke-width: 0.15rem;
+    -o-text-stroke-width: 0.15rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px #08ff08;
+    -moz-text-stroke-color: #42DF4C;
+    -ms-text-stroke-color: #42DF4C;
+    -o-text-stroke-color: #42DF4C;
+}
+
+
 .container21:hover .circleChartCircle{
     animation: circle-chart-fill 2s reverse;
     /*transform: rotate(90deg);*/
@@ -1008,6 +1046,7 @@ a {
     width: 100%;
     height: 100%;
 }
+
 .video {
     position: absolute;
     width: auto;

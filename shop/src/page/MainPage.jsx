@@ -88,8 +88,15 @@ const MainPage = ({ t, setOnFooter }) => {
   const dispatch = useDispatch();
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setOnFooter(true);
+
+    caches.keys().then((names) => {
+      names.forEach((name) => {
+        caches.delete(name);
+      });
+    });
+
 
     const percent = document.getElementById('percent')
     const preloader = document.getElementById('preloader')
@@ -103,12 +110,12 @@ const MainPage = ({ t, setOnFooter }) => {
     const mediaFiles = document.querySelectorAll('iframe, svg, img')
     let i = 0
 
-    console.log(mediaFiles);
+    // console.log(mediaFiles);
 
     Array.from(mediaFiles).forEach((file, index) => {
       file.onload = () => {
         i++
-        console.log(file, i);
+        // console.log(file, i);
         percent.innerHTML = ((i * 100) / mediaFiles.length).toFixed()
         if(i === mediaFiles.length - 5){
           percent.innerHTML = '100'
@@ -186,6 +193,42 @@ const MainPage = ({ t, setOnFooter }) => {
   };
 
 
+  useEffect(() => {
+    let section_counter = document.querySelector("#section_counter")
+    let counters = document.querySelectorAll(`.${m.counter_item}, #pes1`)
+
+    console.log(counters);
+    let CounterObserver = new IntersectionObserver((entries, observer) => {
+      let [entry] = entries
+      if(!entry.isIntersecting) return
+      let speed = 100
+      counters.forEach((counter, index) => {
+        function UpdateCounter(){
+          const targetNumber = +counter.dataset.target
+          const initialNumber = +counter.innerText
+          const incPerCount = targetNumber / speed
+          if(initialNumber < targetNumber) {
+            counter.innerText = Math.ceil(initialNumber + incPerCount)
+            setTimeout(UpdateCounter, 40)
+          }
+        }
+        UpdateCounter()
+
+        if(counter.parentElement.style.animation){
+          counter.parentElement.style.animation = ''
+        } else {
+          counter.parentElement.style.animation = `slider-up .3s ease forward ${index / counters.length + 0.5}s`
+        }
+
+      })
+    }, {
+      root: null,
+      threshold: 0.4
+    })
+    CounterObserver.observe(section_counter)
+  }, [])
+
+
   return <div>
 
     <main style={{ backgroundColor: "#283338" }}>
@@ -224,12 +267,10 @@ const MainPage = ({ t, setOnFooter }) => {
         </div>
       </div>
 
-      {/*<div className={m.preloader} id={m["preloader"]}>*/}
       <div className={`${m.preloader}`} id="preloader">
         <div className={m.preloader__loader}>
           <p><img src={image1} className={m.imgTit}/></p>
           <span className={m.preloader__percent}>
-            {/*<p><img src={image1} style={{position: 'relative', left: '-70px'}} /></p>*/}
             <span id='percent'>0</span>%
           </span>
         </div>
@@ -243,20 +284,8 @@ const MainPage = ({ t, setOnFooter }) => {
         <div id='anim5' className={`${m.animPidDiv5}`}></div>
       </div>
 
-      {screen ? <div className={m.youtubecontainer}>
-          {/*<iframe className={m.startImage}*/}
-          {/*        src="https://www.youtube.com/embed/aBA0fi0gua4?autoplay=1&mute=1&loop=1&playlist=aBA0fi0gua4&enablejsapi=1&showinfo=0&controls=0&modestbranding=1"*/}
-          {/*        frameBorder={0}*/}
-          {/*        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-          {/*        allowFullScreen />*/}
-          {/*<video className={m.startImage} src={image4} autoplay />*/}
-          {/*<video src={image4} loop autoPlay muted />*/}
-            {/*<source src={image4} type="video/mp4" />*/}
-          {/*</video>*/}
-        <Video  />
-          {/*</video>*/}
-        </div>
-        : <div className={m.youtubecontainer}><Video  /></div>}
+      {screen ? <div className={m.youtubecontainer}><Video/></div>
+        : <div className={m.youtubecontainer}><Video/></div>}
 
 
       <div className={m.divStart}></div>
@@ -280,8 +309,12 @@ const MainPage = ({ t, setOnFooter }) => {
             <div className={m.percentDiv2}>
               <div className={m.percentDiv}>
                 <p className={m.percentP}>чистий прибуток</p>
-                <span className={m.percentPAnim}></span>
-                <span className={m.percent}>%</span>
+                <section id='section_counter' className={m.section_counter}>
+                  <div className={m.counter_item}>
+                    <span id='pes1' className={m.percentPAnim} data-target={75}>0</span>
+                    <span className={m.percent}>%</span>
+                  </div>
+                </section>
 
                 <div>
                   <section className={m.circleDiv}>
@@ -303,10 +336,12 @@ const MainPage = ({ t, setOnFooter }) => {
             <div className={m.percentDiv2_2}>
               <p className={m.percentP + " " + m.addPercentP}>прямі витрати</p>
               <div className={m.divPerc}>
-                <div>
-                  <span className={m.percentPAnim2}></span>
-                  <span className={m.percent2}>%</span>
-                </div>
+                <section className={m.section_counter}>
+                  <div className={m.counter_item}>
+                    <span id='pes1' className={m.percentPAnim2} data-target={25}>0</span>
+                    <span className={m.percent2}>%</span>
+                  </div>
+                </section>
                 <p className={m.percentP2}>електроенергія</p>
                 <p className={m.percentP2}>зарплата</p>
                 <p className={m.percentP2}>вода</p>
@@ -676,3 +711,13 @@ const MainPage = ({ t, setOnFooter }) => {
 };
 
 export default MainPage;
+
+
+
+
+
+// {/*<iframe className={m.startImage}*/}
+// {/*        src="https://www.youtube.com/embed/aBA0fi0gua4?autoplay=1&mute=1&loop=1&playlist=aBA0fi0gua4&enablejsapi=1&showinfo=0&controls=0&modestbranding=1"*/}
+// {/*        frameBorder={0}*/}
+// {/*        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+// {/*        allowFullScreen />*/}
