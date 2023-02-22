@@ -33,7 +33,7 @@ const MainPage = ({ t, setOnFooter }) => {
 
   function Home () {
     if(!isLoaded) return <div>Завантаження...</div>
-    return <Map />
+    // return <Map />
   }
 
   const defaultOption = {
@@ -42,7 +42,6 @@ const MainPage = ({ t, setOnFooter }) => {
     rotateControl: false, fullscreenControl: false, disableDoubleClickZoom: true
   }
 
-  // lol
 
   const coordinat = [
     {

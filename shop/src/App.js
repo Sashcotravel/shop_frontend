@@ -10,8 +10,8 @@ import Table from "./old/Table";
 import Home from "./old/Home";
 import Thanks from "./component/Thanks";
 import Obl from "./page/Obl";
-// import Nacr from "./page/Nacr";
-// import Acses from "./page/Acses";
+import Nacr from "./page/Nacr";
+import Acses from "./page/Acses";
 import Footer from "./component/Footer";
 import { useDispatch } from "react-redux";
 import { fetchMail, fetchMailDima, fetchMailUser, fetchPay } from "./API/post";
@@ -53,8 +53,8 @@ const App = () => {
   // const ListWash = React.lazy(() => import('./component/ListWash'))
   const YourOrder = React.lazy(() => import("./page/YourOrder"));
   const OnePost = React.lazy(() => import("./page/listwash/OnePost"));
-  const Nacr = React.lazy(() => import("./page/Nacr"));
-  const Acses = React.lazy(() => import("./page/Acses"));
+  // const Nacr = React.lazy(() => import("./page/Nacr"));
+  // const Acses = React.lazy(() => import("./page/Acses"));
 
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
@@ -64,16 +64,13 @@ const App = () => {
       window.location.replace(newPathname);
     }
 
-
   }, []);
 
   useEffect(() => {
     if(language === 'uk-UA'){
       const switcher = (lng) => {
         i18next.changeLanguage(lng)
-        window.location.replace(
-          `/${lng}${window.location.pathname}`
-        )
+        window.location.replace(`/${lng}${window.location.pathname}`)
       }
 
       switcher('ua')
@@ -81,32 +78,22 @@ const App = () => {
     if(language === 'en-US'){
       const switcher = (lng) => {
         i18next.changeLanguage(lng)
-        window.location.replace(
-          `/${lng}${window.location.pathname}`
-        )
+        window.location.replace(`/${lng}${window.location.pathname}`)
       }
 
       switcher('ua')
     }
     else if (window.location.pathname === '/ua/ua/'){
-      window.location.replace(
-        `/ua/`
-      )
+      window.location.replace(`/ua/`)
     }
     else if (window.location.pathname === '/en/en/'){
-      window.location.replace(
-        `/en/`
-      )
+      window.location.replace(`/en/`)
     }
     else if (window.location.pathname === '/ua/en/'){
-      window.location.replace(
-        `/ua/`
-      )
+      window.location.replace(`/ua/`)
     }
     else if (window.location.pathname === '/en/ua/'){
-      window.location.replace(
-        `/en/`
-      )
+      window.location.replace(`/en/`)
     }
   }, []);
 
@@ -125,11 +112,8 @@ const App = () => {
   };
 
   const checkedClick2 = () => {
-    if (checked2) {
-      setChecked2(false);
-    } else {
-      setChecked2(true);
-    }
+    if (checked2) {setChecked2(false) }
+    else { setChecked2(true) }
   };
 
   const selectedChange = (ev) => {
@@ -155,11 +139,7 @@ const App = () => {
     if (total > 0) {
       let con = document.getElementById("lightblue2");
       con.style.visibility = "hidden";
-      let obj = {
-        total: total,
-        order: userOrder,
-        user: userData
-      };
+      let obj = { total: total, order: userOrder, user: userData };
       const d = await dispatch(fetchPay(obj));
       let link = "http://localhost:3000/your-order/" + d.payload;
       console.log(link);
@@ -381,7 +361,10 @@ const App = () => {
               }
 
               <br />
-              <button className={s.footerBut} style={{ width: "50%", backgroundColor: '#42DF4C' }} onClick={useSubmit}><Link style={{color: '#FFFFFF'}} to='/thanks'>{t("send")}</Link></button>
+              <div style={{margin: 'auto', display: 'flex', justifyContent: 'center'}}>
+                <button className={s.footerBut} style={{ width: "50%", backgroundColor: '#42DF4C' }}
+                        onClick={useSubmit}><Link style={{color: '#FFFFFF'}} to='/thanks'>{t("send")}</Link></button>
+              </div>
             </div>
           </div>
 

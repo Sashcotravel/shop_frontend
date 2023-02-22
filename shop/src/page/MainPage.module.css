@@ -2200,20 +2200,18 @@ video{
     .container4 {
         display: block;
         padding-left: 20px;
+        padding-right: 20px;
     }
-
     .container4_2 {
         padding-top: 80px;
         padding-bottom: 40px;
     }
-
     .h4, .h42 {
         width: 335px;
         font-size: 30px;
         margin: 0;
         line-height: 1;
     }
-
     .p4 {
         width: 335px;
         font-size: 18px;
@@ -2242,7 +2240,7 @@ video{
         grid-column-start: 3;
         margin-left: 0;
         height: 630px;
-        width: 335px;
+        width: 100%;
     }
     .divInfo {
         width: 40%;

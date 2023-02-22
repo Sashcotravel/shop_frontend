@@ -128,6 +128,8 @@
     text-align: start;
     margin: 10px auto 60px;
     font-size: 14px;
+    z-index: 2;
+    position: relative;
 }
 
 .breadcrumbs > *{

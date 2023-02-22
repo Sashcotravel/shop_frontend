@@ -355,7 +355,9 @@
 }
 
 .footerBut{
-    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     cursor: pointer;
     width: 283px;
@@ -580,6 +582,8 @@ input[type="radio"] {
     text-align: start;
     font-size: 14px;
     width: 300px;
+    z-index: 2;
+    position: relative;
 }
 
 
@@ -646,6 +650,9 @@ input[type="radio"] {
 }
 
 @media screen and (max-width: 700px){
+    .userdata2, .userdata {
+        width: 90%;
+    }
     .translateDiv{
         display: block;
     }
