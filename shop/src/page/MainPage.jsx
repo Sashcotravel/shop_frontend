@@ -1,8 +1,8 @@
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { Suspense, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import m from "./MainPage.module.css";
 import s from "../component/Home.module.css";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import image1 from "../image/svg/preloader.svg";
 import image2 from "../image2/coverSMART.jpg";
 import image21 from "../image2/coverPIXEL.jpg";
@@ -19,6 +19,10 @@ import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { defaultTheme } from './Theme'
 import { Carousel } from "./carousel/Carousel";
 
+
+// "@mui/icons-material": "^5.10.16",
+//   "@mui/material": "^5.10.16",
+// "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.20.1.tgz",
 
 
 const MainPage = ({ t, setOnFooter }) => {
@@ -88,7 +92,7 @@ const MainPage = ({ t, setOnFooter }) => {
   const dispatch = useDispatch();
 
 
-  useLayoutEffect(() => {
+  useLayoutEffect(  () => {
     setOnFooter(true);
 
     caches.keys().then((names) => {
@@ -287,7 +291,8 @@ const MainPage = ({ t, setOnFooter }) => {
         <div className={m.preloader__loader}>
           <p><img src={image1} className={m.imgTit}/></p>
           <span className={m.preloader__percent}>
-            <span id='percent'>0</span>%
+            <span id='percent'>0</span>
+            <span>%</span>
           </span>
         </div>
       </div>
@@ -337,11 +342,11 @@ const MainPage = ({ t, setOnFooter }) => {
                     <svg className={m.circleChart} viewBox="1 1 33.83098862 33.83098862" width="400" height="400"
                          xmlns="http://www.w3.org/2000/svg"
                          style={{ overflowClipMargin: "border-box", padding: "20px" }}>
-                      <circle className={m.circleChartBackground} stroke="black" stroke-width="4" fill="none"
+                      <circle className={m.circleChartBackground} stroke="black" strokeWidth="4" fill="none"
                               cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                      <circle className={m.circleChartCircle} stroke="#42df4c" stroke-width="4"
-                              stroke-dasharray="75,100"
-                              stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                      <circle className={m.circleChartCircle} stroke="#42df4c" strokeWidth="4"
+                              strokeDasharray="75,100"
+                              strokeLinecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
                     </svg>
                   </section>
                   <p className={m.circleChartInfo}>EBITDA</p>
@@ -444,7 +449,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>SMART</p><p className={m.pPrise}>6 200 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image2} className={m.imgClass2} /></div>
+              {/*<div className={m.divImgSlider}><img src={image2} className={m.imgClass2} /></div>*/}
             </div>
 
             <div className={m.sliderDiv}>
@@ -452,7 +457,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>PIXEL</p><p className={m.pPrise}>7 200 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image21} className={m.imgClass2} /></div>
+              {/*<div className={m.divImgSlider}><img src={image21} className={m.imgClass2} /></div>*/}
             </div>
 
             <div className={m.sliderDiv}>
@@ -460,7 +465,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>MARCO</p><p className={m.pPrise}>7 700 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image212} className={m.imgClass2} /></div>
+              {/*<div className={m.divImgSlider}><img src={image212} className={m.imgClass2} /></div>*/}
             </div>
 
             <div className={m.sliderDiv}>
@@ -468,7 +473,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>MARCO 2</p><p className={m.pPrise}>8 200 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image21234} className={m.imgClass2} /></div>
+              {/*<div className={m.divImgSlider}><img src={image21234} className={m.imgClass2} /></div>*/}
             </div>
 
             <div className={m.sliderDiv}>
@@ -476,7 +481,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>MARCHELLO</p><p className={m.pPrise}>12 800 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image2123} className={m.imgClass2} /></div>
+              {/*<div className={m.divImgSlider}><img src={image2123} className={m.imgClass2} /></div>*/}
             </div>
 
             <div className={m.sliderDiv}>
@@ -484,7 +489,7 @@ const MainPage = ({ t, setOnFooter }) => {
                 <p className={m.pSmart}>UFO</p><p className={m.pPrise}>13 500 € за пост</p>
                 <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
               </div>
-              <div className={m.divImgSlider}><img src={image212345} className={m.imgClass2} /></div>
+              {/*<div className={m.divImgSlider}><img src={image212345} className={m.imgClass2} /></div>*/}
             </div>
           </Carousel>
 

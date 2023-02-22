@@ -1,49 +1,35 @@
 @font-face {
     font-family: Averta;
     src: url(fonts/AvertaDemoPE-Regular.otf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Averta Light;
     src: url(fonts/AvertaDemoPE-Regular.ttf);
-}
-
-@font-face {
-    font-family: NoAverta Light;
-    src: url(fonts/Roboto-Light.ttf);
-}
-
-@font-face {
-    font-family: Rubic;
-    src: url(fonts/RubikVinyl-Regular.ttf);
-}
-
-@font-face {
-    font-family: Montserrat Italic;
-    src: url(fonts/Montserrat-Italic-VariableFont_wght.ttf);
-}
-
-@font-face {
-    font-family: Montserrat;
-    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Gilroy bold;
     src: url(fonts/Gilroy-Black.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Gilroy Bold;
     src: url(fonts/Gilroy-Bold.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Gilroy Light;
     src: url(fonts/Gilroy-Light.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Gilroy Medium;
     src: url(fonts/Gilroy-Medium.ttf);
+    font-display: swap;
 }

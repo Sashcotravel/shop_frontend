@@ -1,5 +1,6 @@
 @import url(../fonts.css);
 
+
 .animDiv1{
     grid-template-columns: 150px 505px 505px 505px 1fr;
     position: absolute;
@@ -138,7 +139,7 @@ a {
 }
 
 .animCon{
-    animation: title1 1s ease-in-out;
+    /*animation: title1 1s ease-in-out;*/
 }
 
 .titleH1{
@@ -320,7 +321,7 @@ a {
 }
 
 .percentP2{
-    font-family: 'NoAverta Light';
+    font-family: Gilroy Light;
     color: #B2B1B7;
     font-weight: 100;
     font-size: 35px;
@@ -330,7 +331,7 @@ a {
     margin-top: 100px;
     text-align: start;
     color: #B2B1B7;
-    font-family: 'Montserrat';
+    font-family: Gilroy Light;
     font-weight: 100;
     grid-column-start: 3;
     grid-column-end: 6;
@@ -395,7 +396,7 @@ a {
 
 .container3{
     min-height: 430px;
-    background-image: url("../image/svg/0020a4441a50b7f71d56d8223346d30daca1e623cd86a3a5c0234e5ed10c4dce9c140.jpg");
+    background-image: url("../image/svg/back.webp");
     margin: 163px 0 0 0;
     display: flex;
     justify-content: space-around;
@@ -884,6 +885,7 @@ a {
 
 .imageS{
     height: 5px;
+    width: 15px;
     margin-top: 20px;
     margin-right: 5px;
 }
@@ -1128,7 +1130,8 @@ video{
     position: relative;
     top: 60px;
     left: 50px;
-    width: 120px;
+    width: 110px;
+    height: 110px;
     margin-right: 10px;
     z-index: 2;
 }
