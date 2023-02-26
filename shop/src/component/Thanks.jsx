@@ -16,9 +16,6 @@ const Thanks = ({ setOnFooter, t, checked }) => {
   }, [])
 
 
-
-
-
     return (
       <div className={s.divBlock}>
         <img src={image4} className={s.imageThanks} />
@@ -40,10 +37,6 @@ const Thanks = ({ setOnFooter, t, checked }) => {
             </div>
 
           </div>
-
-          {/*<div className={s.butThanks}>*/}
-          {/*  <Link className={s.lineThanks} to="/">На головну</Link>*/}
-          {/*</div>*/}
 
             <Link className={s.butThanks+' '+s.lineThanks} to="/">{t(`mainPageTo`)}</Link>
 

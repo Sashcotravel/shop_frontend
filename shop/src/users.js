@@ -678,6 +678,9 @@ export const listWash = [
         'city2': 'Lviv1',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'map': 'https://www.google.com/maps/place/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1' +
+          '%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79000/@49.8327787,23.9421962,12z/data=' +
+          '!3m1!4b1!4m6!3m5!1s0x473add7c09109a57:0x4223c517012378e2!8m2!3d49.839683!4d24.029717!16zL20vMGQ3X24'
     },
     {
         'name': 'Мийка самообслуговування 3 поста',
@@ -943,6 +946,9 @@ export const listWash = [
         'city2': 'Popasne',
         'obl': 'Луганська область',
         'obl2': 'Luhanska Oblast',
+        'map': 'https://www.google.com/maps/place/%D0%9F%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%B5,+%D0%94%D0%BE%D0%BD%' +
+          'D0%B5%D1%86%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+85131/@48.5959187,37.692928,16z/' +
+          'data=!3m1!4b1!4m6!3m5!1s0x40dfc05752e32c13:0xd5ce2fa0c2ef3c1c!8m2!3d48.5954653!4d37.7015152!16s%2Fg%2F1218ltl1'
     },
     {
         'name': 'Мийка самообслуговування 5 постів',
@@ -1069,6 +1075,9 @@ export const listWash = [
         'city2': 'Lviv2',
         'obl': 'Львівська область',
         'obl2': 'Lvivska Oblast',
+        'map': 'https://www.google.com/maps/place/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%' +
+          'D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79000/@49.8327787,23.9421962,12z/dat' +
+          'a=!3m1!4b1!4m6!3m5!1s0x473add7c09109a57:0x4223c517012378e2!8m2!3d49.839683!4d24.029717!16zL20vMGQ3X24'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',
@@ -1096,6 +1105,10 @@ export const listWash = [
         'city2': 'Sofievka',
         'obl': 'Дніпропетровська область',
         'obl2': 'Dnipropetrovska Oblast',
+        'map': 'https://www.google.com/maps/place/%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D0%BA%D0%B0,+%D0%94%D0%BD%' +
+          'D1%96%D0%BF%D1%80%D0%BE%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB' +
+          '%D0%B0%D1%81%D1%82%D1%8C,+53100/@48.0798805,33.8579222,13z/data=!3m1!4b1!4m6!3m5!1s0x40db0f709aaef18f:' +
+          '0xea7b20a5f4699640!8m2!3d48.0477647!4d33.8781204!16s%2Fg%2F122892fq'
     },
     {
         'name': 'Мийка самообслуговування 6 постів',

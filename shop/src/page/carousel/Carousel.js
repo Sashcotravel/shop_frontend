@@ -12,21 +12,16 @@ export const Carousel = ({ children, infinite }) => {
   const [offset, setOffset] = useState(0)
 
 
-
   const leftArrow = () => {
     setOffset((currentOffset) => {
       const newOffset = currentOffset + 100
-
       return Math.min(newOffset, 0)
     })
   }
   const rightArrow = () => {
     setOffset((currentOffset) => {
       const newOffset = currentOffset - 100
-
-
       const maxOffset = -(100 * (pages.length - 1))
-
       return Math.max(newOffset, maxOffset)
     })
   }
@@ -35,14 +30,8 @@ export const Carousel = ({ children, infinite }) => {
     setPages(
       Children.map(children, (child) => {
         return cloneElement(child, {
-          style: {
-            height: '100%',
-            minWidth: '100%',
-            maxWidth: '100%'
-          }
-        })
-      })
-    )
+          style: { height: '100%', minWidth: '100%', maxWidth: '100%' }
+        })}))
   }, [])
 
 
@@ -50,13 +39,11 @@ export const Carousel = ({ children, infinite }) => {
     <div className={m.sliderBox}>
 
       <div className={m.window}>
-        <img src={left} onClick={leftArrow} className={m.arrowImg} />
-        <img src={right} onClick={rightArrow} className={m.arrowImg} />
+        <img src={left} onClick={leftArrow} className={m.arrowImg} alt='Стрілка'/>
+        <img src={right} onClick={rightArrow} className={m.arrowImg} alt='Стрілка'/>
         <div className={m.all_page_container}
              style={{ transform: `translateX(${offset}%)` }}>
-          {
-            pages
-          }
+          { pages }
         </div>
       </div>
     </div>

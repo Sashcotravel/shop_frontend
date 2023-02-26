@@ -7,15 +7,13 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { listWash } from "../../users";
 import FooterMain from "../../component/FooterMain";
 import { Fancybox, Carousel } from "@fancyapps/ui";
+import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 
 
 const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
 
   const { idMiyka } = useParams();
-  const { id } = useParams();
-  const { post } = useParams();
   const location = useLocation();
-
 
   const o = -115
   const url2 = location.pathname.slice(location.pathname.length - 2) !== "en";
@@ -26,18 +24,15 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
     if (postOne === null) {
       listWash.map((item, i) => {
         if (item.city2 === idMiyka) {
-          setPostOne(item);
-        }
-      });
+          setPostOne(item);}});
     }
 
     return () => {
       setOnFooter(false);
     };
   }, []);
-  const road = () => {
 
-  };
+  const road = () => {};
 
 
   let one = postOne?.obl
@@ -64,9 +59,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
 
   let fg = oblTrue(one, two)
 
-  const style = {
-    margin: '10px auto 60px 100px'
-  }
+  const style = { margin: '10px auto 60px 100px' }
 
   const postColIn = (colPost, className) => {
     if(colPost === 0){
@@ -80,7 +73,6 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
     }
   }
 
-
   Fancybox.bind('[data-fancybox="gallery"]', {
     Thumbs: {
       Carousel: {
@@ -92,8 +84,8 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
 
   return (
     <>
-
         <div className={`boxPost2`}>
+
           <div className={postOne?.city === "Хуст" ? "divIm1" : postOne?.city === "Тернопіль" ? "divIm1" : ""}></div>
           <div className={postOne?.city === "Хуст" ? "divIm2" : postOne?.city === "Тернопіль" ? "divIm2" : ""}></div>
 
@@ -124,44 +116,49 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
             <p className="dataTitle zI">{postOne?.city}</p>
             <br />
 
-
+          <LazyLoadComponent>
           <figure className="containerStyle zI">
             {/*<div className="flex flex-wrap gap-5 justify-center max-w-5xl mx-auto px-6 overflow-y-hidden">*/}
             {postOne?.src.map((item, index) => {
               if (item.slice(0, 4) === "http") {
-                return  <a key={index} data-fancybox="gallery" href={item}>
-                  <iframe key={index} className="imageBox" src={item} />
+                return<a key={index} data-fancybox="gallery" href={item}>
+                  <iframe key={index} className="imageBox" src={item} title='video'/>
                 </a>
               }
               return <a key={index} data-fancybox="gallery" href={item}>
-              <img className="rounded imageBox" key={index} src={item} />
+              <img className="rounded imageBox" key={index} src={item} alt='image' loading='lazy'/>
               </a>
             })}
             {/*</div>*/}
           </figure>
+          </LazyLoadComponent>
 
-          <div className='divButP'>
+        <LazyLoadComponent>
+          <div className="divButP">
             <p className="pSt">вул. {postOne?.st}, м. {postOne?.city}, {postOne?.obl.split(" ")[0]} обл.</p>
 
-            <a href={postOne?.map} style={{ color: "white" }} target='_blank'>
+            <a href={postOne?.map} style={{ color: "white" }} target="_blank">
               <div className="marshBut">
-                <img style={{ position: "relative", left: "10px", width: "14%" }} src={image} />
+                <img style={{ position: "relative", left: "10px", width: "14%", height: "100%" }} src={image}
+                     alt="road" />
                 <span style={{ position: "relative", right: "10px" }}>{t("MakeARoute")}</span>
               </div>
             </a>
           </div>
+        </LazyLoadComponent>
 
           <p className="serv">{t("CarWashServices")}</p>
 
           <div className="servDiv">
             {postOne?.desc.map((item, index) => <div className="servDiv2" key={index}>
               <span className="spanGrad"></span>
-              <span className='spanNameG' >{item}</span>
+              <span className="spanNameG">{item}</span>
             </div>)}
           </div>
+
           <p className="desc2">{postOne?.desc2}</p>
 
-          <p className='invest'>{t("youCan")}</p>
+          <p className="invest">{t("youCan")}</p>
 
           <div onClick={road} className="hosh">{t("IWant")}</div>
 
@@ -174,51 +171,3 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
 };
 
 export default OnePost;
-
-
-
-
-
-// const hidden2 = (e) => {
-//   if (e.target.id === "light2") {
-//     let con = document.getElementById("light2");
-//     con.style.visibility = "hidden";
-//   }
-// };
-// const imgSize = (e) => {
-//   let twoImg = document.getElementById("lightCol2");
-//   twoImg.src = "";
-//   if (window.screen.availWidth > 900) {
-//     let g = document.getElementById('lightCol2');
-//     postOne?.src.forEach(item => {
-//       if(item.slice(0,5) === 'https'){
-//         let con = document.getElementById("light2");
-//         con.style.visibility = "visible";
-//         twoImg.src = item
-//       }})
-//   }
-// };
-
-// <div id="light2" className={s.boxHideImage} style={{zIndex: '2'}} onClick={hidden2}>
-//   <figure className="figure" id="light2">
-//     <div className="divImg" id="light2">
-//             <span className="blockLarge12" id="light2">
-//               <img style={{ width: "35px" }} src={image3} onClick={hidden2} id="light2" />
-//             </span>
-//       {/*<img src={''} className="imageLarge" id="lightCol" />*/}
-//       <iframe className="imageLarge2" id="lightCol2" width="80vw" height='80vh' src="https://www.youtube.com/embed/wvo65hmKvtA"/>
-//     </div>
-{/*  </figure>*/}
-{/*</div>*/}
-
-// if (item.slice(0, 4) === "http") {
-//   return <div>
-//     <iframe key={index} className="imageBox" src={item} />
-//     {
-//       window.screen.width > 900 ? <span className="block12">
-//                     <img style={{ width: "35px" }} src={image1} onClick={imgSize} id={postOne?.imgNum} />
-//                     </span> : ""
-//     }
-//   </div>
-// }
-// return <img className="imageBox" key={index} src={item} />;

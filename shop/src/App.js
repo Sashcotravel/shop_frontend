@@ -2,12 +2,10 @@ import React, { useEffect, useState, Suspense, useLayoutEffect } from "react";
 import s from "./component/Home.module.css";
 import "./App.css";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter as Router, Link, Route, Routes, useNavigate, NavLink, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes, NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
-import Table from "./old/Table";
-import Home from "./old/Home";
 import Thanks from "./component/Thanks";
 import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";
@@ -15,16 +13,24 @@ import Acses from "./page/Acses";
 import Footer from "./component/Footer";
 import { useDispatch } from "react-redux";
 import { fetchMail, fetchMailDima, fetchMailUser, fetchPay } from "./API/post";
-import App2 from "./test/App2";
 import Build from "./page/build";
 import MainPage from "./page/MainPage";
-// import YourOrder from "./page/YourOrder";
 import ListWash from "./component/ListWash";
-// import OnePost from "./page/listwash/OnePost";
 import FooterMain from "./component/FooterMain";
 import ListWash123 from "./TestSelect";
-import { LanguageSwitcher, removeLngPrefix } from "./18n";
+import { removeLngPrefix } from "./18n";
 import i18next from "i18next";
+import Contacts from "./component/Contacs";
+
+
+// const ListWash = React.lazy(() => import('./component/ListWash'))
+// import YourOrder from "./page/YourOrder";
+// import Table from "./old/Table";
+// import Home from "./old/Home";
+// import OnePost from "./page/listwash/OnePost";
+// const Nacr = React.lazy(() => import("./page/Nacr"));
+// const Acses = React.lazy(() => import("./page/Acses"));
+
 
 
 let userOrder = [];
@@ -50,20 +56,15 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  // const ListWash = React.lazy(() => import('./component/ListWash'))
   const YourOrder = React.lazy(() => import("./page/YourOrder"));
   const OnePost = React.lazy(() => import("./page/listwash/OnePost"));
-  // const Nacr = React.lazy(() => import("./page/Nacr"));
-  // const Acses = React.lazy(() => import("./page/Acses"));
+
 
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
     const newPathname = `/${language}${removeLngPrefix(currentPathname)}`;
 
-    if (currentPathname !== newPathname) {
-      window.location.replace(newPathname);
-    }
-
+    if (currentPathname !== newPathname) { window.location.replace(newPathname) }
   }, []);
 
   useEffect(() => {
@@ -104,11 +105,8 @@ const App = () => {
   };
 
   const checkedClick = () => {
-    if (checked) {
-      setChecked(false);
-    } else {
-      setChecked(true);
-    }
+    if (checked) { setChecked(false) }
+    else { setChecked(true) }
   };
 
   const checkedClick2 = () => {
@@ -153,7 +151,7 @@ const App = () => {
     }
   };
 
-  const hiddeItem = (e) => {
+  const hiddeItem = () => {
     let con = document.getElementById("lightblue2");
     con.style.visibility = "hidden";
   };
@@ -184,30 +182,25 @@ const App = () => {
           {
             onFooter ? ""
               : <>
-
-                {
-                  <div className="breadcrumbs" style={window.screen.availWidth > 900 ? style : undefined}>
+                { <div className="breadcrumbs" style={window.screen.availWidth > 900 ? style : undefined}>
                     <Link className="breads" to={urlKalk}>{t(`${nameKalk}`)}</Link>
-                  </div>
-                }
+                  </div> }
 
                 {/*{*/}
                 {/*  location.pathname === '/' ? '' : <Breadcrumbs />*/}
                 {/*}*/}
 
                 <div className={s.divName}>
-                  <h3 className={s.h3Title}>{t("title")}</h3>
-                  {
-                    window.screen.width > 900 &&
+                  <h1 className={s.h3Title}>{t("title")}</h1>
+                  { window.screen.width > 900 &&
                     <span className={s.pTitle}>Короткий текст-пояснення про що цей калькулятор: що можна
                     порахувати вартість нової мийки, або шо можна замовити тільки
                     частину обладнання яке цікавить, або просто ознайомитись з
-                    нашими цінами та асортиментом;)</span>
-                  }
+                    нашими цінами та асортиментом;)</span> }
                 </div>
 
                 <div className={s.divH6}>
-                  <h6 className={s.h6Title}>{t("step")}:</h6>
+                  <h2 className={s.h6Title}>{t("step")}:</h2>
                 </div>
 
                 {
@@ -227,89 +220,52 @@ const App = () => {
               </>
           }
 
-          {
-            <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
-              <Routes>
-                {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
-                <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-                <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-                <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} />} />
-                <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
-                                                         setTotal={setTotal} total={total} />} />
-                <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder}
+
+          <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
+            <Routes>
+              {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
+              <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
+              <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
+              <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} />} />
+              <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} />} />
+              <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
                                                        setTotal={setTotal} total={total} />} />
-                <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder}
-                                                         setTotal={setTotal} total={total} />} />
-                <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder}
-                                                            setTotal={setTotal} total={total} />} />
-                <Route path="/test" element={<App2 data={Users} />} />
-                <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
-                <Route path="/nashi-avtomiyki"
-                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-                <Route path="/nashi-avtomiyki/wsi"
-                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne}  />} />
-                <Route path="/nashi-avtomiyki/:id"
-                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne}  />} />
-                <Route path="/nashi-avtomiyki/:id/:post"
-                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne}  />} />
-                <Route path="/nashi-avtomiyki/miyka/:id/:post/:idMiyka" element={<OnePost setPostOne={setPostOne}
-                                                                                          setOnFooter={setOnFooter}
-                                                                                          postOne={postOne} t={t}
-                                                                                           />} />
-                <Route path="/nashi-avtomiyki/miyka/:id/:idMiyka" element={<OnePost setPostOne={setPostOne}
-                                                                                    setOnFooter={setOnFooter}
-                                                                                    postOne={postOne} t={t}
-                                                                                     />} />
-                {/* TEST START  */}
+              <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder}
+                                                     setTotal={setTotal} total={total} />} />
+              <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder}
+                                                       setTotal={setTotal} total={total} />} />
+              <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder}
+                                                          setTotal={setTotal} total={total} />} />
+              <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
+              <Route path="/nashi-avtomiyki"
+                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+              <Route path="/nashi-avtomiyki/wsi"
+                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+              <Route path="/nashi-avtomiyki/:id"
+                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+              <Route path="/nashi-avtomiyki/:id/:post"
+                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+              <Route path="/nashi-avtomiyki/miyka/:id/:post/:idMiyka" element={<OnePost setPostOne={setPostOne}
+                                                                                        setOnFooter={setOnFooter}
+                                                                                        postOne={postOne} t={t}
+              />} />
+              <Route path="/nashi-avtomiyki/miyka/:id/:idMiyka" element={<OnePost setPostOne={setPostOne}
+                                                                                  setOnFooter={setOnFooter}
+                                                                                  postOne={postOne} t={t}
+              />} />
+              {/* TEST START  */}
 
-                <Route path="/test/nashi-avtomiyki/:id"
-                       element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne}/>} />
-                <Route path="/test/nashi-avtomiyki/wsi"
-                       element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-                <Route path="/test/nashi-avtomiyki/:id/:post"
-                       element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne}/>} />
+              <Route path="/test/nashi-avtomiyki/:id"
+                     element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+              <Route path="/test/nashi-avtomiyki/wsi"
+                     element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+              <Route path="/test/nashi-avtomiyki/:id/:post"
+                     element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
 
-                {/* TEST END  */}
+              {/* TEST END  */}
+            </Routes>
+          </Suspense>
 
-
-                {/*  <Route path="/en" element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
-                {/*  <Route path="/thanks/en" element={<Thanks setOnFooter={setOnFooter} />} />*/}
-                {/*  <Route path="/obladnannya/en" element={<Obl t={t} data={Users} userOrder={userOrder}*/}
-                {/*                                              setTotal={setTotal} total={total} />} />*/}
-                {/*  <Route path="/nakritya/en" element={<Nacr t={t} data={Users} userOrder={userOrder}*/}
-                {/*                                            setTotal={setTotal} total={total} />} />*/}
-                {/*  <Route path="/aksesyari/en" element={<Acses t={t} data={Users} userOrder={userOrder}*/}
-                {/*                                              setTotal={setTotal} total={total} />} />*/}
-                {/*  <Route path="/budivnitstvo/en" element={<Build t={t} data={Users} userOrder={userOrder}*/}
-                {/*                                                 setTotal={setTotal} total={total} />} />*/}
-                {/*  <Route path="/test/en" element={<App2 data={Users} />} />*/}
-                {/*  <Route path="/your-order/:id/en" element={<YourOrder setOnFooter={setOnFooter} />} />*/}
-                {/*  <Route path="/nashi-avtomiyki/en"*/}
-                {/*         element={<ListWash setOnFooter={setOnFooter} changeLanguage={changeLanguage}*/}
-                {/*                            t={t} setPostOne={setPostOne} lang={lang} />} />*/}
-                {/*  <Route path="/nashi-avtomiyki/wsi/en"*/}
-                {/*         element={<ListWash setOnFooter={setOnFooter} changeLanguage={changeLanguage}*/}
-                {/*                            t={t} setPostOne={setPostOne} lang={lang} />} />*/}
-                {/*  <Route path="/nashi-avtomiyki/:id/en"*/}
-                {/*         element={<ListWash setOnFooter={setOnFooter} changeLanguage={changeLanguage}*/}
-                {/*                            t={t} setPostOne={setPostOne} lang={lang} />} />*/}
-                {/*  <Route path="/nashi-avtomiyki/:id/:post/en"*/}
-                {/*         element={<ListWash setOnFooter={setOnFooter} changeLanguage={changeLanguage}*/}
-                {/*                            t={t} setPostOne={setPostOne} lang={lang} />} />*/}
-                {/*  <Route path="/nashi-avtomiyki/miyka/:id/:post/:idMiyka/en" element={<OnePost setPostOne={setPostOne}*/}
-                {/*                                                                               setOnFooter={setOnFooter}*/}
-                {/*                                                                               postOne={postOne} t={t}*/}
-                {/*                                                                               lang={lang} />} />*/}
-                {/*  <Route path="/nashi-avtomiyki/miyka/:id/:idMiyka/en" element={<OnePost setPostOne={setPostOne}*/}
-                {/*                                                                         setOnFooter={setOnFooter}*/}
-                {/*                                                                         postOne={postOne} t={t}*/}
-                {/*                                                                         lang={lang} />} />*/}
-                {/*  <Route path="/test/nashi-avtomiyki/:id/en"*/}
-                {/*         element={<ListWash123 setOnFooter={setOnFooter} changeLanguage={changeLanguage}*/}
-                {/*                               t={t} setPostOne={setPostOne} lang={lang} />} />*/}
-              </Routes>
-            </Suspense>
-          }
 
           <div id="lightblue2" onClick={blurClose} className={s.orderBlock}>
             <div className={s.userdata}>

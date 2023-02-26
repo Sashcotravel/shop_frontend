@@ -5,7 +5,7 @@ const FooterMain = ({ o }) => {
 
   if(o === -156){
     o = -156
-  } else if(o = -115) {
+  } else if(o === -115) {
     o = -115
   } else {
     o = 0
@@ -16,7 +16,7 @@ const FooterMain = ({ o }) => {
       : o === -156 ? {bottom: '-156px'} : {bottom: '-115px'}}>
       <div className='footerMain2'>
         <div>
-          <img src={require("../image/svg/samwash_logo.png")} />
+          <img src={require("../image/svg/samwash_logo.png")} className='imageSize' alt='логотип'/>
         </div>
         <hr style={{border: '1px solid #575758', width: '100%', marginTop: '15px'}} />
         <div>

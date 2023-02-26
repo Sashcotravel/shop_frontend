@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import {Users} from "../users";
+import { postsReducer } from "./order-reduser";
 
 
 const store = configureStore({
     reducer: {
-        users: Users
+        order: postsReducer,
     }
 })
 

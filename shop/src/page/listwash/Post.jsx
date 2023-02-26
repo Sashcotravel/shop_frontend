@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "../../component/Home.module.css";
-import OnePost from "./OnePost";
-import { Link, Route, Routes, useNavigate, NavLink, useParams } from "react-router-dom";
+// import OnePost from "./OnePost";
+import { NavLink } from "react-router-dom";
 
 
 

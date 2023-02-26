@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fetchOrder } from "../API/post";
 import { useDispatch } from "react-redux";
 import s from "../component/Home.module.css";

@@ -23,7 +23,8 @@
     display: block;
     color: white;
     margin: 20px auto;
-    font-family: 'Averta';
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
     font-size: 20px;
 }
 
@@ -83,7 +84,8 @@
     height: 177px;
     text-align: left;
     font-weight: normal;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
     color: #FFFFFF;
     margin-left: 128px;
     font-size: 72px;
@@ -97,8 +99,8 @@
 }
 
 .h6Title{
-    font: normal normal normal 48px/20px Averta Demo PE;
-    font-family: Averta;
+    font: normal normal normal 48px/20px Gilroy Light, sans-serif;
+    font-display: optional;
     color: #FFFFFF;
     margin-bottom: 30px;
 }
@@ -107,18 +109,16 @@
     width: 445px;
     height: 181px;
      text-align: left;
-    font: normal normal normal 18px/28px Averta Demo PE;
+    font: normal normal normal 18px/28px Gilroy Light, sans-serif;
     color: #B2B1B7;
     margin: 30px 0 0 200px;
-    font-family: 'Averta';
 }
 
 .spanTitle{
     border-radius: 25px;
-    font: normal normal normal 16px/20px Averta Demo PE;
+    font: normal normal normal 16px/20px Gilroy Light, sans-serif;
     margin-right: 15px;
     border: 1px solid #B2B1B7;
-    font-family: Averta;
     text-decoration: none;
     color: #B2B1B7;
     width: 200px;
@@ -131,7 +131,8 @@
 .linkTitle{
     text-decoration: none;
     color: #B2B1B7;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
 }
 
 .block {
@@ -139,7 +140,7 @@
     display: block;
     width: 47px;
     height: 56px;
-    margin: 24px 0px 0 77%;
+    margin: 24px 0 0 77%;
     opacity: 0.5;
     background-color: lightslategrey;
 }
@@ -194,7 +195,7 @@
     height: 100%;
     /*background-color: white;*/
     /*opacity: 0.99;*/
-    z-index: 1;
+    z-index: 4;
     visibility: hidden;
     display: flex;
     align-items: center;
@@ -205,20 +206,20 @@
 
 .itemName{
     text-align: left;
-    /*font: normal normal normal;*/
-    font-size: 14px;
-    font-family: Averta;
-    letter-spacing: 0px;
+    font-size: 18px;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
+    letter-spacing: 0;
     color: #D9D9D9;
-    opacity: 1;
     margin: 35px 10px 10px 10px;
 }
 
 .itemDesc{
     text-align: left;
     font-size: 12px;
-    font-family: Averta;
-    letter-spacing: 0px;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
+    letter-spacing: 0;
     color: #D9D9D9;
     opacity: 1;
     margin: 20px 10px 0;
@@ -232,7 +233,8 @@
 }
 
 .font{
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
 }
 
 .butMin{
@@ -253,7 +255,8 @@
     position: relative;
     left: 0;
     font-size: 20px;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
     color: #575758;
     opacity: 1;
 }
@@ -274,7 +277,8 @@
     top: -3px;
     left: 0;
     font-size: 20px;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
     color: white;
     opacity: 1;
 }
@@ -291,7 +295,8 @@
     position: relative;
     top: -15px;
     margin: 32px 23px 0 0;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
     font-size: 16px;
     color: #FFFFFF;
     opacity: 1;
@@ -309,7 +314,8 @@
     width: 166px;
     height: 16px;
     text-align: left;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
     font-size: 14px;
     letter-spacing: 0px;
     color: #D9D9D9;
@@ -319,7 +325,8 @@
 .inputTextGreen{
     width: 166px;
     height: 16px;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
     font-size: 14px;
     opacity: 1;
     color: #42DF4C;
@@ -352,7 +359,8 @@
     justify-content: space-around;
     align-items: center;
     font-size: 20px;
-    font-family: 'Averta';
+    font-family: Gilroy Light, sans-serif;
+    font-display: optional;
 }
 
 .footerBut{
@@ -365,8 +373,8 @@
     height: 60px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 30px;
-    font: normal normal normal 16px/19px Averta Demo PE;
-    font-family: 'Averta';
+    font: normal normal normal 16px/19px Gilroy Light, sans-serif;
+    font-display: optional;
 }
 
 .orderBlock{
@@ -407,14 +415,14 @@
     width: 283px;
     height: 92px;
     text-align: left;
-    font-family: Gilroy Light;
+    font-family: Gilroy Light, sans-serif;
     font-size: 40px;
     color: #FFFFFF;
     margin: 0 0 0 15px;
 }
 
 .descSpan{
-    font-family: Gilroy Light;
+    font-family: Gilroy Light, sans-serif;
     font-size: 20px;
     letter-spacing: 0px;
     color: #B2B1B7;
@@ -428,11 +436,12 @@
     width: 90%;
     height: 45px;
     font-size: 20px;
+    border: none;
     border-bottom: 1px solid #A7A5A5;
     background-color: #1D2025;
     color: #A7A5A5;
     outline: none;
-    font-family: Gilroy Light;
+    font-family: Gilroy Light, sans-serif;
 }
 
 .boxCheck{
@@ -441,7 +450,7 @@
     margin: 25px 0;
     color: #FFFFFF;
     justify-content: flex-start;
-    font-family: Gilroy Light;
+    font-family: Gilroy Light, sans-serif;
 }
 
 .boxCheck2{
@@ -449,7 +458,7 @@
     flex-direction: row;
     margin: 25px 0;
     align-items: flex-start;
-    font-family: Averta;
+    font-family: Gilroy Light, sans-serif;
     color: #FFFFFF;
 }
 
@@ -477,7 +486,7 @@ input[type="radio"] {
     width: 35px;
     height: 35px;
     border-radius: 20px;
-    font: normal normal 600 14px/20px Gilroy Light;
+    font: normal normal 600 14px/20px Gilroy Light, sans-serif;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     cursor: pointer;
     transition: all .3s ease-out;
@@ -501,7 +510,7 @@ input[type="radio"] {
 
 .pLang{
     color: black;
-    font: normal normal 600 14px/20px Gilroy Light;
+    font: normal normal 600 14px/20px Gilroy Light, sans-serif;
 }
 
 .hovP{
@@ -536,7 +545,7 @@ input[type="radio"] {
     width: 525px;
     height: 173px;
     text-align: left;
-    font: normal normal 300 72px/82px Gilroy Light;
+    font: normal normal 300 72px/82px Gilroy Light, sans-serif;
     letter-spacing: 0;
     color: #FFFFFF;
 }
@@ -545,7 +554,7 @@ input[type="radio"] {
     width: 445px;
     height: 100px;
     text-align: left;
-    font: normal normal 300 18px/28px Gilroy Light;
+    font: normal normal 300 18px/28px Gilroy Light, sans-serif;
     letter-spacing: 0px;
     color: #B2B1B7;
 }
@@ -568,7 +577,7 @@ input[type="radio"] {
     height: 60px;
     background: #42DF4C 0 0 no-repeat padding-box;
     border-radius: 30px;
-    font: normal normal normal 20px/19px Averta;
+    font: normal normal normal 20px/19px Gilroy Light, sans-serif;
     letter-spacing: 0;
     display: flex;
     justify-content: center;
@@ -590,7 +599,133 @@ input[type="radio"] {
     position: relative;
 }
 
+/* Contacts page */
 
+.divMain{
+    z-index: 2;
+    padding: 0 160px 100px;
+    text-align: start;
+}
+
+.bread2{
+    margin: 150px auto 70px 0;
+}
+
+.thanksTitle2{
+    width: 525px;
+    height: 126px;
+    text-align: left;
+    font: normal normal 300 72px/82px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+}
+
+.div2Box{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.div1Cont{
+    width: 30%;
+    text-align: left;
+}
+
+.h2_1{
+    width: 380px;
+    height: 120px;
+    text-align: left;
+    font: normal normal 300 52px/70px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #B2B1B7;
+}
+
+.p_1{
+    font: normal normal 300 33px/44px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+}
+
+.p_1_2{
+   margin-bottom: 115px;
+}
+
+.p_1_3{
+   margin-bottom: 55px;
+}
+
+.input1{
+   width: 380px;
+    background-color: transparent;
+}
+
+.h2_2{
+    width: 379px;
+    height: 129px;
+    text-align: left;
+    font: normal normal 300 22px/33px Gilroy Light, sans-serif;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin-bottom: 62px;
+}
+
+.greenButSend{
+    display: flex;
+    width: 380px;
+    height: 60px;
+    background: #42DF4C 0 0 no-repeat padding-box;
+    border-radius: 30px;
+    font: normal normal normal 18px/19px Gilroy Light, sans-serif;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto 0;
+}
+
+.textArea{
+    /*margin: 10px 0;*/
+    padding: 5px;
+    width: 90%;
+    height: 169px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #A7A5A5;
+    background-color: transparent;
+    color: #A7A5A5;
+    outline: none;
+    font-family: Gilroy Light, sans-serif;
+}
+
+
+
+
+@media screen and (max-width: 1600px) {
+    .div1Cont {
+        width: 24%
+    }
+    .input1 {
+        width: 320px;
+    }
+    .p_1 {
+        font: normal normal 300 28px/44px Gilroy Light, sans-serif;
+    }
+    .h2_1 {
+        width: 288px;
+    }
+    .h2_2 {
+        width: 275px;
+    }
+    .greenButSend {
+        width: 330px;
+    }
+    .textArea{
+        width: 320px;
+    }
+}
 
 @media screen and (max-width: 1400px) {
     .trBut {
@@ -598,7 +733,7 @@ input[type="radio"] {
         height: 28px;
     }
     .pLang {
-        font: normal normal 600 11px/20px Gilroy Light;
+        font: normal normal 600 11px/20px Gilroy Light, sans-serif;
     }
     .boxDiv {
         margin: 0 100px 90px 100px;
@@ -612,15 +747,73 @@ input[type="radio"] {
     .butThanks{
         margin: 120px 0 0 100px;
     }
+    .thanksTitle2{
+        width: 325px;
+        height: 140px;
+        font: normal normal 300 55px/82px Gilroy Light, sans-serif;
+    }
+    .h2_1 {
+        width: 250px;
+        height: 80px;
+        font: normal normal 300 35px/40px Gilroy Light, sans-serif;
+    }
+    .breadcrumbs2{
+        margin-left: 0;
+    }
+    .p_1_2{
+        margin-bottom: 90px;
+    }
+    .divMain{
+        padding: 0 100px;
+    }
+    .input1{
+        width: 300px;
+    }
+    .textArea{
+        width: 300px;
+        height: 129px;
+    }
+    .greenButSend {
+        margin-bottom: 50px;
+    }
 }
 
 @media screen and (max-width: 1270px) {
+    .greenButSend{
+        margin: 100px auto 100px;
+    }
+    .input2{
+        width: 400px;
+    }
+    .h2_2{
+        width: 635px;
+        margin-bottom: 20px;
+    }
+    .div1Cont2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .divInput1{
+        width: 305px;
+        margin-bottom: 50px;
+    }
+    .h2_1{
+        width: 350px;
+    }
+    .div1Cont{
+        width: 100%;
+        display: flex;
+    }
+    .div2Box{
+        flex-direction: column;
+    }
     .thanksTitle {
         width: 425px;
-        font: normal normal 300 60px/82px Gilroy Light;
+        font: normal normal 300 60px/82px Gilroy Light, sans-serif;
     }
     .pLang {
-        font: normal normal 600 11px/20px Gilroy Light;
+        font: normal normal 600 11px/20px Gilroy Light, sans-serif;
     }
     .boxDiv {
         margin: 0 100px 70px 100px;
@@ -638,7 +831,14 @@ input[type="radio"] {
     .thanksP {
         width: 350px;
         height: 70px;
-        font: normal normal 300 16px/20px Gilroy Light;
+        font: normal normal 300 16px/20px Gilroy Light, sans-serif;
+    }
+    .breadcrumbs2{
+        margin-left: 0;
+    }
+    .textArea{
+        width: 400px;
+        height: 129px;
     }
 }
 
@@ -650,6 +850,60 @@ input[type="radio"] {
     .divP{
         margin-left: 0;
         margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .divMain{
+        background-color: #1E2227;
+        padding: 0 20px;
+    }
+    .input1{
+        width: 335px;
+        background-color: #1E2227;
+    }
+    .thanksTitle2{
+        width: 200px;
+        height: 93px;
+        text-align: left;
+        font: normal normal 300 36px/82px Gilroy Light, sans-serif;
+        letter-spacing: 0;
+        color: #FFFFFF;
+    }
+    .breadcrumbs2{
+        margin: 150px 0 30px 0;
+    }
+    .h2_1{
+        width: 330px;
+        height: 40px;
+        text-align: left;
+        font: normal normal 300 22px/70px Gilroy Light, sans-serif;
+    }
+    .h2_2{
+        width: 335px;
+        height: 80px;
+        margin-bottom: 20px;
+        font: normal normal 300 18px/22px Gilroy Light, sans-serif;
+    }
+    .div1Cont{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    .p_1{
+        font: normal normal 300 30px/44px Gilroy Light, sans-serif;
+    }
+    .p_1_2{
+        margin-bottom: 30px;
+    }
+    .greenButSend{
+        font: normal normal normal 14px/19px Gilroy Light, sans-serif;
+        margin: 80px auto 80px;
+    }
+    .textArea{
+        width: 335px;
+        height: 120px;
     }
 }
 
@@ -669,7 +923,7 @@ input[type="radio"] {
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        font-family: 'Averta';
+        font-family: Gilroy Light, sans-serif;
         background-color: #1d2025;
         cursor: pointer;
         margin: 0 0 0 10px;
@@ -698,7 +952,7 @@ input[type="radio"] {
         font-size: 9px;
     }
     .h3Title{
-        font-family: Averta;
+        font-family: Gilroy Light, sans-serif;
         font-weight: normal;
         margin: 14px 0 45px 20px;
         font-size: 35px;
@@ -713,7 +967,7 @@ input[type="radio"] {
     }
     .h6Title{
         font: normal normal normal 18px/20px Averta Demo PE;
-        font-family: Averta;
+        font-family: Gilroy Light, sans-serif;
         color: #D9D9D9;
         text-align: left;
         margin: -15px 0 10px 20px;
@@ -731,7 +985,7 @@ input[type="radio"] {
     .spanTitle{
         margin: 0 8px 0 0;
         font-size: 14px;
-        font-family: Averta;
+        font-family: Gilroy Light, sans-serif;
         padding: 8px;
         width: auto;
         height: auto;
@@ -780,12 +1034,15 @@ input[type="radio"] {
     .thanksP {
         width: 320px;
         height: 70px;
-        font: normal normal 300 16px/20px Gilroy Light;
+        font: normal normal 300 16px/20px Gilroy Light, sans-serif;
     }
     .butThanks{
         margin: 100px 0 0 20px;
         width: 255px;
         height: 50px;
-        font: normal normal normal 18px/19px Averta;
+        font: normal normal normal 18px/19px Gilroy Light, sans-serif;
+    }
+    .breadcrumbs2{
+        margin: 110px 0 30px 0;
     }
 }

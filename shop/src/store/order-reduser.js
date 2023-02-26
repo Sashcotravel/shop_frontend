@@ -4,6 +4,7 @@ import { fetchOrder } from "../API/post";
 const initialState = {
   order: {
     total: 0,
+    post: '',
     createdAt: null,
     order: [],
     status: 'loading'
@@ -29,3 +30,5 @@ const postsSlice = createSlice({
     }
   }
 })
+
+export const postsReducer = postsSlice.reducer

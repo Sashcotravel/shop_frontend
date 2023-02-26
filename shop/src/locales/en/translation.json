@@ -9,9 +9,9 @@
   "documentation": "Documentation",
   "getAnOffer": "Get an offer",
   "desc": "Enter your data, and the calculation you selected will be sent to your e-mail. And our specialist will also contact you for clarification of information and consultation.",
-  "enterName": "Enter Name",
-  "enterEmail": "Enter email",
-  "enterYourPhoneNumber": "Enter your phone number",
+  "enterName": "| Enter Name",
+  "enterEmail": "| Enter email",
+  "enterYourPhoneNumber": "| Enter your phone number",
   "don'tCallMe": "Don't call me",
   "orderAConsultation": "Order a consultation",
   "send": "Send",
@@ -55,5 +55,9 @@
   "calculator": "CALCULATOR",
   "pageThanks": "Thank you page",
   "titleThanks": "Request sent successfully",
-  "mainPageTo": "To the main page"
+  "mainPageTo": "To the main page",
+  "department": "Sales department",
+  "feedback": "Feedback",
+  "mail": "| Message",
+  "descCont": "If you have any questions or suggestions, please fill out the form below and we'll be sure to get back to you."
 }
