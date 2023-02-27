@@ -18,7 +18,7 @@ const Thanks = ({ setOnFooter, t, checked }) => {
 
     return (
       <div className={s.divBlock}>
-        <img src={image4} className={s.imageThanks} />
+        <img src={image4} className={s.imageThanks} alt='lable'/>
         <div style={{zIndex: 2}}>
           <div className={`${s.breadcrumbs}`}>
             <Link className="breads" style={{ color: "#7D7D80" }} to="/">{t(`home`)}</Link>

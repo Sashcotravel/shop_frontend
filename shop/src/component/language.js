@@ -40,10 +40,11 @@ export const LanguageSwitcher = () => {
           {/*{lang === "en" ? 'EN' : 'UA'}*/}
           <p className={`${s.pLang} ${s.hovP}`} title="ua" onClick={langClick}>UA</p>
           <p className={`${s.pLang} ${s.hovP}`} title="en" onClick={langClick}>EN</p>
+          <p className={`${s.pLang} ${s.hovP}`} title="ru" onClick={langClick}>RU</p>
         </button>
 
-        : <button className={s.trBut + " " + s.color} onClick={switcher2(lang === "en" ? "ua" : "en")}>
-          {lang === "en" ? "EN" : "UA"}
+        : <button className={s.trBut + " " + s.color} onClick={switcher2(lang === "en" ? "en" : lang === "ru" ? "ru" : 'ua')}>
+          { lang === "en" ? "en" : lang === "ru" ? "ru" : 'ua' }
         </button>
       }
     {/*<button className={s.trBut + " " + `${lang === "ua" || lang === 'uk-UA'  || lang === '' ? s.color : ""}`}*/}

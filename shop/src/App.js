@@ -6,23 +6,23 @@ import { BrowserRouter as Router, Link, Route, Routes, NavLink } from "react-rou
 import { useParams } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
-import Thanks from "./component/Thanks";
 import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";
 import Acses from "./page/Acses";
-import Footer from "./component/Footer";
 import { useDispatch } from "react-redux";
 import { fetchMail, fetchMailDima, fetchMailUser, fetchPay } from "./API/post";
-import Build from "./page/build";
-import MainPage from "./page/MainPage";
 import ListWash from "./component/ListWash";
-import FooterMain from "./component/FooterMain";
-import ListWash123 from "./TestSelect";
 import { removeLngPrefix } from "./18n";
 import i18next from "i18next";
-import Contacts from "./component/Contacs";
 
 
+// import MainPage from "./page/MainPage";
+// import FooterMain from "./component/FooterMain";
+// import Footer from "./component/Footer";
+// import Thanks from "./component/Thanks";
+// import Build from "./page/build";
+// import ListWash123 from "./TestSelect";
+// import Contacts from "./component/Contacs";
 // const ListWash = React.lazy(() => import('./component/ListWash'))
 // import YourOrder from "./page/YourOrder";
 // import Table from "./old/Table";
@@ -30,6 +30,15 @@ import Contacts from "./component/Contacs";
 // import OnePost from "./page/listwash/OnePost";
 // const Nacr = React.lazy(() => import("./page/Nacr"));
 // const Acses = React.lazy(() => import("./page/Acses"));
+const YourOrder = React.lazy(() => import("./page/YourOrder"));
+const OnePost = React.lazy(() => import("./page/listwash/OnePost"));
+const Contacts = React.lazy(() => import("./component/Contacs"));
+const ListWash123 = React.lazy(() => import("./TestSelect"));
+const Build = React.lazy(() => import("./page/build"));
+const Thanks = React.lazy(() => import("./component/Thanks"));
+const Footer = React.lazy(() => import("./component/Footer"));
+const FooterMain = React.lazy(() => import("./component/FooterMain"));
+const MainPage = React.lazy(() => import("./page/MainPage"));
 
 
 
@@ -54,11 +63,7 @@ const App = () => {
 
   const { id } = useParams();
 
-  const dispatch = useDispatch();
-
-  const YourOrder = React.lazy(() => import("./page/YourOrder"));
-  const OnePost = React.lazy(() => import("./page/listwash/OnePost"));
-
+  const dispatch = useDispatch()
 
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
@@ -82,7 +87,15 @@ const App = () => {
         window.location.replace(`/${lng}${window.location.pathname}`)
       }
 
-      switcher('ua')
+      switcher('en')
+    }
+    if(language === 'ru-RU'){
+      const switcher = (lng) => {
+        i18next.changeLanguage(lng)
+        window.location.replace(`/${lng}${window.location.pathname}`)
+      }
+
+      switcher('ru')
     }
     else if (window.location.pathname === '/ua/ua/'){
       window.location.replace(`/ua/`)
@@ -95,6 +108,12 @@ const App = () => {
     }
     else if (window.location.pathname === '/en/ua/'){
       window.location.replace(`/en/`)
+    }
+    else if (window.location.pathname === '/ua/ru/'){
+      window.location.replace(`/ru/`)
+    }
+    else if (window.location.pathname === '/ru/ru/'){
+      window.location.replace(`/ru/`)
     }
   }, []);
 

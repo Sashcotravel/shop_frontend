@@ -5,6 +5,7 @@ import LanguageDetector from "i18next-browser-languagedetector"
 
 import translationUA from './locales/ua/translation.json'
 import translationEN from './locales/en/translation.json'
+import translationRU from './locales/ru/translation.json'
 
 const resources = {
   en: {
@@ -12,6 +13,9 @@ const resources = {
   },
   ua: {
     translation: translationUA
+  },
+  ru: {
+    translation: translationRU
   }
 }
 
@@ -21,7 +25,7 @@ export const languages = Object.entries(resources).map(([lang]) => lang)
 export const removeLngPrefix = (pathname) => {
 
   for (let lang of languages){
-    if(pathname.startsWith(`/${lang}/` || pathname === `/${lang}` || `/${lang}/ua` || `/${lang}/en`)){
+    if(pathname.startsWith(`/${lang}/` || pathname === `/${lang}` || `/${lang}/ua` || `/${lang}/en`|| `/${lang}/ru`)){
       return pathname.replace(`/${lang}`, '')
     }
   }
@@ -30,7 +34,7 @@ export const removeLngPrefix = (pathname) => {
 
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
-  supportedLngs: ['ua', 'uk-UA', 'en', 'en-US'],
+  supportedLngs: ['ua', 'uk-UA', 'en', 'en-US', 'ru'],
   fallbackLng: "ua",
   debug: false,
   interpolation: { escapeValue: false },

@@ -32,7 +32,7 @@ const Contacts = ({ setOnFooter, t }) => {
 
   return (
     <div className={s.divBlock}>
-      <img src={image4} className={s.imageThanks} />
+      <img src={image4} className={s.imageThanks} alt='lable'/>
       <div className={s.divMain}>
         <div className={`${s.breadcrumbs} ${s.bread2} ${s.breadcrumbs2}`}>
           <Link className="breads" style={{ color: "#7D7D80" }} to="/">{t(`home`)}</Link>
