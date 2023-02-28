@@ -1,11 +1,11 @@
-import React, { useEffect, useState, Suspense, useLayoutEffect } from "react";
+import React, { useEffect, useState, Suspense, useLayoutEffect, memo } from "react";
 import s from "./component/Home.module.css";
 import "./App.css";
 import { useTranslation } from "react-i18next";
 import { BrowserRouter as Router, Link, Route, Routes, NavLink } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
+import MainPage from "./page/MainPage";
 import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";
 import Acses from "./page/Acses";
@@ -14,11 +14,12 @@ import { fetchMail, fetchMailDima, fetchMailUser, fetchPay } from "./API/post";
 import ListWash from "./component/ListWash";
 import { removeLngPrefix } from "./18n";
 import i18next from "i18next";
+import FooterMain from "./component/FooterMain";
+import Footer from "./component/Footer";
 
 
-// import MainPage from "./page/MainPage";
-// import FooterMain from "./component/FooterMain";
-// import Footer from "./component/Footer";
+
+
 // import Thanks from "./component/Thanks";
 // import Build from "./page/build";
 // import ListWash123 from "./TestSelect";
@@ -36,9 +37,6 @@ const Contacts = React.lazy(() => import("./component/Contacs"));
 const ListWash123 = React.lazy(() => import("./TestSelect"));
 const Build = React.lazy(() => import("./page/build"));
 const Thanks = React.lazy(() => import("./component/Thanks"));
-const Footer = React.lazy(() => import("./component/Footer"));
-const FooterMain = React.lazy(() => import("./component/FooterMain"));
-const MainPage = React.lazy(() => import("./page/MainPage"));
 
 
 
@@ -48,21 +46,21 @@ let nameKalk = "equipment";
 
 const App = () => {
 
+  const [userData, setUserData] = useState({
+    name: "", phone: "", email: "", cite: "", date: "" });
+  const [formPass, setFormPass] = useState({
+    phone: false, email: false });
   const [total, setTotal] = useState(0);
   const [checked, setChecked] = useState(false);
   const [dateT, setDate] = useState("");
   const [checked2, setChecked2] = useState(false);
   const [selected, setSelected] = useState(null);
-  const [userData, setUserData] = useState({
-    name: "", phone: "", email: "", cite: "", date: "" });
   const [onFooter, setOnFooter] = useState(false);
   const [onMain, setOnMain] = useState(false);
   const [postOne, setPostOne] = useState(null);
+  const [meneger, setMeneger] = useState(true);
 
   const { t, i18n: { language } } = useTranslation();
-
-  const { id } = useParams();
-
   const dispatch = useDispatch()
 
   useLayoutEffect(() => {
@@ -148,25 +146,25 @@ const App = () => {
     });
     setTotal(0);
     userOrder = [];
-    // let con = document.querySelectorAll("[id='lightblue']")
-    // con.forEach(e => e.value = '')
   };
 
   const useSubmit = async () => {
     if (total > 0) {
-      let con = document.getElementById("lightblue2");
-      con.style.visibility = "hidden";
-      let obj = { total: total, order: userOrder, user: userData };
-      const d = await dispatch(fetchPay(obj));
-      let link = "http://localhost:3000/your-order/" + d.payload;
-      console.log(link);
-      dispatch(fetchMail(obj));
-      dispatch(fetchMailDima(obj));
-      dispatch(fetchMailUser(obj));
+      if (formPass.email && formPass.phone) {
+        setMeneger(true);
+        hiddeItem();
+        let obj = { total: total, order: userOrder, user: userData };
+        const d = await dispatch(fetchPay(obj));
+        let link = "http://localhost:3000/your-order/" + d.payload;
+        console.log(link);
+        dispatch(fetchMail(obj));
+        dispatch(fetchMailDima(obj));
+        dispatch(fetchMailUser(obj));
 
-      Users.forEach(user => user.size = 0);
-      Users.forEach(user => user.total = user.prise);
-      nullAll();
+        Users.forEach(user => user.size = 0);
+        Users.forEach(user => user.total = user.prise);
+        nullAll();
+      }
     }
   };
 
@@ -192,6 +190,39 @@ const App = () => {
   const clickBread = (e) => { nameKalk = e.target.id };
 
   const style = { margin: "10px auto 60px 125px" };
+
+  const onBlur = (e) => {
+    let email = document.getElementById('email')
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(!re.test(String(e.target.value).toLowerCase())){
+      email.style.border = '2px solid red'
+      email.style.backgroundCo1or = 'transparent'
+      setFormPass((actual) => { return { ...actual, email: false } })
+    } else {
+      email.style.border = 'none'
+      email.style.borderBottom = '2px solid grey'
+      email.style.backgroundColor = 'transparent'
+      setFormPass((actual) => { return { ...actual, email: true } })
+    }
+  }
+
+  const changeBlur = (e) => {
+    setUserData(memo((actual) => {
+      return { ...actual, [e.target.title]: e.target.value };
+    }));
+    let phone = document.getElementById('phone')
+    let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
+    if (regex.test(e.target.value.toString()) === true) {
+      phone.style.border = 'none'
+      phone.style.borderBottom = '2px solid grey'
+      phone.style.backgroundColor = 'transparent'
+      setFormPass((actual) => { return { ...actual, phone: true } })
+    } else {
+      phone.style.border = '2px solid red'
+      phone.style.backgroundCo1or = 'transparent'
+      setFormPass((actual) => { return { ...actual, phone: false } })
+    }
+  }
 
   return (
     <Router basename={`/${language}/`}>
@@ -239,13 +270,12 @@ const App = () => {
               </>
           }
 
-
           <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
             <Routes>
               {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
-              <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-              <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-              <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} />} />
+              <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
+              <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger}/>} />
+              <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger} />} />
               <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} />} />
               <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
                                                        setTotal={setTotal} total={total} />} />
@@ -285,7 +315,6 @@ const App = () => {
             </Routes>
           </Suspense>
 
-
           <div id="lightblue2" onClick={blurClose} className={s.orderBlock}>
             <div className={s.userdata}>
               <div className={s.ix}>
@@ -298,33 +327,29 @@ const App = () => {
               <br />
               <input className={s.inputUser} type="name" title="name"
                      placeholder={`${t("enterName")}`} onChange={(e) => {
-                setUserData((actual) => {
+                setUserData(memo((actual) => {
                   return { ...actual, [e.target.title]: e.target.value };
-                });
+                }));
               }} />
-              <input className={s.inputUser} type="email" title="email" required
+              <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
                      placeholder={`${t("enterEmail")}`} onChange={(e) => {
-                setUserData((actual) => {
+                setUserData(memo((actual) => {
                   return { ...actual, [e.target.title]: e.target.value };
-                });
+                }));
               }} />
-              <input className={s.inputUser} type="text" title="phone"
-                     placeholder={`${t("enterYourPhoneNumber")}`} onChange={(e) => {
-                setUserData((actual) => {
-                  return { ...actual, [e.target.title]: e.target.value };
-                });
-              }} />
+              <input className={s.inputUser} type="text" title="phone" id="phone"
+                     placeholder={`${t("enterYourPhoneNumber")}`} onChange={changeBlur} />
               <br />
               <div className={s.boxCheck}>
                 <input className={s.inputCheck} type="checkbox"
                        checked={checked} onChange={checkedClick} />
                 <p>{t("don'tCallMe")}</p>
               </div>
-              <div className={s.boxCheck2}>
-                <input onChange={checkedClick2} className={s.inputCheck}
-                       type="checkbox" checked={checked2} />
-                <span>{t("orderAConsultation")}</span>
-              </div>
+              {/*<div className={s.boxCheck2}>*/}
+              {/*  <input onChange={checkedClick2} className={s.inputCheck}*/}
+              {/*         type="checkbox" checked={checked2} />*/}
+              {/*  <span>{t("orderAConsultation")}</span>*/}
+              {/*</div>*/}
               {
                 // checked2 &&
               // ?  <input id="date" type="date" onBlur={valueDate} />
@@ -338,7 +363,10 @@ const App = () => {
               <br />
               <div style={{margin: 'auto', display: 'flex', justifyContent: 'center'}}>
                 <button className={s.footerBut} style={{ width: "50%", backgroundColor: '#42DF4C' }}
-                        onClick={useSubmit}><Link style={{color: '#FFFFFF'}} to='/thanks'>{t("send")}</Link></button>
+                        onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>
+                  { formPass.email && formPass.phone && <Link style={{ color: "#FFFFFF" }} to="/thanks">{t("send")}</Link>}
+                  { !formPass.email && !formPass.phone && t("send") }
+                </button>
               </div>
             </div>
           </div>

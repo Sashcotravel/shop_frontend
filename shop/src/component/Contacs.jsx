@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import s from "./Home.module.css";
 import image4 from "../image/svg/sw logo.svg";
 import { Link } from "react-router-dom";
@@ -16,9 +16,12 @@ const Contacts = ({ setOnFooter, t }) => {
   const screen = window.screen.availWidth > 900
   const dispatch = useDispatch();
 
+  useLayoutEffect(() => {
+    setOnFooter(true)
+  }, [])
+
   useEffect(() => {
     setOnFooter(true)
-
     return () => {
       setOnFooter(false)
     }

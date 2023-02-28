@@ -287,8 +287,8 @@
     color: #FFFFFF;
     background-color: #1d2025;
     margin: 0 25px;
-    position: relative;
-    top: -4px;
+    /*position: relative;*/
+    /*top: -4px;*/
 }
 
 .itemTotal{
@@ -496,7 +496,7 @@ input[type="radio"] {
 }
 
 .trBut:hover{
-    height: 70px;
+    height: 100px;
     border-radius: 20px;
 }
 
@@ -905,26 +905,45 @@ input[type="radio"] {
         width: 335px;
         height: 120px;
     }
-}
-
-@media screen and (max-width: 700px){
-    .userdata2, .userdata {
-        width: 90%;
-    }
     .translateDiv{
         display: block;
     }
     .trBut:hover{
-        height: 35px;
-        border-radius: 50%;
-        position: relative;
+        height: 100px;
+        border-radius: 20px;
+        position: absolute;
     }
     .trBut{
         width: 35px;
         height: 35px;
         border-radius: 50%;
         font-family: Gilroy Light, sans-serif;
-        background-color: #1d2025;
+        background-color: white;
+        cursor: pointer;
+        margin: 0 0 0 10px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .userdata2, .userdata {
+        width: 90%;
+        height: 80vh;
+    }
+    .translateDiv{
+        display: block;
+    }
+    .trBut:hover{
+        height: 100px;
+        border-radius: 20px;
+        position: absolute;
+    }
+    .trBut{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        font-family: Gilroy Light, sans-serif;
+        background-color: white;
         cursor: pointer;
         margin: 0 0 0 10px;
         position: relative;

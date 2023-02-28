@@ -1,15 +1,15 @@
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { memo, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import m from "./MainPage.module.css";
 import s from "../component/Home.module.css";
 import { useDispatch } from "react-redux";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import image1 from "../image/svg/preloader.svg";
-import image2 from "../image2/coverSMART.jpg";
-import image21 from "../image2/coverPIXEL.jpg";
-import image212 from "../image2/coverMARCO.jpg";
-import image2123 from "../image2/coverMARCHELLO.jpg";
+import image2 from "../image/svg/SMART.png";
+import image21 from "../image/svg/PIXEL 2.png";
+import image212 from "../image/svg/MARCO copy.png";
+import image2123 from "../image/svg/MARCHELLO.png";
 import image21234 from "../image2/coverMARCO1.jpg";
-import image212345 from "../image2/karkasUfo.jpg";
+import image212345 from "../image/svg/UFO.png";
 import image3 from "../image/svg/SW icon.svg";
 import image4 from "../image/svg/output.mp4";
 import image5 from "../image/svg/Group 103.svg";
@@ -19,13 +19,31 @@ import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { defaultTheme } from './Theme'
 import { Carousel } from "./carousel/Carousel";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 
-const MainPage = ({ t, setOnFooter }) => {
+const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
 
   const [userData, setUserData] = useState({
     name: "", phone: "", email: "" });
+  const [formPass, setFormPass] = useState({
+    phone: false, email: false });
+  const [captchaIsDone, setCaptchaIsDone] = useState(false)
+
+  let lang = localStorage.i18nextLng
+  const screen = window.screen.availWidth > 900
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const arrow = 'стрілка'
+  // const key = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+  const key = '6LdIRr8kAAAAAKaeaG5sQIIinVfO7j_fnRY-3Nv0'
+
+  // 6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl  пользователей
+  // 6LeDKr8kAAAAAFCPPS6RBsDT9T6a5IpFgWFmzkXg  сайтом и сервисом
+
+  // 6LdIRr8kAAAAAKaeaG5sQIIinVfO7j_fnRY-3Nv0  пользователей
+  // 6LdIRr8kAAAAABb3s8rkmTvo3ObUhzGI1SzkNec6  сайтом и сервисом
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -34,14 +52,13 @@ const MainPage = ({ t, setOnFooter }) => {
 
   function Home () {
     if(!isLoaded) return <div>Завантаження...</div>
-    return <Map />
+    // return <Map />
   }
 
   const defaultOption = {
     panControl: true, mapTypeControl: false, scaleControl: false, streetViewControl: false,
     rotateControl: false, fullscreenControl: false, disableDoubleClickZoom: true, styles: defaultTheme
   }
-
 
   const coordinat = [
     { center: {lat: 49.4042, lng: 24.6073},
@@ -72,14 +89,14 @@ const MainPage = ({ t, setOnFooter }) => {
     </GoogleMap>
   }
 
-
-  const screen = window.screen.availWidth > 900
-  const dispatch = useDispatch();
-  const arrow = 'стрілка'
-
+  useEffect(() => {
+    setOnFooter(true);
+    return () => {
+      setOnFooter(false);
+    };
+  }, [])
 
   useLayoutEffect(  () => {
-    setOnFooter(true);
     // caches.keys().then((names) => {
     //   names.forEach((name) => {
     //     caches.delete(name);
@@ -136,10 +153,15 @@ const MainPage = ({ t, setOnFooter }) => {
   };
 
   const useSubmit = async () => {
-    let con = document.getElementById("lightblue");
-    con.style.visibility = "hidden";
-    let obj = { user: userData };
-    dispatch(fetchMailDimaZam(obj));
+    if(formPass.email && formPass.phone){
+      let con = document.getElementById("lightblue");
+      con.style.visibility = "hidden";
+      let obj = { user: userData };
+      dispatch(fetchMailDimaZam(obj));
+      setMeneger(false)
+      setChecked(false)
+      navigate('/thanks')
+    }
   };
 
   const greenBut = () => { noScroll() };
@@ -147,8 +169,8 @@ const MainPage = ({ t, setOnFooter }) => {
   const infoBig = () => {};
 
   const Video = props => {
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
     const src = getVideoSrc(window.innerWidth);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
     const onLoadedData = () => { setIsVideoLoaded(true) };
 
     return (
@@ -165,7 +187,6 @@ const MainPage = ({ t, setOnFooter }) => {
   };
 
   const getVideoSrc = width => { return image4 };
-
 
   useEffect(() => {
     let section_counter = document.querySelector("#section_counter")
@@ -217,8 +238,39 @@ const MainPage = ({ t, setOnFooter }) => {
 
   }, [])
 
+  const onBlur = (e) => {
+    let email = document.getElementById('email')
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(!re.test(String(e.target.value).toLowerCase())){
+      email.style.border = '2px solid red'
+      email.style.backgroundCo1or = 'transparent'
+      setFormPass((actual) => { return { ...actual, email: false } })
+    } else {
+      email.style.border = 'none'
+      email.style.borderBottom = '2px solid grey'
+      email.style.backgroundColor = 'transparent'
+      setFormPass((actual) => { return { ...actual, email: true } })
+    }
+  }
 
+  const onBlur2 = (e) => {
+    let phone = document.getElementById('phone')
+    let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
+    if (regex.test(e.target.value.toString()) === true) {
+      phone.style.border = 'none'
+      phone.style.borderBottom = '2px solid grey'
+      phone.style.backgroundColor = 'transparent'
+      setFormPass((actual) => { return { ...actual, phone: true } })
+    } else {
+      phone.style.border = '2px solid red'
+      phone.style.backgroundCo1or = 'transparent'
+      setFormPass((actual) => { return { ...actual, phone: false } })
+    }
+  };
 
+  const onChange = () => {
+    setCaptchaIsDone(true)
+  }
 
   return <div>
 
@@ -236,25 +288,26 @@ const MainPage = ({ t, setOnFooter }) => {
           <br />
           <input className={s.inputUser} type="name" title="name"
                  placeholder={`${t("enterName")}`} onChange={(e) => {
-            setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };});}} />
-          <input className={s.inputUser} type="email" title="email" required
+            setUserData(memo((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };}));}} />
+          <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
                  placeholder={`${t("enterEmail")}`} onChange={(e) => {
-            setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };});}} />
-          <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone"
-                 placeholder={`${t("enterYourPhoneNumber")}`} onChange={(e) => {
-            setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };});}} />
+            setUserData(memo((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };}));}} />
+          <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onBlur={onBlur2}
+                 placeholder={`${t("enterYourPhoneNumber")}`} onChange={ (e) => {
+            setUserData(memo((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };}));}} />
+          <ReCAPTCHA sitekey={key} onChange={onChange} className={m.cap} />
           <br />
-          <div className={s.footerBut} style={{ width: "50%", margin: "30px auto" }}
-               onClick={useSubmit}>{t("send")}</div>
+          <button className={s.footerBut} style={{ width: "50%", margin: "30px auto" }}
+                  onClick={useSubmit} disabled={!formPass.email && !formPass.phone && captchaIsDone}>{t("send")}</button>
         </div>
       </div>
 
       <div className={`${m.preloader}`} id="preloader">
         <div className={m.preloader__loader}>
-          <p><img src={image1} className={m.imgTit}/></p>
+          <p><img src={image1} className={m.imgTit} alt='logo'/></p>
           <span className={m.preloader__percent}>
             <span id='percent'>0</span>
             <span>%</span>
@@ -278,11 +331,11 @@ const MainPage = ({ t, setOnFooter }) => {
       <div className={m.mainContainer}>
 
         <div id='container1' className={`${m.container1}`}>
-          <h1 className={m.titleH1}>Шукаєш куди інвестувати?</h1>
-          <h2 className={m.titleH4}>Побудуємо для тебе автомийку самообслуговування за 100 днів!</h2>
+          <h1 className={m.titleH1}>{t("main.searchWhat")}</h1>
+          <h2 className={m.titleH4}>{t("main.build100")}</h2>
           <div className={m.greenButDiv}>
             <button className={m.greenBut} onClick={greenBut} style={{ cursor: "pointer" }}>
-              <span>ЗАМОВИТИ КОНСУЛЬТЦІЮ</span><span className={m.spanArrow}>
+              <span>{t("main.zam")}</span><span className={m.spanArrow}>
               <img src={image5}  className={m.imgClass} alt='Замовити консультацію'/>
             </span>
             </button>
@@ -294,7 +347,7 @@ const MainPage = ({ t, setOnFooter }) => {
 
               <div className={m.percentDiv2}>
                 <div className={m.percentDiv}>
-                  <p className={m.percentP}>чистий прибуток</p>
+                  <p className={m.percentP}>{t("main.prod1")}</p>
                   <section id="section_counter" className={m.section_counter}>
                     <div className={m.counter_item}>
                       <span id="pes1" className={m.percentPAnim} data-target={75}>0</span>
@@ -320,7 +373,7 @@ const MainPage = ({ t, setOnFooter }) => {
               </div>
 
               <div className={m.percentDiv2_2}>
-                <p className={m.percentP + " " + m.addPercentP}>прямі витрати</p>
+                <p className={m.percentP + " " + m.addPercentP}>{t("main.prod2")}</p>
                 <div className={m.divPerc}>
                   <section className={m.section_counter}>
                     <div className={m.counter_item2}>
@@ -328,11 +381,11 @@ const MainPage = ({ t, setOnFooter }) => {
                       <span className={m.percent2}>%</span>
                     </div>
                   </section>
-                  <p className={m.percentP2}>електроенергія</p>
-                  <p className={m.percentP2}>зарплата</p>
-                  <p className={m.percentP2}>вода</p>
-                  <p className={m.percentP2}>піна</p>
-                  <p className={m.percentP2}>віск</p>
+                  <p className={m.percentP2}>{t("main.energe")}</p>
+                  <p className={m.percentP2}>{t("main.salary")}</p>
+                  <p className={m.percentP2}>{t("main.water")}</p>
+                  <p className={m.percentP2}>{t("main.foam")}</p>
+                  <p className={m.percentP2}>{t("main.wax")}</p>
                 </div>
               </div>
             </div>
@@ -340,45 +393,49 @@ const MainPage = ({ t, setOnFooter }) => {
 
         <LazyLoadComponent>
           <div className={m.container2}>
-            <p className={m.pH}>Створюємо автомийки</p>
-            <p className={m.pH2}>самообслуговування</p>
-            <p className={m.pP}>Ви отримаєте повністю готову до запуску автомийку, яка з першого дня буде приносити
-              прибуток.</p>
+            {
+              lang === 'en' ? <p className={m.pH}>{t("main.carWashes")}</p>
+                : <>
+                  <p className={m.pH}>{t("main.carWashes")}</p>
+                  <p className={m.pH2}>{t("main.self-service")}</p>
+                </>
+            }
+            <p className={m.pP}>{t("main.youWillReceive")}</p>
 
             <div>
               <div className={m.divSpan}>
                 <span className={m.spanB}>1</span>
-                <span className={m.wW}>ПРОЄТКУВАННЯ ТА УЗГОДЖЕННЯ</span>
+                <span className={m.wW}>{t("main.DESIGN")}</span>
               </div>
               <div className={m.divSpan + " " + m.span2}>
                 <span className={m.spanB}>2</span>
-                <span className={m.wW}>ДОКУМЕНТАЦІЯ, ДОЗВОЛИ</span>
+                <span className={m.wW}>{t("main.DOCUMENTATION")}</span>
               </div>
               <div className={m.divSpan + " " + m.span3}>
                 <p className={m.spanB}>3</p>
-                <p className={m.wW}>БУДІВНИЦТВО ТА ОБЛАДНАННЯ ДІЛЯНКИ</p>
+                <p className={m.wW}>{t("main.CONSTRUCTION")}</p>
               </div>
               <div className={m.divSpan + " " + m.span4}>
                 <span className={m.spanB}>4</span>
-                <span className={m.wW}>НАКРИТТЯ ДЛЯ БОКСІВ ТА ТЕХ.ПРИМІЩЕННЯ</span>
+                <span className={m.wW}>{t("main.COVERS")}</span>
               </div>
               <div className={m.divSpan + " " + m.span5}>
                 <span className={m.spanB}>5</span>
-                <span className={m.wW}>ОСВІТЛЕННЯ</span>
+                <span className={m.wW}>{t("main.LIGHTING")}</span>
               </div>
               <div className={m.divSpan + " " + m.span6}>
                 <span className={m.spanB}>6</span>
-                <span className={m.wW}>ОБЛАДНАННЯ</span>
+                <span className={m.wW}>{t("main.EQUIPMENT")}</span>
               </div>
               <div className={m.divSpan + " " + m.span7}>
                 <span className={m.spanB}>7</span>
-                <span className={m.wW}>АКСЕСУАРИ</span>
+                <span className={m.wW}>{t("main.ACCESSORIES")}</span>
               </div>
               <div className={m.divSpan}>
                 <span className={m.spanB + " " + m.span8}>8</span>
                 <div>
-                  <p style={{ marginTop: "20px" }}>ЗАПУСК!</p>
-                  <p className={m.span8Z}>Cамоокупність мийки до 3-х років*</p>
+                  <p style={{ marginTop: "20px" }}>{t("main.LAUNCHING")}</p>
+                  <p className={m.span8Z}>{t("main.Self-sufficiency")}</p>
                 </div>
               </div>
             </div>
@@ -387,16 +444,16 @@ const MainPage = ({ t, setOnFooter }) => {
 
         <div className={m.container3}>
           <div>
-            <span className={m.pDos2}>Чому ми?</span>
+            <span className={m.pDos2}>{t("main.whyUs")}</span>
           </div>
           <section id="section_counter2" className={m.section_counter2}>
             <div className={m.imageBlock}>
               <p className={m.pYear} id="pes3" data-target={12}>0</p>
-              <p className={m.pDos}>років досвіду</p>
+              <p className={m.pDos}>{t("main.yearsOfExperience")}</p>
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
               <p className={m.pYear} id="pes3" data-target={250}>0</p>
-              <p className={m.pDos} style={{ width: "210px" }}>боксів <br /> під ключ</p>
+              <p className={m.pDos} style={{ width: "210px" }}>{t("main.boxes")} <br /> {t("main.turnkey")}</p>
             </div>
           </section>
         </div>
@@ -404,17 +461,19 @@ const MainPage = ({ t, setOnFooter }) => {
         <LazyLoadComponent>
           <div className={m.container4}>
             <div className={m.container4_2}>
-              <p className={m.h4}>Найбільший вибір</p>
-              <p className={m.h42}>накриттів в Україні</p>
-              <p className={m.p4}>Ваша мийка буде якісно виділятись на фоні конкурентів, привертатиме увагу
-                і виглядатиме профейсіно та стильно!</p>
+              <p className={m.h4}>{t("main.biggestChoice")}</p>
+              {
+                lang === 'en' ? <p className={m.h421}>{t("main.coveringsInUkraine")}</p>
+                  : <p className={m.h42}>{t("main.coveringsInUkraine")}</p>
+              }
+              <p className={m.p4}>{t("main.yourSinkWillStand")}</p>
             </div>
 
-            <Carousel >
+            <Carousel>
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
-                  <p className={m.pSmart}>SMART</p><p className={m.pPrise}>6 200 € за пост</p>
-                  <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
+                  <p className={m.pSmart}>SMART</p><p className={m.pPrise}>6 200 € {t("main.forPost")}</p>
+                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 <div className={m.divImgSlider}>
                   {/*<img src={image2} className={m.imgClass2} alt='SMART' loading="eager" />*/}
@@ -424,8 +483,8 @@ const MainPage = ({ t, setOnFooter }) => {
 
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
-                  <p className={m.pSmart}>PIXEL</p><p className={m.pPrise}>7 200 € за пост</p>
-                  <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
+                  <p className={m.pSmart}>PIXEL</p><p className={m.pPrise}>7 200 € {t("main.forPost")}</p>
+                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image21} className={m.imgClass2} alt='PIXEL' loading="lazy"/></div>*/}
                 <div className={m.divImgSlider}><LazyLoadImage src={image21} className={m.imgClass2} alt='PIXEL' /></div>
@@ -433,8 +492,8 @@ const MainPage = ({ t, setOnFooter }) => {
 
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
-                  <p className={m.pSmart}>MARCO</p><p className={m.pPrise}>7 700 € за пост</p>
-                  <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
+                  <p className={m.pSmart}>MARCO</p><p className={m.pPrise}>7 700 € {t("main.forPost")}</p>
+                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image212} className={m.imgClass2} alt='MARCO' loading="lazy"/></div>*/}
                 <div className={m.divImgSlider}><LazyLoadImage src={image212} className={m.imgClass2} alt='MARCO' /></div>
@@ -442,8 +501,8 @@ const MainPage = ({ t, setOnFooter }) => {
 
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
-                  <p className={m.pSmart}>MARCO 2</p><p className={m.pPrise}>8 200 € за пост</p>
-                  <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
+                  <p className={m.pSmart}>MARCO 2</p><p className={m.pPrise}>8 200 € {t("main.forPost")}</p>
+                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image21234} className={m.imgClass2} alt='MARCO 2' loading="lazy"/></div>*/}
                 <div className={m.divImgSlider}><LazyLoadImage src={image21234} className={m.imgClass2} alt='MARCO 2' /></div>
@@ -451,8 +510,8 @@ const MainPage = ({ t, setOnFooter }) => {
 
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
-                  <p className={m.pSmart}>MARCHELLO</p><p className={m.pPrise}>12 800 € за пост</p>
-                  <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
+                  <p className={m.pSmart}>MARCHELLO</p><p className={m.pPrise}>12 800 € {t("main.forPost")}</p>
+                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image2123} className={m.imgClass2} alt='MARCHELLO' loading="lazy"/></div>*/}
                 <div className={m.divImgSlider}><LazyLoadImage src={image2123} className={m.imgClass2} alt='MARCHELLO' /></div>
@@ -460,8 +519,8 @@ const MainPage = ({ t, setOnFooter }) => {
 
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
-                  <p className={m.pSmart}>UFO</p><p className={m.pPrise}>13 500 € за пост</p>
-                  <p className={m.pBig2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></p>
+                  <p className={m.pSmart}>UFO</p><p className={m.pPrise}>13 500 € {t("main.forPost")}</p>
+                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image212345} className={m.imgClass2} alt='UFO' loading="lazy"/></div>*/}
                 <div className={m.divImgSlider}><LazyLoadImage src={image212345} className={m.imgClass2} alt='UFO' /></div>
@@ -476,21 +535,21 @@ const MainPage = ({ t, setOnFooter }) => {
             <div className={m.container4_52}>
               <div className={m.container4_53}>
                 {screen ? <>
-                    <p className={m.p4_5}>Замовляючи автомийку у</p>
-                    <p className={m.p4_52}>SamWash, Ви отримаєте не лише</p>
-                    <p className={m.p4_52}>прибутковий бізнес, а й досвід, набутий</p>
-                    <p className={m.p4_5}>за роки створень</p>
-                    <p className={m.p4_5}>автомийок по всій Україні.</p>
+                    <p className={m.p4_5}>{t("main.ordering")}</p>
+                    <p className={m.p4_52}>{t("main.youWill")}</p>
+                    <p className={m.p4_52}>{t("main.profitable")}</p>
+                    <p className={m.p4_5}>{t("main.creation")}</p>
+                    <p className={m.p4_5}>{t("main.throughout")}</p>
                   </>
                   : <>
-                    <p className={m.p4_5}>Замовляючи автомийку</p>
-                    <p className={m.p4_52}>у SamWash, Ви</p>
-                    <p className={m.p4_52}>отримаєте не лише</p>
-                    <p className={m.p4_52}>прибутковий бізнес, а й</p>
-                    <p className={m.p4_52}>досвід, набутий за</p>
-                    <p className={m.p4_5}>роки створень</p>
-                    <p className={m.p4_5}>автомийок по всій</p>
-                    <p className={m.p4_5}>Україні.</p>
+                    <p className={m.p4_5}>{t("main.ordering2")}</p>
+                    <p className={m.p4_52}>{t("main.youWill2")}</p>
+                    <p className={m.p4_52}>{t("main.youWill3")}</p>
+                    <p className={m.p4_52}>{t("main.profitable2")}</p>
+                    <p className={m.p4_52}>{t("main.profitable3")}</p>
+                    <p className={m.p4_5}>{t("main.creation2")}</p>
+                    <p className={m.p4_5}>{t("main.throughout2")}</p>
+                    <p className={m.p4_5}>{t("main.throughout3")}</p>
                   </>
                 }
               </div>
@@ -503,21 +562,20 @@ const MainPage = ({ t, setOnFooter }) => {
             <div className={m.slideStyleBack}></div>
             <div className={m.container5}>
               <div className={m.container5_3}>
-                { !screen && <span className={m.p5}>9 800 € за 1 пост</span> }
-                <p className={m.title5P}>Все ваше обладнання буде таке ж, як на автомийках Німеччини, Італії чи
-                  Франнції:</p>
+                { !screen && <span className={m.p5}>9 800 € {t("main.forPost1")}</span> }
+                <p className={m.title5P}>{t("main.allYourEquipment")}</p>
                 <ul className={m.ul}>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>насоси фірми Interpump з Італії</span></li>
+                    <span className={m.spanIm}>{t("main.pumps")}</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>електроніка фірми Sсhneider з Німеччини</span></li>
+                    <span className={m.spanIm}>{t("main.Schneider")}</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                     <span className={m.spanIm}>...</span></li>
                 </ul>
-                <span className={m.pBig23+' '+m.pBig23_3} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
+                <span className={m.pBig23+' '+m.pBig23_3} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
               </div>
               {screen && <div className={m.div12}>
-                <span className={m.p5}>9 800 € за 1 пост</span>
+                <span className={m.p5}>9 800 € {t("main.forPost1")}</span>
               </div>}
             </div>
           </div>
@@ -526,16 +584,16 @@ const MainPage = ({ t, setOnFooter }) => {
         <LazyLoadComponent>
           <div className={m.container6}>
             <div className={m.container6_2}>
-              <p className={m.p6}>У вас буде найменша технічна кімната серед конкурентів (10²), а це:</p>
+              <p className={m.p6}>{t("main.competitors")}</p>
               <ul className={m.ul} style={{ color: "black" }}>
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                  <span className={m.spanIm}>менші витрати на будівництво</span></li>
+                  <span className={m.spanIm}>{t("main.construction")}</span></li>
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                  <span className={m.spanIm}>більше площі для боксів</span></li>
+                  <span className={m.spanIm}>{t("main.space")}</span></li>
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                  <span className={m.spanIm}>менші витрати на опалення взимку</span></li>
+                  <span className={m.spanIm}>{t("main.heating")}</span></li>
               </ul>
-              <span className={m.pBig23+' '+m.butGreen2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
+              <span className={m.pBig23+' '+m.butGreen2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
             </div>
           </div>
         </LazyLoadComponent>
@@ -545,22 +603,21 @@ const MainPage = ({ t, setOnFooter }) => {
             <div className={m.slideStyleBack}></div>
             <div className={m.container7}>
               <div className={m.container7_3}>
-                { !screen && <span className={m.p5}>6 800 € за 1 прилад</span> }
-                <p className={m.p16}>Ми можемо поставити на Вашу автомийку найпотужніший
-                  порохотяг в Україні.</p>
+                { !screen && <span className={m.p5}>6 800 € {t("main.forDevice")}</span> }
+                <p className={m.p16}>{t("main.powerfulVacuum")}</p>
                 <ul className={m.ul}>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>працює одразу на 2 поста</span></li>
+                    <span className={m.spanIm}>{t("main.worksFor")}</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>...</span></li>
+                    <span className={m.spanIm}>{t("main.power6kW")}</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>термін активної експлуатації - більше 10 років</span></li>
+                    <span className={m.spanIm}>{t("main.periodOf")}</span></li>
                 </ul>
-                <span className={m.pBig23+' '+m.pBig23_2} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
+                <span className={m.pBig23+' '+m.pBig23_2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
               </div>
 
               {screen && <div className={m.div12}>
-                <span className={m.p5}>6 800 € за 1 прилад</span>
+                <span className={m.p5}>6 800 € {t("main.forDevice")}</span>
               </div>}
             </div>
           </div>
@@ -570,18 +627,18 @@ const MainPage = ({ t, setOnFooter }) => {
           <div className={m.container8}>
             <div className={m.container8_2}>
               { !screen && <span className={m.p5}>6 700 €</span> }
-              <p className={m.p6}>Платіжний термінал: уся інформація та статистика у вашому смартфоні.</p>
+              <p className={m.p6}>{t("main.Payment")}</p>
 
               <ul className={m.ul} style={{ color: "black" }}>
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                  <span className={m.spanIm}>всі види оплат для зручності ваших клієнтів</span></li>
+                  <span className={m.spanIm}>{t("main.allTypes")}</span></li>
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                  <span className={m.spanIm}>картки лояльності</span></li>
+                  <span className={m.spanIm}>{t("main.loyalty")}</span></li>
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                  <span className={m.spanIm}>вся інформація в режимі реального часу у вашому смартфоні</span></li>
+                  <span className={m.spanIm}>{t("main.smartphone")}</span></li>
               </ul>
 
-              <span className={m.pBig23+' '+m.greenBut3} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
+              <span className={m.pBig23+' '+m.greenBut3} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
             </div>
             {screen && <div className={m.div12}>
               <span className={m.p5}>6 700 €</span>
@@ -594,18 +651,18 @@ const MainPage = ({ t, setOnFooter }) => {
             <div className={m.slideStyleBack}></div>
             <div className={m.container9}>
               <div className={m.container9_3}>
-                <p className={m.p6+' '+m.p9}>Безконтактна оплата по QR-коду</p>
+                <p className={m.p6+' '+m.p9}>{t("main.payment")}</p>
 
                 <ul className={m.ul}>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>всі види оплат для зручності ваших клієнтів</span></li>
+                    <span className={m.spanIm}>{t("main.convenience")}</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>картки лояльності</span></li>
+                    <span className={m.spanIm}>...</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>вся інформація в режимі реального часу у вашому смартфоні</span></li>
+                    <span className={m.spanIm}>{t("main.operation")}</span></li>
                 </ul>
 
-                <span className={m.pBig23+' '+m.greenBut4} onClick={infoBig}>БІЛЬШЕ ІНФОРМАЦІЇ >></span>
+                <span className={m.pBig23+' '+m.greenBut4} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
               </div>
 
               {screen && <div className={m.div12}>
@@ -624,36 +681,35 @@ const MainPage = ({ t, setOnFooter }) => {
           <div className={m.container10_2}>
             <div className={m.container10}>
               { screen ? <>
-                  <p className={m.p10}>Ми несемо</p>
-                  <p className={m.p10_2}>відповідальність за нашу репутацію,</p>
-                  <p className={m.p10_2}>тому обслуговуємо усі автомийки</p>
-                  <p className={m.p10}>SamWash і після запуску</p>
+                  <p className={m.p10}>{t("main.weCarry")}</p>
+                  <p className={m.p10_2}>{t("main.acknowledgment")}</p>
+                  <p className={m.p10_2}>{t("main.serviceable")}</p>
+                  <p className={m.p10}>{t("main.launch")}</p>
                 </>
                 : <>
-                  <p className={m.p10}>Ми несемо</p>
-                  <p className={m.p10_2}>відповідальність за</p>
-                  <p className={m.p10_2}>нашу репутацію, тому</p>
-                  <p className={m.p10_2}>обслуговуємо усі</p>
-                  <p className={m.p10}>автомийки SamWash і</p>
-                  <p className={m.p10}>після запуску</p>
+                  <p className={m.p10}>{t("main.weCarry")}</p>
+                  <p className={m.p10_2}>{t("main.acknowledgment2")}</p>
+                  <p className={m.p10_2}>{t("main.acknowledgment3")}</p>
+                  <p className={m.p10_2}>{t("main.serviceable2")}</p>
+                  <p className={m.p10}>{t("main.serviceable3")}</p>
+                  <p className={m.p10}>{t("main.launch")}</p>
                 </>
               }
 
               <div className={m.div10}>
-                {screen &&<span className={m.span10}>Гарантія 2 роки на все обладнання</span>}
-                <span className={m.p102}>Ви можете в цьому переконатись, відвідавши будь-яку мийку SamWash, які збудовані нами
-              протягом останніх 12-ти років.</span>
+                {screen &&<span className={m.span10}>{t("main.warranty")}</span>}
+                <span className={m.p102}>{t("main.youCanSee")}</span>
                 <div className={m.greenButDiv + " " + m.divGreen10}>
                   <a href="/nashi-avtomiyki/wsi">
                     <button className={m.greenBut} style={{ cursor: "pointer" }}>
-                      <span>СПИСОК АВТОМИЙОК</span>
+                      <span>{t("main.LISTOFCARWASHS")}</span>
                       <span className={m.spanArrow}>
                       <img src={image5} className={m.imgClass} alt={arrow}/>
                     </span>
                     </button>
                   </a>
                 </div>
-                {!screen &&<span className={m.span10}>Гарантія 2 роки на все обладнання</span>}
+                {!screen &&<span className={m.span10}>{t("main.warranty")}</span>}
               </div>
             </div>
           </div>
@@ -668,32 +724,30 @@ const MainPage = ({ t, setOnFooter }) => {
 
             {screen ? <>
                 <div className={m.container11}>
-                  <p className={m.p11}>Хочеш автомийку вже, а</p>
+                  <p className={m.p11}>{t("main.already")}</p>
                 </div>
                 <div className={m.container11_4}>
-                  <p className={m.p11}>грошей на даний момент не достатньо?</p>
+                  <p className={m.p11}>{t("main.enough")}</p>
                 </div>
                 <div className={m.container11_4+' '+m.c12}>
-                  <p className={m.p11}>Всього за 30% від загальної вартості, Ви</p>
+                  <p className={m.p11}>{t("main.only")}</p>
                 </div>
                 <div className={m.container11+' '+m.c11}>
-                  <p className={m.p11}>стаєте повноправним</p>
-                  <p className={m.p11}>власником бізнесу, який</p>
-                  <p className={m.p11}>відразу після запуску</p>
-                  <p className={m.p11}>приносить прибуток!</p>
+                  <p className={m.p11}>{t("main.become")}</p>
+                  <p className={m.p11}>{t("main.business")}</p>
+                  <p className={m.p11}>{t("main.immediately")}</p>
+                  <p className={m.p11}>{t("main.profit")}</p>
                 </div>
               </>
               : <>
-                <p className={m.p11}>Хочеш автомийку вже, а грошей на даний момент не достатньо? Всього за
-                  30% від загальної вартості, Ви стаєте повноправним власником бізнесу,
-                  який відразу після запуску приносить прибуток!</p>
+                <p className={m.p11}>{t("main.businessOwner")}</p>
               </>}
 
             <div className={m.container11_6}>
-              <p className={m.p11_2}>Лізинг на обладнання та накриття до 3-х років під 10% річних (при першому внеску 30%)</p>
+              <p className={m.p11_2}>{t("main.leasing")}</p>
               <div className={m.greenButDiv}>
                 <button className={m.greenBut} onClick={greenBut} style={{ cursor: "pointer" }}>
-                  <span>ЗАМОВИТИ КОНСУЛЬТЦІЮ</span><span className={m.spanArrow}>
+                  <span>{t("main.MOREINFORMATION")}</span><span className={m.spanArrow}>
               <img src={image5} className={m.imgClass} alt={arrow}/>
             </span>
                 </button>

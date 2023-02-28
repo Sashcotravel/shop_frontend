@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from "react";
 import {Link} from "react-router-dom";
 import s from './Home.module.css'
 import image4 from "../image/svg/sw logo.svg";
 
 
-const Thanks = ({ setOnFooter, t, checked }) => {
+const Thanks = ({ setOnFooter, t, checked, meneger }) => {
+
+  useLayoutEffect(() => {
+    setOnFooter(true)
+  }, [])
 
   useEffect(() => {
-
     setOnFooter(true)
-
     return () => {
       setOnFooter(false)
     }
@@ -32,13 +34,13 @@ const Thanks = ({ setOnFooter, t, checked }) => {
             </div>
 
             <div className={s.divP}>
-              <p className={s.thanksP}>Також ми відправили копію вашої заявки на Ваш e-mail, який Ви вказали.</p>
               {!checked && <p className={s.thanksP}>Наш менеджер зв'яжеться з Вами найближчим часом.</p>}
+              {meneger && <p className={s.thanksP}>Також ми відправили копію вашої заявки на Ваш e-mail, який Ви вказали.</p>}
             </div>
 
           </div>
 
-            <Link className={s.butThanks+' '+s.lineThanks} to="/">{t(`mainPageTo`)}</Link>
+            <a className={s.butThanks+' '+s.lineThanks} href="/">{t(`mainPageTo`)}</a>
 
         </div>
       </div>

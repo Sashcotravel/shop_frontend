@@ -34,7 +34,7 @@ export const LanguageSwitcher = () => {
 
   return (
     <div className={s.translateDiv}>
-      {screen ?
+      {/*{screen ?*/}
         <button className={s.trBut}>
           <span className={s.pLang + " " + s.hovP2}>{lang.toUpperCase()}</span>
           {/*{lang === "en" ? 'EN' : 'UA'}*/}
@@ -43,10 +43,10 @@ export const LanguageSwitcher = () => {
           <p className={`${s.pLang} ${s.hovP}`} title="ru" onClick={langClick}>RU</p>
         </button>
 
-        : <button className={s.trBut + " " + s.color} onClick={switcher2(lang === "en" ? "en" : lang === "ru" ? "ru" : 'ua')}>
-          { lang === "en" ? "en" : lang === "ru" ? "ru" : 'ua' }
-        </button>
-      }
+        {/*: <button className={s.trBut + " " + s.color} onClick={switcher2(lang === "en" ? "en" : lang === "ru" ? "ru" : 'ua')}>*/}
+      {/*    { lang === "en" ? "en" : lang === "ru" ? "ru" : 'ua' }*/}
+      {/*  </button>*/}
+      {/*}*/}
     {/*<button className={s.trBut + " " + `${lang === "ua" || lang === 'uk-UA'  || lang === '' ? s.color : ""}`}*/}
     {/*        onClick={switcher("ua")}>UA*/}
     {/*</button>*/}

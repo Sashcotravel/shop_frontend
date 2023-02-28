@@ -167,6 +167,7 @@
 .breads{
     color: #ddd;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .h4Title{
@@ -793,9 +794,6 @@ a[data-fancybox] img {
     .boxItem {
         margin: 30px;
     }
-    /*.div2Title{*/
-    /*    margin-left: 0;*/
-    /*}*/
     .titleH4{
         margin: -30px 0 50px 20px;
     }
@@ -808,9 +806,6 @@ a[data-fancybox] img {
     }
     .divIm2{
         height: 161px;
-    }
-    .imageBox {
-        margin: 20px 20px 0 0;
     }
     .titlePost {
         font: normal normal normal 36px Averta;
@@ -825,6 +820,7 @@ a[data-fancybox] img {
         width: 280px;
         height: 210px;
         margin: 0 20px 0 0;
+        object-fit: cover;
     }
     .footerMain {
         bottom: -115px;

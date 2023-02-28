@@ -852,7 +852,7 @@ a {
 }
 
 .p11{
-    font: normal normal normal 79px/90px Gilroy Light;
+    font: normal normal normal 72px/90px Gilroy Light;
 }
 
 .footerDiv{
@@ -1152,7 +1152,9 @@ video{
 .divImgSlider{
     padding: 20px;
     width: 60%;
-    height: 81%;
+    height: 100%;
+    top: -115px;
+    position: relative;
 }
 
 .circleDiv{
@@ -1167,12 +1169,21 @@ video{
 .imgClass2{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+}
+
+.h421 {
+    color: #B2B1B7;
+    font: normal normal 300 82px/90px Gilroy Light;
+    margin: 5px 0 85px -405px;
+    max-width: 800px;
 }
 
 
-
-
+.cap{
+    margin: 0 auto;
+    padding: 20px 0 0 20px;
+}
 
 
 
@@ -1185,6 +1196,15 @@ video{
     .container10_2, .container11_2, .container4_5, .animDiv1{
         grid-template-columns: 150px 405px 405px 405px 1fr;
     }
+    .h421 {
+        margin: 5px 0 85px -305px;
+    }
+    .h4{
+        width: 770px;
+    }
+    .h42{
+        margin: 5px 0 85px -305px;
+    }
     .percentPAnim2{
         margin: 50px 0 0 0;
     }
@@ -1195,14 +1215,14 @@ video{
         max-width: 1270px;
     }
     .p10{
-        max-width: 865px;
+        max-width: 923px;
         left: 405px;
     }
     .pSmart{
         font-size: 75px;
     }
     .p11{
-        font: normal normal normal 68px/90px Gilroy Light;
+        font: normal normal normal 61px/78px Gilroy Light;
     }
     .title5P, .p6, .p16{
         font: normal normal normal 44px/70px Gilroy Light;
@@ -1250,6 +1270,9 @@ video{
     .titleH1{
         font: normal normal 300 97px/121px Gilroy Light;
     }
+    .h421 {
+        margin: 5px 0 85px -205px;
+    }
     .p16{
         width: 790px;
     }
@@ -1261,6 +1284,9 @@ video{
     }
     .p4_5, .p4_52, .p10_2, .p10, .p11{
         font: normal normal normal 62px/90px Gilroy Light;
+    }
+    .p11{
+        font: normal normal normal 58px/83px Gilroy Light;
     }
     .p5{
         font: normal normal 300 24px/44px Gilroy Light;
@@ -1279,7 +1305,7 @@ video{
         max-width: 1270px;
     }
     .p10{
-        max-width: 730px;
+        max-width: 794px;
     }
     .divGreen10{
         right: 20px;
@@ -1290,11 +1316,11 @@ video{
     .pSmart{
         font-size: 65px;
     }
+    .pDos{
+        font-size: 40px;
+    }
     .sliderBox {
         height: 566px;
-    }
-    .divImgSlider {
-        height: 78%;
     }
     @keyframes title1 {
         from {
@@ -1314,6 +1340,9 @@ video{
         top: -195px;
         left: 95px;
         font-size: 35px;
+    }
+    .h421 {
+        margin: 5px 0 85px -105px;
     }
     .p16 {
         width: 629px;
@@ -1362,8 +1391,11 @@ video{
         padding-left: 50px;
         padding-top: 120px;
     }
-    .h4 {
-        font: normal normal 300 70px/40px Gilroy Light;
+    .h4, .h42 {
+        font: normal normal 300 70px/60px Gilroy Light;
+    }
+    .h42{
+        margin-left: 0;
     }
     .pDos2 {
         font: normal normal 300 40px/90px Gilroy Light;
@@ -1468,9 +1500,6 @@ video{
     .sliderBox {
         height: 566px;
     }
-    .divImgSlider {
-        height: 82%;
-    }
     @keyframes title1 {
         from {
             position: relative;
@@ -1495,7 +1524,9 @@ video{
     }
     .arrowImg {
         width: 70px;
-        top: 50px;
+        height: 70px;
+        top: 30px;
+        left: 20px;
     }
     .pBig2 {
         width: 300px;
@@ -1511,14 +1542,15 @@ video{
         width: 40%;
         flex-direction: column;
         align-items: flex-start;
-        padding: 40px 0px 0 20px;
+        padding: 20px 0 0 20px;
     }
     .sliderDiv {
         flex-direction: column;
     }
     .divImgSlider {
-        height: 46%;
+        height: 50%;
         width: 100%;
+        position: static;
     }
     .div10{
         display: block;
@@ -1565,6 +1597,9 @@ video{
     .pH2, .h42 {
         margin-left: -100px;
     }
+    .h42{
+        margin-left: 0;
+    }
     .p4_52 {
         margin-left: -200px;
     }
@@ -1581,6 +1616,9 @@ video{
     }
     .p11 {
         font: normal normal normal 42px/60px Gilroy Light;
+    }
+    .h421 {
+        margin: 5px 0 85px 0;
     }
     .percentDiv2_2 {
         margin-left: 0;
@@ -1812,7 +1850,7 @@ video{
         padding-top: 80px;
         padding-bottom: 40px;
     }
-    .h4, .h42 {
+    .h4, .h42, .h421 {
         width: 470px;
         font-size: 40px;
         margin: 0;
@@ -2038,10 +2076,6 @@ video{
         margin: 0 0 20px 0;
         width: 230px;
     }
-    .arrowImg {
-        width: 70px;
-        top: 50px;
-    }
     .pBig2 {
         width: 300px;
         font-size: 10px;
@@ -2051,19 +2085,6 @@ video{
         margin-left: 0;
         height: 630px;
         width: 335px;
-    }
-    .divInfo {
-        width: 40%;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 40px 0px 0 20px;
-    }
-    .sliderDiv {
-        flex-direction: column;
-    }
-    .divImgSlider {
-        height: 46%;
-        width: 100%;
     }
 }
 
@@ -2283,7 +2304,7 @@ video{
         padding-top: 80px;
         padding-bottom: 40px;
     }
-    .h4, .h42 {
+    .h4, .h42, .h421 {
         width: 335px;
         font-size: 30px;
         margin: 0;
