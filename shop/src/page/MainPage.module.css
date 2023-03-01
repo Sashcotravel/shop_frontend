@@ -1179,11 +1179,20 @@ video{
     max-width: 800px;
 }
 
-
-.cap{
-    margin: 0 auto;
-    padding: 20px 0 0 20px;
+.pBack{
+    width: 200px;
 }
+
+.sNane{
+    font: normal normal 300 33px/44px Gilroy Light;
+    color: #7F7F80;
+    display: block;
+    position: relative;
+    left: 300px;
+    top: -50px;
+}
+
+
 
 
 
@@ -1496,6 +1505,7 @@ video{
     }
     .arrowImg {
         width: 100px;
+        height: 100px;
     }
     .sliderBox {
         height: 566px;
@@ -1513,6 +1523,10 @@ video{
 }
 
 @media screen and (max-width: 1025px){
+    .sNane{
+        font: normal normal 300 25px/44px Gilroy Light;
+        left: 190px;
+    }
     .pSmart{
         font-size: 50px;
         width: 300px;
@@ -1589,6 +1603,9 @@ video{
     .container10_2, .container11_2, .container4_5, .animDiv1{
         grid-template-columns: 100px 155px 305px 305px 1fr;
     }
+    .container4_52{
+        grid-column-end: 3;
+    }
     .pH, .pH2 {
         font-size: 51px;
         width: 630px;
@@ -1596,6 +1613,9 @@ video{
     }
     .pH2, .h42 {
         margin-left: -100px;
+    }
+    .p6 {
+        max-width: 615px;
     }
     .h42{
         margin-left: 0;
@@ -1612,10 +1632,10 @@ video{
         font-size: 40px;
         line-height: 1.2;
         width: 759px;
-        margin-left: -165px;
+        margin-left: -210px;
     }
     .p11 {
-        font: normal normal normal 42px/60px Gilroy Light;
+        font: normal normal normal 40px/50px Gilroy Light;
     }
     .h421 {
         margin: 5px 0 85px 0;
@@ -1634,6 +1654,9 @@ video{
     }
     .counter_item2{
         margin: 80px 0 20px 0;
+    }
+    .pBack{
+        width: 140px;
     }
     @keyframes title1 {
         from {
@@ -2089,6 +2112,10 @@ video{
 }
 
 @media screen and (max-width: 600px) {
+    .sNane{
+        font: normal normal 300 25px/44px Gilroy Light;
+        left: 190px;
+    }
     .circleDiv{
         margin-top: 20px;
     }
@@ -2329,7 +2356,7 @@ video{
     .arrowImg {
         width: 70px;
         height: 70px;
-        top: 50px;
+        top: 30px;
         left: 20px;
     }
     .pBig2 {
@@ -2347,7 +2374,7 @@ video{
         width: 40%;
         flex-direction: column;
         align-items: flex-start;
-        padding: 40px 0px 0 20px;
+        padding: 0 0 0 20px;
     }
     .sliderDiv {
         flex-direction: column;
@@ -2359,7 +2386,7 @@ video{
 
     .container4_5 {
         display: block;
-        min-height: 375px;
+        min-height: 420px;
         padding-left: 20px;
         padding-top: 70px;
     }
@@ -2422,44 +2449,37 @@ video{
         display: block;
         margin-bottom: 15px;
     }
-
     .pBig23 {
+        width: 260px;
         font-size: 18px;
         top: 45px;
         font-weight: 600;
     }
-
     .container6 {
-        min-height: 500px;
+        min-height: 540px;
         display: block;
         padding-top: 80px;
     }
-
     .container6_2 {
         margin-left: 20px;
     }
-
     .p6 {
         font-size: 30px;
         line-height: 1;
     }
-
     .li {
         width: 102%;
     }
-
     .container7_2 {
         display: block;
         height: 618px;
     }
-
     .container7 {
         display: block;
         width: 90%;
         padding-top: 80px;
         min-height: 618px;
     }
-
     .container7_3 {
         margin-left: 20px;
     }

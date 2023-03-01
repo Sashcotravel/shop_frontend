@@ -15,9 +15,25 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
   const { idMiyka } = useParams();
   const location = useLocation();
 
+  let one = postOne?.obl
+  let two = postOne?.obl2
   const o = -115
   const url2 = location.pathname.slice(location.pathname.length - 2) !== "en";
+  let lang = localStorage.i18nextLng
 
+
+  useEffect(() => {
+    if(lang === 'ua'){
+      document.title = `Мийка самообслуговування ${postOne?.city} вул. ${postOne?.st} | Автомийка SamWash`;
+      document.description = `Автомийка самообслуговування ${postOne?.city} вул. ${postOne?.st}. 
+      Актуальні ціни на самомийку. Якісно та швидко. Тел. +38 (050) 59 23 772 `
+    }
+    if(lang === 'ru'){
+      document.title = `Мойка самообслуживания ${postOne?.city} ул. ${postOne?.st} | Автомойка SamWash`
+      document.description = `Автомойка самообслуживания SamWash ${postOne?.city} ул. ${postOne?.st}.
+       Актуальные цены. Качественно и быстро.Тел. +38 (050) 59 23 772`
+    }
+  }, [])
 
   useEffect(() => {
     setOnFooter(true);
@@ -33,10 +49,6 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
   }, []);
 
   const road = () => {};
-
-
-  let one = postOne?.obl
-  let two = postOne?.obl2
 
   const oblTrue = (one, two) => {
     if (url2) {
@@ -59,7 +71,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
 
   let fg = oblTrue(one, two)
 
-  const style = { margin: '10px auto 60px 100px' }
+  const style = { margin: '0 auto 60px 100px' }
 
   const postColIn = (colPost, className) => {
     if(colPost === 0){

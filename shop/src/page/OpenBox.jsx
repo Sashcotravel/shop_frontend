@@ -6,10 +6,10 @@ import image2 from '../image/svg/Group31.svg'
 import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
 
 
-const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
+const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   useEffect(() => {
-    setUrl("construction")
+    setUrl("openBox")
   }, [])
 
   const addCount = (e) => {
@@ -137,19 +137,20 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
       <div className={s.divBox}>
 
+
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/back.jpg")} className={"base"} id="img26" alt='Баки для накопичення води'/>
-                  {/*<img src={(`/static/media/${data[21].src}.${data[21].src2}`)} className={"base"} id="img26" />*/}
-                  {size(26)}
+                  <LazyLoadImage src={require("../image2/Fura_1.jpg")} className={"base"} id="img16" alt='ТКомплект'/>
+                  {/*<img src={(`/static/media/${data[10].src}.${data[10].src2}`)} className={"base"} id="img16" />*/}
+                  {size(16)}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[21].nameOfGoods}</p>
+              <p className={s.itemName}>{data[10].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(21)}
+              {boxBut(10)}
             </div>
           </div>
         </LazyLoadComponent>
@@ -159,14 +160,14 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/reshnas.jpg")} className={"base"} id="img45" alt='Решітковий настил' />
-                  {/*<img src={(`/static/media/${data[50].src}.${data[50].src2}`)} className={"base"} id="img45" />*/}
-                  {size(45)}
+                  <LazyLoadImage src={require("../image2/Fura_3.jpg")} className={"base"} id="img17" alt='ТКомплект'/>
+                  {/*<img src={(`/static/media/${data[11].src}.${data[11].src2}`)} className={"base"} id="img17" />*/}
+                  {size(17)}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[50].nameOfGoods}</p>
+              <p className={s.itemName}>{data[11].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(50)}
+              {boxBut(11)}
             </div>
           </div>
         </LazyLoadComponent>
@@ -174,16 +175,21 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
+              {/*<div className={"img29 base"} id="img29">*/}
+              {/*  {size(29)}*/}
+              {/*</div>*/}
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/reshnas2.jpg")} className={"base"} id="img46" alt='Решітковий настил' />
-                  {/*<img src={(`/static/media/${data[51].src}.${data[51].src2}`)} className={"base"} id="img46" />*/}
-                  {size(46)}
+                  <LazyLoadImage src={require("../image2/vidpostfur.jpg")} className={"base"}
+                                 id="img29" alt='Відкритий пост для фури' loading='lazy'/>
+                  {/*<img src={require("../image2/vidpostfur.jpg")} className={"base"}*/}
+                  {/*     id="img29" alt='Відкритий пост для фури' loading='lazy'/>*/}
+                  {size(29)}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[51].nameOfGoods}</p>
+              <p className={s.itemName}>{data[35].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(51)}
+              {boxBut(35)}
             </div>
           </div>
         </LazyLoadComponent>
@@ -191,16 +197,19 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
+              {/*<div className={"img13 base"} id="img13">*/}
+              {/*  {size(13)}*/}
+              {/*</div>*/}
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/reshnas2.jpg")} className={"base"} id="img47" alt='Решітковий настил' />
-                  {/*<img src={(`/static/media/${data[52].src}.${data[52].src2}`)} className={"base"} id="img47" />*/}
-                  {size(47)}
+                  <LazyLoadImage src={require("../image/IMG_0065(2).jpg")} className={"base"} id="img13" alt='Т-подібний відкритий пост' loading='lazy'/>
+                  {/*<img src={require("../image/IMG_0065(2).jpg")} className={"base"} id="img13" alt='Т-подібний відкритий пост' loading='lazy'/>*/}
+                  {size(13)}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[52].nameOfGoods}</p>
+              <p className={s.itemName}>{data[31].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(52)}
+              {boxBut(31)}
             </div>
           </div>
         </LazyLoadComponent>
@@ -208,24 +217,68 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
+              {/*<div className={"img14 base"} id="img14">*/}
+              {/*  {size(14)}*/}
+              {/*</div>*/}
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/reshnas2.jpg")} className={"base"} id="img48" alt='Решітковий настил' />
-                  {/*<img src={(`/static/media/${data[53].src}.${data[53].src2}`)} className={"base"} id="img48" />*/}
-                  {size(48)}
+                  <LazyLoadImage src={require("../image2/ppodvidpostbut.jpg")} className={"base"} id="img14" alt='П-подібний відкритий пост' loading='lazy'/>
+                  {/*<img src={(`/static/media/${data[32].src}.${data[32].src2}`)} className={"base"} id="img14" />*/}
+                  {size(14)}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[53].nameOfGoods}</p>
+              <p className={s.itemName}>{data[32].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(53)}
+              {boxBut(32)}
             </div>
           </div>
         </LazyLoadComponent>
 
+        <LazyLoadComponent>
+          <div className={s.container}>
+            <div className={s.boxOne}>
+              {/*<div className={"img15 base"} id="img15">*/}
+              {/*  {size(15)}*/}
+              {/*</div>*/}
+              <figure>
+                <div style={{ height: "315px" }}>
+                  <LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"}
+                                 id="img15" alt='Т-подібний із захистом відкритий пост' loading='lazy'/>
+                  {/*<img src={(`/static/media/${data[33].src}.${data[33].src2}`)} className={"base"} id="img15" />*/}
+                  {size(15)}
+                </div>
+              </figure>
+              <p className={s.itemName}>{data[33].nameOfGoods}</p>
+              <p className={s.itemDesc}></p>
+              {boxBut(33)}
+            </div>
+          </div>
+        </LazyLoadComponent>
+
+        <LazyLoadComponent>
+          <div className={s.container}>
+            <div className={s.boxOne}>
+              {/*<div className={"img28 base"} id="img28">*/}
+              {/*  {size(28)}*/}
+              {/*</div>*/}
+              <figure>
+                <div style={{ height: "315px" }}>
+                  <LazyLoadImage src={require("../image2/ppodvidpost.jpg")} className={"base"}
+                                 id="img28" alt='П-подібний із захистом відкритий пост' loading='lazy'/>
+                  {/*<img src={(`/static/media/${data[34].src}.${data[34].src2}`)} className={"base"} id="img28" />*/}
+                  {size(28)}
+                </div>
+              </figure>
+              <p className={s.itemName}>{data[34].nameOfGoods}</p>
+              <p className={s.itemDesc}></p>
+              {boxBut(34)}
+            </div>
+          </div>
+        </LazyLoadComponent>
       </div>
 
     </>
   );
 };
 
-export default Build;
+export default OpenBox;

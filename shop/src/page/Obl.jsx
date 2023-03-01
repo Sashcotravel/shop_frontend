@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "../component/Home.module.css";
 import "./Obl.css";
 import image1 from "../image/svg/Fullscreenicon.svg";
@@ -6,11 +6,26 @@ import image2 from "../image/svg/Group31.svg";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 
 
-const Obl = ({ t, data, userOrder, setTotal, total }) => {
+const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   const [pina, setPina] = useState();
 
+  useEffect(() => {
+    setUrl("equipment")
+    if(lang === 'ua'){
+      document.title = "Обладнання для автомийок самообслуговування | Купити в Україні | SamWash"
+      document.description = 'Великий вибір обладнання для автомийок самообслуговування за вигідними ' +
+        'цінами від SamWash. Безкоштовна консультація та швидка доставка по всій Україні.'
+    }
+    if(lang === 'ru'){
+      document.title = 'Купить оборудование для мойки самообслуживания | Цена в Украине | SamWash'
+      document.description = 'Большой выбор оборудования для автомоек самообслуживания по выгодной цене от ' +
+        'SamWash. Бесплатная консультация и быстрая доставка по всей Украине.'
+    }
+  }, [])
+
   const screen = window.screen.availWidth > 900
+  let lang = localStorage.i18nextLng
 
   const addCount = (e) => {
     data.forEach(item => {
@@ -27,6 +42,26 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
         userOrder.push(item);
       }
     });
+  };
+
+  const addCount2 = (e) => {
+    data.forEach(item => {
+      if (item.nameOfGoods === e.target.title) {
+        if(item.size < 1){
+        setPina(item);
+        userOrder.forEach((el, index) => {
+          if (item === el) {
+            userOrder.splice(index, 1);
+          }
+        });
+          item.size = item.size + 1;
+          item.total = item.size * item.prise;
+          setTotal((actual) => actual + item.prise);
+          userOrder.push(item);
+        }
+      }
+    });
+    console.log(userOrder);
   };
 
   const addCountCheck = (e) => {
@@ -254,14 +289,22 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" alt='Компресор'/>
-                  {/*<img src={(`/static/media/${data[12].src}.${data[12].src2}`)} className={"base"} id="img18" />*/}
-                  {size(18)}
+                  {/*<img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className={"base"} id="img3" />*/}
+                  <LazyLoadImage src={require("../image2/teh4progandpausa.jpg")} className={"base"}
+                                 id="img3" alt='Технологічне обладнання' loading='lazy'/>
+                  {size(3)}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[12].nameOfGoods}</p>
-              <p className={s.itemDesc}></p>
-              {boxBut(12)}
+              <p className={s.itemName}>{data[0].nameOfGoods}</p>
+              <p className={s.itemDesc}>Основне миття ГЕЛЕМ,
+                ополіскування помякшеною водою,
+                віск з осушенням,
+                осмос для надання блиску,
+                кнопка "Пауза" <br/>
+                Система ANTIFROST TURBO ECO Електронна система управління Schneider Germany з 4х рівневою системою
+                захисту для безперебійної роботи обладнання до -35 °С навіть при відсутності електроенергії чи
+                водопостачання. Підключена система для економії води для системи antifrost до 90%.</p>
+              {boxBut(0)}
             </div>
           </div>
         </LazyLoadComponent>
@@ -312,6 +355,57 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
           </div>
         </LazyLoadComponent>
 
+        <LazyLoadComponent> {/* pina */}
+          <div className={s.container}>
+            <div className={s.boxOne}>
+              <figure>
+                <div style={{ height: "315px" }}>
+                  <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img103" alt='Кольорова'/>
+                  {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
+                  {size(103)}
+                </div>
+              </figure>
+              <p className={s.itemName}>{data[59].nameOfGoods}</p>
+              <p className={s.itemDesc}></p>
+              {boxBut(59)}
+            </div>
+          </div>
+        </LazyLoadComponent>
+
+        <LazyLoadComponent>
+          <div className={s.container}>
+            <div className={s.boxOne}>
+              <figure>
+                <div style={{ height: "315px" }}>
+                  <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img19" alt='Інвертор'/>
+                  {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
+                  {size(19)}
+                </div>
+              </figure>
+              <p className={s.itemName}>{data[14].nameOfGoods}</p>
+              <p className={s.itemDesc}></p>
+              {boxBut(14)}
+            </div>
+          </div>
+        </LazyLoadComponent>
+
+        <LazyLoadComponent> {/* Кабель */}
+          <div className={s.container}>
+            <div className={s.boxOne}>
+              <figure>
+                <div style={{ height: "315px" }}>
+                  <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img102" alt='Кабель'/>
+                  {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
+                  {size(102)}
+                </div>
+              </figure>
+              <p className={s.itemName}>{data[58].nameOfGoods}</p>
+              <p className={s.itemDesc}></p>
+              {boxBut(58)}
+            </div>
+          </div>
+        </LazyLoadComponent>
+
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
@@ -325,6 +419,34 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
               <p className={s.itemName}>{data[8].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(8)}
+            </div>
+          </div>
+        </LazyLoadComponent>
+
+        <LazyLoadComponent>
+          <div className={s.container}>
+            <div className={s.boxOne}>
+              <figure>
+                <div style={{ height: "315px" }}>
+                  <LazyLoadImage src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" alt='Компресор'/>
+                  {/*<img src={(`/static/media/${data[12].src}.${data[12].src2}`)} className={"base"} id="img18" />*/}
+                  {size(18)}
+                </div>
+              </figure>
+              <p className={s.itemName}>{data[12].nameOfGoods}</p>
+              <p className={s.itemDesc}></p>
+              <div className={s.divBut}>
+                <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
+                  {/*<button className={s.butMin}>*/}
+                  {/*  <span onClick={minesCount} title={data[12].nameOfGoods} className={s.spanMin}>-</span>*/}
+                  {/*</button>*/}
+                  {/*<span className={s.itemTotalSize} id="lightblue">{data[12].size}</span>*/}
+                  {/*<button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>*/}
+                  {/*  <span onClick={addCount} title={data[12].nameOfGoods} className={s.spanAdd}>+</span>*/}
+                  {/*</button>*/}
+                </div>
+                <span className={s.itemTotal}>{data[12].total} грн</span>
+              </div>
             </div>
           </div>
         </LazyLoadComponent>
@@ -351,82 +473,6 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/Fura_1.jpg")} className={"base"} id="img16" alt='ТКомплект'/>
-                  {/*<img src={(`/static/media/${data[10].src}.${data[10].src2}`)} className={"base"} id="img16" />*/}
-                  {size(16)}
-                </div>
-              </figure>
-              <p className={s.itemName}>{data[10].nameOfGoods}</p>
-              <p className={s.itemDesc}></p>
-              {boxBut(10)}
-            </div>
-          </div>
-        </LazyLoadComponent>
-
-        <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
-              <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/Fura_3.jpg")} className={"base"} id="img17" alt='ТКомплект'/>
-                  {/*<img src={(`/static/media/${data[11].src}.${data[11].src2}`)} className={"base"} id="img17" />*/}
-                  {size(17)}
-                </div>
-              </figure>
-              <p className={s.itemName}>{data[11].nameOfGoods}</p>
-              <p className={s.itemDesc}></p>
-              {boxBut(11)}
-            </div>
-          </div>
-        </LazyLoadComponent>
-
-        <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
-              <figure>
-                <div style={{ height: "315px" }}>
-                  {/*<img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className={"base"} id="img3" />*/}
-                  <LazyLoadImage src={require("../image2/teh4progandpausa.jpg")} className={"base"}
-                                 id="img3" alt='Технологічне обладнання' loading='lazy'/>
-                  {size(3)}
-                </div>
-              </figure>
-              <p className={s.itemName}>{data[0].nameOfGoods}</p>
-              <p className={s.itemDesc}>Основне миття ГЕЛЕМ,
-                ополіскування помякшеною водою,
-                віск з осушенням,
-                осмос для надання блиску,
-                кнопка "Пауза" <br/>
-                Система ANTIFROST TURBO ECO Електронна система управління Schneider Germany з 4х рівневою системою
-                захисту для безперебійної роботи обладнання до -35 °С навіть при відсутності електроенергії чи
-                водопостачання. Підключена система для економії води для системи antifrost до 90%.</p>
-              {boxBut(0)}
-            </div>
-          </div>
-        </LazyLoadComponent>
-
-        <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
-              <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img19" alt='Інвертор'/>
-                  {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
-                  {size(19)}
-                </div>
-              </figure>
-              <p className={s.itemName}>{data[14].nameOfGoods}</p>
-              <p className={s.itemDesc}></p>
-              {boxBut(14)}
-            </div>
-          </div>
-        </LazyLoadComponent>
-
-        <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
-              <figure>
-                <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/kasa.jpeg")} className={"base"} id="img20" alt='Панель оператора'/>
                   {/*<img src={(`/static/media/${data[15].src}.${data[15].src2}`)} className={"base"} id="img20" />*/}
                   {size(20)}
@@ -435,23 +481,6 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
               <p className={s.itemName}>{data[15].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(15)}
-            </div>
-          </div>
-        </LazyLoadComponent>
-
-        <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
-              <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/aprrevcoin.jpeg")} className={"base"} id="img21" alt='Панель оператора'/>
-                  {/*<img src={(`/static/media/${data[16].src}.${data[16].src2}`)} className={"base"} id="img21" />*/}
-                  {size(21)}
-                </div>
-              </figure>
-              <p className={s.itemName}>{data[16].nameOfGoods}</p>
-              <p className={s.itemDesc}></p>
-              {boxBut(16)}
             </div>
           </div>
         </LazyLoadComponent>
@@ -485,7 +514,18 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
               </figure>
               <p className={s.itemName}>{data[18].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(18)}
+              <div className={s.divBut}>
+                <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
+                  <button className={s.butMin}>
+                    <span onClick={minesCount} title={data[18].nameOfGoods} className={s.spanMin}>-</span>
+                  </button>
+                  <span className={s.itemTotalSize} id="lightblue">{data[18].size}</span>
+                  <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                    <span onClick={addCount2} title={data[18].nameOfGoods} className={s.spanAdd}>+</span>
+                  </button>
+                </div>
+                <span className={s.itemTotal}>{data[18].total} грн</span>
+              </div>
             </div>
           </div>
         </LazyLoadComponent>
@@ -502,7 +542,18 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
               </figure>
               <p className={s.itemName}>{data[19].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(19)}
+              <div className={s.divBut}>
+                <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
+                  <button className={s.butMin}>
+                    <span onClick={minesCount} title={data[19].nameOfGoods} className={s.spanMin}>-</span>
+                  </button>
+                  <span className={s.itemTotalSize} id="lightblue">{data[19].size}</span>
+                  <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                    <span onClick={addCount2} title={data[19].nameOfGoods} className={s.spanAdd}>+</span>
+                  </button>
+                </div>
+                <span className={s.itemTotal}>{data[19].total} грн</span>
+              </div>
             </div>
           </div>
         </LazyLoadComponent>
@@ -519,41 +570,18 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
               </figure>
               <p className={s.itemName}>{data[20].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              {boxBut(20)}
-            </div>
-          </div>
-        </LazyLoadComponent>
-
-        <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
-              <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/back.jpg")} className={"base"} id="img26" alt='Баки для накопичення води'/>
-                  {/*<img src={(`/static/media/${data[21].src}.${data[21].src2}`)} className={"base"} id="img26" />*/}
-                  {size(26)}
+              <div className={s.divBut}>
+                <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
+                  <button className={s.butMin}>
+                    <span onClick={minesCount} title={data[20].nameOfGoods} className={s.spanMin}>-</span>
+                  </button>
+                  <span className={s.itemTotalSize} id="lightblue">{data[20].size}</span>
+                  <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
+                    <span onClick={addCount2} title={data[20].nameOfGoods} className={s.spanAdd}>+</span>
+                  </button>
                 </div>
-              </figure>
-              <p className={s.itemName}>{data[21].nameOfGoods}</p>
-              <p className={s.itemDesc}></p>
-              {boxBut(21)}
-            </div>
-          </div>
-        </LazyLoadComponent>
-
-        <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
-              <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/et1000.jpg")} className={"base"} id="img27" alt='Жетони' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[22].src}.${data[22].src2}`)} className={"base"} id="img27" />*/}
-                  {size(27)}
-                </div>
-              </figure>
-              <p className={s.itemName}>{data[22].nameOfGoods}</p>
-              <p className={s.itemDesc}></p>
-              {boxBut(22)}
+                <span className={s.itemTotal}>{data[20].total} грн</span>
+              </div>
             </div>
           </div>
         </LazyLoadComponent>
@@ -582,3 +610,21 @@ const Obl = ({ t, data, userOrder, setTotal, total }) => {
 };
 
 export default Obl;
+
+
+{/*<LazyLoadComponent> */}
+{/*  <div className={s.container}>*/}
+{/*    <div className={s.boxOne}>*/}
+{/*      <figure>*/}
+{/*        <div style={{ height: "315px" }}>*/}
+{/*          <LazyLoadImage src={require("../image2/aprrevcoin.jpeg")} className={"base"} id="img21" alt='Панель оператора'/>*/}
+{/*          /!*<img src={(`/static/media/${data[16].src}.${data[16].src2}`)} className={"base"} id="img21" />*!/*/}
+{/*          {size(21)}*/}
+{/*        </div>*/}
+{/*      </figure>*/}
+{/*      <p className={s.itemName}>{data[16].nameOfGoods}</p>*/}
+{/*      <p className={s.itemDesc}></p>*/}
+{/*      {boxBut(16)}*/}
+{/*    </div>*/}
+{/*  </div>*/}
+{/*</LazyLoadComponent>*/}

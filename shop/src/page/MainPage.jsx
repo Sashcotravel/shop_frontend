@@ -14,12 +14,12 @@ import image3 from "../image/svg/SW icon.svg";
 import image4 from "../image/svg/output.mp4";
 import image5 from "../image/svg/Group 103.svg";
 import image6 from "../image/svg/map icon.svg";
-import { fetchMailDimaZam } from "../API/post";
+import { fetchCaptcha, fetchMailDimaZam } from "../API/post";
 import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { defaultTheme } from './Theme'
 import { Carousel } from "./carousel/Carousel";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
-import ReCAPTCHA from "react-google-recaptcha";
+import { reCaptchaExecute  } from 'recaptcha-v3-react-function-async'
 
 
 
@@ -29,36 +29,36 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     name: "", phone: "", email: "" });
   const [formPass, setFormPass] = useState({
     phone: false, email: false });
-  const [captchaIsDone, setCaptchaIsDone] = useState(false)
 
   let lang = localStorage.i18nextLng
   const screen = window.screen.availWidth > 900
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const arrow = 'стрілка'
-  // const key = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-  const key = '6LdIRr8kAAAAAKaeaG5sQIIinVfO7j_fnRY-3Nv0'
-
-  // 6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl  пользователей
-  // 6LeDKr8kAAAAAFCPPS6RBsDT9T6a5IpFgWFmzkXg  сайтом и сервисом
-
-  // 6LdIRr8kAAAAAKaeaG5sQIIinVfO7j_fnRY-3Nv0  пользователей
-  // 6LdIRr8kAAAAABb3s8rkmTvo3ObUhzGI1SzkNec6  сайтом и сервисом
+  const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAX7re_mdCccwAFdJFDpkAyODXH-WRBvXg"
   })
 
-  function Home () {
-    if(!isLoaded) return <div>Завантаження...</div>
-    // return <Map />
-  }
-
   const defaultOption = {
     panControl: true, mapTypeControl: false, scaleControl: false, streetViewControl: false,
     rotateControl: false, fullscreenControl: false, disableDoubleClickZoom: true, styles: defaultTheme
   }
+
+  useEffect(() => {
+    if(lang === 'ua'){
+      document.title = "Купити мийку самообслуговування під ключ | Вигідна ціна | SamWash";
+      document.description = 'Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! ' +
+        'Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'
+    }
+    if(lang === 'ru'){
+      document.title = 'Купить мойку самообслуживания под ключ | Выгодная цена | SamWash'
+      document.description = 'Ищете мойку самообслуживания под ключ? Обращайтесь к нам! Мы будем' +
+        ' заниматься полным циклом строительства автомоек и обеспечим их эффективность и качество.'
+    }
+  }, [])
 
   const coordinat = [
     { center: {lat: 49.4042, lng: 24.6073},
@@ -87,6 +87,11 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
       <MarkerF position={center5} icon={image6} />
       {/*{ Marker(coordinat) }*/}
     </GoogleMap>
+  }
+
+  function Home () {
+    if(!isLoaded) return <div>Завантаження...</div>
+    // return <Map />
   }
 
   useEffect(() => {
@@ -154,13 +159,17 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
 
   const useSubmit = async () => {
     if(formPass.email && formPass.phone){
-      let con = document.getElementById("lightblue");
-      con.style.visibility = "hidden";
-      let obj = { user: userData };
-      dispatch(fetchMailDimaZam(obj));
-      setMeneger(false)
-      setChecked(false)
-      navigate('/thanks')
+      let gtoken = await reCaptchaExecute(key, 'setting')
+      let res = await dispatch(fetchCaptcha({gtoken}))
+      if(res.payload){
+        let con = document.getElementById("lightblue");
+        con.style.visibility = "hidden";
+        let obj = { user: userData };
+        dispatch(fetchMailDimaZam(obj));
+        setMeneger(false)
+        setChecked(false)
+        navigate('/thanks')
+      }
     }
   };
 
@@ -268,13 +277,14 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     }
   };
 
-  const onChange = () => {
-    setCaptchaIsDone(true)
-  }
 
   return <div>
 
     <main style={{ backgroundColor: "#283338" }}>
+
+      This site is protected by reCAPTCHA and the Google
+      <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+      <a href="https://policies.google.com/terms">Terms of Service</a> apply.
 
       <div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
         <div className={s.userdata2}>
@@ -288,20 +298,19 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
           <br />
           <input className={s.inputUser} type="name" title="name"
                  placeholder={`${t("enterName")}`} onChange={(e) => {
-            setUserData(memo((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };}));}} />
+            setUserData((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };});}} />
           <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
                  placeholder={`${t("enterEmail")}`} onChange={(e) => {
-            setUserData(memo((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };}));}} />
+            setUserData((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };});}} />
           <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onBlur={onBlur2}
                  placeholder={`${t("enterYourPhoneNumber")}`} onChange={ (e) => {
-            setUserData(memo((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };}));}} />
-          <ReCAPTCHA sitekey={key} onChange={onChange} className={m.cap} />
+            setUserData((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };});}} />
           <br />
           <button className={s.footerBut} style={{ width: "50%", margin: "30px auto" }}
-                  onClick={useSubmit} disabled={!formPass.email && !formPass.phone && captchaIsDone}>{t("send")}</button>
+                  onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>{t("send")}</button>
         </div>
       </div>
 
@@ -453,7 +462,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
               <p className={m.pYear} id="pes3" data-target={250}>0</p>
-              <p className={m.pDos} style={{ width: "210px" }}>{t("main.boxes")} <br /> {t("main.turnkey")}</p>
+              <p className={m.pDos+' '+m.pBack}>{t("main.boxes")} <br /> {t("main.turnkey")}</p>
             </div>
           </section>
         </div>
@@ -492,21 +501,21 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
 
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
-                  <p className={m.pSmart}>MARCO</p><p className={m.pPrise}>7 700 € {t("main.forPost")}</p>
+                  <p className={m.pSmart}>MARCO</p><p className={m.pPrise}>8 200 € {t("main.forPost")}</p>
                   <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image212} className={m.imgClass2} alt='MARCO' loading="lazy"/></div>*/}
                 <div className={m.divImgSlider}><LazyLoadImage src={image212} className={m.imgClass2} alt='MARCO' /></div>
               </div>
 
-              <div className={m.sliderDiv}>
-                <div className={m.divInfo}>
-                  <p className={m.pSmart}>MARCO 2</p><p className={m.pPrise}>8 200 € {t("main.forPost")}</p>
-                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
-                </div>
-                {/*<div className={m.divImgSlider}><img src={image21234} className={m.imgClass2} alt='MARCO 2' loading="lazy"/></div>*/}
-                <div className={m.divImgSlider}><LazyLoadImage src={image21234} className={m.imgClass2} alt='MARCO 2' /></div>
-              </div>
+              {/*<div className={m.sliderDiv}>*/}
+              {/*  <div className={m.divInfo}>*/}
+              {/*    <p className={m.pSmart}>MARCO 2</p><p className={m.pPrise}>8 200 € {t("main.forPost")}</p>*/}
+              {/*    <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>*/}
+              {/*  </div>*/}
+              {/*  /!*<div className={m.divImgSlider}><img src={image21234} className={m.imgClass2} alt='MARCO 2' loading="lazy"/></div>*!/*/}
+              {/*  <div className={m.divImgSlider}><LazyLoadImage src={image21234} className={m.imgClass2} alt='MARCO 2' /></div>*/}
+              {/*</div>*/}
 
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
@@ -557,7 +566,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
           </div>
         </LazyLoadComponent>
 
-        <LazyLoadComponent>
+        <LazyLoadComponent> {/* translate*/}
           <div className={m.container5_2}>
             <div className={m.slideStyleBack}></div>
             <div className={m.container5}>
@@ -570,7 +579,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                     <span className={m.spanIm}>{t("main.Schneider")}</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>...</span></li>
+                    <span className={m.spanIm}>Застосування стандартів ISO та IEC</span></li>
                 </ul>
                 <span className={m.pBig23+' '+m.pBig23_3} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
               </div>
@@ -692,7 +701,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <p className={m.p10_2}>{t("main.acknowledgment3")}</p>
                   <p className={m.p10_2}>{t("main.serviceable2")}</p>
                   <p className={m.p10}>{t("main.serviceable3")}</p>
-                  <p className={m.p10}>{t("main.launch")}</p>
+                  <p className={m.p10}>{t("main.launch2")}</p>
                 </>
               }
 
@@ -763,8 +772,11 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     <LazyLoadComponent>
       <footer className={m.footerDiv}>
         <div className={m.footerDiv3}>
-          <span className={m.footerSpan}>info@samwash.com</span>
-          <span className={m.footerSpan}>+38 (050) 59 23 772</span>
+          <span className={m.footerSpan}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></span>
+          {
+            screen ? <span className={m.footerSpan}>+38 (050) 59 23 772</span>
+              : <span className={m.footerSpan}><a href="tel:+380505923772" style={{color: 'white'}}>+38 (050) 59 23 772</a></span>
+          }
         </div>
       </footer>
     </LazyLoadComponent>

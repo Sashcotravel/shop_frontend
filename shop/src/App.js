@@ -10,12 +10,14 @@ import Obl from "./page/Obl";
 import Nacr from "./page/Nacr";
 import Acses from "./page/Acses";
 import { useDispatch } from "react-redux";
-import { fetchMail, fetchMailDima, fetchMailUser, fetchPay } from "./API/post";
+import { fetchCaptcha, fetchMail, fetchMailDima, fetchMailUser, fetchPay } from "./API/post";
 import ListWash from "./component/ListWash";
 import { removeLngPrefix } from "./18n";
 import i18next from "i18next";
 import FooterMain from "./component/FooterMain";
 import Footer from "./component/Footer";
+import { loadReCaptcha, reCaptchaExecute } from 'recaptcha-v3-react-function-async'
+import OpenBox from "./page/OpenBox";
 
 
 
@@ -41,8 +43,6 @@ const Thanks = React.lazy(() => import("./component/Thanks"));
 
 
 let userOrder = [];
-let urlKalk = "/obladnannya";
-let nameKalk = "equipment";
 
 const App = () => {
 
@@ -59,9 +59,11 @@ const App = () => {
   const [onMain, setOnMain] = useState(false);
   const [postOne, setPostOne] = useState(null);
   const [meneger, setMeneger] = useState(true);
+  const [url, setUrl] = useState(true);
 
   const { t, i18n: { language } } = useTranslation();
   const dispatch = useDispatch()
+  const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
 
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
@@ -115,6 +117,11 @@ const App = () => {
     }
   }, []);
 
+  useEffect (()=>{
+    loadReCaptcha('6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl')
+      .then(() => {console.log('ReCaptcha loaded')})
+      .catch((e) => {console.error('Error when load ReCaptcha', e)})
+  }, [])
 
   const noScroll = () => {
     let con = document.getElementById("lightblue2");
@@ -151,19 +158,24 @@ const App = () => {
   const useSubmit = async () => {
     if (total > 0) {
       if (formPass.email && formPass.phone) {
-        setMeneger(true);
-        hiddeItem();
-        let obj = { total: total, order: userOrder, user: userData };
-        const d = await dispatch(fetchPay(obj));
-        let link = "http://localhost:3000/your-order/" + d.payload;
-        console.log(link);
-        dispatch(fetchMail(obj));
-        dispatch(fetchMailDima(obj));
-        dispatch(fetchMailUser(obj));
+        let gtoken = await reCaptchaExecute(key, 'setting')
+        let res = await dispatch(fetchCaptcha({gtoken}))
+        if(res.payload){
+          setMeneger(true);
+          hiddeItem();
+          let obj = { total: total, order: userOrder, user: userData };
+          console.log(obj);
+          const d = await dispatch(fetchPay(obj));
+          let link = "http://localhost:3000/your-order/" + d.payload;
+          console.log(link);
+          dispatch(fetchMail(obj));
+          dispatch(fetchMailDima(obj));
+          dispatch(fetchMailUser(obj));
 
-        Users.forEach(user => user.size = 0);
-        Users.forEach(user => user.total = user.prise);
-        nullAll();
+          Users.forEach(user => user.size = 0);
+          Users.forEach(user => user.total = user.prise);
+          nullAll();
+        }
       }
     }
   };
@@ -186,10 +198,7 @@ const App = () => {
     border: "none"
   };
 
-  urlKalk = window.document.location.pathname.slice(3)
-  const clickBread = (e) => { nameKalk = e.target.id };
-
-  const style = { margin: "10px auto 60px 125px" };
+  const style = { margin: "0 auto 60px 125px" };
 
   const onBlur = (e) => {
     let email = document.getElementById('email')
@@ -207,9 +216,9 @@ const App = () => {
   }
 
   const changeBlur = (e) => {
-    setUserData(memo((actual) => {
+    setUserData((actual) => {
       return { ...actual, [e.target.title]: e.target.value };
-    }));
+    });
     let phone = document.getElementById('phone')
     let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
     if (regex.test(e.target.value.toString()) === true) {
@@ -232,13 +241,10 @@ const App = () => {
           {
             onFooter ? ""
               : <>
-                { <div className="breadcrumbs" style={window.screen.availWidth > 900 ? style : undefined}>
-                    <Link className="breads" to={urlKalk}>{t(`${nameKalk}`)}</Link>
-                  </div> }
-
-                {/*{*/}
-                {/*  location.pathname === '/' ? '' : <Breadcrumbs />*/}
-                {/*}*/}
+                <div className="breadcrumbs" style={window.screen.availWidth > 900 ? style : undefined}>
+                    <Link className="breads" to='/'>{t("home")}</Link>
+                    <span className="breads"> / {t(`${url}`)}</span>
+                </div>
 
                 <div className={s.divName}>
                   <h1 className={s.h3Title}>{t("title")}</h1>
@@ -254,17 +260,19 @@ const App = () => {
                 </div>
 
                 {
-                  <div className={s.divTitle} onClick={clickBread}>
-                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} id="equipment"
+                  <div className={s.divTitle}>
+                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                              className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink>
                     <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/nakritya" id="cover">{t("cover")}</NavLink>
+                             to="/nakritya">{t("cover")}</NavLink>
                     <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/aksesyari" id="accessories">{t("accessories")}</NavLink>
+                             to="/vidkriti-box">{t("openBox")}</NavLink>
                     <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/budivnitstvo" id="construction">{t("construction")}</NavLink>
+                             to="/aksesyari">{t("accessories")}</NavLink>
                     <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/doc" id="documentation">{t("documentation")}</NavLink>
+                             to="/budivnitstvo">{t("construction")}</NavLink>
+                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                             to="/doc">{t("documentation")}</NavLink>
                   </div>
                 }
               </>
@@ -277,13 +285,15 @@ const App = () => {
               <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger}/>} />
               <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger} />} />
               <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} />} />
-              <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder}
+              <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                        setTotal={setTotal} total={total} />} />
-              <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder}
+              <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                      setTotal={setTotal} total={total} />} />
-              <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder}
+              <Route path="/vidkriti-box" element={<OpenBox t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                                                     setTotal={setTotal} total={total} />} />
+              <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                        setTotal={setTotal} total={total} />} />
-              <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder}
+              <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                           setTotal={setTotal} total={total} />} />
               <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
               <Route path="/nashi-avtomiyki"
@@ -327,15 +337,15 @@ const App = () => {
               <br />
               <input className={s.inputUser} type="name" title="name"
                      placeholder={`${t("enterName")}`} onChange={(e) => {
-                setUserData(memo((actual) => {
+                setUserData((actual) => {
                   return { ...actual, [e.target.title]: e.target.value };
-                }));
+                });
               }} />
               <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
                      placeholder={`${t("enterEmail")}`} onChange={(e) => {
-                setUserData(memo((actual) => {
+                setUserData((actual) => {
                   return { ...actual, [e.target.title]: e.target.value };
-                }));
+                });
               }} />
               <input className={s.inputUser} type="text" title="phone" id="phone"
                      placeholder={`${t("enterYourPhoneNumber")}`} onChange={changeBlur} />
@@ -380,6 +390,8 @@ const App = () => {
                                className={s.spanTitle + " " + s.title1} to="/obladnannya">{t("equipment")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                                to="/nakritya">{t("cover")}</NavLink>
+                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                               to="/vidkriti-box">{t("openBox")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                                to="/aksesyari">{t("accessories")}</NavLink>
                       <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}

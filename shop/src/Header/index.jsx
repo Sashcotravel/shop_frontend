@@ -71,6 +71,13 @@ export const Header = ({ t }) => {
     border: "none"
   };
 
+  let activeStyle2 = {
+    backgroundColor: "#DF4242",
+    color: "#FFFFFF",
+    border: "none",
+    borderBottom: "1px solid whitesmoke"
+  };
+
   const uaHeader = () => {
     if (screen === true) {
       return <div className="humManu" id="menu__toggle">
@@ -83,13 +90,11 @@ export const Header = ({ t }) => {
               <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
                            className="menu__item" to="/obladnannya">{t("aboutUs")}</NavLink></li>
               <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
-                           className="menu__item"
-                                       to="/nashi-avtomiyki/wsi">{t("team")}</NavLink></li>
+                           className="menu__item" to="/nashi-avtomiyki/wsi">{t("team")}</NavLink></li>
               <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
                      className="menu__item" to="/blog">{t("blog")}</NavLink></li>
-              <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle : undefined}
-                     className="menu__item" style={{ borderBottom: "1px solid whitesmoke" }}
-                           to="/contacts">{t("contacts")}</NavLink></li>
+              <li><NavLink onClick={threeClick} style={({ isActive }) => isActive ? activeStyle2 : undefined}
+                     className="menu__item border" to="/contacts">{t("contacts")}</NavLink></li>
             </ul>
           </div>
       </div>;
@@ -150,7 +155,7 @@ export const Header = ({ t }) => {
                 <LanguageSwitcher />
               </div>
               <div className="mobTelDiv">
-                <span className="textNom">+38 (050) 59 23 772</span>
+                <span className="textNom"><a className="textNom" href="tel:+380505923772">+38 (050) 59 23 772</a></span>
               </div>
 
             </div>

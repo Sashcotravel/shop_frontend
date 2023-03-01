@@ -473,7 +473,7 @@ export const Users = [
     {
         'id': 100057,
         'nameOfGoods': 'Прищепки (жабки) для ковриків з нержавіючої сталі поширеною базою для\n' +   // 40
-          'надійного кріплення',
+          'надійного кріплення (шт)',
         'src': `sa`,
         'src2': `4650c3ff3ec36036f4e4.jpg`,
         'nameImg': '35',
@@ -645,6 +645,50 @@ export const Users = [
         'size': 0,
         'discount': '',
         'total': 10200
+    },
+    {
+        'id': 100200, // new
+        'nameOfGoods': 'Світлова індикація заннятих постів від 1 до 10 ціна за 1 шт ', // 56
+        'src': `sendvish`,
+        'src2': `7f2d948bb48beff454c1.jpg`,
+        'nameImg': '100',
+        'prise': 150,
+        'size': 0,
+        'discount': '',
+        'total': 150
+    },
+    {
+        'id': 100210, // new
+        'nameOfGoods': 'Логотип з підсвіткою 1200*2700 мм ', // 57
+        'src': `sendvish`,
+        'src2': `7f2d948bb48beff454c1.jpg`,
+        'nameImg': '101',
+        'prise': 1200,
+        'size': 0,
+        'discount': '',
+        'total': 1200
+    },
+    {
+        'id': 100220, // new
+        'nameOfGoods': 'Кабель підігріву подачі хімії на 1 бокс', // 58
+        'src': `sendvish`,
+        'src2': `7f2d948bb48beff454c1.jpg`,
+        'nameImg': '102',
+        'prise': 240,
+        'size': 0,
+        'discount': '',
+        'total': 240
+    },
+    {
+        'id': 100230, // new
+        'nameOfGoods': 'Кольорова піна на 1 бокс (розова, синя, жовта) ', // 59
+        'src': `sendvish`,
+        'src2': `7f2d948bb48beff454c1.jpg`,
+        'nameImg': '103',
+        'prise': 300,
+        'size': 0,
+        'discount': '',
+        'total': 300
     },
 ]
 

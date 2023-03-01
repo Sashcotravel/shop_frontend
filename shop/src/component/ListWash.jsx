@@ -29,24 +29,60 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
   const win = window.screen.availWidth > 900;
   const url = localStorage.i18nextLng === "en";
   const url1 = localStorage.i18nextLng === "ua";
+  let lang = localStorage.i18nextLng
   const loc = location.pathname;
+  let descLoc = post === undefined || post === "NaN" || post === "wsi"
 
   const o = win ? -156 : -115;
+
+  useEffect(() => {
+    if(lang === 'ua'){
+      if (post === undefined || post === "NaN" || post === "wsi") {
+        document.title = `Мийки самообслуговування в ${obl} | Автомийки SamWash`;
+        document.description = `Адреси автомийок самообслуговування SamWas, ${obl}. 
+      Обирай автомийку поряд з тобою, за вигідгою ціною, та з якісним обладнанням. Телефонуй просто зараз!`
+      }
+      if (loc === `/nashi-avtomiyki/${id}/${post}` && post !== 'wsi'){
+        document.title = `Мийки самообслуговування в ${obl} на ${post} поста | Автомийки SamWash`;
+        document.description = `Адреси автомийок самообслуговування SamWash в ${obl} 
+        на ${post} поста. Обирай автомийку поряд з тобою, за вигідгою ціною. Телефонуй просто зараз!`
+      }
+      document.title = "Мийки самообслуговування в Україні | Автомийки SamWash";
+      document.description = 'Адреси автомийок самообслуговування SamWash по всій Україні. Обирай ' +
+        'автомийку поряд з тобою, за вигідгою ціною, та з якісним обладнанням. Телефонуй просто зараз!'
+    }
+    if(lang === 'ru'){
+      if (post === undefined || post === "NaN" || post === "wsi") {
+        document.title = `Мойки самообслуживания во ${obl} | Автомойки SamWash`;
+        document.description = `Адреси автомийок самообслуговування SamWas, ${obl}. 
+      Обирай автомийку поряд з тобою, за вигідгою ціною, та з якісним обладнанням. Телефонуй просто зараз!`
+      }
+      if (loc === `/nashi-avtomiyki/${id}/${post}` && post !== 'wsi'){
+        document.title = `Мойки самообслуживания во ${obl} на ${post} поста | Автомойки SamWash`;
+        document.description = `Адреса автомоек самообслуживания SamWash во ${obl} 
+        на ${post} поста. Выбирай автомойку рядом с тобой, по выгодной цене. Звони прямо сейчас!`
+      }
+
+      document.title = 'Мойки самообслуживания в Украине | Автомойки SamWash'
+      document.description = `Адреса автомоек самообслуживания SamWas, ${obl}. Выбирай 
+      автомойку рядом с тобой, по выгодной цене, и с качественным оборудованием. Звони прямо сейчас!`
+    }
+  }, [])
 
 
   useEffect(() => {
     setOnFooter(true);
     if (loc === "/nashi-avtomiyki/wsi") {
-      document.title = "Автомийки SamWash | SamWash Group";
       document.getElementById("all").checked = true;
       document.getElementById("0").checked = true;
-    } else if (loc === `/nashi-avtomiyki/wsi/${post}`) {
+    }
+    else if (loc === `/nashi-avtomiyki/wsi/${post}`) {
       oblUrl2();
       document.title = `Автомийки SamWash на ${post} боксів | SamWash Group`;
       document.getElementById("all").checked = true;
       document.getElementById(`${post}`).checked = true;
-      console.log(obl);
-    } else if (url) {
+    }
+    else if (url) {
       obl = oblFalse(id);
       click1Use(obl);
       document.getElementById("select2").value = obl;
@@ -55,14 +91,14 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
       if (post === undefined || post === "NaN" || post === "wsi") {
         document.getElementById("0").checked = true;
         colPost = Number(0);
-        document.title = `Автомийки SamWash в ${obl} | SamWash Group`;
-      } else {
+      }
+      else {
         colPost = Number(post);
         // document.getElementById("select").value = post;
         document.getElementById(`${post}`).checked = true;
-        document.title = `Автомийки SamWash в ${obl} на ${post} постів | SamWash Group`;
       }
-    } else if (url1) {
+    }
+    else if (url1) {
       obl = oblFalse(id);
       click1Use(obl);
       document.getElementById(obl).checked = true;
@@ -74,7 +110,8 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
         colPost = Number(post);
         document.getElementById(`${post}`).checked = true;
       }
-    } else {
+    }
+    else {
       obl = oblFalse(id);
       click1Use(obl);
       colPost = Number(post);
@@ -265,6 +302,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
   else if (loc === `/nashi-avtomiyki/wsi/${post}`) {
     obl = "all";
     colPost = Number(post);
+    document.title = `Автомийки SamWash на ${post} боксів | SamWash Group`;
   }
   else if (loc === `/nashi-avtomiyki/${id}/wsi` && url) {
     colPost = Number(0);

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchOrder } from "../API/post";
-import { useDispatch } from "react-redux";
 import s from "../component/Home.module.css";
 import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
+import instance from "../API/API";
 
 
 const YourOrder = ({ setOnFooter }) => {
@@ -15,28 +14,24 @@ const YourOrder = ({ setOnFooter }) => {
 
   const { id } = useParams();
 
-  const dispatch = useDispatch();
-
-  let orderReq;
+  // let orderReq;
 
   useEffect(() => {
     (async function() {
       try {
         setOnFooter(true);
         let f = id.slice(0, id.length - 13);
-        console.log(f);
-        orderReq = await dispatch(fetchOrder(f));
-        console.log(orderReq);
+        // orderReq = await dispatch(fetchOrder(f));
+        const { data } = await instance.get(`/order/fetchOrder/${f}`);
         setOrder((actual) => {
           return {
-            ...actual, total: orderReq.payload.total,
-            order: orderReq.payload.order,
-            createdAt: orderReq.payload.createdAt
+            ...actual, total: data.total,
+            order: data.order,
+            createdAt: data.createdAt
           };
         });
-      } catch (e) {
-        console.log(e);
       }
+      catch (e) { console.log(e) }
       return () => {
         setOnFooter(false);
       };
@@ -99,6 +94,7 @@ const YourOrder = ({ setOnFooter }) => {
 
   return <>
     <main>
+
       <div id="light" className={s.boxHideImage} onClick={hidden}>
         <figure className="figure">
           <div className="divImg">
@@ -111,10 +107,10 @@ const YourOrder = ({ setOnFooter }) => {
       </div>
 
       <div className={s.thanksDiv}>
-        <div>
+        <div style={{textAlign: 'start', width: '100%'}}>
           <span className={s.thanks}>Сума: {order.total}</span>
         </div>
-        <div>
+        <div style={{textAlign: 'start', width: '100%'}}>
           <span className={s.thanks}>Коли замовленно: {order.createdAt?.slice(0, 10)}</span>
         </div>
         <div className={s.divMap}>
@@ -123,6 +119,7 @@ const YourOrder = ({ setOnFooter }) => {
           )}
         </div>
       </div>
+
     </main>
   </>;
 };

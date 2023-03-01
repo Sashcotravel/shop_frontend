@@ -3,7 +3,7 @@ import s from "./Home.module.css";
 import image4 from "../image/svg/sw logo.svg";
 import { Link } from "react-router-dom";
 import FooterMain from "./FooterMain";
-import { fetchMailDimaZam } from "../API/post";
+import { fetchMailDimaZam, fetchOrder } from "../API/post";
 import { useDispatch } from "react-redux";
 
 
@@ -13,8 +13,23 @@ const Contacts = ({ setOnFooter, t }) => {
   const [userData, setUserData] = useState({
     name: "", phone: "", email: "", post: ""});
 
+  let lang = localStorage.i18nextLng
   const screen = window.screen.availWidth > 900
   const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    if(lang === 'ua'){
+      document.title = "Контакти відділу продажів | SamWash";
+      document.description = 'Звяжіться з нами, будь-яким зручним для вас способом. вказаним ' +
+        'на сайті та отримайте якісну консультацію по будівництву автомийок самообслуговування під ключ.'
+    }
+    if(lang === 'ru'){
+      document.title = 'Контакты отдела продаж | SamWash'
+      document.description = 'Свяжитесь с нами любым удобным для вас способом. указанным на сайте' +
+        ' и получите качественную консультацию по строительству автомоек самообслуживания под ключ.'
+    }
+  }, [])
 
   useLayoutEffect(() => {
     setOnFooter(true)
@@ -52,7 +67,7 @@ const Contacts = ({ setOnFooter, t }) => {
                   <h2 className={s.h2_1+' '+s.p_1_2}>{t(`department`)}</h2>
                   <div>
                     <p className={s.p_1}>+38 (098) 732 83 99</p>
-                    <p className={s.p_1}>info@samwash.com</p>
+                    <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></p>
                   </div>
                 </div>
 
@@ -97,8 +112,8 @@ const Contacts = ({ setOnFooter, t }) => {
                 <div className={s.div1Cont}>
                   <h2 className={s.h2_1+' '+s.p_1_2}>{t(`department`)}</h2>
                   <div>
-                    <p className={s.p_1}>+38 (098) 732 83 99</p>
-                    <p className={s.p_1}>info@samwash.com</p>
+                    <p className={s.p_1}><a href="tel:+380987328399" style={{color: 'white'}}>+38 (098) 732 83 99</a></p>
+                    <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></p>
                   </div>
                 </div>
 

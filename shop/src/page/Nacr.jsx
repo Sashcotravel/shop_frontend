@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "../component/Home.module.css";
 import "./Obl.css";
 import image1 from "../image/svg/Fullscreenicon.svg";
@@ -6,11 +6,26 @@ import image2 from "../image/svg/Group31.svg";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 
 
-const Nacr = ({ t, data, userOrder, setTotal, total }) => {
+const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   const [pina, setPina] = useState();
 
+  useEffect(() => {
+    setUrl("cover")
+    if(lang === 'ua'){
+      document.title = "Вибір покриття для мийки самообслуговування | SamWash"
+      document.description = 'Визначитися з покриттям для автомийки самообслуговування нескладно, ' +
+        'якщо звернутися до нас. Ми запропонуємо найкращі варіанти по дизайну та ціні для вашого бізнесу.'
+    }
+    if(lang === 'ru'){
+      document.title = 'Вибор покрытия для мойки самообслуживания | SamWash'
+      document.description = 'Определиться с покрытием для автомойки самообслуживания несложно, ' +
+        'если обратиться к нам. Мы предлагаем лучшие варианты по дизайну и цене для вашего бизнеса.'
+    }
+  }, [])
+
   const screen = window.screen.availWidth > 900
+  let lang = localStorage.i18nextLng
 
   const clickNacr = (e) => {
     data.forEach(item => {

@@ -124,11 +124,15 @@
   display: flex;
   padding: 12px 24px;
   color: white;
-  font-family: Averta;
+  font-family: Gilroy Light;
   font-size: 20px;
   text-decoration: none;
   height: 100px;
   align-items: center;
+}
+
+.border{
+  border-bottom: 1px solid whitesmoke;
 }
 
 .menu__item2 {
@@ -221,6 +225,10 @@
   padding-top: 30px;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 // mob
 
 .telDiv{
@@ -229,6 +237,8 @@
   border-radius: 50%;
   border: 2px solid #B2B1B7;
   padding-top: 4px;
+  left: -15px;
+  position: relative;
 }
 
 .manDiv{

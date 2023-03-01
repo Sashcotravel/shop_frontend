@@ -10,6 +10,7 @@ export const Carousel = ({ children, infinite }) => {
 
   const [pages, setPages] = useState([])
   const [offset, setOffset] = useState(0)
+  const [name, setName] = useState(1)
 
 
   const leftArrow = () => {
@@ -17,6 +18,9 @@ export const Carousel = ({ children, infinite }) => {
       const newOffset = currentOffset + 100
       return Math.min(newOffset, 0)
     })
+    if(name === 1){} else {
+      setName((prev) => prev - 1)
+    }
   }
   const rightArrow = () => {
     setOffset((currentOffset) => {
@@ -24,6 +28,9 @@ export const Carousel = ({ children, infinite }) => {
       const maxOffset = -(100 * (pages.length - 1))
       return Math.max(newOffset, maxOffset)
     })
+    if(name === 5){} else {
+      setName((prev) => prev + 1)
+    }
   }
 
   useEffect(() => {
@@ -41,6 +48,7 @@ export const Carousel = ({ children, infinite }) => {
       <div className={m.window}>
         <img src={left} onClick={leftArrow} className={m.arrowImg} alt='Стрілка'/>
         <img src={right} onClick={rightArrow} className={m.arrowImg} alt='Стрілка'/>
+        <span className={m.sNane}>{name} / 5</span>
         <div className={m.all_page_container}
              style={{ transform: `translateX(${offset}%)` }}>
           { pages }

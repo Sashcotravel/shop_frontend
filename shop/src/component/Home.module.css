@@ -29,7 +29,7 @@
 }
 
 .thanksDiv{
-    padding: 20px;
+    padding: 120px 20px 20px 20px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -424,7 +424,7 @@
 .descSpan{
     font-family: Gilroy Light, sans-serif;
     font-size: 20px;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     color: #B2B1B7;
     margin: 0 0 0 15px;
     text-align: left;
@@ -973,7 +973,7 @@ input[type="radio"] {
     .h3Title{
         font-family: Gilroy Light, sans-serif;
         font-weight: normal;
-        margin: 14px 0 45px 20px;
+        margin: 0 0 30px 20px;
         font-size: 35px;
         height: 90px;
         width: auto;
