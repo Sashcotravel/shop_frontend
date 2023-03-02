@@ -8,15 +8,9 @@ import translationEN from './locales/en/translation.json'
 import translationRU from './locales/ru/translation.json'
 
 const resources = {
-  en: {
-    translation: translationEN
-  },
-  ua: {
-    translation: translationUA
-  },
-  ru: {
-    translation: translationRU
-  }
+  en: { translation: translationEN },
+  ua: { translation: translationUA },
+  ru: { translation: translationRU }
 }
 
 export const languages = Object.entries(resources).map(([lang]) => lang)

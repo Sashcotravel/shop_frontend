@@ -77,7 +77,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           userOrder.forEach((el, index) => {
             if (data[6] === el || data[7] === el) {
               userOrder.splice(index, 1);
-              if (el.size != 0) {
+              if (el.size !== 0) {
                 setTotal(total - el.total);
               }
               el.size = 0;
@@ -255,6 +255,105 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     );
   };
 
+  const theeFriends = (e) => {
+    if (!userOrder.includes(data[41]) && !userOrder.includes(data[7])) {
+      userOrder.forEach((item, index) => {
+        if(item === data[12]){
+          userOrder.splice(index, 1);
+        }
+      })
+    } else if (!userOrder.includes(data[12])) {
+      userOrder.push(data[12]);
+    }
+  };
+
+  const popApp = () => {
+    if(data[7].size < 2 && data[7].size !== 0 || data[6].size < 2 && data[6].size !== 0) {
+      if(screen){
+        document.getElementById('divPopapp').style.display = 'flex'
+        document.getElementById('pina1').classList.add(`${s.pulse}`)
+        document.getElementById('pina2').classList.add(`${s.pulse}`)
+      } else {
+        const element = document.getElementById('pina2');
+          element.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('divPopapp2').style.display = 'flex'
+        document.getElementById('pina1').classList.add(`${s.pulse}`)
+        document.getElementById('pina2').classList.add(`${s.pulse}`)
+      }
+    }
+
+  }
+
+  const popApp2 = () => {
+    if(screen){
+      document.getElementById('divPopapp').style.display = 'none'
+    } else {
+      document.getElementById('divPopapp2').style.display = 'none'
+    }
+    document.getElementById('pina1').classList.remove(`${s.pulse}`)
+    document.getElementById('pina2').classList.remove(`${s.pulse}`)
+  }
+
+  const closePopApp = () => {
+    screen ? document.getElementById('divPopapp').style.display = 'none'
+    : document.getElementById('divPopapp2').style.display = 'none'
+  }
+
+  const popApp3 = () => {
+    if(data[20].size < 2 || data[19].size < 2) {
+      if(screen){
+        document.getElementById('divPopapp3').style.display = 'flex'
+        document.getElementById('ter1').classList.add(`${s.pulse}`)
+        document.getElementById('ter2').classList.add(`${s.pulse}`)
+      } else {
+        const element = document.getElementById('ter1');
+        element.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('divPopapp4').style.display = 'flex'
+        document.getElementById('ter1').classList.add(`${s.pulse}`)
+        document.getElementById('ter2').classList.add(`${s.pulse}`)
+      }
+    }
+  }
+
+  const popApp4 = () => {
+    if(screen){
+      document.getElementById('divPopapp3').style.display = 'none'
+    } else {
+      document.getElementById('divPopapp4').style.display = 'none'
+    }
+    document.getElementById('ter1').classList.remove(`${s.pulse}`)
+    document.getElementById('ter2').classList.remove(`${s.pulse}`)
+  }
+
+  const popApp5 = () => {
+      if(screen){
+        document.getElementById('divPopapp5').style.display = 'flex'
+        document.getElementById('card').classList.add(`${s.pulse}`)
+      } else {
+        const element = document.getElementById('card');
+        element.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('divPopapp6').style.display = 'flex'
+        document.getElementById('card').classList.add(`${s.pulse}`)
+      }
+  }
+
+  const popApp6 = () => {
+    if(screen){
+      document.getElementById('divPopapp5').style.display = 'none'
+    } else {
+      document.getElementById('divPopapp6').style.display = 'none'
+    }
+    document.getElementById('card').classList.remove(`${s.pulse}`)
+  }
+
+  const closePopApp2 = () => {
+   if(screen){
+     document.getElementById('divPopapp5').style.display = 'none'
+   } else {
+     document.getElementById('divPopapp6').style.display = 'none'
+   }
+  }
+
 
   return <>
     {screen && <div id="light" className={s.boxHideImage} onClick={hidden}>
@@ -278,6 +377,42 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                   src="https://www.youtube.com/embed/wvo65hmKvtA" title='video' />
         </div>
       </figure>
+    </div>}
+    {screen && <div onClick={popApp2} className={s.divPopapp} id='divPopapp'>
+      <div className={s.popappDiv2}>
+        <p style={{width: '390px'}}>Також ви можете придбати підігрів піни і її колір</p>
+      </div>
+      <span className={s.closeX} onClick={closePopApp}>&#10006;</span>
+    </div>}
+    {!screen && <div onClick={popApp2} className={s.divPopapp} id='divPopapp2'>
+      <div className={s.popappDiv3}>
+        <p style={{width: '390px'}}>Також ви можете придбати підігрів піни і її колір</p>
+      </div>
+      <span className={s.closeX} onClick={closePopApp}>&#10006;</span>
+    </div>}
+    {screen && <div onClick={popApp4} className={s.divPopapp} id='divPopapp3'>
+      <div className={s.popappDiv2}>
+        <p style={{width: '440px'}}>Щоб вибрати карти лояльності, спочатку потрібно придбати термінал</p>
+      </div>
+      <span className={s.closeX} onClick={closePopApp}>&#10006;</span>
+    </div>}
+    {!screen && <div onClick={popApp4} className={s.divPopapp} id='divPopapp4'>
+      <div className={s.popappDiv3}>
+        <p style={{width: '390px'}}>Щоб вибрати карти лояльності, спочатку потрібно придбати термінал</p>
+      </div>
+      <span className={s.closeX} onClick={closePopApp}>&#10006;</span>
+    </div>}
+    {screen && <div onClick={popApp6} className={s.divPopapp} id='divPopapp5'>
+      <div className={s.popappDiv2}>
+        <p style={{width: '440px'}}>Ви також можете придбати систету корпоративних карт</p>
+      </div>
+      <span className={s.closeX} onClick={closePopApp2}>&#10006;</span>
+    </div>}
+    {!screen && <div onClick={popApp6} className={s.divPopapp} id='divPopapp6'>
+      <div className={s.popappDiv3}>
+        <p style={{width: '390px'}}>Ви також можете придбати систету корпоративних карт</p>
+      </div>
+      <span className={s.closeX} onClick={closePopApp2}>&#10006;</span>
     </div>}
 
     <main>
@@ -310,8 +445,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </LazyLoadComponent>
 
         <LazyLoadComponent>
-          <div className={s.container}>     {/*  with check  */}
-            <div className={s.boxOne}>
+          <div className={s.container} onClick={popApp}>     {/*  with check  */}
+            <div className={s.boxOne} onClick={popApp}>
               <figure>
                 <div style={{ height: "315px" }}>
                   <iframe id="img4" width="100%" height="100%" src="https://www.youtube.com/embed/ENZjdyDPFos"
@@ -333,8 +468,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </LazyLoadComponent>
 
         <LazyLoadComponent>
-          <div className={s.container}>   {/*  with check  */}
-            <div className={s.boxOne}>
+          <div className={s.container} onClick={popApp}>   {/*  with check  */}
+            <div className={s.boxOne} onClick={theeFriends}>
               <figure>
                 <div style={{ height: "315px" }}>
                   <iframe id="img5" width="100%" height='100%' src="https://www.youtube.com/embed/ENZjdyDPFos"
@@ -356,8 +491,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </LazyLoadComponent>
 
         <LazyLoadComponent> {/* pina */}
-          <div className={s.container}>
-            <div className={s.boxOne}>
+          <div className={`${s.container}`}>
+            <div className={s.boxOne} id='pina2'>
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img103" alt='Кольорова'/>
@@ -390,8 +525,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </LazyLoadComponent>
 
         <LazyLoadComponent> {/* Кабель */}
-          <div className={s.container}>
-            <div className={s.boxOne}>
+          <div className={`${s.container}`}>
+            <div className={s.boxOne} id='pina1'>
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img102" alt='Кабель'/>
@@ -486,8 +621,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </LazyLoadComponent>
 
         <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
+          <div className={s.container} onClick={popApp3}>
+            <div className={s.boxOne} id='card'>
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/siscorpost.jpg")} className={"base"} id="img22" alt='Система корпоративних карт'/>
@@ -531,8 +666,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </LazyLoadComponent>
 
         <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
+          <div className={s.container} onClick={popApp5}>
+            <div className={s.boxOne} id='ter1'>
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img24" alt='Платіжний термінал'/>
@@ -559,8 +694,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </LazyLoadComponent>
 
         <LazyLoadComponent>
-          <div className={s.container}>
-            <div className={s.boxOne}>
+          <div className={s.container} onClick={popApp5}>
+            <div className={s.boxOne} id='ter2'>
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img25" alt='Платіжний термінал'/>
@@ -588,7 +723,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne}>
+            <div className={s.boxOne} onClick={theeFriends}>
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/Two-stationVthree-phaseVacuumcleaner.jpg")}

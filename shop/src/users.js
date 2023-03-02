@@ -690,6 +690,62 @@ export const Users = [
         'discount': '',
         'total': 300
     },
+    {
+        'id': 100240, // new
+        'nameOfGoods': 'Приямки', // 60
+        'nameImg': '104',
+        'prise': 4000,
+        'size': 0,
+        'discount': '',
+        'total': 4000
+    },
+    {
+        'id': 100250, // new
+        'nameOfGoods': 'Покладка бруківки з матеріалами', // 61
+        'nameImg': '105',
+        'prise': 0,
+        'size': 0,
+        'discount': '',
+        'total': 0
+    },
+    {
+        'id': 100260, // new
+        'nameOfGoods': 'Решітковий настил', // 62
+        'nameImg': '106',
+        'prise': 90,
+        'size': 0,
+        'discount': '',
+        'total': 90
+    },
+    {
+        'id': 100270, // new
+        'nameOfGoods': 'Приєднання каналізації', // 63
+        'nameImg': '107',
+        'prise': 150000,
+        'size': 0,
+        'discount': '',
+        'total': 150000
+    },
+    {
+        'id': 100280, // new
+        'nameOfGoods': 'Приєднання електроенергії 50 кВ', // 64
+        'nameImg': '108',
+        'prise': 200000,
+        'size': 0,
+        'discount': '',
+        'total': 200000
+    },
+    {
+        'id': 100290,
+        'nameOfGoods': 'Технічне приміщення з сендвіч панелей, розмір 6*2,3*2 ', // 65
+        'src': `sendvish`,
+        'src2': `7f2d948bb48beff454c1.jpg`,
+        'nameImg': '109',
+        'prise': 6700,
+        'size': 0,
+        'discount': '',
+        'total': 6700
+    },
 ]
 
 export const listWash = [

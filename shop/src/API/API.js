@@ -5,11 +5,15 @@ import axios from 'axios'
 // process.env.REACT_APP_API_URL
 
 const instance = axios.create({
-    baseURL: 'http://localhost:4445/'
+    baseURL: 'https://calculator.samwash.ua/'
 })
 
-export const instance2 = axios.create({
-    baseURL: process.env.REACT_APP_API_URL
-})
+// const instance = axios.create({
+//     baseURL: 'http://localhost:4445/'
+// })
+
+// export const instance2 = axios.create({
+//     baseURL: 'https://calculator.samwash.ua/'
+// })
 
 export default instance

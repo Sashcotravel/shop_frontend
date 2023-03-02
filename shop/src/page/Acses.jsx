@@ -448,6 +448,22 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
+                  <LazyLoadImage src={require("../image2/sendvish.jpg")} className={"base"} id="img109" alt='Технічне приміщення' />
+                  {size(109)}
+                </div>
+              </figure>
+              <p className={s.itemName}>{data[65].nameOfGoods}</p>
+              <p className={s.itemDesc}></p>
+              {boxBut(65)}
+            </div>
+          </div>
+        </LazyLoadComponent>
+
+        <LazyLoadComponent>
+          <div className={s.container}>
+            <div className={s.boxOne}>
+              <figure>
+                <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/sendvish.jpg")} className={"base"} id="img49" alt='Технічне приміщення' />
                   {/*<img src={(`/static/media/${data[55].src}.${data[55].src2}`)} className={"base"} id="img49" />*/}
                   {size(49)}

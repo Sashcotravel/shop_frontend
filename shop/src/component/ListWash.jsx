@@ -181,8 +181,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
               <img src={image} style={{ margin: "0 10px 0 0" }} width={"53.74px"} height={"53.74px"} alt="road" />
             </a>
           </div>
-          {<NavLink onClick={onePost}
-                    to={`/nashi-avtomiyki/miyka${oblUrl}${"/" + colPost}/${city2}`}>
+          {<NavLink onClick={onePost} to={`/nashi-avtomiyki/miyka${oblUrl}${"/" + colPost}/${city2}`}>
             <button key={imgNum} id={imgNum} className="redBut">{t("Details")}</button>
           </NavLink>}
         </div>
@@ -516,22 +515,47 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
           </div>
 
 
+        <LazyLoadComponent>
+          <div className={s.divBox12} style={{ zIndex: "1", position: "relative" }}>
+          {
+            listWash.map((item, i) => {
+              console.log(item.vOb);
+              if (item.colPost === colPost && item.obl === obl && item.vOb !== undefined) {
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+              } else if (item.obl === obl && colPost === 0 && item.vOb !== undefined) {
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+              } else if (colPost === 0 && obl === "all" && item.vOb !== undefined) {
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+              } else if (item.colPost === colPost && obl === "all" && item.vOb !== undefined) {
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+              } else if (item.colPost === colPost && item.obl2 === obl && item.vOb !== undefined) {
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+              } else if (colPost === 0 && item.obl2 === obl && item.vOb !== undefined) {
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+              } else if (item.vOb !== undefined && colPost === 0 && obl === "all") {
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+              }
+            })
+          }
+          </div>
+        </LazyLoadComponent>
+
 
         <LazyLoadComponent>
           <div className={s.divBox12} style={{ zIndex: "1", position: "relative" }}>
             {
               listWash.map((item, i) => {
-                if (item.colPost === colPost && item.obl === obl) {
+                if (item.colPost === colPost && item.obl === obl && item.vOb === undefined) {
                   return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
-                } else if (item.obl === obl && colPost === 0) {
+                } else if (item.obl === obl && colPost === 0  && item.vOb === undefined) {
                   return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
-                } else if (colPost === 0 && obl === "all") {
+                } else if (colPost === 0 && obl === "all"  && item.vOb === undefined) {
                   return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
-                } else if (item.colPost === colPost && obl === "all") {
+                } else if (item.colPost === colPost && obl === "all"  && item.vOb === undefined) {
                   return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
-                } else if (item.colPost === colPost && item.obl2 === obl) {
+                } else if (item.colPost === colPost && item.obl2 === obl  && item.vOb === undefined) {
                   return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
-                } else if (colPost === 0 && item.obl2 === obl) {
+                } else if (colPost === 0 && item.obl2 === obl && item.vOb === undefined) {
                   return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
                 }
               })

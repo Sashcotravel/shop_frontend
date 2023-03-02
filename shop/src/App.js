@@ -18,6 +18,7 @@ import FooterMain from "./component/FooterMain";
 import Footer from "./component/Footer";
 import { loadReCaptcha, reCaptchaExecute } from 'recaptcha-v3-react-function-async'
 import OpenBox from "./page/OpenBox";
+import DocumentsPage from "./page/DocumentsPage";
 
 
 
@@ -157,12 +158,15 @@ const App = () => {
 
   const useSubmit = async () => {
     if (total > 0) {
-      if (formPass.email && formPass.phone) {
+      if (formPass.email || formPass.phone) {
+        Users.forEach(user => user.size = 0);
+        Users.forEach(user => user.total = user.prise);
+        nullAll();
+        setMeneger(true);
+        hiddeItem();
         let gtoken = await reCaptchaExecute(key, 'setting')
         let res = await dispatch(fetchCaptcha({gtoken}))
         if(res.payload){
-          setMeneger(true);
-          hiddeItem();
           let obj = { total: total, order: userOrder, user: userData };
           console.log(obj);
           const d = await dispatch(fetchPay(obj));
@@ -171,10 +175,6 @@ const App = () => {
           dispatch(fetchMail(obj));
           dispatch(fetchMailDima(obj));
           dispatch(fetchMailUser(obj));
-
-          Users.forEach(user => user.size = 0);
-          Users.forEach(user => user.total = user.prise);
-          nullAll();
         }
       }
     }
@@ -261,18 +261,18 @@ const App = () => {
 
                 {
                   <div className={s.divTitle}>
-                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                             className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink>
-                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/nakritya">{t("cover")}</NavLink>
-                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/vidkriti-box">{t("openBox")}</NavLink>
-                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/aksesyari">{t("accessories")}</NavLink>
-                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/budivnitstvo">{t("construction")}</NavLink>
-                    <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                             to="/doc">{t("documentation")}</NavLink>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
+                                  className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>
+                    <div> <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                   to="/nakritya">{t("cover")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.spanTit2}
+                                  to="/vidkriti-box">{t("openBox")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                  to="/aksesyari">{t("accessories")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                  to="/budivnitstvo">{t("construction")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                  to="/documentacia">{t("documentation")}</NavLink></div>
                   </div>
                 }
               </>
@@ -290,6 +290,8 @@ const App = () => {
               <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                      setTotal={setTotal} total={total} />} />
               <Route path="/vidkriti-box" element={<OpenBox t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                                                     setTotal={setTotal} total={total} />} />
+              <Route path="/documentacia" element={<DocumentsPage t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                      setTotal={setTotal} total={total} />} />
               <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                        setTotal={setTotal} total={total} />} />
@@ -385,20 +387,20 @@ const App = () => {
             onFooter ? ""
               : <>
                 {
-                    <div className={s.divTitle} style={{ marginTop: "90px" }}>
-                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                               className={s.spanTitle + " " + s.title1} to="/obladnannya">{t("equipment")}</NavLink>
-                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/nakritya">{t("cover")}</NavLink>
-                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/vidkriti-box">{t("openBox")}</NavLink>
-                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/aksesyari">{t("accessories")}</NavLink>
-                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/budivnitstvo">{t("construction")}</NavLink>
-                      <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                               to="/doc">{t("documentation")}</NavLink>
-                    </div>
+                  <div className={s.divTitle}>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
+                                  className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>
+                    <div> <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                   to="/nakritya">{t("cover")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.spanTit2}
+                                  to="/vidkriti-box">{t("openBox")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                  to="/aksesyari">{t("accessories")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                  to="/budivnitstvo">{t("construction")}</NavLink></div>
+                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                                  to="/documentacia">{t("documentation")}</NavLink></div>
+                  </div>
                 }
                 <div className={s.empty}></div>
                 {

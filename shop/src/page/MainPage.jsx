@@ -158,7 +158,10 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   };
 
   const useSubmit = async () => {
-    if(formPass.email && formPass.phone){
+    if(formPass.email || formPass.phone){
+      setMeneger(false)
+      setChecked(false)
+      navigate('/thanks')
       let gtoken = await reCaptchaExecute(key, 'setting')
       let res = await dispatch(fetchCaptcha({gtoken}))
       if(res.payload){
@@ -166,9 +169,6 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
         con.style.visibility = "hidden";
         let obj = { user: userData };
         dispatch(fetchMailDimaZam(obj));
-        setMeneger(false)
-        setChecked(false)
-        navigate('/thanks')
       }
     }
   };
@@ -566,7 +566,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
           </div>
         </LazyLoadComponent>
 
-        <LazyLoadComponent> {/* translate*/}
+        <LazyLoadComponent>
           <div className={m.container5_2}>
             <div className={m.slideStyleBack}></div>
             <div className={m.container5}>
@@ -579,7 +579,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                     <span className={m.spanIm}>{t("main.Schneider")}</span></li>
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>Застосування стандартів ISO та IEC</span></li>
+                    <span className={m.spanIm}>{t("main.ISO")}</span></li>
                 </ul>
                 <span className={m.pBig23+' '+m.pBig23_3} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
               </div>
@@ -655,32 +655,32 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
           </div>
         </LazyLoadComponent>
 
-        <LazyLoadComponent>
-          <div className={m.container9_2}>
-            <div className={m.slideStyleBack}></div>
-            <div className={m.container9}>
-              <div className={m.container9_3}>
-                <p className={m.p6+' '+m.p9}>{t("main.payment")}</p>
+        {/*<LazyLoadComponent>*/}
+        {/*  <div className={m.container9_2}>*/}
+        {/*    <div className={m.slideStyleBack}></div>*/}
+        {/*    <div className={m.container9}>*/}
+        {/*      <div className={m.container9_3}>*/}
+        {/*        <p className={m.p6+' '+m.p9}>{t("main.payment")}</p>*/}
 
-                <ul className={m.ul}>
-                  <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>{t("main.convenience")}</span></li>
-                  <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>...</span></li>
-                  <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
-                    <span className={m.spanIm}>{t("main.operation")}</span></li>
-                </ul>
+        {/*        <ul className={m.ul}>*/}
+        {/*          <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>*/}
+        {/*            <span className={m.spanIm}>{t("main.convenience")}</span></li>*/}
+        {/*          <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>*/}
+        {/*            <span className={m.spanIm}>...</span></li>*/}
+        {/*          <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>*/}
+        {/*            <span className={m.spanIm}>{t("main.operation")}</span></li>*/}
+        {/*        </ul>*/}
 
-                <span className={m.pBig23+' '+m.greenBut4} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
-              </div>
+        {/*        <span className={m.pBig23+' '+m.greenBut4} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>*/}
+        {/*      </div>*/}
 
-              {screen && <div className={m.div12}>
-                <span className={m.p5}>6 800 €</span>
-              </div>}
+        {/*      {screen && <div className={m.div12}>*/}
+        {/*        <span className={m.p5}>6 800 €</span>*/}
+        {/*      </div>}*/}
 
-            </div>
-          </div>
-        </LazyLoadComponent>
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</LazyLoadComponent>*/}
 
         <LazyLoadComponent>
           <div className={m.container10_5}></div>
