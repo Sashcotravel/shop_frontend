@@ -44,6 +44,7 @@ const Thanks = React.lazy(() => import("./component/Thanks"));
 
 
 let userOrder = [];
+let obj = {}
 
 const App = () => {
 
@@ -70,27 +71,28 @@ const App = () => {
     const currentPathname = window.location.pathname;
     const newPathname = `/${language}${removeLngPrefix(currentPathname)}`;
 
-    if (currentPathname === '/') {  }
-    else if (currentPathname !== newPathname) { window.location.replace(newPathname) }
+    // if (currentPathname === '/') {  }
+    // else
+      if (currentPathname !== newPathname) { window.location.replace(newPathname) }
   }, []);
 
   useEffect(() => {
-    if(language === 'uk-UA'){
-      const switcher = (lng) => {
-        i18next.changeLanguage(lng)
-        window.location.replace(`${window.location.pathname}`)
-      }
-
-      switcher('ua')
-    }
     // if(language === 'uk-UA'){
     //   const switcher = (lng) => {
     //     i18next.changeLanguage(lng)
-    //     window.location.replace(`/${lng}${window.location.pathname}`)
+    //     window.location.replace(`${window.location.pathname}`)
     //   }
     //
     //   switcher('ua')
     // }
+    if(language === 'uk-UA'){
+      const switcher = (lng) => {
+        i18next.changeLanguage(lng)
+        window.location.replace(`/${lng}${window.location.pathname}`)
+      }
+
+      switcher('ua')
+    }
     if(language === 'en-US'){
       const switcher = (lng) => {
         i18next.changeLanguage(lng)
@@ -108,7 +110,7 @@ const App = () => {
       switcher('ru')
     }
     else if (window.location.pathname === '/ua/ua/'){
-      window.location.replace(`/`)
+      window.location.replace(`/ua/`)
     }
     else if (window.location.pathname === '/en/en/'){
       window.location.replace(`/en/`)
@@ -117,7 +119,7 @@ const App = () => {
       window.location.replace(`/en/`)
     }
     else if (window.location.pathname === '/en/ua/'){
-      window.location.replace(`/`)
+      window.location.replace(`/ua/`)
     }
     else if (window.location.pathname === '/ua/ru/'){
       window.location.replace(`/ru/`)
@@ -163,30 +165,6 @@ const App = () => {
     });
     setTotal(0);
     userOrder = [];
-  };
-
-  const useSubmit = async () => {
-    if (total > 0) {
-      if (formPass.email || formPass.phone) {
-        Users.forEach(user => user.size = 0);
-        Users.forEach(user => user.total = user.prise);
-        nullAll();
-        setMeneger(true);
-        hiddeItem();
-        let gtoken = await reCaptchaExecute(key, 'setting')
-        let res = await dispatch(fetchCaptcha({gtoken}))
-        if(res.payload){
-          let obj = { total: total, order: userOrder, user: userData };
-          console.log(obj);
-          const d = await dispatch(fetchPay(obj));
-          let link = "http://localhost:3000/your-order/" + d.payload;
-          console.log(link);
-          dispatch(fetchMail(obj));
-          dispatch(fetchMailDima(obj));
-          dispatch(fetchMailUser(obj));
-        }
-      }
-    }
   };
 
   const hiddeItem = () => {
@@ -242,8 +220,33 @@ const App = () => {
     }
   }
 
+  const useSubmit = async () => {
+    if (total > 0) {
+      if (formPass.email || formPass.phone) {
+        obj = { total: total, order: userOrder, user: userData };
+        Users.forEach(user => user.size = 0);
+        Users.forEach(user => user.total = user.prise);
+        nullAll();
+        setMeneger(true);
+        hiddeItem();
+        let gtoken = await reCaptchaExecute(key, 'setting')
+        let res = await dispatch(fetchCaptcha({gtoken}))
+        if(res.payload){
+        const d = await dispatch(fetchPay(obj));
+        let link = "http://localhost:3000/your-order/" + d.payload;
+        console.log(link);
+        dispatch(fetchMail(obj));
+        dispatch(fetchMailDima(obj));
+        dispatch(fetchMailUser(obj));
+        }
+      }
+    }
+  };
+
+
   return (
-    <Router basename={language === 'ua' ? '/' : `/${language}/`}>
+    <Router basename={`/${language}/`}>
+    {/*<Router basename={language === 'ua' ? '/' : `/${language}/`}>*/}
       <div className="App">
         <Header t={t} />
         <>
@@ -289,8 +292,9 @@ const App = () => {
 
           <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
             <Routes>
-              <Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />
-              <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
+              {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
+              <Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
+              <Route path={`/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
               <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger}/>} />
               <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger} />} />
               <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} />} />
@@ -385,8 +389,8 @@ const App = () => {
               <div style={{margin: 'auto', display: 'flex', justifyContent: 'center'}}>
                 <button className={s.footerBut} style={{ width: "50%", backgroundColor: '#42DF4C' }}
                         onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>
-                  { formPass.email && formPass.phone && <Link style={{ color: "#FFFFFF" }} to="/thanks">{t("send")}</Link>}
-                  { !formPass.email && !formPass.phone && t("send") }
+                  { formPass.email || formPass.phone && <Link style={{ color: "#FFFFFF" }} to="/thanks">{t("send")}</Link>}
+                  { !formPass.email || !formPass.phone && t("send") }
                 </button>
               </div>
             </div>

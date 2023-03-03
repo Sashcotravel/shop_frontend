@@ -42,6 +42,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         userOrder.push(item);
       }
     });
+    console.log(userOrder);
   };
 
   const addCount2 = (e) => {

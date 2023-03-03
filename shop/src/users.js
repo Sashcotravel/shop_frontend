@@ -121,10 +121,10 @@ export const Users = [
         'src': `turboBrush`,
         'src2': `a82c5ce132bad8b8be47.jpg`,
         'nameImg': '2',
-        'prise': 950,
+        'prise': 38000,  // 950
         'size': 0,
         'discount': '',
-        'total': 950
+        'total': 38000
     },
     {
         'id': 100013,

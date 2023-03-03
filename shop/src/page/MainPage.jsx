@@ -165,8 +165,8 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
       let gtoken = await reCaptchaExecute(key, 'setting')
       let res = await dispatch(fetchCaptcha({gtoken}))
       if(res.payload){
-        let con = document.getElementById("lightblue");
-        con.style.visibility = "hidden";
+        // let con = document.getElementById("lightblue");
+        // con.style.visibility = "hidden";
         let obj = { user: userData };
         dispatch(fetchMailDimaZam(obj));
       }
@@ -484,10 +484,12 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <p className={m.pSmart}>SMART</p><p className={m.pPrise}>6 200 € {t("main.forPost")}</p>
                   <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
-                <div className={m.divImgSlider}>
-                  {/*<img src={image2} className={m.imgClass2} alt='SMART' loading="eager" />*/}
-                  <LazyLoadImage src={image2} className={m.imgClass2} alt="SMART" />
-                </div>
+                <figure>
+                  <div className={m.divImgSlider}>
+                    {/*<img src={image2} className={m.imgClass2} alt='SMART' loading="eager" />*/}
+                    <LazyLoadImage src={image2} className={m.imgClass2} alt="SMART" />
+                  </div>
+                </figure>
               </div>
 
               <div className={m.sliderDiv}>
