@@ -67,10 +67,12 @@ const App = () => {
   const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
 
   useLayoutEffect(() => {
+    debugger
     const currentPathname = window.location.pathname;
     const newPathname = `/${language}${removeLngPrefix(currentPathname)}`;
 
-    if (currentPathname !== newPathname) { window.location.replace(newPathname) }
+    if (currentPathname === '/') {  }
+    else if (currentPathname !== newPathname) { window.location.replace(newPathname) }
   }, []);
 
   useEffect(() => {
@@ -80,7 +82,7 @@ const App = () => {
         window.location.replace(`/${lng}${window.location.pathname}`)
       }
 
-      switcher('ua')
+      switcher('/')
     }
     if(language === 'en-US'){
       const switcher = (lng) => {
@@ -99,16 +101,16 @@ const App = () => {
       switcher('ru')
     }
     else if (window.location.pathname === '/ua/ua/'){
-      window.location.replace(`/ua/`)
+      window.location.replace(`/`)
     }
     else if (window.location.pathname === '/en/en/'){
       window.location.replace(`/en/`)
     }
     else if (window.location.pathname === '/ua/en/'){
-      window.location.replace(`/ua/`)
+      window.location.replace(`/en/`)
     }
     else if (window.location.pathname === '/en/ua/'){
-      window.location.replace(`/en/`)
+      window.location.replace(`/`)
     }
     else if (window.location.pathname === '/ua/ru/'){
       window.location.replace(`/ru/`)
@@ -234,7 +236,7 @@ const App = () => {
   }
 
   return (
-    <Router basename={`/${language}/`}>
+    <Router basename={language === 'ua' ? '/' : `/${language}/`}>
       <div className="App">
         <Header t={t} />
         <>
@@ -280,7 +282,7 @@ const App = () => {
 
           <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
             <Routes>
-              {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
+              <Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />
               <Route path="/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
               <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger}/>} />
               <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger} />} />

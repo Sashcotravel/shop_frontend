@@ -1,6 +1,5 @@
-import { useTransition } from "react";
 import { useLocation } from "react-router-dom";
-import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 import s from "./Home.module.css";
 
 
@@ -8,23 +7,38 @@ import s from "./Home.module.css";
 
 export const LanguageSwitcher = () => {
   const location = useLocation()
+  const { i18n } = useTranslation()
 
   let lang = localStorage.i18nextLng
   const screen = window.screen.availWidth > 900
 
   const switcher2 = (lng) => () => {
-    i18next.changeLanguage(lng)
+    i18n.changeLanguage(lng)
     window.location.replace(
       `/${lng}${location.pathname}`
     )
   }
 
   const switcher = (lng) => {
-    i18next.changeLanguage(lng)
-    window.location.replace(
-      `/${lng}${location.pathname}`
-    )
+    i18n.changeLanguage(lng)
+    if(lng === 'ua'){
+      window.location.replace(
+        `${location.pathname}`
+      )
+    }  else {
+      window.location.replace(
+        `/${lng}${location.pathname}`
+      )
+    }
+
   }
+
+  // const switcher = (lng) => {
+  //   i18n.changeLanguage(lng)
+  //     window.location.replace(
+  //       `/${lng}${location.pathname}`
+  //     )
+  // }
 
   const langClick = (e) => {
     if(e.target.title !== lang){

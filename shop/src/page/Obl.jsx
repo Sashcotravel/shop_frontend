@@ -159,7 +159,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         item.checked = true;
       }
     });
-    console.log(userOrder);
+    // console.log(userOrder);
   };
 
   const imgSize = (e) => {
