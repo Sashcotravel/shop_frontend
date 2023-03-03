@@ -27,7 +27,7 @@ const DocumentsPage = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         userOrder.push(item);
       }
     });
-    console.log(userOrder);
+    // console.log(userOrder);
   };
 
   const minesCount = (e) => {
@@ -53,7 +53,7 @@ const DocumentsPage = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         }
       }
     });
-    console.log(userOrder);
+    // console.log(userOrder);
   };
 
   const boxBut = (num) => {

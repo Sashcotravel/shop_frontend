@@ -519,7 +519,6 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
           <div className={s.divBox12} style={{ zIndex: "1", position: "relative" }}>
           {
             listWash.map((item, i) => {
-              console.log(item.vOb);
               if (item.colPost === colPost && item.obl === obl && item.vOb !== undefined) {
                 return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
               } else if (item.obl === obl && colPost === 0 && item.vOb !== undefined) {

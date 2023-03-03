@@ -67,7 +67,6 @@ const App = () => {
   const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
 
   useLayoutEffect(() => {
-    debugger
     const currentPathname = window.location.pathname;
     const newPathname = `/${language}${removeLngPrefix(currentPathname)}`;
 
@@ -79,11 +78,19 @@ const App = () => {
     if(language === 'uk-UA'){
       const switcher = (lng) => {
         i18next.changeLanguage(lng)
-        window.location.replace(`/${lng}${window.location.pathname}`)
+        window.location.replace(`${window.location.pathname}`)
       }
 
-      switcher('/')
+      switcher('ua')
     }
+    // if(language === 'uk-UA'){
+    //   const switcher = (lng) => {
+    //     i18next.changeLanguage(lng)
+    //     window.location.replace(`/${lng}${window.location.pathname}`)
+    //   }
+    //
+    //   switcher('ua')
+    // }
     if(language === 'en-US'){
       const switcher = (lng) => {
         i18next.changeLanguage(lng)

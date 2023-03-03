@@ -29,7 +29,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         userOrder.push(item);
       }
     });
-    console.log(userOrder);
+    // console.log(userOrder);
   };
 
   const minesCount = (e) => {
@@ -84,7 +84,6 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     setTotal((actual) => actual + data[62].total);
     userOrder.forEach((el, index) => {
       if (data[62] === el) {
-        console.log("lol2");
         setTotal((actual) => actual - lastTot);
         userOrder.splice(index, 1);
       }

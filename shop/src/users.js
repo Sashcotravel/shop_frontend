@@ -35,10 +35,10 @@ export const Users = [
         'src2': `67a95a578f448ddfd571.jpg`,
         'nameOfGoods': 'Технологічне обладнання на 4 програми та кнопка пауза',
         'nameImg': '3',
-        'prise': 9800.00,
+        'prise': 392000,  // 9800.00
         'size': 0,
         'discount': '',
-        'total': 9800.00
+        'total': 392000.00
     },
     {
         'id': 100003,
@@ -86,11 +86,11 @@ export const Users = [
         'src': "4RAV4(none)",
         'src2': "07b83f7e27a4de03c282.jpg",
         'nameImg': '4',
-        'prise': 1250.00,
+        'prise': 50000, // 1250
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 1250
+        'total': 50000
     },
     {
         'id': 100010,
@@ -98,11 +98,11 @@ export const Users = [
         'src': "244538142_1063353097750478_5474927411768411711_n(1)",
         'src2': `242d652cd354cc8c06e7.jpg`,
         'nameImg': '5',
-        'prise': 900,
+        'prise': 36000,  // 900
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 900
+        'total': 36000
     },
     {
         'id': 100011,
@@ -110,10 +110,10 @@ export const Users = [
         'src': `Brush`,
         'src2': `304831120f94939b3e7b.jpg`,
         'nameImg': '1',
-        'prise': 800,
+        'prise': 32000, // 800
         'size': 0,
         'discount': '',
-        'total': 800
+        'total': 32000
     },
     {
         'id': 100012,
