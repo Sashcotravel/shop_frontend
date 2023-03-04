@@ -12,6 +12,8 @@ const Contacts = ({ setOnFooter, t }) => {
 
   const [userData, setUserData] = useState({
     name: "", phone: "", email: "", post: ""});
+  const [formPass, setFormPass] = useState({
+    phone: false, email: false });
 
   let lang = localStorage.i18nextLng
   const screen = window.screen.availWidth > 900
@@ -47,6 +49,48 @@ const Contacts = ({ setOnFooter, t }) => {
     dispatch(fetchMailDimaZam(obj));
   }
 
+  const onBlur = (e) => {
+    let email = document.getElementById('email')
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(!re.test(String(e.target.value).toLowerCase())){
+      if(formPass.phone === false){
+        email.style.border = '2px solid red'
+        email.style.backgroundCo1or = 'transparent'
+        setFormPass((actual) => { return { ...actual, email: false } })
+      }
+      else {
+        email.style.border = 'none'
+        email.style.borderBottom = '2px solid grey'
+        email.style.backgroundColor = 'transparent'
+      }
+    } else {
+      email.style.border = 'none'
+      email.style.borderBottom = '2px solid grey'
+      email.style.backgroundColor = 'transparent'
+      setFormPass((actual) => { return { ...actual, email: true } })
+    }
+  }
+
+  const onBlur2 = (e) => {
+    let phone = document.getElementById("phone");
+    let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
+    if (regex.test(e.target.value.toString()) === true) {
+      phone.style.border = "none";
+      phone.style.borderBottom = "2px solid grey";
+      phone.style.backgroundColor = "transparent";
+      setFormPass((actual) => {return { ...actual, phone: true }});
+    } else {
+      if (formPass.email === false) {
+        phone.style.border = "2px solid red";
+        phone.style.backgroundCo1or = "transparent";
+        setFormPass((actual) => {return { ...actual, phone: false };});
+      } else {
+        phone.style.border = "none";
+        phone.style.borderBottom = "2px solid grey";
+        phone.style.backgroundColor = "transparent";
+      }
+    }
+  };
 
   return (
     <div className={s.divBlock}>
@@ -74,19 +118,19 @@ const Contacts = ({ setOnFooter, t }) => {
                 <div className={s.div1Cont}>
                   <p className={s.h2_1+' '+s.p_1_3}>{t(`feedback`)}</p>
                   <div className={s.divInput1}>
-                    <input className={s.inputUser+' '+s.input1} type="text" title="name" required
+                    <input className={s.inputUser+' '+s.input1} type="text" title="name"
                            placeholder={`${t("enterName")}`} onChange={(e) => {
                       setUserData((actual) => {
                         return { ...actual, [e.target.title]: e.target.value };
                       });
                     }} />
-                    <input className={s.inputUser+' '+s.input1} type="email" title="email" required
+                    <input className={s.inputUser+' '+s.input1} type="email" title="email"  id="email" onBlur={onBlur}
                            placeholder={`${t("enterEmail")}`} onChange={(e) => {
                       setUserData((actual) => {
                         return { ...actual, [e.target.title]: e.target.value };
                       });
                     }} />
-                    <input className={s.inputUser+' '+s.input1} type="text" title="phone" required
+                    <input className={s.inputUser+' '+s.input1} type="text" title="phone" id="phone" onBlur={onBlur2}
                            placeholder={`${t("enterYourPhoneNumber")}`} onChange={(e) => {
                       setUserData((actual) => {
                         return { ...actual, [e.target.title]: e.target.value };
@@ -133,7 +177,7 @@ const Contacts = ({ setOnFooter, t }) => {
                         return { ...actual, [e.target.title]: e.target.value };
                       });
                     }} />
-                    <input className={s.inputUser+' '+s.input1} type="text" title="phone" required
+                    <input className={s.inputUser+' '+s.input1} type="text" title="phone" id="phone" onBlur={onBlur2}
                            placeholder={`${t("enterYourPhoneNumber")}`} onChange={(e) => {
                       setUserData((actual) => {
                         return { ...actual, [e.target.title]: e.target.value };

@@ -282,6 +282,9 @@
   .menu__item2{
     height: 92px;
   }
+  .logoDiv{
+    padding-top: 25px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -292,14 +295,11 @@
   .root {
     height: 70px;
   }
-  hr {
-    top: 83px;
-  }
   .logo {
     width: 100px;
   }
   .logoDiv {
-    padding-top: 20px;
+    padding-top: 15px;
   }
   .mobTelDiv {
     margin-right: 40px;
@@ -331,11 +331,8 @@
     text-align: left;
     font: normal normal 300 10px/20px Gilroy Light;
   }
-}
-
-@media screen and (max-width: 900px) {
-  .menu__item {
-    border-top: 1px solid white;
+  .logoDiv {
+    padding-top: 14px;
   }
 }
 
@@ -354,6 +351,7 @@
     margin: auto;
     justify-content: space-between;
     border: none;
+    padding-left: 20px;
   }
   .menu__item {
     border-top: 1px solid white;
@@ -367,6 +365,7 @@
     justify-content: space-between;
     height: 70px;
     border: none;
+    padding-left: 0;
   }
   .menu__item {
     border-top: 1px solid white;

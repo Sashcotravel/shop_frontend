@@ -104,9 +104,9 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
             {
               localStorage.i18nextLng === 'ua' ?
                 <div className="breadcrumbs zI" style={ window.screen.availWidth > 900 ? style : undefined}>
-                  <Link className="breads" to="/">{t("home")}</Link>
-                  <Link className="breads" to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>
-                  <Link className="breads" to={`/nashi-avtomiyki${fg}/${postOne?.colPost}`}>
+                  <Link className="breads colorBread" to="/">{t("home")}</Link>
+                  <Link className="breads colorBread" to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>
+                  <Link className="breads colorBread" to={`/nashi-avtomiyki${fg}/${postOne?.colPost}`}>
                     {` / ${postOne?.obl}`}</Link>
                   <Link className="breads" to={`/nashi-avtomiyki/wsi/${postOne?.colPost}`}>
                     {/*{` / ${postOne?.colPost} ${t("postCol")}`} </Link>*/}
@@ -114,9 +114,9 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
                 </div>
                 :
                 <div className="breadcrumbs zI" style={ window.screen.availWidth > 900 ? style : undefined}>
-                  <Link className="breads" to="/">{t("home")}</Link>
-                  <Link className="breads" to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>
-                  <Link className="breads" to={`/nashi-avtomiyki${fg}/${postOne?.colPost}`}>
+                  <Link className="breads colorBread" to="/">{t("home")}</Link>
+                  <Link className="breads colorBread" to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>
+                  <Link className="breads colorBread" to={`/nashi-avtomiyki${fg}/${postOne?.colPost}`}>
                     {` / ${postOne?.obl2}`}</Link>
                   <Link className="breads" to={`/nashi-avtomiyki/wsi/${postOne?.colPost}`}>
                     {/*{` / ${postOne?.colPost} ${t("postCol")}`} </Link>*/}

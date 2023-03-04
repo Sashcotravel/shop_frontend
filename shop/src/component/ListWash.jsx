@@ -258,9 +258,12 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
     let oblUrl = oblTrue(obl);
     if (obl === "all") {
       navigator(`/nashi-avtomiyki/wsi`);
-    } else if (obl !== "all" && allObl.length !== 0) {
+      document.getElementById("0").checked = true;
+    }
+    else if (obl !== "all" && allObl.length !== 0) {
       navigator(`/nashi-avtomiyki${oblUrl}/wsi`);
-    } else if (obl !== "all" && col[0] !== 0) {
+    }
+    else if (obl !== "all" && col[0] !== 0) {
       navigator(`/nashi-avtomiyki${oblUrl}/${col[0]}`);
     }
   };
@@ -397,10 +400,11 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
         {
           localStorage.i18nextLng === "ua" ?
             <div className="breadcrumbs">
-              <Link className="breads" to="/">{t("home")}</Link>
-              <Link className="breads" onClick={oblUrl123} to="/nashi-avtomiyki/wsi"> / {t("OurCarWashes")}</Link>
+              <Link className="breads colorBread" to="/">{t("home")}</Link>
+              <Link className={colPost === 0 && obl === "all" ? "breads" : "breads colorBread"}
+                    onClick={oblUrl123} to="/nashi-avtomiyki/wsi"> / {t("OurCarWashes")}</Link>
               {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ?
-                <Link className="breads" to={`/nashi-avtomiyki/${id}/${colPost}`}>
+                <Link className={colPost === 0 ? "breads" : "breads colorBread"} to={`/nashi-avtomiyki/${id}/${colPost}`}>
                   {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ? ` / ${obl}` : ""}</Link> : ""
               }
               {
@@ -411,11 +415,12 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
             </div>
             :
             <div className="breadcrumbs">
-              <Link className="breads" to="/">{t("home")}</Link>
-              <Link className="breads" onClick={oblUrl123} to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>
+              <Link className="breads colorBread" to="/">{t("home")}</Link>
+              <Link className={colPost === 0 && obl === "all" ? "breads" : "breads colorBread"}
+                    onClick={oblUrl123} to="/nashi-avtomiyki/wsi"> / {t("OurCarWashes")}</Link>
               {
                 obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ?
-                  <Link className="breads" to={`/nashi-avtomiyki/${id}/${colPost}`}>
+                  <Link className={colPost === 0 ? "breads" : "breads colorBread"} to={`/nashi-avtomiyki/${id}/${colPost}`}>
                     {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki${post}/wsi` ? ` / ${obl}` : ""}</Link> : ""
               }
               <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}`}>

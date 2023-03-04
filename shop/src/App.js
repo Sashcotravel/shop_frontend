@@ -49,7 +49,7 @@ let obj = {}
 const App = () => {
 
   const [userData, setUserData] = useState({
-    name: "", phone: "", email: "", cite: "", date: "" });
+    name: "", phone: "", email: "", cite: "", date: '' });
   const [formPass, setFormPass] = useState({
     phone: false, email: false });
   const [total, setTotal] = useState(0);
@@ -191,9 +191,17 @@ const App = () => {
     let email = document.getElementById('email')
     const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if(!re.test(String(e.target.value).toLowerCase())){
-      email.style.border = '2px solid red'
-      email.style.backgroundCo1or = 'transparent'
-      setFormPass((actual) => { return { ...actual, email: false } })
+      if(formPass.phone === false) {
+        email.style.border = '2px solid red'
+        email.style.backgroundCo1or = 'transparent'
+        setFormPass((actual) => {
+          return { ...actual, email: false }
+        })
+      }else {
+        email.style.border = 'none'
+        email.style.borderBottom = '2px solid grey'
+        email.style.backgroundColor = 'transparent'
+      }
     } else {
       email.style.border = 'none'
       email.style.borderBottom = '2px solid grey'
@@ -203,45 +211,62 @@ const App = () => {
   }
 
   const changeBlur = (e) => {
+    console.log(formPass.email);
     setUserData((actual) => {
       return { ...actual, [e.target.title]: e.target.value };
     });
-    let phone = document.getElementById('phone')
+    let phone = document.getElementById("phone");
     let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
     if (regex.test(e.target.value.toString()) === true) {
-      phone.style.border = 'none'
-      phone.style.borderBottom = '2px solid grey'
-      phone.style.backgroundColor = 'transparent'
-      setFormPass((actual) => { return { ...actual, phone: true } })
+      phone.style.border = "none";
+      phone.style.borderBottom = "2px solid grey";
+      phone.style.backgroundColor = "transparent";
+      setFormPass((actual) => {
+        return { ...actual, phone: true };
+      });
     } else {
-      phone.style.border = '2px solid red'
-      phone.style.backgroundCo1or = 'transparent'
-      setFormPass((actual) => { return { ...actual, phone: false } })
+      if (formPass.email === false) {
+        phone.style.border = "2px solid red";
+        phone.style.backgroundCo1or = "transparent";
+        setFormPass((actual) => {
+          return { ...actual, phone: false };
+        });
+      } else {
+        phone.style.border = "none";
+        phone.style.borderBottom = "2px solid grey";
+        phone.style.backgroundColor = "transparent";
+      }
     }
-  }
+  };
 
   const useSubmit = async () => {
     if (total > 0) {
       if (formPass.email || formPass.phone) {
-        obj = { total: total, order: userOrder, user: userData };
+        obj = { total: total, order: userOrder, user: userData, checked };
         Users.forEach(user => user.size = 0);
         Users.forEach(user => user.total = user.prise);
         nullAll();
         setMeneger(true);
         hiddeItem();
-        let gtoken = await reCaptchaExecute(key, 'setting')
-        let res = await dispatch(fetchCaptcha({gtoken}))
-        if(res.payload){
-        const d = await dispatch(fetchPay(obj));
-        let link = "http://localhost:3000/your-order/" + d.payload;
-        console.log(link);
-        dispatch(fetchMail(obj));
-        dispatch(fetchMailDima(obj));
-        dispatch(fetchMailUser(obj));
-        }
+        // let gtoken = await reCaptchaExecute(key, 'setting')
+        // let res = await dispatch(fetchCaptcha({gtoken}))
+        // if(res.payload){
+        // const d = await dispatch(fetchPay(obj));
+        // let link = "http://localhost:3000/your-order/" + d.payload;
+        // console.log(link);
+        // dispatch(fetchMail(obj));
+        // dispatch(fetchMailDima(obj));
+        // dispatch(fetchMailUser(obj));
+        // }
       }
     }
   };
+
+  const phoneClick = () => {
+    if(userData.phone === ''){
+      setUserData((actual) => {return { ...actual, phone: '+' }})
+    }
+  }
 
 
   return (
@@ -254,7 +279,7 @@ const App = () => {
             onFooter ? ""
               : <>
                 <div className="breadcrumbs" style={window.screen.availWidth > 900 ? style : undefined}>
-                    <Link className="breads" to='/'>{t("home")}</Link>
+                    <Link className="breads" to='/' style={{color: '#7d7d80'}}>{t("home")}</Link>
                     <span className="breads"> / {t(`${url}`)}</span>
                 </div>
 
@@ -351,19 +376,19 @@ const App = () => {
               <p className={s.descSpan}>{t("desc")}</p>
               <br />
               <input className={s.inputUser} type="name" title="name"
-                     placeholder={`${t("enterName")}`} onChange={(e) => {
+                     placeholder={`${t("enterName")}`} value={userData.name}  onChange={(e) => {
                 setUserData((actual) => {
                   return { ...actual, [e.target.title]: e.target.value };
                 });
               }} />
               <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
-                     placeholder={`${t("enterEmail")}`} onChange={(e) => {
+                     placeholder={`${t("enterEmail")}`} value={userData.email} onChange={(e) => {
                 setUserData((actual) => {
                   return { ...actual, [e.target.title]: e.target.value };
                 });
               }} />
               <input className={s.inputUser} type="text" title="phone" id="phone"
-                     placeholder={`${t("enterYourPhoneNumber")}`} onChange={changeBlur} />
+                     placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={changeBlur} onClick={phoneClick} />
               <br />
               <div className={s.boxCheck}>
                 <input className={s.inputCheck} type="checkbox"
@@ -389,8 +414,9 @@ const App = () => {
               <div style={{margin: 'auto', display: 'flex', justifyContent: 'center'}}>
                 <button className={s.footerBut} style={{ width: "50%", backgroundColor: '#42DF4C' }}
                         onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>
-                  { formPass.email || formPass.phone && <Link style={{ color: "#FFFFFF" }} to="/thanks">{t("send")}</Link>}
-                  { !formPass.email || !formPass.phone && t("send") }
+                  { formPass.email || formPass.phone ?
+                      <Link style={{ color: "#FFFFFF" }} to="/thanks">{t("send")}</Link>
+                      : t("send") }
                 </button>
               </div>
             </div>

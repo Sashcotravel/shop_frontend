@@ -1151,7 +1151,7 @@ video{
 
 .divImgSlider{
     padding: 20px;
-    width: 60%;
+    width: 100%;
     height: 100%;
     top: -115px;
     position: relative;
@@ -1330,6 +1330,12 @@ video{
     }
     .sliderBox {
         height: 566px;
+    }
+    .divInfo{
+        padding-top: 10px;
+    }
+    .pPrise{
+        margin-top: 10px;
     }
     @keyframes title1 {
         from {
@@ -1565,6 +1571,9 @@ video{
         height: 50%;
         width: 100%;
         position: static;
+    }
+    .addClass{
+        height: 100%;
     }
     .div10{
         display: block;
@@ -2383,7 +2392,6 @@ video{
         height: 46%;
         width: 100%;
     }
-
     .container4_5 {
         display: block;
         min-height: 420px;
@@ -2489,67 +2497,55 @@ video{
         width: 292px;
         line-height: 1;
     }
-
     .container8 {
         display: block;
         height: 610px;
         padding-top: 80px;
         padding-left: 20px;
     }
-
     .container9_2 {
         display: block;
         min-height: 457px;
     }
-
     .container9 {
         display: block;
         width: 90%;
         padding-top: 80px;
         min-height: 500px;
     }
-
     .container9_3 {
         margin-left: 20px;
     }
-
     .container10_5 {
         height: 50px;
     }
-
     .p9 {
         max-width: 300px;
     }
-
     .container10_2 {
         height: 611px;
         display: block;
     }
-
     .container10 {
         padding-left: 20px;
         padding-top: 80px;
     }
-
     .p10 {
         font-size: 30px;
         max-width: 335px;
         left: 0;
         line-height: 1;
     }
-
     .p10_2 {
         font-size: 30px;
         max-width: 335px;
         left: 0;
         line-height: 1;
     }
-
     .div10 {
         display: block;
         margin-bottom: 0;
     }
-
     .p102 {
         display: block;
         margin: 0;
@@ -2559,40 +2555,33 @@ video{
         width: 335px;
         line-height: 1.2;
     }
-
     .divGreen10 {
         left: 0;
         right: 0;
         top: 70px;
     }
-
     .span10 {
         font-size: 18px;
         position: relative;
         top: 100px;
     }
-
     .container11_2 {
         display: block;
         height: 800px;
         padding-top: 80px;
         padding-left: 20px;
     }
-
     .container11 {
         margin-top: 0;
     }
-
     .p11 {
         font-size: 30px;
         width: 335px;
         line-height: 1;
     }
-
     .container11_6 {
         margin-top: 40px;
     }
-
     .p11_2 {
         line-height: 1;
         font-size: 18px;
@@ -2600,23 +2589,24 @@ video{
         margin-bottom: 40px;
         font-weight: 600;
     }
-
     .footerDiv {
         position: relative;
         top: 35px;
         padding-top: 0;
     }
-
     .footerSpan {
         font-size: 36px;
     }
-
     .footerDiv3 {
         top: 0;
         min-height: 310px;
         align-items: center;
         justify-content: space-evenly;
         flex-direction: column;
+    }
+    .addClass{
+        height: 100%;
+        margin-top: 20px;
     }
 }
 

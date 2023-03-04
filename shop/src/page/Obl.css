@@ -170,6 +170,10 @@
     text-decoration: none;
 }
 
+.colorBread{
+    color: #7d7d80;
+}
+
 .h4Title{
     color: rgba(178, 177, 183, 1);
     font: normal normal normal 24px Averta;
@@ -773,6 +777,14 @@ a[data-fancybox] img {
 
 
 
+@media screen and (max-width: 1200px) {
+    .divBoxTitASel{
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        height: 370px;
+    }
+}
 
 @media screen and (max-width: 700px) {
     .titleH2 {
@@ -783,6 +795,8 @@ a[data-fancybox] img {
     }
     .divBoxTitASel{
         margin-bottom: -50px;
+        align-items: center;
+        height: auto;
     }
     .breadcrumbs > * {
         margin-top: auto;

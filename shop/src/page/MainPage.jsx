@@ -162,14 +162,14 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
       setMeneger(false)
       setChecked(false)
       navigate('/thanks')
-      let gtoken = await reCaptchaExecute(key, 'setting')
-      let res = await dispatch(fetchCaptcha({gtoken}))
-      if(res.payload){
+      // let gtoken = await reCaptchaExecute(key, 'setting')
+      // let res = await dispatch(fetchCaptcha({gtoken}))
+      // if(res.payload){
         // let con = document.getElementById("lightblue");
         // con.style.visibility = "hidden";
         let obj = { user: userData };
         dispatch(fetchMailDimaZam(obj));
-      }
+      // }
     }
   };
 
@@ -251,9 +251,16 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     let email = document.getElementById('email')
     const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if(!re.test(String(e.target.value).toLowerCase())){
-      email.style.border = '2px solid red'
-      email.style.backgroundCo1or = 'transparent'
-      setFormPass((actual) => { return { ...actual, email: false } })
+      if(formPass.phone === false){
+        email.style.border = '2px solid red'
+        email.style.backgroundCo1or = 'transparent'
+        setFormPass((actual) => { return { ...actual, email: false } })
+      }
+      else {
+        email.style.border = 'none'
+        email.style.borderBottom = '2px solid grey'
+        email.style.backgroundColor = 'transparent'
+      }
     } else {
       email.style.border = 'none'
       email.style.borderBottom = '2px solid grey'
@@ -263,28 +270,40 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   }
 
   const onBlur2 = (e) => {
-    let phone = document.getElementById('phone')
+    let phone = document.getElementById("phone");
     let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
     if (regex.test(e.target.value.toString()) === true) {
-      phone.style.border = 'none'
-      phone.style.borderBottom = '2px solid grey'
-      phone.style.backgroundColor = 'transparent'
-      setFormPass((actual) => { return { ...actual, phone: true } })
+      phone.style.border = "none";
+      phone.style.borderBottom = "2px solid grey";
+      phone.style.backgroundColor = "transparent";
+      setFormPass((actual) => {return { ...actual, phone: true }});
     } else {
-      phone.style.border = '2px solid red'
-      phone.style.backgroundCo1or = 'transparent'
-      setFormPass((actual) => { return { ...actual, phone: false } })
+      if (formPass.email === false) {
+        phone.style.border = "2px solid red";
+        phone.style.backgroundCo1or = "transparent";
+        setFormPass((actual) => {return { ...actual, phone: false };});
+      } else {
+        phone.style.border = "none";
+        phone.style.borderBottom = "2px solid grey";
+        phone.style.backgroundColor = "transparent";
+      }
     }
   };
+
+  const phoneClick = (e) => {
+    if(userData.phone === ''){
+      setUserData((actual) => {return { ...actual, phone: '+' }})
+    }
+  }
 
 
   return <div>
 
     <main style={{ backgroundColor: "#283338" }}>
 
-      This site is protected by reCAPTCHA and the Google
-      <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-      <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+      {/*This site is protected by reCAPTCHA and the Google*/}
+      {/*<a href="https://policies.google.com/privacy">Privacy Policy</a> and*/}
+      {/*<a href="https://policies.google.com/terms">Terms of Service</a> apply.*/}
 
       <div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
         <div className={s.userdata2}>
@@ -297,17 +316,17 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
           <p className={s.descSpan}>{t("desc")}</p>
           <br />
           <input className={s.inputUser} type="name" title="name"
-                 placeholder={`${t("enterName")}`} onChange={(e) => {
+                 placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };});}} />
           <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
-                 placeholder={`${t("enterEmail")}`} onChange={(e) => {
+                 placeholder={`${t("enterEmail")}`} value={userData.email} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };});}} />
           <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onBlur={onBlur2}
-                 placeholder={`${t("enterYourPhoneNumber")}`} onChange={ (e) => {
+                 placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={ (e) => {
             setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };});}} />
+              return { ...actual, [e.target.title]: e.target.value }});}} onClick={phoneClick} />
           <br />
           <button className={s.footerBut} style={{ width: "50%", margin: "30px auto" }}
                   onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>{t("send")}</button>
@@ -485,7 +504,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 <figure>
-                  <div className={m.divImgSlider}>
+                  <div className={`${m.divImgSlider} ${m.addClass}`}>
                     {/*<img src={image2} className={m.imgClass2} alt='SMART' loading="eager" />*/}
                     <LazyLoadImage src={image2} className={m.imgClass2} alt="SMART" />
                   </div>
@@ -498,7 +517,9 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image21} className={m.imgClass2} alt='PIXEL' loading="lazy"/></div>*/}
-                <div className={m.divImgSlider}><LazyLoadImage src={image21} className={m.imgClass2} alt='PIXEL' /></div>
+                <figure>
+                  <div className={m.divImgSlider}><LazyLoadImage src={image21} className={m.imgClass2} alt='PIXEL' /></div>
+                </figure>
               </div>
 
               <div className={m.sliderDiv}>
@@ -507,7 +528,9 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image212} className={m.imgClass2} alt='MARCO' loading="lazy"/></div>*/}
-                <div className={m.divImgSlider}><LazyLoadImage src={image212} className={m.imgClass2} alt='MARCO' /></div>
+                <figure>
+                  <div className={m.divImgSlider}><LazyLoadImage src={image212} className={m.imgClass2} alt='MARCO' /></div>
+                </figure>
               </div>
 
               {/*<div className={m.sliderDiv}>*/}
@@ -525,7 +548,9 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image2123} className={m.imgClass2} alt='MARCHELLO' loading="lazy"/></div>*/}
-                <div className={m.divImgSlider}><LazyLoadImage src={image2123} className={m.imgClass2} alt='MARCHELLO' /></div>
+                <figure>
+                  <div className={m.divImgSlider}><LazyLoadImage src={image2123} className={m.imgClass2} alt='MARCHELLO' /></div>
+                </figure>
               </div>
 
               <div className={m.sliderDiv}>
@@ -534,7 +559,9 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image212345} className={m.imgClass2} alt='UFO' loading="lazy"/></div>*/}
-                <div className={m.divImgSlider}><LazyLoadImage src={image212345} className={m.imgClass2} alt='UFO' /></div>
+                <figure>
+                  <div className={m.divImgSlider}><LazyLoadImage src={image212345} className={m.imgClass2} alt='UFO' /></div>
+                </figure>
               </div>
             </Carousel>
 
