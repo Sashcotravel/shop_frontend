@@ -984,7 +984,7 @@ input[type="radio"] {
     }
     .greenButSend{
         font: normal normal normal 14px/19px Gilroy Light, sans-serif;
-        margin: 80px auto 80px;
+        margin: 0 auto 80px;
     }
     .textArea{
         width: 335px;

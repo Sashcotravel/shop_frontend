@@ -170,6 +170,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     );
   };
 
+
   return <>
     {screen && <div id="light" className={s.boxHideImage} onClick={hidden}>
       <figure className="figure">

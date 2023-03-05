@@ -62,10 +62,12 @@ const App = () => {
   const [postOne, setPostOne] = useState(null);
   const [meneger, setMeneger] = useState(true);
   const [url, setUrl] = useState(true);
+  const [color, setColor] = useState(false)
 
   const { t, i18n: { language } } = useTranslation();
   const dispatch = useDispatch()
   const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
+  const screen = window.screen.availWidth > 600
 
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
@@ -268,6 +270,24 @@ const App = () => {
     }
   }
 
+  const changeColor = () => {
+    if(!screen){
+      if(window.scrollY >= 260) {setColor(true)}
+      else {setColor(false)}
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
+
+  const styleUpManu = {
+    position: 'fixed',
+    top: '35px',
+    zIndex: '2',
+    height: '70px',
+    alignItems: 'center',
+    paddingBottom: '5px',
+    backgroundColor: '#273437'
+  }
 
   return (
     <Router basename={`/${language}/`}>
@@ -297,7 +317,7 @@ const App = () => {
                 </div>
 
                 {
-                  <div className={s.divTitle}>
+                  <div className={s.divTitle} style={color ? styleUpManu : {position: 'relative'} }>
                     <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                                   className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>
                     <div> <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
@@ -345,12 +365,10 @@ const App = () => {
               <Route path="/nashi-avtomiyki/:id/:post"
                      element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
               <Route path="/nashi-avtomiyki/miyka/:id/:post/:idMiyka" element={<OnePost setPostOne={setPostOne}
-                                                                                        setOnFooter={setOnFooter}
-                                                                                        postOne={postOne} t={t}
+                                                  setOnFooter={setOnFooter} postOne={postOne} t={t} setMeneger={setMeneger} setChecked={setChecked}
               />} />
               <Route path="/nashi-avtomiyki/miyka/:id/:idMiyka" element={<OnePost setPostOne={setPostOne}
-                                                                                  setOnFooter={setOnFooter}
-                                                                                  postOne={postOne} t={t}
+                                                  setOnFooter={setOnFooter} postOne={postOne} t={t} setMeneger={setMeneger} setChecked={setChecked}
               />} />
               {/* TEST START  */}
 

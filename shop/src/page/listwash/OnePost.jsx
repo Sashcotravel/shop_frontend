@@ -1,19 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../Obl.css";
 import image from "../../image/svg/Group 59.svg";
-import image2 from "../../image2/coverMARCHELLO.jpg";
-import image3 from "../../image/svg/Group31.svg";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { listWash } from "../../users";
 import FooterMain from "../../component/FooterMain";
 import { Fancybox, Carousel } from "@fancyapps/ui";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
+import s from "../../component/Home.module.css";
+import { useDispatch } from "react-redux";
+import { fetchMailDimaMika, fetchMailUserMiyka } from "../../API/post";
 
 
-const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
+const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }) => {
+
+  const [userData, setUserData] = useState({
+    name: "", phone: "", email: "" });
+  const [formPass, setFormPass] = useState({
+    phone: false, email: false });
 
   const { idMiyka } = useParams();
   const location = useLocation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   let one = postOne?.obl
   let two = postOne?.obl2
@@ -48,7 +56,17 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
     };
   }, []);
 
-  const road = () => {};
+  const road = () => {
+    let link = 'https://calculator.samwash.ua/ua' + location.pathname
+    if(formPass.email || formPass.phone){
+      setMeneger(false)
+      setChecked(false)
+      navigate('/thanks')
+      let obj = { user: userData, link };
+      dispatch(fetchMailDimaMika(obj));
+      dispatch(fetchMailUserMiyka(obj));
+    }
+  };
 
   const oblTrue = (one, two) => {
     if (url2) {
@@ -94,8 +112,105 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
     },
   });
 
+  const blurClose = (e) => {
+    if(e.target.id === "lightblue"){
+      let con = document.getElementById("lightblue");
+      con.style.visibility = "hidden";
+    }
+  };
+
+  const hiddeItem = () => {
+    let con = document.getElementById("lightblue");
+    con.style.visibility = "hidden";
+  };
+
+  const onBlur = (e) => {
+    let email = document.getElementById('email')
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(!re.test(String(e.target.value).toLowerCase())){
+      if(formPass.phone === false){
+        email.style.border = '2px solid red'
+        email.style.backgroundCo1or = 'transparent'
+        setFormPass((actual) => { return { ...actual, email: false } })
+      }
+      else {
+        email.style.border = 'none'
+        email.style.borderBottom = '2px solid grey'
+        email.style.backgroundColor = 'transparent'
+      }
+    } else {
+      email.style.border = 'none'
+      email.style.borderBottom = '2px solid grey'
+      email.style.backgroundColor = 'transparent'
+      setFormPass((actual) => { return { ...actual, email: true } })
+    }
+  }
+
+  const onBlur2 = (e) => {
+    let phone = document.getElementById("phone");
+    let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
+    if (regex.test(e.target.value.toString()) === true) {
+      phone.style.border = "none";
+      phone.style.borderBottom = "2px solid grey";
+      phone.style.backgroundColor = "transparent";
+      setFormPass((actual) => {return { ...actual, phone: true }});
+    } else {
+      if (formPass.email === false) {
+        phone.style.border = "2px solid red";
+        phone.style.backgroundCo1or = "transparent";
+        setFormPass((actual) => {return { ...actual, phone: false };});
+      } else {
+        phone.style.border = "none";
+        phone.style.borderBottom = "2px solid grey";
+        phone.style.backgroundColor = "transparent";
+      }
+    }
+  };
+
+  const phoneClick = (e) => {
+    if(userData.phone === ''){
+      setUserData((actual) => {return { ...actual, phone: '+' }})
+    }
+  }
+
+  const noScroll = () => {
+    let con = document.getElementById("lightblue");
+    con.style.visibility = "visible";
+  };
+
+
+
   return (
     <>
+
+      <div id="lightblue" onClick={blurClose} className={s.orderBlock} style={{ left: "0" }}>
+        <div className={s.userdata2}>
+          <div className={s.ix}>
+                <span style={{ margin: "5px 15px 0 0", color: "#BBB9B9", cursor: "pointer" }}
+                      onClick={hiddeItem}>&#10006;</span>
+          </div>
+          <p className={s.titleUser}>{t("getAnOffer")}</p>
+          <br />
+          <p className={s.descSpan}>{t("desc")}</p>
+          <br />
+          <input className={s.inputUser} type="name" title="name"
+                 placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
+            setUserData((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };});}} />
+          <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
+                 placeholder={`${t("enterEmail")}`} value={userData.email} onChange={(e) => {
+            setUserData((actual) => {
+              return { ...actual, [e.target.title]: e.target.value };});}} />
+          <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onBlur={onBlur2}
+                 placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={ (e) => {
+            setUserData((actual) => {
+              return { ...actual, [e.target.title]: e.target.value }});}} onClick={phoneClick} />
+          <br />
+          <button className={s.footerBut} style={{ width: "50%", margin: "30px auto" }}
+                  onClick={road} disabled={!formPass.email && !formPass.phone}>{t("send")}</button>
+        </div>
+      </div>
+
         <div className={`boxPost2`}>
 
           <div className={postOne?.city === "Хуст" ? "divIm1" : postOne?.city === "Тернопіль" ? "divIm1" : ""}></div>
@@ -172,7 +287,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne }) => {
 
           <p className="invest">{t("youCan")}</p>
 
-          <div onClick={road} className="hosh">{t("IWant")}</div>
+          <div onClick={noScroll} className="hosh">{t("IWant")}</div>
 
         {/*</div>*/}
       </div>
