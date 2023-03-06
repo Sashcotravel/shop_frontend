@@ -110,6 +110,30 @@
     align-items: center;
 }
 
+.styleUpManu2{
+    position: fixed;
+    top: 75px;
+    z-index: 2;
+    height: 70px;
+    padding-bottom: 5px;
+    background-color: rgb(39, 52, 55);
+    width: 100%;
+}
+
+.styleUpManu{
+    position: fixed;
+    top: 35px;
+    z-index: 2;
+    width: 100%;
+    height: 70px;
+    padding-top: 15px;
+    background-color: rgb(39, 52, 55);
+}
+
+.startPosition{
+    position: relative;
+}
+
 .h3Title{
     width: 454px;
     height: 177px;
@@ -861,6 +885,10 @@ input[type="radio"] {
     .greenButSend {
         margin-bottom: 50px;
     }
+    .styleUpManu2{
+        top: 55px;
+        padding-left: 110px;
+    }
 }
 
 @media screen and (max-width: 1270px) {
@@ -927,6 +955,13 @@ input[type="radio"] {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .styleUpManu2{
+        top: 35px;
+        padding-left: 310px;
+    }
+}
+
 @media screen and (max-width: 1020px) {
     .boxDiv {
         flex-direction: column;
@@ -936,9 +971,15 @@ input[type="radio"] {
         margin-left: 0;
         margin-top: 40px;
     }
+    .styleUpManu2{
+        padding-left: 425px;
+    }
 }
 
 @media screen and (max-width: 900px){
+    .styleUpManu2{
+        padding-left: 620px;
+    }
     .divMain{
         background-color: #1E2227;
         padding: 0 20px;

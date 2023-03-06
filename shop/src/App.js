@@ -213,7 +213,6 @@ const App = () => {
   }
 
   const changeBlur = (e) => {
-    console.log(formPass.email);
     setUserData((actual) => {
       return { ...actual, [e.target.title]: e.target.value };
     });
@@ -271,8 +270,13 @@ const App = () => {
   }
 
   const changeColor = () => {
+    if(screen){
+      if(window.scrollY >= 500) {setColor('comp')}
+      else {setColor(false)}
+    }
+
     if(!screen){
-      if(window.scrollY >= 260) {setColor(true)}
+      if(window.scrollY >= 260) {setColor('mob')}
       else {setColor(false)}
     }
   }
@@ -287,6 +291,16 @@ const App = () => {
     alignItems: 'center',
     paddingBottom: '5px',
     backgroundColor: '#273437'
+  }
+
+  const styleUpManu2 = {
+    position: 'fixed',
+    top: '75px',
+    zIndex: '2',
+    height: '70px',
+    paddingBottom: '5px',
+    backgroundColor: 'rgb(39, 52, 55)',
+    width: '100%'
   }
 
   return (
@@ -317,7 +331,8 @@ const App = () => {
                 </div>
 
                 {
-                  <div className={s.divTitle} style={color ? styleUpManu : {position: 'relative'} }>
+                  // <div className={s.divTitle} style={color === 'mob' ? styleUpManu : color === 'comp' ? styleUpManu2 : {position: 'relative'} }>
+                  <div className={`${s.divTitle} ${color === 'mob' ? s.styleUpManu : color === 'comp' ? s.styleUpManu2 : s.startPosition}`} >
                     <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                                   className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>
                     <div> <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}

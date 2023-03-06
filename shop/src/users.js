@@ -1368,4 +1368,45 @@ export const listWash = [
           '0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+90401/@48.1881618,23.2993195,17z/data=!3m1!4b1!4m5!3m4!' +
           '1s0x47382958125a008b:0x11b57679244b99f1!8m2!3d48.1881582!4d23.3015082'
     },
+    {
+        'name': 'Мийка самообслуговування 10 постів',
+        'desc': ['Попередня мийка піною', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
+        'desc2': '',
+        'colPost': 3,
+        'src': [image27], // tyt
+        'imgNum': 28,
+        'proect': true,
+        'vOb': true,
+        'city': 'Шацьк',
+        'city2': 'Shatsk',
+        'obl': 'Волинська область',
+        'obl2': 'Volynska Oblast',
+        'st': '50 років Перемоги, 60A',
+        'map': 'https://www.google.com/maps/place/%D0%90%D0%B2%D1%82%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D1%96%D1%8F+%' +
+          'D0%A8%D0%B0%D1%86%D1%8C%D0%BA,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+50+%D1%80%D0%BE%D0%BA%D1%96%D0%B2+%D0%9F' +
+          '%D0%B5%D1%80%D0%B5%D0%BC%D0%BE%D0%B3%D0%B8,+60%D0%90,+%D0%A8%D0%B0%D1%86%D1%8C%D0%BA,+%D0%92%D0%BE%D0%BB%D0%B' +
+          '8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+44000/@51.4963563,23.9253559,16z' +
+          '/data=!4m14!1m7!3m6!1s0x4723fb7039d667e7:0xf493e7dd0c82fddd!2z0KjQsNGG0YzQuiwg0JLQvtC70LjQvdGB0YzQutCwINC-0L' +
+          'HQu9Cw0YHRgtGM!8m2!3d51.4975426!4d23.9323386!16zL20vMDRsZHp6!3m5!1s0x4723fb113c9111e3:0xb8d833aca72983db!8m2' +
+          '!3d51.496798!4d23.9205033!16s%2Fg%2F113hl7c42'
+    },
+    {
+        'name': 'Мийка самообслуговування 10 постів',
+        'desc': ['Попередня мийка піною', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
+        'desc2': '',
+        'colPost': 3,
+        'src': [image27], // tyt
+        'imgNum': 29,
+        'proect': true,
+        'vOb': true,
+        'city': 'Пустомити',
+        'city2': 'Pushed',
+        'obl': 'Львівська область',
+        'obl2': 'Lvivska Oblast',
+        'st': 'Грушевського',
+        'map': 'https://www.google.com/maps/place/%D0%9F%D1%83%D1%81%D1%82%D0%BE%D0%BC%D0%B8%D1%82%D0%B8,+%D0%9B%D1%8C%D' +
+          '0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+81100/@49.720458,23.905' +
+          '5201,14z/data=!4m9!1m2!2m1!1z0L_Rg9GB0YLQvtC80LjRgtC4INGL0YTRjNCm0YTRi9GA!3m5!1s0x473ae50fda23b1bb:0x8ca5048' +
+          '2b33351d5!8m2!3d49.7154835!4d23.9055618!16zL20vMGd0NWg4'
+    },
 ]

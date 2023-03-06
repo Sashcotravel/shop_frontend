@@ -2124,480 +2124,488 @@ video{
 }
 
 @media screen and (max-width: 600px) {
-    .sNane{
-        font: normal normal 300 25px/44px Gilroy Light;
-        left: 190px;
+        .sNane{
+            font: normal normal 300 25px/44px Gilroy Light;
+            left: 190px;
+        }
+        .circleDiv{
+            margin-top: 20px;
+        }
+        .circleChartInfo {
+            width: 150px;
+            top: -190px;
+            left: 95px;
+            font-size: 35px;
+        }
+        .animDiv1 {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+        .youtubecontainer {
+            top: 0;
+            height: 100%;
+        }
+        .circleChart {
+            width: 300px;
+            height: 300px;
+        }
+        .startImage {
+            width: 870%;
+            top: -610px;
+            height: 301%;
+        }
+        .image {
+            width: 100vw;
+            height: 88%;
+            background-size: cover;
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+        .mainContainer {
+            display: block;
+        }
+        .container1 {
+            display: block;
+            padding-left: 20px
+        }
+        .titleH1 {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-top: 100px;
+            max-width: 360px;
+        }
+        .titleH4 {
+            font-size: 20px;
+            line-height: 1.3;
+            margin-top: 50px;
+            width: 315px;
+        }
+        .greenButDiv {
+            width: 336px;
+            height: 71px;
+            border-radius: 45px;
+        }
+        .greenBut {
+            width: 337px;
+            height: 71px;
+            border-radius: 45px;
+            line-height: 70px;
+            padding-left: 45px;
+            font-size: 16px;
+        }
+        .spanArrow {
+            width: 63px;
+            height: 63px;
+            top: 4px;
+            /*background: transparent url('../image/svg/Group 103.svg') 29px 20px no-repeat padding-box;*/
+            /*background-color: white;*/
+            z-index: 1;
+            padding-left: 5px;
+        }
+        .div99 {
+            display: block;
+            top: 0px;
+            position: relative;
+            padding-left: 20px
+        }
+        .container21 {
+            display: block;
+            padding-left: 20px;
+        }
+        .percentP {
+            font-size: 33px;
+            width: 144px;
+            margin-bottom: 40px;
+            line-height: 1.1;
+        }
+        .percentPAnim2{
+            font-size: 90px;
+        }
+        .percentPAnim{
+            font-size: 90px;
+        }
+        .counter_item {
+            margin: 30px 0 -10px 0;
+        }
+        .percent, .percent2 {
+            font-size: 90px;
+        }
+        .uiwidgets {
+            width: 200px;
+            height: 200px;
+            border: 35px solid #42DF4C;
+            border-right-color: black;
+        }
+        .container {
+            top: 125px;
+            left: 145px;
+            background-color: #283338;
+        }
+        .uiwidgets .uivalues {
+            font-size: 20px;
+            top: 45px;
+        }
+        .percentDiv2_2 {
+            display: block;
+            margin-top: -130px;
+            left: 55px;
+            width: 280px
+        }
+        .percentPAnim2 {
+            margin-left: 0;
+        }
+        .addPercentP {
+            left: 115px;
+            position: relative;
+            top: -30px;
+        }
+        .p6 {
+            max-width: 350px;
+        }
+        .divPerc {
+            margin-top: -75px;
+            padding-left: 115px;
+        }
+        .percentP2 {
+            font-size: 18px;
+        }
+        .container2 {
+            background-color: #283338;
+            display: block;
+            padding-left: 20px;
+            margin-top: 80px;
+        }
+        .pH {
+            font-size: 30px;
+            width: 365px;
+        }
+        .pH2 {
+            font-size: 30px;
+            margin-left: 0;
+            width: 332px;
+        }
+        .pP {
+            font-size: 18px;
+            width: 333px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+        .spanB {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            line-height: 44px;
+            margin-right: 20px;
+        }
+        .divSpan {
+            width: 327px;
+            font-size: 22px;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .span8Z {
+            font-size: 18px;
+            width: 251px;
+            line-height: 1.2;
+        }
+        .wW {
+            width: 265px;
+        }
+        .container3 {
+            display: block;
+            height: 410px;
+            min-width: 360px;
+            background-size: cover;
+            padding-top: 50px;
+            padding-left: 20px;
+        }
+        .pDos2 {
+            font-size: 30px;
+        }
+        .pYear {
+            font-size: 90px;
+        }
+        .pDos {
+            font-size: 33px;
+            line-height: 1;
+        }
+        .imageBlock {
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .container4 {
+            display: block;
+            padding-left: 20px;
+            /*padding-right: 20px;*/
+            padding-right: 0px;
+        }
+        .container4_2 {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+        .h4, .h42, .h421 {
+            width: 335px;
+            font-size: 30px;
+            margin: 0;
+            line-height: 1;
+        }
+        .p4 {
+            width: 335px;
+            font-size: 18px;
+            line-height: 1;
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
+        .pSmart{
+            font-size: 50px;
+            width: 300px;
+        }
+        .pPrise {
+            font: normal normal 300 24px/44px Gilroy Light;
+            margin: 0 0 20px 0;
+            width: 230px;
+        }
+        .arrowImg {
+            width: 70px;
+            height: 70px;
+            top: 30px;
+            left: 20px;
+        }
+        .pBig2 {
+            width: 300px;
+            font-size: 10px;
+        }
+        .sliderBox {
+            grid-column-start: 3;
+            margin-left: 0;
+            height: 630px;
+            width: 92%;
+        }
+        .divInfo {
+            width: 40%;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 0 0 20px;
+        }
+        .sliderDiv {
+            flex-direction: column;
+        }
+        .divImgSlider {
+            height: 85%;
+            width: 100%;
+        }
+        .container4_5 {
+            display: block;
+            min-height: 420px;
+            padding-left: 20px;
+            padding-top: 70px;
+        }
+        .p4_5 {
+            font-size: 30px;
+            line-height: 1;
+            width: 335px;
+        }
+        .p4_52 {
+            font-size: 30px;
+            line-height: 1;
+            margin-left: 0;
+            width: 335px;
+        }
+        .container5_3 {
+            margin-left: 20px;
+        }
+        .container5_2 {
+            display: block;
+        }
+        .slideStyleBack {
+            height: 200px;
+        }
+        .container5 {
+            display: block;
+            min-height: 700px;
+            width: 90%;
+            padding-top: 80px;
+        }
+        .title5P {
+            width: 292px;
+            font-size: 30px;
+            line-height: 1;
+        }
+        .p5 {
+            display: block;
+            bottom: 0;
+            left: 0;
+            margin: 0 0 40px 0;
+            font-size: 22px;
+        }
+        .ul {
+            margin: 40px 0 10px 0;
+            font-size: 18px;
+            width: 275px;
+        }
+        .spanIm {
+            line-height: 1.3;
+            top: 13px;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .pBig23 {
+            width: 260px;
+            font-size: 18px;
+            top: 45px;
+            font-weight: 600;
+        }
+        .container6 {
+            min-height: 540px;
+            display: block;
+            padding-top: 80px;
+        }
+        .container6_2 {
+            margin-left: 20px;
+        }
+        .p6 {
+            font-size: 30px;
+            line-height: 1;
+        }
+        .li {
+            width: 102%;
+        }
+        .container7_2 {
+            display: block;
+            height: 618px;
+        }
+        .container7 {
+            display: block;
+            width: 90%;
+            padding-top: 80px;
+            min-height: 618px;
+        }
+        .container7_3 {
+            margin-left: 20px;
+        }
+        .p16 {
+            font-size: 30px;
+            width: 292px;
+            line-height: 1;
+        }
+        .container8 {
+            display: block;
+            height: 610px;
+            padding-top: 80px;
+            padding-left: 20px;
+        }
+        .container9_2 {
+            display: block;
+            min-height: 457px;
+        }
+        .container9 {
+            display: block;
+            width: 90%;
+            padding-top: 80px;
+            min-height: 500px;
+        }
+        .container9_3 {
+            margin-left: 20px;
+        }
+        .container10_5 {
+            height: 50px;
+        }
+        .p9 {
+            max-width: 300px;
+        }
+        .container10_2 {
+            height: 611px;
+            display: block;
+        }
+        .container10 {
+            padding-left: 20px;
+            padding-top: 80px;
+        }
+        .p10 {
+            font-size: 30px;
+            max-width: 335px;
+            left: 0;
+            line-height: 1;
+        }
+        .p10_2 {
+            font-size: 30px;
+            max-width: 335px;
+            left: 0;
+            line-height: 1;
+        }
+        .div10 {
+            display: block;
+            margin-bottom: 0;
+        }
+        .p102 {
+            display: block;
+            margin: 0;
+            left: 0;
+            top: 40px;
+            font-size: 18px;
+            width: 335px;
+            line-height: 1.2;
+        }
+        .divGreen10 {
+            left: 0;
+            right: 0;
+            top: 70px;
+        }
+        .span10 {
+            font-size: 18px;
+            position: relative;
+            top: 100px;
+        }
+        .container11_2 {
+            display: block;
+            height: 800px;
+            padding-top: 80px;
+            padding-left: 20px;
+        }
+        .container11 {
+            margin-top: 0;
+        }
+        .p11 {
+            font-size: 30px;
+            width: 335px;
+            line-height: 1;
+        }
+        .container11_6 {
+            margin-top: 40px;
+        }
+        .p11_2 {
+            line-height: 1;
+            font-size: 18px;
+            width: 335px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        .footerDiv {
+            position: relative;
+            top: 35px;
+            padding-top: 0;
+        }
+        .footerSpan {
+            font-size: 36px;
+        }
+        .footerDiv3 {
+            top: 0;
+            min-height: 310px;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        .addClass{
+            height: 100%;
+            margin-top: 20px;
+        }
     }
-    .circleDiv{
-        margin-top: 20px;
-    }
-    .circleChartInfo {
-        width: 150px;
-        top: -190px;
-        left: 95px;
-        font-size: 35px;
-    }
-    .animDiv1 {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-    .youtubecontainer {
-        top: 0;
-        height: 100%;
-    }
-    .circleChart {
-        width: 300px;
-        height: 300px;
-    }
-    .startImage {
-        width: 870%;
-        top: -610px;
-        height: 301%;
-    }
-    .image {
-        width: 100vw;
-        height: 88%;
-        background-size: cover;
-        position: absolute;
-        top: 100px;
-        left: 0;
-    }
-    .mainContainer {
-        display: block;
-    }
-    .container1 {
-        display: block;
-        padding-left: 20px
-    }
-    .titleH1 {
-        font-size: 48px;
-        line-height: 1.1;
-        margin-top: 100px;
-        max-width: 360px;
-    }
-    .titleH4 {
-        font-size: 20px;
-        line-height: 1.3;
-        margin-top: 50px;
-        width: 315px;
-    }
-    .greenButDiv {
-        width: 336px;
-        height: 71px;
-        border-radius: 45px;
-    }
-    .greenBut {
-        width: 337px;
-        height: 71px;
-        border-radius: 45px;
-        line-height: 70px;
-        padding-left: 45px;
-        font-size: 16px;
-    }
-    .spanArrow {
-        width: 63px;
-        height: 63px;
-        top: 4px;
-        /*background: transparent url('../image/svg/Group 103.svg') 29px 20px no-repeat padding-box;*/
-        /*background-color: white;*/
-        z-index: 1;
-        padding-left: 5px;
-    }
-    .div99 {
-        display: block;
-        top: 0px;
-        position: relative;
-        padding-left: 20px
-    }
-    .container21 {
-        display: block;
-        padding-left: 20px;
-    }
-    .percentP {
-        font-size: 33px;
-        width: 144px;
-        margin-bottom: 40px;
-        line-height: 1.1;
-    }
-    .percentPAnim2{
-        font-size: 90px;
-    }
-    .percentPAnim{
-        font-size: 90px;
-    }
-    .counter_item {
-        margin: 30px 0 -10px 0;
-    }
-    .percent, .percent2 {
-        font-size: 90px;
-    }
-    .uiwidgets {
-        width: 200px;
-        height: 200px;
-        border: 35px solid #42DF4C;
-        border-right-color: black;
-    }
-    .container {
-        top: 125px;
-        left: 145px;
-        background-color: #283338;
-    }
-    .uiwidgets .uivalues {
-        font-size: 20px;
-        top: 45px;
-    }
-    .percentDiv2_2 {
-        display: block;
-        margin-top: -130px;
-        left: 55px;
-        width: 280px
-    }
-    .percentPAnim2 {
-        margin-left: 0;
-    }
-    .addPercentP {
-        left: 115px;
-        position: relative;
-        top: -30px;
-    }
-    .p6 {
-        max-width: 350px;
-    }
-    .divPerc {
-        margin-top: -75px;
-        padding-left: 115px;
-    }
-    .percentP2 {
-        font-size: 18px;
-    }
-    .container2 {
-        background-color: #283338;
-        display: block;
-        padding-left: 20px;
-        margin-top: 80px;
-    }
-    .pH {
-        font-size: 30px;
-        width: 365px;
-    }
-    .pH2 {
-        font-size: 30px;
-        margin-left: 0;
-        width: 332px;
-    }
-    .pP {
-        font-size: 18px;
-        width: 333px;
-        margin-top: 40px;
-        margin-bottom: 50px;
-    }
-    .spanB {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-        line-height: 44px;
-        margin-right: 20px;
-    }
-    .divSpan {
-        width: 327px;
-        font-size: 22px;
-        margin-bottom: 30px;
-        line-height: 1;
-    }
-    .span8Z {
-        font-size: 18px;
-        width: 251px;
-        line-height: 1.2;
-    }
-    .wW {
-        width: 265px;
-    }
-    .container3 {
-        display: block;
-        height: 410px;
-        min-width: 360px;
-        background-size: cover;
-        padding-top: 50px;
-        padding-left: 20px;
-    }
-    .pDos2 {
-        font-size: 30px;
-    }
-    .pYear {
-        font-size: 90px;
-    }
-    .pDos {
-        font-size: 33px;
-        line-height: 1;
-    }
-    .imageBlock {
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-    .container4 {
-        display: block;
-        padding-left: 20px;
-        /*padding-right: 20px;*/
-        padding-right: 0px;
-    }
-    .container4_2 {
-        padding-top: 80px;
-        padding-bottom: 40px;
-    }
-    .h4, .h42, .h421 {
-        width: 335px;
-        font-size: 30px;
-        margin: 0;
-        line-height: 1;
-    }
-    .p4 {
-        width: 335px;
-        font-size: 18px;
-        line-height: 1;
-        margin-top: 30px;
-        margin-bottom: 35px;
-    }
-    .pSmart{
-        font-size: 50px;
-        width: 300px;
-    }
-    .pPrise {
-        font: normal normal 300 24px/44px Gilroy Light;
-        margin: 0 0 20px 0;
-        width: 230px;
-    }
-    .arrowImg {
-        width: 70px;
-        height: 70px;
-        top: 30px;
-        left: 20px;
-    }
-    .pBig2 {
-        width: 300px;
-        font-size: 10px;
-    }
-    .sliderBox {
-        grid-column-start: 3;
-        margin-left: 0;
-        height: 630px;
-        width: 92%;
-    }
-    .divInfo {
-        width: 40%;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 0 0 20px;
-    }
-    .sliderDiv {
-        flex-direction: column;
-    }
-    .divImgSlider {
-        height: 85%;
+
+@media screen and (max-width: 430px) {
+    .imgClass2{
         width: 100%;
-    }
-    .container4_5 {
-        display: block;
-        min-height: 420px;
-        padding-left: 20px;
-        padding-top: 70px;
-    }
-    .p4_5 {
-        font-size: 30px;
-        line-height: 1;
-        width: 335px;
-    }
-    .p4_52 {
-        font-size: 30px;
-        line-height: 1;
-        margin-left: 0;
-        width: 335px;
-    }
-    .container5_3 {
-        margin-left: 20px;
-    }
-    .container5_2 {
-        display: block;
-    }
-    .slideStyleBack {
-        height: 200px;
-    }
-    .container5 {
-        display: block;
-        min-height: 700px;
-        width: 90%;
-        padding-top: 80px;
-    }
-    .title5P {
-        width: 292px;
-        font-size: 30px;
-        line-height: 1;
-    }
-    .p5 {
-        display: block;
-        bottom: 0;
-        left: 0;
-        margin: 0 0 40px 0;
-        font-size: 22px;
-    }
-    .ul {
-        margin: 40px 0 10px 0;
-        font-size: 18px;
-        width: 275px;
-    }
-    .spanIm {
-        line-height: 1.3;
-        top: 13px;
-        display: block;
-        margin-bottom: 15px;
-    }
-    .pBig23 {
-        width: 260px;
-        font-size: 18px;
-        top: 45px;
-        font-weight: 600;
-    }
-    .container6 {
-        min-height: 540px;
-        display: block;
-        padding-top: 80px;
-    }
-    .container6_2 {
-        margin-left: 20px;
-    }
-    .p6 {
-        font-size: 30px;
-        line-height: 1;
-    }
-    .li {
-        width: 102%;
-    }
-    .container7_2 {
-        display: block;
-        height: 618px;
-    }
-    .container7 {
-        display: block;
-        width: 90%;
-        padding-top: 80px;
-        min-height: 618px;
-    }
-    .container7_3 {
-        margin-left: 20px;
-    }
-    .p16 {
-        font-size: 30px;
-        width: 292px;
-        line-height: 1;
-    }
-    .container8 {
-        display: block;
-        height: 610px;
-        padding-top: 80px;
-        padding-left: 20px;
-    }
-    .container9_2 {
-        display: block;
-        min-height: 457px;
-    }
-    .container9 {
-        display: block;
-        width: 90%;
-        padding-top: 80px;
-        min-height: 500px;
-    }
-    .container9_3 {
-        margin-left: 20px;
-    }
-    .container10_5 {
-        height: 50px;
-    }
-    .p9 {
-        max-width: 300px;
-    }
-    .container10_2 {
-        height: 611px;
-        display: block;
-    }
-    .container10 {
-        padding-left: 20px;
-        padding-top: 80px;
-    }
-    .p10 {
-        font-size: 30px;
-        max-width: 335px;
-        left: 0;
-        line-height: 1;
-    }
-    .p10_2 {
-        font-size: 30px;
-        max-width: 335px;
-        left: 0;
-        line-height: 1;
-    }
-    .div10 {
-        display: block;
-        margin-bottom: 0;
-    }
-    .p102 {
-        display: block;
-        margin: 0;
-        left: 0;
-        top: 40px;
-        font-size: 18px;
-        width: 335px;
-        line-height: 1.2;
-    }
-    .divGreen10 {
-        left: 0;
-        right: 0;
-        top: 70px;
-    }
-    .span10 {
-        font-size: 18px;
-        position: relative;
-        top: 100px;
-    }
-    .container11_2 {
-        display: block;
-        height: 800px;
-        padding-top: 80px;
-        padding-left: 20px;
-    }
-    .container11 {
-        margin-top: 0;
-    }
-    .p11 {
-        font-size: 30px;
-        width: 335px;
-        line-height: 1;
-    }
-    .container11_6 {
-        margin-top: 40px;
-    }
-    .p11_2 {
-        line-height: 1;
-        font-size: 18px;
-        width: 335px;
-        margin-bottom: 40px;
-        font-weight: 600;
-    }
-    .footerDiv {
-        position: relative;
-        top: 35px;
-        padding-top: 0;
-    }
-    .footerSpan {
-        font-size: 36px;
-    }
-    .footerDiv3 {
-        top: 0;
-        min-height: 310px;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-direction: column;
-    }
-    .addClass{
-        height: 100%;
-        margin-top: 20px;
+        height: 145%;
+        object-fit: contain;
     }
 }
 

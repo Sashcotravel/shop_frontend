@@ -273,6 +273,11 @@
     left: 55px;
 }
 
+.projectClass{
+    font-size: 9px;
+    width: 150px;
+}
+
 .boxPost2{
     display: flex;
     color: #FFFFFF;

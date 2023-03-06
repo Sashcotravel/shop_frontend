@@ -124,7 +124,7 @@ const Contacts = ({ setOnFooter, t }) => {
                         return { ...actual, [e.target.title]: e.target.value };
                       });
                     }} />
-                    <input className={s.inputUser+' '+s.input1} type="email" title="email"  id="email" onBlur={onBlur}
+                    <input className={s.inputUser+' '+s.input1} type="email" title="email" id="email" onBlur={onBlur}
                            placeholder={`${t("enterEmail")}`} onChange={(e) => {
                       setUserData((actual) => {
                         return { ...actual, [e.target.title]: e.target.value };
@@ -165,13 +165,13 @@ const Contacts = ({ setOnFooter, t }) => {
                   <p className={s.h2_1+' '+s.p_1_2}>{t(`feedback`)}</p>
                   <p className={s.h2_2}>{t(`descCont`)}</p>
                   <div className={s.divInput1}>
-                    <input className={s.inputUser+' '+s.input1} type="text" title="name" required
+                    <input className={s.inputUser+' '+s.input1} type="text" title="name"
                            placeholder={`${t("enterName")}`} onChange={(e) => {
                       setUserData((actual) => {
                         return { ...actual, [e.target.title]: e.target.value };
                       });
                     }} />
-                    <input className={s.inputUser+' '+s.input1} type="email" title="email" required
+                    <input className={s.inputUser+' '+s.input1} type="email" title="email" id="email" onBlur={onBlur}
                            placeholder={`${t("enterEmail")}`} onChange={(e) => {
                       setUserData((actual) => {
                         return { ...actual, [e.target.title]: e.target.value };

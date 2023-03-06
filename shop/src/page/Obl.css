@@ -318,6 +318,11 @@
     left: 20px;
 }
 
+.projectClass{
+    font-size: 11px;
+    width: 170px;
+}
+
 .boxPost2{
     display: flex;
     color: #FFFFFF;
@@ -900,5 +905,8 @@ a[data-fancybox] img {
     .zPoz{
         position: relative;
         z-index: auto;
+    }
+    .breads{
+        font-size: 10px;
     }
 }

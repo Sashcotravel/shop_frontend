@@ -165,11 +165,12 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
     });
   };
 
-  const container = ({ item, city, vOb, imgNum, map, city2, st }) => {
+  const container = ({ item, city, vOb, imgNum, map, city2, st, proect }) => {
     let oblUrl = oblTrue(obl);
     return (
       <div key={imgNum} className="zPoz">
-        {vOb === undefined ? "" : <div className="addBlock">ВЛАСНИЙ ОБ'ЄКТ</div>}
+        {vOb === undefined ? "" : proect === undefined ? <div className="addBlock">ВЛАСНИЙ ОБ'ЄКТ</div> : ''}
+        {proect === undefined ? "" : <div className="addBlock projectClass">НА СТАДІЇ ПРОЕКТУВАННЯ</div>}
         <div className="boxItem">
           <p className="pRed">SAMWASH</p>
           <div className="divRoad">
@@ -289,6 +290,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
     document.getElementById("select2").value = "all";
     document.getElementById("select").value = 0;
   };
+
   const oblUrl2 = () => {
     click1Use("all");
     document.getElementById("select2").value = "all";
@@ -525,19 +527,19 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
           {
             listWash.map((item, i) => {
               if (item.colPost === colPost && item.obl === obl && item.vOb !== undefined) {
-                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
               } else if (item.obl === obl && colPost === 0 && item.vOb !== undefined) {
-                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
               } else if (colPost === 0 && obl === "all" && item.vOb !== undefined) {
-                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
               } else if (item.colPost === colPost && obl === "all" && item.vOb !== undefined) {
-                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
               } else if (item.colPost === colPost && item.obl2 === obl && item.vOb !== undefined) {
-                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
               } else if (colPost === 0 && item.obl2 === obl && item.vOb !== undefined) {
-                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
               } else if (item.vOb !== undefined && colPost === 0 && obl === "all") {
-                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
               }
             })
           }
@@ -550,17 +552,17 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
             {
               listWash.map((item, i) => {
                 if (item.colPost === colPost && item.obl === obl && item.vOb === undefined) {
-                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
                 } else if (item.obl === obl && colPost === 0  && item.vOb === undefined) {
-                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
                 } else if (colPost === 0 && obl === "all"  && item.vOb === undefined) {
-                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
                 } else if (item.colPost === colPost && obl === "all"  && item.vOb === undefined) {
-                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
                 } else if (item.colPost === colPost && item.obl2 === obl  && item.vOb === undefined) {
-                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
                 } else if (colPost === 0 && item.obl2 === obl && item.vOb === undefined) {
-                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i);
+                  return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);
                 }
               })
             }
