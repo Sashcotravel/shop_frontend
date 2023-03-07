@@ -450,7 +450,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne} onClick={popApp}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <iframe id="img4" width="100%" height="100%" src="https://www.youtube.com/embed/ENZjdyDPFos"
+                  <iframe id="img4" width="100%" height="100%" src="https://www.youtube.com/embed/ADgSpww7qiE"
                           title="Програма піна високий тиск" />
                   {size(4)}
                 </div>
@@ -496,7 +496,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne} id='pina2'>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img103" alt='Кольорова'/>
+                  {/*<LazyLoadImage src={require("")} className={"base"} id="img103" alt='Кольорова'/>*/}
                   {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
                   {size(103)}
                 </div>
@@ -530,7 +530,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne} id='pina1'>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img102" alt='Кабель'/>
+                  {/*<LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img102" alt='Кабель'/>*/}
                   {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
                   {size(102)}
                 </div>
@@ -564,7 +564,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" alt='Компресор'/>
+                  {/*<LazyLoadImage src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" alt='Компресор'/>*/}
                   {/*<img src={(`/static/media/${data[12].src}.${data[12].src2}`)} className={"base"} id="img18" />*/}
                   {size(18)}
                 </div>
@@ -643,7 +643,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/back.jpg")} className={"base"} id="img23" alt='Апарат з обміну'/>
+                  <LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img23" alt='Апарат з обміну'/>
                   {/*<img src={(`/static/media/${data[18].src}.${data[18].src2}`)} className={"base"} id="img23" />*/}
                   {size(23)}
                 </div>
@@ -739,6 +739,23 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             </div>
           </div>
         </LazyLoadComponent>
+
+        <h2 className={s.docH2}>
+          Технологічне обладнання зібрано на оцинкованій рамі і займає площу 2 м. кв. Розміри: ширина 0.8, довжина 2,5 м,
+          висота 2 м. На рамі кріпиться двох колонна система пом'якшення води з клапаном керування Clack, система виготовлення
+          осмосу 700 л/год з повторним використанням води (економить 10% води). Насоси високого тиску Interpump з регульованим тиском до 250 бар.
+          Електродвигуни 2.2, 3.0, 4.0, 5.5, 7.5 кВт, які забезпечують тиск від 120 до 250 бар. Частотні перетворювачі
+          Schneider, які забезпечують плавний пуск і економлять до 15% електроенергії. Дозуючу насоси фірми Seco, які
+          дозволяють електронно дозувати та економити розхід хімічних засобів (5% хімічних засобів).
+          Електро та пневмо клапани Італійської фірми Aigner дозволяють переключати високий тиск до 250 бар (дозволяє
+          уникнути монтажу додаткового насосу та електродвигуна). З'єднані елементи мийки виконані з поліпропіленових та
+          поліамідних труб та фітингів фірми Aquatherm (гарантійний термін 50 років). Зворотні клапани та клапани високого
+          тиску виготовлені з нержавіючої сталі.
+          Електрична шафа автомийки  самообслуговування SamWash
+          Управління мийки здійснюється за допомогою промислового контроллера Schneider 241 серії, який розміщений в
+          електричній шафі з кулером. Контроллер дозволяє економити до 20% води, електроенергії та хімічних засобів для
+          миття автомобіля. Всі елементи електронного управління виключно фірми Schneider.
+        </h2>
 
       </div>
     </main>

@@ -75,9 +75,11 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   };
 
   const addChange = (e) => {
-    setResh(e.target.value)
-    data[62].size = e.target.value
-    data[62].total = data[62].size * 90
+    if(e.target.value.length < 6){
+      setResh(e.target.value)
+      data[62].size = e.target.value
+      data[62].total = data[62].size * 90
+    }
   }
 
   const onBlur = (e) => {
@@ -103,6 +105,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
               <p className={s.itemName}>{data[62].nameOfGoods}</p>
+              <p className={s.itemName}>гравій, пісок, цемент</p>
               <p className={s.itemDesc}></p>
               <div className={s.divBut}>
                 <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
@@ -110,7 +113,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 </div>
                 <input className={s.itemTotal+' '+s.inputResh} type="text" value={resh}
                        onChange={addChange} title={data[62].nameOfGoods} onBlur={onBlur}/>
-                <span className={s.itemTotal} style={{marginLeft: '-40px'}}>кв</span>
+                <span className={s.itemTotal} style={{marginLeft: '-40px'}}>м²</span>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@
     border-radius: 20px 20px 0 0;
     overflow: hidden;
     background-repeat: no-repeat;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .block{
@@ -38,7 +38,7 @@
 
 .imageLarge {
     background-repeat: no-repeat;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
     z-index: 2;
     height: 80vh;
@@ -74,6 +74,7 @@
 .imageSize{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .blockLarge{
@@ -176,7 +177,7 @@
 
 .h4Title{
     color: rgba(178, 177, 183, 1);
-    font: normal normal normal 24px Averta;
+    font: normal normal normal 24px Gilroy Light, sans-serif;
     text-align: start;
     margin: 0 0 50px 20px;
 }
@@ -192,7 +193,7 @@
     color: white;
     background-color: #DF4242;
     font-size: 16px;
-    font-family: 'Averta';
+    font-family: Gilroy Light, sans-serif;
     margin: 0 0 15px 0;
     outline: none;
     appearance: none;
@@ -220,7 +221,7 @@
 }
 
 .titleH2{
-    font-family: 'Averta';
+    font-family: Gilroy Light, sans-serif;
     font-size: 72px;
     font-weight: normal;
     color: #FFFFFF;
@@ -244,7 +245,7 @@
     font-size: 10px;
     text-align: left;
     margin: 3px 0 0 10px;
-    font-family: 'Averta';
+    font-family: Gilroy Light, sans-serif;
 }
 
 .redBut{
@@ -258,7 +259,7 @@
     border-radius: 20px;
     color: white;
     font-size: 16px;
-    font-family: 'Averta';
+    font-family: Gilroy Light, sans-serif;
 }
 
 
@@ -311,7 +312,7 @@
     height: 20px;
     border-radius: 5px;
     font-size: 10px;
-    font-family: 'Averta';
+    font-family: Gilroy Light, sans-serif;
     line-height: 20px;
     position: relative;
     top: 9px;
@@ -515,11 +516,6 @@
     font-family: Gilroy Light, sans-serif;
     width: 582px;
 }
-
-
-/*.div2Title{*/
-/*    margin-left: -60px;*/
-/*}*/
 
 a[data-fancybox] img {
     cursor: zoom-in;
@@ -828,7 +824,7 @@ a[data-fancybox] img {
         height: 161px;
     }
     .titlePost {
-        font: normal normal normal 36px Averta;
+        font: normal normal normal 36px Gilroy Light, sans-serif;
         height: auto;
         margin-left: 20px;
     }

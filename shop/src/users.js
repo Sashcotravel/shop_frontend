@@ -132,10 +132,10 @@ export const Users = [
         'src': `Fura_1`,
         'src2': `0286c741c49b152da106.jpg`,
         'nameImg': '16',
-        'prise': 4500,
+        'prise': 180000,  //  4500
         'size': 0,
         'discount': '',
-        'total': 4500
+        'total': 180000
     },
     {
         'id': 100014,
@@ -143,10 +143,10 @@ export const Users = [
         'src': `Fura_3`,
         'src2': `8ab618036f052c8c49d1.jpg`,
         'nameImg': '17',
-        'prise': 4000,
+        'prise': 160000,  //  4000
         'size': 0,
         'discount': '',
-        'total': 4000
+        'total': 160000
     },
     {
         'id': 100019,
@@ -154,14 +154,16 @@ export const Users = [
         'src': `190287494_104260661860718_4702299049689622091_n`,
         'src2': `4adf4c6c5cb0a57e822a.jpg`,
         'nameImg': '18',
-        'prise': 800,
+        'prise': 32000,  // 800
         'size': 0,
         'discount': '',
-        'total': 800
+        'total': 32000
     },
     {
         'id': 100022,
-        'nameOfGoods': 'Система ANTIFROST TURBO ECO Електронна система управління Schneider Germany з 4х рівневою системою захисту для безперебійної роботи обладнання до -35 °С навіть при відсутності електроенергії чи водопостачання. Підключена система для економії води для системи antifrost до 90%.',
+        'nameOfGoods': 'Система ANTIFROST TURBO ECO Електронна система управління Schneider Germany з 4х рівневою системою' +
+          ' захисту для безперебійної роботи обладнання до -35 °С навіть при відсутності електроенергії чи водопостачання. ' +
+          'Підключена система для економії води для системи antifrost до 90%.',
         'prise': 0.00,
         'size': 0,
         'discount': '',
@@ -173,10 +175,10 @@ export const Users = [
         'src': `chastPer`,
         'src2': `70ff3b554a6c3ce81d44.jpg`,
         'nameImg': '19',
-        'prise': 1200,
+        'prise': 48000,  // 1200
         'size': 0,
         'discount': '',
-        'total': 1200
+        'total': 48000
     },
     {
         'id': 100027,
@@ -184,10 +186,10 @@ export const Users = [
         'src': `kasa`,
         'src2': `e2ee9f5ebcdd8aa90bed.jpeg`,
         'nameImg': '20',
-        'prise': 700,
+        'prise': 28000,  // 700
         'size': 0,
         'discount': '',
-        'total': 700
+        'total': 28000
     },
     {
         'id': 100028,
@@ -195,10 +197,10 @@ export const Users = [
         'src': `aprrevcoin`,
         'src2': `e2ee9f5ebcdd8aa90bed.jpeg`,
         'nameImg': '21',
-        'prise': 700,
+        'prise': 28000,  // 700
         'size': 0,
         'discount': '',
-        'total': 700
+        'total': 28000
     },
     {
         'id': 100031,
@@ -206,10 +208,10 @@ export const Users = [
         'src': `siscorpost`,
         'src2': `e7c8ec001a3e0252549e.jpg`,
         'nameImg': '22',
-        'prise': 300,
+        'prise': 12000,  // 300
         'size': 0,
         'discount': '',
-        'total': 300
+        'total': 12000
     },
     {
         'id': 100033,
@@ -219,10 +221,10 @@ export const Users = [
         'src': `aprrevcoin`,
         'src2': `e2ee9f5ebcdd8aa90bed.jpeg`,
         'nameImg': '23',
-        'prise': 1500.00,
+        'prise': 60000,  // 1500
         'size': 0,
         'discount': '',
-        'total': 1500
+        'total': 60000
     },
     {
         'id': 100034,
@@ -234,10 +236,10 @@ export const Users = [
         'src': `termainal`,
         'src2': `e2ee9f5ebcdd8aa90bed.jpeg`,
         'nameImg': '24',
-        'prise': 6500.00,
+        'prise': 260000, // 6500
         'size': 0,
         'discount': '',
-        'total': 6500
+        'total': 260000
     },
     {
         'id': 100035,
@@ -248,11 +250,11 @@ export const Users = [
         'доступом до особистого кабінету РРО чеки та інше)',
         'src': `termainal`,
         'src2': `e2ee9f5ebcdd8aa90bed.jpeg`,
-        'prise': 6500.00,
+        'prise': 260000, // 6500
         'nameImg': '25',
         'size': 0,
         'discount': '',
-        'total': 6500
+        'total': 260000
     },
     {
         'id': 100036,
@@ -260,10 +262,10 @@ export const Users = [
         'src': `back`,
         'src2': `f61d8db9baa2db3a92f1.jpg`,
         'nameImg': '26',
-        'prise': 80.00,
+        'prise': 3200,  // 80
         'size': 0,
         'discount': '',
-        'total': 80
+        'total': 3200
     },
     {
         'id': 100037,
@@ -271,10 +273,10 @@ export const Users = [
         'src': `et1000`,
         'src2': `df333daab5d8d9bfae72.jpg`,
         'nameImg': '27',
-        'prise': 500,
+        'prise': 20000,  // 500
         'size': 0,
         'discount': '',
-        'total': 500
+        'total': 20000
     },
     {
         'id': 100040,
@@ -282,11 +284,11 @@ export const Users = [
         'src': `coverSMART`,
         'src2': `48fb642630a5a902f432.jpg`,
         'nameImg': '6',
-        'prise': 6200,
+        'prise': 248000,  // 6200
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 6200
+        'total': 248000
     },
     {
         'id': 100040,
@@ -294,11 +296,11 @@ export const Users = [
         'src': `coverPIXEL`,
         'src2': `2238957df344a2ac32e5.jpg`,
         'nameImg': '7',
-        'prise': 7200,
+        'prise': 288000,  // 7200
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 7200
+        'total': 288000
     },
     {
         'id': 100042,
@@ -306,7 +308,7 @@ export const Users = [
         'src': `coverMARCO1`,
         'src2': `38f877096545ebb43c64.jpg`,
         'nameImg': '8',
-        'prise': 7700,
+        'prise': 308000,  // 7700
         'size': 0,
         'discount': '',
         'checked': false,
@@ -318,11 +320,11 @@ export const Users = [
         'src': `coverMARCO`,
         'src2': `75bc71c34442e7fdb624.jpg`,
         'nameImg': '9',
-        'prise': 8200,
+        'prise': 328000,  // 8200
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 8200
+        'total': 328000
     },
     {
         'id': 100044,
@@ -330,11 +332,11 @@ export const Users = [
         'src': `coverMARCHELLO`,
         'src2': `44d392c3c0935599413d.jpg`,
         'nameImg': '10',
-        'prise': 12800,
+        'prise': 512000,  // 12800
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 12800
+        'total': 512000
     },
     {
         'id': 100044_1,
@@ -342,11 +344,11 @@ export const Users = [
         'src': `coverMARCHELLight`,
         'src2': `fe4478c1819155bba04c.jpg`,
         'nameImg': '60',
-        'prise': 12800,
+        'prise': 512000,  // 12800
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 12800
+        'total': 512000
     },
     {
         'id': 100045,
@@ -354,11 +356,11 @@ export const Users = [
         'src': `karkasUfo`,
         'src2': `daad446a6e222c70de73.jpg`,
         'nameImg': '11',
-        'prise': 13500,
+        'prise': 540000,  // 13500
         'size': 0,
         'discount': '',
         'checked': false,
-        'total': 13500
+        'total': 540000
     },
     {
         'id': 100069,
@@ -366,10 +368,10 @@ export const Users = [
         'src': `cohpros`,
         'src2': `4f12441bc523f7ad802d.jpg`,
         'nameImg': '12',
-        'prise': 800,
+        'prise': 32000,  // 800
         'size': 0,
         'discount': '',
-        'total': 800
+        'total': 32000
     },
     {
         'id': 100047,
@@ -377,10 +379,10 @@ export const Users = [
         'src': `IMG_0065(2)`,
         'src2': `a761d88a52f4d809255b.jpg`,
         'nameImg': '13',
-        'prise': 1800,
+        'prise': 72000,  // 1800
         'size': 0,
         'discount': '',
-        'total': 1800
+        'total': 72000
     },
     {
         'id': 100048,
@@ -388,10 +390,10 @@ export const Users = [
         'src': `ppodvidpostbut`,
         'src2': `ab9c6d388fa7b292b4ab.jpg`,
         'nameImg': '14',
-        'prise': 2300,
+        'prise': 92000,  // 2300
         'size': 0,
         'discount': '',
-        'total': 2300
+        'total': 92000
     },
     {
         'id': 100049,
@@ -399,10 +401,10 @@ export const Users = [
         'src': `tpod`,
         'src2': `1f1242fb4d7f5930df18.jpg`,
         'nameImg': '15',
-        'prise': 3800,
+        'prise': 152000,  // 3800
         'size': 0,
         'discount': '',
-        'total': 3800
+        'total': 152000
     },
     {
         'id': 100050,
@@ -410,10 +412,10 @@ export const Users = [
         'src': `ppodvidpost`,
         'src2': `ab9c6d388fa7b292b4ab.jpg`,
         'nameImg': '28',
-        'prise': 4800,
+        'prise': 192000,  // 4800
         'size': 0,
         'discount': '',
-        'total': 4800
+        'total': 192000
     },
     {
         'id': 100051,
@@ -421,10 +423,10 @@ export const Users = [
         'src': `vidpostfur`,
         'src2': `8ab618036f052c8c49d1.jpg`,
         'nameImg': '29',
-        'prise': 3300,
+        'prise': 132000,  // 3300
         'size': 0,
         'discount': '',
-        'total': 3300
+        'total': 132000
     },
     {
         'id': 100053,
@@ -432,10 +434,10 @@ export const Users = [
         'src': `tr4cowcunk`,
         'src2': `ac9280b744e9c8920559.jpg`,
         'nameImg': '30',
-        'prise': 300,
+        'prise': 12000,  // 300
         'size': 0,
         'discount': '',
-        'total': 300
+        'total': 12000
     },
     {
         'id': 100054,
@@ -443,10 +445,10 @@ export const Users = [
         'src': `wisk`,
         'src2': `e64198171b9408865c50.jpg`,
         'nameImg': '31',
-        'prise': 180,
+        'prise': 7200,  // 180
         'size': 0,
         'discount': '',
-        'total': 180
+        'total': 7200
     },
     {
         'id': 100055,
@@ -454,10 +456,10 @@ export const Users = [
         'src': `tr4cowcunk2`,
         'src2': `4afb56f0988b55c47bee.jpg`,
         'nameImg': '32',
-        'prise': 420,
+        'prise': 16800,  // 420
         'size': 0,
         'discount': '',
-        'total': 420
+        'total': 16800
     },
     {
         'id': 100056,
@@ -465,10 +467,10 @@ export const Users = [
         'src': `tr4cow1`,
         'src2': `32282a5cbc52542ce3ef.jpg`,
         'nameImg': '33',
-        'prise': 300,
+        'prise': 12000,  // 300
         'size': 0,
         'discount': '',
-        'total': 300
+        'total': 12000
     },
     {
         'id': 100057,
@@ -477,10 +479,10 @@ export const Users = [
         'src': `sa`,
         'src2': `4650c3ff3ec36036f4e4.jpg`,
         'nameImg': '35',
-        'prise': 35,
+        'prise': 1400,  // 35
         'size': 0,
         'discount': '',
-        'total': 35
+        'total': 1400
     },
     {
         'id': 100059,
@@ -490,10 +492,10 @@ export const Users = [
         'src': `Two-stationVthree-phaseVacuumcleaner`,
         'src2': `0749c842a99319b6b668.jpg`,
         'nameImg': '36',
-        'prise': 6900,
+        'prise': 276000,  // 6900
         'size': 0,
         'discount': '',
-        'total': 6900
+        'total': 276000
     },
     {
         'id': 100060,
@@ -501,10 +503,10 @@ export const Users = [
         'src': `rukcir`,
         'src2': `0ffca901d5ded2e852be.jpg`,
         'nameImg': '37',
-        'prise': 250,
+        'prise': 10000,  // 250
         'size': 0,
         'discount': '',
-        'total': 250
+        'total': 10000
     },
     {
         'id': 100061,
@@ -512,10 +514,10 @@ export const Users = [
         'src': `rukpram`,
         'src2': `bdc08391e1b2f255146b.jpg`,
         'nameImg': '38',
-        'prise': 380,
+        'prise': 15200,  // 380
         'size': 0,
         'discount': '',
-        'total': 380
+        'total': 15200
     },
     {
         'id': 100062,
@@ -523,10 +525,10 @@ export const Users = [
         'src': `tablener2`,
         'src2': `579f33c53fbbf8fb768d.jpg`,
         'nameImg': '39',
-        'prise': 520,
+        'prise': 20800,  // 520
         'size': 0,
         'discount': '',
-        'total': 520
+        'total': 20800
     },
     {
         'id': 100063,
@@ -534,10 +536,10 @@ export const Users = [
         'src': `lighteningpanel`,
         'src2': `3403c66fedcb35793a20.jpg`,
         'nameImg': '40',
-        'prise': 300,
+        'prise': 12000,  // 300
         'size': 0,
         'discount': '',
-        'total': 300
+        'total': 12000
     },
     {
         'id': 100064,
@@ -545,10 +547,10 @@ export const Users = [
         'src': `lighteningpanel2`,
         'src2': `cb5120a00977d2603e27.png`,
         'nameImg': '41',
-        'prise': 450,
+        'prise': 18000,  // 450
         'size': 0,
         'discount': '',
-        'total': 450
+        'total': 18000
     },
     {
         'id': 100065,
@@ -556,10 +558,10 @@ export const Users = [
         'src': `inpan1`,
         'src2': `311bb1fd4c919ab5b123.jpg`,
         'nameImg': '42',
-        'prise': 800,
+        'prise': 32000,  // 800
         'size': 0,
         'discount': '',
-        'total': 800
+        'total': 32000
     },
     {
         'id': 100066,
@@ -567,10 +569,10 @@ export const Users = [
         'src': `wubcow`,
         'src2': `115b57e1647619a87b29.jpg`,
         'nameImg': '43',
-        'prise': 450,
+        'prise': 18000,  // 450
         'size': 0,
         'discount': '',
-        'total': 450
+        'total': 18000
     },
     {
         'id': 100067,
@@ -578,10 +580,10 @@ export const Users = [
         'src': `trash`,
         'src2': `84985f068ea56ddc8d3f.jpg`,
         'nameImg': '44',
-        'prise': 180,
+        'prise': 7200,  // 180
         'size': 0,
         'discount': '',
-        'total': 180
+        'total': 7200
     },
     {
         'id': 100075,
@@ -589,10 +591,10 @@ export const Users = [
         'src': `reshnas`,
         'src2': `2490c0799c46cacfeb5a.jpg`,
         'nameImg': '45',
-        'prise': 360,
+        'prise': 14400,  // 360
         'size': 0,
         'discount': '',
-        'total': 360
+        'total': 14400
     },
     {
         'id': 100076,
@@ -600,10 +602,10 @@ export const Users = [
         'src': `reshnas2`,
         'src2': `8c749df469974fc2e928.jpg`,
         'nameImg': '46',
-        'prise': 140,
+        'prise': 5600,  // 140
         'size': 0,
         'discount': '',
-        'total': 140
+        'total': 5600
     },
     {
         'id': 100077,
@@ -611,10 +613,10 @@ export const Users = [
         'src': `reshnas2`,
         'src2': `8c749df469974fc2e928.jpg`,
         'nameImg': '47',
-        'prise': 205,
+        'prise': 8200,  // 205
         'size': 0,
         'discount': '',
-        'total': 205
+        'total': 8200
     },
     {
         'id': 100078,
@@ -622,10 +624,10 @@ export const Users = [
         'src': `reshnas2`,
         'src2': `8c749df469974fc2e928.jpg`,
         'nameImg': '48',
-        'prise': 90,
+        'prise': 3600,  // 90
         'size': 0,
         'discount': '',
-        'total': 90
+        'total': 3600
     },
     {
         'id': 100079,
@@ -641,10 +643,10 @@ export const Users = [
         'src': `sendvish`,
         'src2': `7f2d948bb48beff454c1.jpg`,
         'nameImg': '49',
-        'prise': 10200,
+        'prise': 408000,  // 10200
         'size': 0,
         'discount': '',
-        'total': 10200
+        'total': 408000
     },
     {
         'id': 100200, // new
@@ -652,10 +654,10 @@ export const Users = [
         'src': `sendvish`,
         'src2': `7f2d948bb48beff454c1.jpg`,
         'nameImg': '100',
-        'prise': 150,
+        'prise': 6000,  // 150
         'size': 0,
         'discount': '',
-        'total': 150
+        'total': 6000
     },
     {
         'id': 100210, // new
@@ -663,10 +665,10 @@ export const Users = [
         'src': `sendvish`,
         'src2': `7f2d948bb48beff454c1.jpg`,
         'nameImg': '101',
-        'prise': 1200,
+        'prise': 48000, // 1200
         'size': 0,
         'discount': '',
-        'total': 1200
+        'total': 48000
     },
     {
         'id': 100220, // new
@@ -674,10 +676,10 @@ export const Users = [
         'src': `sendvish`,
         'src2': `7f2d948bb48beff454c1.jpg`,
         'nameImg': '102',
-        'prise': 240,
+        'prise': 9600, // 240
         'size': 0,
         'discount': '',
-        'total': 240
+        'total': 9600
     },
     {
         'id': 100230, // new
@@ -685,19 +687,19 @@ export const Users = [
         'src': `sendvish`,
         'src2': `7f2d948bb48beff454c1.jpg`,
         'nameImg': '103',
-        'prise': 300,
+        'prise': 12000, // 300
         'size': 0,
         'discount': '',
-        'total': 300
+        'total': 12000
     },
     {
         'id': 100240, // new
         'nameOfGoods': 'Приямки', // 60
         'nameImg': '104',
-        'prise': 4000,
+        'prise': 160000,  // 400
         'size': 0,
         'discount': '',
-        'total': 4000
+        'total': 160000
     },
     {
         'id': 100250, // new
@@ -712,10 +714,10 @@ export const Users = [
         'id': 100260, // new
         'nameOfGoods': 'Решітковий настил', // 62
         'nameImg': '106',
-        'prise': 90,
+        'prise': 3600, // 90
         'size': 0,
         'discount': '',
-        'total': 90
+        'total': 3600
     },
     {
         'id': 100270, // new
@@ -741,10 +743,10 @@ export const Users = [
         'src': `sendvish`,
         'src2': `7f2d948bb48beff454c1.jpg`,
         'nameImg': '109',
-        'prise': 6700,
+        'prise': 268000, // 6700
         'size': 0,
         'discount': '',
-        'total': 6700
+        'total': 268000
     },
 ]
 
@@ -787,7 +789,7 @@ export const listWash = [
         'desc': ['Активна піна', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
         'desc2': 'Для обслуговування великогабаритних автомобілів (до 10 тонн) передбачено 1 пост. Для зручності відвідувачів передбачено 1 пилосос потужністю 3 кВт.',
         'colPost': 3,
-        'src': [image3],
+        'src': [image3, 'https://www.youtube.com/embed/5vCS5brR5ic'],
         'imgNum': 3,
         'city': 'Рогатин',
         'city2': 'Rohatyn',
@@ -1374,7 +1376,7 @@ export const listWash = [
         'desc2': '',
         'colPost': 3,
         'src': [image27], // tyt
-        'imgNum': 28,
+        'imgNum': 41,
         'proect': true,
         'vOb': true,
         'city': 'Шацьк',
@@ -1396,7 +1398,7 @@ export const listWash = [
         'desc2': '',
         'colPost': 3,
         'src': [image27], // tyt
-        'imgNum': 29,
+        'imgNum': 40,
         'proect': true,
         'vOb': true,
         'city': 'Пустомити',

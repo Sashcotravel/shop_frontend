@@ -82,7 +82,7 @@
 }
 
 .preloader__percent{
-    font: normal normal 300 80px/121px Gilroy Light;
+    font: normal normal 300 80px/121px Gilroy Light, sans-serif;
 }
 
 a {
@@ -146,14 +146,14 @@ a {
     color: white;
     max-width: 751px;
     margin-bottom: 65px;
-    font: normal normal 300 105px/121px Gilroy Light;
+    font: normal normal 300 105px/121px Gilroy Light, sans-serif;
 }
 
 .titleH4{
     color: white;
     max-width: 615px;
     margin-bottom: 70px;
-    font: normal normal 400 35px/47px Gilroy Light;
+    font: normal normal 400 35px/47px Gilroy Light, sans-serif;
 }
 
 .greenBut{
@@ -167,7 +167,7 @@ a {
     border: none;
     outline: none;
     border-radius: 50px;
-    font: normal normal 400 18px/47px Gilroy Light;
+    font: normal normal 400 18px/47px Gilroy Light, sans-serif;
     color: white;
     line-height: 90px;
     padding-left: 70px;
@@ -257,20 +257,20 @@ a {
 .percentP{
     color: white;
     width: 218px;
-    font: normal normal 300 50px/48px Gilroy Light;
+    font: normal normal 300 50px/48px Gilroy Light, sans-serif;
     margin-bottom: 90px;
 }
 
 .percent{
     color: #08ff08;
-    font: normal normal 900 160px/37px Gilroy bold;
+    font: normal normal 900 160px/37px Gilroy bold, sans-serif;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 3px #08ff08;
 }
 
 .percent2{
     color: #08ff08;
-    font: normal normal 900 160px/37px Gilroy bold;
+    font: normal normal 900 160px/37px Gilroy bold, sans-serif;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 3px #B2B1B7;
 }
@@ -306,7 +306,7 @@ a {
     position: relative;
     left: 0;
     right: 0;
-    font: normal normal bold 50px/48px Gilroy Bold;
+    font: normal normal bold 50px/48px Gilroy Bold, sans-serif;
     color: #575758;
 }
 
@@ -321,7 +321,7 @@ a {
 }
 
 .percentP2{
-    font-family: Gilroy Light;
+    font-family: Gilroy Light, sans-serif;
     color: #B2B1B7;
     font-weight: 100;
     font-size: 35px;
@@ -331,7 +331,7 @@ a {
     margin-top: 100px;
     text-align: start;
     color: #B2B1B7;
-    font-family: Gilroy Light;
+    font-family: Gilroy Light, sans-serif;
     font-weight: 100;
     grid-column-start: 3;
     grid-column-end: 6;
@@ -382,7 +382,7 @@ a {
 }
 
 .span8Z{
-    font: normal normal normal 28px/36px Gilroy Light;
+    font: normal normal normal 28px/36px Gilroy Light, sans-serif;
     margin-top: 15px;
 }
 
@@ -391,7 +391,7 @@ a {
     align-items: center;
     margin-bottom: 45px;
     color: white;
-    font: normal normal bold 36px/20px Gilroy Bold;
+    font: normal normal bold 36px/20px Gilroy Bold, sans-serif;
 }
 
 .container3{
@@ -406,21 +406,21 @@ a {
 }
 
 .pYear{
-    font: normal normal 900 160px/42px Gilroy Bold;
+    font: normal normal 900 160px/42px Gilroy Bold, sans-serif;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 3px red;
     margin-right: 20px;
 }
 
 .pDos2{
-    font: normal normal 300 82px/90px Gilroy Light;
+    font: normal normal 300 82px/90px Gilroy Light, sans-serif;
     color: white;
     width: 147px;
     text-align: start;
 }
 
 .pDos{
-    font: normal normal 300 50px/48px Gilroy Light;
+    font: normal normal 300 50px/48px Gilroy Light, sans-serif;
     color: white;
     width: 147px;
     text-align: start;
@@ -441,13 +441,13 @@ a {
 
 .h4{
     color: #B2B1B7;
-    font: normal normal 300 82px/90px Gilroy Light;
+    font: normal normal 300 82px/90px Gilroy Light, sans-serif;
     max-width: 770px;
 }
 
 .h42{
     color: #B2B1B7;
-    font: normal normal 300 82px/90px Gilroy Light;
+    font: normal normal 300 82px/90px Gilroy Light, sans-serif;
     margin: 5px 0 85px -505px;
     max-width: 800px;
 
@@ -455,27 +455,27 @@ a {
 
 .p4{
     color: white;
-    font: normal normal 100 33px/44px Gilroy Light;
+    font: normal normal 100 33px/44px Gilroy Light, sans-serif;
     margin-bottom: 85px;
     max-width: 609px;
 }
 
 .pSmart{
-    font: normal normal 900 90px/133px Gilroy Bold;
+    font: normal normal 900 90px/133px Gilroy Bold, sans-serif;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 3px #ffffff;
 }
 
 .pPrise{
     color: #7F7F80;
-    font: normal normal 300 33px/44px Gilroy Light;
+    font: normal normal 300 33px/44px Gilroy Light, sans-serif;
     margin: 35px 0 65px 0;
 }
 
 .pBig{
     width: 172px;
     height: 21px;
-    font: normal normal 300 18px/32px Gilroy Light;
+    font: normal normal 300 18px/32px Gilroy Light, sans-serif;
     letter-spacing: 0;
     color: #42DF4C;
     text-transform: uppercase;
@@ -488,7 +488,7 @@ a {
     top: 60px;
     width: 210px;
     height: 21px;
-    font: normal normal 300 18px/32px Gilroy Light;
+    font: normal normal 300 18px/32px Gilroy Light, sans-serif;
     letter-spacing: 0;
     color: #42DF4C;
     text-transform: uppercase;
@@ -505,7 +505,7 @@ a {
 
 .pBig2{
     color: #42DF4C;
-    font: normal normal 300 18px/32px Gilroy Light;
+    font: normal normal 300 18px/32px Gilroy Light, sans-serif;
     cursor: pointer;
 }
 
@@ -533,11 +533,11 @@ a {
 }
 
 .p4_5{
-    font: normal normal normal 82px/90px Gilroy Light;
+    font: normal normal normal 82px/90px Gilroy Light, sans-serif;
 }
 
 .p4_52{
-    font: normal normal normal 82px/90px Gilroy Light;
+    font: normal normal normal 82px/90px Gilroy Light, sans-serif;
     margin-left: -500px;
 }
 
@@ -584,7 +584,7 @@ a {
 
 .title5P{
     color: #D9D9D9;
-    font: normal normal normal 52px/70px Gilroy Light;
+    font: normal normal normal 52px/70px Gilroy Light, sans-serif;
     max-width: 1052px;
 }
 
@@ -592,13 +592,13 @@ a {
     list-style-type: none;
     color: white;
     margin: 60px 0 55px -12px;
-    font: normal normal 600 22px/33px Gilroy Light;
+    font: normal normal 600 22px/33px Gilroy Light, sans-serif;
     line-height: 37px;
 }
 
 .p5{
     color: #7F7F80;
-    font: normal normal 300 33px/44px Gilroy Light;
+    font: normal normal 300 33px/44px Gilroy Light, sans-serif;
     margin: 102px 13px 10px 11px;
     position: relative;
     bottom: -38px;
@@ -632,7 +632,7 @@ a {
 .p6{
     color: black;
     max-width: 1051px;
-    font: normal normal normal 52px/70px Gilroy Light;
+    font: normal normal normal 52px/70px Gilroy Light, sans-serif;
 }
 
 .butGreen2{
@@ -681,7 +681,7 @@ a {
 .p16{
     color: #D9D9D9;
     max-width: 1051px;
-    font: normal normal normal 52px/70px Gilroy Light;
+    font: normal normal normal 52px/70px Gilroy Light, sans-serif;
 }
 
 .p7{

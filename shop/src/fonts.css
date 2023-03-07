@@ -1,16 +1,4 @@
 @font-face {
-    font-family: Averta;
-    src: url(fonts/AvertaDemoPE-Regular.otf);
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Averta Light;
-    src: url(fonts/AvertaDemoPE-Regular.ttf);
-    font-display: swap;
-}
-
-@font-face {
     font-family: Gilroy bold;
     src: url(fonts/Gilroy-Black.ttf);
     font-display: swap;

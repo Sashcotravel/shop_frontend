@@ -283,25 +283,6 @@ const App = () => {
 
   window.addEventListener('scroll', changeColor)
 
-  const styleUpManu = {
-    position: 'fixed',
-    top: '35px',
-    zIndex: '2',
-    height: '70px',
-    alignItems: 'center',
-    paddingBottom: '5px',
-    backgroundColor: '#273437'
-  }
-
-  const styleUpManu2 = {
-    position: 'fixed',
-    top: '75px',
-    zIndex: '2',
-    height: '70px',
-    paddingBottom: '5px',
-    backgroundColor: 'rgb(39, 52, 55)',
-    width: '100%'
-  }
 
   return (
     <Router basename={`/${language}/`}>
@@ -331,7 +312,6 @@ const App = () => {
                 </div>
 
                 {
-                  // <div className={s.divTitle} style={color === 'mob' ? styleUpManu : color === 'comp' ? styleUpManu2 : {position: 'relative'} }>
                   <div className={`${s.divTitle} ${color === 'mob' ? s.styleUpManu : color === 'comp' ? s.styleUpManu2 : s.startPosition}`} >
                     <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                                   className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>

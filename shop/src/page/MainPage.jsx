@@ -501,7 +501,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
                   <p className={m.pSmart}>SMART</p><p className={m.pPrise}>6 200 € {t("main.forPost")}</p>
-                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
+                  <p onClick={infoBig}><Link className={m.pBig2} to='/nakritya'>{t("main.MOREINFORMATION")} >></Link></p>
                 </div>
                 <figure>
                   <div className={`${m.divImgSlider} ${m.addClass}`}>
@@ -514,7 +514,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
                   <p className={m.pSmart}>PIXEL</p><p className={m.pPrise}>7 200 € {t("main.forPost")}</p>
-                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
+                  <p onClick={infoBig}><Link className={m.pBig2} to='/nakritya'>{t("main.MOREINFORMATION")} >></Link></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image21} className={m.imgClass2} alt='PIXEL' loading="lazy"/></div>*/}
                 <figure>
@@ -525,7 +525,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
                   <p className={m.pSmart}>MARCO</p><p className={m.pPrise}>8 200 € {t("main.forPost")}</p>
-                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
+                  <p onClick={infoBig}><Link className={m.pBig2} to='/nakritya'>{t("main.MOREINFORMATION")} >></Link></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image212} className={m.imgClass2} alt='MARCO' loading="lazy"/></div>*/}
                 <figure>
@@ -545,7 +545,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
                   <p className={m.pSmart}>MARCHELLO</p><p className={m.pPrise}>12 800 € {t("main.forPost")}</p>
-                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
+                  <p onClick={infoBig}><Link className={m.pBig2} to='/nakritya'>{t("main.MOREINFORMATION")} >></Link></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image2123} className={m.imgClass2} alt='MARCHELLO' loading="lazy"/></div>*/}
                 <figure>
@@ -556,7 +556,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
               <div className={m.sliderDiv}>
                 <div className={m.divInfo}>
                   <p className={m.pSmart}>UFO</p><p className={m.pPrise}>13 500 € {t("main.forPost")}</p>
-                  <p className={m.pBig2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></p>
+                  <p onClick={infoBig}><Link className={m.pBig2} to='/nakritya'>{t("main.MOREINFORMATION")} >></Link></p>
                 </div>
                 {/*<div className={m.divImgSlider}><img src={image212345} className={m.imgClass2} alt='UFO' loading="lazy"/></div>*/}
                 <figure>
@@ -610,7 +610,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                     <span className={m.spanIm}>{t("main.ISO")}</span></li>
                 </ul>
-                <span className={m.pBig23+' '+m.pBig23_3} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
+                <span onClick={infoBig}><Link className={m.pBig23+' '+m.pBig23_3} to='/nakritya'>{t("main.MOREINFORMATION")} >></Link></span>
               </div>
               {screen && <div className={m.div12}>
                 <span className={m.p5}>9 800 € {t("main.forPost1")}</span>
@@ -631,7 +631,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                   <span className={m.spanIm}>{t("main.heating")}</span></li>
               </ul>
-              <span className={m.pBig23+' '+m.butGreen2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
+              <span onClick={infoBig}><Link className={m.pBig23+' '+m.butGreen2} to='/nakritya'>{t("main.MOREINFORMATION")} >></Link></span>
             </div>
           </div>
         </LazyLoadComponent>
@@ -651,7 +651,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                     <span className={m.spanIm}>{t("main.periodOf")}</span></li>
                 </ul>
-                <span className={m.pBig23+' '+m.pBig23_2} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
+                <span onClick={infoBig}><Link className={m.pBig23+' '+m.pBig23_2} to='/obladnannya'>{t("main.MOREINFORMATION")} >></Link></span>
               </div>
 
               {screen && <div className={m.div12}>
@@ -675,8 +675,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                 <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                   <span className={m.spanIm}>{t("main.smartphone")}</span></li>
               </ul>
-
-              <span className={m.pBig23+' '+m.greenBut3} onClick={infoBig}>{t("main.MOREINFORMATION")} >></span>
+              <span onClick={infoBig}><Link className={m.pBig23+' '+m.greenBut3} to='/obladnannya'>{t("main.MOREINFORMATION")} >></Link></span>
             </div>
             {screen && <div className={m.div12}>
               <span className={m.p5}>6 700 €</span>
