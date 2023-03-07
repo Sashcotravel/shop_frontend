@@ -78,58 +78,39 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     );
   };
 
+  const size2 = (num) => {
+    return (
+      window.screen.width > 900 ? <span className="block">
+        <img style={{width: '35px', height: '35px'}} src={image1} onClick={imgSize2} id={`img${num}`} alt='size'/>
+      </span> : ""
+    );
+  };
+
   const imgSize = (e) => {
-    console.log();
-    let twoImg = document.getElementById("lightCol");
-    twoImg.src = "";
     if (window.screen.availWidth > 900) {
       let g = document.getElementById(e.target.id);
-      let a = g.src.substring(35, g.src.length - 3) + "webp";
-      // let x = "/static/media/" + a;
-      if (g.src.slice(-3) === "jpg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      } else if (g.src.slice(-4) === "jpeg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      } else {
-        let con = document.getElementById("light2");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol2");
-        twoImg.src = g.src;
-      }
+      let con = document.getElementById("light");
+      con.style.visibility = "visible";
+      let twoImg = document.getElementById("lightCol");
+      twoImg.src = g.src;
     }
   };
 
-  // const imgSize = (e) => {
-  //   let twoImg = document.getElementById("lightCol");
-  //   twoImg.src = "";
-  //   if (window.screen.availWidth > 900) {
-  //     let g = document.getElementById(e.target.id);
-  //     let a = g.src.substring(35, g.src.length - 24) + "webp";
-  //     let x = "../image/" + a;
-  //     if (g.src.slice(-3) === "jpg") {
-  //       let con = document.getElementById("light");
-  //       con.style.visibility = "visible";
-  //       let twoImg = document.getElementById("lightCol");
-  //       twoImg.src = require("../image/" + a);
-  //     }
-  //   }
-  // };
+  const imgSize2 = (e) => {
+    if (window.screen.availWidth > 900) {
+      let g = document.getElementById(e.target.id);
+      let con = document.getElementById("light2");
+      con.style.visibility = "visible";
+      let twoImg = document.getElementById("lightCol2");
+      twoImg.src = g.src;
+    }
+  };
 
   const hidden = (e) => {
     if (e.target.id === "light") {
       let con = document.getElementById("light");
       con.style.visibility = "hidden";
-    }
-  };
-
-  const hidden2 = (e) => {
-    if (e.target.id === "light2") {
+    } else if (e.target.id === "light2") {
       let con = document.getElementById("light2");
       con.style.visibility = "hidden";
     }
@@ -138,16 +119,16 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   return (
     <>
       <div id="light" className={s.boxHideImage} onClick={hidden}>
-        <figure className='figure'>
-          <div className='divImg'>
+        <figure className='figure' id="light">
+          <div className='divImg' id="light">
             <span className='blockLarge' id="light">
               <img style={{width: '35px', height: '35px'}} src={image2} onClick={hidden} id="light" alt='size'/>
             </span>
-            <img src={require("../image/ЩІТКА (1).jpg")} className="imageLarge" id="lightCol" />
+            <img src='' className="imageLarge" id="lightCol" />
           </div>
         </figure>
       </div>
-      <div id="light2" className={s.boxHideImage} onClick={hidden2}>
+      <div id="light2" className={s.boxHideImage} onClick={hidden}>
         <figure className="figure">
           <div className="divImg" id="light2">
             <span className="blockLarge" id="light2">
@@ -155,7 +136,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                              onClick={hidden} id="light2" alt="закрити" loading='lazy' />
             </span>
             <iframe className="imageLarge2" id="lightCol2" width="100%" height="100%"
-                    src="https://www.youtube.com/embed/wvo65hmKvtA" title='video' />
+                    src='' title='video' />
           </div>
         </figure>
       </div>
@@ -168,10 +149,9 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  {/*<LazyLoadImage src={require("../image2/Fura_1.jpg")} className={"base"} id="img16" alt='ТКомплект'/>*/}
                   <iframe id="img16" width="100%" height="100%" src="https://www.youtube.com/embed/5vCS5brR5ic"
-                          title="Програма піна високий тиск" />
-                  {size(16)}
+                          title="ТКомплект" style={{border: 'none'}} />
+                  {size2(16)}
                 </div>
               </figure>
               <p className={s.itemName}>{data[10].nameOfGoods}</p>
@@ -186,10 +166,9 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div style={{ height: "315px" }}>
-                  {/*<LazyLoadImage src={require("../image2/Fura_3.jpg")} className={"base"} id="img17" alt='ТКомплект'/>*/}
                   <iframe id="img17" width="100%" height="100%" src="https://www.youtube.com/embed/5vCS5brR5ic"
-                          title="Програма піна високий тиск" />
-                  {size(17)}
+                          title="ТКомплект" style={{border: 'none'}} />
+                  {size2(17)}
                 </div>
               </figure>
               <p className={s.itemName}>{data[11].nameOfGoods}</p>
@@ -250,7 +229,6 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"} id="img14" alt='П-подібний відкритий пост' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[32].src}.${data[32].src2}`)} className={"base"} id="img14" />*/}
                   {size(14)}
                 </div>
               </figure>

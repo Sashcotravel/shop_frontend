@@ -164,23 +164,18 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   };
 
   const imgSize = (e) => {
-    let twoImg = document.getElementById("lightCol");
-    twoImg.src = "";
     if (window.screen.availWidth > 900) {
+      let twoImg = document.getElementById("lightCol");
       let g = document.getElementById(e.target.id);
-      // let a = g.src.substring(35, g.src.length - 3) + "webp";
-      // let x = "/static/media/" + a;
       if (g.src.slice(-3) === "jpg") {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol");
-        // twoImg.src = "/static/media/" + a
         twoImg.src = g.src;
       } else if (g.src.slice(-4) === "jpeg") {
         let con = document.getElementById("light");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol");
-        // twoImg.src = "/static/media/" + a
         twoImg.src = g.src;
       } else {
         let con = document.getElementById("light2");
@@ -195,11 +190,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     if (e.target.id === "light") {
       let con = document.getElementById("light");
       con.style.visibility = "hidden";
-    }
-  };
-
-  const hidden2 = (e) => {
-    if (e.target.id === "light2") {
+    } else if (e.target.id === "light2") {
       let con = document.getElementById("light2");
       con.style.visibility = "hidden";
     }
@@ -358,16 +349,16 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   return <>
     {screen && <div id="light" className={s.boxHideImage} onClick={hidden}>
-      <figure className="figure">
+      <figure className="figure" id="light">
         <div className="divImg" id="light">
             <span className="blockLarge" id="light">
               <LazyLoadImage style={{ width: "35px", height: '35px' }} src={image2} onClick={hidden} id="light" alt="закрити" />
             </span>
-          <img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className="imageLarge" id="lightCol" />
+          <img src='' className="imageLarge" id="lightCol" />
         </div>
       </figure>
     </div>}
-    {screen && <div id="light2" className={s.boxHideImage} onClick={hidden2}>
+    {screen && <div id="light2" className={s.boxHideImage} onClick={hidden}>
       <figure className="figure">
         <div className="divImg" id="light2">
             <span className="blockLarge" id="light2">
@@ -375,7 +366,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                              onClick={hidden} id="light2" alt="закрити" loading='lazy' />
             </span>
           <iframe className="imageLarge2" id="lightCol2" width="100%" height="100%"
-                  src="https://www.youtube.com/embed/wvo65hmKvtA" title='video' />
+                  src='' style={{border: 'none'}} />
         </div>
       </figure>
     </div>}
@@ -451,7 +442,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div style={{ height: "315px" }}>
                   <iframe id="img4" width="100%" height="100%" src="https://www.youtube.com/embed/ADgSpww7qiE"
-                          title="Програма піна високий тиск" />
+                          title="Програма піна високий тиск" style={{border: 'none'}} />
                   {size(4)}
                 </div>
               </figure>
@@ -474,7 +465,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div style={{ height: "315px" }}>
                   <iframe id="img5" width="100%" height='100%' src="https://www.youtube.com/embed/ENZjdyDPFos"
-                          title='Програма піна низький тиск'/>
+                          title='Програма піна низький тиск' style={{border: 'none'}}/>
                   {size(5)}
                 </div>
               </figure>

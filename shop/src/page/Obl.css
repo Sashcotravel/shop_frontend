@@ -21,6 +21,7 @@
     backdrop-filter: blur(3px);
     background-color: #6495ed40;
     padding-top: 7px;
+    cursor: pointer;
 }
 
 .block12{
@@ -33,7 +34,7 @@
     left: 115px;
     border-radius: 10px;
     backdrop-filter: blur(3px);
-    /*background-color: #6495ed40;*/
+    cursor: pointer;
 }
 
 .imageLarge {
@@ -92,6 +93,7 @@
     background-color: #6495ed40;
     z-index: 7;
     padding-top: 7px;
+    cursor: pointer;
 }
 
 .blockLarge12{
@@ -107,7 +109,7 @@
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
     z-index: 3;
-    /*background-color: #6495ed40;*/
+    cursor: pointer;
 }
 
 .divImg{

@@ -4,6 +4,7 @@ import s from "../component/Home.module.css";
 import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
 import instance from "../API/API";
+import { getRequireSource } from "@babel/preset-env/lib/polyfills/utils";
 
 
 const YourOrder = ({ setOnFooter }) => {
@@ -41,22 +42,18 @@ const YourOrder = ({ setOnFooter }) => {
   const size = (num) => {
     return (
       window.screen.width > 900 ? <span className="block">
-        <img style={{ width: "35px" }} src={image1} onClick={imgSize} id={`img${num}`} />
+        <img style={{ width: "35px", height: '35px' }} src={image1} onClick={imgSize} id={`img${num}`} alt='size'/>
       </span> : ""
     );
   };
 
   const imgSize = (e) => {
-    let twoImg = document.getElementById("lightCol");
-    twoImg.src = "";
     if (window.screen.availWidth > 900) {
       let g = document.getElementById(e.target.id);
-      if (g.src.slice(-3) === "jpg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      }
+      let con = document.getElementById("light");
+      con.style.visibility = "visible";
+      let twoImg = document.getElementById("lightCol");
+      twoImg.src = g.src;
     }
   };
 
@@ -67,20 +64,20 @@ const YourOrder = ({ setOnFooter }) => {
     }
   };
 
-  const container = (nameImg, nameImg2, imgNum, nameGoods, total, totalsSize, index) => {
+  const container = (img, imgNum, nameGoods, total, totalsSize, index) => {
+    let g = '/favicon(1).ico'
     return (
       <div key={index} className={s.container}>
         <div className={s.boxOne}>
           <figure>
             <div style={{ height: "315px" }}>
-              <img src={(`/static/media/${nameImg}.${nameImg2}`)} className={"base"} id={`img${imgNum}`} />
-              {/*<img src={require("../image/4RAV4(none).jpg")} className={"base"} id={`img${imgNum}`} />*/}
-              {size(imgNum)}
+              <img src={g} className={"base"} id={`img${imgNum}`} />
+              {/*<div style={{backgroundImage: `url("/logo192.png`}} className={"base"} id={`img${imgNum}`} />*/}
+              {/*{size(imgNum)}*/}
             </div>
           </figure>
           <h5 className={s.itemName}>{nameGoods}</h5>
-          <p className={s.itemDesc}>Description - Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+          <p className={s.itemDesc}></p>
           <div className={s.divBut}>
             <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
               <span className={s.itemTotalSize} id="lightblue">{totalsSize}</span>
@@ -96,12 +93,12 @@ const YourOrder = ({ setOnFooter }) => {
     <main>
 
       <div id="light" className={s.boxHideImage} onClick={hidden}>
-        <figure className="figure">
-          <div className="divImg">
+        <figure className="figure" id="light">
+          <div className="divImg" id="light">
             <span className="blockLarge" id="light">
-              <img style={{ width: "35px" }} src={image2} onClick={hidden} id="light" />
+              <img style={{ width: "35px", height: '35px' }} src={image2} onClick={hidden} id="light" />
             </span>
-            <img src={(``)} className="imageLarge" id="lightCol" />
+            <img src='' className="imageLarge" id="lightCol" />
           </div>
         </figure>
       </div>
@@ -115,10 +112,14 @@ const YourOrder = ({ setOnFooter }) => {
         </div>
         <div className={s.divMap}>
           {order.order?.map((item, index) =>
-            container(item.src, item.src2, item.nameImg, item.nameOfGoods, item.total, item.size, index)
+            container('../image2/coverSMART.jpg', item.nameImg, item.nameOfGoods, item.total, item.size, index)
           )}
+          {
+            container('../image2/coverSMART.jpg', 3, 'lol', 12, 2, 1)
+          }
         </div>
       </div>
+
 
     </main>
   </>;

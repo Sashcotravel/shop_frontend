@@ -53,26 +53,12 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     });
   };
   const imgSize = (e) => {
-    let twoImg = document.getElementById("lightCol");
-    twoImg.src = "";
     if (window.screen.availWidth > 900) {
+      let twoImg = document.getElementById("lightCol");
       let g = document.getElementById(e.target.id);
-      if (g.src.slice(-3) === "jpg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      } else if (g.src.slice(-4) === "jpeg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      }else if (g.src.slice(-3) === "png") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      }
+      let con = document.getElementById("light");
+      con.style.visibility = "visible";
+      twoImg.src = g.src;
     }
   };
   const hidden = (e) => {
@@ -107,12 +93,12 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   return <>
     {screen && <div id="light" className={s.boxHideImage} onClick={hidden}>
-      <figure className="figure">
-        <div className="divImg">
+      <figure className="figure" id="light">
+        <div className="divImg" id="light">
             <span className="blockLarge" id="light">
               <img style={{ width: "35px", height: '35px' }} src={image2} onClick={hidden} id="light" alt='open'/>
             </span>
-          <img src={(`../image2/tpod.jpg`)} className="imageLarge" id="lightCol" />
+          <img src='' className="imageLarge" id="lightCol" />
         </div>
       </figure>
     </div> }

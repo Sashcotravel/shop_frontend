@@ -27,6 +27,7 @@ export const Header = ({ t }) => {
       } else {
         document.getElementById("divHidden").style.width = '80%'
         document.getElementById("menu__box").style.width = '80%'
+        document.getElementById("hidden").style.backdropFilter = 'blur(3px)'
       }
       document.getElementById("close").style.visibility = 'visible'
       document.getElementById("hidden").style.width = '98vw'

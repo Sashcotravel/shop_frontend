@@ -117,16 +117,12 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   };
 
   const imgSize = (e) => {
-    let twoImg = document.getElementById("lightCol");
-    twoImg.src = "";
     if (window.screen.availWidth > 900) {
+      let twoImg = document.getElementById("lightCol");
       let g = document.getElementById(e.target.id);
-      if (g.src.slice(-3) === "jpg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      }
+      let con = document.getElementById("light");
+      con.style.visibility = "visible";
+      twoImg.src = g.src;
     }
   };
 
@@ -173,12 +169,12 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   return <>
     {screen && <div id="light" className={s.boxHideImage} onClick={hidden}>
-      <figure className="figure">
-        <div className="divImg">
+      <figure className="figure" id="light">
+        <div className="divImg" id="light">
             <span className="blockLarge" id="light">
               <img style={{ width: "35px", height: '35px'  }} src={image2} onClick={hidden} id="light" alt='close' />
             </span>
-          <img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className="imageLarge" id="lightCol" />
+          <img src='' className="imageLarge" id="lightCol" />
         </div>
       </figure>
     </div>}
@@ -192,7 +188,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div style={{ height: "315px" }}>
                   <LazyLoadImage src={require("../image2/coverSMART.jpg")}
-                                 className={"base"} id="img6" alt='SMART' loading='lazy'/>
+                                 className="base" id="img6" alt='SMART' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[23].src}.${data[23].src2}`)} className={"base"} id="img6" />*/}
                   {size(6)}
                 </div>
