@@ -33,6 +33,7 @@ export const Users = [
         'id': 100002,
         'nameOfGoods': 'Технологічне обладнання на 4 програми та кнопка пауза',
         'nameImg': '3',
+        'nameWebp': 'Технічне обладнання (1).jpg',
         'prise': 392000,  // 9800.00
         'size': 0,
         'discount': '',
@@ -102,6 +103,7 @@ export const Users = [
         'id': 100011,
         'nameOfGoods': 'Щітка',
         'nameImg': '1',
+        'nameWebp': 'Щітка (1).jpg',
         'prise': 32000, // 800
         'size': 0,
         'discount': '',
@@ -111,6 +113,7 @@ export const Users = [
         'id': 100012,
         'nameOfGoods': 'Турбо щітка-піна',  // 9
         'nameImg': '2',
+        'nameWebp': 'турбо щітка (1).jpg',
         'prise': 38000,  // 950
         'size': 0,
         'discount': '',
@@ -157,6 +160,7 @@ export const Users = [
         'id': 100024,
         'nameOfGoods': 'Інвертор (частотний перетворювач)',
         'nameImg': '19',
+        'nameWebp': 'інвертор (1).jpg',
         'prise': 48000,  // 1200
         'size': 0,
         'discount': '',
@@ -166,6 +170,7 @@ export const Users = [
         'id': 100027,
         'nameOfGoods': 'Панель оператора TOUCH SCREEN  (сенсорна панель) Schneider Germany 12.1 дюймів з системою SCADA',
         'nameImg': '20',
+        'nameWebp': 'панель оператора (1).jpg',
         'prise': 28000,  // 700
         'size': 0,
         'discount': '',
@@ -184,6 +189,7 @@ export const Users = [
         'id': 100031,
         'nameOfGoods': 'Система корпоративних карт на пост',
         'nameImg': '22',
+        'nameWebp': 'корпоративні карти (1).jpg',
         'prise': 12000,  // 300
         'size': 0,
         'discount': '',
@@ -195,6 +201,7 @@ export const Users = [
           'в антивандальному виконанні (Купюроприймач CASHCODE (Канада)\\ Comastero\n' +
           '(Італія) 300/600 купюр, монітор для відображення дії, вікно отримання жетонів)',
         'nameImg': '23',
+        'nameWebp': 'апарат з продажу жетонів (1).jpg',
         'prise': 60000,  // 1500
         'size': 0,
         'discount': '',
@@ -239,6 +246,7 @@ export const Users = [
         'id': 100037,
         'nameOfGoods': 'Жетони 1000 шт',
         'nameImg': '27',
+        'nameWebp': '1000zhet.jpg',
         'prise': 20000,  // 500
         'size': 0,
         'discount': '',
@@ -318,6 +326,7 @@ export const Users = [
         'id': 100069,
         'nameOfGoods': 'Когутик (реклама на відкритому пості) ',
         'nameImg': '12',
+        'nameWebp': '0-02-05-e80dcf4cd2ac2d9cf067221fa0e3119b53dc3b41e416b8601214b688af2fe62e_1c6dabdf3b9b3d (1).jpg',
         'prise': 32000,  // 800
         'size': 0,
         'discount': '',
@@ -327,6 +336,7 @@ export const Users = [
         'id': 100047,
         'nameOfGoods': 'Т-подібний відкритий пост для бусів',
         'nameImg': '13',
+        'nameWebp': 'Т-подібний для бусів (1).jpg',
         'prise': 72000,  // 1800
         'size': 0,
         'discount': '',
@@ -336,6 +346,7 @@ export const Users = [
         'id': 100048,
         'nameOfGoods': 'П-подібний відкритий пост для бусів',
         'nameImg': '14',
+        'nameWebp': 'П-подібний.jpg',
         'prise': 92000,  // 2300
         'size': 0,
         'discount': '',
@@ -345,6 +356,7 @@ export const Users = [
         'id': 100049,
         'nameOfGoods': 'Т-подібний із захистом відкритий пост для бусів',
         'nameImg': '15',
+        'nameWebp': 'Т-подіний з захистом.jpg',
         'prise': 152000,  // 3800
         'size': 0,
         'discount': '',
@@ -354,6 +366,7 @@ export const Users = [
         'id': 100050,
         'nameOfGoods': 'П-подібний із захистом відкритий пост для бусів',
         'nameImg': '28',
+        'nameWebp': 'П-з захистом (1).jpg',
         'prise': 192000,  // 4800
         'size': 0,
         'discount': '',
@@ -363,6 +376,7 @@ export const Users = [
         'id': 100051,
         'nameOfGoods': 'Відкритий пост для фури, поворотна консоль з пантографом із нержавіючої сталі',  // 35
         'nameImg': '29',
+        'nameWebp': 'для фури Пантограф (1).jpg',
         'prise': 132000,  // 3300
         'size': 0,
         'discount': '',
@@ -372,6 +386,7 @@ export const Users = [
         'id': 100053,
         'nameOfGoods': 'Тримачі для 4 ковриків з гарячого оцинкованого металу на два пости (ширина 2 м)',
         'nameImg': '30',
+        'nameWebp': 'Тримачі для 4 ковриків з нержавіючої сталі на два пости (ширина 2 м) (1).jpg',
         'prise': 12000,  // 300
         'size': 0,
         'discount': '',
@@ -381,6 +396,7 @@ export const Users = [
         'id': 100054,
         'nameOfGoods': 'Тримачі для 4 ковриків з гарячо оцинкованого металу на один пост (ширина 2 м)',
         'nameImg': '31',
+        'nameWebp': 'тримач на 4 коврика на 2 поста (1).jpg',
         'prise': 7200,  // 180
         'size': 0,
         'discount': '',
@@ -399,6 +415,7 @@ export const Users = [
         'id': 100056,
         'nameOfGoods': 'Тримачі для 4 ковриків з нержавіючої сталі на один пост (ширина 2 м)',
         'nameImg': '33',
+        'nameWebp': 'на один пост (1).jpg',
         'prise': 12000,  // 300
         'size': 0,
         'discount': '',
@@ -420,6 +437,7 @@ export const Users = [
           'монітором 17\'\', системою TOUCH SCREEN: - обдув повітря, - чорніння шин; карта\n' +
           'лояльності\n',
         'nameImg': '36',
+        'nameWebp': '0-02-0a-f3f94e024793195c1efe2c5ee0af15d58326a090f0b3e0d8e561357096e09846_52ab709e5237b85f (1).jpg',
         'prise': 276000,  // 6900
         'size': 0,
         'discount': '',
@@ -429,6 +447,7 @@ export const Users = [
         'id': 100060,
         'nameOfGoods': 'Рукомийник з нержавіючої сталі, круглий',
         'nameImg': '37',
+        'nameWebp': 'IMG_2686 (1).jpg',
         'prise': 10000,  // 250
         'size': 0,
         'discount': '',
@@ -447,6 +466,7 @@ export const Users = [
         'id': 100062,
         'nameOfGoods': 'Столик з нержавіючої сталі, двохярусний',
         'nameImg': '39',
+        'nameWebp': 'Столик з нержавіючої сталі, двохярусний (1).jpg',
         'prise': 20800,  // 520
         'size': 0,
         'discount': '',
@@ -465,6 +485,7 @@ export const Users = [
         'id': 100064,
         'nameOfGoods': 'Індикатор зайнятих постів, двосторонній',
         'nameImg': '41',
+        'nameWebp': 'Layer 5.jpg',
         'prise': 18000,  // 450
         'size': 0,
         'discount': '',
@@ -483,6 +504,7 @@ export const Users = [
         'id': 100066,
         'nameOfGoods': 'Вибивачка ковриків',
         'nameImg': '43',
+        'nameWebp': 'для килимків 2 (1).jpg',
         'prise': 18000,  // 450
         'size': 0,
         'discount': '',
@@ -572,6 +594,7 @@ export const Users = [
         'id': 100220, // new
         'nameOfGoods': 'Кабель підігріву подачі хімії на 1 бокс', // 58
         'nameImg': '102',
+        'nameWebp': 'кабель підігрівву подачі хімії (1).jpg',
         'prise': 9600, // 240
         'size': 0,
         'discount': '',

@@ -88,11 +88,15 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   const imgSize = (e) => {
     if (window.screen.availWidth > 900) {
-      let g = document.getElementById(e.target.id);
-      let con = document.getElementById("light");
-      con.style.visibility = "visible";
       let twoImg = document.getElementById("lightCol");
-      twoImg.src = g.src;
+      let g = document.getElementById(e.target.id);
+      data.map(item => {
+        if('img' + item.nameImg === e.target.id){
+          let con = document.getElementById("light");
+          con.style.visibility = "visible";
+          twoImg.src = require(`../img/Аксесуари/big_jpeg/${item.nameWebp}`)
+        }
+      })
     }
   };
 
@@ -181,15 +185,16 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img29 base"} id="img29">*/}
-              {/*  {size(29)}*/}
-              {/*</div>*/}
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/vidpostfur.jpg")} className={"base"}
-                                 id="img29" alt='Відкритий пост для фури' loading='lazy'/>
-                  {/*<img src={require("../image2/vidpostfur.jpg")} className={"base"}*/}
-                  {/*     id="img29" alt='Відкритий пост для фури' loading='lazy'/>*/}
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/для фури Пантограф-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/для фури Пантограф-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/для фури Пантограф-1.jpg")} className="base"
+                         id="img29" alt='Відкритий пост для фури' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/vidpostfur.jpg")} className={"base"}*/}
+                  {/*               id="img29" alt='Відкритий пост для фури' loading='lazy'/>*/}
                   {size(29)}
                 </div>
               </figure>
@@ -203,12 +208,15 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img13 base"} id="img13">*/}
-              {/*  {size(13)}*/}
-              {/*</div>*/}
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"} id="img13" alt='Т-подібний відкритий пост' loading='lazy'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/Т-подібний для бусів-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/Т-подібний для бусів-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/Т-подібний для бусів-1.jpg")} className="base"
+                         id="img13" alt='Т-подібний відкритий пост' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"} id="img13" alt='Т-подібний відкритий пост' loading='lazy'/>*/}
                   {/*<img src={require("../image/IMG_0065(2).jpg")} className={"base"} id="img13" alt='Т-подібний відкритий пост' loading='lazy'/>*/}
                   {size(13)}
                 </div>
@@ -223,12 +231,15 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img14 base"} id="img14">*/}
-              {/*  {size(14)}*/}
-              {/*</div>*/}
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"} id="img14" alt='П-подібний відкритий пост' loading='lazy'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/П-подібний-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/П-подібний-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/П-подібний-1.jpg")} className="base"
+                         id="img14" alt='П-подібний відкритий пост' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"} id="img14" alt='П-подібний відкритий пост' loading='lazy'/>*/}
                   {size(14)}
                 </div>
               </figure>
@@ -242,13 +253,16 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img15 base"} id="img15">*/}
-              {/*  {size(15)}*/}
-              {/*</div>*/}
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/ppodvidpostbut.jpg")} className={"base"}
-                                 id="img15" alt='Т-подібний із захистом відкритий пост' loading='lazy'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/Т-подіний з захистом-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/Т-подіний з захистом-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/Т-подіний з захистом-1.jpg")} className="base"
+                         id="img15" alt='Т-подібний із захистом відкритий пост' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/ppodvidpostbut.jpg")} className={"base"}*/}
+                  {/*               id="img15" alt='Т-подібний із захистом відкритий пост' loading='lazy'/>*/}
                   {/*<img src={(`/static/media/${data[33].src}.${data[33].src2}`)} className={"base"} id="img15" />*/}
                   {size(15)}
                 </div>
@@ -263,13 +277,16 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img28 base"} id="img28">*/}
-              {/*  {size(28)}*/}
-              {/*</div>*/}
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/ppodvidpostbut.jpg")} className={"base"}
-                                 id="img28" alt='П-подібний із захистом відкритий пост' loading='lazy'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/П-з захистом-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/П-з захистом-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/П-з захистом-1.jpg")} className="base"
+                         id="img28" alt='П-подібний із захистом відкритий пост' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/ppodvidpostbut.jpg")} className={"base"}*/}
+                  {/*               id="img28" alt='П-подібний із захистом відкритий пост' loading='lazy'/>*/}
                   {/*<img src={(`/static/media/${data[34].src}.${data[34].src2}`)} className={"base"} id="img28" />*/}
                   {size(28)}
                 </div>

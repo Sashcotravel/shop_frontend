@@ -110,7 +110,7 @@ const Contacts = ({ setOnFooter, t }) => {
                 <div className={s.div1Cont}>
                   <h2 className={s.h2_1+' '+s.p_1_2}>{t(`department`)}</h2>
                   <div>
-                    <p className={s.p_1}>+38 (098) 732 83 99</p>
+                    <p className={s.p_1}>+38 (050) 59 23 772</p>
                     <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></p>
                   </div>
                 </div>
@@ -156,7 +156,7 @@ const Contacts = ({ setOnFooter, t }) => {
                 <div className={s.div1Cont}>
                   <h2 className={s.h2_1+' '+s.p_1_2}>{t(`department`)}</h2>
                   <div>
-                    <p className={s.p_1}><a href="tel:+380987328399" style={{color: 'white'}}>+38 (098) 732 83 99</a></p>
+                    <p className={s.p_1}><a href="tel:+380505923772" style={{color: 'white'}}>+38 (050) 59 23 772</a></p>
                     <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></p>
                   </div>
                 </div>

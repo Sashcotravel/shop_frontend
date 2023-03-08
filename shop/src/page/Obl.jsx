@@ -167,21 +167,20 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
       let g = document.getElementById(e.target.id);
-      if (g.src.slice(-3) === "jpg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      } else if (g.src.slice(-4) === "jpeg") {
-        let con = document.getElementById("light");
-        con.style.visibility = "visible";
-        let twoImg = document.getElementById("lightCol");
-        twoImg.src = g.src;
-      } else {
+      if (e.target.id === "img4" || e.target.id === "img5") {
         let con = document.getElementById("light2");
         con.style.visibility = "visible";
         let twoImg = document.getElementById("lightCol2");
         twoImg.src = g.src;
+
+      }  else {
+        data.map(item => {
+          if('img' + item.nameImg === e.target.id){
+            let con = document.getElementById("light");
+            con.style.visibility = "visible";
+            twoImg.src = require(`../img/Аксесуари/big_jpeg/${item.nameWebp}`)
+          }
+        })
       }
     }
   };
@@ -347,6 +346,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   }
 
 
+
   return <>
     {screen && <div id="light" className={s.boxHideImage} onClick={hidden}>
       <figure className="figure" id="light">
@@ -415,10 +415,15 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
-                  {/*<img src={(`/static/media/${data[0].src}.${data[0].src2}`)} className={"base"} id="img3" />*/}
-                  <LazyLoadImage src={require("../image2/teh4progandpausa.jpg")} className={"base"}
-                                 id="img3" alt='Технологічне обладнання' loading='lazy'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/Технічне обладнання-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/Технічне обладнання-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/Технічне обладнання-1.jpg")} className="base"
+                         id="img3" alt='Технологічне обладнання' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/teh4progandpausa.jpg")} className={"base"}*/}
+                  {/*               id="img3" alt='Технологічне обладнання' loading='lazy'/>*/}
                   {size(3)}
                 </div>
               </figure>
@@ -486,10 +491,16 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={`${s.container}`}>
             <div className={s.boxOne} id='pina2'>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div style={{ height: "5px" }}>
+                  {/*<picture>*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_jpeg/Технічне обладнання-1.jpg")} type="image/jpeg" />*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_WebP/Технічне обладнання-1.webp")} />*/}
+                  {/*  <img src={require("../img/Аксесуари/small_jpeg/Технічне обладнання-1.jpg")} className="base"*/}
+                  {/*       id="img103" alt='Кольорова' loading='lazy' />*/}
+                  {/*</picture>*/}
                   {/*<LazyLoadImage src={require("")} className={"base"} id="img103" alt='Кольорова'/>*/}
                   {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
-                  {size(103)}
+                  {/*{size(103)}*/}
                 </div>
               </figure>
               <p className={s.itemName}>{data[59].nameOfGoods}</p>
@@ -503,8 +514,14 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img19" alt='Інвертор'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/інвертор-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/інвертор-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/інвертор-1.jpg")} className="base"
+                         id="img19" alt='Інвертор' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img19" alt='Інвертор'/>*/}
                   {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
                   {size(19)}
                 </div>
@@ -520,7 +537,13 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={`${s.container}`}>
             <div className={s.boxOne} id='pina1'>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/кабель підігрівву подачі хімії-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/кабель підігрівву подачі хімії-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/кабель підігрівву подачі хімії-1.jpg")} className="base"
+                         id="img102" alt='Кабель' loading='lazy' />
+                  </picture>
                   {/*<LazyLoadImage src={require("../image2/chastPer.jpg")} className={"base"} id="img102" alt='Кабель'/>*/}
                   {/*<img src={(`/static/media/${data[14].src}.${data[14].src2}`)} className={"base"} id="img19" />*/}
                   {size(102)}
@@ -537,8 +560,14 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/Brush.jpg")} className={"base"} id="img1" alt='Щітка'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/Щітка-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/Щітка-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/Щітка-1.jpg")} className="base"
+                         id="img1" alt='Щітка' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/Brush.jpg")} className={"base"} id="img1" alt='Щітка'/>*/}
                   {/*<img src={(`/static/media/${data[8].src}.${data[8].src2}`)} className={"base"} id="img1" />*/}
                   {size(1)}
                 </div>
@@ -554,10 +583,10 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div style={{ height: "5px" }}>
                   {/*<LazyLoadImage src={require("../image/190287494_104260661860718_4702299049689622091_n.jpg")} className={"base"} id="img18" alt='Компресор'/>*/}
                   {/*<img src={(`/static/media/${data[12].src}.${data[12].src2}`)} className={"base"} id="img18" />*/}
-                  {size(18)}
+                  {/*{size(18)}*/}
                 </div>
               </figure>
               <p className={s.itemName}>{data[12].nameOfGoods}</p>
@@ -582,9 +611,14 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/turboBrush.jpg")} className={"base"} id="img2" alt='Турбо щітка-піна'/>
-                  {/*<img src={(`/static/media/${data[9].src}.${data[9].src2}`)} className={"base"} id="img2" />*/}
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/турбо щітка-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/турбо щітка-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/турбо щітка-1.jpg")} className="base"
+                         id="img2" alt='Турбо щітка-піна' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/turboBrush.jpg")} className={"base"} id="img2" alt='Турбо щітка-піна'/>*/}
                   {size(2)}
                 </div>
               </figure>
@@ -599,8 +633,14 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/kasa.jpeg")} className={"base"} id="img20" alt='Панель оператора'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/панель оператора-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/панель оператора-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/панель оператора-1.jpg")} className="base"
+                         id="img20" alt='Панель оператора' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/kasa.jpeg")} className={"base"} id="img20" alt='Панель оператора'/>*/}
                   {/*<img src={(`/static/media/${data[15].src}.${data[15].src2}`)} className={"base"} id="img20" />*/}
                   {size(20)}
                 </div>
@@ -616,9 +656,14 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container} onClick={popApp3}>
             <div className={s.boxOne} id='card'>
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/siscorpost.jpg")} className={"base"} id="img22" alt='Система корпоративних карт'/>
-                  {/*<img src={(`/static/media/${data[17].src}.${data[17].src2}`)} className={"base"} id="img22" />*/}
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/корпоративні карти-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/корпоративні карти-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/корпоративні карти-1.jpg")} className="base"
+                         id="img22" alt='Система корпоративних карт' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/siscorpost.jpg")} className={"base"} id="img22" alt='Система корпоративних карт'/>*/}
                   {size(22)}
                 </div>
               </figure>
@@ -633,8 +678,14 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img23" alt='Апарат з обміну'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/апарат з продажу жетонів-1.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/апарат з продажу жетонів-1.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/апарат з продажу жетонів-1.jpg")} className="base"
+                         id="img23" alt='Апарат з обміну' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img23" alt='Апарат з обміну'/>*/}
                   {/*<img src={(`/static/media/${data[18].src}.${data[18].src2}`)} className={"base"} id="img23" />*/}
                   {size(23)}
                 </div>
@@ -662,9 +713,15 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne} id='ter1'>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img24" alt='Платіжний термінал'/>
+                  {/*<picture>*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_jpeg/апарат з продажу жетонів-1.jpg")} type="image/jpeg" />*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_WebP/апарат з продажу жетонів-1.webp")} />*/}
+                  {/*  <img src={require("../img/Аксесуари/small_jpeg/апарат з продажу жетонів-1.jpg")} className="base"*/}
+                  {/*       id="img24" alt='Платіжний термінал' loading='lazy' />*/}
+                  {/*</picture>*/}
+                  {/*<LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img24" alt='Платіжний термінал'/>*/}
                   {/*<img src={(`/static/media/${data[19].src}.${data[19].src2}`)} className={"base"} id="img24" />*/}
-                  {size(24)}
+                  {/*{size(24)}*/}
                 </div>
               </figure>
               <p className={s.itemName}>{data[19].nameOfGoods}</p>
@@ -690,9 +747,15 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne} id='ter2'>
               <figure>
                 <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img25" alt='Платіжний термінал'/>
+                  {/*<picture>*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_jpeg/апарат з продажу жетонів-1.jpg")} type="image/jpeg" />*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_WebP/апарат з продажу жетонів-1.webp")} />*/}
+                  {/*  <img src={require("../img/Аксесуари/small_jpeg/апарат з продажу жетонів-1.jpg")} className="base"*/}
+                  {/*       id="img25" alt='Платіжний термінал' loading='lazy' />*/}
+                  {/*</picture>*/}
+                  {/*<LazyLoadImage src={require("../image2/termainal.jpg")} className={"base"} id="img25" alt='Платіжний термінал'/>*/}
                   {/*<img src={(`/static/media/${data[20].src}.${data[20].src2}`)} className={"base"} id="img25" />*/}
-                  {size(25)}
+                  {/*{size(25)}*/}
                 </div>
               </figure>
               <p className={s.itemName}>{data[20].nameOfGoods}</p>
@@ -717,9 +780,15 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne} onClick={theeFriends}>
               <figure>
-                <div style={{ height: "315px" }}>
-                  <LazyLoadImage src={require("../image2/Two-stationVthree-phaseVacuumcleaner.jpg")}
-                                 className={"base"} id="img36" alt='Пилосос' loading='lazy'/>
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/asset-3.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/asset-3.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/asset-3.jpg")} className="base"
+                         id="img36" alt='Пилосос' loading='lazy' />
+                  </picture>
+                  {/*<LazyLoadImage src={require("../image2/Two-stationVthree-phaseVacuumcleaner.jpg")}*/}
+                  {/*               className={"base"} id="img36" alt='Пилосос' loading='lazy'/>*/}
                   {/*<img src={(`/static/media/${data[41].src}.${data[41].src2}`)} className={"base"} id="img36" />*/}
                   {size(36)}
                 </div>
