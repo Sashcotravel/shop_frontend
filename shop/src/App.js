@@ -311,7 +311,6 @@ const App = () => {
                   <h2 className={s.h6Title}>{t("step")}:</h2>
                 </div>
 
-                {
                   <div className={`${s.divTitle} ${color === 'mob' ? s.styleUpManu : color === 'comp' ? s.styleUpManu2 : s.startPosition}`} >
                     <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
                                   className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>
@@ -326,7 +325,7 @@ const App = () => {
                     <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
                                   to="/documentacia">{t("documentation")}</NavLink></div>
                   </div>
-                }
+
               </>
           }
 

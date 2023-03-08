@@ -311,7 +311,8 @@
     font-display: optional;
     letter-spacing: 0;
     color: #D9D9D9;
-    margin: 35px 10px 10px 10px;
+    /*margin: 35px 10px 10px 10px;*/
+    margin: -30px 10px 10px 10px;
 }
 
 .docH2{
@@ -1181,7 +1182,7 @@ input[type="radio"] {
         height: auto;
     }
     .spanTit2{
-        width: 120px;
+        width: 135px;
     }
     .footerDiv2{
         position: fixed;
@@ -1211,7 +1212,7 @@ input[type="radio"] {
         font: normal normal 300 45px/55px Gilroy Light;
     }
     .pLang {
-        font: normal normal 600 11px/20px Gilroy Light;
+        font: normal normal 600 14px/20px Gilroy Light;
     }
     .boxDiv {
         margin: 0 0 70px 20px;

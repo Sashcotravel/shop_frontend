@@ -442,13 +442,13 @@ a {
 .h4{
     color: #B2B1B7;
     font: normal normal 300 82px/90px Gilroy Light, sans-serif;
-    max-width: 770px;
+    width: 900px;
 }
 
 .h42{
     color: #B2B1B7;
     font: normal normal 300 82px/90px Gilroy Light, sans-serif;
-    margin: 5px 0 85px -505px;
+    margin: 5px 0 85px -405px;
     max-width: 800px;
 
 }
@@ -505,7 +505,7 @@ a {
 
 .pBig2{
     color: #42DF4C;
-    font: normal normal 300 18px/32px Gilroy Light, sans-serif;
+    font: normal normal 300 16px/32px Gilroy Light, sans-serif;
     cursor: pointer;
 }
 
@@ -1209,7 +1209,8 @@ video{
         margin: 5px 0 85px -305px;
     }
     .h4{
-        width: 770px;
+        /*width: 770px;*/
+        width: 900px;
     }
     .h42{
         margin: 5px 0 85px -305px;

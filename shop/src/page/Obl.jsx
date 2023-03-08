@@ -503,7 +503,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                   {/*{size(103)}*/}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[59].nameOfGoods}</p>
+              <p className={s.itemName} style={{margin: '30px 0 0 10px'}}>{data[59].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(59)}
             </div>
@@ -589,7 +589,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                   {/*{size(18)}*/}
                 </div>
               </figure>
-              <p className={s.itemName}>{data[12].nameOfGoods}</p>
+              <p className={s.itemName} style={{margin: '30px 0 0 10px'}}>{data[12].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               <div className={s.divBut}>
                 <div style={{ padding: 10 + "px", margin: "20px 15px" }}>

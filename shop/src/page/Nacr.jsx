@@ -186,7 +186,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <LazyLoadImage src={require("../image2/coverSMART.jpg")}
                                  className="base" id="img6" alt='SMART' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[23].src}.${data[23].src2}`)} className={"base"} id="img6" />*/}
@@ -209,7 +209,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <LazyLoadImage src={require("../image2/coverPIXEL.jpg")}
                                  className={"base"} id="img7" alt='PIXEL' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[24].src}.${data[24].src2}`)} className={"base"} id="img7" />*/}
@@ -232,7 +232,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <LazyLoadImage src={require("../image2/coverMARCO1.jpg")} className={"base"}
                                  id="img8" alt='MARCO 1 Banner' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[25].src}.${data[25].src2}`)} className={"base"} id="img8" />*/}
@@ -255,7 +255,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <LazyLoadImage src={require("../image2/coverMARCO.jpg")} className={"base"}
                        id="img9" alt=' MARCO 2 Glass' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[26].src}.${data[26].src2}`)} className={"base"} id="img9" />*/}
@@ -278,7 +278,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <LazyLoadImage src={require("../image2/coverMARCHELLO.jpg")} className={"base"}
                                  id="img10" alt='MARCHELLO' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[27].src}.${data[27].src2}`)} className={"base"} id="img10" />*/}
@@ -304,7 +304,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <img src={require("../image2/coverMARCHELLight.jpg")} className={"base"}
                        id="img60" alt='MARCHELLO Light' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[28].src}.${data[28].src2}`)} className={"base"} id="img60" />*/}
@@ -326,11 +326,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={'img11 base'} id='img11'>*/}
-              {/*  {size(11)}*/}
-              {/*</div>*/}
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <LazyLoadImage src={require("../image2/karkasUfo.jpg")} className={"base"}
                                  id="img11" alt='UFO' loading='lazy'/>
                   {/*<img src={(`/static/media/${data[29].src}.${data[29].src2}`)} className={"base"} id="img11" />*/}
