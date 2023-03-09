@@ -49,17 +49,39 @@ const YourOrder = ({ setOnFooter }) => {
     );
   };
 
+  // const imgSize123 = (e) => {
+  //   if (window.screen.availWidth > 900) {
+  //     let twoImg = document.getElementById("lightCol");
+  //     let g = document.getElementById(e.target.id);
+  //     Users.map(item => {
+  //       if('img' + item.nameImg === e.target.id){
+  //         let con = document.getElementById("light");
+  //         con.style.visibility = "visible";
+  //         twoImg.src = `/big_jpeg/${item.nameWebp}`
+  //       }
+  //     })
+  //   }
+  // };
+
   const imgSize = (e) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
       let g = document.getElementById(e.target.id);
-      Users.map(item => {
-        if('img' + item.nameImg === e.target.id){
-          let con = document.getElementById("light");
-          con.style.visibility = "visible";
-          twoImg.src = `/big_jpeg/${item.nameWebp}`
-        }
-      })
+      if (e.target.id === "img4" || e.target.id === "img5" || e.target.id === "img17" || e.target.id === "img16") {
+        let con = document.getElementById("light2");
+        con.style.visibility = "visible";
+        let twoImg = document.getElementById("lightCol2");
+        twoImg.src = g.src;
+
+      }  else {
+        Users.map(item => {
+          if('img' + item.nameImg === e.target.id){
+            let con = document.getElementById("light");
+            con.style.visibility = "visible";
+            twoImg.src = `/big_jpeg/${item.nameWebp}`
+          }
+        })
+      }
     }
   };
 
@@ -82,7 +104,7 @@ const YourOrder = ({ setOnFooter }) => {
             <div>
               {
                 img.slice(0, 4) === 'http' ?
-                <iframe id="img4" width="100%" height="100%" src={img}
+                <iframe id={`img${imgNum}`} width="100%" height="100%" src={img}
                 title="Програма піна високий тиск" style={{border: 'none'}} />
                 : <img src={`/big_jpeg/${img}`} className={"base"} id={`img${imgNum}`} />
               }
