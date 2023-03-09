@@ -152,7 +152,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <iframe id="img16" width="100%" height="100%" src="https://www.youtube.com/embed/5vCS5brR5ic"
                           title="ТКомплект" style={{border: 'none'}} />
                   {size2(16)}
@@ -169,7 +169,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <iframe id="img17" width="100%" height="100%" src="https://www.youtube.com/embed/5vCS5brR5ic"
                           title="ТКомплект" style={{border: 'none'}} />
                   {size2(17)}

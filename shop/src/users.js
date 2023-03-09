@@ -123,6 +123,7 @@ export const Users = [
         'id': 100013,
         'nameOfGoods': 'ТКомплект обладнання для миття ФУРИ: поворотна консоль з пантографом 5,5м (нержавійка) - 1 робоче місце активне',
         'nameImg': '16',
+        'nameWebp': 'https://www.youtube.com/embed/5vCS5brR5ic',
         'prise': 180000,  //  4500
         'size': 0,
         'discount': '',
@@ -132,6 +133,7 @@ export const Users = [
         'id': 100014,
         'nameOfGoods': 'Комплект обладнання для миття ФУРИ з пантографом 5,5м (нержавійка) - 1 робоче місце пасивне',  // 11
         'nameImg': '17',
+        'nameWebp': 'https://www.youtube.com/embed/5vCS5brR5ic',
         'prise': 160000,  //  4000
         'size': 0,
         'discount': '',

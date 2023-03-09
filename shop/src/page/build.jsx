@@ -103,9 +103,9 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[62].nameOfGoods}</p>
-              <p className={s.itemName}>гравій, пісок, цемент</p>
+              <p className={s.itemName} style={{marginTop: '0'}}>гравій, пісок, цемент</p>
               <p className={s.itemDesc}></p>
               <div className={s.divBut}>
                 <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
@@ -121,7 +121,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[21].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(21)}
@@ -131,7 +131,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[50].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(50)}
@@ -141,7 +141,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[51].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(51)}
@@ -151,7 +151,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[52].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(52)}
@@ -161,7 +161,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[53].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(53)}
@@ -171,7 +171,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[60].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(60)}
@@ -181,7 +181,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 0 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[61].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               {boxBut(61)}

@@ -4,7 +4,8 @@ import s from "../component/Home.module.css";
 import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
 import instance from "../API/API";
-import { getRequireSource } from "@babel/preset-env/lib/polyfills/utils";
+import { Users } from "../users";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 const YourOrder = ({ setOnFooter }) => {
@@ -12,6 +13,7 @@ const YourOrder = ({ setOnFooter }) => {
   const [order, setOrder] = useState({
     total: 0, createdAt: null, order: []
   });
+  const screen = window.screen.availWidth > 900
 
   const { id } = useParams();
 
@@ -49,11 +51,15 @@ const YourOrder = ({ setOnFooter }) => {
 
   const imgSize = (e) => {
     if (window.screen.availWidth > 900) {
-      let g = document.getElementById(e.target.id);
-      let con = document.getElementById("light");
-      con.style.visibility = "visible";
       let twoImg = document.getElementById("lightCol");
-      twoImg.src = g.src;
+      let g = document.getElementById(e.target.id);
+      Users.map(item => {
+        if('img' + item.nameImg === e.target.id){
+          let con = document.getElementById("light");
+          con.style.visibility = "visible";
+          twoImg.src = `/big_jpeg/${item.nameWebp}`
+        }
+      })
     }
   };
 
@@ -61,19 +67,28 @@ const YourOrder = ({ setOnFooter }) => {
     if (e.target.id === "light") {
       let con = document.getElementById("light");
       con.style.visibility = "hidden";
+    } else if (e.target.id === "light2") {
+      let con = document.getElementById("light2");
+      con.style.visibility = "hidden";
     }
   };
 
+
   const container = (img, imgNum, nameGoods, total, totalsSize, index) => {
-    let g = '/favicon(1).ico'
     return (
       <div key={index} className={s.container}>
         <div className={s.boxOne}>
           <figure>
-            <div style={{ height: "315px" }}>
-              <img src={g} className={"base"} id={`img${imgNum}`} />
+            <div>
+              {
+                img.slice(0, 4) === 'http' ?
+                <iframe id="img4" width="100%" height="100%" src={img}
+                title="Програма піна високий тиск" style={{border: 'none'}} />
+                : <img src={`/big_jpeg/${img}`} className={"base"} id={`img${imgNum}`} />
+              }
+              {/*<img src={`/big_jpeg/${img}`} className={"base"} id={`img${imgNum}`} />*/}
               {/*<div style={{backgroundImage: `url("/logo192.png`}} className={"base"} id={`img${imgNum}`} />*/}
-              {/*{size(imgNum)}*/}
+              {size(imgNum)}
             </div>
           </figure>
           <h5 className={s.itemName}>{nameGoods}</h5>
@@ -89,19 +104,32 @@ const YourOrder = ({ setOnFooter }) => {
     );
   };
 
+
   return <>
     <main>
 
-      <div id="light" className={s.boxHideImage} onClick={hidden}>
+      {screen && <div id="light" className={s.boxHideImage} onClick={hidden}>
         <figure className="figure" id="light">
           <div className="divImg" id="light">
             <span className="blockLarge" id="light">
-              <img style={{ width: "35px", height: '35px' }} src={image2} onClick={hidden} id="light" />
+              <img style={{ width: "35px", height: '35px' }} src={image2} onClick={hidden} id="light" alt='open'/>
             </span>
             <img src='' className="imageLarge" id="lightCol" />
           </div>
         </figure>
-      </div>
+      </div> }
+      {screen && <div id="light2" className={s.boxHideImage} onClick={hidden}>
+        <figure className="figure">
+          <div className="divImg" id="light2">
+            <span className="blockLarge" id="light2">
+              <LazyLoadImage style={{ width: "35px", height: '35px' }} src={image2}
+                             onClick={hidden} id="light2" alt="закрити" loading='lazy' />
+            </span>
+            <iframe className="imageLarge2" id="lightCol2" width="100%" height="100%"
+                    src='' style={{border: 'none'}} />
+          </div>
+        </figure>
+      </div>}
 
       <div className={s.thanksDiv}>
         <div style={{textAlign: 'start', width: '100%'}}>
@@ -112,11 +140,8 @@ const YourOrder = ({ setOnFooter }) => {
         </div>
         <div className={s.divMap}>
           {order.order?.map((item, index) =>
-            container('../image2/coverSMART.jpg', item.nameImg, item.nameOfGoods, item.total, item.size, index)
+            container(item.nameWebp, item.nameImg, item.nameOfGoods, item.total, item.size, index)
           )}
-          {
-            container('../image2/coverSMART.jpg', 3, 'lol', 12, 2, 1)
-          }
         </div>
       </div>
 

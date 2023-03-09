@@ -108,7 +108,7 @@ const DocumentsPage = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 30px 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[63].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               <span className={s.itemTotal} style={{margin: '35px 100px 0 0', display: 'block', width: '260px'}}>Приблизна вартість {data[63].total} грн,</span>
@@ -123,7 +123,7 @@ const DocumentsPage = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
         <LazyLoadComponent>
           <div className={s.container}>
-            <div className={s.boxOne} style={{padding: '10px 0 30px 10px'}}>
+            <div className={s.boxOne+' '+s.boxOne2}>
               <p className={s.itemName}>{data[64].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               <span className={s.itemTotal} style={{margin: '35px 100px 0 0', display: 'block', width: '260px'}}>Приблизна вартість {data[64].total} грн,</span>

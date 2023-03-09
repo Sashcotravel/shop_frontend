@@ -27,6 +27,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const screen = window.screen.availWidth > 900
   let lang = localStorage.i18nextLng
 
+
   const addCount = (e) => {
     data.forEach(item => {
       if (item.nameOfGoods === e.target.title) {
@@ -417,8 +418,8 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <picture>
-                    <source srcSet={require("../img/Аксесуари/small_jpeg/Технічне обладнання-1.jpg")} type="image/jpeg" />
-                    <source srcSet={require("../img/Аксесуари/small_WebP/Технічне обладнання-1.webp")} />
+                    <source srcSet={"../img/Аксесуари/small_jpeg/Технічне обладнання-1.jpg"} type="image/jpeg" />
+                    <source srcSet={"../img/Аксесуари/small_WebP/Технічне обладнання-1.webp"} />
                     <img src={require("../img/Аксесуари/small_jpeg/Технічне обладнання-1.jpg")} className="base"
                          id="img3" alt='Технологічне обладнання' loading='lazy' />
                   </picture>
