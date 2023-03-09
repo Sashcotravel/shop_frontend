@@ -21,8 +21,6 @@ import OpenBox from "./page/OpenBox";
 import DocumentsPage from "./page/DocumentsPage";
 
 
-
-
 // import Thanks from "./component/Thanks";
 // import Build from "./page/build";
 // import ListWash123 from "./TestSelect";
