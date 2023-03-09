@@ -71,28 +71,30 @@ const App = () => {
     const currentPathname = window.location.pathname;
     const newPathname = `/${language}${removeLngPrefix(currentPathname)}`;
 
-    // if (currentPathname === '/') {  }
-    // else
-      if (currentPathname !== newPathname) { window.location.replace(newPathname) }
+    if (currentPathname === '/ua/') { window.location.pathname = '/' }
+    // else if (currentPathname !== newPathname) {
+      // window.location.replace(newPathname)
+    // }
   }, []);
 
+
   useEffect(() => {
-    // if(language === 'uk-UA'){
-    //   const switcher = (lng) => {
-    //     i18next.changeLanguage(lng)
-    //     window.location.replace(`${window.location.pathname}`)
-    //   }
-    //
-    //   switcher('ua')
-    // }
     if(language === 'uk-UA'){
       const switcher = (lng) => {
         i18next.changeLanguage(lng)
-        window.location.replace(`/${lng}${window.location.pathname}`)
+        // window.location.replace(``)
       }
 
       switcher('ua')
     }
+    // if(language === 'uk-UA'){
+    //   const switcher = (lng) => {
+    //     i18next.changeLanguage(lng)
+    //     window.location.replace(`/${lng}${window.location.pathname}`)
+    //   }
+    //
+    //   switcher('ua')
+    // }
     if(language === 'en-US'){
       const switcher = (lng) => {
         i18next.changeLanguage(lng)
@@ -109,22 +111,33 @@ const App = () => {
 
       switcher('ru')
     }
-    else if (window.location.pathname === '/ua/ua/'){
-      window.location.replace(`/ua/`)
+    else if (window.location.pathname.slice(0, 7) === '/ua/ua/'){
+      window.location.replace(``)
     }
-    else if (window.location.pathname === '/en/en/'){
+    else if (window.location.pathname.slice(0, 4) === '/ua/'){
+      window.location.pathname = '/' + window.location.pathname.slice(4)
+      // window.location.replace(``)
+    }
+    else if (window.location.pathname === '/ua/'){
+      window.location.pathname = '/'
+      // window.location.replace(``)
+    }
+    else if (window.location.pathname.slice(0, 7) === '/en/en/'){
       window.location.replace(`/en/`)
     }
-    else if (window.location.pathname === '/ua/en/'){
+    else if (window.location.pathname.slice(0, 7) === '/ua/en/'){
       window.location.replace(`/en/`)
     }
-    else if (window.location.pathname === '/en/ua/'){
-      window.location.replace(`/ua/`)
+    else if (window.location.pathname.slice(0, 7) === '/en/ua/'){
+      window.location.replace(``)
     }
-    else if (window.location.pathname === '/ua/ru/'){
+    else if (window.location.pathname.slice(0, 7) === '/ua/ru/'){
       window.location.replace(`/ru/`)
     }
-    else if (window.location.pathname === '/ru/ru/'){
+    else if (window.location.pathname.slice(0, 7) === '/ru/ru/'){
+      window.location.replace(`/ru/`)
+    }
+    else if (window.location.pathname.slice(0, 7) === '/ru/ua/'){
       window.location.replace(`/ru/`)
     }
   }, []);
@@ -283,8 +296,8 @@ const App = () => {
 
 
   return (
-    <Router basename={`/${language}/`}>
-    {/*<Router basename={language === 'ua' ? '/' : `/${language}/`}>*/}
+    // <Router basename={`/${language}/`}>
+    <Router basename={language === 'ua' ? '' : `/${language}/`}>
       <div className="App">
         <Header t={t} />
         <>

@@ -114,15 +114,15 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container}>
             <div className={s.boxOne}>
               <figure>
-                <div>
-                  <picture>
-                    <source srcSet={require("../img/Аксесуари/small_jpeg/asset-2.jpg")} type="image/jpeg" />
-                    <source srcSet={require("../img/Аксесуари/small_WebP/asset-2.webp")} />
-                    <img src={require("../img/Аксесуари/small_WebP/asset-2.webp")} className="base" id="img12" alt="Когутик" />
-                  </picture>
+                <div style={{ height: "315px" }}>
+                  {/*<picture>*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_jpeg/asset-2.jpg")} type="image/jpeg" />*/}
+                  {/*  <source srcSet={require("../img/Аксесуари/small_WebP/asset-2.webp")} />*/}
+                  {/*  <img src={require("../img/Аксесуари/small_WebP/asset-2.webp")} className="base" id="img12" alt="Когутик" />*/}
+                  {/*</picture>*/}
                   {/*<LazyLoadImage src={require("../image2/cohpros.jpg")} className="base" id="img12" alt="Когутик"/>*/}
                   {/*<img src={require("../image2/cohpros.jpg")} className={"base"} id="img12" alt='Когутик' loading='lazy'/>*/}
-                  {size(12)}
+                  {/*{size(12)}*/}
                 </div>
               </figure>
               <p className={s.itemName}>{data[30].nameOfGoods}</p>
@@ -205,9 +205,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img32 base"} id="img32">*/}
-              {/*  {size(32)}*/}
-              {/*</div>*/}
               <figure>
                 <div style={{ height: "315px" }}>
                   {/*<picture>*/}
@@ -281,20 +278,16 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img35 base"} id="img35">*/}
-              {/*  {size(35)}*/}
-              {/*</div>*/}
               <figure>
-                <div style={{ height: "315px" }}>
-                  {/*<picture>*/}
-                  {/*  <source srcSet={require("../img/Аксесуари/small_jpeg/на один пост.jpg")} type="image/jpeg" />*/}
-                  {/*  <source srcSet={require("../img/Аксесуари/small_WebP/на один пост.webp")} />*/}
-                  {/*  <img src={require("../img/Аксесуари/small_WebP/на один пост.webp")} className="base"*/}
-                  {/*       id="img101" alt='Логотип' loading='lazy' />*/}
-                  {/*</picture>*/}
+                <div>
+                  <picture>
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/asset-2.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/asset-2.webp")} />
+                    <img src={require("../img/Аксесуари/small_WebP/asset-2.webp")} className="base" id="img12" alt="Когутик" />
+                  </picture>
                   {/*<LazyLoadImage src={require("../image2/sa.jpg")} className={"base"} id="img101" alt='Логотип' />*/}
                   {/*<img src={(`/static/media/${data[40].src}.${data[40].src2}`)} className={"base"} id="img35" />*/}
-                  {/*{size(101)}*/}
+                  {size(12)}
                 </div>
               </figure>
               <p className={s.itemName}>{data[57].nameOfGoods}</p>

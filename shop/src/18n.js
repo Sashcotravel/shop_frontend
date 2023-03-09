@@ -19,7 +19,11 @@ export const languages = Object.entries(resources).map(([lang]) => lang)
 export const removeLngPrefix = (pathname) => {
 
   for (let lang of languages){
-    if(pathname.startsWith(`/${lang}/` || pathname === `/${lang}` || `/${lang}/ua` || `/${lang}/en`|| `/${lang}/ru`)){
+    if(pathname.startsWith('/ua/')){
+      return pathname.replace(`/ua/`, '')
+    }
+    if(pathname.startsWith(`/${lang}/` || pathname === `/${lang}` || `/${lang}/ua`
+      || `/${lang}/en` || `/${lang}/ru` || `/ua/`)){
       return pathname.replace(`/${lang}`, '')
     }
   }
