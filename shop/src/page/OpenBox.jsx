@@ -89,6 +89,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const imgSize = (e) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
+      twoImg.src = ''
       let g = document.getElementById(e.target.id);
       data.map(item => {
         if('img' + item.nameImg === e.target.id){
@@ -103,6 +104,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const imgSize2 = (e) => {
     if (window.screen.availWidth > 900) {
       let g = document.getElementById(e.target.id);
+      twoImg.src = ''
       let con = document.getElementById("light2");
       con.style.visibility = "visible";
       let twoImg = document.getElementById("lightCol2");

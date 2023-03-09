@@ -168,6 +168,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
       let g = document.getElementById(e.target.id);
+      twoImg.src = ''
       if (e.target.id === "img4" || e.target.id === "img5") {
         let con = document.getElementById("light2");
         con.style.visibility = "visible";
@@ -446,7 +447,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container} onClick={popApp}>     {/*  with check  */}
             <div className={s.boxOne} onClick={popApp}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <iframe id="img4" width="100%" height="100%" src="https://www.youtube.com/embed/ADgSpww7qiE"
                           title="Програма піна високий тиск" style={{border: 'none'}} />
                   {size(4)}
@@ -469,7 +470,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
           <div className={s.container} onClick={popApp}>   {/*  with check  */}
             <div className={s.boxOne} onClick={theeFriends}>
               <figure>
-                <div style={{ height: "315px" }}>
+                <div>
                   <iframe id="img5" width="100%" height='100%' src="https://www.youtube.com/embed/ENZjdyDPFos"
                           title='Програма піна низький тиск' style={{border: 'none'}}/>
                   {size(5)}

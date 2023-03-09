@@ -55,6 +55,7 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const imgSize = (e) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
+      twoImg.src = ''
       let g = document.getElementById(e.target.id);
       data.map(item => {
         if('img' + item.nameImg === e.target.id){

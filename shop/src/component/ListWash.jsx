@@ -277,8 +277,11 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
     let oblUrl = oblTrue(obl);
     if (e.target.id === "0" && obl === "all") {
       navigator(`/nashi-avtomiyki/wsi`);
-    } else if (e.target.id !== "0" && obl === "all") {
+    }
+    else if (e.target.id !== "0" && obl === "all") {
       navigator(`/nashi-avtomiyki/wsi/${colP}`);
+    }  else if (e.target.id === "0" && obl !== "all") {
+      navigator(`/nashi-avtomiyki/${oblUrl}`);
     } else {
       navigator(`/nashi-avtomiyki${oblUrl}${colP === 0 ? "" : "/" + colP}`);
     }
@@ -521,30 +524,6 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
             </div>
           </div>
 
-
-        {/*<LazyLoadComponent>*/}
-        {/*  <div className={s.divBox12} style={{ zIndex: "1", position: "relative" }}>*/}
-        {/*  {*/}
-        {/*    listWash.map((item, i) => {*/}
-        {/*      if (item.colPost === colPost && item.obl === obl && item.vOb !== undefined) {*/}
-        {/*        return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);*/}
-        {/*      } else if (item.obl === obl && colPost === 0 && item.vOb !== undefined) {*/}
-        {/*        return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);*/}
-        {/*      } else if (colPost === 0 && obl === "all" && item.vOb !== undefined) {*/}
-        {/*        return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);*/}
-        {/*      } else if (item.colPost === colPost && obl === "all" && item.vOb !== undefined) {*/}
-        {/*        return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);*/}
-        {/*      } else if (item.colPost === colPost && item.obl2 === obl && item.vOb !== undefined) {*/}
-        {/*        return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);*/}
-        {/*      } else if (colPost === 0 && item.obl2 === obl && item.vOb !== undefined) {*/}
-        {/*        return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);*/}
-        {/*      } else if (item.vOb !== undefined && colPost === 0 && obl === "all") {*/}
-        {/*        return container(item, item.city, item.vOb, item.imgNum, item.map, item.city2, item.st, i, item.proect);*/}
-        {/*      }*/}
-        {/*    })*/}
-        {/*  }*/}
-        {/*  </div>*/}
-        {/*</LazyLoadComponent>*/}
 
 
         <LazyLoadComponent>

@@ -119,6 +119,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const imgSize = (e) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
+      twoImg.src = ''
       let g = document.getElementById(e.target.id);
       let con = document.getElementById("light");
       con.style.visibility = "visible";
