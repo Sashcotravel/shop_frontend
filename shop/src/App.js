@@ -77,7 +77,6 @@ const App = () => {
     // }
   }, []);
 
-
   useEffect(() => {
     if(language === 'uk-UA'){
       const switcher = (lng) => {
