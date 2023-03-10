@@ -2,7 +2,7 @@ import React, { useEffect, useState, Suspense, useLayoutEffect, memo } from "rea
 import s from "./component/Home.module.css";
 import "./App.css";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter as Router, Link, Route, Routes, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes, NavLink, HashRouter } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
 import MainPage from "./page/MainPage";
@@ -19,11 +19,11 @@ import Footer from "./component/Footer";
 import { loadReCaptcha, reCaptchaExecute } from 'recaptcha-v3-react-function-async'
 import OpenBox from "./page/OpenBox";
 import DocumentsPage from "./page/DocumentsPage";
+import Error from "./page/error/Error";
 
 
 // import Thanks from "./component/Thanks";
 // import Build from "./page/build";
-// import ListWash123 from "./TestSelect";
 // import Contacts from "./component/Contacs";
 // const ListWash = React.lazy(() => import('./component/ListWash'))
 // import YourOrder from "./page/YourOrder";
@@ -35,7 +35,6 @@ import DocumentsPage from "./page/DocumentsPage";
 const YourOrder = React.lazy(() => import("./page/YourOrder"));
 const OnePost = React.lazy(() => import("./page/listwash/OnePost"));
 const Contacts = React.lazy(() => import("./component/Contacs"));
-const ListWash123 = React.lazy(() => import("./TestSelect"));
 const Build = React.lazy(() => import("./page/build"));
 const Thanks = React.lazy(() => import("./component/Thanks"));
 
@@ -121,6 +120,12 @@ const App = () => {
       window.location.pathname = '/'
       // window.location.replace(``)
     }
+    else if (window.location.pathname.slice(0, 7) === '/' && language === 'en'){
+      window.location.replace(`/en/`)
+    }
+    else if (window.location.pathname.slice(0, 7) === '/' && language === 'ru'){
+      window.location.replace(`/ru/`)
+    }
     else if (window.location.pathname.slice(0, 7) === '/en/en/'){
       window.location.replace(`/en/`)
     }
@@ -139,6 +144,9 @@ const App = () => {
     else if (window.location.pathname.slice(0, 7) === '/ru/ua/'){
       window.location.replace(`/ru/`)
     }
+    else if (window.location.pathname.slice(0, 7) === '/ru/en/'){
+      window.location.replace(`/ru/`)
+    }
   }, []);
 
   useEffect (()=>{
@@ -146,6 +154,7 @@ const App = () => {
       .then(() => {console.log('ReCaptcha loaded')})
       .catch((e) => {console.error('Error when load ReCaptcha', e)})
   }, [])
+
 
   const noScroll = () => {
     let con = document.getElementById("lightblue2");
@@ -279,24 +288,10 @@ const App = () => {
     }
   }
 
-  const changeColor = () => {
-    if(screen){
-      if(window.scrollY >= 500) {setColor('comp')}
-      else {setColor(false)}
-    }
-
-    if(!screen){
-      if(window.scrollY >= 260) {setColor('mob')}
-      else {setColor(false)}
-    }
-  }
-
-  window.addEventListener('scroll', changeColor)
-
 
   return (
     // <Router basename={`/${language}/`}>
-    <Router basename={language === 'ua' ? '' : `/${language}/`}>
+    <Router basename={language === 'ua' ? '/' : `/${language}/`}>
       <div className="App">
         <Header t={t} />
         <>
@@ -321,69 +316,41 @@ const App = () => {
                   <h2 className={s.h6Title}>{t("step")}:</h2>
                 </div>
 
-                  <div className={`${s.divTitle} ${color === 'mob' ? s.styleUpManu : color === 'comp' ? s.styleUpManu2 : s.startPosition}`} >
-                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
-                                  className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>
-                    <div> <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                                   to="/nakritya">{t("cover")}</NavLink></div>
-                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.spanTit2}
-                                  to="/vidkriti-box">{t("openBox")}</NavLink></div>
-                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                                  to="/aksesyari">{t("accessories")}</NavLink></div>
-                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                                  to="/budivnitstvo">{t("construction")}</NavLink></div>
-                    <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
-                                  to="/documentacia">{t("documentation")}</NavLink></div>
-                  </div>
-
               </>
           }
 
           <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
             <Routes>
-              {/*<Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} />} />*/}
-              <Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
-              <Route path={`/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
-              <Route path="/uk-UA/" element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger}/>} />
-              <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger} />} />
-              <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} />} />
-              <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                <Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
+                <Route path={`/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
+                <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger} />} />
+                <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} />} />
+                <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                                                         setTotal={setTotal} total={total} />} />
+                <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                        setTotal={setTotal} total={total} />} />
-              <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
-                                                     setTotal={setTotal} total={total} />} />
-              <Route path="/vidkriti-box" element={<OpenBox t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
-                                                     setTotal={setTotal} total={total} />} />
-              <Route path="/documentacia" element={<DocumentsPage t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
-                                                     setTotal={setTotal} total={total} />} />
-              <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
-                                                       setTotal={setTotal} total={total} />} />
-              <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
-                                                          setTotal={setTotal} total={total} />} />
-              <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
-              <Route path="/nashi-avtomiyki"
-                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-              <Route path="/nashi-avtomiyki/wsi"
-                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-              <Route path="/nashi-avtomiyki/:id"
-                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-              <Route path="/nashi-avtomiyki/:id/:post"
-                     element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-              <Route path="/nashi-avtomiyki/miyka/:id/:post/:idMiyka" element={<OnePost setPostOne={setPostOne}
-                                                  setOnFooter={setOnFooter} postOne={postOne} t={t} setMeneger={setMeneger} setChecked={setChecked}
-              />} />
-              <Route path="/nashi-avtomiyki/miyka/:id/:idMiyka" element={<OnePost setPostOne={setPostOne}
-                                                  setOnFooter={setOnFooter} postOne={postOne} t={t} setMeneger={setMeneger} setChecked={setChecked}
-              />} />
-              {/* TEST START  */}
-
-              <Route path="/test/nashi-avtomiyki/:id"
-                     element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-              <Route path="/test/nashi-avtomiyki/wsi"
-                     element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-              <Route path="/test/nashi-avtomiyki/:id/:post"
-                     element={<ListWash123 setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
-
-              {/* TEST END  */}
+                <Route path="/vidkriti-box" element={<OpenBox t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                                                              setTotal={setTotal} total={total} />} />
+                <Route path="/documentacia" element={<DocumentsPage t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                                                                    setTotal={setTotal} total={total} />} />
+                <Route path="/aksesyari" element={<Acses t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                                                         setTotal={setTotal} total={total} />} />
+                <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
+                                                            setTotal={setTotal} total={total} />} />
+                <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
+                <Route path="/nashi-avtomiyki"
+                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+                <Route path="/nashi-avtomiyki/wsi"
+                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+                <Route path="/nashi-avtomiyki/:id"
+                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+                <Route path="/nashi-avtomiyki/:id/:post"
+                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
+                <Route path="/nashi-avtomiyki/miyka/:id/:post/:idMiyka" element={<OnePost setPostOne={setPostOne} setOnFooter={setOnFooter}
+                                                                                          postOne={postOne} t={t} setMeneger={setMeneger} setChecked={setChecked} />} />
+                <Route path="/nashi-avtomiyki/miyka/:id/:idMiyka" element={<OnePost setPostOne={setPostOne} setOnFooter={setOnFooter}
+                                                                                    postOne={postOne} t={t} setMeneger={setMeneger} setChecked={setChecked} />} />
+                <Route path='*' element={<Error setOnFooter={setOnFooter} t={t} />}/>
             </Routes>
           </Suspense>
 

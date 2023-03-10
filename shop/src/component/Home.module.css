@@ -833,6 +833,28 @@ input[type="radio"] {
     font-family: Gilroy Light, sans-serif;
 }
 
+/* Error page */
+
+.errorDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+    height: 88vh;
+}
+
+.errorP{
+    font-size: 150px;
+    color: gray;
+    font-family: Gilroy Bold, sans-serif;
+}
+
+.errorP2{
+    font-size: 100px;
+    color: white;
+    font-family: Gilroy Light, sans-serif;
+}
 
 
 
@@ -990,6 +1012,9 @@ input[type="radio"] {
         width: 120px;
         height: 35px;
         font-size: 14px;
+    }
+    .errorP2{
+        font-size: 75px;
     }
 }
 
@@ -1254,5 +1279,11 @@ input[type="radio"] {
     .boxOne2{
         padding-top: 15px;
         padding-bottom: 20px;
+    }
+    .errorP2{
+        font-size: 30px;
+    }
+    .errorDiv{
+        padding-top: 0;
     }
 }

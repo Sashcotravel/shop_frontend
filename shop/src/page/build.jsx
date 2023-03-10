@@ -4,6 +4,7 @@ import "./Obl.css";
 import image1 from '../image/svg/Fullscreenicon.svg'
 import image2 from '../image/svg/Group31.svg'
 import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
+import { NavLink } from "react-router-dom";
 
 
 const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
@@ -14,6 +15,8 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   const [resh, setResh] = useState(0)
   const [lastTot, setLastTot] = useState(0)
+  const [color, setColor] = useState(false)
+  const screen = window.screen.availWidth > 900
 
   const addCount = (e) => {
     data.forEach(item => {
@@ -96,9 +99,46 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     setLastTot(data[62].total);
   };
 
+  let activeStyle = {
+    backgroundColor: "#DF4242",
+    color: "#FFFFFF",
+    border: "none"
+  };
+
+  const style = { margin: "0 auto 60px 125px" };
+
+  const changeColor = () => {
+    if(screen){
+      if(window.scrollY >= 500) {setColor('comp')}
+      else {setColor(false)}
+    }
+
+    if(!screen){
+      if(window.scrollY >= 260) {setColor('mob')}
+      else {setColor(false)}
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
 
   return (
-    <>
+    <main>
+
+      <div className={`${s.divTitle} ${color === 'mob' ? s.styleUpManu : color === 'comp' ? s.styleUpManu2 : s.startPosition}`} >
+        <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined}
+                      className={s.spanTitle} to="/obladnannya">{t("equipment")}</NavLink></div>
+        <div> <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                       to="/nakritya">{t("cover")}</NavLink></div>
+        <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle+' '+s.spanTit2}
+                      to="/vidkriti-box">{t("openBox")}</NavLink></div>
+        <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                      to="/aksesyari">{t("accessories")}</NavLink></div>
+        <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                      to="/budivnitstvo">{t("construction")}</NavLink></div>
+        <div><NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className={s.spanTitle}
+                      to="/documentacia">{t("documentation")}</NavLink></div>
+      </div>
+
       <div className={s.divBox}>
 
         <LazyLoadComponent>
@@ -191,7 +231,7 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
       </div>
 
-    </>
+    </main>
   );
 };
 

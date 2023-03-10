@@ -19,7 +19,6 @@ const Contacts = ({ setOnFooter, t }) => {
   const screen = window.screen.availWidth > 900
   const dispatch = useDispatch();
 
-  setOnFooter(true)
   useEffect(() => {
     if(lang === 'ua'){
       document.title = "Контакти відділу продажів | SamWash";
@@ -32,7 +31,6 @@ const Contacts = ({ setOnFooter, t }) => {
         ' и получите качественную консультацию по строительству автомоек самообслуживания под ключ.'
     }
   }, [])
-
 
   useEffect(() => {
     setOnFooter(true)
