@@ -61,13 +61,6 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     }
   }, [])
 
-  // const Marker = (coordinates) => {
-  //   console.log(coordinates);
-  //   coordinates.map(item => {
-  //     let center = () => item.center
-  //     return <MarkerF position={center} icon={image6} />})
-  // }
-
   const Map = () => {
     const center = useMemo(() => ({ lat: 48.385, lng: 31.183 }), [])
 

@@ -1456,4 +1456,19 @@ export const coordinates = [
         title: 'SAMWASH Львів',
         url: '/nashi-avtomiyki/miyka/lvivska-oblast/3/Lviv6'
     },
+    {
+        center: {lat: 49.3532, lng: 23.5169},
+        title: 'SAMWASH Дрогобич',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/2/Drohobych'
+    },
+    {
+        center: {lat: 48.5304, lng: 25.0412},
+        title: 'SAMWASH Коломия',
+        url: '/nashi-avtomiyki/miyka/frankivska-oblast/4/Kolomyia'
+    },
+    {
+        center: {lat: 49.5325, lng: 25.6146},
+        title: 'SAMWASH Тернопіль',
+        url: '/nashi-avtomiyki/miyka/ternopilska-oblast/5/Ternopil'
+    },
 ]
