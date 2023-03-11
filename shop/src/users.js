@@ -1310,7 +1310,7 @@ export const listWash = [
           '!3d51.496798!4d23.9205033!16s%2Fg%2F113hl7c42'
     },
     {
-        'name': 'Мийка самообслуговування 10 постів',
+        'name': 'Мийка самообслуговування 3 поста',
         'desc': ['Попередня мийка піною', 'Основна мийка гелем', 'Полоскання', 'Віск', 'Осмос'],
         'desc2': '',
         'colPost': 3,
@@ -1327,5 +1327,133 @@ export const listWash = [
           '0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+81100/@49.720458,23.905' +
           '5201,14z/data=!4m9!1m2!2m1!1z0L_Rg9GB0YLQvtC80LjRgtC4INGL0YTRjNCm0YTRi9GA!3m5!1s0x473ae50fda23b1bb:0x8ca5048' +
           '2b33351d5!8m2!3d49.7154835!4d23.9055618!16zL20vMGd0NWg4'
+    },
+];
+
+export const coordinates = [
+    {
+        center: {lat: 49.4042, lng: 24.6073},
+        title: 'SAMWASH Ужгород',
+        url: '/nashi-avtomiyki/miyka/zakarpatska-oblast/6/Uzhhorod'
+    },
+    {
+        center: {lat: 49.8223, lng: 23.9562},
+        title: 'SAMWASH ХУСТ',
+        url: '/nashi-avtomiyki/miyka/zakarpatska-oblast/10/Hust'
+    },
+    {
+        center: {lat: 50.0168, lng: 32.9998},
+        title: 'SAMWASH ЛУБНИ',
+        url: '/nashi-avtomiyki/miyka/poltavska-oblast/7/Lubny'
+    },
+    {
+        center: {lat: 50.7435, lng: 25.3114},
+        title: 'SAMWASH ЛУЦЬК',
+        url: '/nashi-avtomiyki/miyka/volynska-oblast/6/Lutsk'
+    },
+    {
+        center: {lat: 49.2718, lng: 23.8084},
+        title: 'SAMWASH СТРИЙ',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/6/Striy'
+    },
+    {
+        center: {lat: 49.8369, lng: 23.9665},
+        title: 'SAMWASH ЛЬВІВ',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/6/Lviv3'
+    },
+    {
+        center: {lat: 49.8668, lng: 24.0552},
+        title: 'SAMWASH ЛЬВІВ',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/6/Lviv4'
+    },
+    {
+        center: {lat: 49.8042, lng: 23.9802},
+        title: 'SAMWASH ЛЬВІВ',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/2/Lviv1'
+    },
+    {
+        center: {lat: 49.8679, lng: 23.9535},
+        title: 'SAMWASH ЛЬВІВ',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/10/Lviv5'
+    },
+    {
+        center: {lat: 50.2766, lng: 24.6230},
+        title: 'SAMWASH РАДЕХІВ',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/6/Radekhov'
+    },
+    {
+        center: {lat: 48.1971, lng: 22.6370},
+        title: 'SAMWASH БЕРЕГОВЕ',
+        url: '/nashi-avtomiyki/miyka/zakarpatska-oblast/6/Berehove'
+    },
+    {
+        center: {lat: 49.7747, lng: 23.6701},
+        title: 'SAMWASH ГОРОДОК',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/5/Gorodok'
+    },
+    {
+        center: {lat: 49.2265, lng: 28.4850},
+        title: 'SAMWASH Вінниця',
+        url: '/nashi-avtomiyki/miyka/vinnytska-oblast/5/Vinnytska'
+    },
+    {
+        center: {lat: 49.0845, lng: 28.6481},
+        title: 'SAMWASH Лука-Мелешківська',
+        url: '/nashi-avtomiyki/miyka/vinnytska-oblast/5/Luka-Meleshkivska'
+    },
+    {
+        center: {lat: 51.2388, lng: 24.0355},
+        title: 'SAMWASH Любомль',
+        url: '/nashi-avtomiyki/miyka/volynska-oblast/4/Luboml'
+    },
+    {
+        center: {lat: 49.7488, lng: 24.1491},
+        title: 'SAMWASH Давидів',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/4/Davydov'
+    },
+    {
+        center: {lat: 49.4745, lng: 24.1290},
+        title: 'SAMWASH Новий Розділ',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/4/Noviy-Rozdil'
+    },
+    {
+        center: {lat: 49.9095, lng: 23.4802},
+        title: 'SAMWASH Терновиця',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/4/Ternovitsa'
+    },
+    {
+        center: {lat: 49.5725, lng: 22.7788},
+        title: 'SAMWASH Добромиль',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/4/Dobromil'
+    },
+    {
+        center: {lat: 50.9330, lng: 28.5956},
+        title: 'SAMWASH Коростень',
+        url: '/nashi-avtomiyki/miyka/zhitomirska-oblast/4/Korosten'
+    },
+    {
+        center: {lat: 49.0869, lng: 29.0719},
+        title: 'SAMWASH Іллінці',
+        url: '/nashi-avtomiyki/miyka/vinnytska-oblast/3/Ilnytsia'
+    },
+    {
+        center: {lat: 48.0545, lng: 24.2128},
+        title: 'SAMWASH Рахів',
+        url: '/nashi-avtomiyki/miyka/zakarpatska-oblast/3/Rakhiv'
+    },
+    {
+        center: {lat: 50.6110, lng: 26.6921},
+        title: 'SAMWASH Монастирське',
+        url: '/nashi-avtomiyki/miyka/ternopilska-oblast/3/Monastyrske'
+    },
+    {
+        center: {lat: 49.4083, lng: 24.6023},
+        title: 'SAMWASH Рогатин',
+        url: '/nashi-avtomiyki/miyka/frankivska-oblast/3/Rohatyn'
+    },
+    {
+        center: {lat: 49.8223, lng: 23.9563},
+        title: 'SAMWASH Львів',
+        url: '/nashi-avtomiyki/miyka/lvivska-oblast/3/Lviv6'
     },
 ]

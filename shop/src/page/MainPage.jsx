@@ -17,6 +17,7 @@ import image6 from "../image/svg/map icon.svg";
 import { fetchCaptcha, fetchMailDimaZam } from "../API/post";
 import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { defaultTheme } from './Theme'
+import { listWash, coordinates } from '../users'
 import { Carousel } from "./carousel/Carousel";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { reCaptchaExecute  } from 'recaptcha-v3-react-function-async'
@@ -60,41 +61,31 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     }
   }, [])
 
-  const coordinat = [
-    { center: {lat: 49.4042, lng: 24.6073},
-      title: 'SAMWASH Ужгород' },
-    { center: {lat: 49.8223, lng: 23.9562},
-      title: 'SAMWASH ХУСТ' },
-  ]
+  // const Marker = (coordinates) => {
+  //   console.log(coordinates);
+  //   coordinates.map(item => {
+  //     let center = () => item.center
+  //     return <MarkerF position={center} icon={image6} />})
+  // }
 
   const Map = () => {
     const center = useMemo(() => ({ lat: 48.385, lng: 31.183 }), [])
-    const Marker = (coordinat) => {
-      coordinat.map(item => {let center = item.center
-        return <MarkerF position={center} icon={image6} />})
-    }
-
-    const center2 = useMemo(() => ({ lat: 49.4042, lng: 24.6073 }), [])
-    const center3 = useMemo(() => ({ lat: 49.8223, lng: 23.9562 }), [])
-    const center4 = useMemo(() => ({ lat: 50.7435, lng: 25.3114 }), [])
-    const center5 = useMemo(() => ({ lat: 49.2718, lng: 23.8084, }), [])
 
     return <GoogleMap zoom={7} center={center} mapContainerClassName={m.map_container}
                       options={defaultOption}>
-      <MarkerF position={center2} icon={image6}/>
-      <MarkerF position={center3} icon={image6} />
-      <MarkerF position={center4} icon={image6} />
-      <MarkerF position={center5} icon={image6} />
-      {/*{ Marker(coordinat) }*/}
+      { coordinates.map((item, index) => {
+            let center = item.center;
+            return <MarkerF position={center} icon={image6} key={index} onClick={() => navigate(item.url) } title={item.title} />})}
     </GoogleMap>
   }
 
   function Home () {
     if(!isLoaded) return <div>Завантаження...</div>
-    // return <Map />
+    return <Map />
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setOnFooter(true);
     return () => {
       setOnFooter(false);

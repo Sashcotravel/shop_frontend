@@ -71,6 +71,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setOnFooter(true);
     if (loc === "/nashi-avtomiyki/wsi") {
       document.getElementById("all").checked = true;

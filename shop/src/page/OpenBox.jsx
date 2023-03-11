@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setUrl("openBox")
   }, [])
 

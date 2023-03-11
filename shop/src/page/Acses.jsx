@@ -13,6 +13,7 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const screen = window.screen.availWidth > 900
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setUrl("accessories")
   }, [])
 

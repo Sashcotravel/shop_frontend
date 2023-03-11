@@ -13,6 +13,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const [color, setColor] = useState(false)
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setUrl("equipment")
     if(lang === 'ua'){
       document.title = "Обладнання для автомийок самообслуговування | Купити в Україні | SamWash"

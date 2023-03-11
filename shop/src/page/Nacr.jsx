@@ -14,6 +14,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   const screen = window.screen.availWidth > 900
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setUrl("cover")
     if(lang === 'ua'){
       document.title = "Вибір покриття для мийки самообслуговування | SamWash"
@@ -90,7 +91,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         userOrder.push(item);
       }
     });
-    console.log(userOrder);
+    // console.log(userOrder);
   };
 
   const minesCount = (e) => {

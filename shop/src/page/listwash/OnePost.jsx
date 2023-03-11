@@ -44,6 +44,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
   }, [])
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setOnFooter(true);
     if (postOne === null) {
       listWash.map((item, i) => {
