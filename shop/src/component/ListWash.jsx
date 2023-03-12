@@ -280,13 +280,10 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
       navigator(`/nashi-avtomiyki/wsi`);
     }
     else if (e.target.id !== "0" && obl === "all") {
-      console.log('lol1');
       navigator(`/nashi-avtomiyki/wsi/${colP}`);
     }  else if (e.target.id === "0" && obl !== "all") {
-      console.log('lol2');
       navigator(`/nashi-avtomiyki${oblUrl}/wsi`);
     } else {
-      console.log('lol3');
       navigator(`/nashi-avtomiyki${oblUrl}${colP === 0 ? "" : "/" + colP}`);
     }
   };
@@ -401,6 +398,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
   };
 
 
+
   return (
     <>
       <main style={window.screen.availWidth > 900 ? style : undefined}>
@@ -413,7 +411,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
               <Link className={colPost === 0 && obl === "all" ? "breads" : "breads colorBread"}
                     onClick={oblUrl123} to="/nashi-avtomiyki/wsi"> / {t("OurCarWashes")}</Link>
               {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ?
-                <Link className={colPost === 0 ? "breads" : "breads colorBread"} to={`/nashi-avtomiyki/${id}/${colPost}`}>
+                <Link className={colPost === 0 ? "breads" : "breads colorBread"} to={`/nashi-avtomiyki/${id}/wsi`}>
                   {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ? ` / ${obl}` : ""}</Link> : ""
               }
               {
@@ -429,7 +427,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
                     onClick={oblUrl123} to="/nashi-avtomiyki/wsi"> / {t("OurCarWashes")}</Link>
               {
                 obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ?
-                  <Link className={colPost === 0 ? "breads" : "breads colorBread"} to={`/nashi-avtomiyki/${id}/${colPost}`}>
+                  <Link className={colPost === 0 ? "breads" : "breads colorBread"} to={`/nashi-avtomiyki/${id}/wsi`}>
                     {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki${post}/wsi` ? ` / ${obl}` : ""}</Link> : ""
               }
               <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}`}>
