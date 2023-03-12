@@ -280,10 +280,13 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
       navigator(`/nashi-avtomiyki/wsi`);
     }
     else if (e.target.id !== "0" && obl === "all") {
+      console.log('lol1');
       navigator(`/nashi-avtomiyki/wsi/${colP}`);
     }  else if (e.target.id === "0" && obl !== "all") {
-      navigator(`/nashi-avtomiyki/${oblUrl}`);
+      console.log('lol2');
+      navigator(`/nashi-avtomiyki${oblUrl}/wsi`);
     } else {
+      console.log('lol3');
       navigator(`/nashi-avtomiyki${oblUrl}${colP === 0 ? "" : "/" + colP}`);
     }
   };
