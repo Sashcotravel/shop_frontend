@@ -72,7 +72,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     </GoogleMap>
   }
 
-  function Home () {
+  const Home = () => {
     if(!isLoaded) return <div>Завантаження...</div>
     return <Map />
   }
@@ -297,7 +297,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
           </div>
           <p className={s.titleUser}>{t("getAnOffer")}</p>
           <br />
-          <p className={s.descSpan}>{t("desc")}</p>
+          <p className={s.descSpan}>{t("descCon")}</p>
           <br />
           <input className={s.inputUser} type="name" title="name"
                  placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
@@ -312,7 +312,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value }});}} onClick={phoneClick} />
           <br />
-          <button className={s.footerBut} style={{ width: "50%", margin: "30px auto" }}
+          <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}
                   onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>{t("send")}</button>
         </div>
       </div>

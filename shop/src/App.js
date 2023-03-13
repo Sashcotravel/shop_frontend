@@ -401,7 +401,8 @@ const App = () => {
 
               <br />
               <div style={{margin: 'auto', display: 'flex', justifyContent: 'center'}}>
-                <button className={s.footerBut} style={{ width: "50%", backgroundColor: '#42DF4C' }}
+                <button className={s.footerBut+' '+s.size}
+                        // style={{ width: "50%", backgroundColor: '#42DF4C' }}
                         onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>
                   { formPass.email || formPass.phone ?
                       <Link style={{ color: "#FFFFFF" }} to="/thanks">{t("send")}</Link>

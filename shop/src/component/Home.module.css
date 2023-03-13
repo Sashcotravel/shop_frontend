@@ -198,7 +198,7 @@
     height: 56px;
     margin: 24px 0 0 77%;
     opacity: 0.5;
-    background-color: lightslategrey;
+    /*background-color: lightslategrey;*/
 }
 
 .blockLarge {
@@ -206,9 +206,9 @@
     display: block;
     width: 47px;
     height: 56px;
-    margin: 24px 0px 0 90%;
+    margin: 24px 0 0 90%;
     opacity: 0.5;
-    background-color: lightslategrey;
+    /*background-color: lightslategrey;*/
 }
 
 .spanImg{
@@ -311,7 +311,7 @@
 .itemName{
     text-align: left;
     font-size: 18px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
     font-display: optional;
     letter-spacing: 0;
     color: #D9D9D9;
@@ -434,11 +434,17 @@
 }
 
 .check{
-    margin: 35px 15px 10px -70px;
+    margin: 35px 15px 10px 0;
 }
 
 .check2{
     margin: 35px 15px 10px -190px;
+}
+
+.inputBoxR{
+    width: 315px;
+    text-align: start;
+    padding-left: 30px;
 }
 
 .inputText{
@@ -509,6 +515,10 @@
     font-display: optional;
 }
 
+.size{
+    background-color: #42DF4C;
+}
+
 .orderBlock{
     position: fixed;
     bottom: 0;
@@ -525,19 +535,17 @@
 }
 
 .userdata{
-    width: 40vw;
+    width: 335px;
     height: 70vh;
     background-color: #1D2025;
-    border: 1px solid grey;
     margin: 3% auto;
     padding: 10px;
     border-radius: 20px;
 }
 
 .userdata2{
-    width: 40%;
+    width: 335px;
     background-color: #1D2025;
-    border: 1px solid grey;
     margin: 25% auto;
     padding: 10px;
     border-radius: 20px;
@@ -641,8 +649,9 @@ input[type="radio"] {
 }
 
 .pLang{
+    margin: 10px 0 10px 1px;
     color: black;
-    font: normal normal 600 14px/20px Gilroy Light, sans-serif;
+    font: normal normal 600 15px/17px Gilroy Light, sans-serif;
 }
 
 .hovP{
@@ -888,7 +897,8 @@ input[type="radio"] {
         height: 28px;
     }
     .pLang {
-        font: normal normal 600 11px/20px Gilroy Light, sans-serif;
+        margin-top: 9px;
+        font: normal normal 600 11px/11px Gilroy Light, sans-serif;
     }
     .boxDiv {
         margin: 0 100px 90px 100px;
@@ -975,7 +985,7 @@ input[type="radio"] {
         font: normal normal 300 60px/82px Gilroy Light, sans-serif;
     }
     .pLang {
-        font: normal normal 600 11px/20px Gilroy Light, sans-serif;
+        font: normal normal 600 11px/11px Gilroy Light, sans-serif;
     }
     .boxDiv {
         margin: 0 100px 70px 100px;
@@ -1080,6 +1090,7 @@ input[type="radio"] {
     .textArea{
         width: 335px;
         height: 120px;
+        font-size: 15px;
     }
     .translateDiv{
         display: block;
@@ -1184,8 +1195,7 @@ input[type="radio"] {
         justify-content: normal;
     }
     .h6Title{
-        font: normal normal normal 18px/20px Averta Demo PE;
-        font-family: Gilroy Light, sans-serif;
+        font: normal normal normal 18px/20px Gilroy Light, sans-serif;
         color: #D9D9D9;
         text-align: left;
         margin: -15px 0 10px 20px;
@@ -1207,9 +1217,9 @@ input[type="radio"] {
     }
     .spanTitle{
         margin: 0 8px 0 0;
-        font-size: 14px;
+        font-size: 16px;
         font-family: Gilroy Light, sans-serif;
-        padding: 8px;
+        padding: 10px;
         width: auto;
         height: auto;
     }
@@ -1241,10 +1251,10 @@ input[type="radio"] {
     /* thanks page */
     .thanksTitle {
         width: 365px;
-        font: normal normal 300 45px/55px Gilroy Light;
+        font: normal normal 300 45px/55px Gilroy Light, sans-serif;
     }
     .pLang {
-        font: normal normal 600 14px/20px Gilroy Light;
+        font: normal normal 600 14px/17px Gilroy Light, sans-serif;
     }
     .boxDiv {
         margin: 0 0 70px 20px;
@@ -1285,5 +1295,12 @@ input[type="radio"] {
     }
     .errorDiv{
         padding-top: 0;
+    }
+    .size{
+        width: 90%;
+        height: 60px;
+    }
+    .inputBoxR{
+        padding-left: 25px;
     }
 }

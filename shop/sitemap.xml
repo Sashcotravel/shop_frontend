@@ -1,37 +1,33 @@
-<?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url>
-    <loc>https://calculator.samwash.ua/</loc>
-    <xhtml:link rel="alternate" hreflang="ua"
-                href="https://calculator.samwash.ua"/>
-
-    <xhtml:link rel="alternate" hreflang="en"
-                href="https://calculator.samwash.ua/en/"/>
-
-    <xhtml:link rel="alternate" hreflang="ru"
-                href="https://calculator.samwash.ua/ru/"/>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/aksesyari</loc>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/budivnitstvo</loc>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/contacts</loc>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/documentacia</loc>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/nakritya</loc>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/nashi-avtomiyki/wsi</loc>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/obladnannya</loc>
-</url>
-<url>
-    <loc>https://calculator.samwash.ua/vidkriti-box</loc>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://calculator.samwash.ua/</loc>
+        <xhtml:link rel="alternate" hreflang="ua" href="https://calculator.samwash.ua"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://calculator.samwash.ua/en/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://calculator.samwash.ua/ru/"/>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/aksesyari</loc>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/budivnitstvo</loc>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/contacts</loc>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/documentacia</loc>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/nakritya</loc>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/nashi-avtomiyki/wsi</loc>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/obladnannya</loc>
+    </url>
+    <url>
+        <loc>https://calculator.samwash.ua/vidkriti-box</loc>
+    </url>
 </urlset>

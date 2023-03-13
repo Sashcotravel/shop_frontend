@@ -237,7 +237,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[23].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[23].size > 0 ? s.check2 : s.check} checked={data[23].checked}
                        type="radio" name="pina" title={data[23].nameOfGoods} onChange={clickNacr} />
                 {selectName(23)}
@@ -260,7 +260,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[24].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[24].size > 0 ? s.check2 : s.check} checked={data[24].checked}
                        type="radio" name="pina" title={data[24].nameOfGoods} onChange={clickNacr} />
                 {selectName(24)}
@@ -283,7 +283,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[25].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[25].size > 0 ? s.check2 : s.check} checked={data[25].checked}
                        type="radio" name="pina" title={data[25].nameOfGoods} onChange={clickNacr} />
                 {selectName(25)}
@@ -306,7 +306,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[26].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[26].size > 0 ? s.check2 : s.check} checked={data[26].checked}
                        type="radio" name="pina" title={data[26].nameOfGoods} onChange={clickNacr} />
                 {selectName(26)}
@@ -329,7 +329,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[27].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[27].size > 0 ? s.check2 : s.check} checked={data[27].checked}
                        type="radio" name="pina" title={data[27].nameOfGoods} onChange={clickNacr} />
                 {
@@ -355,7 +355,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[28].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[28].size > 0 ? s.check2 : s.check} checked={data[28].checked}
                        type="radio" name="pina" title={data[28].nameOfGoods} onChange={clickNacr} />
                 {selectName(28)}
@@ -378,7 +378,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[29].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[29].size > 0 ? s.check2 : s.check} checked={data[29].checked}
                        type="radio" name="pina" title={data[29].nameOfGoods} onChange={clickNacr} />
                 {selectName(29)}

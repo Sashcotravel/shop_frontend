@@ -492,7 +492,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                   {size(4)}
                 </div>
               </figure>
-              <h5 className={s.itemName}>{data[6].nameOfGoods}</h5>
+              <p className={s.itemName}>{data[6].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               <div>
                 <input className={data[6].size > 0 ? s.check2 : s.check}
@@ -515,7 +515,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                   {size(5)}
                 </div>
               </figure>
-              <h5 className={s.itemName}>{data[7].nameOfGoods}</h5>
+              <p className={s.itemName}>{data[7].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
               <div>
                 <input className={data[7].size > 0 ? s.check2 : s.check}

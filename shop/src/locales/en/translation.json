@@ -10,6 +10,7 @@
   "openBox": "Open boxes",
   "getAnOffer": "Get an offer",
   "desc": "Enter your data, and the calculation you selected will be sent to your e-mail. And our specialist will also contact you for clarification of information and consultation.",
+  "descCon": "Enter your contact details and we will contact you.",
   "enterName": "| Enter Name",
   "enterEmail": "| Enter email",
   "enterYourPhoneNumber": "| Enter the format number: +380993344553",

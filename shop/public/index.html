@@ -15,8 +15,8 @@
     <meta name="google-site-verification" content="q4NkW8V3qDQmTKo3ozMGc_Ja1bnVV0jXiTzxLwhPstI" />
     <link rel="apple-touch-icon"  href="%PUBLIC_URL%/favicon.ico" />
     <link rel="alternate" hreflang="ua" href="https://calculator.samwash.ua"/>
-    <link rel="alternate" hreflang="en" href="https://calculator.samwash.ua/en/"/>
-    <link rel="alternate" hreflang="ru" href="https://calculator.samwash.ua/ru/"/>
+<!--    <link rel="alternate" hreflang="en" href="https://calculator.samwash.ua/en/"/>-->
+<!--    <link rel="alternate" hreflang="ru" href="https://calculator.samwash.ua/ru/"/>-->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -39,6 +39,9 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="module">
+      import reactRouterSitemapGenerator from 'https://cdn.skypack.dev/react-router-sitemap-generator';
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page2.

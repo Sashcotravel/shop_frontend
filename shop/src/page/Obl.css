@@ -19,7 +19,7 @@
     opacity: 1;
     border-radius: 10px;
     backdrop-filter: blur(3px);
-    background-color: #6495ed40;
+    /*background-color: #6495ed40;*/
     padding-top: 7px;
     cursor: pointer;
 }
@@ -261,7 +261,8 @@
     border-radius: 20px;
     color: white;
     font-size: 16px;
-    font-family: Gilroy Light, sans-serif;
+    cursor: pointer;
+    font-family: Gilroy Medium, sans-serif;
 }
 
 
@@ -314,7 +315,7 @@
     height: 20px;
     border-radius: 5px;
     font-size: 10px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
     line-height: 20px;
     position: relative;
     top: 9px;
@@ -344,7 +345,7 @@
     margin: 10px 0 0 100px;
     color: #B2B1B7;
     font-size: 20px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
     font-weight: normal;
 }
 
@@ -360,13 +361,13 @@
 
 .pSt{
     font-size: 20px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
     color: #B2B1B7;
     margin-top: 20px;
 }
 
 .marshBut{
-    margin: 0 0 70px 20px;
+    margin: 0 0 70px 120px;
     width: 283px;
     height: 60px;
     border-radius: 30px;
@@ -375,7 +376,7 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 16px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
 }
 
 .serv{
@@ -420,14 +421,15 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 16px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
+    cursor: pointer;
 }
 
 .desc2{
-    margin: -10px 20px 20px 100px;
+    margin: -10px 100px 20px 100px;
     color: #B2B1B7;
     font-size: 20px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
 }
 
 .imageBox{
@@ -442,7 +444,7 @@
 }
 
 .divIm2{
-    background: transparent linear-gradient(180deg, #000000 0%, #1D202533 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #000000 0%, #1d2025b0 100%) 0% 0% no-repeat padding-box;
     /*background: linear-gradient(180deg, rgb(0, 0, 0), rgba(29, 32, 37, 0));*/
     position: absolute;
     height: 351px;
@@ -487,14 +489,14 @@
     width: 172px;
     text-align: start;
     height: 24px;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
     font-weight: normal;
 }
 
 .titlePName2{
     font-size: 12px;
     text-align: start;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
     margin: 5px 0 -2px 0;
     font-weight: normal;
 }
@@ -508,8 +510,9 @@
 .divButP{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
     margin-top: 85px;
+    padding-left: 100px;
 }
 
 .invest{
@@ -530,7 +533,7 @@ a[data-fancybox] img {
     position: relative;
     border: none;
     margin: 0 0 15px 0;
-    padding: 12px 10px 10px 10px;
+    padding: 9px 10px 10px 10px;
     background-color: #DF4242;
     width: 335px;
     border-radius: 20px;
@@ -548,7 +551,7 @@ a[data-fancybox] img {
     position: relative;
     border: 1px solid gray;
     margin: 0 0 15px 0;
-    padding: 12px 10px 10px 10px;
+    padding: 11px 10px 10px 10px;
     text-align: center;
     color: white;
     font-size: 16px;
@@ -561,11 +564,15 @@ a[data-fancybox] img {
     /*border-radius: .25rem;*/
     border: none;
     outline: none;
+    /*top: -3px;*/
+    /*position: relative;*/
 }
 .rich-select-dropdown2 {
     /*border-radius: .25rem;*/
     border: none;
     outline: none;
+    /*top: -3px;*/
+    /*position: relative;*/
 }
 
 .rich-select-dropdown:focus-within {
@@ -705,7 +712,7 @@ a[data-fancybox] img {
 }
 
 .rich-select-option {
-    padding: 0 8px;
+    padding: 0px 8px;
 }
 .rich-select-options > .rich-select-option:hover {
     background-color: #f1f1f1;
@@ -713,7 +720,7 @@ a[data-fancybox] img {
 }
 
 .rich-select-option2 {
-    padding: 0 8px;
+    padding: 0px 8px;
 
 }
 .rich-select-options2 > .rich-select-option2:hover {
@@ -727,7 +734,7 @@ a[data-fancybox] img {
     margin-bottom: 0;
     display: flex;
     justify-content: center;
-    padding: 3px 0;
+    padding: 8px 0;
 }
 .rich-select-option-body2 label {
     width: 100%;
@@ -786,6 +793,23 @@ a[data-fancybox] img {
         align-items: start;
         flex-direction: column;
         height: 370px;
+    }
+    .marshBut {
+        margin: 0 0 70px 50px;
+    }
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .divBoxTitASel{
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        height: 370px;
+    }
+    .marshBut {
+        margin: 0 0 70px 50px;
     }
 }
 
@@ -851,6 +875,7 @@ a[data-fancybox] img {
         flex-wrap: nowrap;
         justify-content: normal;
         margin-top: 0;
+        padding-left: 0;
     }
     .pSt{
          margin: 40px 20px 20px;
@@ -906,5 +931,8 @@ a[data-fancybox] img {
     }
     .breads{
         font-size: 10px;
+    }
+    .marshBut{
+        margin: 0 0 70px 20px;
     }
 }

@@ -102,7 +102,7 @@ a {
 .divStart{
     height: 100%;
     width: 100%;
-    background-color: #00000078;
+    background-color: #000000a3;
     position: absolute;
     top: 0;
 }
@@ -434,18 +434,23 @@ a {
 }
 
 .container4_2{
+    display: grid;
     padding: 163px 0 100px 0;
     text-align: start;
-    grid-column-start: 3;
+    grid-template-columns: 150px 505px 505px 505px 1fr;
 }
 
 .h4{
+    grid-column-start: 3;
+    grid-column-end: 6;
     color: #B2B1B7;
     font: normal normal 300 82px/90px Gilroy Light, sans-serif;
     width: 900px;
 }
 
 .h42{
+    grid-column-start: 3;
+    grid-column-end: 6;
     color: #B2B1B7;
     font: normal normal 300 82px/90px Gilroy Light, sans-serif;
     margin: 5px 0 85px -405px;
@@ -454,6 +459,8 @@ a {
 }
 
 .p4{
+    grid-column-start: 3;
+    grid-column-end: 6;
     color: white;
     font: normal normal 100 33px/44px Gilroy Light, sans-serif;
     margin-bottom: 85px;
@@ -463,7 +470,7 @@ a {
 .pSmart{
     font: normal normal 900 90px/133px Gilroy Bold, sans-serif;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px #ffffff;
+    -webkit-text-stroke: 1px #ffffff;
 }
 
 .pPrise{
@@ -1094,8 +1101,8 @@ video{
 }
 
 .sliderBox{
-    grid-column-start: 2;
-    grid-column-end: 5;
+    /*grid-column-start: 2;*/
+    /*grid-column-end: 5;*/
     width: 80%;
     height: 666px;
     background: #161A1C 0% 0% no-repeat padding-box;
@@ -1130,8 +1137,8 @@ video{
     position: relative;
     top: 60px;
     left: 50px;
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     margin-right: 10px;
     z-index: 2;
 }
@@ -1188,8 +1195,8 @@ video{
     color: #7F7F80;
     display: block;
     position: relative;
-    left: 300px;
-    top: -50px;
+    left: 310px;
+    top: -65px;
 }
 
 
@@ -1202,7 +1209,7 @@ video{
         height: 171%;
     }
     .mainContainer, .container8, .container6, .container21,
-    .container10_2, .container11_2, .container4_5, .animDiv1{
+    .container10_2, .container11_2, .container4_5, .animDiv1, .container4_2{
         grid-template-columns: 150px 405px 405px 405px 1fr;
     }
     .h421 {
@@ -1274,7 +1281,7 @@ video{
         top: 150px;
     }
     .mainContainer, .container8, .container6, .container21,
-    .container10_2, .container11_2, .container4_5, .animDiv1{
+    .container10_2, .container11_2, .container4_5, .animDiv1, .container4_2{
         grid-template-columns: 100px 305px 305px 305px 1fr;
     }
     .titleH1{
@@ -1338,6 +1345,9 @@ video{
     .pPrise{
         margin-top: 10px;
     }
+    .h4{
+        width: 770px;
+    }
     @keyframes title1 {
         from {
             position: relative;
@@ -1362,6 +1372,12 @@ video{
     }
     .p16 {
         width: 629px;
+    }
+    .container4_2{
+        margin-left: 150px;
+        /* grid-template-columns: auto; */
+        display: flex;
+        flex-direction: column;
     }
     .mainContainer, .container8, .container6, .container21,
     .container10_2, .container11_2, .container4_5, .animDiv1{
@@ -1409,6 +1425,9 @@ video{
     }
     .h4, .h42 {
         font: normal normal 300 70px/60px Gilroy Light;
+    }
+    .h4{
+        width: 770px;
     }
     .h42{
         margin-left: 0;
@@ -1557,8 +1576,8 @@ video{
         font-size: 10px;
     }
     .sliderBox {
-        grid-column-start: 3;
-        margin-left: 0;
+        /*grid-column-start: 3;*/
+        margin-left: 50px;
         height: 630px;
         width: 335px;
     }
@@ -1611,6 +1630,12 @@ video{
         display: block;
         left: 145px;
         width: 300px;
+    }
+    .container4_2{
+        /*grid-template-columns: 1fr;*/
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
     }
     .mainContainer, .container8, .container6, .container21,
     .container10_2, .container11_2, .container4_5, .animDiv1{
@@ -1885,6 +1910,7 @@ video{
     .container4_2 {
         padding-top: 80px;
         padding-bottom: 40px;
+        margin-left: 0;
     }
     .h4, .h42, .h421 {
         width: 470px;
