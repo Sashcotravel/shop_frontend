@@ -12,6 +12,9 @@ const generator = new Generator(
 );
 generator.save('public/sitemap.xml');
 
+//  npm i babel-register --legacy-peer-deps
+// npm i react-router-sitemap --legacy-peer-deps
+
 // require("babel-register")
 //
 // const Sitemap = require('react-router-sitemap').default;
