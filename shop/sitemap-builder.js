@@ -1,9 +1,9 @@
-const Generator = require('react-router-sitemap-generator');
-const Router = require('./route'); //import your react router component
+import Generator from 'react-router-sitemap-generator';
+import Router from './route'; //import your react router component
 
 const generator = new Generator(
-  'https://react-router-sitemap-generator.com',
-  Router(),
+  'https://calculator.samwash.ua',
+  Router,
   {
     lastmod: new Date().toISOString().slice(0, 10),
     changefreq: 'monthly',
@@ -11,6 +11,23 @@ const generator = new Generator(
   }
 );
 generator.save('public/sitemap.xml');
+
+// require("babel-register")
+//
+// const Sitemap = require('react-router-sitemap').default;
+// const router = require('./route').default;
+//
+// function generateSitemap() {
+//
+//   return (
+//     new Sitemap(router)
+//       .build("https://calculator.samwash.ua")
+//       .save('./public/sitemap.xml')
+//   );
+// }
+//
+// generateSitemap();
+
 
 // const fs = require('fs');
 // const convert = require('xml-js');
