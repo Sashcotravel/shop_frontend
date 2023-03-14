@@ -20,7 +20,7 @@ const Error = ({ setOnFooter, t }) => {
       <p className={s.errorP}>404</p>
       <p className={s.errorP2}>{t('error')}</p>
 
-      <a className={s.butThanks+' '+s.lineThanks} href="/">{t(`mainPageTo`)}</a>
+      <a className={s.butThanks+' '+s.lineThanks} style={{marginLeft: '0'}} href="/">{t(`mainPageTo`)}</a>
 
     </div>
 

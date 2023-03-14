@@ -23,9 +23,7 @@ export const LanguageSwitcher = () => {
     if(lng === 'ua'){
       window.location.replace(`${location.pathname}`)
     }  else {
-      window.location.replace(
-        `/${lng}${location.pathname}`
-      )
+      window.location.replace(`/${lng}${location.pathname}`)
     }
   }
 

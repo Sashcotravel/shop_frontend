@@ -36,8 +36,13 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
       document.description = `Автомийка самообслуговування ${postOne?.city} вул. ${postOne?.st}. 
       Актуальні ціни на самомийку. Якісно та швидко. Тел. +38 (050) 59 23 772 `
     }
+    if(lang === 'en'){
+      document.title = `Self-service sink ${postOne?.city} st. ${postOne?.st} | Car wash SamWash`;
+      document.description = `Self-service car wash ${postOne?.city} st. ${postOne?.st}. 
+      Current prices for self-washing. Qualitatively and quickly. Tel. +38 (050) 59 23 772 `
+    }
     if(lang === 'ru'){
-      document.title = `Мойка самообслуживания ${postOne?.city} ул. ${postOne?.st} | Автомойка SamWash`
+      document.title = `Мойка самообслуживания ${postOne?.city} ул. ${postOne?.st} | Car wash SamWash`
       document.description = `Автомойка самообслуживания SamWash ${postOne?.city} ул. ${postOne?.st}.
        Актуальные цены. Качественно и быстро.Тел. +38 (050) 59 23 772`
     }
@@ -58,7 +63,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
   }, []);
 
   const road = () => {
-    let link = 'https://calculator.samwash.ua/ua' + location.pathname
+    let link = 'https://calculator.samwash.ua' + location.pathname
     if(formPass.email || formPass.phone){
       setMeneger(false)
       setChecked(false)
@@ -70,7 +75,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
   };
 
   const oblTrue = (one, two) => {
-    if (url2) {
+    if (localStorage.i18nextLng === "ua" || localStorage.i18nextLng === "ru") {
       return one === "all" ? "/wsi" : one === "Закарпатська область" ? "/zakarpatska-oblast"
         : one === "Львівська область" ? "/lvivska-oblast" : one === "Франківська область" ? "/frankivska-oblast"
           : one === "Тернопільська область" ? "/ternopilska-oblast" : one === "Дніпропетровська область" ? "/dniprotrovska-oblast"
@@ -218,7 +223,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
           <div className={postOne?.city === "Хуст" ? "divIm2" : postOne?.city === "Тернопіль" ? "divIm2" : ""}></div>
 
             {
-              localStorage.i18nextLng === 'ua' ?
+              localStorage.i18nextLng === 'ua' || localStorage.i18nextLng === 'ru' ?
                 <div className="breadcrumbs zI" style={ window.screen.availWidth > 900 ? style : undefined}>
                   <Link className="breads colorBread" to="/">{t("home")}</Link>
                   <Link className="breads colorBread" to="/nashi-avtomiyki/wsi">/ {t("OurCarWashes")}</Link>

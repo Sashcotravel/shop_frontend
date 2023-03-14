@@ -1,19 +1,39 @@
-import Generator from 'react-router-sitemap-generator';
-import Router from './route'; //import your react router component
+// import Generator from 'react-router-sitemap-generator';
+// import Router from './route'; //import your react router component
+//
+// const generator = new Generator(
+//   'https://samwash.ua',
+//   Router,
+//   {
+//     lastmod: new Date().toISOString().slice(0, 10),
+//     changefreq: 'monthly',
+//     priority: 0.8,
+//   }
+// );
+// generator.save('public/sitemap.xml');
 
-const generator = new Generator(
-  'https://calculator.samwash.ua',
-  Router,
-  {
-    lastmod: new Date().toISOString().slice(0, 10),
-    changefreq: 'monthly',
-    priority: 0.8,
-  }
-);
-generator.save('public/sitemap.xml');
 
+// "react-router-sitemap-generator": "^0.0.8",
 //  npm i babel-register --legacy-peer-deps
 // npm i react-router-sitemap --legacy-peer-deps
+
+
+// "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.20.1.tgz",
+//  "mobiscroll": "^3.0.0-beta6",
+// "source-map-loader": "^4.0.1",
+//  "xml-js": "^1.6.11"
+// "sitemap": "babel-node sitemap-builder.js"
+
+// html index
+// <script type="module">
+//   import reactRouterSitemapGenerator from 'https://cdn.skypack.dev/react-router-sitemap-generator';
+// </script>
+
+
+
+
+
+
 
 // require("babel-register")
 //

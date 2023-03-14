@@ -63,7 +63,8 @@ const App = () => {
 
   const { t, i18n: { language } } = useTranslation();
   const dispatch = useDispatch()
-  const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
+  // const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
+  const key = '6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq'
   const screen = window.screen.availWidth > 600
 
   useLayoutEffect(() => {
@@ -74,6 +75,8 @@ const App = () => {
     // else if (currentPathname !== newPathname) {
       // window.location.replace(newPathname)
     // }
+    document.documentElement.lang = language
+    console.log(language);
   }, []);
 
   useEffect(() => {
@@ -338,8 +341,6 @@ const App = () => {
                 <Route path="/budivnitstvo" element={<Build t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                             setTotal={setTotal} total={total} />} />
                 <Route path="/your-order/:id" element={<YourOrder setOnFooter={setOnFooter} />} />
-                <Route path="/nashi-avtomiyki"
-                       element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
                 <Route path="/nashi-avtomiyki/wsi"
                        element={<ListWash setOnFooter={setOnFooter} t={t} setPostOne={setPostOne} />} />
                 <Route path="/nashi-avtomiyki/:id"

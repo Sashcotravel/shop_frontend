@@ -84,15 +84,15 @@
 .divBox{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 30px;
+    justify-content: space-between;
+    margin: 0 112px;
 }
 
 .divBox12{
     display: flex;
     flex-wrap: wrap;
     margin-top: 75px;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .divName{
@@ -524,14 +524,15 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
     z-index: 4;
     visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all .5s ease-out;
 }
 
 .userdata{
@@ -581,7 +582,7 @@
     background-color: #1D2025;
     color: #A7A5A5;
     outline: none;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
 }
 
 .boxCheck{
@@ -786,7 +787,7 @@ input[type="radio"] {
 }
 
 .p_1{
-    font: normal normal 300 33px/44px Gilroy Light, sans-serif;
+    font: normal normal 300 33px/44px Gilroy Medium, sans-serif;
     letter-spacing: 0;
     color: #FFFFFF;
 }
@@ -808,7 +809,7 @@ input[type="radio"] {
     width: 379px;
     height: 129px;
     text-align: left;
-    font: normal normal 300 22px/33px Gilroy Light, sans-serif;
+    font: normal normal 300 22px/33px Gilroy Medium, sans-serif;
     letter-spacing: 0;
     color: #FFFFFF;
     margin-bottom: 62px;
@@ -839,7 +840,7 @@ input[type="radio"] {
     background-color: transparent;
     color: #A7A5A5;
     outline: none;
-    font-family: Gilroy Light, sans-serif;
+    font-family: Gilroy Medium, sans-serif;
 }
 
 /* Error page */
@@ -875,7 +876,7 @@ input[type="radio"] {
         width: 320px;
     }
     .p_1 {
-        font: normal normal 300 28px/44px Gilroy Light, sans-serif;
+        font: normal normal 300 28px/44px Gilroy Medium, sans-serif;
     }
     .h2_1 {
         width: 288px;

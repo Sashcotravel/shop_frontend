@@ -1,8 +1,8 @@
-import React, { memo, useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import m from "./MainPage.module.css";
 import s from "../component/Home.module.css";
 import { useDispatch } from "react-redux";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image1 from "../image/svg/preloader.svg";
 import image2 from "../image/svg/SMART.webp";
 import image21 from "../image/svg/PIXEL 2.webp";
@@ -17,7 +17,7 @@ import image6 from "../image/svg/map icon.svg";
 import { fetchCaptcha, fetchMailDimaZam } from "../API/post";
 import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { defaultTheme } from './Theme'
-import { listWash, coordinates } from '../users'
+import { coordinates } from '../users'
 import { Carousel } from "./carousel/Carousel";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { reCaptchaExecute  } from 'recaptcha-v3-react-function-async'
@@ -36,11 +36,12 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const arrow = 'стрілка'
-  const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
+  // const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
+  const key = '6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq'
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyAX7re_mdCccwAFdJFDpkAyODXH-WRBvXg"
+    googleMapsApiKey: "AIzaSyD4-Ca3XmVM77RpqrahMOrkqfwhFsvUvrg"
   })
 
   const defaultOption = {
@@ -49,15 +50,20 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   }
 
   useEffect(() => {
-    if(lang === 'ua'){
-      document.title = "Купити мийку самообслуговування під ключ | Вигідна ціна | SamWash";
-      document.description = 'Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! ' +
-        'Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'
+    if(lang === 'en'){
+      document.title = "Buy a turnkey self-service sink | Good price | SamWash";
+      document.description = 'Looking for a turnkey self-service car wash? Contact us! ' +
+        'We will deal with the full cycle of car wash construction and ensure their efficiency and quality.'
     }
     if(lang === 'ru'){
       document.title = 'Купить мойку самообслуживания под ключ | Выгодная цена | SamWash'
       document.description = 'Ищете мойку самообслуживания под ключ? Обращайтесь к нам! Мы будем' +
         ' заниматься полным циклом строительства автомоек и обеспечим их эффективность и качество.'
+    }
+    if(lang === 'ua'){
+      document.title = 'Купити мийку самообслуговування під ключ | Вигідна ціна | SamWash'
+      document.description = 'Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! ' +
+        'Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'
     }
   }, [])
 
@@ -146,14 +152,14 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
       setMeneger(false)
       setChecked(false)
       navigate('/thanks')
-      // let gtoken = await reCaptchaExecute(key, 'setting')
-      // let res = await dispatch(fetchCaptcha({gtoken}))
-      // if(res.payload){
+      let gtoken = await reCaptchaExecute(key, 'setting')
+      let res = await dispatch(fetchCaptcha({gtoken}))
+      if(res.payload){
         // let con = document.getElementById("lightblue");
         // con.style.visibility = "hidden";
         let obj = { user: userData };
         dispatch(fetchMailDimaZam(obj));
-      // }
+      }
     }
   };
 

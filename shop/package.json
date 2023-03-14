@@ -6,7 +6,6 @@
     "@emotion/react": "11.9.0",
     "@emotion/styled": "^11.10.5",
     "@fancyapps/ui": "^4.0.31",
-    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.20.1.tgz",
     "@react-google-maps/api": "^2.18.1",
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -26,7 +25,6 @@
     "i18next": "^22.4.8",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.1.1",
-    "mobiscroll": "^3.0.0-beta6",
     "moment": "^2.29.4",
     "prettier": "^2.6.2",
     "react": "^18.2.0",
@@ -39,29 +37,24 @@
     "react-redux": "^8.0.5",
     "react-router": "^6.9.0",
     "react-router-dom": "^6.4.4",
-    "react-router-sitemap-generator": "^0.0.8",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-simplemde-editor": "^5.2.0",
-    "react-sitemap-stevedevops": "^0.4.0",
     "react-slick": "^0.29.0",
     "react-swipe": "^6.0.4",
     "react-table": "^7.8.0",
     "react-to-print": "^2.14.10",
     "recaptcha-v3-react-function-async": "^0.0.3",
-    "source-map-loader": "^4.0.1",
     "style-components": "^0.1.0",
     "use-sync-external-store": "^1.2.0",
     "web-vitals": "^2.1.4",
-    "webpack-merge": "^5.8.0",
-    "xml-js": "^1.6.11"
+    "webpack-merge": "^5.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "sitemap": "babel-node sitemap-builder.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

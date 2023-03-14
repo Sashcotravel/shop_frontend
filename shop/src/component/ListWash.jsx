@@ -35,6 +35,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
 
   const o = win ? -156 : -115;
 
+
   useEffect(() => {
     if(lang === 'ua'){
       if (post === undefined || post === "NaN" || post === "wsi") {
@@ -50,6 +51,21 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
       document.title = "Мийки самообслуговування в Україні | Автомийки SamWash";
       document.description = 'Адреси автомийок самообслуговування SamWash по всій Україні. Обирай ' +
         'автомийку поряд з тобою, за вигідгою ціною, та з якісним обладнанням. Телефонуй просто зараз!'
+    }
+    if(lang === 'en'){
+      if (post === undefined || post === "NaN" || post === "wsi") {
+        document.title = `Self-service sinks in ${obl} | Car washes SamWash`;
+        document.description = `Addresses of SamWas self-service car washes, ${obl}. 
+      Choose a car wash near you, at an affordable price, and with quality equipment. Call now!`
+      }
+      if (loc === `/nashi-avtomiyki/${id}/${post}` && post !== 'wsi'){
+        document.title = `Self-service sinks in ${obl} on ${post} posts | Car washes SamWash`;
+        document.description = `Addresses of SamWas self-service car washes, ${obl} 
+        on ${post} posts. Choose a car wash near you, at an affordable price, and with quality equipment. Call now!`
+      }
+      document.title = "Self-service sinks in Ukraine | SamWash car washes";
+      document.description = 'Addresses of SamWash self-service car washes throughout Ukraine. Choose ' +
+        'a car wash near you, at an affordable price, and with quality equipment. Call now!'
     }
     if(lang === 'ru'){
       if (post === undefined || post === "NaN" || post === "wsi") {
@@ -99,6 +115,22 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
         document.getElementById(`${post}`).checked = true;
       }
     }
+    else if (localStorage.i18nextLng === "ru") {
+      obl = oblFalse(id);
+      click1Use(obl);
+      document.getElementById("select2").value = obl;
+      let oblAs = oblFalse2(id);
+      document.getElementById(oblAs).checked = true;
+      if (post === undefined || post === "NaN" || post === "wsi") {
+        document.getElementById("0").checked = true;
+        colPost = Number(0);
+      }
+      else {
+        colPost = Number(post);
+        // document.getElementById("select").value = post;
+        document.getElementById(`${post}`).checked = true;
+      }
+    }
     else if (url1) {
       obl = oblFalse(id);
       click1Use(obl);
@@ -133,6 +165,17 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
     allObl = [];
     listWash.forEach((item, i) => {
       if (url1) {
+        if (item.obl === o) {
+          allObl.push(item);
+          if (col2 === -1) {
+            col.pop();
+          }
+          if (item.colPost !== col[col2]) {
+            col2++;
+            col.push(item.colPost);
+          }
+        }
+      } else if (localStorage.i18nextLng === "ru") {
         if (item.obl === o) {
           allObl.push(item);
           if (col2 === -1) {
@@ -199,6 +242,13 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
             : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
               : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
                 : obl === "Полтавська область" ? "/poltavska-oblast" : "";
+    } else if (localStorage.i18nextLng === "ru") {
+      return obl === "all" ? "/wsi" : obl === "Закарпатська область" ? "/zakarpatska-oblast"
+        : obl === "Львівська область" ? "/lvivska-oblast" : obl === "Франківська область" ? "/frankivska-oblast"
+          : obl === "Тернопільська область" ? "/ternopilska-oblast" : obl === "Дніпропетровська область" ? "/dniprotrovska-oblast"
+            : obl === "Житомирська область" ? "/zhitomirska-oblast" : obl === "Волинська область" ? "/volynska-oblast"
+              : obl === "Луганська область" ? "/luganska-oblast" : obl === "Вінницька область" ? "/vinnytska-oblast"
+                : obl === "Полтавська область" ? "/poltavska-oblast" : "";
     } else {
       return obl === "all" ? "/wsi" : obl === "Zakarpatska Oblast" ? "/zakarpatska-oblast"
         : obl === "Lvivska Oblast" ? "/lvivska-oblast" : obl === "Ivano-Frankivska Oblast" ? "/frankivska-oblast"
@@ -210,7 +260,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
   };
 
   const oblFalse = (id) => {
-    if (localStorage.i18nextLng === "ua") {
+    if (localStorage.i18nextLng === "ua" || localStorage.i18nextLng === "ru") {
       return id === "wsi" ? "Виберіть область" : id === "zakarpatska-oblast" ? "Закарпатська область"
         : id === "lvivska-oblast" ? "Львівська область" : id === "frankivska-oblast" ? "Франківська область"
           : id === "ternopilska-oblast" ? "Тернопільська область" : id === "dniprotrovska-oblast" ? "Дніпропетровська область"
@@ -248,7 +298,8 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
         allObl.push(item);
         col.push(item.colPost);
         // } else if (item.obl2 === e.target.value) {
-      } else if (item.obl2 === e.target.title) {
+      }
+      else if (item.obl2 === e.target.title) {
         allObl.push(item);
         col.push(item.colPost);
       }
@@ -421,6 +472,22 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
               }
             </div>
             :
+            localStorage.i18nextLng === "ru" ?
+              <div className="breadcrumbs">
+                <Link className="breads colorBread" to="/">{t("home")}</Link>
+                <Link className={colPost === 0 && obl === "all" ? "breads" : "breads colorBread"}
+                      onClick={oblUrl123} to="/nashi-avtomiyki/wsi"> / {t("OurCarWashes")}</Link>
+                {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ?
+                  <Link className={colPost === 0 ? "breads" : "breads colorBread"} to={`/nashi-avtomiyki/${id}/wsi`}>
+                    {obl === "all" ? "" : obl === "wsi" ? "" : location.pathname !== `/nashi-avtomiyki/wsi/${post}` ? ` / ${obl}` : ""}</Link> : ""
+                }
+                {
+                  colPost === 0 ? "" : colPost === undefined ? ""
+                    : <Link className="breads" onClick={oblUrl2} to={`/nashi-avtomiyki/wsi/${colPost}`}>
+                      {colPost !== 0 ? "/ " : ""} {postColIn(colPost, "breads")} </Link>
+                }
+              </div>
+              :
             <div className="breadcrumbs">
               <Link className="breads colorBread" to="/">{t("home")}</Link>
               <Link className={colPost === 0 && obl === "all" ? "breads" : "breads colorBread"}
@@ -441,7 +508,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
               <h1 className="titleH2">{t("title2")}</h1>
 
               {
-                url ?
+                localStorage.i18nextLng === "en" ?
                   obl !== "all" && colPost !== 0 ? <h2 className="titleH4">
                       in {obl} {postColIn(colPost, "titleH4321")}</h2>
                     : obl !== "all" ? <h3 className="titleH4">in {obl}</h3>
@@ -462,32 +529,32 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
                 <div className="rich-select custom-select">
                   <div className="rich-select-dropdown" id="select2" onChange={click1}>
                     {optionF(1, "all", "all", t("SelectAnArea"))}
-                    {optionF(2, "Львівська область", url ? "Lvivska Oblast" : "Львівська область", url ? "Lvivska Oblast" : "Львівська область")}
-                    {optionF(3, "Франківська область", url ? "Ivano-Frankivska Oblast" : "Франківська область", url ? "Ivano-Frankivska Oblast" : "Франківська область")}
-                    {optionF(4, "Закарпатська область", url ? "Zakarpatska Oblast" : "Закарпатська область", url ? "Zakarpatska Oblast" : "Закарпатська область")}
-                    {optionF(5, "Тернопільська область", url ? "Ternopilska Oblast" : "Тернопільська область", url ? "Ternopilska Oblast" : "Тернопільська область")}
                     {optionF(6, "Дніпропетровська область", url ? "Dnipropetrovska Oblast" : "Дніпропетровська область", url ? "Dnipropetrovska Oblast" : "Дніпропетровська область")}
+                    {optionF(5, "Тернопільська область", url ? "Ternopilska Oblast" : "Тернопільська область", url ? "Ternopilska Oblast" : "Тернопільська область")}
+                    {optionF(4, "Закарпатська область", url ? "Zakarpatska Oblast" : "Закарпатська область", url ? "Zakarpatska Oblast" : "Закарпатська область")}
                     {optionF(7, "Житомирська область", url ? "Zhytomyrska Oblast" : "Житомирська область", url ? "Zhytomyrska Oblast" : "Житомирська область")}
+                    {optionF(3, "Франківська область", url ? "Ivano-Frankivska Oblast" : "Франківська область", url ? "Ivano-Frankivska Oblast" : "Франківська область")}
+                    {optionF(11, "Полтавська область", url ? "Poltavska Oblast" : "Полтавська область", url ? "Poltavska Oblast" : "Полтавська область")}
                     {optionF(8, "Волинська область", url ? "Volynska Oblast" : "Волинська область", url ? "Volynska Oblast" : "Волинська область")}
                     {optionF(9, "Луганська область", url ? "Luhanska Oblast" : "Луганська область", url ? "Luhanska Oblast" : "Луганська область")}
                     {optionF(10, "Вінницька область", url ? "Vinnytska Oblast" : "Вінницька область", url ? "Vinnytska Oblast" : "Вінницька область")}
-                    {optionF(11, "Полтавська область", url ? "Poltavska Oblast" : "Полтавська область", url ? "Poltavska Oblast" : "Полтавська область")}
+                    {optionF(2, "Львівська область", url ? "Lvivska Oblast" : "Львівська область", url ? "Lvivska Oblast" : "Львівська область")}
                   </div>
 
                   <input type="checkbox" id="rich-select-dropdown-button" aria-label="Select" className="rich-select-dropdown-button"/>
                   <label htmlFor="rich-select-dropdown-button"></label>
                   <div className="rich-select-options">
                     {option2F("all", t("SelectAnArea"))}
-                    {option2F("Львівська область", url ? "Lvivska Oblast" : "Львівська область")}
-                    {option2F("Франківська область", url ? "Ivano-Frankivska Oblast" : "Франківська область")}
-                    {option2F("Закарпатська область", url ? "Zakarpatska Oblast" : "Закарпатська область")}
-                    {option2F("Тернопільська область", url ? "Ternopilska Oblast" : "Тернопільська область")}
                     {option2F("Дніпропетровська область", url ? "Dnipropetrovska Oblast" : "Дніпропетровська область")}
+                    {option2F("Тернопільська область", url ? "Ternopilska Oblast" : "Тернопільська область")}
+                    {option2F("Закарпатська область", url ? "Zakarpatska Oblast" : "Закарпатська область")}
                     {option2F("Житомирська область", url ? "Zhytomyrska Oblast" : "Житомирська область")}
+                    {option2F("Франківська область", url ? "Ivano-Frankivska Oblast" : "Франківська область")}
+                    {option2F("Полтавська область", url ? "Poltavska Oblast" : "Полтавська область")}
                     {option2F("Волинська область", url ? "Volynska Oblast" : "Волинська область")}
                     {option2F("Луганська область", url ? "Luhanska Oblast" : "Луганська область")}
                     {option2F("Вінницька область", url ? "Vinnytska Oblast" : "Вінницька область")}
-                    {option2F("Полтавська область", url ? "Poltavska Oblast" : "Полтавська область")}
+                    {option2F("Львівська область", url ? "Lvivska Oblast" : "Львівська область")}
                   </div>
                 </div>
                 {/*</LazyLoadComponent>*/}

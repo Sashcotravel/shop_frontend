@@ -20,6 +20,11 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
       document.description = 'Великий вибір обладнання для автомийок самообслуговування за вигідними ' +
         'цінами від SamWash. Безкоштовна консультація та швидка доставка по всій Україні.'
     }
+    if(lang === 'en'){
+      document.title = "Equipment for self-service car washes | Buy in Ukraine | SamWash"
+      document.description = 'A large selection of equipment for self-service car washes at favorable prices ' +
+        'prices from SamWash. Free consultation and fast delivery throughout Ukraine.'
+    }
     if(lang === 'ru'){
       document.title = 'Купить оборудование для мойки самообслуживания | Цена в Украине | SamWash'
       document.description = 'Большой выбор оборудования для автомоек самообслуживания по выгодной цене от ' +
@@ -494,7 +499,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[6].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[6].size > 0 ? s.check2 : s.check}
                        type="radio" name="pina" title={data[6].nameOfGoods} onChange={clickPina}
                        checked={data[6].checked} />
@@ -517,7 +522,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               </figure>
               <p className={s.itemName}>{data[7].nameOfGoods}</p>
               <p className={s.itemDesc}></p>
-              <div>
+              <div className={s.inputBoxR}>
                 <input className={data[7].size > 0 ? s.check2 : s.check}
                        type="radio" name="pina" title={data[7].nameOfGoods} onChange={clickPina}
                        checked={data[7].checked} />

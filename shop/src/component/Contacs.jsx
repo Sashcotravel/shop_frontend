@@ -25,6 +25,11 @@ const Contacts = ({ setOnFooter, t }) => {
       document.description = 'Звяжіться з нами, будь-яким зручним для вас способом. вказаним ' +
         'на сайті та отримайте якісну консультацію по будівництву автомийок самообслуговування під ключ.'
     }
+    if(lang === 'en'){
+      document.title = "Contacts of the sales department SamWash";
+      document.description = 'Contact us in any way convenient for you. specified on the ' +
+        'website and get quality advice on the construction of turnkey self-service car washes.'
+    }
     if(lang === 'ru'){
       document.title = 'Контакты отдела продаж | SamWash'
       document.description = 'Свяжитесь с нами любым удобным для вас способом. указанным на сайте' +

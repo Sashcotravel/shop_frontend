@@ -21,6 +21,11 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
       document.description = 'Визначитися з покриттям для автомийки самообслуговування нескладно, ' +
         'якщо звернутися до нас. Ми запропонуємо найкращі варіанти по дизайну та ціні для вашого бізнесу.'
     }
+    if(lang === 'en'){
+      document.title = "Choosing a coating for a self-service sink | SamWash"
+      document.description = 'It is easy to decide on a cover for a self-service car wash, ' +
+        'if you contact us. We will offer the best design and price options for your business.'
+    }
     if(lang === 'ru'){
       document.title = 'Вибор покрытия для мойки самообслуживания | SamWash'
       document.description = 'Определиться с покрытием для автомойки самообслуживания несложно, ' +
