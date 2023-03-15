@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import FooterMain from "./FooterMain";
 import { fetchMailDimaZam, fetchOrder } from "../API/post";
 import { useDispatch } from "react-redux";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 
@@ -94,7 +95,7 @@ const Contacts = ({ setOnFooter, t }) => {
 
   return (
     <div className={s.divBlock}>
-      <img src={image4} className={s.imageThanks} alt='lable'/>
+      <LazyLoadImage src={image4} className={s.imageThanks} alt='lable'/>
       <div className={s.divMain}>
         <div className={`${s.breadcrumbs} ${s.bread2} ${s.breadcrumbs2}`}>
           <Link className="breads" style={{ color: "#7D7D80" }} to="/">{t(`home`)}</Link>
@@ -111,7 +112,7 @@ const Contacts = ({ setOnFooter, t }) => {
                   <h2 className={s.h2_1+' '+s.p_1_2}>{t(`department`)}</h2>
                   <div>
                     <p className={s.p_1}>+38 (050) 59 23 772</p>
-                    <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></p>
+                    <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.ua</a></p>
                   </div>
                 </div>
 
@@ -157,7 +158,7 @@ const Contacts = ({ setOnFooter, t }) => {
                   <h2 className={s.h2_1+' '+s.p_1_2}>{t(`department`)}</h2>
                   <div>
                     <p className={s.p_1}><a href="tel:+380505923772" style={{color: 'white'}}>+38 (050) 59 23 772</a></p>
-                    <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></p>
+                    <p className={s.p_1}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.ua</a></p>
                   </div>
                 </div>
 

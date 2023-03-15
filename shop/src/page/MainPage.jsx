@@ -36,7 +36,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const arrow = 'стрілка'
-  // const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
+  // const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl' // my
   const key = '6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq'
 
   const { isLoaded } = useJsApiLoader({
@@ -148,18 +148,20 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   };
 
   const useSubmit = async () => {
-    if(formPass.email || formPass.phone){
-      setMeneger(false)
-      setChecked(false)
-      navigate('/thanks')
-      let gtoken = await reCaptchaExecute(key, 'setting')
-      let res = await dispatch(fetchCaptcha({gtoken}))
-      if(res.payload){
+    if (formPass.email || formPass.phone) {
+      setMeneger(false);
+      setChecked(false);
+      navigate("/thanks");
+      let gtoken = await reCaptchaExecute(key, "setting");
+      let res = await dispatch(fetchCaptcha({ gtoken }));
+      console.log(res);
+      // if (res.payload) {
         // let con = document.getElementById("lightblue");
         // con.style.visibility = "hidden";
         let obj = { user: userData };
         dispatch(fetchMailDimaZam(obj));
-      }
+        // console.log('lol');
+      // }
     }
   };
 
@@ -790,7 +792,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     <LazyLoadComponent>
       <footer className={m.footerDiv}>
         <div className={m.footerDiv3}>
-          <span className={m.footerSpan}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.com</a></span>
+          <span className={m.footerSpan}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.ua</a></span>
           {
             screen ? <span className={m.footerSpan}>+38 (050) 59 23 772</span>
               : <span className={m.footerSpan}><a href="tel:+380505923772" style={{color: 'white'}}>+38 (050) 59 23 772</a></span>

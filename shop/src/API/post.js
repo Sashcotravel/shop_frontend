@@ -50,7 +50,6 @@ export const fetchMailUser = createAsyncThunk("order/fetchMailUser", async (obj)
 );
 
 export const fetchCaptcha = createAsyncThunk("order/fetchCaptcha", async (obj) => {
-        // const { data } = await instance.post(`/order/reCaptcha`, obj);
         const { data } = await instance.post(`/order/reCaptcha`, obj);
         return data;
     }

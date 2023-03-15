@@ -20,11 +20,11 @@ import { loadReCaptcha, reCaptchaExecute } from 'recaptcha-v3-react-function-asy
 import OpenBox from "./page/OpenBox";
 import DocumentsPage from "./page/DocumentsPage";
 import Error from "./page/error/Error";
+import Thanks from "./component/Thanks";
+import Contacts from "./component/Contacs";
 
 
-// import Thanks from "./component/Thanks";
 // import Build from "./page/build";
-// import Contacts from "./component/Contacs";
 // const ListWash = React.lazy(() => import('./component/ListWash'))
 // import YourOrder from "./page/YourOrder";
 // import Table from "./old/Table";
@@ -34,9 +34,9 @@ import Error from "./page/error/Error";
 // const Acses = React.lazy(() => import("./page/Acses"));
 const YourOrder = React.lazy(() => import("./page/YourOrder"));
 const OnePost = React.lazy(() => import("./page/listwash/OnePost"));
-const Contacts = React.lazy(() => import("./component/Contacs"));
+// const Contacts = React.lazy(() => import("./component/Contacs"));
 const Build = React.lazy(() => import("./page/build"));
-const Thanks = React.lazy(() => import("./component/Thanks"));
+// const Thanks = React.lazy(() => import("./component/Thanks"));
 
 
 
@@ -75,8 +75,7 @@ const App = () => {
     // else if (currentPathname !== newPathname) {
       // window.location.replace(newPathname)
     // }
-    document.documentElement.lang = language
-    console.log(language);
+    // document.documentElement.lang = language
   }, []);
 
   useEffect(() => {
