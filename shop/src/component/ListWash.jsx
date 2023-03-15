@@ -213,8 +213,8 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
     let oblUrl = oblTrue(obl);
     return (
       <div key={imgNum} className="zPoz">
-        {vOb === undefined ? "" : proect === undefined ? <div className="addBlock">ВЛАСНИЙ ОБ'ЄКТ</div> : ''}
-        {proect === undefined ? "" : <div className="addBlock projectClass">НА СТАДІЇ ПРОЕКТУВАННЯ</div>}
+        {vOb === undefined ? "" : proect === undefined ? <div className="addBlock">{t("ownBuild")}</div> : ''}
+        {proect === undefined ? "" : <div className="addBlock projectClass">{t("projectBuild")}</div>}
         <div className="boxItem">
           <p className="pRed">SAMWASH</p>
           <div className="divRoad">

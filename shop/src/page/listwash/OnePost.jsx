@@ -11,6 +11,10 @@ import { useDispatch } from "react-redux";
 import { fetchMailDimaMika, fetchMailUserMiyka } from "../../API/post";
 
 
+let numPhone = 0
+let numEmail = 0
+
+
 const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }) => {
 
   const [userData, setUserData] = useState({
@@ -131,15 +135,29 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
   };
 
   const onBlur = (e) => {
+    numEmail = 1
+    let phone = document.getElementById("phone");
     let email = document.getElementById('email')
-    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if(!re.test(String(e.target.value).toLowerCase())){
+
+    setUserData((actual) => {
+      return { ...actual, [e.target.title]: e.target.value };})
+
+    const re = /^\S+@\S+\.\S+$/
+    if(!re.test(e.target.value)){
       if(formPass.phone === false){
         email.style.border = '2px solid red'
         email.style.backgroundCo1or = 'transparent'
+        if(numPhone > 0){
+          phone.style.border = '2px solid red'
+          phone.style.backgroundColor = 'transparent'
+        }
         setFormPass((actual) => { return { ...actual, email: false } })
+        setFormPass((actual) => {return { ...actual, phone: false };});
       }
       else {
+        phone.style.border = "none";
+        phone.style.borderBottom = "2px solid grey";
+        phone.style.backgroundColor = "transparent";
         email.style.border = 'none'
         email.style.borderBottom = '2px solid grey'
         email.style.backgroundColor = 'transparent'
@@ -148,24 +166,52 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
       email.style.border = 'none'
       email.style.borderBottom = '2px solid grey'
       email.style.backgroundColor = 'transparent'
-      setFormPass((actual) => { return { ...actual, email: true } })
+      phone.style.border = "none";
+      setFormPass((actual) => {return { ...actual, email: true }});
+      phone.style.borderBottom = "2px solid grey";
+      phone.style.backgroundColor = "transparent";
     }
   }
 
   const onBlur2 = (e) => {
+    numPhone = 1
+    if (Number(e.target.value)) {
+      setUserData((actual) => {
+        return { ...actual, [e.target.title]: e.target.value }})
+    }
+    else {
+      if(e.target.value.length === 1){
+        setUserData((actual) => {
+          return { ...actual, [e.target.title]: '+' }})
+      }
+    }
+
     let phone = document.getElementById("phone");
+    let email = document.getElementById('email')
     let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
     if (regex.test(e.target.value.toString()) === true) {
       phone.style.border = "none";
       phone.style.borderBottom = "2px solid grey";
       phone.style.backgroundColor = "transparent";
       setFormPass((actual) => {return { ...actual, phone: true }});
+      email.style.border = 'none'
+      email.style.borderBottom = '2px solid grey'
+      email.style.backgroundColor = 'transparent'
     } else {
       if (formPass.email === false) {
         phone.style.border = "2px solid red";
         phone.style.backgroundCo1or = "transparent";
+        if(numEmail > 0){
+          email.style.border = '2px solid red'
+          email.style.backgroundColor = 'transparent'
+        }
         setFormPass((actual) => {return { ...actual, phone: false };});
-      } else {
+        setFormPass((actual) => { return { ...actual, email: false } })
+      }
+      else {
+        email.style.border = 'none'
+        email.style.borderBottom = '2px solid grey'
+        email.style.backgroundColor = 'transparent'
         phone.style.border = "none";
         phone.style.borderBottom = "2px solid grey";
         phone.style.backgroundColor = "transparent";
@@ -199,18 +245,13 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
           <br />
           <p className={s.descSpan}>{t("descCon")}</p>
           <br />
-          <input className={s.inputUser} type="name" title="name"
-                 placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
-            setUserData((actual) => {
+          <input className={s.inputUser} type="name" title="name" placeholder={`${t("enterName")}`}
+                 value={userData.name} onChange={(e) => {setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };});}} />
-          <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
-                 placeholder={`${t("enterEmail")}`} value={userData.email} onChange={(e) => {
-            setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };});}} />
-          <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onBlur={onBlur2}
-                 placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={ (e) => {
-            setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value }});}} onClick={phoneClick} />
+          <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone"
+                 placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={ onBlur2} onClick={phoneClick} />
+          <input className={s.inputUser} type="email" title="email" id="email"
+                 placeholder={`${t("enterEmail")}`} value={userData.email} onChange={onBlur} />
           <br />
           <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42DF4C' }}
                   onClick={road} disabled={!formPass.email && !formPass.phone}>{t("send")}</button>

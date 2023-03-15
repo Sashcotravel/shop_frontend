@@ -21,8 +21,13 @@ import { coordinates } from '../users'
 import { Carousel } from "./carousel/Carousel";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { reCaptchaExecute  } from 'recaptcha-v3-react-function-async'
+import axios from "axios";
 
 
+
+
+let numPhone = 0
+let numEmail = 0
 
 const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
 
@@ -42,6 +47,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyD4-Ca3XmVM77RpqrahMOrkqfwhFsvUvrg"
+    // googleMapsApiKey: "AIzaSyDiIH-nH1QzvLZoDJJQIlyt06lupZp4Yss"
   })
 
   const defaultOption = {
@@ -240,15 +246,29 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   }, [])
 
   const onBlur = (e) => {
+    numEmail = 1
+    let phone = document.getElementById("phone");
     let email = document.getElementById('email')
-    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if(!re.test(String(e.target.value).toLowerCase())){
+
+    setUserData((actual) => {
+      return { ...actual, [e.target.title]: e.target.value };})
+
+    const re = /^\S+@\S+\.\S+$/
+    if(!re.test(e.target.value)){
       if(formPass.phone === false){
         email.style.border = '2px solid red'
         email.style.backgroundCo1or = 'transparent'
+        if(numPhone > 0){
+          phone.style.border = '2px solid red'
+          phone.style.backgroundColor = 'transparent'
+        }
         setFormPass((actual) => { return { ...actual, email: false } })
+        setFormPass((actual) => {return { ...actual, phone: false };});
       }
       else {
+        phone.style.border = "none";
+        phone.style.borderBottom = "2px solid grey";
+        phone.style.backgroundColor = "transparent";
         email.style.border = 'none'
         email.style.borderBottom = '2px solid grey'
         email.style.backgroundColor = 'transparent'
@@ -257,24 +277,52 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
       email.style.border = 'none'
       email.style.borderBottom = '2px solid grey'
       email.style.backgroundColor = 'transparent'
-      setFormPass((actual) => { return { ...actual, email: true } })
+      phone.style.border = "none";
+      setFormPass((actual) => {return { ...actual, email: true }});
+      phone.style.borderBottom = "2px solid grey";
+      phone.style.backgroundColor = "transparent";
     }
   }
 
   const onBlur2 = (e) => {
+    numPhone = 1
+    if (Number(e.target.value)) {
+      setUserData((actual) => {
+        return { ...actual, [e.target.title]: e.target.value }})
+    }
+    else {
+      if(e.target.value.length === 1){
+        setUserData((actual) => {
+          return { ...actual, [e.target.title]: '+' }})
+      }
+    }
+
     let phone = document.getElementById("phone");
+    let email = document.getElementById('email')
     let regex = new RegExp(/^(\+|00)[1-9][0-9 \-\(\)\.]{10,32}$/);
     if (regex.test(e.target.value.toString()) === true) {
       phone.style.border = "none";
       phone.style.borderBottom = "2px solid grey";
       phone.style.backgroundColor = "transparent";
       setFormPass((actual) => {return { ...actual, phone: true }});
+      email.style.border = 'none'
+      email.style.borderBottom = '2px solid grey'
+      email.style.backgroundColor = 'transparent'
     } else {
       if (formPass.email === false) {
         phone.style.border = "2px solid red";
         phone.style.backgroundCo1or = "transparent";
+        if(numEmail > 0){
+          email.style.border = '2px solid red'
+          email.style.backgroundColor = 'transparent'
+        }
         setFormPass((actual) => {return { ...actual, phone: false };});
-      } else {
+        setFormPass((actual) => { return { ...actual, email: false } })
+      }
+      else {
+        email.style.border = 'none'
+        email.style.borderBottom = '2px solid grey'
+        email.style.backgroundColor = 'transparent'
         phone.style.border = "none";
         phone.style.borderBottom = "2px solid grey";
         phone.style.backgroundColor = "transparent";
@@ -311,14 +359,10 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                  placeholder={`${t("enterName")}`} value={userData.name} onChange={(e) => {
             setUserData((actual) => {
               return { ...actual, [e.target.title]: e.target.value };});}} />
-          <input className={s.inputUser} type="email" title="email" id="email" onBlur={onBlur}
-                 placeholder={`${t("enterEmail")}`} value={userData.email} onChange={(e) => {
-            setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value };});}} />
-          <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onBlur={onBlur2}
-                 placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={ (e) => {
-            setUserData((actual) => {
-              return { ...actual, [e.target.title]: e.target.value }});}} onClick={phoneClick} />
+          <input className={s.inputUser} style={{ width: "90%" }} type="text" title="phone" id="phone" onClick={phoneClick}
+                 placeholder={`${t("enterYourPhoneNumber")}`} value={userData.phone} onChange={ onBlur2} />
+          <input className={s.inputUser} type="email" title="email" id="email"
+                 placeholder={`${t("enterEmail")}`} value={userData.email} onChange={onBlur} />
           <br />
           <button className={s.footerBut} style={{ width: "50%", margin: "30px auto", backgroundColor: '#42df4c' }}
                   onClick={useSubmit} disabled={!formPass.email && !formPass.phone}>{t("send")}</button>
@@ -792,7 +836,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     <LazyLoadComponent>
       <footer className={m.footerDiv}>
         <div className={m.footerDiv3}>
-          <span className={m.footerSpan}><a style={{color: 'white'}} href="mailto:info@samwash.com">info@samwash.ua</a></span>
+          <span className={m.footerSpan}><a style={{color: 'white'}} href="mailto:info@samwash.ua">info@samwash.ua</a></span>
           {
             screen ? <span className={m.footerSpan}>+38 (050) 59 23 772</span>
               : <span className={m.footerSpan}><a href="tel:+380505923772" style={{color: 'white'}}>+38 (050) 59 23 772</a></span>
