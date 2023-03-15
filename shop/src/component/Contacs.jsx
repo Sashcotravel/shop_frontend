@@ -6,6 +6,7 @@ import FooterMain from "./FooterMain";
 import { fetchMailDimaZam, fetchOrder } from "../API/post";
 import { useDispatch } from "react-redux";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Helmet } from "react-helmet";
 
 
 let numPhone = 0
@@ -22,23 +23,22 @@ const Contacts = ({ setOnFooter, t }) => {
   const screen = window.screen.availWidth > 900
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if(lang === 'ua'){
-      document.title = "Контакти відділу продажів | SamWash";
-      document.description = 'Звяжіться з нами, будь-яким зручним для вас способом. вказаним ' +
-        'на сайті та отримайте якісну консультацію по будівництву автомийок самообслуговування під ключ.'
-    }
-    if(lang === 'en'){
-      document.title = "Contacts of the sales department SamWash";
-      document.description = 'Contact us in any way convenient for you. specified on the ' +
-        'website and get quality advice on the construction of turnkey self-service car washes.'
-    }
-    if(lang === 'ru'){
-      document.title = 'Контакты отдела продаж | SamWash'
-      document.description = 'Свяжитесь с нами любым удобным для вас способом. указанным на сайте' +
-        ' и получите качественную консультацию по строительству автомоек самообслуживания под ключ.'
-    }
-  }, [])
+  // useEffect(() => {
+  //   if(lang === 'ua'){
+  //     document.title = "Контакти відділу продажів | SamWash";
+  //     document.description = 'Звяжіться з нами, будь-яким зручним для вас способом. вказаним на сайті та отримайте якісну консультацію по будівництву автомийок самообслуговування під ключ.'
+  //   }
+  //   if(lang === 'en'){
+  //     document.title = "Contacts of the sales department SamWash";
+  //     document.description = 'Contact us in any way convenient for you. specified on the ' +
+  //       'website and get quality advice on the construction of turnkey self-service car washes.'
+  //   }
+  //   if(lang === 'ru'){
+  //     document.title = 'Контакты отдела продаж | SamWash'
+  //     document.description = 'Свяжитесь с нами любым удобным для вас способом. указанным на сайте' +
+  //       ' и получите качественную консультацию по строительству автомоек самообслуживания под ключ.'
+  //   }
+  // }, [])
 
   useEffect(() => {
     setOnFooter(true)
@@ -145,6 +145,14 @@ const Contacts = ({ setOnFooter, t }) => {
 
   return (
     <div className={s.divBlock}>
+
+      <Helmet>
+        <html lang={localStorage.i18nextLng} />
+        <meta charSet="utf-8" />
+        <title>{t("contactTit")}</title>
+        <meta name="description" content={t("contacDesc")} />
+      </Helmet>
+
       <LazyLoadImage src={image4} className={s.imageThanks} alt='lable'/>
       <div className={s.divMain}>
         <div className={`${s.breadcrumbs} ${s.bread2} ${s.breadcrumbs2}`}>

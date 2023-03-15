@@ -21,6 +21,7 @@ import { coordinates } from '../users'
 import { Carousel } from "./carousel/Carousel";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { reCaptchaExecute  } from 'recaptcha-v3-react-function-async'
+import {Helmet} from "react-helmet";
 import axios from "axios";
 
 
@@ -55,23 +56,20 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
     rotateControl: false, fullscreenControl: false, disableDoubleClickZoom: true, styles: defaultTheme
   }
 
-  useEffect(() => {
-    if(lang === 'en'){
-      document.title = "Buy a turnkey self-service sink | Good price | SamWash";
-      document.description = 'Looking for a turnkey self-service car wash? Contact us! ' +
-        'We will deal with the full cycle of car wash construction and ensure their efficiency and quality.'
-    }
-    if(lang === 'ru'){
-      document.title = 'Купить мойку самообслуживания под ключ | Выгодная цена | SamWash'
-      document.description = 'Ищете мойку самообслуживания под ключ? Обращайтесь к нам! Мы будем' +
-        ' заниматься полным циклом строительства автомоек и обеспечим их эффективность и качество.'
-    }
-    if(lang === 'ua'){
-      document.title = 'Купити мийку самообслуговування під ключ | Вигідна ціна | SamWash'
-      document.description = 'Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! ' +
-        'Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'
-    }
-  }, [])
+  // useEffect(() => {
+  //   if(lang === 'en'){
+  //     document.title = "Buy a turnkey self-service sink | Good price | SamWash";
+  //     document.description = 'Looking for a turnkey self-service car wash? Contact us! We will deal with the full cycle of car wash construction and ensure their efficiency and quality.'
+  //   }
+  //   if(lang === 'ru'){
+  //     document.title = 'Купить мойку самообслуживания под ключ | Выгодная цена | SamWash'
+  //     document.description = 'Ищете мойку самообслуживания под ключ? Обращайтесь к нам! Мы будем заниматься полным циклом строительства автомоек и обеспечим их эффективность и качество.'
+  //   }
+  //   if(lang === 'ua'){
+  //     document.title = 'Купити мийку самообслуговування під ключ | Вигідна ціна | SamWash'
+  //     document.description = 'Шукаєте мийку самообслуговування під ключ? Звертайтесь до нас! Ми займатимемося повним циклом будівництва автомийок та забезпечимо їх ефективність та якість.'
+  //   }
+  // }, [])
 
   const Map = () => {
     const center = useMemo(() => ({ lat: 48.385, lng: 31.183 }), [])
@@ -337,7 +335,16 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   }
 
 
+
   return <div>
+
+    <Helmet>
+      <html lang={localStorage.i18nextLng} />
+      <meta charSet="utf-8" />
+      <title>{t("mainTit")}</title>
+      <meta name="description" content={t("mainDesc")} />
+    </Helmet>
+
 
     <main style={{ backgroundColor: "#283338" }}>
 

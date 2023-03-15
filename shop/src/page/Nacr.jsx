@@ -5,6 +5,7 @@ import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
@@ -16,21 +17,18 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setUrl("cover")
-    if(lang === 'ua'){
-      document.title = "Вибір покриття для мийки самообслуговування | SamWash"
-      document.description = 'Визначитися з покриттям для автомийки самообслуговування нескладно, ' +
-        'якщо звернутися до нас. Ми запропонуємо найкращі варіанти по дизайну та ціні для вашого бізнесу.'
-    }
-    if(lang === 'en'){
-      document.title = "Choosing a coating for a self-service sink | SamWash"
-      document.description = 'It is easy to decide on a cover for a self-service car wash, ' +
-        'if you contact us. We will offer the best design and price options for your business.'
-    }
-    if(lang === 'ru'){
-      document.title = 'Вибор покрытия для мойки самообслуживания | SamWash'
-      document.description = 'Определиться с покрытием для автомойки самообслуживания несложно, ' +
-        'если обратиться к нам. Мы предлагаем лучшие варианты по дизайну и цене для вашего бизнеса.'
-    }
+  //   if(lang === 'ua'){
+  //     document.title = "Вибір покриття для мийки самообслуговування | SamWash"
+  //     document.description = 'Визначитися з покриттям для автомийки самообслуговування нескладно, якщо звернутися до нас. Ми запропонуємо найкращі варіанти по дизайну та ціні для вашого бізнесу.'
+  //   }
+  //   if(lang === 'en'){
+  //     document.title = "Choosing a coating for a self-service sink | SamWash"
+  //     document.description = 'It is easy to decide on a cover for a self-service car wash, if you contact us. We will offer the best design and price options for your business.'
+  //   }
+  //   if(lang === 'ru'){
+  //     document.title = 'Вибор покрытия для мойки самообслуживания | SamWash'
+  //     document.description = 'Определиться с покрытием для автомойки самообслуживания несложно, если обратиться к нам. Мы предлагаем лучшие варианты по дизайну и цене для вашего бизнеса.'
+  //   }
   }, [])
 
   let lang = localStorage.i18nextLng
@@ -209,6 +207,13 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         </div>
       </figure>
     </div>}
+
+    <Helmet>
+      <html lang={localStorage.i18nextLng} />
+      <meta charSet="utf-8" />
+      <title>{t("nacrTit")}</title>
+      <meta name="description" content={t("nacrDesc")} />
+    </Helmet>
 
     <main>
 

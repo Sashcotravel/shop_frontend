@@ -8,6 +8,7 @@ import image3 from "../image/svg/Ω.svg";
 import FooterMain from "./FooterMain";
 // import Post from "../page/listwash/Post";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
+import { Helmet } from "react-helmet";
 
 
 // let col = [0];
@@ -452,6 +453,7 @@ const ListWash = ({ setOnFooter, t, setPostOne }) => {
 
   return (
     <>
+
       <main style={window.screen.availWidth > 900 ? style : undefined}>
         <div className="slideStyleBack"></div>
 

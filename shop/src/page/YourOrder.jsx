@@ -18,7 +18,7 @@ const YourOrder = ({ setOnFooter }) => {
   const { id } = useParams();
 
   // let orderReq;
-
+  setOnFooter(true);
   useEffect(() => {
     (async function() {
       try {

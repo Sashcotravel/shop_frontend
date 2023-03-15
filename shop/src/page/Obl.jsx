@@ -5,6 +5,7 @@ import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
@@ -15,21 +16,18 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setUrl("equipment")
-    if(lang === 'ua'){
-      document.title = "Обладнання для автомийок самообслуговування | Купити в Україні | SamWash"
-      document.description = 'Великий вибір обладнання для автомийок самообслуговування за вигідними ' +
-        'цінами від SamWash. Безкоштовна консультація та швидка доставка по всій Україні.'
-    }
-    if(lang === 'en'){
-      document.title = "Equipment for self-service car washes | Buy in Ukraine | SamWash"
-      document.description = 'A large selection of equipment for self-service car washes at favorable prices ' +
-        'prices from SamWash. Free consultation and fast delivery throughout Ukraine.'
-    }
-    if(lang === 'ru'){
-      document.title = 'Купить оборудование для мойки самообслуживания | Цена в Украине | SamWash'
-      document.description = 'Большой выбор оборудования для автомоек самообслуживания по выгодной цене от ' +
-        'SamWash. Бесплатная консультация и быстрая доставка по всей Украине.'
-    }
+  //   if(lang === 'ua'){
+  //     document.title = "Обладнання для автомийок самообслуговування | Купити в Україні | SamWash"
+  //     document.description = 'Великий вибір обладнання для автомийок самообслуговування за вигідними цінами від SamWash. Безкоштовна консультація та швидка доставка по всій Україні.'
+  //   }
+  //   if(lang === 'en'){
+  //     document.title = "Equipment for self-service car washes | Buy in Ukraine | SamWash"
+  //     document.description = 'A large selection of equipment for self-service car washes at favorable prices prices from SamWash. Free consultation and fast delivery throughout Ukraine.'
+  //   }
+  //   if(lang === 'ru'){
+  //     document.title = 'Купить оборудование для мойки самообслуживания | Цена в Украине | SamWash'
+  //     document.description = 'Большой выбор оборудования для автомоек самообслуживания по выгодной цене от SamWash. Бесплатная консультация и быстрая доставка по всей Украине.'
+  //   }
   }, [])
 
   const screen = window.screen.availWidth > 900
@@ -437,6 +435,13 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
       </div>
       <span className={s.closeX} onClick={closePopApp2}>&#10006;</span>
     </div>}
+
+    <Helmet>
+      <html lang={localStorage.i18nextLng} />
+      <meta charSet="utf-8" />
+      <title>{t("oblTit")}</title>
+      <meta name="description" content={t("oblDesc")} />
+    </Helmet>
 
     <main>
 

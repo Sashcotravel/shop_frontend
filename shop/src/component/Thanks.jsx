@@ -7,7 +7,7 @@ import FooterMain from "./FooterMain";
 
 const Thanks = ({ setOnFooter, t, checked, meneger }) => {
 
-
+  setOnFooter(true)
   useEffect(() => {
     setOnFooter(true)
     return () => {
