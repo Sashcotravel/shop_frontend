@@ -1248,6 +1248,7 @@ input[type="radio"] {
     }
     .divBox{
         margin: auto;
+        justify-content: center;
     }
     /* thanks page */
     .thanksTitle {

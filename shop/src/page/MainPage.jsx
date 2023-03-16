@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { memo, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import m from "./MainPage.module.css";
 import s from "../component/Home.module.css";
 import { useDispatch } from "react-redux";
@@ -29,8 +29,9 @@ import axios from "axios";
 
 let numPhone = 0
 let numEmail = 0
+let captcha = 0
 
-const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
+const MainPage = ({ t, setOnFooter, setMeneger, setChecked, setPoroh }) => {
 
   const [userData, setUserData] = useState({
     name: "", phone: "", email: "" });
@@ -45,11 +46,12 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   // const key = '6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq'
   const key = process.env.REACT_APP_RECAPTCHAPUBLIC
 
+
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
+    id: "google-map-script",
     // googleMapsApiKey: "AIzaSyD4-Ca3XmVM77RpqrahMOrkqfwhFsvUvrg"
     googleMapsApiKey: process.env.REACT_APP_GOOGLEMAPS
-  })
+  });
 
   const defaultOption = {
     panControl: true, mapTypeControl: false, scaleControl: false, streetViewControl: false,
@@ -71,7 +73,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   //   }
   // }, [])
 
-  const Map = () => {
+  const Map = memo(() => {
     const center = useMemo(() => ({ lat: 48.385, lng: 31.183 }), [])
 
     return <GoogleMap zoom={7} center={center} mapContainerClassName={m.map_container}
@@ -80,7 +82,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
             let center = item.center;
             return <MarkerF position={center} icon={image6} key={index} onClick={() => navigate(item.url) } title={item.title} />})}
     </GoogleMap>
-  }
+  })
 
   const Home = () => {
     if(!isLoaded) return <div>Завантаження...</div>
@@ -153,9 +155,9 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
 
   const useSubmit = async () => {
     if (formPass.email || formPass.phone) {
-      setMeneger(false);
-      setChecked(false);
-      navigate("/thanks");
+      // setMeneger(false);
+      // setChecked(false);
+      // navigate("/thanks");
       // let gtoken = await reCaptchaExecute(key, "setting");
       // let res = await dispatch(fetchCaptcha({ gtoken }));
       // console.log(res);
@@ -163,17 +165,34 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
         // let con = document.getElementById("lightblue");
         // con.style.visibility = "hidden";
         let obj = { user: userData };
-        dispatch(fetchMailDimaZam(obj));
-        // console.log('lol');
+        const res = await dispatch(fetchMailDimaZam(obj));
+        console.log('lol');
       // }
     }
   };
 
-  const greenBut = () => { noScroll() };
+  const greenBut = () => {
+    noScroll()
+    captcha += 1
+    if(captcha === 1){
+      function reCaptchaOnFocus() {
+        let head = document.getElementsByTagName("head")[0];
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://www.google.com/recaptcha/api.js";
+        head.appendChild(script);
+        let script2 = document.createElement("script");
+        script2.src = "https://www.google.com/recaptcha/api.js?render=6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq";
+        head.appendChild(script);
+        head.appendChild(script2);
+      };
+      reCaptchaOnFocus()
+    }
+  };
 
   const infoBig = () => {};
 
-  const Video = props => {
+  const Video = memo(props => {
     const src = getVideoSrc(window.innerWidth);
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
     const onLoadedData = () => { setIsVideoLoaded(true) };
@@ -185,11 +204,11 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
 
         <LazyLoadComponent>
           <video autoPlay playsInline muted loop src={src} onLoadedData={onLoadedData}
-                 style={{ opacity: isVideoLoaded ? 1 : 0 }} data-loaded='lazy'/>
+                 style={{ opacity: isVideoLoaded ? 1 : 0 }} data-loaded='lazy' />
         </LazyLoadComponent>
       </div>
     );
-  };
+  });
 
   const getVideoSrc = width => { return image4 };
 
@@ -695,7 +714,8 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
                   <li className={m.li}><img className={m.imageS} src={image3} alt={arrow}/>
                     <span className={m.spanIm}>{t("main.periodOf")}</span></li>
                 </ul>
-                <span onClick={infoBig}><Link className={m.pBig23+' '+m.pBig23_2} to='/obladnannya'>{t("main.MOREINFORMATION")} >></Link></span>
+                <span onClick={infoBig}><Link className={m.pBig23+' '+m.pBig23_2} onClick={() => setPoroh(true)}
+                                              to='/obladnannya'>{t("main.MOREINFORMATION")} >></Link></span>
               </div>
 
               {screen && <div className={m.div12}>

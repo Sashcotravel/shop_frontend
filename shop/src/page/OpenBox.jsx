@@ -95,7 +95,6 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
       twoImg.src = ''
-      let g = document.getElementById(e.target.id);
       data.map(item => {
         if('img' + item.nameImg === e.target.id){
           let con = document.getElementById("light");
@@ -133,8 +132,6 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     border: "none"
   };
 
-  const style = { margin: "0 auto 60px 125px" };
-
   const changeColor = () => {
     if(screen){
       if(window.scrollY >= 500) {setColor('comp')}
@@ -158,7 +155,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <span className='blockLarge' id="light">
               <img style={{width: '35px', height: '35px'}} src={image2} onClick={hidden} id="light" alt='size'/>
             </span>
-            <img src='' className="imageLarge" id="lightCol" />
+            <img src='' className="imageLarge" id="lightCol" alt='photo'/>
           </div>
         </figure>
       </div>
@@ -166,7 +163,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <figure className="figure">
           <div className="divImg" id="light2">
             <span className="blockLarge" id="light2">
-              <LazyLoadImage style={{ width: "35px", height: '35px' }} src={image2}
+              <LazyLoadImage style={{ width: "35px", height: '35px' }} src={image2} alt='size'
                              onClick={hidden} id="light2" alt="закрити" loading='lazy' />
             </span>
             <iframe className="imageLarge2" id="lightCol2" width="100%" height="100%"
@@ -233,9 +230,9 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <picture>
-                    <source srcSet={require("../img/Аксесуари/small_jpeg/для фури Пантограф-1.jpg")} type="image/jpeg" />
-                    <source srcSet={require("../img/Аксесуари/small_WebP/для фури Пантограф-1.webp")} />
-                    <img src={require("../img/Аксесуари/small_jpeg/для фури Пантограф-1.jpg")} className="base"
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/pantograph.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/pantograph.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/pantograph.jpg")} className="base"
                          id="img29" alt='Відкритий пост для фури' loading='lazy' />
                   </picture>
                   {/*<LazyLoadImage src={require("../image2/vidpostfur.jpg")} className={"base"}*/}
@@ -256,9 +253,9 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <picture>
-                    <source srcSet={require("../img/Аксесуари/small_jpeg/Т-подібний для бусів-1.jpg")} type="image/jpeg" />
-                    <source srcSet={require("../img/Аксесуари/small_WebP/Т-подібний для бусів-1.webp")} />
-                    <img src={require("../img/Аксесуари/small_jpeg/Т-подібний для бусів-1.jpg")} className="base"
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/tpodButs.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/tpodButs.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/tpodButs.jpg")} className="base"
                          id="img13" alt='Т-подібний відкритий пост' loading='lazy' />
                   </picture>
                   {/*<LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"} id="img13" alt='Т-подібний відкритий пост' loading='lazy'/>*/}
@@ -279,9 +276,9 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <picture>
-                    <source srcSet={require("../img/Аксесуари/small_jpeg/П-подібний-1.jpg")} type="image/jpeg" />
-                    <source srcSet={require("../img/Аксесуари/small_WebP/П-подібний-1.webp")} />
-                    <img src={require("../img/Аксесуари/small_jpeg/П-подібний-1.jpg")} className="base"
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/ppod.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/ppod.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/ppod.jpg")} className="base"
                          id="img14" alt='П-подібний відкритий пост' loading='lazy' />
                   </picture>
                   {/*<LazyLoadImage src={require("../image2/tpod.jpg")} className={"base"} id="img14" alt='П-подібний відкритий пост' loading='lazy'/>*/}
@@ -301,9 +298,9 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <picture>
-                    <source srcSet={require("../img/Аксесуари/small_jpeg/Т-подіний з захистом-1.jpg")} type="image/jpeg" />
-                    <source srcSet={require("../img/Аксесуари/small_WebP/Т-подіний з захистом-1.webp")} />
-                    <img src={require("../img/Аксесуари/small_jpeg/Т-подіний з захистом-1.jpg")} className="base"
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/tpodZah.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/tpodZah.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/tpodZah.jpg")} className="base"
                          id="img15" alt='Т-подібний із захистом відкритий пост' loading='lazy' />
                   </picture>
                   {/*<LazyLoadImage src={require("../image2/ppodvidpostbut.jpg")} className={"base"}*/}
@@ -325,9 +322,9 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <picture>
-                    <source srcSet={require("../img/Аксесуари/small_jpeg/П-з захистом-1.jpg")} type="image/jpeg" />
-                    <source srcSet={require("../img/Аксесуари/small_WebP/П-з захистом-1.webp")} />
-                    <img src={require("../img/Аксесуари/small_jpeg/П-з захистом-1.jpg")} className="base"
+                    <source srcSet={require("../img/Аксесуари/small_jpeg/pwithZah.jpg")} type="image/jpeg" />
+                    <source srcSet={require("../img/Аксесуари/small_WebP/ppodZah.webp")} />
+                    <img src={require("../img/Аксесуари/small_jpeg/pwithZah.jpg")} className="base"
                          id="img28" alt='П-подібний із захистом відкритий пост' loading='lazy' />
                   </picture>
                   {/*<LazyLoadImage src={require("../image2/ppodvidpostbut.jpg")} className={"base"}*/}

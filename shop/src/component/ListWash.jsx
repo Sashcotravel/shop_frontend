@@ -8,7 +8,6 @@ import image3 from "../image/svg/Ω.svg";
 import FooterMain from "./FooterMain";
 // import Post from "../page/listwash/Post";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
-import { Helmet } from "react-helmet";
 
 
 // let col = [0];

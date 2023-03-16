@@ -13,7 +13,7 @@ import { fetchMailDimaMika, fetchMailUserMiyka } from "../../API/post";
 
 let numPhone = 0
 let numEmail = 0
-
+let captcha = 0
 
 const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }) => {
 
@@ -67,7 +67,7 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
   }, []);
 
   const road = () => {
-    let link = 'https://calculator.samwash.ua' + location.pathname
+    let link = 'https://samwash.ua' + location.pathname
     if(formPass.email || formPass.phone){
       setMeneger(false)
       setChecked(false)
@@ -228,6 +228,22 @@ const OnePost = ({ postOne, setOnFooter, t, setPostOne, setMeneger, setChecked }
   const noScroll = () => {
     let con = document.getElementById("lightblue");
     con.style.visibility = "visible";
+    captcha += 1
+    if(captcha === 1){
+      function reCaptchaOnFocus() {
+        let head = document.getElementsByTagName("head")[0];
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://www.google.com/recaptcha/api.js";
+        head.appendChild(script);
+        let script2 = document.createElement("script");
+        script2.src = "https://www.google.com/recaptcha/api.js?render=6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq";
+        head.appendChild(script);
+        head.appendChild(script2);
+      };
+      reCaptchaOnFocus()
+    }
+
   };
 
 

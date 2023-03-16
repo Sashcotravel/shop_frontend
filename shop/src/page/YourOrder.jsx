@@ -106,7 +106,7 @@ const YourOrder = ({ setOnFooter }) => {
                 img.slice(0, 4) === 'http' ?
                 <iframe id={`img${imgNum}`} width="100%" height="100%" src={img}
                 title="Програма піна високий тиск" style={{border: 'none'}} />
-                : <img src={`/big_jpeg/${img}`} className={"base"} id={`img${imgNum}`} />
+                : <img src={`/big_jpeg/${img}`} className={"base"} id={`img${imgNum}`} alt='photo'/>
               }
               {/*<img src={`/big_jpeg/${img}`} className={"base"} id={`img${imgNum}`} />*/}
               {/*<div style={{backgroundImage: `url("/logo192.png`}} className={"base"} id={`img${imgNum}`} />*/}
@@ -136,7 +136,7 @@ const YourOrder = ({ setOnFooter }) => {
             <span className="blockLarge" id="light">
               <img style={{ width: "35px", height: '35px' }} src={image2} onClick={hidden} id="light" alt='open'/>
             </span>
-            <img src='' className="imageLarge" id="lightCol" />
+            <img src='' className="imageLarge" id="lightCol" alt='open'/>
           </div>
         </figure>
       </div> }
@@ -148,7 +148,7 @@ const YourOrder = ({ setOnFooter }) => {
                              onClick={hidden} id="light2" alt="закрити" loading='lazy' />
             </span>
             <iframe className="imageLarge2" id="lightCol2" width="100%" height="100%"
-                    src='' style={{border: 'none'}} />
+                    src='' style={{border: 'none'}} title='video' />
           </div>
         </figure>
       </div>}

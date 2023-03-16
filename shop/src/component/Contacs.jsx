@@ -1,9 +1,9 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./Home.module.css";
 import image4 from "../image/svg/sw logo.svg";
 import { Link } from "react-router-dom";
 import FooterMain from "./FooterMain";
-import { fetchMailDimaZam, fetchOrder } from "../API/post";
+import { fetchMailDimaZam } from "../API/post";
 import { useDispatch } from "react-redux";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -12,14 +12,13 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 let numPhone = 0
 let numEmail = 0
 
-const Contacts = ({ setOnFooter, t }) => {
+const Contacts = ({ setOnFooter, t, setMeneger, setChecked }) => {
 
   const [userData, setUserData] = useState({
     name: "", phone: "", email: "", post: ""});
   const [formPass, setFormPass] = useState({
     phone: false, email: false });
 
-  let lang = localStorage.i18nextLng
   const screen = window.screen.availWidth > 900
   const dispatch = useDispatch();
 
@@ -42,12 +41,28 @@ const Contacts = ({ setOnFooter, t }) => {
 
   useEffect(() => {
     setOnFooter(true)
+
+      function reCaptchaOnFocus() {
+        let head = document.getElementsByTagName("head")[0];
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://www.google.com/recaptcha/api.js";
+        head.appendChild(script);
+        let script2 = document.createElement("script");
+        script2.src = "https://www.google.com/recaptcha/api.js?render=6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq";
+        head.appendChild(script);
+        head.appendChild(script2);
+      };
+      reCaptchaOnFocus()
+
     return () => {
       setOnFooter(false)
     }
   }, [])
 
   const sendPost = () => {
+    setMeneger(false);
+    setChecked(false);
     let obj = { user: userData };
     dispatch(fetchMailDimaZam(obj));
   }
@@ -148,7 +163,6 @@ const Contacts = ({ setOnFooter, t }) => {
 
       <HelmetProvider>
         <Helmet>
-          <html lang={localStorage.i18nextLng} />
           <meta charSet="utf-8" />
           <title>{t("contactTit")}</title>
           <meta name="description" content={t("contacDesc")} />
@@ -200,7 +214,7 @@ const Contacts = ({ setOnFooter, t }) => {
                     });
                   }} />
 
-                  <Link className={s.greenButSend+' '+s.lineThanks} onClick={sendPost} to="/">{t(`send`)}</Link>
+                  <Link className={s.greenButSend+' '+s.lineThanks} onClick={sendPost} to="/thanks">{t(`send`)}</Link>
 
                 </div>
               </>
@@ -237,7 +251,7 @@ const Contacts = ({ setOnFooter, t }) => {
                 </div>
 
                 <div className={s.div1Cont+' '+s.div1Cont2}>
-                  <Link className={s.greenButSend+' '+s.lineThanks} onClick={sendPost} to="/">{t(`send`)}</Link>
+                  <Link className={s.greenButSend+' '+s.lineThanks} onClick={sendPost} to="/thanks">{t(`send`)}</Link>
                 </div>
               </>
           }

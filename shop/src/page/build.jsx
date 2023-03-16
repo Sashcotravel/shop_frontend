@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import s from "../component/Home.module.css";
 import "./Obl.css";
-import image1 from '../image/svg/Fullscreenicon.svg'
-import image2 from '../image/svg/Group31.svg'
-import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
 
 
@@ -105,8 +103,6 @@ const Build = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     color: "#FFFFFF",
     border: "none"
   };
-
-  const style = { margin: "0 auto 60px 125px" };
 
   const changeColor = () => {
     if(screen){

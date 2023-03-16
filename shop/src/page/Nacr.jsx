@@ -19,8 +19,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     setUrl("cover")
   }, [])
 
-  let lang = localStorage.i18nextLng
-
   const clickNacr = (e) => {
     data.forEach(item => {
       item.checked = false;
@@ -179,7 +177,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     }
   }
 
-  window.addEventListener('scroll', changeColor)
+  window.addEventListener('scroll', changeColor, { passive: true })
 
 
   return <>
@@ -227,8 +225,8 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div>
-                  <LazyLoadImage src={require("../image2/coverSMART.jpg")}
-                                 className="base" id="img6" alt='SMART' loading='lazy'/>
+                  <LazyLoadImage src={require("../image2/coverSMART.jpg")} className="base"
+                                 id="img6" alt='SMART' loading='lazy' effect="blur"/>
                   {size(6)}
                 </div>
               </figure>
@@ -249,7 +247,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             <div className={s.boxOne}>
               <figure>
                 <div>
-                  <LazyLoadImage src={require("../image2/coverPIXEL.jpg")}
+                  <LazyLoadImage src={require("../image2/coverPIXEL.jpg")} effect="blur"
                                  className={"base"} id="img7" alt='PIXEL' loading='lazy'/>
                   {size(7)}
                 </div>
@@ -272,7 +270,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <LazyLoadImage src={require("../image2/coverMARCO1.jpg")} className={"base"}
-                                 id="img8" alt='MARCO 1 Banner' loading='lazy'/>
+                                 id="img8" alt='MARCO 1 Banner' loading='lazy' effect="blur"/>
                   {size(8)}
                 </div>
               </figure>
@@ -294,7 +292,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <LazyLoadImage src={require("../image2/coverMARCO.jpg")} className={"base"}
-                       id="img9" alt=' MARCO 2 Glass' loading='lazy'/>
+                       id="img9" alt=' MARCO 2 Glass' loading='lazy' effect="blur"/>
                   {size(9)}
                 </div>
               </figure>
@@ -316,7 +314,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <LazyLoadImage src={require("../image2/coverMARCHELLO.jpg")} className={"base"}
-                                 id="img10" alt='MARCHELLO' loading='lazy'/>
+                                 id="img10" alt='MARCHELLO' loading='lazy' effect="blur"/>
                   {size(10)}
                 </div>
               </figure>
@@ -341,7 +339,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <img src={require("../image2/coverMARCHELLight.jpg")} className={"base"}
-                       id="img60" alt='MARCHELLO Light' loading='lazy'/>
+                       id="img60" alt='MARCHELLO Light' loading='lazy' effect="blur"/>
                   {size(60)}
                 </div>
               </figure>
@@ -363,7 +361,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <LazyLoadImage src={require("../image2/karkasUfo.jpg")} className={"base"}
-                                 id="img11" alt='UFO' loading='lazy'/>
+                                 id="img11" alt='UFO' loading='lazy' effect="blur"/>
                   {size(11)}
                 </div>
               </figure>

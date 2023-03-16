@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import FooterMain from "../../component/FooterMain";
 import s from "../../component/Home.module.css";
 

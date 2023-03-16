@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import {Link} from "react-router-dom";
 import s from './Home.module.css'
 import image4 from "../image/svg/sw logo.svg";

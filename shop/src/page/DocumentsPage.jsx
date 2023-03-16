@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import s from "../component/Home.module.css";
 import "./Obl.css";
-import image1 from '../image/svg/Fullscreenicon.svg'
-import image2 from '../image/svg/Group31.svg'
-import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
 
 
@@ -15,93 +13,14 @@ const DocumentsPage = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   const [color, setColor] = useState(false)
   const screen = window.screen.availWidth > 900
+  
 
-
-  const addCount = (e) => {
-    data.forEach(item => {
-      if (item.nameOfGoods === e.target.title) {
-        userOrder.forEach((el, index) => {
-          if (item === el) {
-            userOrder.splice(index, 1);
-          }
-        });
-        item.size = item.size + 1;
-        item.total = item.size * item.prise;
-        setTotal((actual) => actual + item.prise);
-        userOrder.push(item);
-      }
-    });
-    // console.log(userOrder);
-  };
-
-  const minesCount = (e) => {
-    data.forEach(item => {
-      if (item.nameOfGoods === e.target.title) {
-        if (item.size === 0) {
-          item.size = 0;
-        } else {
-          item.size = item.size - 1;
-          if (item.size === 0) {
-            item.checked = false;
-            userOrder.forEach((el, index) => {
-              if (item === el) {
-                userOrder.splice(index, 1);
-              }
-            });
-          }
-          item.total = item.total - item.prise;
-          if (item.total === 0) {
-            item.total = item.prise;
-          }
-          setTotal(total - item.prise);
-        }
-      }
-    });
-    // console.log(userOrder);
-  };
-
-  const boxBut = (num) => {
-    return (
-      <div className={s.divBut}>
-        <div style={{ padding: 10 + "px", margin: "20px 15px" }}>
-          <button className={s.butMin}>
-            <span onClick={minesCount} title={data[num].nameOfGoods} className={s.spanMin}>-</span>
-          </button>
-          <span className={s.itemTotalSize} id="lightblue">{data[num].size}</span>
-          <button className={s.butPlas} style={{ backgroundColor: "#DF4242", border: "none" }}>
-            <span onClick={addCount} title={data[num].nameOfGoods} className={s.spanAdd}>+</span>
-          </button>
-        </div>
-        <span className={s.itemTotal}>{data[num].total} грн</span>
-      </div>
-    );
-  };
-
-  const onChange = (e) => {
-    data.forEach(item => {
-      if (item.nameOfGoods === e.target.id) {
-        if (e.target.checked) {
-          setTotal((actual) => actual + item.prise);
-          userOrder.push(item);
-        } else {
-          userOrder.forEach((el, index) => {
-            if (item === el) {
-              setTotal(total - item.prise);
-              userOrder.splice(index, 1);
-            }
-          });
-        }
-      }
-    });
-  };
 
   let activeStyle = {
     backgroundColor: "#DF4242",
     color: "#FFFFFF",
     border: "none"
   };
-
-  const style = { margin: "0 auto 60px 125px" };
 
   const changeColor = () => {
     if(screen){
@@ -115,7 +34,7 @@ const DocumentsPage = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     }
   }
 
-  window.addEventListener('scroll', changeColor)
+  window.addEventListener('scroll', changeColor, { passive: true })
 
 
   return (
@@ -155,10 +74,6 @@ const DocumentsPage = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <p className={s.itemDesc}></p>
               <span className={s.itemTotal} style={{margin: '35px 100px 0 0', display: 'block', width: '260px'}}>Приблизна вартість {data[63].total} грн,</span>
               <p className={s.itemName} style={{margin: '-5px 0 0 10px', color: 'white'}}>до обговорення</p>
-              {/*<div className={s.divBut}>*/}
-              {/*  <input type="checkbox" id={data[63].nameOfGoods} onChange={onChange}/>*/}
-              {/*  <span className={s.itemTotal}>{data[63].total} грн</span>*/}
-              {/*</div>*/}
             </div>
           </div>
         </LazyLoadComponent>

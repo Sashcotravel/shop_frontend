@@ -1,4 +1,3 @@
-import { useTransition } from "react";
 import { useLocation } from "react-router-dom";
 import i18next from "i18next";
 import s from "./Home.module.css";
@@ -9,7 +8,6 @@ export const LanguageSwitcher = () => {
   const location = useLocation()
 
   let lang = localStorage.i18nextLng
-  const screen = window.screen.availWidth > 900
 
   // const switcher2 = (lng) => () => {
   //   i18next.changeLanguage(lng)

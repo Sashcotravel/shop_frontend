@@ -1,8 +1,8 @@
-import React, { useEffect, useState, Suspense, useLayoutEffect, memo } from "react";
+import React, { useEffect, useState, Suspense, useLayoutEffect } from "react";
 import s from "./component/Home.module.css";
 import "./App.css";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter as Router, Link, Route, Routes, NavLink, HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes, NavLink } from "react-router-dom";
 import { Header } from "./Header";
 import { Users } from "./users";
 import MainPage from "./page/MainPage";
@@ -22,6 +22,7 @@ import DocumentsPage from "./page/DocumentsPage";
 import Error from "./page/error/Error";
 import Thanks from "./component/Thanks";
 import Contacts from "./component/Contacs";
+
 
 
 // import Build from "./page/build";
@@ -44,6 +45,7 @@ let userOrder = [];
 let obj = {}
 let numPhone = 0
 let numEmail = 0
+let captcha = 0
 
 const App = () => {
 
@@ -53,21 +55,18 @@ const App = () => {
     phone: false, email: false });
   const [total, setTotal] = useState(0);
   const [checked, setChecked] = useState(false);
-  const [dateT, setDate] = useState("");
-  const [checked2, setChecked2] = useState(false);
-  const [selected, setSelected] = useState(null);
   const [onFooter, setOnFooter] = useState(false);
-  const [onMain, setOnMain] = useState(false);
   const [postOne, setPostOne] = useState(null);
   const [meneger, setMeneger] = useState(true);
   const [url, setUrl] = useState(true);
-  const [color, setColor] = useState(false)
+  const [poroh, setPoroh] = useState(false);
 
   const { t, i18n: { language } } = useTranslation();
   const dispatch = useDispatch()
   // const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl'
   const key = '6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq'
   const screen = window.screen.availWidth > 600
+
 
   useLayoutEffect(() => {
     const currentPathname = window.location.pathname;
@@ -155,25 +154,27 @@ const App = () => {
   const noScroll = () => {
     let con = document.getElementById("lightblue2");
     con.style.visibility = "visible";
+    captcha += 1
+
+    if(captcha === 1){
+      function reCaptchaOnFocus() {
+        let head = document.getElementsByTagName("head")[0];
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://www.google.com/recaptcha/api.js";
+        head.appendChild(script);
+        let script2 = document.createElement("script");
+        script2.src = "https://www.google.com/recaptcha/api.js?render=6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq";
+        head.appendChild(script);
+        head.appendChild(script2);
+      };
+      reCaptchaOnFocus()
+    }
   };
 
   const checkedClick = () => {
     if (checked) { setChecked(false) }
     else { setChecked(true) }
-  };
-
-  const checkedClick2 = () => {
-    if (checked2) {setChecked2(false) }
-    else { setChecked2(true) }
-  };
-
-  const selectedChange = (ev) => {
-    setSelected(ev.value);
-    // let date = ev.value.toString();
-    // setDate(date.slice(0, 25));
-    // setUserData((actual) => {
-    //   return { ...actual, date: date.slice(0, 25) };
-    // });
   };
 
   const nullAll = () => {
@@ -352,12 +353,12 @@ const App = () => {
 
           <Suspense fallback={<h1 style={{ color: "white" }}>Завантаження...</h1>}>
             <Routes>
-                <Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
-                <Route path={`/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked}/>} />
-                <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger} />} />
-                <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} />} />
+                <Route path={`/${language}/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked} setPoroh={setPoroh}/>}  />
+                <Route path={`/`} element={<MainPage t={t} setOnFooter={setOnFooter} setMeneger={setMeneger} setChecked={setChecked} setPoroh={setPoroh}/>}  />
+                <Route path="/thanks" element={<Thanks setOnFooter={setOnFooter} t={t} checked={checked} meneger={meneger}/>} />
+                <Route path="/contacts" element={<Contacts setOnFooter={setOnFooter} t={t} setChecked={setChecked}  setMeneger={setMeneger}/>} />
                 <Route path="/obladnannya" element={<Obl t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
-                                                         setTotal={setTotal} total={total} />} />
+                                                         setTotal={setTotal} total={total} poroh={poroh} setPoroh={setPoroh} />} />
                 <Route path="/nakritya" element={<Nacr t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
                                                        setTotal={setTotal} total={total} />} />
                 <Route path="/vidkriti-box" element={<OpenBox t={t} data={Users} userOrder={userOrder} setUrl={setUrl}
