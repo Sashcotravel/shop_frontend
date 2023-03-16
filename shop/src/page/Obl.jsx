@@ -498,7 +498,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <iframe id="img4" width="100%" height="100%" src="https://www.youtube.com/embed/ADgSpww7qiE"
-                          title="Програма піна високий тиск" style={{border: 'none'}} />
+                          title="Програма піна високий тиск" style={{border: 'none'}} loading="lazy" />
                   {size(4)}
                 </div>
               </figure>
@@ -521,7 +521,7 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <iframe id="img5" width="100%" height='100%' src="https://www.youtube.com/embed/ENZjdyDPFos"
-                          title='Програма піна низький тиск' style={{border: 'none'}}/>
+                          title='Програма піна низький тиск' style={{border: 'none'}} loading="lazy" />
                   {size(5)}
                 </div>
               </figure>

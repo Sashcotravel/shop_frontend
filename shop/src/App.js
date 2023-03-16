@@ -309,7 +309,7 @@ const App = () => {
         // let gtoken = await reCaptchaExecute(key, 'setting')
         // let res = await dispatch(fetchCaptcha({gtoken}))
         // if(res.payload){
-        let link = "http://localhost:3000/your-order/" + d.payload;
+        let link = "https://www.samwash.ua/your-order/" + d.payload;
         console.log(link);
         // dispatch(fetchMail(obj));
         // dispatch(fetchMailDima(obj));

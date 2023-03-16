@@ -65,6 +65,11 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin(),
     new CompressionPlugin({ algorithm: 'gzip', threshold: 10240, minRatio: 0.8 }),
+    require('rollup-plugin-replace')({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    require('rollup-plugin-commonjs')(),
+    require('rollup-plugin-terser')(),
   ],
   devServer: {
     hot: true

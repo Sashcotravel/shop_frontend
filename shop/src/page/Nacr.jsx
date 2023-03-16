@@ -17,18 +17,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setUrl("cover")
-  //   if(lang === 'ua'){
-  //     document.title = "Вибір покриття для мийки самообслуговування | SamWash"
-  //     document.description = 'Визначитися з покриттям для автомийки самообслуговування нескладно, якщо звернутися до нас. Ми запропонуємо найкращі варіанти по дизайну та ціні для вашого бізнесу.'
-  //   }
-  //   if(lang === 'en'){
-  //     document.title = "Choosing a coating for a self-service sink | SamWash"
-  //     document.description = 'It is easy to decide on a cover for a self-service car wash, if you contact us. We will offer the best design and price options for your business.'
-  //   }
-  //   if(lang === 'ru'){
-  //     document.title = 'Вибор покрытия для мойки самообслуживания | SamWash'
-  //     document.description = 'Определиться с покрытием для автомойки самообслуживания несложно, если обратиться к нам. Мы предлагаем лучшие варианты по дизайну и цене для вашего бизнеса.'
-  //   }
   }, [])
 
   let lang = localStorage.i18nextLng
@@ -80,7 +68,7 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
             if (el === data[23] || el === data[24] || el === data[25] || el === data[26]
               || el === data[27] || el === data[28] || el === data[29]) {
               userOrder.splice(index, 1);
-              if (el.size != 0) {
+              if (el.size !== 0) {
                 setTotal(total - el.total);
               }
               el.size = 0;
@@ -179,8 +167,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     border: "none"
   };
 
-  const style = { margin: "0 auto 60px 125px" };
-
   const changeColor = () => {
     if(screen){
       if(window.scrollY >= 500) {setColor('comp')}
@@ -241,7 +227,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 <div>
                   <LazyLoadImage src={require("../image2/coverSMART.jpg")}
                                  className="base" id="img6" alt='SMART' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[23].src}.${data[23].src2}`)} className={"base"} id="img6" />*/}
                   {size(6)}
                 </div>
               </figure>
@@ -264,7 +249,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 <div>
                   <LazyLoadImage src={require("../image2/coverPIXEL.jpg")}
                                  className={"base"} id="img7" alt='PIXEL' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[24].src}.${data[24].src2}`)} className={"base"} id="img7" />*/}
                   {size(7)}
                 </div>
               </figure>
@@ -287,7 +271,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 <div>
                   <LazyLoadImage src={require("../image2/coverMARCO1.jpg")} className={"base"}
                                  id="img8" alt='MARCO 1 Banner' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[25].src}.${data[25].src2}`)} className={"base"} id="img8" />*/}
                   {size(8)}
                 </div>
               </figure>
@@ -310,7 +293,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 <div>
                   <LazyLoadImage src={require("../image2/coverMARCO.jpg")} className={"base"}
                        id="img9" alt=' MARCO 2 Glass' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[26].src}.${data[26].src2}`)} className={"base"} id="img9" />*/}
                   {size(9)}
                 </div>
               </figure>
@@ -333,7 +315,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 <div>
                   <LazyLoadImage src={require("../image2/coverMARCHELLO.jpg")} className={"base"}
                                  id="img10" alt='MARCHELLO' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[27].src}.${data[27].src2}`)} className={"base"} id="img10" />*/}
                   {size(10)}
                 </div>
               </figure>
@@ -359,7 +340,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 <div>
                   <img src={require("../image2/coverMARCHELLight.jpg")} className={"base"}
                        id="img60" alt='MARCHELLO Light' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[28].src}.${data[28].src2}`)} className={"base"} id="img60" />*/}
                   {size(60)}
                 </div>
               </figure>
@@ -382,7 +362,6 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                 <div>
                   <LazyLoadImage src={require("../image2/karkasUfo.jpg")} className={"base"}
                                  id="img11" alt='UFO' loading='lazy'/>
-                  {/*<img src={(`/static/media/${data[29].src}.${data[29].src2}`)} className={"base"} id="img11" />*/}
                   {size(11)}
                 </div>
               </figure>

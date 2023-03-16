@@ -108,11 +108,11 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
 
   const imgSize2 = (e) => {
     if (window.screen.availWidth > 900) {
+      let twoImg = document.getElementById("lightCol2");
       let g = document.getElementById(e.target.id);
       twoImg.src = ''
       let con = document.getElementById("light2");
       con.style.visibility = "visible";
-      let twoImg = document.getElementById("lightCol2");
       twoImg.src = g.src;
     }
   };
@@ -199,7 +199,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <iframe id="img16" width="100%" height="100%" src="https://www.youtube.com/embed/5vCS5brR5ic"
-                          title="ТКомплект" style={{border: 'none'}} />
+                          loading="lazy" title="ТКомплект" style={{border: 'none'}} />
                   {size2(16)}
                 </div>
               </figure>
@@ -216,7 +216,7 @@ const OpenBox = ({ t, data, userOrder, setTotal, total, setUrl }) => {
               <figure>
                 <div>
                   <iframe id="img17" width="100%" height="100%" src="https://www.youtube.com/embed/5vCS5brR5ic"
-                          title="ТКомплект" style={{border: 'none'}} />
+                          title="ТКомплект" style={{border: 'none'}} loading="lazy" />
                   {size2(17)}
                 </div>
               </figure>

@@ -42,13 +42,13 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const arrow = 'стрілка'
-  // const key = '6LeDKr8kAAAAAOvhuveRpPUklVNHNdIID4YtceQl' // my
-  const key = '6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq'
+  // const key = '6Lc2yv4kAAAAAIMg51K6LElr3MktKm2jfQOsXJuq'
+  const key = process.env.REACT_APP_RECAPTCHAPUBLIC
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyD4-Ca3XmVM77RpqrahMOrkqfwhFsvUvrg"
-    // googleMapsApiKey: "AIzaSyDiIH-nH1QzvLZoDJJQIlyt06lupZp4Yss"
+    // googleMapsApiKey: "AIzaSyD4-Ca3XmVM77RpqrahMOrkqfwhFsvUvrg"
+    googleMapsApiKey: process.env.REACT_APP_GOOGLEMAPS
   })
 
   const defaultOption = {
@@ -156,9 +156,9 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
       setMeneger(false);
       setChecked(false);
       navigate("/thanks");
-      let gtoken = await reCaptchaExecute(key, "setting");
-      let res = await dispatch(fetchCaptcha({ gtoken }));
-      console.log(res);
+      // let gtoken = await reCaptchaExecute(key, "setting");
+      // let res = await dispatch(fetchCaptcha({ gtoken }));
+      // console.log(res);
       // if (res.payload) {
         // let con = document.getElementById("lightblue");
         // con.style.visibility = "hidden";
@@ -339,7 +339,6 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
   return <div>
 
     <Helmet>
-      <html lang={localStorage.i18nextLng} />
       <meta charSet="utf-8" />
       <title>{t("mainTit")}</title>
       <meta name="description" content={t("mainDesc")} />

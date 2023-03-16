@@ -59,7 +59,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     if (window.screen.availWidth > 900) {
       let twoImg = document.getElementById("lightCol");
       twoImg.src = ''
-      let g = document.getElementById(e.target.id);
       data.map(item => {
         if('img' + item.nameImg === e.target.id){
           let con = document.getElementById("light");
@@ -104,8 +103,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
     color: "#FFFFFF",
     border: "none"
   };
-
-  const style = { margin: "0 auto 60px 125px" };
 
   const changeColor = () => {
     if(screen){
@@ -186,8 +183,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <img src={require("../img/Аксесуари/small_jpeg/Тримачі для -1.jpg")} className="base"
                          id="img30" alt='Тримачі для 4 ковриків' loading='lazy' />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image2/tr4cowcunk.jpg")} className={"base"}*/}
-                  {/*               id="img30" alt='Тримачі для 4 ковриків' loading='lazy'/>*/}
                   {size(30)}
                 </div>
               </figure>
@@ -209,8 +204,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                   <img src={require("../img/Аксесуари/small_WebP/1000zhet.webp")} className="base"
                        id="img27" alt='Жетони' loading='lazy' />
                 </picture>
-                  {/*<LazyLoadImage src={require("../image2/et1000.jpg")} className={"base"} id="img27" alt='Жетони' loading='lazy'/>*/}
-                  {/*<img src={(`/static/media/${data[22].src}.${data[22].src2}`)} className={"base"} id="img27" />*/}
                   {size(27)}
                 </div>
               </figure>
@@ -232,9 +225,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <img src={require("../img/Аксесуари/small_WebP/тримач на -1.webp")} className="base"
                          id="img31" alt='Тримачі для 4 ковриків' loading='lazy' />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image/wisk.jpg")} className={"base"}*/}
-                  {/*               id="img31" alt='Тримачі для 4 ковриків' loading='lazy'/>*/}
-                  {/*<img src={(`/static/media/${data[37].src}.${data[37].src2}`)} className={"base"} id="img31" />*/}
                   {size(31)}
                 </div>
               </figure>
@@ -280,9 +270,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <img src={require("../img/Аксесуари/small_WebP/на один пост.webp")} className="base"
                          id="img33" alt='Тримачі для 4 ковриків' loading='lazy' />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image2/tr4cow1.jpg")} className={"base"}*/}
-                  {/*               id="img33" alt='Тримачі для 4 ковриків' loading='lazy'/>*/}
-                  {/*<img src={(`/static/media/${data[39].src}.${data[39].src2}`)} className={"base"} id="img33" />*/}
                   {size(33)}
                 </div>
               </figure>
@@ -296,9 +283,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
         <LazyLoadComponent>
           <div className={s.container}>
             <div className={s.boxOne}>
-              {/*<div className={"img35 base"} id="img35">*/}
-              {/*  {size(35)}*/}
-              {/*</div>*/}
               <figure>
                 <div style={{ height: "315px" }}>
                   {/*<picture>*/}
@@ -328,8 +312,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <source srcSet={require("../img/Аксесуари/small_WebP/asset-2.webp")} />
                     <img src={require("../img/Аксесуари/small_WebP/asset-2.webp")} className="base" id="img12" alt="Когутик" />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image2/sa.jpg")} className={"base"} id="img101" alt='Логотип' />*/}
-                  {/*<img src={(`/static/media/${data[40].src}.${data[40].src2}`)} className={"base"} id="img35" />*/}
                   {size(12)}
                 </div>
               </figure>
@@ -351,8 +333,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <img src={require("../img/Аксесуари/small_jpeg/IMG_-2.jpg")} className="base"
                          id="img37" alt='Рукомийник' loading='lazy' />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image2/rukcir.jpg")} className={"base"} id="img37" alt='Рукомийник' />*/}
-                  {/*<img src={(`/static/media/${data[42].src}.${data[42].src2}`)} className={"base"} id="img37" />*/}
                   {size(37)}
                 </div>
               </figure>
@@ -397,8 +377,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <img src={require("../img/Аксесуари/small_jpeg/stolik.jpg")} className="base"
                          id="img39" alt='Столик' loading='lazy' />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image2/tablener2.jpg")} className={"base"} id="img39" alt='Індикатор' />*/}
-                  {/*<img src={(`/static/media/${data[44].src}.${data[44].src2}`)} className={"base"} id="img39" />*/}
                   {size(39)}
                 </div>
               </figure>
@@ -466,8 +444,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <img src={require("../img/Аксесуари/small_jpeg/Layer -1.jpg")} className="base"
                          id="img41" alt='Індикатор' loading='lazy' />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image2/lighteningpanel2.png")} className={"base"} id="img41" alt='Індикатор' />*/}
-                  {/*<img src={(`/static/media/${data[46].src}.${data[46].src2}`)} className={"base"} id="img41" />*/}
                   {size(41)}
                 </div>
               </figure>
@@ -512,8 +488,6 @@ const Acses = ({ t, data, userOrder, setTotal, total, setUrl }) => {
                     <img src={require("../img/Аксесуари/small_jpeg/для килимків -1.jpg")} className="base"
                          id="img43" alt='Вибивачка ковриків' loading='lazy' />
                   </picture>
-                  {/*<LazyLoadImage src={require("../image2/wubcow.jpg")} className={"base"} id="img43" alt='Вибивачка ковриків' />*/}
-                  {/*<img src={(`/static/media/${data[48].src}.${data[48].src2}`)} className={"base"} id="img43" />*/}
                   {size(43)}
                 </div>
               </figure>
