@@ -5,7 +5,7 @@ import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
@@ -436,12 +436,14 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl }) => {
       <span className={s.closeX} onClick={closePopApp2}>&#10006;</span>
     </div>}
 
-    <Helmet>
-      <html lang={localStorage.i18nextLng} />
-      <meta charSet="utf-8" />
-      <title>{t("oblTit")}</title>
-      <meta name="description" content={t("oblDesc")} />
-    </Helmet>
+    <HelmetProvider>
+      <Helmet>
+        <html lang={localStorage.i18nextLng} />
+        <meta charSet="utf-8" />
+        <title>{t("oblTit")}</title>
+        <meta name="description" content={t("oblDesc")} />
+      </Helmet>
+    </HelmetProvider>
 
     <main>
 

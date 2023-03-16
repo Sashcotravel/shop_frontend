@@ -5,7 +5,7 @@ import image1 from "../image/svg/Fullscreenicon.svg";
 import image2 from "../image/svg/Group31.svg";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
@@ -194,12 +194,14 @@ const Nacr = ({ t, data, userOrder, setTotal, total, setUrl }) => {
       </figure>
     </div>}
 
-    <Helmet>
-      <html lang={localStorage.i18nextLng} />
-      <meta charSet="utf-8" />
-      <title>{t("nacrTit")}</title>
-      <meta name="description" content={t("nacrDesc")} />
-    </Helmet>
+    <HelmetProvider>
+      <Helmet>
+        <html lang={localStorage.i18nextLng} />
+        <meta charSet="utf-8" />
+        <title>{t("nacrTit")}</title>
+        <meta name="description" content={t("nacrDesc")} />
+      </Helmet>
+    </HelmetProvider>
 
     <main>
 

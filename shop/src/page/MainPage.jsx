@@ -21,7 +21,7 @@ import { coordinates } from '../users'
 import { Carousel } from "./carousel/Carousel";
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 import { reCaptchaExecute  } from 'recaptcha-v3-react-function-async'
-import {Helmet} from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import axios from "axios";
 
 
@@ -338,11 +338,13 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked }) => {
 
   return <div>
 
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>{t("mainTit")}</title>
-      <meta name="description" content={t("mainDesc")} />
-    </Helmet>
+    <HelmetProvider>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{t("mainTit")}</title>
+        <meta name="description" content={t("mainDesc")} />
+      </Helmet>
+    </HelmetProvider>
 
 
     <main style={{ backgroundColor: "#283338" }}>

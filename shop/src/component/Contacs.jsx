@@ -6,7 +6,7 @@ import FooterMain from "./FooterMain";
 import { fetchMailDimaZam, fetchOrder } from "../API/post";
 import { useDispatch } from "react-redux";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 let numPhone = 0
@@ -146,12 +146,14 @@ const Contacts = ({ setOnFooter, t }) => {
   return (
     <div className={s.divBlock}>
 
-      <Helmet>
-        <html lang={localStorage.i18nextLng} />
-        <meta charSet="utf-8" />
-        <title>{t("contactTit")}</title>
-        <meta name="description" content={t("contacDesc")} />
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <html lang={localStorage.i18nextLng} />
+          <meta charSet="utf-8" />
+          <title>{t("contactTit")}</title>
+          <meta name="description" content={t("contacDesc")} />
+        </Helmet>
+      </HelmetProvider>
 
       <LazyLoadImage src={image4} className={s.imageThanks} alt='lable'/>
       <div className={s.divMain}>
