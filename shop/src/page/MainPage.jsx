@@ -165,7 +165,7 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked, setPoroh }) => {
         // let con = document.getElementById("lightblue");
         // con.style.visibility = "hidden";
         let obj = { user: userData };
-        dispatch(fetchMailDimaZam({ name: userData.name, email: userData.email, phone: userData.phone }));
+        dispatch(fetchMailDimaZam(obj));
       // }
     }
   };
