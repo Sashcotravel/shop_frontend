@@ -155,18 +155,17 @@ const MainPage = ({ t, setOnFooter, setMeneger, setChecked, setPoroh }) => {
 
   const useSubmit = async () => {
     if (formPass.email || formPass.phone) {
-      // setMeneger(false);
-      // setChecked(false);
-      // navigate("/thanks");
-      // let gtoken = await reCaptchaExecute(key, "setting");
-      // let res = await dispatch(fetchCaptcha({ gtoken }));
-      // console.log(res);
+      setMeneger(false);
+      setChecked(false);
+      navigate("/thanks");
+      let gtoken = await reCaptchaExecute(key, "setting");
+      let res = await dispatch(fetchCaptcha({ gtoken }));
+      console.log(res);
       // if (res.payload) {
         // let con = document.getElementById("lightblue");
         // con.style.visibility = "hidden";
         let obj = { user: userData };
-        const res = await dispatch(fetchMailDimaZam(obj));
-        console.log('lol');
+        dispatch(fetchMailDimaZam({ name: userData.name, email: userData.email, phone: userData.phone }));
       // }
     }
   };

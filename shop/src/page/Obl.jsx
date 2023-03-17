@@ -377,11 +377,11 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl, poroh, setPoroh }) =
   window.addEventListener('scroll', changeColor, { passive: true })
 
   if (poroh) {
-    console.log(window.screen.width, 'lol');
-    if (window.screen.width > 1730) {
+    console.log(window.screen.width);
+    if (window.screen.width > 1919) {
       setTimeout(() => {
         window.scrollTo({
-          top: 1850,
+          top: 2000,
           behavior: "smooth"
         });
         setPoroh(false);
@@ -405,15 +405,37 @@ const Obl = ({ t, data, userOrder, setTotal, total, setUrl, poroh, setPoroh }) =
         setPoroh(false);
       }, 1000);
     }
+    else if (window.screen.availWidth > 700) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: 6500,
+          behavior: "smooth"
+        });
+        console.log('15');
+        setPoroh(false);
+      }, 1000);
+      setTimeout(() => {
+        window.scrollTo({
+          top: 6650,
+          behavior: "smooth"
+        });
+      }, 2000);
+    }
     else {
       setTimeout(() => {
         window.scrollTo({
-          top: 5900,
+          top: 6600,
           behavior: "smooth"
         });
-        console.log(5);
+        console.log('5');
         setPoroh(false);
       }, 1000);
+      setTimeout(() => {
+        window.scrollTo({
+          top: 6450,
+          behavior: "smooth"
+        });
+      }, 2000);
     }
   }
 
